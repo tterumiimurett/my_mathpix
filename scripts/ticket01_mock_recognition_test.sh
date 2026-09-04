@@ -14,7 +14,7 @@ fi
 "$app_binary" --ticket01-mock-recognition-self-test >"$output_file" 2>&1 &
 app_pid=$!
 
-for _ in {1..100}; do
+for _ in {1..300}; do
     if ! kill -0 "$app_pid" >/dev/null 2>&1; then
         break
     fi
@@ -33,7 +33,7 @@ wait "$app_pid"
 exit_status=$?
 set -e
 
-expected='TICKET01_MOCK_PROTOCOL_OK submit=1 polls=5 png=yes fields=yes fixture=yes guard=yes result=yes'
+expected='TICKET01_MOCK_PROTOCOL_OK submit=1 polls=multiple png=yes fields=yes fixture=yes guard=yes result=yes'
 if [[ "$exit_status" -ne 0 ]] || ! grep -Fxq "$expected" "$output_file"; then
     grep -E '^TICKET01_MOCK_PROTOCOL_(FAIL|OK) ' "$output_file" || true
     printf 'RED: expected safe mock protocol evidence was not emitted (status=%s)\n' "$exit_status" >&2

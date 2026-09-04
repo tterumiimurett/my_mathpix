@@ -108,6 +108,101 @@ enum SelfCheck {
         )
         captureLifecycle.cancel()
 
+        let relaunchedAcceptance = AppLaunchConfiguration(
+            arguments: ["MyMathpix"],
+            acceptanceRelaunchMode: .acceptance
+        )
+        check(
+            relaunchedAcceptance.runsTicket01Acceptance
+                && relaunchedAcceptance.ticket01Scenario == nil,
+            "acceptance mode survives a LaunchServices restart",
+            failures: &failures
+        )
+        let relaunchedPermissionScenario = AppLaunchConfiguration(
+            arguments: ["MyMathpix"],
+            acceptanceRelaunchMode: .scenario("permission-revoked")
+        )
+        check(
+            relaunchedPermissionScenario.ticket01Scenario == .permissionRevoked,
+            "acceptance scenario survives a LaunchServices restart",
+            failures: &failures
+        )
+        check(
+            Ticket01AcceptanceRelaunchMode.parse("scenario:permission-denied")
+                == .scenario("permission-denied"),
+            "acceptance relaunch marker parses an approved scenario",
+            failures: &failures
+        )
+        check(
+            Ticket01AcceptanceRelaunchMode.parse("unexpected") == nil,
+            "invalid acceptance relaunch marker is rejected",
+            failures: &failures
+        )
+        do {
+            let markerRoot = FileManager.default.temporaryDirectory
+                .appendingPathComponent("MyMathpix-RelaunchMarker-SelfCheck-\(UUID().uuidString)")
+            defer { try? FileManager.default.removeItem(at: markerRoot) }
+            try FileManager.default.createDirectory(at: markerRoot, withIntermediateDirectories: true)
+            let markerURL = markerRoot.appendingPathComponent("relaunch-mode.txt")
+            try Data("acceptance\n".utf8).write(to: markerURL, options: .atomic)
+            try FileManager.default.setAttributes(
+                [.posixPermissions: NSNumber(value: Int16(0o600))],
+                ofItemAtPath: markerURL.path
+            )
+            let markerDate = Date(timeIntervalSince1970: 1_800_000_000)
+            try FileManager.default.setAttributes(
+                [.modificationDate: markerDate],
+                ofItemAtPath: markerURL.path
+            )
+            check(
+                Ticket01AcceptanceRelaunchMarker.load(
+                    from: markerURL,
+                    now: markerDate.addingTimeInterval(60)
+                ) == .acceptance,
+                "fresh private acceptance marker is accepted",
+                failures: &failures
+            )
+            check(
+                Ticket01AcceptanceRelaunchMarker.load(
+                    from: markerURL,
+                    now: markerDate.addingTimeInterval(16 * 60)
+                ) == nil,
+                "stale acceptance marker is rejected",
+                failures: &failures
+            )
+            try FileManager.default.setAttributes(
+                [
+                    .posixPermissions: NSNumber(value: Int16(0o644)),
+                    .modificationDate: markerDate
+                ],
+                ofItemAtPath: markerURL.path
+            )
+            check(
+                Ticket01AcceptanceRelaunchMarker.load(
+                    from: markerURL,
+                    now: markerDate.addingTimeInterval(60)
+                ) == nil,
+                "non-private acceptance marker is rejected",
+                failures: &failures
+            )
+        } catch {
+            failures.append("acceptance relaunch marker: \(error.localizedDescription)")
+        }
+
+        var failedEvidence = Ticket01AcceptanceReporter.Evidence()
+        failedEvidence.phase = "failed"
+        failedEvidence.failureCode = "recognition_failed"
+        let restartedEvidence = Ticket01AcceptanceReporter.selectionStartedEvidence(
+            starting: failedEvidence
+        )
+        check(
+            restartedEvidence.phase == "selecting"
+                && restartedEvidence.failureCode == nil
+                && restartedEvidence.recoveryProbeStarted,
+            "new capture clears stale acceptance failure state",
+            failures: &failures
+        )
+
         let syntheticCaptureError = NSError(domain: "Ticket01Capture", code: 1)
         check(
             ScreenCaptureFailureMapper.map(
@@ -191,7 +286,7 @@ enum SelfCheck {
         }
 
         if failures.isEmpty {
-            print("MyMathpix self-test passed (31 checks).")
+            print("MyMathpix self-test passed (39 checks).")
             return true
         }
         print("MyMathpix self-test failed:")

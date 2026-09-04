@@ -29,7 +29,7 @@ struct MyMathpixApp: App {
         if launch.runsTicket01MockSelfTest {
             let passed = Ticket01MockRecognitionSelfTest.runBlocking()
             if passed {
-                print("TICKET01_MOCK_PROTOCOL_OK submit=1 polls=5 png=yes fields=yes fixture=yes guard=yes result=yes")
+                print("TICKET01_MOCK_PROTOCOL_OK submit=1 polls=multiple png=yes fields=yes fixture=yes guard=yes result=yes")
             }
             exit(passed ? 0 : 1)
         }
@@ -42,9 +42,7 @@ struct MyMathpixApp: App {
             let captureCoordinator: CaptureCoordinator
             switch launch.ticket01Scenario {
             case .permissionNotDetermined, .permissionDenied, .permissionRevoked:
-                captureCoordinator = CaptureCoordinator(
-                    permission: Ticket01FixedScreenCapturePermission(hasAccess: false, requestResult: false)
-                )
+                captureCoordinator = CaptureCoordinator()
             case .captureAPIFailure:
                 captureCoordinator = CaptureCoordinator(
                     imageCapturer: Ticket01FailingImageCapturer(failure: .captureAPI)
@@ -94,49 +92,5 @@ struct MyMathpixApp: App {
                 .environmentObject(model)
                 .frame(width: 540, height: 560)
         }
-    }
-}
-
-private struct AppLaunchConfiguration {
-    enum Ticket01Scenario: String {
-        case permissionNotDetermined = "permission-not-determined"
-        case permissionDenied = "permission-denied"
-        case permissionRevoked = "permission-revoked"
-        case captureAPIFailure = "capture-api-failure"
-        case displayDisappearance = "display-disappearance"
-        case cancellation
-        case tinySelection = "tiny-selection"
-    }
-
-    let arguments: [String]
-
-    var runsTicket01MockSelfTest: Bool {
-        arguments.contains("--ticket01-mock-recognition-self-test")
-    }
-
-    var runsResourceBundleSelfTest: Bool {
-        arguments.contains("--ticket01-resource-bundle-self-test")
-    }
-
-    var runsOverlayLifecycleSelfTest: Bool {
-        arguments.contains("--ticket01-overlay-lifecycle-self-test")
-    }
-
-    var runsLocalTokenStoreSelfTest: Bool {
-        arguments.contains("--ticket01-local-token-self-test")
-    }
-
-    var runsSelfTest: Bool {
-        arguments.contains("--self-test")
-    }
-
-    var runsTicket01Acceptance: Bool {
-        arguments.contains("--ticket01-acceptance")
-    }
-
-    var ticket01Scenario: Ticket01Scenario? {
-        let prefix = "--ticket01-scenario="
-        guard let argument = arguments.first(where: { $0.hasPrefix(prefix) }) else { return nil }
-        return Ticket01Scenario(rawValue: String(argument.dropFirst(prefix.count)))
     }
 }

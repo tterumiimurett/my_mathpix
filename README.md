@@ -9,7 +9,7 @@ A personal-first native macOS snippet recognizer for formulas, tables, and mixed
 - Editable canonical Markdown with offline KaTeX preview
 - Explicit LaTeX, Markdown, TSV, rich-table, image, and combined copy formats
 - Local history containing the 20 most recent snippets
-- API token stored in macOS Keychain
+- API token stored in a private `0600` file inside the App Sandbox container
 
 No account, subscription, backend, analytics, or cloud history is included in the Personal MVP.
 
@@ -22,7 +22,7 @@ Double-click `启动 MyMathpix.command`, or run:
 open ./dist/MyMathpix.app
 ```
 
-The current machine needs Swift 6.2 or later. The first capture requires macOS Screen Recording permission. Enter a Datalab API token in Settings; it is stored in Keychain and never written to history or logs.
+The current machine needs Swift 6.2 or later. The first capture requires macOS Screen Recording permission. Enter a Datalab API token in Settings; it is stored in a private `0600` file inside the App Sandbox container and never written to preferences, history, or logs. MyMathpix does not read, migrate, write, or delete Keychain items.
 
 ## Self-test
 

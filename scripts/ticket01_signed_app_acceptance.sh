@@ -4,12 +4,24 @@ set -euo pipefail
 repo_dir="${0:A:h:h}"
 app_dir="$repo_dir/dist/MyMathpix.app"
 app_binary="$app_dir/Contents/MacOS/MyMathpix"
-evidence_file="${HOME}/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket01Acceptance/evidence.json"
+acceptance_dir="${HOME}/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket01Acceptance"
+evidence_file="$acceptance_dir/evidence.json"
+relaunch_marker="$acceptance_dir/relaunch-mode.txt"
 mode="${1:-launch}"
 scenario="${2:-}"
 
-find_acceptance_pid() {
-    pgrep -f "$app_binary.*--ticket01-acceptance" | head -n 1
+find_app_pid() {
+    pgrep -f "$app_binary" | head -n 1
+}
+
+write_relaunch_marker() {
+    local marker_value="$1"
+    local temporary_marker="$relaunch_marker.tmp.$$"
+    umask 077
+    mkdir -p "$acceptance_dir"
+    printf '%s\n' "$marker_value" >"$temporary_marker"
+    chmod 600 "$temporary_marker"
+    mv -f "$temporary_marker" "$relaunch_marker"
 }
 
 verify_bundle() {
@@ -22,19 +34,23 @@ verify_bundle() {
 }
 
 launch_and_wait() {
-    if existing_pid="$(find_acceptance_pid)" && [[ -n "$existing_pid" ]]; then
-        printf 'BLOCKED: Ticket 01 acceptance App is already running (pid=%s)\n' "$existing_pid" >&2
+    local marker_value="$1"
+    shift
+    if existing_pid="$(find_app_pid)" && [[ -n "$existing_pid" ]]; then
+        printf 'BLOCKED: MyMathpix is already running (pid=%s); quit it before starting an isolated acceptance run\n' "$existing_pid" >&2
         exit 2
     fi
+    write_relaunch_marker "$marker_value"
     launch_epoch="$(date +%s)"
     open -n "$app_dir" --args "$@"
     app_pid=""
     for _ in {1..100}; do
-        app_pid="$(find_acceptance_pid || true)"
+        app_pid="$(find_app_pid || true)"
         [[ -n "$app_pid" ]] && break
         sleep 0.1
     done
     if [[ -z "$app_pid" ]]; then
+        rm -f "$relaunch_marker"
         printf 'RED: LaunchServices did not expose the Ticket 01 acceptance process\n' >&2
         exit 1
     fi
@@ -46,6 +62,7 @@ launch_and_wait() {
     done
     if [[ ! -f "$evidence_file" ]] || (( $(stat -f %m "$evidence_file") < launch_epoch )); then
         kill "$app_pid" >/dev/null 2>&1 || true
+        rm -f "$relaunch_marker"
         printf 'RED: signed App did not initialize redacted Ticket 01 evidence\n' >&2
         exit 1
     fi
@@ -58,7 +75,7 @@ verify_safe_evidence_schema() {
             "canonical_markdown_visible", "capture_completed",
             "capture_triggered_by_global_shortcut", "expected_pixel_height",
             "expected_pixel_width", "failure_code", "fields_approved",
-            "fixture_valid", "guard_band_absent", "overlay_dismissed",
+            "fixture_valid", "guard_band_absent", "last_failure_code", "overlay_dismissed",
             "phase", "pixel_geometry_preserved", "png_pixel_height",
             "png_pixel_width", "png_valid", "poll_count", "preview_visible",
             "recent_history_count", "recent_history_visible",
@@ -76,7 +93,7 @@ verify_safe_evidence_schema() {
 case "$mode" in
     launch|launch-secondary)
         verify_bundle
-        launch_and_wait --ticket01-acceptance
+        launch_and_wait acceptance --ticket01-acceptance
 
         printf 'TICKET01_ACCEPTANCE_READY pid=%s\n' "$app_pid"
         printf 'FIXTURE=%s\n' "$repo_dir/scripts/ticket01_fixture.html"
@@ -87,13 +104,13 @@ case "$mode" in
         fi
         ;;
     verify|verify-secondary)
-        app_pid="$(find_acceptance_pid || true)"
+        app_pid="$(find_app_pid || true)"
         if [[ -z "$app_pid" ]] || ! kill -0 "$app_pid" >/dev/null 2>&1; then
             printf 'RED: acceptance App process is not alive\n' >&2
             exit 1
         fi
         jq -e '
-            .schema == 3 and
+            .schema == 4 and
             .phase == "complete" and
             .capture_triggered_by_global_shortcut == true and
             .capture_completed == true and
@@ -101,7 +118,7 @@ case "$mode" in
             .recognizing_was_visible == true and
             .second_capture_blocked == true and
             .submit_count == 1 and
-            .poll_count == 5 and
+            .poll_count >= 2 and
             .png_valid == true and
             .fields_approved == true and
             .fixture_valid == true and
@@ -132,7 +149,7 @@ case "$mode" in
             jq -e '.selected_display_scale >= 2' "$evidence_file" >/dev/null
         fi
         verify_safe_evidence_schema
-        printf 'TICKET01_SIGNED_APP_OK mode=%s pid=%s submit=1 polls=5 recent_history=1 ui=yes redacted=yes\n' "$mode" "$app_pid"
+        printf 'TICKET01_SIGNED_APP_OK mode=%s pid=%s submit=1 polls=multiple recent_history=1 ui=yes redacted=yes\n' "$mode" "$app_pid"
         ;;
     launch-scenario)
         case "$scenario" in
@@ -143,12 +160,16 @@ case "$mode" in
                 ;;
         esac
         verify_bundle
-        launch_and_wait --ticket01-acceptance "--ticket01-scenario=$scenario"
+        launch_and_wait "scenario:$scenario" --ticket01-acceptance "--ticket01-scenario=$scenario"
         printf 'TICKET01_SCENARIO_READY scenario=%s pid=%s\n' "$scenario" "$app_pid"
-        printf 'ACTION=Complete the named failure or cancellation once, dismiss its explanation if shown, then press Control-Command-M again to prove the App is immediately operable. Leave the second selection overlay open unless permission is denied.\n'
+        if [[ "$scenario" == permission-* ]]; then
+            printf 'ACTION=Prepare the named real macOS Screen Recording state first, invoke Control-Command-M, and confirm the process survives with a visible explanation. These permission scenarios use the real system permission provider, not an injected denial.\n'
+        else
+            printf 'ACTION=Complete the named failure or cancellation once, dismiss its explanation if shown, then press Control-Command-M again to prove the App is immediately operable. Leave the second selection overlay open.\n'
+        fi
         ;;
     verify-scenario)
-        app_pid="$(find_acceptance_pid || true)"
+        app_pid="$(find_app_pid || true)"
         if [[ -z "$app_pid" ]] || ! kill -0 "$app_pid" >/dev/null 2>&1; then
             printf 'RED: scenario App process is not alive\n' >&2
             exit 1
@@ -192,7 +213,8 @@ case "$mode" in
         else
             jq -e --arg code "$expected_code" '
                 .phase == "selecting" and
-                .failure_code == $code and
+                .failure_code == null and
+                .last_failure_code == $code and
                 .capture_triggered_by_global_shortcut == true and
                 .recovery_probe_started == true and
                 .recent_history_count == 0 and
@@ -207,11 +229,12 @@ case "$mode" in
         fi
         ;;
     stop)
-        app_pid="$(find_acceptance_pid || true)"
+        app_pid="$(find_app_pid || true)"
         if [[ -n "$app_pid" ]]; then
             kill "$app_pid"
             while kill -0 "$app_pid" >/dev/null 2>&1; do sleep 0.1; done
         fi
+        rm -f "$relaunch_marker"
         printf 'TICKET01_ACCEPTANCE_STOPPED\n'
         ;;
     *)

@@ -4,7 +4,7 @@ import Foundation
 @MainActor
 final class Ticket01AcceptanceReporter {
     struct Evidence: Codable, Equatable, Sendable {
-        var schema = 3
+        var schema = 4
         var phase = "launched"
         var captureTriggeredByGlobalShortcut = false
         var captureCompleted = false
@@ -37,6 +37,7 @@ final class Ticket01AcceptanceReporter {
         var renderedTableVisible = false
         var recentHistoryVisible = false
         var failureCode: String?
+        var lastFailureCode: String?
         var recoveryProbeStarted = false
         var activeDisplayCount = 0
         var distinctDisplayScaleCount = 0
@@ -70,11 +71,21 @@ final class Ticket01AcceptanceReporter {
     }
 
     func markSelecting() {
+        evidence = Self.selectionStartedEvidence(starting: evidence)
+        persist()
+    }
+
+    nonisolated static func selectionStartedEvidence(starting: Evidence) -> Evidence {
+        var evidence = starting
         if evidence.phase == "failed" || evidence.phase == "cancelled" {
             evidence.recoveryProbeStarted = true
         }
+        if evidence.lastFailureCode == nil {
+            evidence.lastFailureCode = evidence.failureCode
+        }
+        evidence.failureCode = nil
         evidence.phase = "selecting"
-        persist()
+        return evidence
     }
 
     func markCaptureCompleted(snippet: CapturedSnippet, overlayDismissed: Bool) {
@@ -109,6 +120,7 @@ final class Ticket01AcceptanceReporter {
     func markComplete(recentHistoryCount: Int) {
         applyMockSnapshot()
         evidence.phase = "complete"
+        evidence.failureCode = nil
         evidence.recentHistoryCount = recentHistoryCount
         evidence.resultEditorVisible = false
         evidence.originalSnippetVisible = false
@@ -139,6 +151,7 @@ final class Ticket01AcceptanceReporter {
         apply(snapshot: snapshot, to: &evidence)
         evidence.phase = "failed"
         evidence.failureCode = "recognition_failed"
+        evidence.lastFailureCode = "recognition_failed"
         evidence.recentHistoryCount = recentHistoryCount
         return evidence
     }
@@ -178,6 +191,7 @@ final class Ticket01AcceptanceReporter {
 
     func markCancelled(recentHistoryCount: Int) {
         evidence.phase = "cancelled"
+        evidence.failureCode = nil
         evidence.recentHistoryCount = recentHistoryCount
         persist()
     }
@@ -185,6 +199,7 @@ final class Ticket01AcceptanceReporter {
     func markFailure(code: String, recentHistoryCount: Int) {
         evidence.phase = "failed"
         evidence.failureCode = code
+        evidence.lastFailureCode = code
         evidence.recentHistoryCount = recentHistoryCount
         persist()
     }

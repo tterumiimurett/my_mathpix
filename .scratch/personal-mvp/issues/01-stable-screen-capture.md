@@ -40,3 +40,7 @@ Verified supporting evidence:
 - The owner confirmed real shortcut capture, rectangle bounds, Result Editor visibility, formula/table preview, repeated capture after Escape, multi-display overlay coverage, and fullscreen-Space coverage. No new MyMathpix crash report was emitted on 2026-09-04.
 
 The ticket remains `claimed`, not `resolved`, because the final strict signed-App evidence did not satisfy every compound acceptance criterion. The last scalar-only run reached a live complete Result Editor with correct fixture, formula, table, PNG dimensions, and history, but accumulated `submit_count=3`, `recent_history_count=3`, `second_capture_blocked=false`, and selected the 1x primary display. A fresh exactly-one-attempt Retina-secondary run is still required. Actual macOS not-determined and revoked-after-prior-grant states, plus a real display-disappearance/capture-API-failure recovery run, remain unexecuted. This directory has no Git metadata (`git status` reports “not a git repository”), so the requested commit is also impossible without repository metadata; no repository was initialized and no commit was fabricated.
+
+### 2026-09-04 — Git status correction
+
+The preceding audit accurately recorded the repository state at that time. The owner subsequently authorized Git initialization. Commit `6692c67` on `main` now records the pre-review Ticket 01 snapshot, and review fixes are developed on `ticket01-review-fixes`; no pre-Ticket implementation history was reconstructed or fabricated.
