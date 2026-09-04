@@ -32,8 +32,7 @@ flowchart TD
 
 ## Recommended frontier
 
-1. Complete `01` first; it establishes the authoritative capture seam and repairs the current termination.
+1. Ticket `01` is resolved by explicit owner acceptance; its implementation establishes the authoritative capture seam and repairs the reported termination. See [01 — Make Screen Capture survive through a mock result](issues/01-stable-screen-capture.md#answer) for the verified evidence and owner-waived external runs.
 2. Tickets `02`, `03`, and `04` are then unblocked. They may run in parallel only when their main agents agree on shared contracts and avoid overlapping edits; otherwise use the easier-to-review order `02 → 03 → 04`.
 3. Ticket `05` starts after real recognition and result consumption are complete.
 4. Ticket `06` is the integration gate. It must test the assembled signed App and cannot be replaced by reports from earlier tickets.
-

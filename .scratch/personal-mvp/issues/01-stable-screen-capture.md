@@ -4,7 +4,7 @@
 
 **Blocked by:** None — can start immediately.
 
-**Status:** claimed
+**Status:** resolved
 
 ## Suggested agent split
 
@@ -44,3 +44,9 @@ The ticket remains `claimed`, not `resolved`, because the final strict signed-Ap
 ### 2026-09-04 — Git status correction
 
 The preceding audit accurately recorded the repository state at that time. The owner subsequently authorized Git initialization. Commit `6692c67` on `main` now records the pre-review Ticket 01 snapshot, and review fixes are developed on `ticket01-review-fixes`; no pre-Ticket implementation history was reconstructed or fabricated.
+
+## Answer
+
+Resolved by explicit owner acceptance on 2026-09-04 after the final `main...d0ca523` two-axis code review reported zero Standards findings and zero actionable Spec code findings. The final candidate passed 45 deterministic checks, strict ad-hoc signature and App Sandbox verification, and the signed mock-recognition, overlay-lifecycle, resource-bundle, and private local-token checks. The candidate CDHash is `7dff41b68627c94140fd6988c979744a85c84361`; no Keychain access was introduced.
+
+The owner explicitly chose to close the ticket without completing the remaining strict clean-run evidence: exactly one Retina-secondary attempt with the concurrent shortcut block, the full external TCC state sequence, and real display-disappearance/capture-API-failure runs. Those acceptance boxes remain unchecked so the tracker does not represent unexecuted scenarios as observed facts. Screen Recording TCC was reset to not-determined while preparing that matrix, so normal use requires granting the final candidate again.
