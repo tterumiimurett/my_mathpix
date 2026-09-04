@@ -34,6 +34,9 @@ struct MyMathpixApp: App {
             }
             exit(passed ? 0 : 1)
         }
+        if launch.runsTicket04DailyWorkflowSelfTest {
+            exit(Ticket04DailyWorkflowSelfTest.run() ? 0 : 1)
+        }
         if launch.runsSelfTest {
             exit(SelfCheck.run() ? 0 : 1)
         }
@@ -77,7 +80,7 @@ struct MyMathpixApp: App {
     }
 
     var body: some Scene {
-        WindowGroup("MyMathpix") {
+        WindowGroup("MyMathpix", id: "main") {
             ContentView()
                 .environmentObject(model)
                 .frame(minWidth: 920, minHeight: 620)
@@ -85,16 +88,8 @@ struct MyMathpixApp: App {
         .defaultSize(width: 1180, height: 760)
 
         MenuBarExtra("MyMathpix", systemImage: "function") {
-            Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {
-                model.startCapture()
-            }
-            .disabled(model.isProcessing)
-            Button("Show MyMathpix") { model.showMainWindow() }
-            Divider()
-            Text(model.statusMessage)
-            Divider()
-            SettingsLink { Text("Settings…") }
-            Button("Quit MyMathpix") { NSApp.terminate(nil) }
+            MenuBarContent()
+                .environmentObject(model)
         }
 
         Settings {
@@ -102,5 +97,31 @@ struct MyMathpixApp: App {
                 .environmentObject(model)
                 .frame(width: 540, height: 560)
         }
+    }
+}
+
+private struct MenuBarContent: View {
+    @Environment(\.openWindow) private var openWindow
+    @EnvironmentObject private var model: AppModel
+
+    var body: some View {
+        Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {
+            model.startCapture()
+        }
+        .disabled(model.isProcessing)
+        Button("Show MyMathpix") { showMainWindow() }
+        Divider()
+        Text(model.statusMessage)
+        Divider()
+        SettingsLink { Text("Settings…") }
+        Button("Quit MyMathpix") { NSApplication.shared.terminate(nil) }
+            .onAppear {
+                model.installMainWindowOpener { openWindow(id: "main") }
+            }
+    }
+
+    private func showMainWindow() {
+        openWindow(id: "main")
+        DispatchQueue.main.async { model.showMainWindow() }
     }
 }

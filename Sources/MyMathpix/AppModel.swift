@@ -1,7 +1,6 @@
 import AppKit
 import Combine
 import Foundation
-import ServiceManagement
 
 @MainActor
 final class AppModel: ObservableObject {
@@ -10,6 +9,7 @@ final class AppModel: ObservableObject {
         case globalShortcut
     }
     let history: HistoryStore
+    let diagnosticLog: DiagnosticLog
 
     @Published var selectedID: UUID?
     @Published var isProcessing = false
@@ -25,10 +25,12 @@ final class AppModel: ObservableObject {
     private let recognitionConfiguration: (any RecognitionConfiguration)?
     private let captureCoordinator: CaptureCoordinator
     private let ticket01Reporter: Ticket01AcceptanceReporter?
-    private let hotKeyManager = HotKeyManager()
+    private let hotKeyRegistrar: any HotKeyRegistering
+    private let launchAtLoginController: any LaunchAtLoginControlling
     private var historyObservation: AnyCancellable?
     private var recognitionTask: Task<Void, Never>?
     private var slowTask: Task<Void, Never>?
+    private var openMainWindow: (() -> Void)?
     private let defaults: UserDefaults
 
     init(
@@ -37,6 +39,9 @@ final class AppModel: ObservableObject {
         captureCoordinator: CaptureCoordinator? = nil,
         history: HistoryStore? = nil,
         defaults: UserDefaults = .standard,
+        hotKeyRegistrar: (any HotKeyRegistering)? = nil,
+        launchAtLoginController: (any LaunchAtLoginControlling)? = nil,
+        diagnosticLog: DiagnosticLog? = nil,
         ticket01Reporter: Ticket01AcceptanceReporter? = nil
     ) {
         let resolvedRecognitionService: any RecognitionService
@@ -55,20 +60,25 @@ final class AppModel: ObservableObject {
         self.captureCoordinator = captureCoordinator ?? CaptureCoordinator()
         self.history = history
         self.defaults = defaults
+        self.hotKeyRegistrar = hotKeyRegistrar ?? HotKeyManager()
+        self.launchAtLoginController = launchAtLoginController ?? SystemLaunchAtLoginController()
+        self.diagnosticLog = diagnosticLog ?? DiagnosticLog()
         self.ticket01Reporter = ticket01Reporter
         hasToken = resolvedRecognitionConfiguration?.isConfigured ?? true
         usage = Self.loadUsage(defaults: defaults)
         hotKeyConfiguration = Self.loadHotKey(defaults: defaults)
-        launchAtLogin = SMAppService.mainApp.status == .enabled
+        launchAtLogin = self.launchAtLoginController.isEnabled
         selectedID = history.items.first?.id
         historyObservation = history.objectWillChange.sink { [weak self] _ in
             self?.objectWillChange.send()
         }
+        try? self.diagnosticLog.record(.appLaunched)
         do {
-            try hotKeyManager.register(hotKeyConfiguration) {
+            try self.hotKeyRegistrar.register(hotKeyConfiguration) {
                 [weak self] in self?.startCapture(trigger: .globalShortcut)
             }
         } catch {
+            try? self.diagnosticLog.record(.shortcutConflict)
             errorMessage = error.localizedDescription
         }
     }
@@ -107,10 +117,12 @@ final class AppModel: ObservableObject {
                 self.startRecognition(uploadPayload: snippet.uploadPayload, mode: .fast)
             case .failure(let error) where error is CancellationError:
                 self.statusMessage = "Ready"
+                try? self.diagnosticLog.record(.captureCancelled)
                 self.ticket01Reporter?.markCancelled(recentHistoryCount: self.history.items.count)
             case .failure(let error):
                 self.errorMessage = error.localizedDescription
                 self.statusMessage = "Capture failed"
+                try? self.diagnosticLog.record(.captureFailed)
                 self.ticket01Reporter?.markFailure(
                     code: (error as? AppError)?.safeDiagnosticCode ?? "capture_error",
                     recentHistoryCount: self.history.items.count
@@ -119,6 +131,7 @@ final class AppModel: ObservableObject {
             }
         }
         if began {
+            try? diagnosticLog.record(.captureStarted)
             ticket01Reporter?.markSelecting()
         }
     }
@@ -153,6 +166,7 @@ final class AppModel: ObservableObject {
         do {
             try history.delete(id: selectedID)
             self.selectedID = history.items.first?.id
+            try? diagnosticLog.record(.historyItemDeleted)
         } catch {
             errorMessage = "The history item could not be deleted: \(error.localizedDescription)"
         }
@@ -161,6 +175,7 @@ final class AppModel: ObservableObject {
     func clearHistory() throws {
         try history.clear()
         selectedID = nil
+        try? diagnosticLog.record(.historyCleared)
     }
 
     func saveToken(_ token: String) throws {
@@ -180,22 +195,40 @@ final class AppModel: ObservableObject {
     }
 
     func saveHotKey(_ configuration: HotKeyConfiguration) throws {
-        try hotKeyManager.register(configuration) {
-            [weak self] in self?.startCapture(trigger: .globalShortcut)
+        do {
+            try hotKeyRegistrar.register(configuration) {
+                [weak self] in self?.startCapture(trigger: .globalShortcut)
+            }
+        } catch {
+            try? diagnosticLog.record(.shortcutConflict)
+            throw error
         }
         hotKeyConfiguration = configuration
         let data = try JSONEncoder().encode(configuration)
         defaults.set(data, forKey: "hot-key")
+        try? diagnosticLog.record(.shortcutUpdated)
     }
 
     func setLaunchAtLogin(_ enabled: Bool) throws {
-        if enabled { try SMAppService.mainApp.register() }
-        else { try SMAppService.mainApp.unregister() }
-        launchAtLogin = SMAppService.mainApp.status == .enabled
+        try launchAtLoginController.setEnabled(enabled)
+        launchAtLogin = launchAtLoginController.isEnabled
+        try? diagnosticLog.record(launchAtLogin ? .launchAtLoginEnabled : .launchAtLoginDisabled)
     }
 
     func requestScreenCapturePermission() {
         captureCoordinator.requestPermission()
+    }
+
+    func installMainWindowOpener(_ opener: @escaping () -> Void) {
+        openMainWindow = opener
+    }
+
+    func exportDiagnostics(to url: URL) throws {
+        try diagnosticLog.exportData().write(to: url, options: .atomic)
+    }
+
+    func clearDiagnostics() throws {
+        try diagnosticLog.clear()
     }
 
     func ticket01MarkRecognizingVisible() {
@@ -229,9 +262,12 @@ final class AppModel: ObservableObject {
     }
 
     func showMainWindow() {
-        NSApp.activate(ignoringOtherApps: true)
-        if let window = NSApp.windows.first(where: { $0.title == "MyMathpix" }) ?? NSApp.windows.first(where: { $0.canBecomeMain }) {
+        let application = NSApplication.shared
+        application.activate(ignoringOtherApps: true)
+        if let window = application.windows.first(where: { $0.title == "MyMathpix" }) {
             window.makeKeyAndOrderFront(nil)
+        } else {
+            openMainWindow?()
         }
     }
 
@@ -258,6 +294,7 @@ final class AppModel: ObservableObject {
             statusMessage = mode == .fast ? "Recognizing…" : "Running high-quality recognition…"
             showMainWindow()
             ticket01Reporter?.markRecognitionStarted()
+            try? diagnosticLog.record(.recognitionStarted, mode: mode)
             usage.requestCount += 1
             persistUsage()
 
@@ -305,6 +342,7 @@ final class AppModel: ObservableObject {
         persistUsage()
         isProcessing = false
         statusMessage = "Recognition complete"
+        try? diagnosticLog.record(.recognitionCompleted, mode: mode)
         if let ticket01Reporter {
             ticket01Reporter.markComplete(recentHistoryCount: history.items.count)
             ticket01SafeSummary = ticket01Reporter.safeSummary
@@ -328,6 +366,7 @@ final class AppModel: ObservableObject {
         isProcessing = false
         statusMessage = "Recognition failed"
         errorMessage = error.localizedDescription
+        try? diagnosticLog.record(.recognitionFailed, mode: mode)
         if let ticket01Reporter {
             ticket01Reporter.markRecognitionFailed(recentHistoryCount: history.items.count)
             ticket01SafeSummary = ticket01Reporter.safeSummary

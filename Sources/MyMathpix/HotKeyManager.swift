@@ -20,10 +20,18 @@ struct HotKeyConfiguration: Codable, Equatable {
 }
 
 @MainActor
-final class HotKeyManager {
+protocol HotKeyRegistering: AnyObject {
+    func register(_ configuration: HotKeyConfiguration, action: @escaping () -> Void) throws
+}
+
+@MainActor
+final class HotKeyManager: HotKeyRegistering {
+    private static let signature = OSType(0x4D4D5058) // MMPX
     private var hotKeyRef: EventHotKeyRef?
     private var eventHandlerRef: EventHandlerRef?
     private var action: (() -> Void)?
+    private var registeredConfiguration: HotKeyConfiguration?
+    private var nextID: UInt32 = 1
 
     init() {
         var eventType = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))
@@ -42,7 +50,7 @@ final class HotKeyManager {
                     nil,
                     &id
                 )
-                guard status == noErr, id.id == 1 else { return status }
+                guard status == noErr, id.signature == HotKeyManager.signature else { return status }
                 let manager = Unmanaged<HotKeyManager>.fromOpaque(context).takeUnretainedValue()
                 Task { @MainActor in manager.action?() }
                 return noErr
@@ -60,9 +68,9 @@ final class HotKeyManager {
     }
 
     func register(_ configuration: HotKeyConfiguration, action: @escaping () -> Void) throws {
-        if let hotKeyRef {
-            UnregisterEventHotKey(hotKeyRef)
-            self.hotKeyRef = nil
+        if registeredConfiguration == configuration, hotKeyRef != nil {
+            self.action = action
+            return
         }
         guard let keyCode = Self.keyCode(for: configuration.key) else {
             throw AppError.service("The shortcut key must be a letter from A to Z.")
@@ -75,15 +83,19 @@ final class HotKeyManager {
         guard modifiers != 0 else {
             throw AppError.service("The shortcut needs at least one modifier key.")
         }
-        let signature = OSType(0x4D4D5058) // MMPX
-        let id = EventHotKeyID(signature: signature, id: 1)
+        let id = EventHotKeyID(signature: Self.signature, id: nextID)
+        var candidate: EventHotKeyRef?
         let status = RegisterEventHotKey(
             UInt32(keyCode), modifiers, id,
-            GetApplicationEventTarget(), 0, &hotKeyRef
+            GetApplicationEventTarget(), UInt32(kEventHotKeyExclusive), &candidate
         )
-        guard status == noErr else {
+        guard status == noErr, let candidate else {
             throw AppError.service("The shortcut could not be registered. It may conflict with another app.")
         }
+        if let hotKeyRef { UnregisterEventHotKey(hotKeyRef) }
+        hotKeyRef = candidate
+        registeredConfiguration = configuration
+        nextID = nextID == UInt32.max ? 1 : nextID + 1
         self.action = action
     }
 

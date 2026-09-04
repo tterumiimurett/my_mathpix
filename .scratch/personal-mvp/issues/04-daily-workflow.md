@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Make Screen Capture survive through a mock result.
 
-**Status:** ready-for-agent
+**Status:** claimed
 
 ## Suggested agent split
 
@@ -22,4 +22,3 @@
 - [ ] Launch at login is disabled by default and can be deliberately changed in Settings.
 - [ ] Local diagnostics exclude credentials, authentication headers, Snippet pixels, and complete output, and no analytics or automatic upload is introduced.
 - [ ] The App exposes its version and bundled third-party license notices.
-

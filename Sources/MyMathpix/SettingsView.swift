@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 struct SettingsView: View {
@@ -6,6 +7,7 @@ struct SettingsView: View {
     @State private var hotKey = HotKeyConfiguration()
     @State private var testingToken = false
     @State private var status: String?
+    @State private var confirmsHistoryClear = false
 
     var body: some View {
         Form {
@@ -58,11 +60,50 @@ struct SettingsView: View {
 
             Section("Local data") {
                 Button("Clear Recent History", role: .destructive) {
-                    do { try model.clearHistory(); status = "History cleared." }
-                    catch { status = error.localizedDescription }
+                    confirmsHistoryClear = true
                 }
-                Text("History stays in this Mac's sandbox container. Snippet pixels and complete outputs are not written to diagnostic logs.")
+                Text("The twenty newest Successful or Failed Records stay in this Mac's App Sandbox container, including each original Snippet and final edited output.")
                     .font(.caption).foregroundStyle(.secondary)
+            }
+
+            Section("Diagnostics") {
+                LabeledContent("Local events", value: "\(model.diagnosticLog.entries.count)")
+                if let latest = model.diagnosticLog.entries.last {
+                    LabeledContent("Latest", value: latest.code.rawValue)
+                }
+                HStack {
+                    Button("Export Diagnostics…") { exportDiagnostics() }
+                    Button("Clear Diagnostics", role: .destructive) {
+                        do {
+                            try model.clearDiagnostics()
+                            status = "Diagnostics cleared."
+                        } catch {
+                            status = error.localizedDescription
+                        }
+                    }
+                }
+                Text("Diagnostics stay local unless you export them. They contain fixed operational event codes only—never credentials, authentication headers, Snippet pixels, or complete output.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+
+            Section("About MyMathpix") {
+                LabeledContent("Version", value: AppVersionInfo.current.displayName)
+                if ThirdPartyLicenses.bundled.isEmpty {
+                    Text("No bundled license notice is available.")
+                        .foregroundStyle(.secondary)
+                } else {
+                    ForEach(ThirdPartyLicenses.bundled) { license in
+                        DisclosureGroup("\(license.name) — License Notice") {
+                            ScrollView {
+                                Text(license.text)
+                                    .font(.caption.monospaced())
+                                    .textSelection(.enabled)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .frame(height: 150)
+                        }
+                    }
+                }
             }
 
             if let status {
@@ -72,6 +113,23 @@ struct SettingsView: View {
         .formStyle(.grouped)
         .padding()
         .onAppear { hotKey = model.hotKeyConfiguration }
+        .confirmationDialog(
+            "Clear all Recent History?",
+            isPresented: $confirmsHistoryClear,
+            titleVisibility: .visible
+        ) {
+            Button("Clear All Snippets", role: .destructive) {
+                do {
+                    try model.clearHistory()
+                    status = "History cleared."
+                } catch {
+                    status = error.localizedDescription
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This permanently deletes every retained Snippet image and edited output from the App Sandbox.")
+        }
     }
 
     @MainActor
@@ -82,6 +140,21 @@ struct SettingsView: View {
             try await model.testAndSaveToken(token)
             token = ""
             status = "Token verified and saved locally in the App Sandbox."
+        } catch {
+            status = error.localizedDescription
+        }
+    }
+
+    @MainActor
+    private func exportDiagnostics() {
+        let panel = NSSavePanel()
+        panel.title = "Export MyMathpix Diagnostics"
+        panel.nameFieldStringValue = "MyMathpix-Diagnostics.txt"
+        panel.canCreateDirectories = true
+        guard panel.runModal() == .OK, let url = panel.url else { return }
+        do {
+            try model.exportDiagnostics(to: url)
+            status = "Diagnostics exported."
         } catch {
             status = error.localizedDescription
         }
