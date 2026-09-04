@@ -4,7 +4,7 @@ import Foundation
 @MainActor
 final class Ticket01AcceptanceReporter {
     struct Evidence: Codable, Equatable, Sendable {
-        var schema = 4
+        var schema = 5
         var acceptanceRunID = ""
         var processID = 0
         var permissionPreflightGranted: Bool?

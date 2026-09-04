@@ -16,6 +16,10 @@ find_app_pid() {
     pgrep -f "$app_binary" | head -n 1
 }
 
+bundle_cdhash() {
+    codesign -dvvv "$app_dir" 2>&1 | sed -n 's/^CDHash=//p' | head -n 1
+}
+
 write_relaunch_marker() {
     local marker_value="$1"
     local temporary_marker="$relaunch_marker.tmp.$$"
@@ -30,9 +34,10 @@ write_session_state() {
     local run_id="$1"
     local original_pid="$2"
     local relaunch_policy="$3"
+    local cdhash="$4"
     local temporary_session="$session_file.tmp.$$"
     umask 077
-    printf '%s|%s|%s\n' "$run_id" "$original_pid" "$relaunch_policy" >"$temporary_session"
+    printf '%s|%s|%s|%s\n' "$run_id" "$original_pid" "$relaunch_policy" "$cdhash" >"$temporary_session"
     chmod 600 "$temporary_session"
     mv -f "$temporary_session" "$session_file"
 }
@@ -42,11 +47,16 @@ load_session_state() {
         printf 'RED: Ticket 01 acceptance run state is missing\n' >&2
         exit 1
     fi
-    IFS='|' read -r session_run_id original_pid relaunch_policy <"$session_file"
+    IFS='|' read -r session_run_id original_pid relaunch_policy session_cdhash <"$session_file"
     if [[ ! "$session_run_id" =~ '^[0-9a-f-]{36}$' ]] ||
        [[ ! "$original_pid" =~ '^[0-9]+$' ]] ||
-       [[ -z "$relaunch_policy" ]]; then
+       [[ -z "$relaunch_policy" ]] ||
+       [[ ! "$session_cdhash" =~ '^[0-9a-f]{40}$' ]]; then
         printf 'RED: Ticket 01 acceptance run state is invalid\n' >&2
+        exit 1
+    fi
+    if [[ "$session_cdhash" != "$(bundle_cdhash)" ]]; then
+        printf 'RED: signed App changed after this acceptance run was launched\n' >&2
         exit 1
     fi
 }
@@ -57,7 +67,7 @@ write_tcc_state() {
     local temporary_state="$tcc_state_file.tmp.$$"
     umask 077
     mkdir -p "$acceptance_dir"
-    printf '%s|%s|%s\n' "$state" "$(date +%s)" "$origin" >"$temporary_state"
+    printf '%s|%s|%s|%s\n' "$state" "$(date +%s)" "$origin" "$(bundle_cdhash)" >"$temporary_state"
     chmod 600 "$temporary_state"
     mv -f "$temporary_state" "$tcc_state_file"
 }
@@ -67,10 +77,15 @@ load_tcc_state() {
         printf 'BLOCKED: the required real TCC predecessor state has not been verified\n' >&2
         exit 2
     fi
-    IFS='|' read -r observed_tcc_state observed_tcc_epoch observed_tcc_origin <"$tcc_state_file"
+    IFS='|' read -r observed_tcc_state observed_tcc_epoch observed_tcc_origin observed_tcc_cdhash <"$tcc_state_file"
     if [[ ! "$observed_tcc_epoch" =~ '^[0-9]+$' ]] ||
-       (( $(date +%s) - observed_tcc_epoch > 1800 )); then
+       (( $(date +%s) - observed_tcc_epoch > 1800 )) ||
+       [[ ! "$observed_tcc_cdhash" =~ '^[0-9a-f]{40}$' ]]; then
         printf 'BLOCKED: the real TCC predecessor evidence is invalid or older than 30 minutes\n' >&2
+        exit 2
+    fi
+    if [[ "$observed_tcc_cdhash" != "$(bundle_cdhash)" ]]; then
+        printf 'BLOCKED: the real TCC predecessor belongs to a different signed App build\n' >&2
         exit 2
     fi
 }
@@ -140,7 +155,7 @@ launch_and_wait() {
         printf 'RED: LaunchServices did not expose the Ticket 01 acceptance process\n' >&2
         exit 1
     fi
-    write_session_state "$run_id" "$app_pid" "$relaunch_policy"
+    write_session_state "$run_id" "$app_pid" "$relaunch_policy" "$(bundle_cdhash)"
     for _ in {1..50}; do
         if [[ -f "$evidence_file" ]] && (( $(stat -f %m "$evidence_file") >= launch_epoch )); then
             break
@@ -165,6 +180,7 @@ launch_and_wait() {
 
 verify_safe_evidence_schema() {
     jq -e '
+        .schema == 5 and
         (keys - [
             "acceptance_run_id", "active_display_count", "canonical_markdown_matches_fixture",
             "canonical_markdown_visible", "capture_completed",
@@ -212,7 +228,7 @@ case "$mode" in
             exit 1
         fi
         jq -e --arg run_id "$session_run_id" --argjson process_id "$app_pid" '
-            .schema == 4 and
+            .schema == 5 and
             .acceptance_run_id == $run_id and
             .process_id == $process_id and
             .phase == "complete" and
