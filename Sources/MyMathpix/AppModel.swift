@@ -10,12 +10,14 @@ final class AppModel: ObservableObject {
         case globalShortcut
     }
     let history: HistoryStore
+    let recognitionEvidence: RecognitionEvidenceStore
 
     @Published var selectedID: UUID?
     @Published var isProcessing = false
     @Published var statusMessage = "Ready"
     @Published var errorMessage: String?
     @Published private(set) var hasToken: Bool
+    @Published private(set) var needsCredentialRecovery = false
     @Published private(set) var usage: UsageSnapshot
     @Published var hotKeyConfiguration: HotKeyConfiguration
     @Published var launchAtLogin = false
@@ -30,14 +32,27 @@ final class AppModel: ObservableObject {
     private var recognitionTask: Task<Void, Never>?
     private var slowTask: Task<Void, Never>?
     private let defaults: UserDefaults
+    private let appInteractionEnabled: Bool
+    private let slowMessageDelay: Duration
+    private var activeAttempt: ActiveAttempt?
+
+    private struct ActiveAttempt {
+        let id: UUID
+        let historyItemID: UUID
+        let mode: RecognitionMode
+        let startedAt: TimeInterval
+    }
 
     init(
         recognitionService: (any RecognitionService)? = nil,
         recognitionConfiguration: (any RecognitionConfiguration)? = nil,
         captureCoordinator: CaptureCoordinator? = nil,
         history: HistoryStore? = nil,
+        recognitionEvidence: RecognitionEvidenceStore? = nil,
         defaults: UserDefaults = .standard,
-        ticket01Reporter: Ticket01AcceptanceReporter? = nil
+        ticket01Reporter: Ticket01AcceptanceReporter? = nil,
+        appInteractionEnabled: Bool = true,
+        slowMessageDelay: Duration = .seconds(5)
     ) {
         let resolvedRecognitionService: any RecognitionService
         let resolvedRecognitionConfiguration: (any RecognitionConfiguration)?
@@ -54,8 +69,11 @@ final class AppModel: ObservableObject {
         self.recognitionConfiguration = resolvedRecognitionConfiguration
         self.captureCoordinator = captureCoordinator ?? CaptureCoordinator()
         self.history = history
+        self.recognitionEvidence = recognitionEvidence ?? RecognitionEvidenceStore()
         self.defaults = defaults
         self.ticket01Reporter = ticket01Reporter
+        self.appInteractionEnabled = appInteractionEnabled
+        self.slowMessageDelay = slowMessageDelay
         hasToken = resolvedRecognitionConfiguration?.isConfigured ?? true
         usage = Self.loadUsage(defaults: defaults)
         hotKeyConfiguration = Self.loadHotKey(defaults: defaults)
@@ -64,12 +82,14 @@ final class AppModel: ObservableObject {
         historyObservation = history.objectWillChange.sink { [weak self] _ in
             self?.objectWillChange.send()
         }
-        do {
-            try hotKeyManager.register(hotKeyConfiguration) {
-                [weak self] in self?.startCapture(trigger: .globalShortcut)
+        if appInteractionEnabled {
+            do {
+                try hotKeyManager.register(hotKeyConfiguration) {
+                    [weak self] in self?.startCapture(trigger: .globalShortcut)
+                }
+            } catch {
+                errorMessage = error.localizedDescription
             }
-        } catch {
-            errorMessage = error.localizedDescription
         }
     }
 
@@ -104,7 +124,7 @@ final class AppModel: ObservableObject {
                     snippet: snippet,
                     overlayDismissed: !self.captureCoordinator.isActive
                 )
-                self.startRecognition(uploadPayload: snippet.uploadPayload, mode: .fast)
+                self.recognizeCapturedSnippet(snippet.uploadPayload)
             case .failure(let error) where error is CancellationError:
                 self.statusMessage = "Ready"
                 self.ticket01Reporter?.markCancelled(recentHistoryCount: self.history.items.count)
@@ -123,22 +143,27 @@ final class AppModel: ObservableObject {
         }
     }
 
-    func retryHighQuality() {
+    var highQualityRetryNeedsConfirmation: Bool {
+        !(selectedItem?.markdown.isEmpty ?? true)
+    }
+
+    func retryHighQuality(replacingCurrentContent: Bool = false) {
         guard let item = selectedItem, let data = history.imageData(for: item) else { return }
-        if !item.markdown.isEmpty {
-            let alert = NSAlert()
-            alert.messageText = "Replace the current edits?"
-            alert.informativeText = "High Quality Retry will replace the current source with a new Datalab result."
-            alert.addButton(withTitle: "Retry and Replace")
-            alert.addButton(withTitle: "Cancel")
-            guard alert.runModal() == .alertFirstButtonReturn else { return }
-        }
+        guard item.markdown.isEmpty || replacingCurrentContent else { return }
         startRecognition(uploadPayload: UploadPayload(pngData: data), mode: .balanced, existingID: item.id)
     }
 
     func retryFailed() {
         guard let item = selectedItem, let data = history.imageData(for: item) else { return }
         startRecognition(uploadPayload: UploadPayload(pngData: data), mode: item.mode, existingID: item.id)
+    }
+
+    func recognizeCapturedSnippet(_ uploadPayload: UploadPayload) {
+        startRecognition(uploadPayload: uploadPayload, mode: .fast)
+    }
+
+    func cancelRecognition() {
+        recognitionTask?.cancel()
     }
 
     func updateMarkdown(_ markdown: String) {
@@ -177,6 +202,16 @@ final class AppModel: ObservableObject {
         }
         try await recognitionConfiguration.testAndSaveToken(token)
         hasToken = recognitionConfiguration.isConfigured
+        needsCredentialRecovery = false
+    }
+
+    func clearToken() throws {
+        guard let recognitionConfiguration else {
+            throw AppError.service("Credential settings are unavailable in this isolated acceptance run.")
+        }
+        try recognitionConfiguration.clearToken()
+        hasToken = recognitionConfiguration.isConfigured
+        needsCredentialRecovery = false
     }
 
     func saveHotKey(_ configuration: HotKeyConfiguration) throws {
@@ -229,6 +264,7 @@ final class AppModel: ObservableObject {
     }
 
     func showMainWindow() {
+        guard appInteractionEnabled else { return }
         NSApp.activate(ignoringOtherApps: true)
         if let window = NSApp.windows.first(where: { $0.title == "MyMathpix" }) ?? NSApp.windows.first(where: { $0.canBecomeMain }) {
             window.makeKeyAndOrderFront(nil)
@@ -241,6 +277,7 @@ final class AppModel: ObservableObject {
             return
         }
         do {
+            needsCredentialRecovery = false
             let id: UUID
             if let existingID, var item = history.item(id: existingID) {
                 item.status = .processing
@@ -260,12 +297,19 @@ final class AppModel: ObservableObject {
             ticket01Reporter?.markRecognitionStarted()
             usage.requestCount += 1
             persistUsage()
+            activeAttempt = ActiveAttempt(
+                id: UUID(),
+                historyItemID: id,
+                mode: mode,
+                startedAt: Date().timeIntervalSince1970
+            )
 
             slowTask?.cancel()
             slowTask = Task { [weak self] in
-                try? await Task.sleep(for: .seconds(5))
+                guard let self else { return }
+                try? await Task.sleep(for: self.slowMessageDelay)
                 guard !Task.isCancelled else { return }
-                self?.statusMessage = "Still processing — this is taking longer than usual"
+                self.statusMessage = "Still processing — this is taking longer than usual"
             }
 
             recognitionTask = Task { [weak self] in
@@ -274,9 +318,14 @@ final class AppModel: ObservableObject {
                     let result = try await recognitionService.recognize(uploadPayload: uploadPayload, mode: mode)
                     complete(id: id, result: result, mode: mode)
                 } catch is CancellationError {
-                    fail(id: id, error: AppError.service("Recognition was cancelled."), mode: mode)
+                    fail(
+                        id: id,
+                        error: AppError.service("Recognition was cancelled."),
+                        mode: mode,
+                        outcome: .cancelled
+                    )
                 } catch {
-                    fail(id: id, error: error, mode: mode)
+                    fail(id: id, error: error, mode: mode, outcome: .failed)
                 }
             }
         } catch {
@@ -295,15 +344,24 @@ final class AppModel: ObservableObject {
         item.html = result.html
         item.status = .complete
         item.mode = mode
-        item.runtime = result.runtime
-        item.costSummary = result.costSummary
         item.errorMessage = nil
         do { try history.update(item) }
         catch { errorMessage = "The recognition result could not be saved: \(error.localizedDescription)" }
         usage.successfulCount += 1
+        needsCredentialRecovery = false
         usage.cumulativeCost += result.costValue ?? 0
         persistUsage()
+        recordAttempt(
+            historyItemID: id,
+            outcome: .complete,
+            serviceRuntime: result.runtime,
+            costCents: result.costValue,
+            parseQualityScore: result.parseQualityScore,
+            automaticRetryCount: result.automaticRetryCount,
+            failureCode: nil
+        )
         isProcessing = false
+        recognitionTask = nil
         statusMessage = "Recognition complete"
         if let ticket01Reporter {
             ticket01Reporter.markComplete(recentHistoryCount: history.items.count)
@@ -317,7 +375,12 @@ final class AppModel: ObservableObject {
         }
     }
 
-    private func fail(id: UUID, error: Error, mode: RecognitionMode) {
+    private func fail(
+        id: UUID,
+        error: Error,
+        mode: RecognitionMode,
+        outcome: RecognitionAttemptOutcome
+    ) {
         slowTask?.cancel()
         if var item = history.item(id: id) {
             item.status = .failed
@@ -326,8 +389,19 @@ final class AppModel: ObservableObject {
             try? history.update(item)
         }
         isProcessing = false
+        recognitionTask = nil
         statusMessage = "Recognition failed"
         errorMessage = error.localizedDescription
+        needsCredentialRecovery = (error as? AppError)?.safeDiagnosticCode == "invalid_credentials"
+        recordAttempt(
+            historyItemID: id,
+            outcome: outcome,
+            serviceRuntime: nil,
+            costCents: nil,
+            parseQualityScore: nil,
+            automaticRetryCount: nil,
+            failureCode: (error as? AppError)?.safeDiagnosticCode ?? "recognition_failure"
+        )
         if let ticket01Reporter {
             ticket01Reporter.markRecognitionFailed(recentHistoryCount: history.items.count)
             ticket01SafeSummary = ticket01Reporter.safeSummary
@@ -337,6 +411,41 @@ final class AppModel: ObservableObject {
 
     private func persistUsage() {
         if let data = try? JSONEncoder().encode(usage) { defaults.set(data, forKey: "usage") }
+    }
+
+    private func recordAttempt(
+        historyItemID: UUID,
+        outcome: RecognitionAttemptOutcome,
+        serviceRuntime: Double?,
+        costCents: Double?,
+        parseQualityScore: Double?,
+        automaticRetryCount: Int?,
+        failureCode: String?
+    ) {
+        guard let attempt = activeAttempt,
+              attempt.historyItemID == historyItemID else { return }
+        let finishedAt = Date().timeIntervalSince1970
+        do {
+            try recognitionEvidence.record(
+                RecognitionAttemptEvidence(
+                    id: attempt.id,
+                    historyItemID: attempt.historyItemID,
+                    startedAt: attempt.startedAt,
+                    finishedAt: finishedAt,
+                    mode: attempt.mode,
+                    outcome: outcome,
+                    elapsedSeconds: max(0, finishedAt - attempt.startedAt),
+                    serviceRuntimeSeconds: serviceRuntime,
+                    costCents: costCents,
+                    parseQualityScore: parseQualityScore,
+                    automaticRetryCount: automaticRetryCount,
+                    failureCode: failureCode
+                )
+            )
+        } catch {
+            errorMessage = "Recognition usage evidence could not be saved."
+        }
+        activeAttempt = nil
     }
 
     private static func loadUsage(defaults: UserDefaults) -> UsageSnapshot {

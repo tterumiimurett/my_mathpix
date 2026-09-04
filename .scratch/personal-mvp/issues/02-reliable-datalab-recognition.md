@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Make Screen Capture survive through a mock result.
 
-**Status:** ready-for-agent
+**Status:** claimed
 
 ## Suggested agent split
 

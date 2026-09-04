@@ -25,9 +25,7 @@ struct LocalTokenStore {
     func saveToken(_ token: String) throws {
         let trimmed = token.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmed.isEmpty {
-            if FileManager.default.fileExists(atPath: storageURL.path) {
-                try FileManager.default.removeItem(at: storageURL)
-            }
+            try clearToken()
             return
         }
         try FileManager.default.createDirectory(at: rootURL, withIntermediateDirectories: true)
@@ -65,6 +63,12 @@ struct LocalTokenStore {
         guard hasPrivatePermissions else {
             try? FileManager.default.removeItem(at: storageURL)
             throw CocoaError(.fileWriteNoPermission)
+        }
+    }
+
+    func clearToken() throws {
+        if FileManager.default.fileExists(atPath: storageURL.path) {
+            try FileManager.default.removeItem(at: storageURL)
         }
     }
 

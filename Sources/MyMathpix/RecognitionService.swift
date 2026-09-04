@@ -10,6 +10,7 @@ protocol RecognitionConfiguration: AnyObject {
     var isConfigured: Bool { get }
     func saveToken(_ token: String) throws
     func testAndSaveToken(_ token: String) async throws
+    func clearToken() throws
 }
 
 @MainActor
@@ -34,6 +35,10 @@ final class LiveRecognitionService: RecognitionService, RecognitionConfiguration
         let normalized = token.trimmingCharacters(in: .whitespacesAndNewlines)
         try await client.validateToken(normalized)
         try tokenStore.saveToken(normalized)
+    }
+
+    func clearToken() throws {
+        try tokenStore.clearToken()
     }
 
     func recognize(uploadPayload: UploadPayload, mode: RecognitionMode) async throws -> DatalabResult {

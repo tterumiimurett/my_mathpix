@@ -150,6 +150,10 @@ struct AppLaunchConfiguration {
         arguments.contains("--ticket01-local-token-self-test")
     }
 
+    var runsTicket02RecognitionSelfTest: Bool {
+        arguments.contains("--ticket02-recognition-self-test")
+    }
+
     var runsSelfTest: Bool {
         arguments.contains("--self-test")
     }

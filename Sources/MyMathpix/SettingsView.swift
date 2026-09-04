@@ -18,6 +18,17 @@ struct SettingsView: View {
                     .disabled(testingToken || token.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                     if model.hasToken { Label("Stored locally on this Mac", systemImage: "externaldrive") }
                 }
+                if model.hasToken {
+                    Button("Clear Saved Token", role: .destructive) {
+                        do {
+                            try model.clearToken()
+                            token = ""
+                            status = "Saved token cleared."
+                        } catch {
+                            status = error.localizedDescription
+                        }
+                    }
+                }
                 Text("The test calls Datalab's authenticated health endpoint. A verified token is stored as a 0600 file inside the App Sandbox; MyMathpix does not access Keychain.")
                     .font(.caption).foregroundStyle(.secondary)
             }
@@ -53,7 +64,7 @@ struct SettingsView: View {
             Section("Usage") {
                 LabeledContent("Requests", value: "\(model.usage.requestCount)")
                 LabeledContent("Successful", value: "\(model.usage.successfulCount)")
-                LabeledContent("Recorded cost", value: String(format: "%.4f", model.usage.cumulativeCost))
+                LabeledContent("Recorded cost (cents)", value: String(format: "%.4f", model.usage.cumulativeCost))
             }
 
             Section("Local data") {

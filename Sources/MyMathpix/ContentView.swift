@@ -4,6 +4,7 @@ import WebKit
 
 struct ContentView: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.openSettings) private var openSettings
 
     var body: some View {
         NavigationSplitView {
@@ -30,6 +31,9 @@ struct ContentView: View {
                     ProgressView()
                         .controlSize(.small)
                         .onAppear { model.ticket01MarkRecognizingVisible() }
+                    Button("Cancel Recognition") {
+                        model.cancelRecognition()
+                    }
                 }
                 Text(model.statusMessage)
                     .font(.caption)
@@ -45,6 +49,12 @@ struct ContentView: View {
             get: { model.errorMessage != nil },
             set: { if !$0 { model.errorMessage = nil } }
         )) {
+            if model.needsCredentialRecovery {
+                Button("Open Settings") {
+                    model.errorMessage = nil
+                    openSettings()
+                }
+            }
             Button("OK", role: .cancel) { model.errorMessage = nil }
         } message: {
             Text(model.errorMessage ?? "")
@@ -138,6 +148,7 @@ private struct HistoryRow: View {
 private struct ResultDetailView: View {
     @EnvironmentObject private var model: AppModel
     let item: HistoryItem
+    @State private var confirmsHighQualityReplacement = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -192,6 +203,18 @@ private struct ResultDetailView: View {
         .onChange(of: item.status) { _, status in
             if status == .complete { reportFinalSurface() }
         }
+        .confirmationDialog(
+            "Replace the current edits?",
+            isPresented: $confirmsHighQualityReplacement,
+            titleVisibility: .visible
+        ) {
+            Button("Retry and Replace", role: .destructive) {
+                model.retryHighQuality(replacingCurrentContent: true)
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("High Quality Retry will replace the current source with a new Datalab result.")
+        }
     }
 
     private var actionBar: some View {
@@ -201,8 +224,19 @@ private struct ResultDetailView: View {
                     .foregroundStyle(.red)
                     .lineLimit(1)
                 Button("Retry") { model.retryFailed() }
+                Button("Copy Original Image") {
+                    if let data = model.history.imageData(for: item) {
+                        _ = ClipboardService.copyImage(data)
+                    }
+                }
             } else {
-                Button("High Quality Retry") { model.retryHighQuality() }
+                Button("High Quality Retry") {
+                    if model.highQualityRetryNeedsConfirmation {
+                        confirmsHighQualityReplacement = true
+                    } else {
+                        model.retryHighQuality(replacingCurrentContent: true)
+                    }
+                }
                     .disabled(model.isProcessing)
                 Menu("Copy") {
                     Button("Combined Markdown") { ClipboardService.copyMarkdown(item.markdown) }
@@ -227,8 +261,13 @@ private struct ResultDetailView: View {
                 }
             }
             Spacer()
-            if let runtime = item.runtime {
-                Text(String(format: "%.2fs", runtime)).foregroundStyle(.secondary)
+            if let evidence = model.recognitionEvidence.latest(for: item.id) {
+                if let runtime = evidence.serviceRuntimeSeconds {
+                    Text(String(format: "Datalab %.2fs", runtime)).foregroundStyle(.secondary)
+                }
+                if let cost = evidence.costCents {
+                    Text(String(format: "%.4f¢", cost)).foregroundStyle(.secondary)
+                }
             }
             Text(item.mode.title).foregroundStyle(.secondary)
             Button(role: .destructive) { model.deleteSelected() } label: {

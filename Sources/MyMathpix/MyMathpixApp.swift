@@ -13,6 +13,11 @@ struct MyMathpixApp: App {
             print(passed ? "TICKET01_LOCAL_TOKEN_OK" : "TICKET01_LOCAL_TOKEN_FAIL")
             exit(passed ? 0 : 1)
         }
+        if launch.runsTicket02RecognitionSelfTest {
+            let passed = Ticket02RecognitionSelfTest.runBlocking()
+            print(passed ? "TICKET02_RECOGNITION_OK" : "TICKET02_RECOGNITION_FAIL")
+            exit(passed ? 0 : 1)
+        }
         if launch.runsOverlayLifecycleSelfTest {
             let passed = Ticket01OverlayLifecycleSelfTest.run()
             print(passed ? "TICKET01_OVERLAY_LIFECYCLE_OK" : "TICKET01_OVERLAY_LIFECYCLE_FAIL")
@@ -68,6 +73,7 @@ struct MyMathpixApp: App {
                 recognitionService: Ticket01RecognitionService(),
                 captureCoordinator: captureCoordinator,
                 history: HistoryStore(inMemory: true),
+                recognitionEvidence: RecognitionEvidenceStore(inMemory: true),
                 defaults: defaults,
                 ticket01Reporter: reporter
             ))

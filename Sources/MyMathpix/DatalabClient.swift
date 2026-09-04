@@ -1,18 +1,112 @@
 import Foundation
 
+private enum DatalabURLTrust {
+    private static let approvedHosts = ["datalab.to", "www.datalab.to"]
+
+    static func isApprovedAPIURL(_ url: URL?) -> Bool {
+        guard let url,
+              url.scheme?.lowercased() == "https",
+              let host = url.host?.lowercased(),
+              approvedHosts.contains(host),
+              url.user == nil,
+              url.password == nil,
+              url.port == nil || url.port == 443 else { return false }
+        return true
+    }
+
+    static func isApprovedStatusURL(_ url: URL?) -> Bool {
+        guard isApprovedAPIURL(url), let url else { return false }
+        let path = url.path.split(separator: "/", omittingEmptySubsequences: true)
+        return path.count == 4
+            && path[0] == "api"
+            && path[1] == "v1"
+            && path[2] == "convert"
+            && !path[3].isEmpty
+    }
+
+    static func isApprovedRedirect(from originalURL: URL?, to redirectedURL: URL?) -> Bool {
+        guard isApprovedAPIURL(redirectedURL),
+              let originalURL,
+              let redirectedURL else { return false }
+        if isApprovedStatusURL(originalURL) {
+            return isApprovedStatusURL(redirectedURL)
+        }
+        return redirectedURL.path == originalURL.path
+    }
+}
+
+private final class DatalabRedirectDelegate: NSObject, URLSessionTaskDelegate, @unchecked Sendable {
+    func urlSession(
+        _ session: URLSession,
+        task: URLSessionTask,
+        willPerformHTTPRedirection response: HTTPURLResponse,
+        newRequest request: URLRequest,
+        completionHandler: @escaping (URLRequest?) -> Void
+    ) {
+        completionHandler(
+            DatalabURLTrust.isApprovedRedirect(
+                from: task.originalRequest?.url,
+                to: request.url
+            ) ? request : nil
+        )
+    }
+}
+
 actor DatalabClient {
+    struct Policy: Sendable {
+        let timeout: Duration
+        let initialPollDelay: Duration
+        let maximumPollDelay: Duration
+        let transientRetryDelay: Duration
+
+        init(
+            timeout: Duration = .seconds(60),
+            initialPollDelay: Duration = .milliseconds(400),
+            maximumPollDelay: Duration = .seconds(1),
+            transientRetryDelay: Duration = .milliseconds(500)
+        ) {
+            self.timeout = timeout
+            self.initialPollDelay = initialPollDelay
+            self.maximumPollDelay = maximumPollDelay
+            self.transientRetryDelay = transientRetryDelay
+        }
+    }
+
+    private final class RetryBudget {
+        private(set) var used = 0
+
+        func consume() -> Bool {
+            guard used == 0 else { return false }
+            used = 1
+            return true
+        }
+    }
+
     private let session: URLSession
+    private let policy: Policy
+    private let redirectDelegate: DatalabRedirectDelegate
     private let submitURL = URL(string: "https://www.datalab.to/api/v1/convert")!
 
-    init(session: URLSession = .shared) {
-        self.session = session
+    init(session: URLSession = .shared, policy: Policy = Policy()) {
+        let redirectDelegate = DatalabRedirectDelegate()
+        self.redirectDelegate = redirectDelegate
+        self.session = URLSession(
+            configuration: session.configuration,
+            delegate: redirectDelegate,
+            delegateQueue: nil
+        )
+        self.policy = policy
     }
 
     func validateToken(_ token: String) async throws {
         var request = URLRequest(url: URL(string: "https://www.datalab.to/api/v1/user_health")!)
         request.timeoutInterval = 15
         request.setValue(token, forHTTPHeaderField: "X-API-Key")
-        let (data, response) = try await session.data(for: request)
+        let (data, response) = try await responseData(
+            for: request,
+            retryBudget: RetryBudget(),
+            permitsAutomaticRetry: true
+        )
         try validateHTTP(response, data: data)
         let json = try jsonObject(data)
         guard (json["status"] as? String)?.lowercased() == "ok" else {
@@ -21,11 +115,62 @@ actor DatalabClient {
     }
 
     func recognize(pngData: Data, token: String, mode: RecognitionMode) async throws -> DatalabResult {
-        let checkURL = try await submit(pngData: pngData, token: token, mode: mode)
-        return try await poll(checkURL: checkURL, token: token)
+        let clock = ContinuousClock()
+        let timeout = policy.timeout
+        let deadline = clock.now.advanced(by: timeout)
+        return try await withThrowingTaskGroup(of: DatalabResult.self) { group in
+            group.addTask { [self] in
+                try await performRecognition(
+                    pngData: pngData,
+                    token: token,
+                    mode: mode,
+                    deadline: deadline
+                )
+            }
+            group.addTask {
+                try await ContinuousClock().sleep(for: timeout)
+                throw AppError.requestTimedOut
+            }
+            defer { group.cancelAll() }
+            guard let result = try await group.next() else {
+                throw AppError.invalidResponse("recognition produced no result")
+            }
+            return result
+        }
     }
 
-    private func submit(pngData: Data, token: String, mode: RecognitionMode) async throws -> URL {
+    private func performRecognition(
+        pngData: Data,
+        token: String,
+        mode: RecognitionMode,
+        deadline: ContinuousClock.Instant
+    ) async throws -> DatalabResult {
+        try Task.checkCancellation()
+        let retryBudget = RetryBudget()
+        let checkURL = try await submit(
+            pngData: pngData,
+            token: token,
+            mode: mode,
+            retryBudget: retryBudget
+        )
+        try Task.checkCancellation()
+        guard ContinuousClock().now < deadline else {
+            throw AppError.requestTimedOut
+        }
+        return try await poll(
+            checkURL: checkURL,
+            token: token,
+            retryBudget: retryBudget,
+            deadline: deadline
+        )
+    }
+
+    private func submit(
+        pngData: Data,
+        token: String,
+        mode: RecognitionMode,
+        retryBudget: RetryBudget
+    ) async throws -> URL {
         let boundary = "MyMathpix-\(UUID().uuidString)"
         var request = URLRequest(url: submitURL)
         request.httpMethod = "POST"
@@ -44,7 +189,11 @@ actor DatalabClient {
             fileData: pngData
         )
 
-        let (data, response) = try await session.data(for: request)
+        let (data, response) = try await responseData(
+            for: request,
+            retryBudget: retryBudget,
+            permitsAutomaticRetry: false
+        )
         try validateHTTP(response, data: data)
         let json = try jsonObject(data)
         if json["success"] as? Bool == false {
@@ -52,52 +201,122 @@ actor DatalabClient {
         }
         guard let rawURL = json["request_check_url"] as? String,
               let url = URL(string: rawURL),
-              url.scheme == "https",
-              isTrustedDatalabHost(url.host) else {
+              DatalabURLTrust.isApprovedStatusURL(url) else {
             throw AppError.invalidResponse("missing or untrusted request_check_url")
         }
         return url
     }
 
-    private func poll(checkURL: URL, token: String) async throws -> DatalabResult {
+    private func poll(
+        checkURL: URL,
+        token: String,
+        retryBudget: RetryBudget,
+        deadline: ContinuousClock.Instant
+    ) async throws -> DatalabResult {
         let clock = ContinuousClock()
-        let deadline = clock.now.advanced(by: .seconds(60))
-        var delay = Duration.milliseconds(400)
+        var delay = policy.initialPollDelay
 
-        while clock.now < deadline {
+        while true {
             try Task.checkCancellation()
+            guard clock.now < deadline else {
+                throw AppError.requestTimedOut
+            }
             var request = URLRequest(url: checkURL)
             request.timeoutInterval = 15
             request.setValue(token, forHTTPHeaderField: "X-API-Key")
-            let (data, response) = try await session.data(for: request)
+            let (data, response) = try await responseData(
+                for: request,
+                retryBudget: retryBudget,
+                permitsAutomaticRetry: true
+            )
             try validateHTTP(response, data: data)
             let json = try jsonObject(data)
-            let status = (json["status"] as? String)?.lowercased() ?? ""
+            guard let rawStatus = json["status"] as? String else {
+                throw AppError.invalidResponse("poll response had no status")
+            }
+            let status = rawStatus.lowercased()
 
             if status == "complete" {
                 if json["success"] as? Bool == false {
                     throw AppError.service(json["error"] as? String ?? "Datalab could not recognize this snippet.")
                 }
-                guard let markdown = json["markdown"] as? String else {
-                    throw AppError.invalidResponse("completed response had no Markdown")
+                guard json["success"] as? Bool == true,
+                      let markdown = json["markdown"] as? String,
+                      let html = json["html"] as? String else {
+                    throw AppError.invalidResponse("completed response lacked requested Markdown or HTML")
                 }
                 return DatalabResult(
                     markdown: markdown,
-                    html: json["html"] as? String,
+                    html: html,
                     runtime: number(json["runtime"]),
                     costSummary: costSummary(json["cost_breakdown"]),
                     costValue: costValue(json["cost_breakdown"]),
-                    parseQualityScore: number(json["parse_quality_score"])
+                    parseQualityScore: number(json["parse_quality_score"]),
+                    automaticRetryCount: retryBudget.used
                 )
             }
             if ["failed", "error", "cancelled", "canceled"].contains(status) || json["success"] as? Bool == false {
                 throw AppError.service(json["error"] as? String ?? "Datalab recognition failed.")
             }
+            guard status == "processing" else {
+                throw AppError.invalidResponse("unrecognized poll status")
+            }
 
             try await clock.sleep(for: delay)
-            delay = min(delay + .milliseconds(200), .seconds(1))
+            delay = min(delay + .milliseconds(200), policy.maximumPollDelay)
         }
-        throw AppError.requestTimedOut
+    }
+
+    private func responseData(
+        for request: URLRequest,
+        retryBudget: RetryBudget,
+        permitsAutomaticRetry: Bool
+    ) async throws -> (Data, URLResponse) {
+        while true {
+            do {
+                let response = try await session.data(for: request)
+                try Task.checkCancellation()
+                guard DatalabURLTrust.isApprovedAPIURL(response.1.url) else {
+                    throw AppError.invalidResponse("request left the approved Datalab host")
+                }
+                if let http = response.1 as? HTTPURLResponse,
+                   isTransientStatus(http.statusCode),
+                   permitsAutomaticRetry,
+                   retryBudget.consume() {
+                    try await ContinuousClock().sleep(for: policy.transientRetryDelay)
+                    continue
+                }
+                return response
+            } catch is CancellationError {
+                throw CancellationError()
+            } catch let error as URLError {
+                if error.code == .cancelled || Task.isCancelled {
+                    throw CancellationError()
+                }
+                if isTransient(error),
+                   permitsAutomaticRetry,
+                   retryBudget.consume() {
+                    try await ContinuousClock().sleep(for: policy.transientRetryDelay)
+                    continue
+                }
+                throw AppError.networkUnavailable
+            }
+        }
+    }
+
+    private func isTransientStatus(_ statusCode: Int) -> Bool {
+        statusCode == 408 || statusCode == 425 || statusCode == 429 || 500...599 ~= statusCode
+    }
+
+    private func isTransient(_ error: URLError) -> Bool {
+        switch error.code {
+        case .timedOut, .cannotFindHost, .cannotConnectToHost, .dnsLookupFailed,
+             .networkConnectionLost, .notConnectedToInternet, .internationalRoamingOff,
+             .callIsActive, .dataNotAllowed, .resourceUnavailable:
+            true
+        default:
+            false
+        }
     }
 
     private func multipartBody(
@@ -124,6 +343,9 @@ actor DatalabClient {
         guard let http = response as? HTTPURLResponse else {
             throw AppError.invalidResponse("non-HTTP response")
         }
+        if http.statusCode == 401 || http.statusCode == 403 {
+            throw AppError.invalidCredentials
+        }
         guard 200..<300 ~= http.statusCode else {
             let json = try? jsonObject(data)
             let message = json?["error"] as? String
@@ -134,15 +356,11 @@ actor DatalabClient {
     }
 
     private func jsonObject(_ data: Data) throws -> [String: Any] {
-        guard let object = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+        guard let value = try? JSONSerialization.jsonObject(with: data),
+              let object = value as? [String: Any] else {
             throw AppError.invalidResponse("expected a JSON object")
         }
         return object
-    }
-
-    private func isTrustedDatalabHost(_ host: String?) -> Bool {
-        guard let host = host?.lowercased() else { return false }
-        return host == "datalab.to" || host == "www.datalab.to" || host.hasSuffix(".datalab.to")
     }
 
     private func number(_ value: Any?) -> Double? {
