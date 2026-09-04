@@ -7,6 +7,8 @@ app_binary="$app_dir/Contents/MacOS/MyMathpix"
 acceptance_dir="${HOME}/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket01Acceptance"
 evidence_file="$acceptance_dir/evidence.json"
 relaunch_marker="$acceptance_dir/relaunch-mode.txt"
+session_file="$acceptance_dir/run-state.txt"
+tcc_state_file="$acceptance_dir/tcc-state.txt"
 mode="${1:-launch}"
 scenario="${2:-}"
 
@@ -24,6 +26,75 @@ write_relaunch_marker() {
     mv -f "$temporary_marker" "$relaunch_marker"
 }
 
+write_session_state() {
+    local run_id="$1"
+    local original_pid="$2"
+    local relaunch_policy="$3"
+    local temporary_session="$session_file.tmp.$$"
+    umask 077
+    printf '%s|%s|%s\n' "$run_id" "$original_pid" "$relaunch_policy" >"$temporary_session"
+    chmod 600 "$temporary_session"
+    mv -f "$temporary_session" "$session_file"
+}
+
+load_session_state() {
+    if [[ ! -r "$session_file" ]]; then
+        printf 'RED: Ticket 01 acceptance run state is missing\n' >&2
+        exit 1
+    fi
+    IFS='|' read -r session_run_id original_pid relaunch_policy <"$session_file"
+    if [[ ! "$session_run_id" =~ '^[0-9a-f-]{36}$' ]] ||
+       [[ ! "$original_pid" =~ '^[0-9]+$' ]] ||
+       [[ -z "$relaunch_policy" ]]; then
+        printf 'RED: Ticket 01 acceptance run state is invalid\n' >&2
+        exit 1
+    fi
+}
+
+write_tcc_state() {
+    local state="$1"
+    local origin="$2"
+    local temporary_state="$tcc_state_file.tmp.$$"
+    umask 077
+    mkdir -p "$acceptance_dir"
+    printf '%s|%s|%s\n' "$state" "$(date +%s)" "$origin" >"$temporary_state"
+    chmod 600 "$temporary_state"
+    mv -f "$temporary_state" "$tcc_state_file"
+}
+
+load_tcc_state() {
+    if [[ ! -r "$tcc_state_file" ]]; then
+        printf 'BLOCKED: the required real TCC predecessor state has not been verified\n' >&2
+        exit 2
+    fi
+    IFS='|' read -r observed_tcc_state observed_tcc_epoch observed_tcc_origin <"$tcc_state_file"
+    if [[ ! "$observed_tcc_epoch" =~ '^[0-9]+$' ]] ||
+       (( $(date +%s) - observed_tcc_epoch > 1800 )); then
+        printf 'BLOCKED: the real TCC predecessor evidence is invalid or older than 30 minutes\n' >&2
+        exit 2
+    fi
+}
+
+require_tcc_state() {
+    local expected_state="$1"
+    load_tcc_state
+    if [[ "$observed_tcc_state" != "$expected_state" ]]; then
+        printf 'BLOCKED: expected real TCC state %s, last verified state is %s\n' "$expected_state" "$observed_tcc_state" >&2
+        exit 2
+    fi
+}
+
+require_no_running_app() {
+    if existing_pid="$(find_app_pid)" && [[ -n "$existing_pid" ]]; then
+        printf 'BLOCKED: MyMathpix is already running (pid=%s); quit it before changing or probing TCC state\n' "$existing_pid" >&2
+        exit 2
+    fi
+}
+
+screen_permission_probe() {
+    "$app_binary" --ticket01-screen-permission-state
+}
+
 verify_bundle() {
     codesign --verify --deep --strict "$app_dir"
     entitlements="$(codesign -d --entitlements :- "$app_dir" 2>/dev/null)"
@@ -34,15 +105,30 @@ verify_bundle() {
 }
 
 launch_and_wait() {
-    local marker_value="$1"
+    local relaunch_policy="$1"
     shift
     if existing_pid="$(find_app_pid)" && [[ -n "$existing_pid" ]]; then
         printf 'BLOCKED: MyMathpix is already running (pid=%s); quit it before starting an isolated acceptance run\n' "$existing_pid" >&2
         exit 2
     fi
-    write_relaunch_marker "$marker_value"
+    run_id="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+    case "$relaunch_policy" in
+        none)
+            rm -f "$relaunch_marker"
+            ;;
+        acceptance)
+            write_relaunch_marker "acceptance:$run_id"
+            ;;
+        scenario:*)
+            write_relaunch_marker "$relaunch_policy:$run_id"
+            ;;
+        *)
+            printf 'RED: invalid relaunch policy\n' >&2
+            exit 1
+            ;;
+    esac
     launch_epoch="$(date +%s)"
-    open -n "$app_dir" --args "$@"
+    open -n "$app_dir" --args "$@" "--ticket01-run-id=$run_id"
     app_pid=""
     for _ in {1..100}; do
         app_pid="$(find_app_pid || true)"
@@ -50,10 +136,11 @@ launch_and_wait() {
         sleep 0.1
     done
     if [[ -z "$app_pid" ]]; then
-        rm -f "$relaunch_marker"
+        rm -f "$relaunch_marker" "$session_file"
         printf 'RED: LaunchServices did not expose the Ticket 01 acceptance process\n' >&2
         exit 1
     fi
+    write_session_state "$run_id" "$app_pid" "$relaunch_policy"
     for _ in {1..50}; do
         if [[ -f "$evidence_file" ]] && (( $(stat -f %m "$evidence_file") >= launch_epoch )); then
             break
@@ -62,8 +149,16 @@ launch_and_wait() {
     done
     if [[ ! -f "$evidence_file" ]] || (( $(stat -f %m "$evidence_file") < launch_epoch )); then
         kill "$app_pid" >/dev/null 2>&1 || true
-        rm -f "$relaunch_marker"
+        rm -f "$relaunch_marker" "$session_file"
         printf 'RED: signed App did not initialize redacted Ticket 01 evidence\n' >&2
+        exit 1
+    fi
+    if ! jq -e --arg run_id "$run_id" --argjson process_id "$app_pid" '
+        .acceptance_run_id == $run_id and .process_id == $process_id
+    ' "$evidence_file" >/dev/null; then
+        kill "$app_pid" >/dev/null 2>&1 || true
+        rm -f "$relaunch_marker" "$session_file"
+        printf 'RED: signed App evidence is not bound to the launched process and run\n' >&2
         exit 1
     fi
 }
@@ -71,12 +166,14 @@ launch_and_wait() {
 verify_safe_evidence_schema() {
     jq -e '
         (keys - [
-            "active_display_count", "canonical_markdown_matches_fixture",
+            "acceptance_run_id", "active_display_count", "canonical_markdown_matches_fixture",
             "canonical_markdown_visible", "capture_completed",
             "capture_triggered_by_global_shortcut", "expected_pixel_height",
             "expected_pixel_width", "failure_code", "fields_approved",
             "fixture_valid", "guard_band_absent", "last_failure_code", "overlay_dismissed",
-            "phase", "pixel_geometry_preserved", "png_pixel_height",
+            "permission_preflight_granted", "permission_request_attempted",
+            "permission_request_granted", "phase", "pixel_geometry_preserved",
+            "png_pixel_height", "process_id",
             "png_pixel_width", "png_valid", "poll_count", "preview_visible",
             "recent_history_count", "recent_history_visible",
             "recovery_probe_started", "recognizing_was_visible",
@@ -93,7 +190,7 @@ verify_safe_evidence_schema() {
 case "$mode" in
     launch|launch-secondary)
         verify_bundle
-        launch_and_wait acceptance --ticket01-acceptance
+        launch_and_wait none --ticket01-acceptance
 
         printf 'TICKET01_ACCEPTANCE_READY pid=%s\n' "$app_pid"
         printf 'FIXTURE=%s\n' "$repo_dir/scripts/ticket01_fixture.html"
@@ -104,15 +201,25 @@ case "$mode" in
         fi
         ;;
     verify|verify-secondary)
+        load_session_state
         app_pid="$(find_app_pid || true)"
         if [[ -z "$app_pid" ]] || ! kill -0 "$app_pid" >/dev/null 2>&1; then
             printf 'RED: acceptance App process is not alive\n' >&2
             exit 1
         fi
-        jq -e '
+        if [[ "$relaunch_policy" != "none" ]] || [[ "$app_pid" != "$original_pid" ]]; then
+            printf 'RED: authoritative capture process was replaced after launch (original=%s current=%s)\n' "$original_pid" "$app_pid" >&2
+            exit 1
+        fi
+        jq -e --arg run_id "$session_run_id" --argjson process_id "$app_pid" '
             .schema == 4 and
+            .acceptance_run_id == $run_id and
+            .process_id == $process_id and
             .phase == "complete" and
             .capture_triggered_by_global_shortcut == true and
+            .permission_preflight_granted == true and
+            .permission_request_attempted == false and
+            .permission_request_granted == null and
             .capture_completed == true and
             .overlay_dismissed == true and
             .recognizing_was_visible == true and
@@ -143,13 +250,39 @@ case "$mode" in
         if [[ "$mode" == "verify-secondary" ]]; then
             jq -e '
                 .active_display_count >= 2 and
-                .selected_display_was_secondary == true
+                .selected_display_was_secondary == true and
+                .selected_display_scale >= 2
             ' "$evidence_file" >/dev/null
         else
             jq -e '.selected_display_scale >= 2' "$evidence_file" >/dev/null
         fi
         verify_safe_evidence_schema
+        write_tcc_state granted "$session_run_id"
         printf 'TICKET01_SIGNED_APP_OK mode=%s pid=%s submit=1 polls=multiple recent_history=1 ui=yes redacted=yes\n' "$mode" "$app_pid"
+        ;;
+    prepare-permission-not-determined)
+        verify_bundle
+        require_no_running_app
+        rm -f "$relaunch_marker" "$session_file"
+        tccutil reset ScreenCapture com.byterumi.mymathpix >/dev/null
+        if [[ "$(screen_permission_probe)" != "TICKET01_SCREEN_PERMISSION granted=no" ]]; then
+            printf 'RED: Screen Recording preflight remained granted after TCC reset\n' >&2
+            exit 1
+        fi
+        write_tcc_state not-determined tccutil-reset
+        printf 'TICKET01_TCC_PREPARED state=not-determined source=tccutil-reset redacted=yes\n'
+        ;;
+    prepare-permission-revoked)
+        verify_bundle
+        require_no_running_app
+        require_tcc_state granted
+        rm -f "$relaunch_marker" "$session_file"
+        if [[ "$(screen_permission_probe)" != "TICKET01_SCREEN_PERMISSION granted=no" ]]; then
+            printf 'BLOCKED: revoke Screen Recording for MyMathpix in System Settings, quit it, then rerun this preparation\n' >&2
+            exit 2
+        fi
+        write_tcc_state revoked "after-granted:$observed_tcc_origin"
+        printf 'TICKET01_TCC_PREPARED state=revoked source=granted-to-denied-transition redacted=yes\n'
         ;;
     launch-scenario)
         case "$scenario" in
@@ -159,21 +292,53 @@ case "$mode" in
                 exit 2
                 ;;
         esac
+        case "$scenario" in
+            permission-not-determined)
+                require_tcc_state not-determined
+                ;;
+            permission-denied)
+                require_tcc_state denied
+                ;;
+            permission-revoked)
+                require_tcc_state revoked
+                ;;
+        esac
         verify_bundle
-        launch_and_wait "scenario:$scenario" --ticket01-acceptance "--ticket01-scenario=$scenario"
+        relaunch_policy="none"
+        if [[ "$scenario" == permission-* ]]; then
+            relaunch_policy="scenario:$scenario"
+        fi
+        launch_and_wait "$relaunch_policy" --ticket01-acceptance "--ticket01-scenario=$scenario"
         printf 'TICKET01_SCENARIO_READY scenario=%s pid=%s\n' "$scenario" "$app_pid"
         if [[ "$scenario" == permission-* ]]; then
-            printf 'ACTION=Prepare the named real macOS Screen Recording state first, invoke Control-Command-M, and confirm the process survives with a visible explanation. These permission scenarios use the real system permission provider, not an injected denial.\n'
+            printf 'ACTION=The named real macOS TCC predecessor state is recorded. Invoke Control-Command-M and confirm the process survives with a visible explanation. For not-determined, choose Don’t Allow in the real system prompt so the next denied-state run has an observed predecessor.\n'
         else
             printf 'ACTION=Complete the named failure or cancellation once, dismiss its explanation if shown, then press Control-Command-M again to prove the App is immediately operable. Leave the second selection overlay open.\n'
         fi
         ;;
     verify-scenario)
+        trap 'rm -f "$relaunch_marker"' EXIT
+        load_session_state
         app_pid="$(find_app_pid || true)"
         if [[ -z "$app_pid" ]] || ! kill -0 "$app_pid" >/dev/null 2>&1; then
             printf 'RED: scenario App process is not alive\n' >&2
             exit 1
         fi
+        expected_relaunch_policy="none"
+        if [[ "$scenario" == permission-* ]]; then
+            expected_relaunch_policy="scenario:$scenario"
+        fi
+        if [[ "$relaunch_policy" != "$expected_relaunch_policy" ]]; then
+            printf 'RED: scenario does not match the prepared acceptance run\n' >&2
+            exit 1
+        fi
+        if [[ "$scenario" != permission-* ]] && [[ "$app_pid" != "$original_pid" ]]; then
+            printf 'RED: scenario process died and was replaced (original=%s current=%s)\n' "$original_pid" "$app_pid" >&2
+            exit 1
+        fi
+        jq -e --arg run_id "$session_run_id" --argjson process_id "$app_pid" '
+            .acceptance_run_id == $run_id and .process_id == $process_id
+        ' "$evidence_file" >/dev/null
         expected_code="$scenario"
         case "$scenario" in
             permission-not-determined|permission-denied|permission-revoked)
@@ -197,6 +362,9 @@ case "$mode" in
                 .phase == "failed" and
                 .failure_code == $code and
                 .capture_triggered_by_global_shortcut == true and
+                .permission_preflight_granted == false and
+                .permission_request_attempted == true and
+                .permission_request_granted == false and
                 .recovery_probe_started == false and
                 .recent_history_count == 0 and
                 .submit_count == 0
@@ -223,22 +391,41 @@ case "$mode" in
         fi
         verify_safe_evidence_schema
         if [[ "$scenario" == permission-* ]]; then
-            printf 'TICKET01_SCENARIO_OK scenario=%s pid=%s recent_history=0 submits=0 explanation=yes redacted=yes\n' "$scenario" "$app_pid"
+            case "$scenario" in
+                permission-not-determined|permission-denied)
+                    write_tcc_state denied "$session_run_id"
+                    ;;
+                permission-revoked)
+                    write_tcc_state revoked "$session_run_id"
+                    ;;
+            esac
+            relaunched="no"
+            [[ "$app_pid" != "$original_pid" ]] && relaunched="yes"
+            printf 'TICKET01_SCENARIO_OK scenario=%s pid=%s relaunched=%s recent_history=0 submits=0 explanation=yes redacted=yes\n' "$scenario" "$app_pid" "$relaunched"
         else
             printf 'TICKET01_SCENARIO_OK scenario=%s pid=%s recent_history=0 submits=0 recovery_overlay=yes redacted=yes\n' "$scenario" "$app_pid"
         fi
         ;;
     stop)
-        app_pid="$(find_app_pid || true)"
+        app_pid=""
+        if [[ -r "$session_file" ]] && [[ -f "$evidence_file" ]]; then
+            load_session_state
+            candidate_pid="$(find_app_pid || true)"
+            if [[ -n "$candidate_pid" ]] && jq -e --arg run_id "$session_run_id" --argjson process_id "$candidate_pid" '
+                .acceptance_run_id == $run_id and .process_id == $process_id
+            ' "$evidence_file" >/dev/null; then
+                app_pid="$candidate_pid"
+            fi
+        fi
         if [[ -n "$app_pid" ]]; then
             kill "$app_pid"
             while kill -0 "$app_pid" >/dev/null 2>&1; do sleep 0.1; done
         fi
-        rm -f "$relaunch_marker"
+        rm -f "$relaunch_marker" "$session_file"
         printf 'TICKET01_ACCEPTANCE_STOPPED\n'
         ;;
     *)
-        printf 'Usage: %s [launch|verify|launch-secondary|verify-secondary|launch-scenario NAME|verify-scenario NAME|stop]\n' "$0" >&2
+        printf 'Usage: %s [launch|verify|launch-secondary|verify-secondary|prepare-permission-not-determined|prepare-permission-revoked|launch-scenario NAME|verify-scenario NAME|stop]\n' "$0" >&2
         exit 2
         ;;
 esac

@@ -5,6 +5,11 @@ import Foundation
 final class Ticket01AcceptanceReporter {
     struct Evidence: Codable, Equatable, Sendable {
         var schema = 4
+        var acceptanceRunID = ""
+        var processID = 0
+        var permissionPreflightGranted: Bool?
+        var permissionRequestAttempted = false
+        var permissionRequestGranted: Bool?
         var phase = "launched"
         var captureTriggeredByGlobalShortcut = false
         var captureCompleted = false
@@ -51,13 +56,15 @@ final class Ticket01AcceptanceReporter {
         "Ticket 01 · attempts \(evidence.submitCount) · polls \(evidence.pollCount) · Recent History \(evidence.recentHistoryCount)"
     }
 
-    init() {
+    init(runID: UUID) {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("MyMathpix/Ticket01Acceptance", isDirectory: true)
         evidenceURL = base.appendingPathComponent("evidence.json")
         encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         encoder.keyEncodingStrategy = .convertToSnakeCase
+        evidence.acceptanceRunID = runID.uuidString.lowercased()
+        evidence.processID = Int(ProcessInfo.processInfo.processIdentifier)
         evidence.activeDisplayCount = NSScreen.screens.count
         evidence.distinctDisplayScaleCount = Set(NSScreen.screens.map(\.backingScaleFactor)).count
         try? FileManager.default.createDirectory(at: base, withIntermediateDirectories: true)
@@ -68,6 +75,29 @@ final class Ticket01AcceptanceReporter {
         evidence.captureTriggeredByGlobalShortcut = evidence.captureTriggeredByGlobalShortcut
             || triggeredByGlobalShortcut
         persist()
+    }
+
+    func markPermissionObservation(_ observation: ScreenCapturePermissionObservation) {
+        evidence = Self.permissionObservationEvidence(
+            starting: evidence,
+            preflightGranted: observation.preflightGranted,
+            requestAttempted: observation.requestAttempted,
+            requestGranted: observation.requestGranted
+        )
+        persist()
+    }
+
+    nonisolated static func permissionObservationEvidence(
+        starting: Evidence,
+        preflightGranted: Bool,
+        requestAttempted: Bool,
+        requestGranted: Bool?
+    ) -> Evidence {
+        var evidence = starting
+        evidence.permissionPreflightGranted = preflightGranted
+        evidence.permissionRequestAttempted = requestAttempted
+        evidence.permissionRequestGranted = requestGranted
+        return evidence
     }
 
     func markSelecting() {

@@ -9,6 +9,12 @@ protocol ScreenCapturePermissionProviding {
     func requestAccess() -> Bool
 }
 
+struct ScreenCapturePermissionObservation: Equatable, Sendable {
+    let preflightGranted: Bool
+    let requestAttempted: Bool
+    let requestGranted: Bool?
+}
+
 struct SystemScreenCapturePermission: ScreenCapturePermissionProviding {
     var hasAccess: Bool { CGPreflightScreenCaptureAccess() }
 
@@ -169,6 +175,7 @@ final class CaptureCoordinator {
     private var lifecycle = ScreenCaptureLifecycle()
     private let permission: any ScreenCapturePermissionProviding
     private let imageCapturer: any ScreenImageCapturing
+    private let permissionObservation: ((ScreenCapturePermissionObservation) -> Void)?
     private var captureTask: Task<Void, Never>?
     private var cursorIsPushed = false
     private var hiddenApplicationWindows: [(window: NSWindow, wasKey: Bool)] = []
@@ -177,10 +184,12 @@ final class CaptureCoordinator {
 
     init(
         permission: any ScreenCapturePermissionProviding = SystemScreenCapturePermission(),
-        imageCapturer: any ScreenImageCapturing = ScreenCaptureKitImageCapturer()
+        imageCapturer: any ScreenImageCapturing = ScreenCaptureKitImageCapturer(),
+        permissionObservation: ((ScreenCapturePermissionObservation) -> Void)? = nil
     ) {
         self.permission = permission
         self.imageCapturer = imageCapturer
+        self.permissionObservation = permissionObservation
     }
 
     var hasPermission: Bool {
@@ -197,7 +206,14 @@ final class CaptureCoordinator {
             completion(.failure(AppError.captureInProgress))
             return false
         }
-        guard permission.hasAccess || permission.requestAccess() else {
+        let preflightGranted = permission.hasAccess
+        let requestGranted = preflightGranted ? nil : permission.requestAccess()
+        permissionObservation?(ScreenCapturePermissionObservation(
+            preflightGranted: preflightGranted,
+            requestAttempted: !preflightGranted,
+            requestGranted: requestGranted
+        ))
+        guard preflightGranted || requestGranted == true else {
             lifecycle.cancel()
             completion(.failure(AppError.capturePermissionDenied))
             return false

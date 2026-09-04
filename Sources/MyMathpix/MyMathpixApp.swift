@@ -1,4 +1,5 @@
 import AppKit
+import CoreGraphics
 import SwiftUI
 
 @main
@@ -6,7 +7,7 @@ struct MyMathpixApp: App {
     @StateObject private var model: AppModel
 
     init() {
-        let launch = AppLaunchConfiguration(arguments: CommandLine.arguments)
+        let launch = AppLaunchConfiguration.current(arguments: CommandLine.arguments)
         if launch.runsLocalTokenStoreSelfTest {
             let passed = Ticket01LocalTokenStoreSelfTest.run()
             print(passed ? "TICKET01_LOCAL_TOKEN_OK" : "TICKET01_LOCAL_TOKEN_FAIL")
@@ -36,23 +37,32 @@ struct MyMathpixApp: App {
         if launch.runsSelfTest {
             exit(SelfCheck.run() ? 0 : 1)
         }
+        if launch.reportsScreenPermissionState {
+            print("TICKET01_SCREEN_PERMISSION granted=\(CGPreflightScreenCaptureAccess() ? "yes" : "no")")
+            exit(0)
+        }
         if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
-            let reporter = Ticket01AcceptanceReporter()
+            let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
+            let permissionObservation: (ScreenCapturePermissionObservation) -> Void = { observation in
+                reporter.markPermissionObservation(observation)
+            }
             let captureCoordinator: CaptureCoordinator
             switch launch.ticket01Scenario {
             case .permissionNotDetermined, .permissionDenied, .permissionRevoked:
-                captureCoordinator = CaptureCoordinator()
+                captureCoordinator = CaptureCoordinator(permissionObservation: permissionObservation)
             case .captureAPIFailure:
                 captureCoordinator = CaptureCoordinator(
-                    imageCapturer: Ticket01FailingImageCapturer(failure: .captureAPI)
+                    imageCapturer: Ticket01FailingImageCapturer(failure: .captureAPI),
+                    permissionObservation: permissionObservation
                 )
             case .displayDisappearance:
                 captureCoordinator = CaptureCoordinator(
-                    imageCapturer: Ticket01FailingImageCapturer(failure: .displayUnavailable)
+                    imageCapturer: Ticket01FailingImageCapturer(failure: .displayUnavailable),
+                    permissionObservation: permissionObservation
                 )
             case .cancellation, .tinySelection, nil:
-                captureCoordinator = CaptureCoordinator()
+                captureCoordinator = CaptureCoordinator(permissionObservation: permissionObservation)
             }
             _model = StateObject(wrappedValue: AppModel(
                 recognitionService: Ticket01RecognitionService(),

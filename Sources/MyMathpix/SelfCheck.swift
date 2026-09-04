@@ -108,9 +108,10 @@ enum SelfCheck {
         )
         captureLifecycle.cancel()
 
+        let acceptanceRunID = UUID(uuidString: "00000000-0000-4000-8000-000000000001")!
         let relaunchedAcceptance = AppLaunchConfiguration(
             arguments: ["MyMathpix"],
-            acceptanceRelaunchMode: .acceptance
+            acceptanceRelaunchMode: .acceptance(runID: acceptanceRunID)
         )
         check(
             relaunchedAcceptance.runsTicket01Acceptance
@@ -120,7 +121,7 @@ enum SelfCheck {
         )
         let relaunchedPermissionScenario = AppLaunchConfiguration(
             arguments: ["MyMathpix"],
-            acceptanceRelaunchMode: .scenario("permission-revoked")
+            acceptanceRelaunchMode: .scenario(.permissionRevoked, runID: acceptanceRunID)
         )
         check(
             relaunchedPermissionScenario.ticket01Scenario == .permissionRevoked,
@@ -128,8 +129,9 @@ enum SelfCheck {
             failures: &failures
         )
         check(
-            Ticket01AcceptanceRelaunchMode.parse("scenario:permission-denied")
-                == .scenario("permission-denied"),
+            Ticket01AcceptanceRelaunchMode.parse(
+                "scenario:permission-denied:\(acceptanceRunID.uuidString)"
+            ) == .scenario(.permissionDenied, runID: acceptanceRunID),
             "acceptance relaunch marker parses an approved scenario",
             failures: &failures
         )
@@ -138,13 +140,44 @@ enum SelfCheck {
             "invalid acceptance relaunch marker is rejected",
             failures: &failures
         )
+        check(
+            !AppLaunchConfiguration(
+                arguments: ["MyMathpix"],
+                acceptanceRelaunchMode: nil
+            ).runsTicket01Acceptance,
+            "ordinary launch does not enter acceptance mode",
+            failures: &failures
+        )
+        let explicitAcceptance = AppLaunchConfiguration(
+            arguments: [
+                "MyMathpix",
+                "--ticket01-acceptance",
+                "--ticket01-run-id=\(acceptanceRunID.uuidString)"
+            ]
+        )
+        check(
+            explicitAcceptance.runsTicket01Acceptance
+                && explicitAcceptance.acceptanceRunID == acceptanceRunID,
+            "explicit acceptance requires and preserves its run ID",
+            failures: &failures
+        )
+        check(
+            !AppLaunchConfiguration(
+                arguments: ["MyMathpix", "--ticket01-acceptance"]
+            ).runsTicket01Acceptance,
+            "unbound acceptance argument is rejected",
+            failures: &failures
+        )
         do {
             let markerRoot = FileManager.default.temporaryDirectory
                 .appendingPathComponent("MyMathpix-RelaunchMarker-SelfCheck-\(UUID().uuidString)")
             defer { try? FileManager.default.removeItem(at: markerRoot) }
             try FileManager.default.createDirectory(at: markerRoot, withIntermediateDirectories: true)
             let markerURL = markerRoot.appendingPathComponent("relaunch-mode.txt")
-            try Data("acceptance\n".utf8).write(to: markerURL, options: .atomic)
+            try Data("acceptance:\(acceptanceRunID.uuidString)\n".utf8).write(
+                to: markerURL,
+                options: .atomic
+            )
             try FileManager.default.setAttributes(
                 [.posixPermissions: NSNumber(value: Int16(0o600))],
                 ofItemAtPath: markerURL.path
@@ -158,7 +191,7 @@ enum SelfCheck {
                 Ticket01AcceptanceRelaunchMarker.load(
                     from: markerURL,
                     now: markerDate.addingTimeInterval(60)
-                ) == .acceptance,
+                ) == .acceptance(runID: acceptanceRunID),
                 "fresh private acceptance marker is accepted",
                 failures: &failures
             )
@@ -185,6 +218,26 @@ enum SelfCheck {
                 "non-private acceptance marker is rejected",
                 failures: &failures
             )
+            try FileManager.default.setAttributes(
+                [
+                    .posixPermissions: NSNumber(value: Int16(0o600)),
+                    .modificationDate: markerDate
+                ],
+                ofItemAtPath: markerURL.path
+            )
+            check(
+                Ticket01AcceptanceRelaunchMarker.consume(
+                    from: markerURL,
+                    now: markerDate.addingTimeInterval(60)
+                ) == .acceptance(runID: acceptanceRunID),
+                "private acceptance marker is consumed once",
+                failures: &failures
+            )
+            check(
+                !FileManager.default.fileExists(atPath: markerURL.path),
+                "consumed acceptance marker cannot leak into a later launch",
+                failures: &failures
+            )
         } catch {
             failures.append("acceptance relaunch marker: \(error.localizedDescription)")
         }
@@ -200,6 +253,19 @@ enum SelfCheck {
                 && restartedEvidence.failureCode == nil
                 && restartedEvidence.recoveryProbeStarted,
             "new capture clears stale acceptance failure state",
+            failures: &failures
+        )
+        let permissionEvidence = Ticket01AcceptanceReporter.permissionObservationEvidence(
+            starting: Ticket01AcceptanceReporter.Evidence(),
+            preflightGranted: false,
+            requestAttempted: true,
+            requestGranted: false
+        )
+        check(
+            permissionEvidence.permissionPreflightGranted == false
+                && permissionEvidence.permissionRequestAttempted
+                && permissionEvidence.permissionRequestGranted == false,
+            "acceptance evidence records the real permission decision path",
             failures: &failures
         )
 
@@ -286,7 +352,7 @@ enum SelfCheck {
         }
 
         if failures.isEmpty {
-            print("MyMathpix self-test passed (39 checks).")
+            print("MyMathpix self-test passed (45 checks).")
             return true
         }
         print("MyMathpix self-test failed:")
