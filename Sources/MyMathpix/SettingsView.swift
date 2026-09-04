@@ -7,6 +7,8 @@ struct SettingsView: View {
     @State private var hotKey = HotKeyConfiguration()
     @State private var testingToken = false
     @State private var status: String?
+    @State private var shortcutStatus: String?
+    @State private var shortcutStatusIsError = false
     @State private var confirmsHistoryClear = false
 
     var body: some View {
@@ -35,9 +37,20 @@ struct SettingsView: View {
                     TextField("Key", text: $hotKey.key).frame(width: 60)
                     Text(hotKey.displayName).font(.title3.monospaced())
                     Button("Save Shortcut") {
-                        do { try model.saveHotKey(hotKey); status = "Shortcut saved." }
-                        catch { status = error.localizedDescription }
+                        do {
+                            try model.saveHotKey(hotKey)
+                            shortcutStatus = "Shortcut saved."
+                            shortcutStatusIsError = false
+                        } catch {
+                            shortcutStatus = error.localizedDescription
+                            shortcutStatusIsError = true
+                        }
                     }
+                }
+                if let shortcutStatus {
+                    Text(shortcutStatus)
+                        .font(.caption)
+                        .foregroundStyle(shortcutStatusIsError ? Color.red : Color.secondary)
                 }
             }
 

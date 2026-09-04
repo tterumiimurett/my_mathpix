@@ -109,7 +109,7 @@ final class HotKeyManager: HotKeyRegistering {
             "U": kVK_ANSI_U, "V": kVK_ANSI_V, "W": kVK_ANSI_W, "X": kVK_ANSI_X,
             "Y": kVK_ANSI_Y, "Z": kVK_ANSI_Z
         ]
-        guard let character = key.uppercased().first else { return nil }
+        guard key.count == 1, let character = key.uppercased().first else { return nil }
         return values[character]
     }
 }

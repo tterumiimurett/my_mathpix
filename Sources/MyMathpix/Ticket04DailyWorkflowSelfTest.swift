@@ -355,6 +355,25 @@ enum Ticket04DailyWorkflowSelfTest {
         } catch {
             failures.append("real global shortcut conflict probe: \(error.localizedDescription)")
         }
+        do {
+            let malformedRegistrar = HotKeyManager()
+            try malformedRegistrar.register(
+                HotKeyConfiguration(
+                    key: "JK",
+                    command: true,
+                    control: true,
+                    option: false,
+                    shift: false
+                )
+            ) {}
+            failures.append("multi-character shortcut key is rejected")
+        } catch {
+            expect(
+                error.localizedDescription.contains("letter from A to Z"),
+                "multi-character shortcut key is rejected",
+                failures: &failures
+            )
+        }
 
         let version = AppVersionInfo.current
         expect(!version.marketingVersion.isEmpty && !version.build.isEmpty, "App version is exposed", failures: &failures)
