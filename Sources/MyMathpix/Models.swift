@@ -58,6 +58,22 @@ struct UsageSnapshot: Codable, Equatable {
     var cumulativeCost: Double = 0
 }
 
+enum DiagnosticCode: String, Codable, Equatable {
+    case missingToken = "missing_token"
+    case invalidCredentials = "invalid_credentials"
+    case networkFailure = "network_failure"
+    case permissionDenied = "permission_denied"
+    case captureInProgress = "capture_in_progress"
+    case captureAPIFailure = "capture_api_failure"
+    case displayUnavailable = "display_unavailable"
+    case selectionTooSmall = "selection_too_small"
+    case invalidResponse = "invalid_response"
+    case serviceFailure = "service_failure"
+    case timeout
+    case captureError = "capture_error"
+    case recognitionFailure = "recognition_failure"
+}
+
 enum AppError: LocalizedError {
     case missingToken
     case invalidCredentials
@@ -98,19 +114,19 @@ enum AppError: LocalizedError {
         }
     }
 
-    var safeDiagnosticCode: String {
+    var diagnosticCode: DiagnosticCode {
         switch self {
-        case .missingToken: "missing_token"
-        case .invalidCredentials: "invalid_credentials"
-        case .networkUnavailable: "network_failure"
-        case .capturePermissionDenied: "permission_denied"
-        case .captureInProgress: "capture_in_progress"
-        case .captureFailed: "capture_api_failure"
-        case .captureDisplayUnavailable: "display_unavailable"
-        case .selectionTooSmall: "selection_too_small"
-        case .invalidResponse: "invalid_response"
-        case .service: "service_failure"
-        case .requestTimedOut: "timeout"
+        case .missingToken: .missingToken
+        case .invalidCredentials: .invalidCredentials
+        case .networkUnavailable: .networkFailure
+        case .capturePermissionDenied: .permissionDenied
+        case .captureInProgress: .captureInProgress
+        case .captureFailed: .captureAPIFailure
+        case .captureDisplayUnavailable: .displayUnavailable
+        case .selectionTooSmall: .selectionTooSmall
+        case .invalidResponse: .invalidResponse
+        case .service: .serviceFailure
+        case .requestTimedOut: .timeout
         }
     }
 }

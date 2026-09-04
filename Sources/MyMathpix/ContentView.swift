@@ -261,11 +261,11 @@ private struct ResultDetailView: View {
                 }
             }
             Spacer()
-            if let evidence = model.recognitionEvidence.latest(for: item.id) {
-                if let runtime = evidence.serviceRuntimeSeconds {
+            if let usageRecord = model.usageRecords.latest(for: item.id) {
+                if let runtime = usageRecord.serviceRuntimeSeconds {
                     Text(String(format: "Datalab %.2fs", runtime)).foregroundStyle(.secondary)
                 }
-                if let cost = evidence.costCents {
+                if let cost = usageRecord.costCents {
                     Text(String(format: "%.4f¢", cost)).foregroundStyle(.secondary)
                 }
             }

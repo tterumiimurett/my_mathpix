@@ -5,9 +5,11 @@ final class Ticket02MockURLProtocol: URLProtocol {
         case healthOK
         case invalidCredentials
         case recognitionInvalidCredentials
+        case recognitionPermissionDenied
         case conversionSuccess
         case transientPollThenSuccess
         case persistentTransientPoll
+        case nonRetryableServerStatus
         case untrustedCheckURL
         case unapprovedDatalabSubdomainCheckURL
         case nonStatusCheckURL
@@ -150,7 +152,8 @@ final class Ticket02MockURLProtocol: URLProtocol {
         case .invalidCredentials:
             return (httpResponse(url: url, statusCode: 401), jsonData(["error": "Invalid API key."]))
         case .conversionSuccess, .transientPollThenSuccess, .persistentTransientPoll,
-             .recognitionInvalidCredentials,
+             .recognitionInvalidCredentials, .recognitionPermissionDenied,
+             .nonRetryableServerStatus,
              .untrustedCheckURL, .unapprovedDatalabSubdomainCheckURL,
              .nonStatusCheckURL, .pollHTTPRejection, .malformedPollJSON,
              .completionMissingHTML,
@@ -172,8 +175,10 @@ final class Ticket02MockURLProtocol: URLProtocol {
         guard [
             .conversionSuccess,
             .recognitionInvalidCredentials,
+            .recognitionPermissionDenied,
             .transientPollThenSuccess,
             .persistentTransientPoll,
+            .nonRetryableServerStatus,
             .untrustedCheckURL,
             .unapprovedDatalabSubdomainCheckURL,
             .nonStatusCheckURL,
@@ -226,6 +231,12 @@ final class Ticket02MockURLProtocol: URLProtocol {
                 jsonData(["error": "Invalid API key."])
             )
         }
+        if selectedScenario == .recognitionPermissionDenied {
+            return (
+                httpResponse(url: url, statusCode: 403),
+                jsonData(["error": "Subscription or permission issue."])
+            )
+        }
         let checkURL: String
         switch selectedScenario {
         case .untrustedCheckURL:
@@ -272,6 +283,8 @@ final class Ticket02MockURLProtocol: URLProtocol {
             )
         case .pollHTTPRejection:
             return (httpResponse(url: url, statusCode: 422), jsonData(["error": "Request rejected."]))
+        case .nonRetryableServerStatus:
+            return (httpResponse(url: url, statusCode: 503), jsonData(["error": "Service unavailable."]))
         case .malformedPollJSON:
             return (httpResponse(url: url), Data("not-json".utf8))
         case .completionMissingHTML:
@@ -298,7 +311,7 @@ final class Ticket02MockURLProtocol: URLProtocol {
         if selectedScenario == .persistentTransientPoll
             || (selectedScenario == .transientPollThenSuccess && count == 1) {
             return (
-                httpResponse(url: url, statusCode: 503),
+                httpResponse(url: url, statusCode: 500),
                 jsonData(["error": "Temporarily unavailable."])
             )
         }

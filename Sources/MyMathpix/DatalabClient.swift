@@ -305,14 +305,13 @@ actor DatalabClient {
     }
 
     private func isTransientStatus(_ statusCode: Int) -> Bool {
-        statusCode == 408 || statusCode == 425 || statusCode == 429 || 500...599 ~= statusCode
+        statusCode == 429 || statusCode == 500 || statusCode == 529
     }
 
     private func isTransient(_ error: URLError) -> Bool {
         switch error.code {
         case .timedOut, .cannotFindHost, .cannotConnectToHost, .dnsLookupFailed,
-             .networkConnectionLost, .notConnectedToInternet, .internationalRoamingOff,
-             .callIsActive, .dataNotAllowed, .resourceUnavailable:
+             .networkConnectionLost, .notConnectedToInternet:
             true
         default:
             false
@@ -343,7 +342,7 @@ actor DatalabClient {
         guard let http = response as? HTTPURLResponse else {
             throw AppError.invalidResponse("non-HTTP response")
         }
-        if http.statusCode == 401 || http.statusCode == 403 {
+        if http.statusCode == 401 {
             throw AppError.invalidCredentials
         }
         guard 200..<300 ~= http.statusCode else {

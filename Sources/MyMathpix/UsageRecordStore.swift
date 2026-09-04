@@ -1,29 +1,29 @@
 import Foundation
 
-enum RecognitionAttemptOutcome: String, Codable, Equatable {
+enum UsageRecordOutcome: String, Codable, Equatable {
     case complete
     case failed
     case cancelled
 }
 
-struct RecognitionAttemptEvidence: Codable, Equatable, Identifiable {
+struct UsageRecord: Codable, Equatable, Identifiable {
     let id: UUID
     let historyItemID: UUID
     let startedAt: TimeInterval
     let finishedAt: TimeInterval
     let mode: RecognitionMode
-    let outcome: RecognitionAttemptOutcome
+    let outcome: UsageRecordOutcome
     let elapsedSeconds: Double
     let serviceRuntimeSeconds: Double?
     let costCents: Double?
     let parseQualityScore: Double?
     let automaticRetryCount: Int?
-    let failureCode: String?
+    let failureCode: DiagnosticCode?
 }
 
 @MainActor
-final class RecognitionEvidenceStore: ObservableObject {
-    @Published private(set) var records: [RecognitionAttemptEvidence] = []
+final class UsageRecordStore: ObservableObject {
+    @Published private(set) var records: [UsageRecord] = []
 
     private let rootURL: URL
     private let storageURL: URL
@@ -35,20 +35,20 @@ final class RecognitionEvidenceStore: ObservableObject {
             in: .userDomainMask
         )[0].appendingPathComponent("MyMathpix", isDirectory: true)
         self.rootURL = root
-        self.storageURL = root.appendingPathComponent("recognition-evidence.json")
+        self.storageURL = root.appendingPathComponent("usage-records.json")
         self.inMemory = inMemory
         load()
     }
 
-    func record(_ evidence: RecognitionAttemptEvidence) throws {
-        records.append(evidence)
+    func record(_ usageRecord: UsageRecord) throws {
+        records.append(usageRecord)
         if records.count > 200 {
             records.removeFirst(records.count - 200)
         }
         try persist()
     }
 
-    func latest(for historyItemID: UUID) -> RecognitionAttemptEvidence? {
+    func latest(for historyItemID: UUID) -> UsageRecord? {
         records.last { $0.historyItemID == historyItemID }
     }
 
@@ -56,7 +56,7 @@ final class RecognitionEvidenceStore: ObservableObject {
         guard !inMemory,
               let data = try? Data(contentsOf: storageURL),
               let loaded = try? JSONDecoder().decode(
-                  [RecognitionAttemptEvidence].self,
+                  [UsageRecord].self,
                   from: data
               ) else {
             records = []

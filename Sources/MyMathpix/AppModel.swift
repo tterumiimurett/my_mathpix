@@ -10,7 +10,7 @@ final class AppModel: ObservableObject {
         case globalShortcut
     }
     let history: HistoryStore
-    let recognitionEvidence: RecognitionEvidenceStore
+    let usageRecords: UsageRecordStore
 
     @Published var selectedID: UUID?
     @Published var isProcessing = false
@@ -48,7 +48,7 @@ final class AppModel: ObservableObject {
         recognitionConfiguration: (any RecognitionConfiguration)? = nil,
         captureCoordinator: CaptureCoordinator? = nil,
         history: HistoryStore? = nil,
-        recognitionEvidence: RecognitionEvidenceStore? = nil,
+        usageRecords: UsageRecordStore? = nil,
         defaults: UserDefaults = .standard,
         ticket01Reporter: Ticket01AcceptanceReporter? = nil,
         appInteractionEnabled: Bool = true,
@@ -69,7 +69,7 @@ final class AppModel: ObservableObject {
         self.recognitionConfiguration = resolvedRecognitionConfiguration
         self.captureCoordinator = captureCoordinator ?? CaptureCoordinator()
         self.history = history
-        self.recognitionEvidence = recognitionEvidence ?? RecognitionEvidenceStore()
+        self.usageRecords = usageRecords ?? UsageRecordStore()
         self.defaults = defaults
         self.ticket01Reporter = ticket01Reporter
         self.appInteractionEnabled = appInteractionEnabled
@@ -132,7 +132,8 @@ final class AppModel: ObservableObject {
                 self.errorMessage = error.localizedDescription
                 self.statusMessage = "Capture failed"
                 self.ticket01Reporter?.markFailure(
-                    code: (error as? AppError)?.safeDiagnosticCode ?? "capture_error",
+                    code: (error as? AppError)?.diagnosticCode.rawValue
+                        ?? DiagnosticCode.captureError.rawValue,
                     recentHistoryCount: self.history.items.count
                 )
                 self.showMainWindow()
@@ -379,7 +380,7 @@ final class AppModel: ObservableObject {
         id: UUID,
         error: Error,
         mode: RecognitionMode,
-        outcome: RecognitionAttemptOutcome
+        outcome: UsageRecordOutcome
     ) {
         slowTask?.cancel()
         if var item = history.item(id: id) {
@@ -392,7 +393,7 @@ final class AppModel: ObservableObject {
         recognitionTask = nil
         statusMessage = "Recognition failed"
         errorMessage = error.localizedDescription
-        needsCredentialRecovery = (error as? AppError)?.safeDiagnosticCode == "invalid_credentials"
+        needsCredentialRecovery = (error as? AppError)?.diagnosticCode == .invalidCredentials
         recordAttempt(
             historyItemID: id,
             outcome: outcome,
@@ -400,7 +401,7 @@ final class AppModel: ObservableObject {
             costCents: nil,
             parseQualityScore: nil,
             automaticRetryCount: nil,
-            failureCode: (error as? AppError)?.safeDiagnosticCode ?? "recognition_failure"
+            failureCode: (error as? AppError)?.diagnosticCode ?? .recognitionFailure
         )
         if let ticket01Reporter {
             ticket01Reporter.markRecognitionFailed(recentHistoryCount: history.items.count)
@@ -415,19 +416,19 @@ final class AppModel: ObservableObject {
 
     private func recordAttempt(
         historyItemID: UUID,
-        outcome: RecognitionAttemptOutcome,
+        outcome: UsageRecordOutcome,
         serviceRuntime: Double?,
         costCents: Double?,
         parseQualityScore: Double?,
         automaticRetryCount: Int?,
-        failureCode: String?
+        failureCode: DiagnosticCode?
     ) {
         guard let attempt = activeAttempt,
               attempt.historyItemID == historyItemID else { return }
         let finishedAt = Date().timeIntervalSince1970
         do {
-            try recognitionEvidence.record(
-                RecognitionAttemptEvidence(
+            try usageRecords.record(
+                UsageRecord(
                     id: attempt.id,
                     historyItemID: attempt.historyItemID,
                     startedAt: attempt.startedAt,
@@ -443,7 +444,7 @@ final class AppModel: ObservableObject {
                 )
             )
         } catch {
-            errorMessage = "Recognition usage evidence could not be saved."
+            errorMessage = "The Usage Record could not be saved."
         }
         activeAttempt = nil
     }

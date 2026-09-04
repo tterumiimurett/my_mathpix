@@ -274,7 +274,7 @@ enum SelfCheck {
             ScreenCaptureFailureMapper.map(
                 syntheticCaptureError,
                 hasScreenCaptureAccess: false
-            ).safeDiagnosticCode == "permission_denied",
+            ).diagnosticCode == .permissionDenied,
             "revoked ScreenCaptureKit failure maps to permission explanation",
             failures: &failures
         )
@@ -282,7 +282,7 @@ enum SelfCheck {
             ScreenCaptureFailureMapper.map(
                 syntheticCaptureError,
                 hasScreenCaptureAccess: true
-            ).safeDiagnosticCode == "capture_api_failure",
+            ).diagnosticCode == .captureAPIFailure,
             "ScreenCaptureKit failure maps to capture explanation",
             failures: &failures
         )
@@ -290,7 +290,7 @@ enum SelfCheck {
             ScreenCaptureFailureMapper.map(
                 AppError.captureDisplayUnavailable,
                 hasScreenCaptureAccess: true
-            ).safeDiagnosticCode == "display_unavailable",
+            ).diagnosticCode == .displayUnavailable,
             "domain capture failures keep their diagnostic code",
             failures: &failures
         )

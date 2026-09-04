@@ -73,7 +73,7 @@ struct MyMathpixApp: App {
                 recognitionService: Ticket01RecognitionService(),
                 captureCoordinator: captureCoordinator,
                 history: HistoryStore(inMemory: true),
-                recognitionEvidence: RecognitionEvidenceStore(inMemory: true),
+                usageRecords: UsageRecordStore(inMemory: true),
                 defaults: defaults,
                 ticket01Reporter: reporter
             ))

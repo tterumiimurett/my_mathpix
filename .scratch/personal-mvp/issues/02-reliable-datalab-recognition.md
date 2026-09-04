@@ -22,3 +22,10 @@
 - [ ] Technical failure retains the original Snippet as a Failed Record that can be retried or copied without recapture.
 - [ ] High-Quality Retry reuses the same Snippet in balanced mode and asks before replacing hand-edited content.
 - [ ] Available request cost and runtime evidence are recorded separately from recognition content.
+
+## Comments
+
+- 2026-09-04 implementation checkpoint: the signed-App deterministic Datalab boundary covers private-file token lifecycle and health validation; fast/balanced multipart requests; trusted polling; processing, completion, rejection, malformed response, service failure, cancellation, timeout, and one-retry behavior; Failed Record recovery; edit-replacement confirmation state; and separate Usage Records. The full repository self-test also passes.
+- Blocker: no real Datalab credential was made available, so authenticated health and live Convert submit/poll have not been exercised against the hosted service.
+- Blocker: the signed App's real SwiftUI Result Editor flow, including visible progress, Settings recovery, copying the retained Snippet, and the High-Quality Retry confirmation dialog, has not been operated in a GUI session for this ticket. The deterministic signed-App self-test exercises the public model and transport seams but does not claim that human-visible acceptance.
+- The ticket therefore remains `claimed`; no acceptance checkbox is marked complete until those live credential and GUI checks are performed.

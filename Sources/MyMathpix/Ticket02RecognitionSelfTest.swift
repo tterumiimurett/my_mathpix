@@ -102,12 +102,12 @@ enum Ticket02RecognitionSelfTest {
             )
         )
         let history = HistoryStore(inMemory: true)
-        let evidence = RecognitionEvidenceStore(inMemory: true)
+        let usageRecords = UsageRecordStore(inMemory: true)
         let model = AppModel(
             recognitionService: service,
             recognitionConfiguration: service,
             history: history,
-            recognitionEvidence: evidence,
+            usageRecords: usageRecords,
             defaults: defaults,
             appInteractionEnabled: false
         )
@@ -118,11 +118,24 @@ enum Ticket02RecognitionSelfTest {
               let itemID = model.selectedID,
               history.item(id: itemID)?.status == .failed,
               history.imageData(for: history.item(id: itemID)!) == png,
-              evidence.latest(for: itemID)?.failureCode == "invalid_credentials",
+              usageRecords.latest(for: itemID)?.failureCode == .invalidCredentials,
               model.errorMessage?.contains("Settings") == true else { return false }
         do {
             try model.clearToken()
-            return !model.hasToken && !model.needsCredentialRecovery
+            guard !model.hasToken && !model.needsCredentialRecovery else { return false }
+            try model.saveToken("ticket02-non-secret-sentinel")
+            Ticket02MockURLProtocol.configure(
+                scenario: .recognitionPermissionDenied,
+                expectedPNG: png
+            )
+            model.recognizeCapturedSnippet(UploadPayload(pngData: png))
+            guard await waitUntil({ !model.isProcessing }),
+                  !model.needsCredentialRecovery,
+                  let permissionItemID = model.selectedID,
+                  usageRecords.latest(for: permissionItemID)?.failureCode == .serviceFailure else {
+                return false
+            }
+            return true
         } catch {
             return false
         }
@@ -198,13 +211,13 @@ enum Ticket02RecognitionSelfTest {
                 )
             )
         )
-        let evidence = RecognitionEvidenceStore(rootURL: evidenceRoot)
+        let usageRecords = UsageRecordStore(rootURL: evidenceRoot)
         let history = HistoryStore(inMemory: true)
         let model = AppModel(
             recognitionService: liveService,
             recognitionConfiguration: liveService,
             history: history,
-            recognitionEvidence: evidence,
+            usageRecords: usageRecords,
             defaults: defaults,
             appInteractionEnabled: false,
             slowMessageDelay: .milliseconds(10)
@@ -222,7 +235,7 @@ enum Ticket02RecognitionSelfTest {
               let itemID = model.selectedID,
               history.item(id: itemID)?.status == .failed,
               history.imageData(for: history.item(id: itemID)!) == png,
-              evidence.latest(for: itemID)?.outcome == .cancelled else { return false }
+              usageRecords.latest(for: itemID)?.outcome == .cancelled else { return false }
 
         Ticket02MockURLProtocol.configure(
             scenario: .pollHTTPRejection,
@@ -231,7 +244,7 @@ enum Ticket02RecognitionSelfTest {
         model.retryFailed()
         guard await waitUntil({ !model.isProcessing }),
               history.item(id: itemID)?.status == .failed,
-              evidence.latest(for: itemID)?.outcome == .failed else { return false }
+              usageRecords.latest(for: itemID)?.outcome == .failed else { return false }
 
         Ticket02MockURLProtocol.configure(
             scenario: .conversionSuccess,
@@ -265,8 +278,8 @@ enum Ticket02RecognitionSelfTest {
               history.item(id: itemID)?.runtime == nil,
               history.item(id: itemID)?.costSummary == nil else { return false }
 
-        let latest = evidence.latest(for: itemID)
-        guard evidence.records.count == 4,
+        let latest = usageRecords.latest(for: itemID)
+        guard usageRecords.records.count == 4,
               latest?.outcome == .complete,
               latest?.mode == .balanced,
               latest?.serviceRuntimeSeconds == 1.25,
@@ -276,10 +289,10 @@ enum Ticket02RecognitionSelfTest {
               model.usage.successfulCount == 2,
               model.usage.cumulativeCost == 0.84 else { return false }
 
-        let reloadedEvidence = RecognitionEvidenceStore(rootURL: evidenceRoot)
-        guard reloadedEvidence.records == evidence.records,
+        let reloadedUsageRecords = UsageRecordStore(rootURL: evidenceRoot)
+        guard reloadedUsageRecords.records == usageRecords.records,
               let evidenceData = try? Data(
-                  contentsOf: evidenceRoot.appendingPathComponent("recognition-evidence.json")
+                  contentsOf: evidenceRoot.appendingPathComponent("usage-records.json")
               ),
               !evidenceData.contains(Data("ticket02-non-secret-sentinel".utf8)),
               !evidenceData.contains(Data("ticket02 result".utf8)),
@@ -350,55 +363,61 @@ enum Ticket02RecognitionSelfTest {
         guard await expectsFailure(
             scenario: .persistentTransientPoll,
             policy: quickPolicy,
-            code: "service_failure",
+            code: .serviceFailure,
             pollCount: 2
+        ),
+        await expectsFailure(
+            scenario: .nonRetryableServerStatus,
+            policy: quickPolicy,
+            code: .serviceFailure,
+            pollCount: 1
         ),
         await expectsFailure(
             scenario: .untrustedCheckURL,
             policy: quickPolicy,
-            code: "invalid_response",
+            code: .invalidResponse,
             pollCount: 0
         ),
         await expectsFailure(
             scenario: .unapprovedDatalabSubdomainCheckURL,
             policy: quickPolicy,
-            code: "invalid_response",
+            code: .invalidResponse,
             pollCount: 0
         ),
         await expectsFailure(
             scenario: .nonStatusCheckURL,
             policy: quickPolicy,
-            code: "invalid_response",
+            code: .invalidResponse,
             pollCount: 0
         ),
         await expectsFailure(
             scenario: .pollHTTPRejection,
             policy: quickPolicy,
-            code: "service_failure",
+            code: .serviceFailure,
             pollCount: 1
         ),
         await expectsFailure(
             scenario: .malformedPollJSON,
             policy: quickPolicy,
-            code: "invalid_response",
+            code: .invalidResponse,
             pollCount: 1
         ),
         await expectsFailure(
             scenario: .completionMissingHTML,
             policy: quickPolicy,
-            code: "invalid_response",
+            code: .invalidResponse,
             pollCount: 1
         ),
         await expectsFailure(
             scenario: .unknownPollStatus,
             policy: quickPolicy,
-            code: "invalid_response",
+            code: .invalidResponse,
             pollCount: 1
         ),
         await expectsFailure(
             scenario: .serviceFailure,
             policy: quickPolicy,
-            code: "service_failure",
+            code: .serviceFailure,
             pollCount: 1
         ) else { return false }
 
@@ -411,7 +430,7 @@ enum Ticket02RecognitionSelfTest {
         guard await expectsFailure(
             scenario: .processingForever,
             policy: timeoutPolicy,
-            code: "timeout",
+            code: .timeout,
             minimumPollCount: 1
         ) else { return false }
 
@@ -424,7 +443,7 @@ enum Ticket02RecognitionSelfTest {
         guard await expectsFailure(
             scenario: .slowSubmit,
             policy: wholeAttemptTimeoutPolicy,
-            code: "timeout",
+            code: .timeout,
             pollCount: 0
         ) else { return false }
 
@@ -465,7 +484,7 @@ enum Ticket02RecognitionSelfTest {
     private static func expectsFailure(
         scenario: Ticket02MockURLProtocol.Scenario,
         policy: DatalabClient.Policy,
-        code: String,
+        code: DiagnosticCode,
         pollCount: Int? = nil,
         minimumPollCount: Int? = nil
     ) async -> Bool {
@@ -486,14 +505,14 @@ enum Ticket02RecognitionSelfTest {
             return false
         } catch {
             let snapshot = Ticket02MockURLProtocol.snapshot()
-            let actualCode = (error as? AppError)?.safeDiagnosticCode
+            let actualCode = (error as? AppError)?.diagnosticCode
             let passed = actualCode == code
                 && (pollCount == nil || snapshot.pollCount == pollCount)
                 && (minimumPollCount == nil || snapshot.pollCount >= minimumPollCount!)
             if !passed {
                 print(
                     "TICKET02_FAILURE_CASE scenario=\(String(describing: scenario)) "
-                    + "expected=\(code) actual=\(actualCode ?? "non-domain") "
+                    + "expected=\(code.rawValue) actual=\(actualCode?.rawValue ?? "non-domain") "
                     + "polls=\(snapshot.pollCount)"
                 )
             }
