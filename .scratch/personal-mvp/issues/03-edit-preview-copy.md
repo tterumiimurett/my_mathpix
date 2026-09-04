@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Make Screen Capture survive through a mock result.
 
-**Status:** ready-for-agent
+**Status:** claimed
 
 ## Suggested agent split
 
@@ -22,4 +22,3 @@
 - [ ] Explicit actions provide Formula Output, Markdown, Combined Output, TSV table, rich table, and original image representations.
 - [ ] Rich-table copy offers compatible HTML, RTF, TSV, and plain-text representations, verified by reading the public pasteboard values and types.
 - [ ] Labels and help text distinguish Copy Formats from Native Paste and do not promise native Notion or Feishu blocks.
-

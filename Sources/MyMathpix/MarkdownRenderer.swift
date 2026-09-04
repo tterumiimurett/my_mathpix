@@ -1,5 +1,12 @@
 import Foundation
 
+enum OfflinePreviewNavigationPolicy {
+    static func allows(_ url: URL) -> Bool {
+        guard let scheme = url.scheme?.lowercased() else { return false }
+        return scheme == "about" || scheme == "file"
+    }
+}
+
 enum MarkdownRenderer {
     static func document(for markdown: String) -> String {
         let body = renderBody(MarkdownNormalizer.normalize(markdown))
@@ -9,7 +16,9 @@ enum MarkdownRenderer {
 
         return """
         <!doctype html>
-        <html><head><meta charset="utf-8"><style>
+        <html><head><meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; img-src data:; font-src file: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+        <style>
         \(css)
         :root { color-scheme: light dark; }
         body { font: 15px -apple-system, BlinkMacSystemFont, sans-serif; margin: 22px; line-height: 1.55; overflow-wrap: anywhere; }
@@ -167,11 +176,7 @@ enum MarkdownRenderer {
     }
 
     private static func cells(_ line: String) -> [String] {
-        var value = line.trimmingCharacters(in: .whitespaces)
-        if value.hasPrefix("|") { value.removeFirst() }
-        if value.hasSuffix("|") { value.removeLast() }
-        return value.split(separator: "|", omittingEmptySubsequences: false)
-            .map { $0.trimmingCharacters(in: .whitespaces) }
+        MarkdownNormalizer.markdownTableCells(in: line)
     }
 
     private static func isTableDelimiter(_ line: String) -> Bool {

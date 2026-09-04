@@ -34,6 +34,16 @@ struct MyMathpixApp: App {
             }
             exit(passed ? 0 : 1)
         }
+        if launch.runsTicket03SelfTest {
+            exit(Ticket03SelfCheck.run() ? 0 : 1)
+        }
+        if let format = launch.ticket03PasteboardInspection {
+            let passed = Ticket03PasteboardInspector.inspect(format)
+            if passed {
+                print("TICKET03_PASTEBOARD_OK format=\(format.rawValue) values=yes public_types=yes")
+            }
+            exit(passed ? 0 : 1)
+        }
         if launch.runsSelfTest {
             exit(SelfCheck.run() ? 0 : 1)
         }
@@ -41,7 +51,25 @@ struct MyMathpixApp: App {
             print("TICKET01_SCREEN_PERMISSION granted=\(CGPreflightScreenCaptureAccess() ? "yes" : "no")")
             exit(0)
         }
-        if launch.runsTicket01Acceptance {
+        if launch.runsTicket03Acceptance {
+            let history = HistoryStore(inMemory: true)
+            do {
+                try Ticket03AcceptanceFixture.seed(history: history)
+            } catch {
+                fatalError("Ticket 03 acceptance fixture could not be prepared")
+            }
+            let defaults = UserDefaults(
+                suiteName: "com.byterumi.mymathpix.ticket03.\(ProcessInfo.processInfo.processIdentifier)"
+            )!
+            let reporter = Ticket03AcceptanceReporter(runID: launch.ticket03AcceptanceRunID!)
+            _model = StateObject(wrappedValue: AppModel(
+                recognitionService: Ticket03AcceptanceRecognitionService(),
+                history: history,
+                defaults: defaults,
+                ticket03Reporter: reporter,
+                registersHotKey: false
+            ))
+        } else if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
             let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
             let permissionObservation: (ScreenCapturePermissionObservation) -> Void = { observation in

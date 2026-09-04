@@ -180,6 +180,11 @@ private struct ResultDetailView: View {
                             renderedFormulaVisible: renderedFormulaVisible,
                             renderedTableVisible: renderedTableVisible
                         )
+                        model.ticket03MarkPreviewVisible(
+                            canonicalMarkdown: item.markdown,
+                            renderedFormulaVisible: renderedFormulaVisible,
+                            renderedTableVisible: renderedTableVisible
+                        )
                     }
                 }
                 .accessibilityIdentifier("offline-preview")
@@ -192,49 +197,43 @@ private struct ResultDetailView: View {
         .onChange(of: item.status) { _, status in
             if status == .complete { reportFinalSurface() }
         }
+        .onChange(of: item.markdown) { _, _ in reportFinalSurface() }
     }
 
     private var actionBar: some View {
-        HStack(spacing: 10) {
-            if item.status == .failed {
-                Label(item.errorMessage ?? "Recognition failed", systemImage: "exclamationmark.triangle")
-                    .foregroundStyle(.red)
-                    .lineLimit(1)
-                Button("Retry") { model.retryFailed() }
-            } else {
-                Button("High Quality Retry") { model.retryHighQuality() }
-                    .disabled(model.isProcessing)
-                Menu("Copy") {
-                    Button("Combined Markdown") { ClipboardService.copyMarkdown(item.markdown) }
-                    Button("LaTeX") {
-                        if !ClipboardService.copyLaTeX(from: item.markdown) {
-                            model.errorMessage = "This result is not a single pure formula."
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 10) {
+                if item.status == .failed {
+                    Label(item.errorMessage ?? "Recognition failed", systemImage: "exclamationmark.triangle")
+                        .foregroundStyle(.red)
+                        .lineLimit(1)
+                    Button("Retry") { model.retryFailed() }
+                } else {
+                    Button("High Quality Retry") { model.retryHighQuality() }
+                        .disabled(model.isProcessing)
+                    Menu("Copy Formats") {
+                        ForEach(CopyFormat.allCases) { format in
+                            Button(format.title) { model.copySelected(as: format) }
+                                .help(format.helpText)
                         }
                     }
-                    Button("Table as TSV") {
-                        if !ClipboardService.copyTSV(from: item.markdown) {
-                            model.errorMessage = "No simple Markdown table was found."
-                        }
-                    }
-                    Button("Rich Table") {
-                        if !ClipboardService.copyRichTable(from: item.markdown) {
-                            model.errorMessage = "No simple Markdown table was found."
-                        }
-                    }
-                    Button("Original Image") {
-                        if let data = model.history.imageData(for: item) { _ = ClipboardService.copyImage(data) }
-                    }
+                    .disabled(item.status != .complete)
+                    .accessibilityIdentifier("copy-formats-menu")
                 }
+                Spacer()
+                if let runtime = item.runtime {
+                    Text(String(format: "%.2fs", runtime)).foregroundStyle(.secondary)
+                }
+                Text(item.mode.title).foregroundStyle(.secondary)
+                Button(role: .destructive) { model.deleteSelected() } label: {
+                    Image(systemName: "trash")
+                }
+                .help("Delete this snippet")
             }
-            Spacer()
-            if let runtime = item.runtime {
-                Text(String(format: "%.2fs", runtime)).foregroundStyle(.secondary)
-            }
-            Text(item.mode.title).foregroundStyle(.secondary)
-            Button(role: .destructive) { model.deleteSelected() } label: {
-                Image(systemName: "trash")
-            }
-            .help("Delete this snippet")
+            Text(CopyFormat.explanation)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .accessibilityIdentifier("copy-formats-native-paste-boundary")
         }
         .padding(10)
     }
@@ -244,6 +243,10 @@ private struct ResultDetailView: View {
             originalSnippetVisible: model.history.image(for: item) != nil,
             canonicalMarkdown: item.markdown,
             isComplete: item.status == .complete
+        )
+        model.ticket03MarkResultEditorVisible(
+            originalSnippetVisible: model.history.image(for: item) != nil,
+            canonicalMarkdown: item.markdown
         )
     }
 }
@@ -268,6 +271,7 @@ struct MarkdownPreview: NSViewRepresentable {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
         configuration.defaultWebpagePreferences.allowsContentJavaScript = true
+        configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
         let webView = WKWebView(frame: .zero, configuration: configuration)
         webView.setValue(false, forKey: "drawsBackground")
         webView.navigationDelegate = context.coordinator
@@ -286,6 +290,21 @@ struct MarkdownPreview: NSViewRepresentable {
 
         init(onRendered: @escaping (Bool, Bool) -> Void) {
             self.onRendered = onRendered
+        }
+
+        func webView(
+            _ webView: WKWebView,
+            decidePolicyFor navigationAction: WKNavigationAction,
+            decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+        ) {
+            guard navigationAction.navigationType == .other,
+                  navigationAction.targetFrame?.isMainFrame != false,
+                  let url = navigationAction.request.url,
+                  OfflinePreviewNavigationPolicy.allows(url) else {
+                decisionHandler(.cancel)
+                return
+            }
+            decisionHandler(.allow)
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

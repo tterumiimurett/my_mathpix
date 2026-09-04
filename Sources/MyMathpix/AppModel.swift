@@ -25,6 +25,8 @@ final class AppModel: ObservableObject {
     private let recognitionConfiguration: (any RecognitionConfiguration)?
     private let captureCoordinator: CaptureCoordinator
     private let ticket01Reporter: Ticket01AcceptanceReporter?
+    private let ticket03Reporter: Ticket03AcceptanceReporter?
+    private let pasteboard: NSPasteboard
     private let hotKeyManager = HotKeyManager()
     private var historyObservation: AnyCancellable?
     private var recognitionTask: Task<Void, Never>?
@@ -37,7 +39,10 @@ final class AppModel: ObservableObject {
         captureCoordinator: CaptureCoordinator? = nil,
         history: HistoryStore? = nil,
         defaults: UserDefaults = .standard,
-        ticket01Reporter: Ticket01AcceptanceReporter? = nil
+        ticket01Reporter: Ticket01AcceptanceReporter? = nil,
+        ticket03Reporter: Ticket03AcceptanceReporter? = nil,
+        pasteboard: NSPasteboard = .general,
+        registersHotKey: Bool = true
     ) {
         let resolvedRecognitionService: any RecognitionService
         let resolvedRecognitionConfiguration: (any RecognitionConfiguration)?
@@ -56,6 +61,8 @@ final class AppModel: ObservableObject {
         self.history = history
         self.defaults = defaults
         self.ticket01Reporter = ticket01Reporter
+        self.ticket03Reporter = ticket03Reporter
+        self.pasteboard = pasteboard
         hasToken = resolvedRecognitionConfiguration?.isConfigured ?? true
         usage = Self.loadUsage(defaults: defaults)
         hotKeyConfiguration = Self.loadHotKey(defaults: defaults)
@@ -64,12 +71,14 @@ final class AppModel: ObservableObject {
         historyObservation = history.objectWillChange.sink { [weak self] _ in
             self?.objectWillChange.send()
         }
-        do {
-            try hotKeyManager.register(hotKeyConfiguration) {
-                [weak self] in self?.startCapture(trigger: .globalShortcut)
+        if registersHotKey {
+            do {
+                try hotKeyManager.register(hotKeyConfiguration) {
+                    [weak self] in self?.startCapture(trigger: .globalShortcut)
+                }
+            } catch {
+                errorMessage = error.localizedDescription
             }
-        } catch {
-            errorMessage = error.localizedDescription
         }
     }
 
@@ -143,9 +152,33 @@ final class AppModel: ObservableObject {
 
     func updateMarkdown(_ markdown: String) {
         guard var item = selectedItem else { return }
+        guard item.markdown != markdown else { return }
         item.markdown = markdown
+        // Complex Table Output belongs to the service result. Once the owner
+        // edits Canonical Markdown, rich copy must follow the edited source.
+        item.html = nil
         do { try history.update(item) }
         catch { errorMessage = "The edited result could not be saved: \(error.localizedDescription)" }
+    }
+
+    func copySelected(as format: CopyFormat) {
+        guard let item = selectedItem else { return }
+        let payload = ClipboardPayload(
+            canonicalMarkdown: item.markdown,
+            complexTableHTML: item.html,
+            originalPNG: history.imageData(for: item)
+        )
+        do {
+            try ClipboardService.copy(format, payload: payload, to: pasteboard)
+            ticket03Reporter?.markCopy(
+                format,
+                passed: Ticket03PasteboardInspector.inspect(format, pasteboard: pasteboard)
+            )
+            statusMessage = "\(format.title) copied"
+            NSSound(named: "Glass")?.play()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     func deleteSelected() {
@@ -228,6 +261,52 @@ final class AppModel: ObservableObject {
         ticket01Reporter?.markRecentHistoryVisible()
     }
 
+    func ticket03MarkResultEditorVisible(
+        originalSnippetVisible: Bool,
+        canonicalMarkdown: String
+    ) {
+        ticket03Reporter?.markResultEditorVisible(
+            originalSnippetVisible: originalSnippetVisible,
+            canonicalMarkdown: canonicalMarkdown
+        )
+    }
+
+    func ticket03MarkPreviewVisible(
+        canonicalMarkdown: String,
+        renderedFormulaVisible: Bool,
+        renderedTableVisible: Bool
+    ) {
+        guard let ticket03Reporter else { return }
+        switch ticket03Reporter.markPreviewRendered(
+            canonicalMarkdown: canonicalMarkdown,
+            renderedFormulaVisible: renderedFormulaVisible,
+            renderedTableVisible: renderedTableVisible
+        ) {
+        case .none:
+            break
+        case .applyEditedSource:
+            updateMarkdown(Ticket03AcceptanceFixture.editedMarkdown)
+        case .copyMixedFormatsAndShowPureFormula:
+            for format in [
+                CopyFormat.markdown,
+                .combinedOutput,
+                .tsvTable,
+                .richTable,
+                .originalImage
+            ] {
+                copySelected(as: format)
+            }
+            ticket03Reporter.expectPureFormulaPreview()
+            updateMarkdown(Ticket03PasteboardInspector.pureFormulaSource)
+        case .copyFormulaAndRestoreEditedSource:
+            copySelected(as: .formulaOutput)
+            ticket03Reporter.expectFinalEditedPreview()
+            updateMarkdown(Ticket03AcceptanceFixture.editedMarkdown)
+        case .finish:
+            ticket03Reporter.finish()
+        }
+    }
+
     func showMainWindow() {
         NSApp.activate(ignoringOtherApps: true)
         if let window = NSApp.windows.first(where: { $0.title == "MyMathpix" }) ?? NSApp.windows.first(where: { $0.canBecomeMain }) {
@@ -292,7 +371,7 @@ final class AppModel: ObservableObject {
             return
         }
         item.markdown = MarkdownNormalizer.normalize(result.markdown)
-        item.html = result.html
+        item.html = result.html.flatMap(ComplexTableOutputSanitizer.sanitize)?.html
         item.status = .complete
         item.mode = mode
         item.runtime = result.runtime
@@ -309,9 +388,20 @@ final class AppModel: ObservableObject {
             ticket01Reporter.markComplete(recentHistoryCount: history.items.count)
             ticket01SafeSummary = ticket01Reporter.safeSummary
         }
-        if let latex = MarkdownNormalizer.pureFormula(in: item.markdown) {
-            ClipboardService.copyMarkdown(latex)
-            NSSound(named: "Glass")?.play()
+        if let format = ClipboardService.automaticCopyFormat(for: item.markdown) {
+            let payload = ClipboardPayload(
+                canonicalMarkdown: item.markdown,
+                complexTableHTML: item.html,
+                originalPNG: history.imageData(for: item)
+            )
+            do {
+                try ClipboardService.copy(format, payload: payload, to: pasteboard)
+                statusMessage = "Formula Output copied"
+                NSSound(named: "Glass")?.play()
+            } catch {
+                errorMessage = error.localizedDescription
+                showMainWindow()
+            }
         } else {
             showMainWindow()
         }

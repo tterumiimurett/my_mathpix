@@ -5,6 +5,7 @@ enum MarkdownNormalizer {
         var text = input
             .replacingOccurrences(of: "\r\n", with: "\n")
             .replacingOccurrences(of: "\r", with: "\n")
+        text = canonicalizeFormulaDelimiters(in: text)
         text = text.split(separator: "\n", omittingEmptySubsequences: false)
             .map { line in line.replacingOccurrences(of: #"[ \t]+$"#, with: "", options: .regularExpression) }
             .joined(separator: "\n")
@@ -16,16 +17,12 @@ enum MarkdownNormalizer {
         let text = normalize(markdown)
         if text.hasPrefix("$$"), text.hasSuffix("$$"), text.count >= 4 {
             let inner = String(text.dropFirst(2).dropLast(2)).trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !inner.isEmpty, !inner.contains("$$") else { return nil }
+            guard !inner.isEmpty, !containsUnescapedDollar(in: inner) else { return nil }
             return inner
-        }
-        if text.hasPrefix("\\["), text.hasSuffix("\\]"), text.count >= 4 {
-            let inner = String(text.dropFirst(2).dropLast(2)).trimmingCharacters(in: .whitespacesAndNewlines)
-            return inner.isEmpty ? nil : inner
         }
         if text.hasPrefix("$"), text.hasSuffix("$"), !text.hasPrefix("$$"), text.count >= 3 {
             let inner = String(text.dropFirst().dropLast()).trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !inner.isEmpty, !inner.contains("\n"), !inner.contains("$") else { return nil }
+            guard !inner.isEmpty, !inner.contains("\n"), !containsUnescapedDollar(in: inner) else { return nil }
             return inner
         }
         return nil
@@ -60,6 +57,10 @@ enum MarkdownNormalizer {
         return "<table>\(head)<tbody>\(body)</tbody></table>"
     }
 
+    static func markdownTableCells(in line: String) -> [String] {
+        tableCells(line).map(cleanCell)
+    }
+
     private static func isDelimiterRow(_ line: String) -> Bool {
         let cells = tableCells(line)
         guard !cells.isEmpty else { return false }
@@ -71,8 +72,28 @@ enum MarkdownNormalizer {
     private static func tableCells(_ line: String) -> [String] {
         var text = line.trimmingCharacters(in: .whitespaces)
         if text.hasPrefix("|") { text.removeFirst() }
-        if text.hasSuffix("|") { text.removeLast() }
-        return text.split(separator: "|", omittingEmptySubsequences: false).map(String.init)
+        if text.hasSuffix("|"), !text.hasSuffix("\\|") { text.removeLast() }
+
+        let characters = Array(text)
+        var cells: [String] = []
+        var cell = ""
+        var index = 0
+        while index < characters.count {
+            if characters[index] == "\\", index + 1 < characters.count, characters[index + 1] == "|" {
+                cell.append("\\|")
+                index += 2
+                continue
+            }
+            if characters[index] == "|" {
+                cells.append(cell)
+                cell = ""
+            } else {
+                cell.append(characters[index])
+            }
+            index += 1
+        }
+        cells.append(cell)
+        return cells
     }
 
     private static func cleanCell(_ cell: String) -> String {
@@ -87,5 +108,93 @@ enum MarkdownNormalizer {
             .replacingOccurrences(of: ">", with: "&gt;")
             .replacingOccurrences(of: "\"", with: "&quot;")
             .replacingOccurrences(of: "'", with: "&#39;")
+    }
+
+    private static func canonicalizeFormulaDelimiters(in text: String) -> String {
+        var fence: (character: Character, length: Int)?
+        return text.split(separator: "\n", omittingEmptySubsequences: false).map { substring in
+            let line = String(substring)
+            let trimmed = line.trimmingCharacters(in: .whitespaces)
+            if let marker = fence {
+                if fenceRun(in: trimmed, character: marker.character) >= marker.length {
+                    fence = nil
+                }
+                return line
+            }
+            if let opening = openingFence(in: trimmed) {
+                fence = opening
+                return line
+            }
+            return canonicalizeFormulaDelimitersOutsideCodeSpans(in: line)
+        }.joined(separator: "\n")
+    }
+
+    private static func openingFence(in line: String) -> (character: Character, length: Int)? {
+        guard let first = line.first, first == "`" || first == "~" else { return nil }
+        let count = fenceRun(in: line, character: first)
+        return count >= 3 ? (first, count) : nil
+    }
+
+    private static func fenceRun(in line: String, character: Character) -> Int {
+        line.prefix { $0 == character }.count
+    }
+
+    private static func canonicalizeFormulaDelimitersOutsideCodeSpans(in line: String) -> String {
+        let characters = Array(line)
+        var result = ""
+        var codeDelimiterLength: Int?
+        var index = 0
+
+        while index < characters.count {
+            if characters[index] == "`" {
+                var end = index
+                while end < characters.count, characters[end] == "`" { end += 1 }
+                let count = end - index
+                result += String(repeating: "`", count: count)
+                if let openLength = codeDelimiterLength {
+                    if count == openLength { codeDelimiterLength = nil }
+                } else {
+                    codeDelimiterLength = count
+                }
+                index = end
+                continue
+            }
+
+            if codeDelimiterLength == nil,
+               characters[index] == "\\",
+               index + 1 < characters.count {
+                switch characters[index + 1] {
+                case "(", ")":
+                    result.append("$")
+                    index += 2
+                    continue
+                case "[", "]":
+                    result.append("$$")
+                    index += 2
+                    continue
+                default:
+                    break
+                }
+            }
+
+            result.append(characters[index])
+            index += 1
+        }
+        return result
+    }
+
+    private static func containsUnescapedDollar(in text: String) -> Bool {
+        let characters = Array(text)
+        for index in characters.indices where characters[index] == "$" {
+            var slashCount = 0
+            var cursor = index
+            while cursor > characters.startIndex {
+                cursor = characters.index(before: cursor)
+                guard characters[cursor] == "\\" else { break }
+                slashCount += 1
+            }
+            if slashCount.isMultiple(of: 2) { return true }
+        }
+        return false
     }
 }

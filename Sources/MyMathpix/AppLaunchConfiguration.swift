@@ -154,6 +154,27 @@ struct AppLaunchConfiguration {
         arguments.contains("--self-test")
     }
 
+    var runsTicket03SelfTest: Bool {
+        arguments.contains("--ticket03-self-test")
+    }
+
+    var runsTicket03Acceptance: Bool {
+        ticket03AcceptanceRunID != nil
+    }
+
+    var ticket03AcceptanceRunID: UUID? {
+        guard arguments.contains("--ticket03-acceptance"),
+              let rawValue = Self.argumentValue(named: "--ticket03-run-id=", in: arguments) else {
+            return nil
+        }
+        return UUID(uuidString: rawValue)
+    }
+
+    var ticket03PasteboardInspection: CopyFormat? {
+        Self.argumentValue(named: "--ticket03-inspect-pasteboard=", in: arguments)
+            .flatMap(CopyFormat.init(rawValue:))
+    }
+
     var reportsScreenPermissionState: Bool {
         arguments.contains("--ticket01-screen-permission-state")
     }
