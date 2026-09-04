@@ -145,7 +145,9 @@ launch_and_wait() {
         fi
         rm -f "$relaunch_marker" "$session_file"
     }
-    trap 'cleanup_incomplete_launch' EXIT INT TERM
+    trap 'cleanup_incomplete_launch' EXIT
+    trap 'cleanup_incomplete_launch; trap - EXIT INT TERM; exit 130' INT
+    trap 'cleanup_incomplete_launch; trap - EXIT INT TERM; exit 143' TERM
     case "$relaunch_policy" in
         none)
             rm -f "$relaunch_marker"
