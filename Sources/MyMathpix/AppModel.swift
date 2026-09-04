@@ -258,18 +258,8 @@ final class AppModel: ObservableObject {
         ticket01Reporter?.markRecentHistoryVisible()
     }
 
-    func ticket03MarkResultEditorVisible(
-        originalSnippetVisible: Bool,
-        canonicalMarkdown: String,
-        copyFormatsVisible: Bool,
-        nativePasteBoundaryVisible: Bool
-    ) {
-        ticket03Reporter?.markResultEditorVisible(
-            originalSnippetVisible: originalSnippetVisible,
-            canonicalMarkdown: canonicalMarkdown,
-            copyFormatsVisible: copyFormatsVisible,
-            nativePasteBoundaryVisible: nativePasteBoundaryVisible
-        )
+    func ticket03MarkResultEditorVisible(_ observation: ResultEditorObservation) {
+        ticket03Reporter?.markResultEditorVisible(observation)
     }
 
     func ticket03MarkPreviewVisible(_ observation: PreviewRenderObservation) {

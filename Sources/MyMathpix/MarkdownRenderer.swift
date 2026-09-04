@@ -56,7 +56,7 @@ enum MarkdownRenderer {
         var output: [String] = []
         var paragraph: [String] = []
         var index = 0
-        var codeFence: (character: Character, length: Int)?
+        var codeFence: MarkdownCodeFence?
         var codeLines: [String] = []
 
         func flushParagraph() {
@@ -68,7 +68,7 @@ enum MarkdownRenderer {
         while index < lines.count {
             let line = lines[index]
             if let activeFence = codeFence {
-                if closesFence(line, matching: activeFence) {
+                if activeFence.closes(line) {
                     output.append("<pre><code>\(MarkdownNormalizer.escapeHTML(codeLines.joined(separator: "\n")))</code></pre>")
                     codeLines.removeAll()
                     codeFence = nil
@@ -78,7 +78,7 @@ enum MarkdownRenderer {
                 index += 1
                 continue
             }
-            if let openingFence = fenceMarker(in: line) {
+            if let openingFence = MarkdownCodeFence.opening(in: line) {
                 flushParagraph()
                 codeFence = openingFence
                 index += 1
@@ -177,12 +177,12 @@ enum MarkdownRenderer {
         var index = 0
 
         while index < lines.count {
-            if let openingFence = fenceMarker(in: lines[index]) {
+            if let openingFence = MarkdownCodeFence.opening(in: lines[index]) {
                 var block = [lines[index]]
                 index += 1
                 while index < lines.count {
                     block.append(lines[index])
-                    let isClosing = closesFence(lines[index], matching: openingFence)
+                    let isClosing = openingFence.closes(lines[index])
                     index += 1
                     if isClosing { break }
                 }
@@ -268,24 +268,6 @@ enum MarkdownRenderer {
             index += 1
             if !source.contains(candidate) { return candidate }
         }
-    }
-
-    private static func fenceMarker(in line: String) -> (character: Character, length: Int)? {
-        let trimmed = line.trimmingCharacters(in: .whitespaces)
-        guard let first = trimmed.first, first == "`" || first == "~" else { return nil }
-        let length = trimmed.prefix { $0 == first }.count
-        return length >= 3 ? (first, length) : nil
-    }
-
-    private static func closesFence(
-        _ line: String,
-        matching fence: (character: Character, length: Int)
-    ) -> Bool {
-        let trimmed = line.trimmingCharacters(in: .whitespaces)
-        guard trimmed.first == fence.character else { return false }
-        let length = trimmed.prefix { $0 == fence.character }.count
-        return length >= fence.length
-            && trimmed.dropFirst(length).trimmingCharacters(in: .whitespaces).isEmpty
     }
 
     private static func inline(_ source: String, math: [String: MathToken]) -> String {

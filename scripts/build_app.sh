@@ -37,6 +37,10 @@ cp "$repo_dir/Config/Info.plist" "$contents_dir/Info.plist"
 if [[ -n "$bundle_id" ]]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $bundle_id" "$contents_dir/Info.plist"
 fi
+if [[ "$app_name" != "MyMathpix" ]]; then
+    /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $app_name" "$contents_dir/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleName $app_name" "$contents_dir/Info.plist"
+fi
 
 resource_bundle="$build_dir/MyMathpix_MyMathpix.bundle"
 resource_root="$resource_bundle/Resources"

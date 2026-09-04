@@ -6,6 +6,13 @@ struct PreviewRenderObservation {
     let renderedTableVisible: Bool
 }
 
+struct ResultEditorObservation {
+    let originalSnippetVisible: Bool
+    let canonicalMarkdown: String
+    let copyFormatsVisible: Bool
+    let nativePasteBoundaryVisible: Bool
+}
+
 @MainActor
 final class Ticket03AcceptanceReporter {
     enum Phase: String, Codable {
@@ -61,18 +68,13 @@ final class Ticket03AcceptanceReporter {
         persist()
     }
 
-    func markResultEditorVisible(
-        originalSnippetVisible: Bool,
-        canonicalMarkdown: String,
-        copyFormatsVisible: Bool,
-        nativePasteBoundaryVisible: Bool
-    ) {
+    func markResultEditorVisible(_ observation: ResultEditorObservation) {
         evidence.resultEditorVisible = true
-        evidence.originalSnippetVisible = originalSnippetVisible
+        evidence.originalSnippetVisible = observation.originalSnippetVisible
         evidence.canonicalMarkdownVisible = true
-        evidence.copyFormatsVisible = copyFormatsVisible
-        evidence.nativePasteBoundaryVisible = nativePasteBoundaryVisible
-        if canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown {
+        evidence.copyFormatsVisible = observation.copyFormatsVisible
+        evidence.nativePasteBoundaryVisible = observation.nativePasteBoundaryVisible
+        if observation.canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown {
             evidence.editedSourceVisible = true
         }
         if evidence.phase == .launched { evidence.phase = .editorVisible }
@@ -115,17 +117,19 @@ final class Ticket03AcceptanceReporter {
     }
 
     func markCopy(_ format: CopyFormat, passed: Bool) {
-        switch format {
-        case .formulaOutput: evidence.formulaOutputCopied = passed
-        case .markdown: evidence.markdownCopied = passed
-        case .combinedOutput: evidence.combinedOutputCopied = passed
-        case .tsvTable: evidence.tsvTableCopied = passed
-        case .richTable: evidence.richTableCopied = passed
-        case .originalImage: evidence.originalImageCopied = passed
-        }
+        evidence[keyPath: Self.copyEvidenceKeyPaths[format]!] = passed
         finishIfComplete()
         persist()
     }
+
+    private static let copyEvidenceKeyPaths: [CopyFormat: WritableKeyPath<Evidence, Bool>] = [
+        .formulaOutput: \Evidence.formulaOutputCopied,
+        .markdown: \Evidence.markdownCopied,
+        .combinedOutput: \Evidence.combinedOutputCopied,
+        .tsvTable: \Evidence.tsvTableCopied,
+        .richTable: \Evidence.richTableCopied,
+        .originalImage: \Evidence.originalImageCopied
+    ]
 
     private func finishIfComplete() {
         let complete = evidence.resultEditorVisible

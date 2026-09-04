@@ -111,32 +111,19 @@ enum MarkdownNormalizer {
     }
 
     private static func canonicalizeFormulaDelimiters(in text: String) -> String {
-        var fence: (character: Character, length: Int)?
+        var fence: MarkdownCodeFence?
         return text.split(separator: "\n", omittingEmptySubsequences: false).map { substring in
             let line = String(substring)
-            let trimmed = line.trimmingCharacters(in: .whitespaces)
             if let marker = fence {
-                if fenceRun(in: trimmed, character: marker.character) >= marker.length {
-                    fence = nil
-                }
+                if marker.closes(line) { fence = nil }
                 return line
             }
-            if let opening = openingFence(in: trimmed) {
+            if let opening = MarkdownCodeFence.opening(in: line) {
                 fence = opening
                 return line
             }
             return canonicalizeFormulaDelimitersOutsideCodeSpans(in: line)
         }.joined(separator: "\n")
-    }
-
-    private static func openingFence(in line: String) -> (character: Character, length: Int)? {
-        guard let first = line.first, first == "`" || first == "~" else { return nil }
-        let count = fenceRun(in: line, character: first)
-        return count >= 3 ? (first, count) : nil
-    }
-
-    private static func fenceRun(in line: String, character: Character) -> Int {
-        line.prefix { $0 == character }.count
     }
 
     private static func canonicalizeFormulaDelimitersOutsideCodeSpans(in line: String) -> String {

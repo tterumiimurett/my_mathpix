@@ -247,13 +247,13 @@ private struct ResultDetailView: View {
             canonicalMarkdown: item.markdown,
             isComplete: item.status == .complete
         )
-        model.ticket03MarkResultEditorVisible(
+        model.ticket03MarkResultEditorVisible(ResultEditorObservation(
             originalSnippetVisible: model.history.image(for: item) != nil,
             canonicalMarkdown: item.markdown,
             copyFormatsVisible: item.status == .complete,
             nativePasteBoundaryVisible: CopyFormat.explanation.contains("Native Paste")
                 && CopyFormat.explanation.contains("does not create native Notion or Feishu blocks")
-        )
+        ))
     }
 }
 

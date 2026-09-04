@@ -11,33 +11,26 @@ enum CopyFormat: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var title: String {
+    private var descriptor: (title: String, helpText: String) {
         switch self {
-        case .formulaOutput: "Formula Output (LaTeX)"
-        case .markdown: "Markdown"
-        case .combinedOutput: "Combined Output"
-        case .tsvTable: "TSV Table"
-        case .richTable: "Rich Table"
-        case .originalImage: "Original Image"
+        case .formulaOutput:
+            ("Formula Output (LaTeX)", "Copy raw LaTeX when the result is one Pure Formula.")
+        case .markdown:
+            ("Markdown", "Copy the editable Canonical Markdown source.")
+        case .combinedOutput:
+            ("Combined Output", "Copy the complete text, formulas, and tables as one Combined Output.")
+        case .tsvTable:
+            ("TSV Table", "Copy the first table as tab-separated plain text.")
+        case .richTable:
+            ("Rich Table", "Copy safe HTML, RTF, TSV, and plain-text table representations together.")
+        case .originalImage:
+            ("Original Image", "Copy the original Snippet image without recognized text.")
         }
     }
 
-    var helpText: String {
-        switch self {
-        case .formulaOutput:
-            "Copy raw LaTeX when the result is one Pure Formula."
-        case .markdown:
-            "Copy the editable Canonical Markdown source."
-        case .combinedOutput:
-            "Copy the complete text, formulas, and tables as one Combined Output."
-        case .tsvTable:
-            "Copy the first table as tab-separated plain text."
-        case .richTable:
-            "Copy safe HTML, RTF, TSV, and plain-text table representations together."
-        case .originalImage:
-            "Copy the original Snippet image without recognized text."
-        }
-    }
+    var title: String { descriptor.title }
+
+    var helpText: String { descriptor.helpText }
 
     static let explanation = "Copy Formats place source representations on the clipboard. Native Paste is a separate capability and does not create native Notion or Feishu blocks."
 }
