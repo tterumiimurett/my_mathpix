@@ -106,9 +106,7 @@ final class HistoryStore: ObservableObject {
                 }
             }
         } catch {
-            for (filename, data) in removedImages {
-                try? writeImage(data, named: filename)
-            }
+            restoreImages(removedImages)
             throw error
         }
         items = []
@@ -116,9 +114,7 @@ final class HistoryStore: ObservableObject {
             try persist()
         } catch {
             items = priorItems
-            for (filename, data) in removedImages {
-                try? writeImage(data, named: filename)
-            }
+            restoreImages(removedImages)
             throw error
         }
     }
@@ -151,6 +147,12 @@ final class HistoryStore: ObservableObject {
     private func removeImagesBestEffort(for removed: ArraySlice<HistoryItem>) {
         for item in removed {
             _ = try? removeImage(named: item.imageFilename)
+        }
+    }
+
+    private func restoreImages(_ images: [String: Data]) {
+        for (filename, data) in images {
+            try? writeImage(data, named: filename)
         }
     }
 
