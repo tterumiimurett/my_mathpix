@@ -1,0 +1,17 @@
+artifact=safe-crash-metadata-only
+source=macOS-DiagnosticReports
+bundle_id=com.byterumi.mymathpix
+timestamp=2026-08-31T17:01:05-04:00
+os_version=macOS-15.7.3-24G419
+exception=EXC_BREAKPOINT
+signal=SIGTRAP
+termination=Trace-BPT-trap-5
+faulting_thread=0
+top_frame=CaptureOverlayWindow.init-contentRect-styleMask-backing-defer
+next_app_frame=CaptureOverlayWindow.init-screen
+path_before_failure=CaptureCoordinator.begin-to-overlay-window-creation
+recognition_submission_reached=no
+contains_credentials=no
+contains_authentication_headers=no
+contains_snippet_pixels=no
+contains_complete_recognition_output=no

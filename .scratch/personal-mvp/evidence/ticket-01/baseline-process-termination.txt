@@ -1,0 +1,10 @@
+artifact=safe-process-metadata-only
+bundle=dist/MyMathpix.app
+signature=valid
+pid=10447
+alive_before_shortcut=yes
+alive_after_selection=yes
+exit_status=running-after-90-seconds
+contains_credentials=no
+contains_snippet_pixels=no
+contains_complete_recognition_output=no
