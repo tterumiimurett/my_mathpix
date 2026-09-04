@@ -79,8 +79,12 @@ load_tcc_state() {
     fi
     IFS='|' read -r observed_tcc_state observed_tcc_epoch observed_tcc_origin observed_tcc_cdhash <"$tcc_state_file"
     if [[ ! "$observed_tcc_epoch" =~ '^[0-9]+$' ]] ||
-       (( $(date +%s) - observed_tcc_epoch > 1800 )) ||
        [[ ! "$observed_tcc_cdhash" =~ '^[0-9a-f]{40}$' ]]; then
+        printf 'BLOCKED: the real TCC predecessor evidence is invalid or older than 30 minutes\n' >&2
+        exit 2
+    fi
+    tcc_state_age=$(( $(date +%s) - observed_tcc_epoch ))
+    if (( tcc_state_age < -5 )) || (( tcc_state_age > 1800 )); then
         printf 'BLOCKED: the real TCC predecessor evidence is invalid or older than 30 minutes\n' >&2
         exit 2
     fi
@@ -126,7 +130,22 @@ launch_and_wait() {
         printf 'BLOCKED: MyMathpix is already running (pid=%s); quit it before starting an isolated acceptance run\n' "$existing_pid" >&2
         exit 2
     fi
+    mkdir -p "$acceptance_dir"
     run_id="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+    app_pid=""
+    launch_committed="no"
+    cleanup_incomplete_launch() {
+        if [[ "$launch_committed" == "yes" ]]; then return; fi
+        if [[ -n "$app_pid" ]] && kill -0 "$app_pid" >/dev/null 2>&1; then
+            running_command="$(ps -p "$app_pid" -o command= 2>/dev/null || true)"
+            if [[ "$running_command" == "$app_binary"* ]] &&
+               [[ "$running_command" == *"--ticket01-run-id=$run_id"* ]]; then
+                kill "$app_pid" >/dev/null 2>&1 || true
+            fi
+        fi
+        rm -f "$relaunch_marker" "$session_file"
+    }
+    trap 'cleanup_incomplete_launch' EXIT INT TERM
     case "$relaunch_policy" in
         none)
             rm -f "$relaunch_marker"
@@ -144,14 +163,12 @@ launch_and_wait() {
     esac
     launch_epoch="$(date +%s)"
     open -n "$app_dir" --args "$@" "--ticket01-run-id=$run_id"
-    app_pid=""
     for _ in {1..100}; do
         app_pid="$(find_app_pid || true)"
         [[ -n "$app_pid" ]] && break
         sleep 0.1
     done
     if [[ -z "$app_pid" ]]; then
-        rm -f "$relaunch_marker" "$session_file"
         printf 'RED: LaunchServices did not expose the Ticket 01 acceptance process\n' >&2
         exit 1
     fi
@@ -163,19 +180,17 @@ launch_and_wait() {
         sleep 0.1
     done
     if [[ ! -f "$evidence_file" ]] || (( $(stat -f %m "$evidence_file") < launch_epoch )); then
-        kill "$app_pid" >/dev/null 2>&1 || true
-        rm -f "$relaunch_marker" "$session_file"
         printf 'RED: signed App did not initialize redacted Ticket 01 evidence\n' >&2
         exit 1
     fi
     if ! jq -e --arg run_id "$run_id" --argjson process_id "$app_pid" '
         .acceptance_run_id == $run_id and .process_id == $process_id
     ' "$evidence_file" >/dev/null; then
-        kill "$app_pid" >/dev/null 2>&1 || true
-        rm -f "$relaunch_marker" "$session_file"
         printf 'RED: signed App evidence is not bound to the launched process and run\n' >&2
         exit 1
     fi
+    launch_committed="yes"
+    trap - EXIT INT TERM
 }
 
 verify_safe_evidence_schema() {
