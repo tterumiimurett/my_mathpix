@@ -115,9 +115,28 @@ enum Ticket03SelfCheck {
         let previewBefore = MarkdownRenderer.document(for: "Value: \\(x\\)")
         let previewAfter = MarkdownRenderer.document(for: "Value: \\(y^2\\)")
         check(previewBefore != previewAfter, "source edits produce a new preview", failures: &failures)
+        let inlineCodePreview = MarkdownRenderer.renderBody("Literal `$x$` stays code.")
+        check(
+            inlineCodePreview.contains("<code>$x$</code>")
+                && !inlineCodePreview.contains("data-tex"),
+            "inline code keeps formula delimiters literal",
+            failures: &failures
+        )
+        let fencedCodePreview = MarkdownRenderer.renderBody("""
+        ```text
+        $$x^2$$
+        ```
+        """)
+        check(
+            fencedCodePreview.contains("<pre><code>$$x^2$$</code></pre>")
+                && !fencedCodePreview.contains("data-tex"),
+            "fenced code keeps formula delimiters literal",
+            failures: &failures
+        )
         check(
             previewAfter.contains("Content-Security-Policy")
                 && previewAfter.contains("default-src 'none'")
+                && previewAfter.contains("navigate-to 'none'")
                 && !previewAfter.contains("src=\"https://")
                 && !previewAfter.contains("href=\"https://")
                 && !previewAfter.contains("url(https://")
@@ -129,6 +148,22 @@ enum Ticket03SelfCheck {
         check(
             escapedHTML.contains("&lt;img") && !escapedHTML.contains("<img"),
             "raw HTML is escaped by default",
+            failures: &failures
+        )
+        let complexPreview = MarkdownRenderer.document(
+            for: "Complex structure:",
+            complexTableHTML: unsafeTable
+        ).lowercased()
+        check(
+            complexPreview.contains("<table>")
+                && complexPreview.contains("colspan=\"2\"")
+                && !complexPreview.contains("onclick")
+                && !complexPreview.contains("steal()")
+                && !complexPreview.contains("<iframe")
+                && !complexPreview.contains("src=\"http")
+                && !complexPreview.contains("href=\"http")
+                && !complexPreview.contains("url(http"),
+            "Complex Table Output is sanitized before offline preview",
             failures: &failures
         )
         check(
@@ -192,8 +227,9 @@ enum Ticket03SelfCheck {
             check(types.contains(.tabularText), "rich table provides public TSV", failures: &failures)
             check(types.contains(.string), "rich table provides public plain text", failures: &failures)
             check(
-                pasteboard.data(forType: .html).flatMap { String(data: $0, encoding: .utf8) } == safeComplexHTML,
-                "rich table HTML is the sanitized representation",
+                pasteboard.data(forType: .html).flatMap { String(data: $0, encoding: .utf8) }
+                    == MarkdownNormalizer.tableHTML(from: mixedMarkdown),
+                "rich table follows the editable Markdown table",
                 failures: &failures
             )
             check(
@@ -204,6 +240,23 @@ enum Ticket03SelfCheck {
             check(!(pasteboard.data(forType: .rtf)?.isEmpty ?? true), "rich table RTF has content", failures: &failures)
         } catch {
             failures.append("rich table Copy Format")
+        }
+
+        do {
+            let complexOnlyPayload = ClipboardPayload(
+                canonicalMarkdown: "Complex table fallback",
+                complexTableHTML: safeComplexHTML,
+                originalPNG: png
+            )
+            try ClipboardService.copy(.richTable, payload: complexOnlyPayload, to: pasteboard)
+            check(
+                pasteboard.data(forType: .html).flatMap { String(data: $0, encoding: .utf8) }
+                    == safeComplexHTML,
+                "rich table retains sanitized Complex Table Output as its fallback",
+                failures: &failures
+            )
+        } catch {
+            failures.append("Complex Table Output rich-copy fallback")
         }
 
         do {
@@ -265,8 +318,8 @@ enum Ticket03SelfCheck {
                 failures: &failures
             )
             check(
-                model.selectedItem?.html == nil,
-                "owner edit invalidates stale service table HTML",
+                model.selectedItem?.html == safeComplexHTML,
+                "owner edit retains sanitized Complex Table Output alongside Markdown",
                 failures: &failures
             )
             check(

@@ -154,9 +154,6 @@ final class AppModel: ObservableObject {
         guard var item = selectedItem else { return }
         guard item.markdown != markdown else { return }
         item.markdown = markdown
-        // Complex Table Output belongs to the service result. Once the owner
-        // edits Canonical Markdown, rich copy must follow the edited source.
-        item.html = nil
         do { try history.update(item) }
         catch { errorMessage = "The edited result could not be saved: \(error.localizedDescription)" }
     }
@@ -263,48 +260,20 @@ final class AppModel: ObservableObject {
 
     func ticket03MarkResultEditorVisible(
         originalSnippetVisible: Bool,
-        canonicalMarkdown: String
+        canonicalMarkdown: String,
+        copyFormatsVisible: Bool,
+        nativePasteBoundaryVisible: Bool
     ) {
         ticket03Reporter?.markResultEditorVisible(
             originalSnippetVisible: originalSnippetVisible,
-            canonicalMarkdown: canonicalMarkdown
+            canonicalMarkdown: canonicalMarkdown,
+            copyFormatsVisible: copyFormatsVisible,
+            nativePasteBoundaryVisible: nativePasteBoundaryVisible
         )
     }
 
-    func ticket03MarkPreviewVisible(
-        canonicalMarkdown: String,
-        renderedFormulaVisible: Bool,
-        renderedTableVisible: Bool
-    ) {
-        guard let ticket03Reporter else { return }
-        switch ticket03Reporter.markPreviewRendered(
-            canonicalMarkdown: canonicalMarkdown,
-            renderedFormulaVisible: renderedFormulaVisible,
-            renderedTableVisible: renderedTableVisible
-        ) {
-        case .none:
-            break
-        case .applyEditedSource:
-            updateMarkdown(Ticket03AcceptanceFixture.editedMarkdown)
-        case .copyMixedFormatsAndShowPureFormula:
-            for format in [
-                CopyFormat.markdown,
-                .combinedOutput,
-                .tsvTable,
-                .richTable,
-                .originalImage
-            ] {
-                copySelected(as: format)
-            }
-            ticket03Reporter.expectPureFormulaPreview()
-            updateMarkdown(Ticket03PasteboardInspector.pureFormulaSource)
-        case .copyFormulaAndRestoreEditedSource:
-            copySelected(as: .formulaOutput)
-            ticket03Reporter.expectFinalEditedPreview()
-            updateMarkdown(Ticket03AcceptanceFixture.editedMarkdown)
-        case .finish:
-            ticket03Reporter.finish()
-        }
+    func ticket03MarkPreviewVisible(_ observation: PreviewRenderObservation) {
+        ticket03Reporter?.markPreviewRendered(observation)
     }
 
     func showMainWindow() {

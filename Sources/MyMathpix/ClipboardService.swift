@@ -177,15 +177,15 @@ enum ClipboardService {
     }
 
     private static func tableRepresentations(for payload: ClipboardPayload) -> TableRepresentations? {
+        if let html = MarkdownNormalizer.tableHTML(from: payload.canonicalMarkdown),
+           let tsv = MarkdownNormalizer.markdownTableTSV(from: payload.canonicalMarkdown) {
+            return TableRepresentations(html: html, tsv: tsv)
+        }
         if let complexTableHTML = payload.complexTableHTML,
            let safe = ComplexTableOutputSanitizer.sanitize(complexTableHTML) {
             return TableRepresentations(html: safe.html, tsv: safe.tabSeparatedText)
         }
-        guard let html = MarkdownNormalizer.tableHTML(from: payload.canonicalMarkdown),
-              let tsv = MarkdownNormalizer.markdownTableTSV(from: payload.canonicalMarkdown) else {
-            return nil
-        }
-        return TableRepresentations(html: html, tsv: tsv)
+        return nil
     }
 
     private static func tabSeparatedText(for payload: ClipboardPayload) -> String? {

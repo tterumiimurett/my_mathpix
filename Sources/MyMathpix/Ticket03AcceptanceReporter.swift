@@ -1,20 +1,28 @@
 import Foundation
 
+struct PreviewRenderObservation {
+    let canonicalMarkdown: String
+    let renderedFormulaVisible: Bool
+    let renderedTableVisible: Bool
+}
+
 @MainActor
 final class Ticket03AcceptanceReporter {
-    enum PreviewAction {
-        case none
-        case applyEditedSource
-        case copyMixedFormatsAndShowPureFormula
-        case copyFormulaAndRestoreEditedSource
-        case finish
+    enum Phase: String, Codable {
+        case launched
+        case editorVisible = "editor-visible"
+        case initialPreview = "initial-preview"
+        case editedPreview = "edited-preview"
+        case pureFormulaPreview = "pure-formula-preview"
+        case finalEditedPreview = "final-edited-preview"
+        case complete
     }
 
     struct Evidence: Codable, Equatable {
         var schema = 1
         var acceptanceRunID = ""
         var processID = 0
-        var phase = "launched"
+        var phase = Phase.launched
         var resultEditorVisible = false
         var originalSnippetVisible = false
         var canonicalMarkdownVisible = false
@@ -55,63 +63,55 @@ final class Ticket03AcceptanceReporter {
 
     func markResultEditorVisible(
         originalSnippetVisible: Bool,
-        canonicalMarkdown: String
+        canonicalMarkdown: String,
+        copyFormatsVisible: Bool,
+        nativePasteBoundaryVisible: Bool
     ) {
         evidence.resultEditorVisible = true
         evidence.originalSnippetVisible = originalSnippetVisible
         evidence.canonicalMarkdownVisible = true
-        evidence.copyFormatsVisible = CopyFormat.allCases.count == 6
-        evidence.nativePasteBoundaryVisible = CopyFormat.explanation.contains("Native Paste")
-            && CopyFormat.explanation.contains("does not create native Notion or Feishu blocks")
+        evidence.copyFormatsVisible = copyFormatsVisible
+        evidence.nativePasteBoundaryVisible = nativePasteBoundaryVisible
         if canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown {
             evidence.editedSourceVisible = true
         }
-        if evidence.phase == "launched" { evidence.phase = "editor-visible" }
+        if evidence.phase == .launched { evidence.phase = .editorVisible }
+        finishIfComplete()
         persist()
     }
 
-    func markPreviewRendered(
-        canonicalMarkdown: String,
-        renderedFormulaVisible: Bool,
-        renderedTableVisible: Bool
-    ) -> PreviewAction {
-        guard renderedFormulaVisible else { return .none }
+    func markPreviewRendered(_ observation: PreviewRenderObservation) {
+        guard observation.renderedFormulaVisible else { return }
         evidence.renderedFormulaVisible = true
-        let document = MarkdownRenderer.document(for: canonicalMarkdown)
+        let document = MarkdownRenderer.document(for: observation.canonicalMarkdown)
         evidence.offlinePolicyPresent = document.contains("Content-Security-Policy")
             && document.contains("default-src 'none'")
             && document.contains("connect-src 'none'")
             && document.contains("frame-src 'none'")
 
-        switch evidence.phase {
-        case "editor-visible" where canonicalMarkdown == Ticket03AcceptanceFixture.initialMarkdown:
-            guard renderedTableVisible else { return .none }
+        if observation.canonicalMarkdown == Ticket03AcceptanceFixture.initialMarkdown,
+           observation.renderedTableVisible {
             evidence.initialPreviewVisible = true
             evidence.renderedTableVisible = true
-            evidence.phase = "initial-preview"
-            persist()
-            return .applyEditedSource
-        case "initial-preview" where canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown:
-            guard renderedTableVisible else { return .none }
+            evidence.phase = .initialPreview
+        } else if observation.canonicalMarkdown == Ticket03PasteboardInspector.pureFormulaSource {
+            evidence.pureFormulaPreviewVisible = true
+            evidence.phase = .pureFormulaPreview
+        } else if observation.canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown,
+                  observation.renderedTableVisible,
+                  evidence.initialPreviewVisible {
+            evidence.editedSourceVisible = true
             evidence.editedPreviewVisible = true
             evidence.renderedTableVisible = true
-            evidence.phase = "copying-mixed"
-            persist()
-            return .copyMixedFormatsAndShowPureFormula
-        case "awaiting-pure-preview" where canonicalMarkdown == Ticket03PasteboardInspector.pureFormulaSource:
-            evidence.pureFormulaPreviewVisible = true
-            evidence.phase = "copying-formula"
-            persist()
-            return .copyFormulaAndRestoreEditedSource
-        case "awaiting-final-preview" where canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown:
-            guard renderedTableVisible else { return .none }
-            evidence.finalEditedPreviewVisible = true
-            evidence.renderedTableVisible = true
-            persist()
-            return .finish
-        default:
-            return .none
+            if evidence.pureFormulaPreviewVisible {
+                evidence.finalEditedPreviewVisible = true
+                evidence.phase = .finalEditedPreview
+            } else {
+                evidence.phase = .editedPreview
+            }
         }
+        finishIfComplete()
+        persist()
     }
 
     func markCopy(_ format: CopyFormat, passed: Bool) {
@@ -123,20 +123,11 @@ final class Ticket03AcceptanceReporter {
         case .richTable: evidence.richTableCopied = passed
         case .originalImage: evidence.originalImageCopied = passed
         }
+        finishIfComplete()
         persist()
     }
 
-    func expectPureFormulaPreview() {
-        evidence.phase = "awaiting-pure-preview"
-        persist()
-    }
-
-    func expectFinalEditedPreview() {
-        evidence.phase = "awaiting-final-preview"
-        persist()
-    }
-
-    func finish() {
+    private func finishIfComplete() {
         let complete = evidence.resultEditorVisible
             && evidence.originalSnippetVisible
             && evidence.canonicalMarkdownVisible
@@ -156,8 +147,7 @@ final class Ticket03AcceptanceReporter {
             && evidence.tsvTableCopied
             && evidence.richTableCopied
             && evidence.originalImageCopied
-        evidence.phase = complete ? "complete" : "failed"
-        persist()
+        if complete { evidence.phase = .complete }
     }
 
     private func persist() {

@@ -2,9 +2,10 @@
 set -euo pipefail
 
 repo_dir="${0:A:h:h}"
-app_dir="$repo_dir/dist/MyMathpix.app"
+acceptance_bundle_id="com.byterumi.mymathpix.ticket03acceptance"
+app_dir="$repo_dir/dist/MyMathpixTicket03Acceptance.app"
 app_binary="$app_dir/Contents/MacOS/MyMathpix"
-acceptance_dir="${HOME}/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket03Acceptance"
+acceptance_dir="${HOME}/Library/Containers/$acceptance_bundle_id/Data/Library/Application Support/MyMathpix/Ticket03Acceptance"
 evidence_file="$acceptance_dir/evidence.json"
 session_file="$acceptance_dir/run-state.txt"
 mode="${1:-launch}"

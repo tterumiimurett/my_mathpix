@@ -8,8 +8,17 @@ enum OfflinePreviewNavigationPolicy {
 }
 
 enum MarkdownRenderer {
-    static func document(for markdown: String) -> String {
+    static func document(
+        for markdown: String,
+        complexTableHTML: String? = nil
+    ) -> String {
         let body = renderBody(MarkdownNormalizer.normalize(markdown))
+        let safeComplexTable = complexTableHTML
+            .flatMap(ComplexTableOutputSanitizer.sanitize)?
+            .html
+        let complexTableSection = safeComplexTable.map {
+            "<section aria-label=\"Complex Table Output\">\($0)</section>"
+        } ?? ""
         let resources = AppResources.directoryURL
         let css = resources.flatMap { try? String(contentsOf: $0.appendingPathComponent("katex.min.css"), encoding: .utf8) } ?? ""
         let js = resources.flatMap { try? String(contentsOf: $0.appendingPathComponent("katex.min.js"), encoding: .utf8) } ?? ""
@@ -17,7 +26,7 @@ enum MarkdownRenderer {
         return """
         <!doctype html>
         <html><head><meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; img-src data:; font-src file: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; navigate-to 'none'; img-src data:; font-src file: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
         <style>
         \(css)
         :root { color-scheme: light dark; }
@@ -29,7 +38,7 @@ enum MarkdownRenderer {
         pre { padding: 12px; border-radius: 8px; background: color-mix(in srgb, currentColor 8%, transparent); overflow-x: auto; }
         blockquote { border-left: 3px solid color-mix(in srgb, currentColor 30%, transparent); margin-left: 0; padding-left: 12px; opacity: .85; }
         .math-display { overflow-x: auto; padding: 8px 0; }
-        </style></head><body>\(body)<script>
+        </style></head><body>\(body)\(complexTableSection)<script>
         \(js)
         document.querySelectorAll('[data-tex]').forEach(function(el) {
           try {
@@ -47,7 +56,7 @@ enum MarkdownRenderer {
         var output: [String] = []
         var paragraph: [String] = []
         var index = 0
-        var inCode = false
+        var codeFence: (character: Character, length: Int)?
         var codeLines: [String] = []
 
         func flushParagraph() {
@@ -58,18 +67,20 @@ enum MarkdownRenderer {
 
         while index < lines.count {
             let line = lines[index]
-            if line.hasPrefix("```") {
-                flushParagraph()
-                if inCode {
+            if let activeFence = codeFence {
+                if closesFence(line, matching: activeFence) {
                     output.append("<pre><code>\(MarkdownNormalizer.escapeHTML(codeLines.joined(separator: "\n")))</code></pre>")
                     codeLines.removeAll()
+                    codeFence = nil
+                } else {
+                    codeLines.append(line)
                 }
-                inCode.toggle()
                 index += 1
                 continue
             }
-            if inCode {
-                codeLines.append(line)
+            if let openingFence = fenceMarker(in: line) {
+                flushParagraph()
+                codeFence = openingFence
                 index += 1
                 continue
             }
@@ -110,7 +121,7 @@ enum MarkdownRenderer {
             index += 1
         }
         flushParagraph()
-        if inCode, !codeLines.isEmpty {
+        if codeFence != nil, !codeLines.isEmpty {
             output.append("<pre><code>\(MarkdownNormalizer.escapeHTML(codeLines.joined(separator: "\n")))</code></pre>")
         }
         return output.joined(separator: "\n")
@@ -121,9 +132,16 @@ enum MarkdownRenderer {
         let display: Bool
     }
 
+    private struct ProtectedCode {
+        let text: String
+        let replacements: [String: String]
+    }
+
     private static func extractMath(_ source: String) -> (text: String, math: [String: MathToken]) {
-        var text = source
+        let protectedCode = protectCode(in: source)
+        var text = protectedCode.text
         var tokens: [String: MathToken] = [:]
+        var tokenIndex = 0
         let patterns: [(String, Bool)] = [
             (#"\$\$([\s\S]*?)\$\$"#, true),
             (#"\\\[([\s\S]*?)\\\]"#, true),
@@ -136,12 +154,138 @@ enum MarkdownRenderer {
             for match in matches {
                 guard let range = Range(match.range(at: 0), in: text),
                       let contentRange = Range(match.range(at: 1), in: text) else { continue }
-                let key = "@@MATH\(tokens.count)@@"
+                let key = uniquePlaceholder(
+                    kind: "MATH",
+                    index: &tokenIndex,
+                    avoiding: source
+                )
                 tokens[key] = MathToken(tex: String(text[contentRange]), display: display)
                 text.replaceSubrange(range, with: key)
             }
         }
+        for (key, code) in protectedCode.replacements {
+            text = text.replacingOccurrences(of: key, with: code)
+        }
         return (text, tokens)
+    }
+
+    private static func protectCode(in source: String) -> ProtectedCode {
+        let lines = source.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
+        var output: [String] = []
+        var replacements: [String: String] = [:]
+        var tokenIndex = 0
+        var index = 0
+
+        while index < lines.count {
+            if let openingFence = fenceMarker(in: lines[index]) {
+                var block = [lines[index]]
+                index += 1
+                while index < lines.count {
+                    block.append(lines[index])
+                    let isClosing = closesFence(lines[index], matching: openingFence)
+                    index += 1
+                    if isClosing { break }
+                }
+                let key = uniquePlaceholder(
+                    kind: "CODE",
+                    index: &tokenIndex,
+                    avoiding: source
+                )
+                replacements[key] = block.joined(separator: "\n")
+                output.append(key)
+            } else {
+                output.append(protectInlineCode(
+                    in: lines[index],
+                    originalSource: source,
+                    replacements: &replacements,
+                    tokenIndex: &tokenIndex
+                ))
+                index += 1
+            }
+        }
+        return ProtectedCode(text: output.joined(separator: "\n"), replacements: replacements)
+    }
+
+    private static func protectInlineCode(
+        in line: String,
+        originalSource: String,
+        replacements: inout [String: String],
+        tokenIndex: inout Int
+    ) -> String {
+        let characters = Array(line)
+        var output = ""
+        var index = 0
+
+        while index < characters.count {
+            guard characters[index] == "`" else {
+                output.append(characters[index])
+                index += 1
+                continue
+            }
+
+            let openingStart = index
+            while index < characters.count, characters[index] == "`" { index += 1 }
+            let delimiterLength = index - openingStart
+            var closingStart = index
+            var closingEnd: Int?
+            while closingStart < characters.count {
+                guard characters[closingStart] == "`" else {
+                    closingStart += 1
+                    continue
+                }
+                var runEnd = closingStart
+                while runEnd < characters.count, characters[runEnd] == "`" { runEnd += 1 }
+                if runEnd - closingStart == delimiterLength {
+                    closingEnd = runEnd
+                    break
+                }
+                closingStart = runEnd
+            }
+
+            guard let closingEnd else {
+                output += String(characters[openingStart...])
+                break
+            }
+            let key = uniquePlaceholder(
+                kind: "CODE",
+                index: &tokenIndex,
+                avoiding: originalSource
+            )
+            replacements[key] = String(characters[openingStart..<closingEnd])
+            output += key
+            index = closingEnd
+        }
+        return output
+    }
+
+    private static func uniquePlaceholder(
+        kind: String,
+        index: inout Int,
+        avoiding source: String
+    ) -> String {
+        while true {
+            let candidate = "\u{E000}MYMATHPIX_\(kind)_\(index)\u{E001}"
+            index += 1
+            if !source.contains(candidate) { return candidate }
+        }
+    }
+
+    private static func fenceMarker(in line: String) -> (character: Character, length: Int)? {
+        let trimmed = line.trimmingCharacters(in: .whitespaces)
+        guard let first = trimmed.first, first == "`" || first == "~" else { return nil }
+        let length = trimmed.prefix { $0 == first }.count
+        return length >= 3 ? (first, length) : nil
+    }
+
+    private static func closesFence(
+        _ line: String,
+        matching fence: (character: Character, length: Int)
+    ) -> Bool {
+        let trimmed = line.trimmingCharacters(in: .whitespaces)
+        guard trimmed.first == fence.character else { return false }
+        let length = trimmed.prefix { $0 == fence.character }.count
+        return length >= fence.length
+            && trimmed.dropFirst(length).trimmingCharacters(in: .whitespaces).isEmpty
     }
 
     private static func inline(_ source: String, math: [String: MathToken]) -> String {

@@ -173,18 +173,21 @@ private struct ResultDetailView: View {
                 .frame(minWidth: 400)
 
                 GroupBox("Offline Preview") {
-                    MarkdownPreview(markdown: item.markdown) {
+                    MarkdownPreview(
+                        markdown: item.markdown,
+                        complexTableHTML: item.html
+                    ) {
                         renderedFormulaVisible,
                         renderedTableVisible in
                         model.ticket01MarkPreviewVisible(
                             renderedFormulaVisible: renderedFormulaVisible,
                             renderedTableVisible: renderedTableVisible
                         )
-                        model.ticket03MarkPreviewVisible(
+                        model.ticket03MarkPreviewVisible(PreviewRenderObservation(
                             canonicalMarkdown: item.markdown,
                             renderedFormulaVisible: renderedFormulaVisible,
                             renderedTableVisible: renderedTableVisible
-                        )
+                        ))
                     }
                 }
                 .accessibilityIdentifier("offline-preview")
@@ -246,20 +249,26 @@ private struct ResultDetailView: View {
         )
         model.ticket03MarkResultEditorVisible(
             originalSnippetVisible: model.history.image(for: item) != nil,
-            canonicalMarkdown: item.markdown
+            canonicalMarkdown: item.markdown,
+            copyFormatsVisible: item.status == .complete,
+            nativePasteBoundaryVisible: CopyFormat.explanation.contains("Native Paste")
+                && CopyFormat.explanation.contains("does not create native Notion or Feishu blocks")
         )
     }
 }
 
 struct MarkdownPreview: NSViewRepresentable {
     let markdown: String
+    let complexTableHTML: String?
     let onRendered: (Bool, Bool) -> Void
 
     init(
         markdown: String,
+        complexTableHTML: String? = nil,
         onRendered: @escaping (Bool, Bool) -> Void = { _, _ in }
     ) {
         self.markdown = markdown
+        self.complexTableHTML = complexTableHTML
         self.onRendered = onRendered
     }
 
@@ -281,15 +290,27 @@ struct MarkdownPreview: NSViewRepresentable {
 
     func updateNSView(_ webView: WKWebView, context: Context) {
         context.coordinator.onRendered = onRendered
+        context.coordinator.prepareForDocumentLoad()
         let baseURL = AppResources.directoryURL
-        webView.loadHTMLString(MarkdownRenderer.document(for: markdown), baseURL: baseURL)
+        webView.loadHTMLString(
+            MarkdownRenderer.document(
+                for: markdown,
+                complexTableHTML: complexTableHTML
+            ),
+            baseURL: baseURL
+        )
     }
 
     final class Coordinator: NSObject, WKNavigationDelegate {
         var onRendered: (Bool, Bool) -> Void
+        private var isAwaitingDocumentLoad = false
 
         init(onRendered: @escaping (Bool, Bool) -> Void) {
             self.onRendered = onRendered
+        }
+
+        func prepareForDocumentLoad() {
+            isAwaitingDocumentLoad = true
         }
 
         func webView(
@@ -297,13 +318,15 @@ struct MarkdownPreview: NSViewRepresentable {
             decidePolicyFor navigationAction: WKNavigationAction,
             decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
         ) {
-            guard navigationAction.navigationType == .other,
-                  navigationAction.targetFrame?.isMainFrame != false,
+            guard isAwaitingDocumentLoad,
+                  navigationAction.navigationType == .other,
+                  navigationAction.targetFrame?.isMainFrame == true,
                   let url = navigationAction.request.url,
                   OfflinePreviewNavigationPolicy.allows(url) else {
                 decisionHandler(.cancel)
                 return
             }
+            isAwaitingDocumentLoad = false
             decisionHandler(.allow)
         }
 
