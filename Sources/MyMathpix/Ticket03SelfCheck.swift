@@ -166,6 +166,15 @@ enum Ticket03SelfCheck {
             "Complex Table Output is sanitized before offline preview",
             failures: &failures
         )
+        let editableTablePreview = MarkdownRenderer.document(
+            for: table,
+            complexTableHTML: unsafeTable
+        ).lowercased()
+        check(
+            editableTablePreview.components(separatedBy: "<table>").count - 1 == 1,
+            "editable GFM table does not duplicate its Complex Table fallback",
+            failures: &failures
+        )
         check(
             OfflinePreviewNavigationPolicy.allows(URL(string: "https://example.invalid")!) == false
                 && OfflinePreviewNavigationPolicy.allows(URL(string: "file:///tmp/local-font.woff2")!)
@@ -179,8 +188,8 @@ enum Ticket03SelfCheck {
                 "Formula Output (LaTeX)",
                 "Markdown",
                 "Combined Output",
-                "TSV Table",
-                "Rich Table",
+                "TSV Table (Plain Text)",
+                "Rich Table (HTML + RTF)",
                 "Original Image"
             ],
             "all six explicit Copy Formats are available",
@@ -213,11 +222,33 @@ enum Ticket03SelfCheck {
             complexTableHTML: safeComplexHTML,
             originalPNG: png
         )
+        check(
+            ClipboardService.unavailability(of: .formulaOutput, payload: payload) == .formulaOutputRequiresPureFormula
+                && ClipboardService.unavailability(of: .richTable, payload: payload) == nil
+                && ClipboardService.unavailability(of: .originalImage, payload: payload) == nil,
+            "copy rows distinguish mixed content from available table and image formats",
+            failures: &failures
+        )
+        let formulaOnly = ClipboardPayload(canonicalMarkdown: "$$x^2$$", complexTableHTML: nil, originalPNG: nil)
+        check(
+            ClipboardService.unavailability(of: .formulaOutput, payload: formulaOnly) == nil
+                && ClipboardService.unavailability(of: .tsvTable, payload: formulaOnly) == .tableUnavailable
+                && ClipboardService.unavailability(of: .richTable, payload: formulaOnly) == .tableUnavailable
+                && ClipboardService.unavailability(of: .originalImage, payload: formulaOnly) == .imageUnavailable,
+            "copy rows explain unavailable table and original image without writing to pasteboard",
+            failures: &failures
+        )
         let pasteboard = NSPasteboard(name: NSPasteboard.Name("Ticket03SelfCheck.\(UUID().uuidString)"))
 
         assertCopy(.markdown, payload: payload, pasteboard: pasteboard, plainText: mixedMarkdown, failures: &failures)
         assertCopy(.combinedOutput, payload: payload, pasteboard: pasteboard, plainText: mixedMarkdown, failures: &failures)
         assertCopy(.tsvTable, payload: payload, pasteboard: pasteboard, plainText: "Label\tValue\nA\t2", failures: &failures)
+        let tsvTypes = Set(pasteboard.types ?? [])
+        check(
+            !tsvTypes.contains(.html) && !tsvTypes.contains(.rtf),
+            "TSV Table does not claim rich clipboard representations",
+            failures: &failures
+        )
 
         do {
             try ClipboardService.copy(.richTable, payload: payload, to: pasteboard)
@@ -263,6 +294,22 @@ enum Ticket03SelfCheck {
             let purePayload = ClipboardPayload(canonicalMarkdown: "$$x^2$$", complexTableHTML: nil, originalPNG: png)
             try ClipboardService.copy(.formulaOutput, payload: purePayload, to: pasteboard)
             check(pasteboard.string(forType: .string) == "x^2", "Formula Output is raw LaTeX", failures: &failures)
+            let formulaAndHTMLTable = ClipboardPayload(
+                canonicalMarkdown: "$$x^2$$", complexTableHTML: safeComplexHTML, originalPNG: png
+            )
+            check(
+                ClipboardService.unavailability(of: .formulaOutput, payload: formulaAndHTMLTable)
+                    == .formulaOutputRequiresPureFormula
+                    && ClipboardService.automaticCopyFormat(for: formulaAndHTMLTable) == nil,
+                "formula plus retained HTML table is not Pure Formula",
+                failures: &failures
+            )
+            do {
+                try ClipboardService.copy(.formulaOutput, payload: formulaAndHTMLTable, to: pasteboard)
+                failures.append("formula copy must not omit a retained HTML table")
+            } catch CopyFormatError.formulaOutputRequiresPureFormula {
+                check(pasteboard.string(forType: .string) == "x^2", "rejected formula plus table preserves clipboard", failures: &failures)
+            }
             check(
                 ClipboardService.automaticCopyFormat(for: purePayload.canonicalMarkdown) == .formulaOutput,
                 "Pure Formula chooses automatic Formula Output copy",
@@ -323,7 +370,9 @@ enum Ticket03SelfCheck {
                 failures: &failures
             )
             check(
-                MarkdownRenderer.document(for: model.selectedItem?.markdown ?? "").contains("Verified identity"),
+                MarkdownRenderer.document(for: model.selectedItem?.markdown ?? "").contains(
+                    Data("e^{i\\pi} = -1".utf8).base64EncodedString()
+                ),
                 "owner edit flows into offline preview input",
                 failures: &failures
             )
@@ -333,10 +382,16 @@ enum Ticket03SelfCheck {
                 "owner edit flows into public rich-table pasteboard values",
                 failures: &failures
             )
-            model.copySelected(as: .combinedOutput)
+            check(model.copySelected(as: .combinedOutput), "copy action reports success for row feedback", failures: &failures)
             check(
                 Ticket03PasteboardInspector.inspect(.combinedOutput, pasteboard: journeyPasteboard),
                 "owner edit flows into Combined Output",
+                failures: &failures
+            )
+            check(
+                !model.copySelected(as: .formulaOutput)
+                    && Ticket03PasteboardInspector.inspect(.combinedOutput, pasteboard: journeyPasteboard),
+                "unavailable formula copy reports failure and preserves mixed content on pasteboard",
                 failures: &failures
             )
         } catch {
@@ -364,6 +419,14 @@ enum Ticket03SelfCheck {
         check(
             pasteboardInspection.ticket03PasteboardInspection == .richTable,
             "Ticket 03 pasteboard inspection selects one known Copy Format",
+            failures: &failures
+        )
+        check(
+            !Ticket03AcceptanceFixture.initialMarkdown.contains("Recognition Result")
+                && !Ticket03AcceptanceFixture.editedMarkdown.contains("Edited Result")
+                && !Ticket03AcceptanceFixture.initialMarkdown.contains("Euler identity")
+                && !Ticket03AcceptanceFixture.editedMarkdown.contains("Verified identity"),
+            "acceptance fixture does not inject synthetic result labels",
             failures: &failures
         )
 

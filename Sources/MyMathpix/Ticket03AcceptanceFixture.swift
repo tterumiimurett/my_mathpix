@@ -3,9 +3,7 @@ import Foundation
 
 enum Ticket03AcceptanceFixture {
     static let initialMarkdown = """
-    # Recognition Result
-
-    Euler identity: $e^{i\\pi} + 1 = 0$.
+    $$e^{i\\pi} + 1 = 0$$
 
     | Symbol | Meaning |
     | --- | --- |
@@ -14,9 +12,7 @@ enum Ticket03AcceptanceFixture {
     """
 
     static let editedMarkdown = """
-    # Edited Result
-
-    Verified identity: $e^{i\\pi} + 1 = 0$.
+    $$e^{i\\pi} = -1$$
 
     | Symbol | Meaning |
     | --- | --- |
@@ -32,12 +28,6 @@ enum Ticket03AcceptanceFixture {
         let created = try history.create(uploadPayload: UploadPayload(pngData: png))
         var complete = created
         complete.markdown = initialMarkdown
-        complete.html = ComplexTableOutputSanitizer.sanitize("""
-        <table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody>
-        <tr><td>π</td><td>Circle constant</td></tr>
-        <tr><td>e</td><td>Euler's number</td></tr>
-        </tbody></table>
-        """)?.html
         complete.status = .complete
         complete.mode = .fast
         complete.runtime = 1.25

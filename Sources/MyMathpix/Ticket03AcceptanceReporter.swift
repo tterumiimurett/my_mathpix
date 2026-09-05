@@ -11,6 +11,7 @@ struct ResultEditorObservation {
     let canonicalMarkdown: String
     let copyFormatsVisible: Bool
     let nativePasteBoundaryVisible: Bool
+    var canonicalMarkdownVisible = true
 }
 
 @MainActor
@@ -70,11 +71,12 @@ final class Ticket03AcceptanceReporter {
 
     func markResultEditorVisible(_ observation: ResultEditorObservation) {
         evidence.resultEditorVisible = true
-        evidence.originalSnippetVisible = observation.originalSnippetVisible
-        evidence.canonicalMarkdownVisible = true
+        evidence.originalSnippetVisible = evidence.originalSnippetVisible || observation.originalSnippetVisible
+        evidence.canonicalMarkdownVisible = evidence.canonicalMarkdownVisible || observation.canonicalMarkdownVisible
         evidence.copyFormatsVisible = observation.copyFormatsVisible
         evidence.nativePasteBoundaryVisible = observation.nativePasteBoundaryVisible
-        if observation.canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown {
+        if observation.canonicalMarkdownVisible,
+           observation.canonicalMarkdown == Ticket03AcceptanceFixture.editedMarkdown {
             evidence.editedSourceVisible = true
         }
         if evidence.phase == .launched { evidence.phase = .editorVisible }

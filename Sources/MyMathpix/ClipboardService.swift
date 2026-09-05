@@ -20,9 +20,9 @@ enum CopyFormat: String, CaseIterable, Identifiable {
         case .combinedOutput:
             ("Combined Output", "Copy the complete text, formulas, and tables as one Combined Output.")
         case .tsvTable:
-            ("TSV Table", "Copy the first table as tab-separated plain text.")
+            ("TSV Table (Plain Text)", "Copy the first table as tab-separated plain text.")
         case .richTable:
-            ("Rich Table", "Copy safe HTML, RTF, TSV, and plain-text table representations together.")
+            ("Rich Table (HTML + RTF)", "Copy safe HTML, RTF, TSV, and plain-text table representations together.")
         case .originalImage:
             ("Original Image", "Copy the original Snippet image without recognized text.")
         }
@@ -32,7 +32,7 @@ enum CopyFormat: String, CaseIterable, Identifiable {
 
     var helpText: String { descriptor.helpText }
 
-    static let explanation = "Copy Formats place source representations on the clipboard. Native Paste is a separate capability and does not create native Notion or Feishu blocks."
+    static let explanation = "Copy source formats only — not Native Paste. Copying does not create native Notion or Feishu blocks."
 }
 
 struct ClipboardPayload {
@@ -46,6 +46,15 @@ enum CopyFormatError: LocalizedError, Equatable {
     case tableUnavailable
     case imageUnavailable
     case pasteboardWriteFailed
+
+    var shortDescription: String {
+        switch self {
+        case .formulaOutputRequiresPureFormula: "Pure formula only"
+        case .tableUnavailable: "No table"
+        case .imageUnavailable: "No original image"
+        case .pasteboardWriteFailed: "Copy failed"
+        }
+    }
 
     var errorDescription: String? {
         switch self {
@@ -63,8 +72,36 @@ enum CopyFormatError: LocalizedError, Equatable {
 
 @MainActor
 enum ClipboardService {
+    static func unavailability(of format: CopyFormat, payload: ClipboardPayload) -> CopyFormatError? {
+        switch format {
+        case .formulaOutput:
+            return pureFormula(in: payload) == nil
+                ? .formulaOutputRequiresPureFormula : nil
+        case .markdown, .combinedOutput:
+            return nil
+        case .tsvTable, .richTable:
+            return tableRepresentations(for: payload) == nil ? .tableUnavailable : nil
+        case .originalImage:
+            guard let png = payload.originalPNG, NSImage(data: png)?.tiffRepresentation != nil else {
+                return .imageUnavailable
+            }
+            return nil
+        }
+    }
+
     static func automaticCopyFormat(for canonicalMarkdown: String) -> CopyFormat? {
-        MarkdownNormalizer.pureFormula(in: canonicalMarkdown) == nil ? nil : .formulaOutput
+        automaticCopyFormat(for: ClipboardPayload(
+            canonicalMarkdown: canonicalMarkdown, complexTableHTML: nil, originalPNG: nil
+        ))
+    }
+
+    static func automaticCopyFormat(for payload: ClipboardPayload) -> CopyFormat? {
+        pureFormula(in: payload) == nil ? nil : .formulaOutput
+    }
+
+    private static func pureFormula(in payload: ClipboardPayload) -> String? {
+        guard payload.complexTableHTML.flatMap(ComplexTableOutputSanitizer.sanitize) == nil else { return nil }
+        return MarkdownNormalizer.pureFormula(in: payload.canonicalMarkdown)
     }
 
     static func copy(
@@ -74,7 +111,7 @@ enum ClipboardService {
     ) throws {
         switch format {
         case .formulaOutput:
-            guard let latex = MarkdownNormalizer.pureFormula(in: payload.canonicalMarkdown) else {
+            guard let latex = pureFormula(in: payload) else {
                 throw CopyFormatError.formulaOutputRequiresPureFormula
             }
             try writePlainText(latex, to: pasteboard)

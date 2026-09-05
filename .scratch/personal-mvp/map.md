@@ -36,3 +36,7 @@ flowchart TD
 2. Tickets `02`, `03`, and `04` are then unblocked. They may run in parallel only when their main agents agree on shared contracts and avoid overlapping edits; otherwise use the easier-to-review order `02 → 03 → 04`.
 3. Ticket `05` starts after real recognition and result consumption are complete.
 4. Ticket `06` is the integration gate. It must test the assembled signed App and cannot be replaced by reports from earlier tickets.
+
+## Delivered context
+
+- Ticket `03` resolved on 2026-09-05: owner-confirmed compact Result Editor, offline edit/preview, and six immediate Copy Formats. See [Ticket 03 Answer](issues/03-edit-preview-copy.md#answer) and [signed-App UI verification with screenshots](evidence/ticket03-ui/verification.md). Ticket 04 can host `ResultEditorView(item:)` using the selected record and existing `AppModel`; capture-display placement remains Ticket 04 scope. Full-content LaTeX remains undecided.

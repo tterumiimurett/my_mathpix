@@ -106,11 +106,23 @@ struct MyMathpixApp: App {
 
     var body: some Scene {
         WindowGroup("MyMathpix") {
-            ContentView()
-                .environmentObject(model)
-                .frame(minWidth: 920, minHeight: 620)
+            if AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance {
+                if let item = model.selectedItem {
+                    ResultEditorView(item: item)
+                        .id(item.id)
+                        .environmentObject(model)
+                        .frame(minWidth: 400, minHeight: 520)
+                }
+            } else {
+                ContentView()
+                    .environmentObject(model)
+                    .frame(minWidth: 920, minHeight: 620)
+            }
         }
-        .defaultSize(width: 1180, height: 760)
+        .defaultSize(
+            width: AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance ? 470 : 1180,
+            height: AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance ? 700 : 760
+        )
 
         MenuBarExtra("MyMathpix", systemImage: "function") {
             Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {

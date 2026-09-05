@@ -11,7 +11,8 @@ struct ContentView: View {
                 .navigationSplitViewColumnWidth(min: 210, ideal: 250, max: 320)
         } detail: {
             if let item = model.selectedItem {
-                ResultDetailView(item: item)
+                ResultEditorView(item: item)
+                    .id(item.id)
             } else {
                 emptyState
             }
@@ -135,127 +136,6 @@ private struct HistoryRow: View {
     }
 }
 
-private struct ResultDetailView: View {
-    @EnvironmentObject private var model: AppModel
-    let item: HistoryItem
-
-    var body: some View {
-        VStack(spacing: 0) {
-            actionBar
-            Divider()
-            HSplitView {
-                VSplitView {
-                    GroupBox("Original Snippet") {
-                        if let image = model.history.image(for: item) {
-                            ScrollView([.horizontal, .vertical]) {
-                                Image(nsImage: image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding(8)
-                            }
-                        }
-                    }
-                    .accessibilityIdentifier("original-snippet")
-                    .frame(minHeight: 180)
-
-                    GroupBox("Canonical Markdown") {
-                        TextEditor(text: Binding(
-                            get: { item.markdown },
-                            set: { model.updateMarkdown($0) }
-                        ))
-                        .font(.system(.body, design: .monospaced))
-                        .scrollContentBackground(.hidden)
-                        .padding(4)
-                    }
-                    .accessibilityIdentifier("canonical-markdown")
-                    .frame(minHeight: 220)
-                }
-                .frame(minWidth: 400)
-
-                GroupBox("Offline Preview") {
-                    MarkdownPreview(
-                        markdown: item.markdown,
-                        complexTableHTML: item.html
-                    ) {
-                        renderedFormulaVisible,
-                        renderedTableVisible in
-                        model.ticket01MarkPreviewVisible(
-                            renderedFormulaVisible: renderedFormulaVisible,
-                            renderedTableVisible: renderedTableVisible
-                        )
-                        model.ticket03MarkPreviewVisible(PreviewRenderObservation(
-                            canonicalMarkdown: item.markdown,
-                            renderedFormulaVisible: renderedFormulaVisible,
-                            renderedTableVisible: renderedTableVisible
-                        ))
-                    }
-                }
-                .accessibilityIdentifier("offline-preview")
-                .frame(minWidth: 400)
-            }
-            .padding(10)
-        }
-        .accessibilityIdentifier("result-editor")
-        .onAppear { reportFinalSurface() }
-        .onChange(of: item.status) { _, status in
-            if status == .complete { reportFinalSurface() }
-        }
-        .onChange(of: item.markdown) { _, _ in reportFinalSurface() }
-    }
-
-    private var actionBar: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 10) {
-                if item.status == .failed {
-                    Label(item.errorMessage ?? "Recognition failed", systemImage: "exclamationmark.triangle")
-                        .foregroundStyle(.red)
-                        .lineLimit(1)
-                    Button("Retry") { model.retryFailed() }
-                } else {
-                    Button("High Quality Retry") { model.retryHighQuality() }
-                        .disabled(model.isProcessing)
-                    Menu("Copy Formats") {
-                        ForEach(CopyFormat.allCases) { format in
-                            Button(format.title) { model.copySelected(as: format) }
-                                .help(format.helpText)
-                        }
-                    }
-                    .disabled(item.status != .complete)
-                    .accessibilityIdentifier("copy-formats-menu")
-                }
-                Spacer()
-                if let runtime = item.runtime {
-                    Text(String(format: "%.2fs", runtime)).foregroundStyle(.secondary)
-                }
-                Text(item.mode.title).foregroundStyle(.secondary)
-                Button(role: .destructive) { model.deleteSelected() } label: {
-                    Image(systemName: "trash")
-                }
-                .help("Delete this snippet")
-            }
-            Text(CopyFormat.explanation)
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .accessibilityIdentifier("copy-formats-native-paste-boundary")
-        }
-        .padding(10)
-    }
-
-    private func reportFinalSurface() {
-        model.ticket01MarkResultEditorVisible(
-            originalSnippetVisible: model.history.image(for: item) != nil,
-            canonicalMarkdown: item.markdown,
-            isComplete: item.status == .complete
-        )
-        model.ticket03MarkResultEditorVisible(ResultEditorObservation(
-            originalSnippetVisible: model.history.image(for: item) != nil,
-            canonicalMarkdown: item.markdown,
-            copyFormatsVisible: item.status == .complete,
-            nativePasteBoundaryVisible: CopyFormat.explanation.contains("Native Paste")
-                && CopyFormat.explanation.contains("does not create native Notion or Feishu blocks")
-        ))
-    }
-}
 
 struct MarkdownPreview: NSViewRepresentable {
     let markdown: String
@@ -290,19 +170,17 @@ struct MarkdownPreview: NSViewRepresentable {
 
     func updateNSView(_ webView: WKWebView, context: Context) {
         context.coordinator.onRendered = onRendered
+        let document = MarkdownRenderer.document(for: markdown, complexTableHTML: complexTableHTML)
+        guard context.coordinator.loadedDocument != document else { return }
+        context.coordinator.loadedDocument = document
         context.coordinator.prepareForDocumentLoad()
         let baseURL = AppResources.directoryURL
-        webView.loadHTMLString(
-            MarkdownRenderer.document(
-                for: markdown,
-                complexTableHTML: complexTableHTML
-            ),
-            baseURL: baseURL
-        )
+        webView.loadHTMLString(document, baseURL: baseURL)
     }
 
     final class Coordinator: NSObject, WKNavigationDelegate {
         var onRendered: (Bool, Bool) -> Void
+        var loadedDocument: String?
         private var isAwaitingDocumentLoad = false
 
         init(onRendered: @escaping (Bool, Bool) -> Void) {

@@ -158,8 +158,9 @@ final class AppModel: ObservableObject {
         catch { errorMessage = "The edited result could not be saved: \(error.localizedDescription)" }
     }
 
-    func copySelected(as format: CopyFormat) {
-        guard let item = selectedItem else { return }
+    @discardableResult
+    func copySelected(as format: CopyFormat) -> Bool {
+        guard let item = selectedItem else { return false }
         let payload = ClipboardPayload(
             canonicalMarkdown: item.markdown,
             complexTableHTML: item.html,
@@ -173,8 +174,10 @@ final class AppModel: ObservableObject {
             )
             statusMessage = "\(format.title) copied"
             NSSound(named: "Glass")?.play()
+            return true
         } catch {
             errorMessage = error.localizedDescription
+            return false
         }
     }
 
@@ -347,12 +350,12 @@ final class AppModel: ObservableObject {
             ticket01Reporter.markComplete(recentHistoryCount: history.items.count)
             ticket01SafeSummary = ticket01Reporter.safeSummary
         }
-        if let format = ClipboardService.automaticCopyFormat(for: item.markdown) {
-            let payload = ClipboardPayload(
-                canonicalMarkdown: item.markdown,
-                complexTableHTML: item.html,
-                originalPNG: history.imageData(for: item)
-            )
+        let payload = ClipboardPayload(
+            canonicalMarkdown: item.markdown,
+            complexTableHTML: item.html,
+            originalPNG: history.imageData(for: item)
+        )
+        if let format = ClipboardService.automaticCopyFormat(for: payload) {
             do {
                 try ClipboardService.copy(format, payload: payload, to: pasteboard)
                 statusMessage = "Formula Output copied"

@@ -12,10 +12,13 @@ enum MarkdownRenderer {
         for markdown: String,
         complexTableHTML: String? = nil
     ) -> String {
-        let body = renderBody(MarkdownNormalizer.normalize(markdown))
-        let safeComplexTable = complexTableHTML
-            .flatMap(ComplexTableOutputSanitizer.sanitize)?
-            .html
+        let canonicalMarkdown = MarkdownNormalizer.normalize(markdown)
+        let body = renderBody(canonicalMarkdown)
+        let safeComplexTable: String? = if MarkdownNormalizer.tableHTML(from: canonicalMarkdown) == nil {
+            complexTableHTML.flatMap(ComplexTableOutputSanitizer.sanitize)?.html
+        } else {
+            nil
+        }
         let complexTableSection = safeComplexTable.map {
             "<section aria-label=\"Complex Table Output\">\($0)</section>"
         } ?? ""
