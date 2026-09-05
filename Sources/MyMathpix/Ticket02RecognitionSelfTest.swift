@@ -16,6 +16,10 @@ enum Ticket02RecognitionSelfTest {
     }
 
     private static func run() async -> Bool {
+        guard await clearInvalidatesPendingValidation() else {
+            print("TICKET02_SELF_TEST_FAILURE step=clear-pending-validation")
+            return false
+        }
         guard await validatesTokenWithoutRecognition() else {
             print("TICKET02_SELF_TEST_FAILURE step=health")
             return false
@@ -73,6 +77,33 @@ enum Ticket02RecognitionSelfTest {
             print("TICKET02_SELF_TEST_FAILURE step=token-io")
             return false
         }
+    }
+
+    @MainActor
+    private static func clearInvalidatesPendingValidation() async -> Bool {
+        let root = FileManager.default.temporaryDirectory
+            .appendingPathComponent("Ticket02-ClearRace-\(UUID().uuidString)")
+        defer { try? FileManager.default.removeItem(at: root) }
+        let store = LocalTokenStore(rootURL: root)
+        let service = LiveRecognitionService(
+            tokenStore: store,
+            client: DatalabClient(session: Ticket02MockURLProtocol.makeSession(scenario: .heldHealth))
+        )
+        do { try service.saveToken("ticket02-non-secret-original") } catch { return false }
+        let validation = Task { try await service.testAndSaveToken("ticket02-non-secret-replacement") }
+        guard await waitUntil({ Ticket02MockURLProtocol.hasHeldHealth }) else {
+            validation.cancel()
+            Ticket02MockURLProtocol.releaseHealth()
+            return false
+        }
+        do { try service.clearToken() } catch {
+            Ticket02MockURLProtocol.releaseHealth()
+            _ = await validation.result
+            return false
+        }
+        Ticket02MockURLProtocol.releaseHealth()
+        _ = await validation.result
+        return !service.isConfigured && store.readToken() == nil
     }
 
     @MainActor
@@ -262,7 +293,7 @@ enum Ticket02RecognitionSelfTest {
             scenario: .conversionSuccess,
             expectedPNG: png
         )
-        guard model.highQualityRetryNeedsConfirmation else { return false }
+        guard model.retryNeedsConfirmation else { return false }
         model.retryHighQuality(replacingCurrentContent: false)
         guard !model.isProcessing,
               Ticket02MockURLProtocol.snapshot().submitCount == 0,
@@ -297,6 +328,54 @@ enum Ticket02RecognitionSelfTest {
               !evidenceData.contains(Data("ticket02-non-secret-sentinel".utf8)),
               !evidenceData.contains(Data("ticket02 result".utf8)),
               !evidenceData.contains(Data("X-API-Key".utf8)) else { return false }
+
+        Ticket02MockURLProtocol.configure(scenario: .processingForever, expectedPNG: png)
+        model.retryHighQuality(replacingCurrentContent: true)
+        guard await waitUntil({ Ticket02MockURLProtocol.snapshot().pollCount > 0 }) else { return false }
+        model.cancelRecognition()
+        guard await waitUntil({ !model.isProcessing }),
+              history.item(id: itemID)?.status == .failed else { return false }
+        model.updateMarkdown("owner edit after cancellation")
+        Ticket02MockURLProtocol.configure(scenario: .conversionSuccess, expectedPNG: png)
+        model.retryFailed()
+        guard !model.isProcessing,
+              Ticket02MockURLProtocol.snapshot().submitCount == 0,
+              history.item(id: itemID)?.markdown == "owner edit after cancellation" else {
+            print("TICKET02_SELF_TEST_FAILURE step=cancelled-retry-confirmation")
+            return false
+        }
+
+        guard model.retryNeedsConfirmation else { return false }
+        model.retryFailed(replacingCurrentContent: true)
+        guard await waitUntil({ !model.isProcessing }),
+              Ticket02MockURLProtocol.snapshot().balancedMode,
+              Ticket02MockURLProtocol.snapshot().pngMatched,
+              history.item(id: itemID)?.status == .complete,
+              history.item(id: itemID)?.markdown == "ticket02 result" else { return false }
+
+        for clearAll in [false, true] {
+            Ticket02MockURLProtocol.configure(scenario: .conversionSuccess, expectedPNG: png)
+            let previousCount = usageRecords.records.count
+            let previousCost = model.usage.cumulativeCost
+            model.recognizeCapturedSnippet(UploadPayload(pngData: png))
+            guard let deletedID = model.selectedID, model.isProcessing else { return false }
+            if clearAll {
+                do { try model.clearHistory() } catch { return false }
+            } else {
+                model.deleteSelected()
+            }
+            guard await waitUntil({ !model.isProcessing }),
+                  history.item(id: deletedID) == nil,
+                  usageRecords.records.count == previousCount + 1,
+                  usageRecords.latest(for: deletedID)?.serviceRuntimeSeconds == 1.25,
+                  usageRecords.latest(for: deletedID)?.costCents == 0.42,
+                  usageRecords.latest(for: deletedID)?.outcome == .complete,
+                  abs(model.usage.cumulativeCost - previousCost - 0.42) < 0.000001,
+                  UsageRecordStore(rootURL: evidenceRoot).records == usageRecords.records else {
+                print("TICKET02_SELF_TEST_FAILURE step=deleted-history-usage")
+                return false
+            }
+        }
 
         let preferencesText = String(describing: defaults.dictionaryRepresentation())
         return !preferencesText.contains("ticket02-non-secret-sentinel")

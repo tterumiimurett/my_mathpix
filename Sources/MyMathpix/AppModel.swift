@@ -144,7 +144,7 @@ final class AppModel: ObservableObject {
         }
     }
 
-    var highQualityRetryNeedsConfirmation: Bool {
+    var retryNeedsConfirmation: Bool {
         !(selectedItem?.markdown.isEmpty ?? true)
     }
 
@@ -154,8 +154,9 @@ final class AppModel: ObservableObject {
         startRecognition(uploadPayload: UploadPayload(pngData: data), mode: .balanced, existingID: item.id)
     }
 
-    func retryFailed() {
+    func retryFailed(replacingCurrentContent: Bool = false) {
         guard let item = selectedItem, let data = history.imageData(for: item) else { return }
+        guard item.markdown.isEmpty || replacingCurrentContent else { return }
         startRecognition(uploadPayload: UploadPayload(pngData: data), mode: item.mode, existingID: item.id)
     }
 
@@ -336,18 +337,6 @@ final class AppModel: ObservableObject {
 
     private func complete(id: UUID, result: DatalabResult, mode: RecognitionMode) {
         slowTask?.cancel()
-        guard var item = history.item(id: id) else {
-            isProcessing = false
-            statusMessage = "Recognition result was discarded because its history item no longer exists"
-            return
-        }
-        item.markdown = MarkdownNormalizer.normalize(result.markdown)
-        item.html = result.html
-        item.status = .complete
-        item.mode = mode
-        item.errorMessage = nil
-        do { try history.update(item) }
-        catch { errorMessage = "The recognition result could not be saved: \(error.localizedDescription)" }
         usage.successfulCount += 1
         needsCredentialRecovery = false
         usage.cumulativeCost += result.costValue ?? 0
@@ -363,6 +352,17 @@ final class AppModel: ObservableObject {
         )
         isProcessing = false
         recognitionTask = nil
+        guard var item = history.item(id: id) else {
+            statusMessage = "Recognition result was discarded because its history item no longer exists"
+            return
+        }
+        item.markdown = MarkdownNormalizer.normalize(result.markdown)
+        item.html = result.html
+        item.status = .complete
+        item.mode = mode
+        item.errorMessage = nil
+        do { try history.update(item) }
+        catch { errorMessage = "The recognition result could not be saved: \(error.localizedDescription)" }
         statusMessage = "Recognition complete"
         if let ticket01Reporter {
             ticket01Reporter.markComplete(recentHistoryCount: history.items.count)

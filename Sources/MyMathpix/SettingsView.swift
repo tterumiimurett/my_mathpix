@@ -93,6 +93,8 @@ struct SettingsView: View {
             try await model.testAndSaveToken(token)
             token = ""
             status = "Token verified and saved locally in the App Sandbox."
+        } catch is CancellationError {
+            // A newer credential action owns the visible status.
         } catch {
             status = error.localizedDescription
         }

@@ -25,6 +25,8 @@
 
 ## Comments
 
+- 2026-09-05 P2 regression fixes: clearing credentials invalidates pending health validation before it can save; recovery Retry asks before replacing retained content after a cancelled balanced attempt; completed attempts retain independent Usage Records even after single deletion or clear-all. Each trigger was reproduced with a failing deterministic public-boundary test and passed after its fix. Signed-App Ticket 02 focused checks and the full 45-check self-test pass. Live credential and GUI acceptance below remain unperformed; status remains `claimed`.
+
 - 2026-09-04 implementation checkpoint: the signed-App deterministic Datalab boundary covers private-file token lifecycle and health validation; fast/balanced multipart requests; trusted polling; processing, completion, rejection, malformed response, service failure, cancellation, timeout, and one-retry behavior; Failed Record recovery; edit-replacement confirmation state; and separate Usage Records. The full repository self-test also passes.
 - Blocker: no real Datalab credential was made available, so authenticated health and live Convert submit/poll have not been exercised against the hosted service.
 - Blocker: the signed App's real SwiftUI Result Editor flow, including visible progress, Settings recovery, copying the retained Snippet, and the High-Quality Retry confirmation dialog, has not been operated in a GUI session for this ticket. The deterministic signed-App self-test exercises the public model and transport seams but does not claim that human-visible acceptance.

@@ -3,6 +3,7 @@ import Foundation
 final class Ticket02MockURLProtocol: URLProtocol {
     enum Scenario {
         case healthOK
+        case heldHealth
         case invalidCredentials
         case recognitionInvalidCredentials
         case recognitionPermissionDenied
@@ -49,6 +50,17 @@ final class Ticket02MockURLProtocol: URLProtocol {
     private static var scenario: Scenario = .healthOK
     private static var current = Snapshot()
     private static var expectedPNG: Data?
+    private static var heldHealth: Ticket02MockURLProtocol?
+
+    static var hasHeldHealth: Bool { lock.withLock { heldHealth != nil } }
+
+    static func releaseHealth() {
+        let pending = lock.withLock { () -> Ticket02MockURLProtocol? in
+            defer { heldHealth = nil }
+            return heldHealth
+        }
+        pending?.deliverResponse()
+    }
     private var delayedWorkItem: DispatchWorkItem?
 
     static func makeSession(scenario: Scenario, expectedPNG: Data? = nil) -> URLSession {
@@ -83,6 +95,12 @@ final class Ticket02MockURLProtocol: URLProtocol {
     }
 
     override func startLoading() {
+        if Self.lock.withLock({ () -> Bool in
+            guard Self.scenario == .heldHealth,
+                  request.url?.path == "/api/v1/user_health" else { return false }
+            Self.heldHealth = self
+            return true
+        }) { return }
         if Self.delaysResponse(for: request) {
             let workItem = DispatchWorkItem { [weak self] in
                 self?.deliverResponse()
@@ -147,7 +165,7 @@ final class Ticket02MockURLProtocol: URLProtocol {
             return scenario
         }
         switch selectedScenario {
-        case .healthOK:
+        case .healthOK, .heldHealth:
             return (httpResponse(url: url), jsonData(["status": "ok"]))
         case .invalidCredentials:
             return (httpResponse(url: url, statusCode: 401), jsonData(["error": "Invalid API key."]))

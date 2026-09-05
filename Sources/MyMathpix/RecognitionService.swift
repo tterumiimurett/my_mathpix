@@ -17,6 +17,7 @@ protocol RecognitionConfiguration: AnyObject {
 final class LiveRecognitionService: RecognitionService, RecognitionConfiguration {
     private let tokenStore: LocalTokenStore
     private let client: DatalabClient
+    private var credentialRevision = UUID()
 
     init(tokenStore: LocalTokenStore = LocalTokenStore(), client: DatalabClient = DatalabClient()) {
         self.tokenStore = tokenStore
@@ -28,16 +29,22 @@ final class LiveRecognitionService: RecognitionService, RecognitionConfiguration
     }
 
     func saveToken(_ token: String) throws {
+        credentialRevision = UUID()
         try tokenStore.saveToken(token)
     }
 
     func testAndSaveToken(_ token: String) async throws {
+        let revision = UUID()
+        credentialRevision = revision
         let normalized = token.trimmingCharacters(in: .whitespacesAndNewlines)
         try await client.validateToken(normalized)
+        guard credentialRevision == revision else { throw CancellationError() }
+        try Task.checkCancellation()
         try tokenStore.saveToken(normalized)
     }
 
     func clearToken() throws {
+        credentialRevision = UUID()
         try tokenStore.clearToken()
     }
 

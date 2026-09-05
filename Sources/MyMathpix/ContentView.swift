@@ -149,6 +149,7 @@ private struct ResultDetailView: View {
     @EnvironmentObject private var model: AppModel
     let item: HistoryItem
     @State private var confirmsHighQualityReplacement = false
+    @State private var retryingFailedRecord = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -209,11 +210,15 @@ private struct ResultDetailView: View {
             titleVisibility: .visible
         ) {
             Button("Retry and Replace", role: .destructive) {
-                model.retryHighQuality(replacingCurrentContent: true)
+                if retryingFailedRecord {
+                    model.retryFailed(replacingCurrentContent: true)
+                } else {
+                    model.retryHighQuality(replacingCurrentContent: true)
+                }
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("High Quality Retry will replace the current source with a new Datalab result.")
+            Text("Retry will replace the current source with a new Datalab result.")
         }
     }
 
@@ -223,7 +228,14 @@ private struct ResultDetailView: View {
                 Label(item.errorMessage ?? "Recognition failed", systemImage: "exclamationmark.triangle")
                     .foregroundStyle(.red)
                     .lineLimit(1)
-                Button("Retry") { model.retryFailed() }
+                Button("Retry") {
+                    retryingFailedRecord = true
+                    if model.retryNeedsConfirmation {
+                        confirmsHighQualityReplacement = true
+                    } else {
+                        model.retryFailed()
+                    }
+                }
                 Button("Copy Original Image") {
                     if let data = model.history.imageData(for: item) {
                         _ = ClipboardService.copyImage(data)
@@ -231,7 +243,8 @@ private struct ResultDetailView: View {
                 }
             } else {
                 Button("High Quality Retry") {
-                    if model.highQualityRetryNeedsConfirmation {
+                    retryingFailedRecord = false
+                    if model.retryNeedsConfirmation {
                         confirmsHighQualityReplacement = true
                     } else {
                         model.retryHighQuality(replacingCurrentContent: true)
