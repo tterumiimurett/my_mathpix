@@ -164,13 +164,17 @@ struct ResultEditorView: View {
             .padding(.top, 14)
             .padding(.bottom, 6)
             ForEach(CopyFormat.allCases) { format in
-                let unavailable = ClipboardService.unavailability(of: format, payload: payload)
+                let preparation = Result { try ClipboardService.prepare(format, payload: payload) }
+                let prepared = try? preparation.get()
+                let unavailable: CopyFormatError? = if case .failure(let error) = preparation {
+                    error as? CopyFormatError ?? .pasteboardWriteFailed
+                } else { nil }
                 let status = format != .originalImage && item.status != .complete
                     ? (item.status == .failed ? "Recognition failed" : "Recognizing…")
                     : unavailable?.shortDescription
-                CopyFormatRow(format: format, unavailable: status, copied: copiedFormat == format) {
+                CopyFormatRow(format: format, prepared: prepared, unavailable: status, copied: copiedFormat == format) {
                     clearFeedback()
-                    guard model.copySelected(as: format) else {
+                    guard let prepared, model.copyPrepared(prepared) else {
                         copyError = model.errorMessage ?? "Copy failed. Please try again."
                         return
                     }
@@ -185,6 +189,7 @@ struct ResultEditorView: View {
             }
         }
         .padding(.horizontal, 12)
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("copy-formats-list")
     }
 
@@ -235,6 +240,7 @@ struct ResultEditorView: View {
 
 private struct CopyFormatRow: View {
     let format: CopyFormat
+    let prepared: PreparedClipboardCopy?
     let unavailable: String?
     let copied: Bool
     let copy: () -> Void
@@ -243,15 +249,27 @@ private struct CopyFormatRow: View {
     var body: some View {
         Button(action: copy) {
             HStack(spacing: 12) {
-                Text(format.title)
-                    .font(.system(size: 13, weight: .medium))
-                Spacer(minLength: 8)
                 if let unavailable {
-                    Text(unavailable).font(.system(size: 11))
-                } else if copied {
+                    Text(unavailable)
+                        .font(.system(size: 12))
+                        .lineLimit(1)
+                } else if let text = prepared?.previewText {
+                    Text(text.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }.joined(separator: " "))
+                        .font(.system(size: 13))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } else if let image = prepared?.previewImage {
+                    Image(nsImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 110, height: 28, alignment: .leading)
+                }
+                Spacer(minLength: 8)
+                if copied {
                     Label("Copied", systemImage: "checkmark")
                         .font(.system(size: 12))
-                } else {
+                } else if unavailable == nil {
                     Image(systemName: "doc.on.doc")
                         .font(.system(size: 12))
                         .foregroundStyle(.secondary)
@@ -268,7 +286,7 @@ private struct CopyFormatRow: View {
         .buttonStyle(.plain)
         .disabled(unavailable != nil)
         .onHover { isHovered = $0 }
-        .help(format.helpText)
+        .help("\(format.title): \(format.helpText)")
         .accessibilityLabel("Copy \(format.title)")
         .accessibilityValue(unavailable ?? (copied ? "Copied" : "Available"))
         .accessibilityIdentifier("copy-format-\(format.rawValue)")

@@ -41,6 +41,29 @@ struct ClipboardPayload {
     let originalPNG: Data?
 }
 
+struct PreparedClipboardCopy {
+    enum Content {
+        case text(String)
+        case table(tsv: String, html: String?)
+        case image(png: Data, tiff: Data)
+    }
+    let format: CopyFormat
+    let content: Content
+
+    var previewText: String? {
+        switch content {
+        case .text(let text): text
+        case .table(let tsv, _): tsv
+        case .image: nil
+        }
+    }
+
+    var previewImage: NSImage? {
+        guard case .image(let png, _) = content else { return nil }
+        return NSImage(data: png)
+    }
+}
+
 enum CopyFormatError: LocalizedError, Equatable {
     case formulaOutputRequiresPureFormula
     case tableUnavailable
@@ -73,20 +96,8 @@ enum CopyFormatError: LocalizedError, Equatable {
 @MainActor
 enum ClipboardService {
     static func unavailability(of format: CopyFormat, payload: ClipboardPayload) -> CopyFormatError? {
-        switch format {
-        case .formulaOutput:
-            return pureFormula(in: payload) == nil
-                ? .formulaOutputRequiresPureFormula : nil
-        case .markdown, .combinedOutput:
-            return nil
-        case .tsvTable, .richTable:
-            return tableRepresentations(for: payload) == nil ? .tableUnavailable : nil
-        case .originalImage:
-            guard let png = payload.originalPNG, NSImage(data: png)?.tiffRepresentation != nil else {
-                return .imageUnavailable
-            }
-            return nil
-        }
+        do { _ = try prepare(format, payload: payload); return nil }
+        catch { return error as? CopyFormatError ?? .pasteboardWriteFailed }
     }
 
     static func automaticCopyFormat(for canonicalMarkdown: String) -> CopyFormat? {
@@ -104,65 +115,67 @@ enum ClipboardService {
         return MarkdownNormalizer.pureFormula(in: payload.canonicalMarkdown)
     }
 
+    static func prepare(_ format: CopyFormat, payload: ClipboardPayload) throws -> PreparedClipboardCopy {
+        let content: PreparedClipboardCopy.Content
+        switch format {
+        case .formulaOutput:
+            guard let latex = pureFormula(in: payload) else { throw CopyFormatError.formulaOutputRequiresPureFormula }
+            content = .text(latex)
+        case .markdown, .combinedOutput:
+            content = .text(payload.canonicalMarkdown)
+        case .tsvTable, .richTable:
+            guard let table = tableRepresentations(for: payload) else { throw CopyFormatError.tableUnavailable }
+            content = .table(tsv: table.tsv, html: format == .richTable ? table.html : nil)
+        case .originalImage:
+            guard let png = payload.originalPNG, let image = NSImage(data: png),
+                  let tiff = image.tiffRepresentation else { throw CopyFormatError.imageUnavailable }
+            content = .image(png: png, tiff: tiff)
+        }
+        return PreparedClipboardCopy(format: format, content: content)
+    }
+
     static func copy(
         _ format: CopyFormat,
         payload: ClipboardPayload,
         to pasteboard: NSPasteboard = .general
     ) throws {
-        switch format {
-        case .formulaOutput:
-            guard let latex = pureFormula(in: payload) else {
-                throw CopyFormatError.formulaOutputRequiresPureFormula
-            }
-            try writePlainText(latex, to: pasteboard)
-        case .markdown, .combinedOutput:
-            try writePlainText(payload.canonicalMarkdown, to: pasteboard)
-        case .tsvTable:
-            guard let tsv = tabSeparatedText(for: payload) else {
-                throw CopyFormatError.tableUnavailable
-            }
-            pasteboard.clearContents()
-            guard pasteboard.setString(tsv, forType: .tabularText),
-                  pasteboard.setString(tsv, forType: .string) else {
-                throw CopyFormatError.pasteboardWriteFailed
-            }
-        case .richTable:
-            guard let representations = tableRepresentations(for: payload),
-                  let htmlData = representations.html.data(using: .utf8),
-                  let attributed = try? NSAttributedString(
+        try copy(prepare(format, payload: payload), to: pasteboard)
+    }
+
+    static func copy(_ prepared: PreparedClipboardCopy, to pasteboard: NSPasteboard = .general) throws {
+        let item = NSPasteboardItem()
+        var representations: [NSPasteboard.PasteboardType: Data] = [:]
+        switch prepared.content {
+        case .text(let text):
+            representations[.string] = Data(text.utf8)
+        case .table(let tsv, let html):
+            representations[.string] = Data(tsv.utf8)
+            representations[.tabularText] = Data(tsv.utf8)
+            if let html {
+                let htmlData = Data(html.utf8)
+                let attributed = try NSAttributedString(
                     data: htmlData,
-                    options: [
-                        .documentType: NSAttributedString.DocumentType.html,
-                        .characterEncoding: String.Encoding.utf8.rawValue
-                    ],
+                    options: [.documentType: NSAttributedString.DocumentType.html,
+                              .characterEncoding: String.Encoding.utf8.rawValue],
                     documentAttributes: nil
-                  ),
-                  let rtf = try? attributed.data(
+                )
+                let rtf = try attributed.data(
                     from: NSRange(location: 0, length: attributed.length),
                     documentAttributes: [.documentType: NSAttributedString.DocumentType.rtf]
-                  ),
-                  !rtf.isEmpty else {
-                throw CopyFormatError.tableUnavailable
+                )
+                guard !rtf.isEmpty else { throw CopyFormatError.tableUnavailable }
+                representations[.html] = htmlData
+                representations[.rtf] = rtf
             }
-            pasteboard.clearContents()
-            guard pasteboard.setData(htmlData, forType: .html),
-                  pasteboard.setData(rtf, forType: .rtf),
-                  pasteboard.setString(representations.tsv, forType: .tabularText),
-                  pasteboard.setString(representations.tsv, forType: .string) else {
-                throw CopyFormatError.pasteboardWriteFailed
-            }
-        case .originalImage:
-            guard let png = payload.originalPNG,
-                  let image = NSImage(data: png),
-                  let tiff = image.tiffRepresentation else {
-                throw CopyFormatError.imageUnavailable
-            }
-            pasteboard.clearContents()
-            guard pasteboard.setData(png, forType: .png),
-                  pasteboard.setData(tiff, forType: .tiff) else {
-                throw CopyFormatError.pasteboardWriteFailed
-            }
+        case .image(let png, let tiff):
+            representations[.png] = png
+            representations[.tiff] = tiff
         }
+        for (type, data) in representations {
+            guard item.setData(data, forType: type) else { throw CopyFormatError.pasteboardWriteFailed }
+        }
+        pasteboard.clearContents()
+        guard pasteboard.writeObjects([item]) else { throw CopyFormatError.pasteboardWriteFailed }
     }
 
     // Compatibility wrappers keep the existing capture acceptance seam stable.
@@ -218,18 +231,4 @@ enum ClipboardService {
         return nil
     }
 
-    private static func tabSeparatedText(for payload: ClipboardPayload) -> String? {
-        if let tsv = MarkdownNormalizer.markdownTableTSV(from: payload.canonicalMarkdown) {
-            return tsv
-        }
-        guard let complexTableHTML = payload.complexTableHTML else { return nil }
-        return ComplexTableOutputSanitizer.sanitize(complexTableHTML)?.tabSeparatedText
-    }
-
-    private static func writePlainText(_ string: String, to pasteboard: NSPasteboard) throws {
-        pasteboard.clearContents()
-        guard pasteboard.setString(string, forType: .string) else {
-            throw CopyFormatError.pasteboardWriteFailed
-        }
-    }
 }

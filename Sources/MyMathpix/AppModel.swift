@@ -167,7 +167,18 @@ final class AppModel: ObservableObject {
             originalPNG: history.imageData(for: item)
         )
         do {
-            try ClipboardService.copy(format, payload: payload, to: pasteboard)
+            return copyPrepared(try ClipboardService.prepare(format, payload: payload))
+        } catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
+    }
+
+    @discardableResult
+    func copyPrepared(_ prepared: PreparedClipboardCopy) -> Bool {
+        let format = prepared.format
+        do {
+            try ClipboardService.copy(prepared, to: pasteboard)
             ticket03Reporter?.markCopy(
                 format,
                 passed: Ticket03PasteboardInspector.inspect(format, pasteboard: pasteboard)

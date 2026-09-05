@@ -25,6 +25,10 @@
 
 ## Comments
 
+### Reopened — 2026-09-06
+
+Owner-reported TSV cells leak inline HTML formatting tags. Fix plain-text conversion at the table boundary, preserving literal text, formulas, code, and entities; verify rich table representations too. The new owner decision supersedes format-name-only rows: each vertical immediate-copy row displays a single-line, tail-truncated preview of its actual copied content, with no persistent visible format title. Keep full clipboard payloads, shared conversion for preview/copy, accessible format names, accurate unavailability, and success feedback. Original-image rows use the actual image thumbnail; rich-table rows use their actual plain-text representation. Keep Original/Edit and bottom mode/runtime layout. Full-content LaTeX remains outside scope. Work stays on the Ticket 03 branch.
+
 ### Owner-confirmed UI direction — 2026-09-05
 
 The owner confirmed a compact macOS result window after a Grill Me discussion in the coordinating task. This supersedes the initial always-visible editing-workbench layout: emphasize the rendered result at the top; reveal Original and Edit independently on demand; keep one editable Canonical Markdown state. Below the result, list every existing Copy Format vertically with only its format name (no content/code sample), accurate unavailable status, and immediate whole-row copy. Show brief Copied feedback only after successful clipboard writing. Keep formula-only LaTeX semantics; full-content LaTeX export remains undecided and is not implemented.
@@ -36,6 +40,10 @@ The reusable internal surface is `ResultEditorView(item:)` with the existing `Ap
 The implementation and actual signed-App UI verification completed on 2026-09-05; see Answer and the linked evidence.
 
 ## Answer
+
+### Follow-up completed — 2026-09-06
+
+Resolved the independently reproduced TSV formatting-tag leak and implemented the owner's content-only single-line copy rows. Preview and complete clipboard writes share one prepared conversion; original image uses its real thumbnail. Format identity remains accessible through assistive labels and help. Preserved compact layout, independent Original/Edit, bottom mode/runtime, and Pure Formula scope. All six formats were clicked in the actual signed App and independently read from the public pasteboard; long truncated rows copied the full content. Focused and full 45-check suites passed. Standards and Spec each found one issue; both were fixed and re-review returned zero remaining findings. See [follow-up evidence and screenshots](../evidence/ticket03-content-rows/verification.md). Earlier evidence below describes the original completed UI version.
 
 Implemented the owner-confirmed compact preview-first Result Editor, independent Original/Edit disclosures, fixed aspect-fit original image, six whole-row Copy Formats, truthful unavailable states, and transient successful-copy feedback. Preserved deterministic canonical normalization, offline secured rendering, safe table fallback, editable GFM, conservative full-payload Pure Formula classification, and exact public clipboard representations. Removed synthetic acceptance headings/labels and duplicate fallback-table rendering.
 

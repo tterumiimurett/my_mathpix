@@ -44,6 +44,25 @@ enum Ticket03SelfCheck {
         | --- | ---: |
         | A \\| B | $2$ |
         """
+        let formattedTable = """
+        | <b>Name</b> | Value |
+        | --- | --- |
+        | <STRONG title="a > b">A &amp; B</STRONG> | **bold** &alpha; &#x3B2; |
+        | a < b > c | `$x$ <b>literal</b>` |
+        | &lt;b&gt;literal&lt;/b&gt; | $a_b + c_d$<br/>next |
+        """
+        check(
+            MarkdownNormalizer.markdownTableTSV(from: formattedTable)
+                == "Name\tValue\nA & B\tbold α β\na < b > c\t$x$ <b>literal</b>\n<b>literal</b>\t$a_b + c_d$ next",
+            "TSV converts formatting and entities without stripping literal comparisons, code or formulas",
+            failures: &failures
+        )
+        check(
+            MarkdownNormalizer.markdownTableTSV(from: "| Code |\n| --- |\n| <code>**literal** &amp; &#945;</code> |")
+                == "Code\n**literal** & α",
+            "HTML code cells retain literal Markdown characters and decode entities",
+            failures: &failures
+        )
         check(
             MarkdownNormalizer.markdownTableTSV(from: table) == "Label\tValue\nA | B\t$2$",
             "editable GFM table converts escaped pipes to TSV",
@@ -209,6 +228,38 @@ enum Ticket03SelfCheck {
             failures.append("original image fixture")
             return report(failures)
         }
+        do {
+            let formattedPayload = ClipboardPayload(canonicalMarkdown: formattedTable, complexTableHTML: nil, originalPNG: png)
+            let output = try ClipboardService.prepare(.tsvTable, payload: formattedPayload)
+            let board = NSPasteboard(name: .init("Ticket03Prepared.\(UUID().uuidString)"))
+            try ClipboardService.copy(output, to: board)
+            check(
+                output.previewText == board.string(forType: .string)
+                    && board.string(forType: .tabularText) == "Name\tValue\nA & B\tbold α β\na < b > c\t$x$ <b>literal</b>\n<b>literal</b>\t$a_b + c_d$ next",
+                "row preview and full TSV pasteboard share the same prepared content",
+                failures: &failures
+            )
+            let rich = try ClipboardService.prepare(.richTable, payload: formattedPayload)
+            try ClipboardService.copy(rich, to: board)
+            check(
+                rich.previewText == output.previewText
+                    && board.string(forType: .string) == output.previewText
+                    && board.string(forType: .tabularText) == output.previewText
+                    && board.string(forType: .html)?.contains("<td>A &amp; B</td>") == true,
+                "rich table HTML and plain representations preserve the same cell text",
+                failures: &failures
+            )
+            if let rtf = board.data(forType: .rtf) {
+                let richText = try NSAttributedString(data: rtf, options: [.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil).string
+                check(richText.contains("A & B") && richText.contains("bold α β") && !richText.contains("<STRONG"),
+                      "rich RTF renders the same cleaned cell semantics", failures: &failures)
+            } else { failures.append("rich RTF is present") }
+            let longSource = String(repeating: "content beyond the one-line viewport ", count: 30) + "END-OF-COMPLETE-CONTENT"
+            let longPrepared = try ClipboardService.prepare(.markdown, payload: .init(canonicalMarkdown: longSource, complexTableHTML: nil, originalPNG: nil))
+            try ClipboardService.copy(longPrepared, to: board)
+            check(longPrepared.previewText == longSource && board.string(forType: .string) == longSource,
+                  "one-line preview model retains every character of copied content", failures: &failures)
+        } catch { failures.append("prepared copy and row preview contract") }
         let mixedMarkdown = """
         Result: $x + 1$
 

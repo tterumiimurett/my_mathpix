@@ -58,7 +58,10 @@ enum MarkdownNormalizer {
     }
 
     static func markdownTableCells(in line: String) -> [String] {
-        tableCells(line).map(cleanCell)
+        tableCells(line).map {
+            $0.trimmingCharacters(in: .whitespacesAndNewlines)
+                .replacingOccurrences(of: "\\|", with: "|")
+        }
     }
 
     private static func isDelimiterRow(_ line: String) -> Bool {
@@ -97,9 +100,7 @@ enum MarkdownNormalizer {
     }
 
     private static func cleanCell(_ cell: String) -> String {
-        cell.trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: "<br>", with: "\n", options: .caseInsensitive)
-            .replacingOccurrences(of: "\\|", with: "|")
+        TableCellText.plainText(cell)
     }
 
     static func escapeHTML(_ text: String) -> String {
