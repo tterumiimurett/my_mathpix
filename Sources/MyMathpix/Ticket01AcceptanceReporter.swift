@@ -4,7 +4,7 @@ import Foundation
 @MainActor
 final class Ticket01AcceptanceReporter {
     struct Evidence: Codable, Equatable, Sendable {
-        var schema = 5
+        var schema = 6
         var acceptanceRunID = ""
         var processID = 0
         var permissionPreflightGranted: Bool?
@@ -31,6 +31,7 @@ final class Ticket01AcceptanceReporter {
         var selectionPointHeight = 0.0
         var selectedDisplayScale = 0.0
         var selectedDisplayWasSecondary = false
+        var capturedDisplayID: UInt32?
         var pixelGeometryPreserved = false
         var recentHistoryCount = 0
         var resultEditorVisible = false
@@ -46,6 +47,11 @@ final class Ticket01AcceptanceReporter {
         var recoveryProbeStarted = false
         var activeDisplayCount = 0
         var distinctDisplayScaleCount = 0
+        var mainWindowVisibleWhenRecognitionStarted = false
+        var resultWindowPresented = false
+        var resultWindowPresentedAfterCompletion = false
+        var resultWindowDisplayMatchesCapture = false
+        var resultWindowUsesVisibleAreaTopLeftInset = false
     }
 
     private(set) var evidence = Evidence()
@@ -128,11 +134,22 @@ final class Ticket01AcceptanceReporter {
         evidence.selectionPointHeight = snippet.geometry.selectionSizeInPoints.height
         evidence.selectedDisplayScale = snippet.geometry.displayScale
         evidence.selectedDisplayWasSecondary = snippet.geometry.selectedDisplayWasSecondary
+        evidence.capturedDisplayID = snippet.displayID
         persist()
     }
 
-    func markRecognitionStarted() {
+    func markRecognitionStarted(mainWindowVisible: Bool) {
         evidence.phase = "recognizing"
+        evidence.mainWindowVisibleWhenRecognitionStarted = mainWindowVisible
+        persist()
+    }
+
+    func markResultWindowPresented(_ observation: ResultWindowPresentationObservation) {
+        evidence.resultWindowPresented = true
+        evidence.resultWindowPresentedAfterCompletion = evidence.phase == "complete"
+        evidence.resultWindowDisplayMatchesCapture = evidence.capturedDisplayID == observation.requestedDisplayID
+            && evidence.capturedDisplayID == observation.presentedDisplayID
+        evidence.resultWindowUsesVisibleAreaTopLeftInset = observation.usedVisibleAreaTopLeftInset
         persist()
     }
 

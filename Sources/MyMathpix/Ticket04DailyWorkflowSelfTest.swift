@@ -1,3 +1,5 @@
+import AppKit
+import CoreGraphics
 import Foundation
 
 @MainActor
@@ -200,6 +202,56 @@ enum Ticket04DailyWorkflowSelfTest {
                     && retriedItem?.imageFilename == originalRetryImageFilename
                     && afterRetry.imageData(for: failedWorkflowItem) == Data("failed-workflow-image".utf8),
                 "retry updates the existing record and keeps its original Snippet",
+                failures: &failures
+            )
+
+            let completionHistory = HistoryStore(inMemory: true)
+            let deferredRecognition = Ticket04DeferredRecognitionService()
+            let resultWindowPresenter = Ticket04ResultWindowPresenter()
+            let completionModel = AppModel(
+                recognitionService: deferredRecognition,
+                history: completionHistory,
+                defaults: workflowDefaults,
+                hotKeyRegistrar: Ticket04HotKeyRegistrar(),
+                launchAtLoginController: Ticket04LaunchAtLoginController(isEnabled: false),
+                diagnosticLog: DiagnosticLog(
+                    rootURL: root.appendingPathComponent("CompletionDiagnostics", isDirectory: true),
+                    now: { fixedDate }
+                ),
+                resultWindowPresenter: resultWindowPresenter
+            )
+            let capturedDisplayID: CGDirectDisplayID = 4_204
+            completionModel.recognizeCapturedSnippet(CapturedSnippet(
+                uploadPayload: UploadPayload(pngData: Data("captured-window-image".utf8)),
+                geometry: CaptureGeometry(
+                    expectedPixelWidth: 400,
+                    expectedPixelHeight: 240,
+                    selectionSizeInPoints: CGSize(width: 200, height: 120),
+                    displayScale: 2,
+                    selectedDisplayWasSecondary: true
+                ),
+                displayID: capturedDisplayID
+            ))
+            let recognitionStarted = waitUntil { deferredRecognition.isWaiting }
+            expect(
+                recognitionStarted && resultWindowPresenter.presentedDisplayIDs.isEmpty,
+                "capture result window stays hidden while recognition is running",
+                failures: &failures
+            )
+            deferredRecognition.complete()
+            let resultWindowPresented = waitUntil { !completionModel.isProcessing }
+            expect(
+                resultWindowPresented
+                    && resultWindowPresenter.presentedDisplayIDs == [capturedDisplayID],
+                "recognition completion presents the result on the captured display",
+                failures: &failures
+            )
+
+            let visibleFrame = CGRect(x: -1_440, y: 24, width: 1_440, height: 876)
+            let expectedTopLeft = ResultWindowPlacement.topLeft(in: visibleFrame)
+            expect(
+                expectedTopLeft == NSPoint(x: -1_424, y: 884),
+                "result window uses the captured display visible-area top-left inset",
                 failures: &failures
             )
 
@@ -468,5 +520,42 @@ private final class Ticket04SuccessfulRecognitionService: RecognitionService {
             costValue: nil,
             parseQualityScore: nil
         )
+    }
+}
+
+@MainActor
+private final class Ticket04DeferredRecognitionService: RecognitionService {
+    private var continuation: CheckedContinuation<DatalabResult, any Error>?
+    private(set) var isWaiting = false
+
+    func recognize(uploadPayload: UploadPayload, mode: RecognitionMode) async throws -> DatalabResult {
+        isWaiting = true
+        return try await withCheckedThrowingContinuation { continuation = $0 }
+    }
+
+    func complete() {
+        continuation?.resume(returning: DatalabResult(
+            markdown: "captured result",
+            html: nil,
+            runtime: 0.1,
+            costSummary: nil,
+            costValue: nil,
+            parseQualityScore: nil
+        ))
+        continuation = nil
+    }
+}
+
+@MainActor
+private final class Ticket04ResultWindowPresenter: ResultWindowPresenting {
+    private(set) var presentedDisplayIDs: [CGDirectDisplayID] = []
+    var isMainWindowVisible = false
+
+    func installMainWindowOpener(_ opener: @escaping () -> Void) {}
+
+    func showMainWindow() {}
+
+    func presentResult(on displayID: CGDirectDisplayID) {
+        presentedDisplayIDs.append(displayID)
     }
 }

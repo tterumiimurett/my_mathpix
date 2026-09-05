@@ -47,6 +47,11 @@ struct MyMathpixApp: App {
         if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
             let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
+            let resultWindowPresenter = AppKitResultWindowPresenter(
+                presentationObservation: { observation in
+                    reporter.markResultWindowPresented(observation)
+                }
+            )
             let permissionObservation: (ScreenCapturePermissionObservation) -> Void = { observation in
                 reporter.markPermissionObservation(observation)
             }
@@ -72,7 +77,8 @@ struct MyMathpixApp: App {
                 captureCoordinator: captureCoordinator,
                 history: HistoryStore(inMemory: true),
                 defaults: defaults,
-                ticket01Reporter: reporter
+                ticket01Reporter: reporter,
+                resultWindowPresenter: resultWindowPresenter
             ))
         } else {
             _model = StateObject(wrappedValue: AppModel())
