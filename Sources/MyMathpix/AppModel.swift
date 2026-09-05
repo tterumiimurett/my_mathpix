@@ -27,7 +27,7 @@ final class AppModel: ObservableObject {
     private let ticket01Reporter: Ticket01AcceptanceReporter?
     private let hotKeyRegistrar: any HotKeyRegistering
     private let launchAtLoginController: any LaunchAtLoginControlling
-    private let resultWindowPresenter: any ResultWindowPresenting
+    private let resultEditorWindowPresenter: any ResultEditorWindowPresenting
     private var historyObservation: AnyCancellable?
     private var recognitionTask: Task<Void, Never>?
     private var slowTask: Task<Void, Never>?
@@ -43,7 +43,7 @@ final class AppModel: ObservableObject {
         launchAtLoginController: (any LaunchAtLoginControlling)? = nil,
         diagnosticLog: DiagnosticLog? = nil,
         ticket01Reporter: Ticket01AcceptanceReporter? = nil,
-        resultWindowPresenter: (any ResultWindowPresenting)? = nil
+        resultEditorWindowPresenter: (any ResultEditorWindowPresenting)? = nil
     ) {
         let resolvedRecognitionService: any RecognitionService
         let resolvedRecognitionConfiguration: (any RecognitionConfiguration)?
@@ -63,7 +63,7 @@ final class AppModel: ObservableObject {
         self.defaults = defaults
         self.hotKeyRegistrar = hotKeyRegistrar ?? HotKeyManager()
         self.launchAtLoginController = launchAtLoginController ?? SystemLaunchAtLoginController()
-        self.resultWindowPresenter = resultWindowPresenter ?? AppKitResultWindowPresenter()
+        self.resultEditorWindowPresenter = resultEditorWindowPresenter ?? AppKitResultEditorWindowPresenter()
         self.diagnosticLog = diagnosticLog ?? DiagnosticLog()
         self.ticket01Reporter = ticket01Reporter
         hasToken = resolvedRecognitionConfiguration?.isConfigured ?? true
@@ -222,7 +222,11 @@ final class AppModel: ObservableObject {
     }
 
     func installMainWindowOpener(_ opener: @escaping () -> Void) {
-        resultWindowPresenter.installMainWindowOpener(opener)
+        resultEditorWindowPresenter.installMainWindowOpener(opener)
+    }
+
+    func registerMainWindow(_ window: NSWindow) {
+        resultEditorWindowPresenter.registerMainWindow(window)
     }
 
     func exportDiagnostics(to url: URL) throws {
@@ -264,7 +268,7 @@ final class AppModel: ObservableObject {
     }
 
     func showMainWindow() {
-        resultWindowPresenter.showMainWindow()
+        resultEditorWindowPresenter.showMainWindow()
     }
 
     func recognizeCapturedSnippet(_ snippet: CapturedSnippet) {
@@ -303,7 +307,7 @@ final class AppModel: ObservableObject {
             isProcessing = true
             statusMessage = mode == .fast ? "Recognizing…" : "Running high-quality recognition…"
             ticket01Reporter?.markRecognitionStarted(
-                mainWindowVisible: resultWindowPresenter.isMainWindowVisible
+                mainWindowVisible: resultEditorWindowPresenter.isMainWindowVisible
             )
             try? diagnosticLog.record(.recognitionStarted, mode: mode)
             usage.requestCount += 1
@@ -403,7 +407,7 @@ final class AppModel: ObservableObject {
 
     private func presentRecognitionOutcome(on displayID: CGDirectDisplayID?) {
         guard let displayID else { return }
-        resultWindowPresenter.presentResult(on: displayID)
+        resultEditorWindowPresenter.presentResultEditor(on: displayID)
         captureCoordinator.releaseHiddenApplicationWindows()
     }
 

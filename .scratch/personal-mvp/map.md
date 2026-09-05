@@ -33,6 +33,6 @@ flowchart TD
 ## Recommended frontier
 
 1. Ticket `01` is resolved by explicit owner acceptance; its implementation establishes the authoritative capture seam and repairs the reported termination. See [01 — Make Screen Capture survive through a mock result](issues/01-stable-screen-capture.md#answer) for the verified evidence and owner-waived external runs.
-2. Tickets `02` and `03` are unblocked and may proceed in their isolated worktrees. Ticket `04` was reopened and is `claimed` for the owner-confirmed result-window timing and captured-display placement acceptance; see [04 — Make the App dependable for a daily personal workflow](issues/04-daily-workflow.md#answer). Its original persistence, real-App UI, settings, diagnostics, version, and license evidence remains valid.
+2. Tickets `02` and `03` are unblocked and may proceed in their isolated worktrees. Ticket `04` was reopened and is `claimed` for the owner-confirmed Result Editor window timing and captured-display placement acceptance; see [04 — Make the App dependable for a daily personal workflow](issues/04-daily-workflow.md#answer). Its original persistence, real-App UI, settings, diagnostics, version, and license evidence remains valid.
 3. Ticket `05` starts after real recognition and result consumption are complete.
 4. Ticket `06` is the integration gate. It must test the assembled signed App and cannot be replaced by reports from earlier tickets.

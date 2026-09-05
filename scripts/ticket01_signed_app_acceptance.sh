@@ -212,9 +212,9 @@ verify_safe_evidence_schema() {
             "recent_history_count", "recent_history_visible",
             "recovery_probe_started", "recognizing_was_visible",
             "rendered_formula_visible", "rendered_table_visible", "result_complete",
-            "result_editor_visible", "result_window_display_matches_capture",
-            "result_window_presented", "result_window_presented_after_completion",
-            "result_window_uses_visible_area_top_left_inset", "schema", "second_capture_blocked",
+            "result_editor_visible", "result_editor_window_display_matches_capture",
+            "result_editor_window_presented", "result_editor_window_presented_after_completion",
+            "result_editor_window_uses_visible_area_top_left_inset", "schema", "second_capture_blocked",
             "selected_display_scale", "selected_display_was_secondary",
             "selection_point_height", "selection_point_width", "submit_count",
             "original_snippet_visible", "distinct_display_scale_count"
@@ -283,10 +283,10 @@ case "$mode" in
             .rendered_formula_visible == true and
             .rendered_table_visible == true and
             .recent_history_visible == true
-            and .result_window_presented == true
-            and .result_window_presented_after_completion == true
-            and .result_window_display_matches_capture == true
-            and .result_window_uses_visible_area_top_left_inset == true
+            and .result_editor_window_presented == true
+            and .result_editor_window_presented_after_completion == true
+            and .result_editor_window_display_matches_capture == true
+            and .result_editor_window_uses_visible_area_top_left_inset == true
         ' "$evidence_file" >/dev/null
         if [[ "$mode" == "verify-secondary" ]]; then
             jq -e '

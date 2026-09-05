@@ -47,9 +47,9 @@ struct MyMathpixApp: App {
         if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
             let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
-            let resultWindowPresenter = AppKitResultWindowPresenter(
+            let resultEditorWindowPresenter = AppKitResultEditorWindowPresenter(
                 presentationObservation: { observation in
-                    reporter.markResultWindowPresented(observation)
+                    reporter.markResultEditorWindowPresented(observation)
                 }
             )
             let permissionObservation: (ScreenCapturePermissionObservation) -> Void = { observation in
@@ -78,7 +78,7 @@ struct MyMathpixApp: App {
                 history: HistoryStore(inMemory: true),
                 defaults: defaults,
                 ticket01Reporter: reporter,
-                resultWindowPresenter: resultWindowPresenter
+                resultEditorWindowPresenter: resultEditorWindowPresenter
             ))
         } else {
             _model = StateObject(wrappedValue: AppModel())
@@ -89,6 +89,9 @@ struct MyMathpixApp: App {
         WindowGroup("MyMathpix", id: "main") {
             ContentView()
                 .environmentObject(model)
+                .background(MainWindowRegistrationView { window in
+                    model.registerMainWindow(window)
+                })
                 .frame(minWidth: 920, minHeight: 620)
         }
         .defaultSize(width: 1180, height: 760)

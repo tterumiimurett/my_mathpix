@@ -87,7 +87,7 @@ The implementation is complete only when one highest-level test drives the signe
 67. As the owner, I want difficult boundary cases reported separately, so that deliberate stress cases do not indefinitely block the Personal MVP.
 68. As the owner, I want to use the finished App for fourteen consecutive days before public-product work, so that daily reliability is demonstrated rather than assumed.
 69. As the owner, I want the App to replace Mathpix in my routine Snippet workflow, so that the Dogfood Gate measures real substitution rather than feature count.
-70. As the owner, I want the result window to appear only after recognition finishes and at the top-left visible area of the display where I captured the Snippet, so that the result returns to the screen where I was working without being hidden by the menu bar.
+70. As the owner, I want the Result Editor window to appear only after recognition finishes and at the top-left visible area of the display where I captured the Snippet, so that the result returns to the screen where I was working without being hidden by the menu bar.
 
 ## Implementation Decisions
 
@@ -126,7 +126,7 @@ The implementation is complete only when one highest-level test drives the signe
 - Exercise permission states externally: not determined, denied, granted, and revoked after prior grant. None may terminate the process.
 - Exercise capture cancellation, too-small selection, display disappearance, and capture API error. Each returns to an operable state.
 - Exercise Datalab submit success, processing polls, completion, HTTP rejection, malformed check URL, service failure, timeout, and cancellation through a mock URL protocol or equivalent transport boundary.
-- Assert through the signed-App capture seam that the normal window is not visible while recognition is active, and that the completed result window is shown on the captured display at the top-left of its visible area.
+- Assert through the signed-App capture seam that the normal window is not visible while recognition is active, and that the completed Result Editor window is shown on the captured display at the top-left of its visible area.
 - Assert that multipart requests contain only the selected PNG and approved fields, and never include window titles, active application identity, history, or credentials outside the authentication header.
 - Retain deterministic checks for Canonical Markdown normalization, conservative Pure Formula classification, Markdown-table-to-TSV conversion, safe rich-table generation, raw-HTML escaping, and offline-preview resource isolation.
 - Test Recent History through externally meaningful persistence behavior: creation, edit autosave, failed-record retention, retry update, relaunch recovery, single deletion, clear-all, twenty-record eviction, and image deletion.

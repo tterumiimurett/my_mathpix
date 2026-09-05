@@ -48,10 +48,10 @@ final class Ticket01AcceptanceReporter {
         var activeDisplayCount = 0
         var distinctDisplayScaleCount = 0
         var mainWindowVisibleWhenRecognitionStarted = false
-        var resultWindowPresented = false
-        var resultWindowPresentedAfterCompletion = false
-        var resultWindowDisplayMatchesCapture = false
-        var resultWindowUsesVisibleAreaTopLeftInset = false
+        var resultEditorWindowPresented = false
+        var resultEditorWindowPresentedAfterCompletion = false
+        var resultEditorWindowDisplayMatchesCapture = false
+        var resultEditorWindowUsesVisibleAreaTopLeftInset = false
     }
 
     private(set) var evidence = Evidence()
@@ -144,12 +144,12 @@ final class Ticket01AcceptanceReporter {
         persist()
     }
 
-    func markResultWindowPresented(_ observation: ResultWindowPresentationObservation) {
-        evidence.resultWindowPresented = true
-        evidence.resultWindowPresentedAfterCompletion = evidence.phase == "complete"
-        evidence.resultWindowDisplayMatchesCapture = evidence.capturedDisplayID == observation.requestedDisplayID
+    func markResultEditorWindowPresented(_ observation: ResultEditorWindowPresentationObservation) {
+        evidence.resultEditorWindowPresented = true
+        evidence.resultEditorWindowPresentedAfterCompletion = evidence.phase == "complete"
+        evidence.resultEditorWindowDisplayMatchesCapture = evidence.capturedDisplayID == observation.requestedDisplayID
             && evidence.capturedDisplayID == observation.presentedDisplayID
-        evidence.resultWindowUsesVisibleAreaTopLeftInset = observation.usedVisibleAreaTopLeftInset
+        evidence.resultEditorWindowUsesVisibleAreaTopLeftInset = observation.usedVisibleAreaTopLeftInset
         persist()
     }
 

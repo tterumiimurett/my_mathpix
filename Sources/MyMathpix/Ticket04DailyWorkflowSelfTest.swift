@@ -207,7 +207,7 @@ enum Ticket04DailyWorkflowSelfTest {
 
             let completionHistory = HistoryStore(inMemory: true)
             let deferredRecognition = Ticket04DeferredRecognitionService()
-            let resultWindowPresenter = Ticket04ResultWindowPresenter()
+            let resultEditorWindowPresenter = Ticket04ResultEditorWindowPresenter()
             let completionModel = AppModel(
                 recognitionService: deferredRecognition,
                 history: completionHistory,
@@ -218,7 +218,7 @@ enum Ticket04DailyWorkflowSelfTest {
                     rootURL: root.appendingPathComponent("CompletionDiagnostics", isDirectory: true),
                     now: { fixedDate }
                 ),
-                resultWindowPresenter: resultWindowPresenter
+                resultEditorWindowPresenter: resultEditorWindowPresenter
             )
             let capturedDisplayID: CGDirectDisplayID = 4_204
             completionModel.recognizeCapturedSnippet(CapturedSnippet(
@@ -234,24 +234,38 @@ enum Ticket04DailyWorkflowSelfTest {
             ))
             let recognitionStarted = waitUntil { deferredRecognition.isWaiting }
             expect(
-                recognitionStarted && resultWindowPresenter.presentedDisplayIDs.isEmpty,
-                "capture result window stays hidden while recognition is running",
+                recognitionStarted && resultEditorWindowPresenter.presentedDisplayIDs.isEmpty,
+                "captured Result Editor window stays hidden while recognition is running",
                 failures: &failures
             )
             deferredRecognition.complete()
-            let resultWindowPresented = waitUntil { !completionModel.isProcessing }
+            let resultEditorWindowPresented = waitUntil { !completionModel.isProcessing }
             expect(
-                resultWindowPresented
-                    && resultWindowPresenter.presentedDisplayIDs == [capturedDisplayID],
-                "recognition completion presents the result on the captured display",
+                resultEditorWindowPresented
+                    && resultEditorWindowPresenter.presentedDisplayIDs == [capturedDisplayID],
+                "recognition completion presents the Result Editor on the captured display",
                 failures: &failures
             )
 
             let visibleFrame = CGRect(x: -1_440, y: 24, width: 1_440, height: 876)
-            let expectedTopLeft = ResultWindowPlacement.topLeft(in: visibleFrame)
+            let expectedTopLeft = ResultEditorWindowPlacement.topLeft(in: visibleFrame)
             expect(
                 expectedTopLeft == NSPoint(x: -1_424, y: 884),
-                "result window uses the captured display visible-area top-left inset",
+                "Result Editor window uses the captured display visible-area top-left inset",
+                failures: &failures
+            )
+
+            var deferredWindowOpenCount = 0
+            let reopeningPresenter = AppKitResultEditorWindowPresenter(
+                screenProvider: { [] },
+                activateApplication: {}
+            )
+            reopeningPresenter.presentResultEditor(on: capturedDisplayID)
+            reopeningPresenter.installMainWindowOpener { deferredWindowOpenCount += 1 }
+            reopeningPresenter.installMainWindowOpener { deferredWindowOpenCount += 1 }
+            expect(
+                deferredWindowOpenCount == 1,
+                "a pending Result Editor presentation waits for and requests one window opener",
                 failures: &failures
             )
 
@@ -547,15 +561,17 @@ private final class Ticket04DeferredRecognitionService: RecognitionService {
 }
 
 @MainActor
-private final class Ticket04ResultWindowPresenter: ResultWindowPresenting {
+private final class Ticket04ResultEditorWindowPresenter: ResultEditorWindowPresenting {
     private(set) var presentedDisplayIDs: [CGDirectDisplayID] = []
     var isMainWindowVisible = false
+
+    func registerMainWindow(_ window: NSWindow) {}
 
     func installMainWindowOpener(_ opener: @escaping () -> Void) {}
 
     func showMainWindow() {}
 
-    func presentResult(on displayID: CGDirectDisplayID) {
+    func presentResultEditor(on displayID: CGDirectDisplayID) {
         presentedDisplayIDs.append(displayID)
     }
 }
