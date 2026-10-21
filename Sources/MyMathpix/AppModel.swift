@@ -268,7 +268,8 @@ final class AppModel: ObservableObject {
     func showMainWindow() {
         guard appInteractionEnabled else { return }
         NSApp.activate(ignoringOtherApps: true)
-        if let window = NSApp.windows.first(where: { $0.title == "MyMathpix" }) ?? NSApp.windows.first(where: { $0.canBecomeMain }) {
+        let appDisplayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "MyMathpix"
+        if let window = NSApp.windows.first(where: { $0.title == appDisplayName }) ?? NSApp.windows.first(where: { $0.canBecomeMain }) {
             window.makeKeyAndOrderFront(nil)
         }
     }
