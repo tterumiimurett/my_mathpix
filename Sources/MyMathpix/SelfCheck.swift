@@ -358,6 +358,37 @@ enum SelfCheck {
             failures.append("local token persistence: \(error.localizedDescription)")
         }
 
+        do {
+            let first = Ticket06AcceptanceConfiguration(runID: UUID(), service: .failure)
+            let other = Ticket06AcceptanceConfiguration(runID: UUID(), service: .failure)
+            defer {
+                try? FileManager.default.removeItem(at: first.rootURL)
+                try? FileManager.default.removeItem(at: other.rootURL)
+                UserDefaults.standard.removePersistentDomain(forName: first.defaultsName)
+                UserDefaults.standard.removePersistentDomain(forName: other.defaultsName)
+            }
+            let model = try Ticket06Acceptance.makeModel(configuration: first, appInteractionEnabled: false)
+            let pixels = Data("ticket06-disposable-fixture".utf8)
+            let item = try model.history.create(uploadPayload: UploadPayload(pngData: pixels))
+            model.selectedID = item.id
+            model.updateMarkdown("Acceptance correction survives relaunch.")
+            let relaunched = try Ticket06Acceptance.makeModel(configuration: first, appInteractionEnabled: false)
+            let independent = try Ticket06Acceptance.makeModel(configuration: other, appInteractionEnabled: false)
+            check(
+                relaunched.selectedItem?.markdown == "Acceptance correction survives relaunch."
+                    && relaunched.selectedItem?.status == .failed
+                    && relaunched.selectedItem.flatMap { relaunched.history.imageData(for: $0) } == pixels
+                    && independent.history.items.isEmpty,
+                "UUID acceptance history restores edits and interrupted images without crossing sessions",
+                failures: &failures
+            )
+            relaunched.deleteSelected()
+            let afterDelete = try Ticket06Acceptance.makeModel(configuration: first, appInteractionEnabled: false)
+            check(afterDelete.history.items.isEmpty, "disposable acceptance deletion survives relaunch", failures: &failures)
+        } catch {
+            failures.append("isolated persistent acceptance history")
+        }
+
         check(
             Ticket04DailyWorkflowSelfTest.run(),
             "Ticket 04 daily workflow contract",
@@ -365,7 +396,7 @@ enum SelfCheck {
         )
 
         if failures.isEmpty {
-            print("MyMathpix self-test passed (46 checks plus Ticket 04 workflow checks).")
+            print("MyMathpix self-test passed (48 checks plus Ticket 04 workflow checks).")
             return true
         }
         print("MyMathpix self-test failed:")

@@ -81,23 +81,45 @@ final class Ticket03AcceptanceRecognitionService: RecognitionService {
 enum Ticket03PasteboardInspector {
     static let pureFormulaSource = "$$x^2 + y^2$$"
 
-    static func inspect(_ format: CopyFormat, pasteboard: NSPasteboard = .general) -> Bool {
+    static func inspect(
+        _ format: CopyFormat,
+        pasteboard: NSPasteboard = .general,
+        expectedMarkdown: String? = nil
+    ) -> Bool {
         let types = Set(pasteboard.types ?? [])
         switch format {
-        case .lark:
-            return types.contains(.html) && types.contains(.string)
-                && pasteboard.string(forType: .html)?.contains("$x^2$") == true
-                && pasteboard.string(forType: .html)?.contains("$$y = x + 1$$") == true
-                && pasteboard.string(forType: .html)?.contains("<table>") == true
-        case .notion:
-            return types.contains(.html)
-                && types.contains(.string)
+        case .lark, .notion:
+            let expected = expectedMarkdown ?? pasteboard.string(forType: .string)
+            guard let expected,
+                  expected == Ticket03AcceptanceFixture.initialMarkdown
+                    || expected == Ticket03AcceptanceFixture.editedMarkdown,
+                  types.contains(.html), types.contains(.string),
+                  pasteboard.string(forType: .string) == expected,
+                  let html = pasteboard.string(forType: .html),
+                  html.components(separatedBy: "<table>").count == 2 else { return false }
+            let initial = expected == Ticket03AcceptanceFixture.initialMarkdown
+            let complete = html.contains(initial ? "COMPLETE-CELL-END" : "Circle constant")
+                && html.contains(initial ? "After the table." : "Euler")
+            if format == .lark {
+                return complete
+                    && html.contains(initial ? "$x^2$" : "$$e^{i\\pi} = -1$$")
+                    && html.contains(initial ? "$$y = x + 1$$" : "$\\pi$")
+                    && !types.contains(.init("org.chromium.web-custom-data"))
+                    && !types.contains(.init("com.byterumi.mymathpix.notion-blocks-v3"))
+            }
+            return complete && html.contains("<math")
                 && types.contains(.init("org.chromium.web-custom-data"))
                 && types.contains(.init("com.byterumi.mymathpix.notion-blocks-v3"))
         case .formulaOutput:
             return types.contains(.string)
                 && pasteboard.string(forType: .string) == "x^2 + y^2"
-        case .markdown, .combinedOutput:
+        case .markdown:
+            let expected = expectedMarkdown ?? pasteboard.string(forType: .string)
+            return types.contains(.string)
+                && (expected == Ticket03AcceptanceFixture.initialMarkdown
+                    || expected == Ticket03AcceptanceFixture.editedMarkdown)
+                && pasteboard.string(forType: .string) == expected
+        case .combinedOutput:
             return types.contains(.string)
                 && pasteboard.string(forType: .string) == Ticket03AcceptanceFixture.editedMarkdown
         case .tsvTable:

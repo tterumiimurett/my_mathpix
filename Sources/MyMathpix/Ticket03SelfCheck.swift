@@ -713,6 +713,73 @@ enum Ticket03SelfCheck {
         }
 
         do {
+            let acceptanceBoard = NSPasteboard.withUniqueName()
+            defer { acceptanceBoard.releaseGlobally() }
+            try ClipboardService.copy(
+                .markdown,
+                payload: ClipboardPayload(
+                    canonicalMarkdown: Ticket03AcceptanceFixture.initialMarkdown,
+                    complexTableHTML: nil, originalPNG: nil
+                ),
+                to: acceptanceBoard
+            )
+            check(
+                Ticket03PasteboardInspector.inspect(.markdown, pasteboard: acceptanceBoard),
+                "initial accepted Markdown clipboard is inspectable before editing",
+                failures: &failures
+            )
+            try ClipboardService.copy(
+                .lark,
+                payload: ClipboardPayload(
+                    canonicalMarkdown: Ticket03AcceptanceFixture.editedMarkdown,
+                    complexTableHTML: nil, originalPNG: nil
+                ),
+                to: acceptanceBoard
+            )
+            check(
+                Ticket03PasteboardInspector.inspect(.lark, pasteboard: acceptanceBoard),
+                "edited accepted Lark clipboard is inspectable after correction",
+                failures: &failures
+            )
+            try ClipboardService.copy(
+                .notion,
+                payload: ClipboardPayload(
+                    canonicalMarkdown: "Unrelated partial result.",
+                    complexTableHTML: nil, originalPNG: nil
+                ),
+                to: acceptanceBoard
+            )
+            check(
+                !Ticket03PasteboardInspector.inspect(.notion, pasteboard: acceptanceBoard),
+                "Notion acceptance inspection rejects matching types with unrelated content",
+                failures: &failures
+            )
+            for source in [Ticket03AcceptanceFixture.initialMarkdown, Ticket03AcceptanceFixture.editedMarkdown] {
+                for format in CopyFormat.visibleFormats {
+                    try ClipboardService.copy(
+                        format,
+                        payload: ClipboardPayload(canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil),
+                        to: acceptanceBoard
+                    )
+                    check(
+                        Ticket03PasteboardInspector.inspect(format, pasteboard: acceptanceBoard, expectedMarkdown: source),
+                        "accepted three-format clipboard preserves its declared fixture stage",
+                        failures: &failures
+                    )
+                    let differentStage = source == Ticket03AcceptanceFixture.initialMarkdown
+                        ? Ticket03AcceptanceFixture.editedMarkdown : Ticket03AcceptanceFixture.initialMarkdown
+                    check(
+                        !Ticket03PasteboardInspector.inspect(format, pasteboard: acceptanceBoard, expectedMarkdown: differentStage),
+                        "acceptance clipboard cannot satisfy a different fixture stage",
+                        failures: &failures
+                    )
+                }
+            }
+        } catch {
+            failures.append("initial acceptance clipboard inspection")
+        }
+
+        do {
             let history = HistoryStore(inMemory: true)
             let created = try history.create(uploadPayload: UploadPayload(pngData: png))
             var completed = created

@@ -143,6 +143,10 @@ final class Ticket03AcceptanceReporter {
             && evidence.copyFormatsVisible
             && evidence.nativePasteBoundaryVisible
             && evidence.initialPreviewVisible
+            && evidence.originalSnippetVisible
+            && evidence.canonicalMarkdownVisible
+            && evidence.editedSourceVisible
+            && evidence.editedPreviewVisible
             && evidence.renderedFormulaVisible
             && evidence.renderedTableVisible
             && evidence.offlinePolicyPresent

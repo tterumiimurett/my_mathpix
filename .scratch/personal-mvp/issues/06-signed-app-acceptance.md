@@ -4,7 +4,11 @@
 
 **Blocked by:** 04 — Make the App dependable for a daily personal workflow; 05 — Prove recognition quality with the Golden Set.
 
-**Status:** ready-for-agent
+**Status:** claimed
+
+## Comments
+
+- 2026-10-22: Ticket 05 ordinary quality gate is verified for both modes. Claimed on integration baseline `a1333d6` to assemble and support-check one stable signed candidate. Actual shortcut/selection/live-service GUI acceptance remains pending; the parent agent owns those observations. Existing menu-bar and Notion-inline exceptions remain unresolved.
 
 ## Suggested agent split
 
