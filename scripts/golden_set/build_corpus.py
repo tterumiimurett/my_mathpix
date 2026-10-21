@@ -134,6 +134,15 @@ boundary=[
 for i,(title,source,body,style,notes) in enumerate(boundary,1):add(f'B{i:02}','boundary',title,source,body,notes,style=style)
 assert len(cases)==80
 for case in cases:
+    if case['category']=='mixed':
+        case['reviewNotes']='Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.'
+    if case['id']=='B05':
+        case['expectedComplexTableHTML']='<table><tr><th>Group</th><th>Value</th></tr><tr><td rowspan="2">A</td><td>1</td></tr><tr><td>2</td></tr></table>'
+        case['tableGrids']=[[['Group','Value'],['A','1'],['','2']]]
+        case['reviewNotes']+=' Require the A cell to span two data rows in safe HTML; flat Markdown alone does not preserve merged structure.'
+    if case['id']=='B08':case['tableGrids']=[[['A','B'],['1','2']],[['C','D'],['3','4']]]
+    if case['id']=='B09':case['tableGrids']=[[['Quantity','Formula'],['Energy','$E=mc^2$'],['Area','$A=\\pi r^2$']]]
+for case in cases:
     case['contentSHA256']=hashlib.sha256(json.dumps({k:case[k] for k in ('goldenMarkdown','fixtureBody','fixtureStyle','tableGrids','reviewNotes')},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 OUT.mkdir(parents=True,exist_ok=True)
 manifest={'schema':1,'version':'authored-v1','description':'Fixed original printed development Snippets. Independently authored expected content; not service output, not a representative private screenshot benchmark.','counts':{'formula':30,'table':20,'mixed':20,'boundary':10},'cases':cases}

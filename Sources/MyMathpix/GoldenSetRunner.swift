@@ -70,13 +70,16 @@ enum GoldenSetRunner {
             let previewDirectory = output.appendingPathComponent("previews", isDirectory: true)
             try FileManager.default.createDirectory(at: resultDirectory, withIntermediateDirectories: true)
             try FileManager.default.createDirectory(at: previewDirectory, withIntermediateDirectories: true)
-            let configuration: [String: Any] = ["schema": 1, "corpusSHA256": digest(manifestData), "bundleIdentifier": Bundle.main.bundleIdentifier ?? "unbundled", "policy": "fixed-case-order-fast-and-balanced-no-quality-retries", "runID": runID]
+            guard let executable = Bundle.main.executableURL else { throw GoldenError.resources }
+            let artifactHash = digest(try Data(contentsOf: executable))
+            let configuration: [String: Any] = ["artifactSHA256": artifactHash, "schema": 1, "corpusSHA256": digest(manifestData), "bundleIdentifier": Bundle.main.bundleIdentifier ?? "unbundled", "policy": "fixed-case-order-fast-and-balanced-no-quality-retries", "runID": runID]
             let configurationURL = output.appendingPathComponent("configuration.json")
             if FileManager.default.fileExists(atPath: configurationURL.path) {
                 let existing = try Data(contentsOf: configurationURL)
                 guard let previous = try JSONSerialization.jsonObject(with: existing) as? NSDictionary,
                       previous == configuration as NSDictionary else { throw GoldenError.changedRun }
             } else { try write(configuration, to: configurationURL) }
+            let configurationHash = digest(try Data(contentsOf: configurationURL))
             try manifestData.write(to: output.appendingPathComponent("manifest.json"), options: .atomic)
             let limit = value("--golden-set-limit=", in: arguments).flatMap(Int.init) ?? 160
             guard limit > 0, limit <= 160 else { throw GoldenError.arguments }
@@ -101,7 +104,7 @@ enum GoldenSetRunner {
                         return 0
                     }
                     let start = Date()
-                    var record: [String: Any] = ["schema": 1, "caseID": id, "mode": mode.rawValue, "inputSHA256": inputHash, "startedAt": ISO8601DateFormatter().string(from: start)]
+                    var record: [String: Any] = ["schema": 1, "caseID": id, "mode": mode.rawValue, "inputSHA256": inputHash, "startedAt": ISO8601DateFormatter().string(from: start), "corpusSHA256": digest(manifestData), "configurationSHA256": configurationHash, "artifactSHA256": artifactHash, "contentSHA256": item["contentSHA256"] as? String ?? ""]
                     do {
                         let result = try await service.recognize(uploadPayload: UploadPayload(pngData: png), mode: mode)
                         let canonical = MarkdownNormalizer.normalize(result.markdown)
@@ -164,10 +167,32 @@ enum GoldenSetRunner {
             } catch { values[name] = ["error": "clipboard_failed"] }
         }
         let correction = canonical + "\n\nCorrection check."
-        let corrected = MarkdownRenderer.document(for: correction, complexTableHTML: safeHTML)
-        _ = try await snapshotter.png(document: corrected)
-        try ClipboardService.copy(.markdown, payload: ClipboardPayload(canonicalMarkdown: correction, complexTableHTML: safeHTML, originalPNG: png), to: board)
-        return ["previewPNG": stem + ".png", "clipboard": values, "correctionMarkdownCopied": board.string(forType: .string) == correction, "correctedPreviewContainsMarker": corrected.contains("Correction check."), "destinationAcceptance": "Not performed by batch runner; Notion inline math is a known deferred defect"]
+        let history = HistoryStore(inMemory: true)
+        var item = try history.create(uploadPayload: UploadPayload(pngData: png))
+        item.markdown = canonical
+        item.html = safeHTML
+        item.status = .complete
+        try history.update(item)
+        let namespace = "com.byterumi.mymathpix.golden-correction." + UUID().uuidString
+        let defaults = UserDefaults(suiteName: namespace)!
+        let diagnosticsRoot = FileManager.default.temporaryDirectory.appendingPathComponent(namespace)
+        defer {
+            defaults.removePersistentDomain(forName: namespace)
+            try? FileManager.default.removeItem(at: diagnosticsRoot)
+        }
+        let model = AppModel(recognitionService: LiveRecognitionService(), history: history,
+            usageRecords: UsageRecordStore(inMemory: true), defaults: defaults,
+            diagnosticLog: DiagnosticLog(rootURL: diagnosticsRoot), pasteboard: board,
+            registersHotKey: false, appInteractionEnabled: false)
+        model.selectedID = item.id
+        model.updateMarkdown(correction)
+        guard let edited = model.selectedItem, edited.markdown == correction,
+              history.item(id: item.id)?.markdown == correction else { throw GoldenError.correction }
+        let corrected = MarkdownRenderer.document(for: edited.markdown, complexTableHTML: edited.html)
+        let correctedPNG = try await snapshotter.png(document: corrected, expectedText: "Correction check.")
+        try correctedPNG.write(to: output.appendingPathComponent(stem + "-corrected.png"), options: .atomic)
+        try ClipboardService.copy(.markdown, payload: ClipboardPayload(canonicalMarkdown: edited.markdown, complexTableHTML: edited.html, originalPNG: png), to: board)
+        return ["previewPNG": stem + ".png", "previewSHA256": digest(preview), "correctedPreviewSHA256": digest(correctedPNG), "clipboard": values, "correctionMarkdownCopied": board.string(forType: .string) == correction, "correctedPreviewContainsMarker": snapshotter.lastObservedText.contains("Correction check."), "isolatedModelEditPersisted": history.item(id: item.id)?.markdown == correction, "destinationAcceptance": "Not performed by batch runner; Notion inline math is a known deferred defect"]
     }
 
     private static func fixtureDocument(body: String, style: String, resources: URL) throws -> String {
@@ -185,7 +210,7 @@ enum GoldenSetRunner {
         let data = try JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes])
         try data.write(to: url, options: .atomic)
     }
-    private enum GoldenError: String, Error { case resources, manifest, arguments, changedRun, changedInput }
+    private enum GoldenError: String, Error { case resources, manifest, arguments, changedRun, changedInput, correction }
 }
 
 @MainActor
@@ -194,8 +219,11 @@ private final class GoldenSnapshotter: NSObject, WKNavigationDelegate {
     let window: NSWindow
     let resources: URL
     var navigation: CheckedContinuation<Void, Error>?
+    var navigationTimer: Timer?
+    var lastObservedText = ""
 
     init(resources: URL) {
+        _ = NSApplication.shared
         self.resources = resources
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
@@ -209,25 +237,64 @@ private final class GoldenSnapshotter: NSObject, WKNavigationDelegate {
         window.orderBack(nil)
     }
 
-    func png(document: String) async throws -> Data {
+    func png(document: String, expectedText: String? = nil) async throws -> Data {
         webView.setFrameSize(NSSize(width: 800, height: 600))
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             navigation = continuation
+            navigationTimer = Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { [weak self] _ in
+                Task { @MainActor in
+                    self?.navigation?.resume(throwing: CocoaError(.fileReadUnknown))
+                    self?.navigation = nil
+                }
+            }
             webView.loadHTMLString(document, baseURL: resources)
         }
         _ = try await webView.callAsyncJavaScript("await document.fonts.ready; return true;", arguments: [:], in: nil, contentWorld: .page)
+        let observation = try await webView.evaluateJavaScript("({source:document.querySelectorAll('[data-tex]').length,rendered:document.querySelectorAll('.katex').length,errors:document.querySelectorAll('.katex-error').length,text:document.body.innerText})") as? [String: Any]
+        guard let observation,
+              observation["source"] as? Int == observation["rendered"] as? Int,
+              observation["errors"] as? Int == 0,
+              let observedText = observation["text"] as? String, !observedText.isEmpty,
+              expectedText == nil || observedText.contains(expectedText!) else { throw CocoaError(.fileReadCorruptFile) }
+        lastObservedText = observedText
         let height = try await webView.evaluateJavaScript("Math.max(120,document.body.scrollHeight)") as? Double ?? 600
         webView.setFrameSize(NSSize(width: 800, height: min(1600, height)))
         let config = WKSnapshotConfiguration()
         config.rect = webView.bounds
-        config.snapshotWidth = 1600
+        config.snapshotWidth = 800
         let image = try await webView.takeSnapshot(configuration: config)
         guard let tiff = image.tiffRepresentation,
-              let bitmap = NSBitmapImageRep(data: tiff),
-              let png = bitmap.representation(using: .png, properties: [:]) else { throw CocoaError(.fileWriteUnknown) }
+              let rawBitmap = NSBitmapImageRep(data: tiff),
+              let bitmap = Self.normalizedBitmap(rawBitmap),
+              let png = bitmap.representation(using: .png, properties: [:]), bitmap.pixelsWide == 1600, bitmap.pixelsHigh >= 240, Self.hasVisiblePixels(bitmap) else { throw CocoaError(.fileWriteUnknown) }
         return png
     }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) { self.navigation?.resume(); self.navigation = nil }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) { self.navigation?.resume(throwing: error); self.navigation = nil }
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) { self.navigation?.resume(throwing: error); self.navigation = nil }
+    private static func normalizedBitmap(_ source: NSBitmapImageRep) -> NSBitmapImageRep? {
+        if source.pixelsWide == 1600 { return source }
+        let height = Int((1600.0 * Double(source.pixelsHigh) / Double(source.pixelsWide)).rounded())
+        guard let target = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 1600, pixelsHigh: height,
+            bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
+            colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0),
+            let context = NSGraphicsContext(bitmapImageRep: target), let sourceImage = source.cgImage else { return nil }
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = context
+        context.imageInterpolation = .high
+        NSImage(cgImage: sourceImage, size: NSSize(width: source.pixelsWide, height: source.pixelsHigh))
+            .draw(in: NSRect(x: 0, y: 0, width: 1600, height: height), from: .zero, operation: .copy, fraction: 1)
+        NSGraphicsContext.restoreGraphicsState()
+        return target
+    }
+    private static func hasVisiblePixels(_ bitmap: NSBitmapImageRep) -> Bool {
+        var darkPixels = 0
+        for y in stride(from: 0, to: bitmap.pixelsHigh, by: 4) {
+            for x in stride(from: 0, to: bitmap.pixelsWide, by: 4) {
+                if let c = bitmap.colorAt(x: x, y: y)?.usingColorSpace(.deviceRGB), c.alphaComponent > 0.5,
+                   c.redComponent + c.greenComponent + c.blueComponent < 2.7 { darkPixels += 1 }
+            }
+        }
+        return darkPixels >= 10
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) { navigationTimer?.invalidate(); self.navigation?.resume(); self.navigation = nil }
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) { navigationTimer?.invalidate(); self.navigation?.resume(throwing: error); self.navigation = nil }
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) { navigationTimer?.invalidate(); self.navigation?.resume(throwing: error); self.navigation = nil }
 }
