@@ -3,6 +3,19 @@ import Foundation
 /// Plain-text projection for a table cell. Only recognized formatting tags are
 /// consumed; literal comparisons, escaped markup, code and math stay content.
 enum TableCellText {
+    /// Datalab may wrap a whole header in HTML emphasis even though GFM
+    /// already makes it a header. Peel only that inert wrapper; inline code,
+    /// math, attributes and all other raw HTML keep their existing treatment.
+    static func previewHeaderSource(_ source: String) -> String {
+        let wrapper = try! NSRegularExpression(pattern: #"(?is)^\s*<(b|strong)>(.*?)</\1>\s*$"#)
+        var result = source
+        while let match = wrapper.firstMatch(in: result, range: NSRange(result.startIndex..., in: result)),
+              let content = Range(match.range(at: 2), in: result) {
+            result = String(result[content])
+        }
+        return result
+    }
+
     static func plainText(_ source: String) -> String {
         let characters = Array(source)
         var markdown = ""
