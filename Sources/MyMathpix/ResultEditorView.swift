@@ -163,7 +163,7 @@ struct ResultEditorView: View {
             .padding(.horizontal, 8)
             .padding(.top, 14)
             .padding(.bottom, 6)
-            ForEach(CopyFormat.allCases) { format in
+            ForEach(CopyFormat.visibleFormats) { format in
                 let preparation = Result { try ClipboardService.prepare(format, payload: payload) }
                 let prepared = try? preparation.get()
                 let unavailable: CopyFormatError? = if case .failure(let error) = preparation {
@@ -185,7 +185,7 @@ struct ResultEditorView: View {
                         copiedFormat = nil
                     }
                 }
-                if format != CopyFormat.allCases.last { Divider().padding(.horizontal, 8) }
+                if format != CopyFormat.visibleFormats.last { Divider().padding(.horizontal, 8) }
             }
         }
         .padding(.horizontal, 12)
@@ -246,9 +246,25 @@ private struct CopyFormatRow: View {
     let copy: () -> Void
     @State private var isHovered = false
 
+    private var shortTitle: String {
+        switch format {
+        case .formulaOutput: "LaTeX"
+        case .markdown: "Markdown"
+        case .combinedOutput: "Combined"
+        case .tsvTable: "TSV"
+        case .richTable: "Rich Table"
+        case .originalImage: "Image"
+        case .notion: "Notion"
+        }
+    }
+
     var body: some View {
         Button(action: copy) {
             HStack(spacing: 12) {
+                Text(shortTitle)
+                    .font(.system(size: 11))
+                    .foregroundStyle(.secondary)
+                    .frame(width: 70, alignment: .leading)
                 if let unavailable {
                     Text(unavailable)
                         .font(.system(size: 12))

@@ -51,7 +51,7 @@ enum MarkdownRenderer {
         """
     }
 
-    static func renderBody(_ markdown: String) -> String {
+    static func renderBody(_ markdown: String, forClipboard: Bool = false) -> String {
         let extracted = extractMath(markdown)
         let lines = extracted.text.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
         var output: [String] = []
@@ -93,7 +93,7 @@ enum MarkdownRenderer {
                     tableLines.append(lines[index])
                     index += 1
                 }
-                output.append(renderTable(tableLines, math: extracted.math))
+                output.append(renderTable(tableLines, math: extracted.math, forClipboard: forClipboard))
                 continue
             }
             if line.trimmingCharacters(in: .whitespaces).isEmpty {
@@ -272,12 +272,21 @@ enum MarkdownRenderer {
     }
 
     private static func inline(_ source: String, math: [String: MathToken]) -> String {
-        var text = MarkdownNormalizer.escapeHTML(source)
-        text = replace(pattern: #"`([^`]+)`"#, in: text, template: "<code>$1</code>")
+        var code: [String: String] = [:]
+        var index = 0
+        let protected = protectInlineCode(
+            in: source, originalSource: source, replacements: &code, tokenIndex: &index
+        )
+        var text = MarkdownNormalizer.escapeHTML(protected)
         text = replace(pattern: #"\*\*([^*]+)\*\*"#, in: text, template: "<strong>$1</strong>")
         text = replace(pattern: #"(?<!\*)\*([^*]+)\*(?!\*)"#, in: text, template: "<em>$1</em>")
         for (key, token) in math {
             text = text.replacingOccurrences(of: key, with: mathHTML(token))
+        }
+        for (key, literal) in code {
+            let delimiterLength = literal.prefix { $0 == "`" }.count
+            let content = String(literal.dropFirst(delimiterLength).dropLast(delimiterLength))
+            text = text.replacingOccurrences(of: key, with: "<code>\(MarkdownNormalizer.escapeHTML(content))</code>")
         }
         return text
     }
@@ -288,16 +297,24 @@ enum MarkdownRenderer {
         return "<span class=\"\(className)\" data-tex=\"\(encoded)\" data-display=\"\(token.display ? "1" : "0")\"></span>"
     }
 
-    private static func renderTable(_ lines: [String], math: [String: MathToken]) -> String {
+    private static func renderTable(_ lines: [String], math: [String: MathToken], forClipboard: Bool) -> String {
         guard lines.count >= 2 else { return "" }
         let rows = lines.enumerated().compactMap { offset, line -> [String]? in
             if offset == 1 { return nil }
             return cells(line)
         }
         guard let header = rows.first else { return "" }
-        let head = "<thead><tr>" + header.map { "<th>\(inline($0, math: math))</th>" }.joined() + "</tr></thead>"
+        func cellHTML(_ source: String) -> String {
+            guard forClipboard else { return inline(source, math: math) }
+            var html = MarkdownNormalizer.escapeHTML(TableCellText.plainText(source))
+            for (key, token) in math {
+                html = html.replacingOccurrences(of: key, with: mathHTML(token))
+            }
+            return html
+        }
+        let head = "<thead><tr>" + header.map { "<th>\(cellHTML($0))</th>" }.joined() + "</tr></thead>"
         let body = rows.dropFirst().map { row in
-            "<tr>" + row.map { "<td>\(inline($0, math: math))</td>" }.joined() + "</tr>"
+            "<tr>" + row.map { "<td>\(cellHTML($0))</td>" }.joined() + "</tr>"
         }.joined()
         return "<table>\(head)<tbody>\(body)</tbody></table>"
     }

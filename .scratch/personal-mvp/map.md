@@ -39,6 +39,8 @@ flowchart TD
 
 ## Delivered context
 
+- Ticket `03` reopened on 2026-10-21 for the owner's two-action Markdown/Notion clipboard workflow. Native equation paste is an explicitly authorized extension, but destination acceptance remains pending; see [follow-up verification](evidence/ticket03-notion-copy-2026-10-21.md). Work remains on the original Ticket 03 branch.
+
 - Ticket `03` review fixes resolved on 2026-10-21: preserves valid LaTeX row spacing, projects merged cells without TSV column shifts, decodes HTML entities safely, and retains unrelated Complex Table Output. See [verification and review results](evidence/ticket03-spec-fixes-2026-10-21.md). Changes remain on the original Ticket 03 branch.
 
 - Ticket `03` follow-up resolved on 2026-09-06: corrected plain-text table conversion and owner-approved single-line content preview rows, backed by [actual signed-window six-format regression](evidence/ticket03-content-rows/verification.md). This supersedes the earlier format-name-only row design. Integration remains on the original Ticket 03 branch; no other ticket was merged.

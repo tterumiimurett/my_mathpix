@@ -308,9 +308,10 @@ enum Ticket03SelfCheck {
                 "Combined Output",
                 "TSV Table (Plain Text)",
                 "Rich Table (HTML + RTF)",
-                "Original Image"
+                "Original Image",
+                "Notion"
             ],
-            "all six explicit Copy Formats are available",
+            "legacy Copy Format seams remain available alongside Notion",
             failures: &failures
         )
         check(
@@ -318,8 +319,9 @@ enum Ticket03SelfCheck {
                 && CopyFormat.explanation.contains("Native Paste")
                 && CopyFormat.explanation.contains("Notion")
                 && CopyFormat.explanation.contains("Feishu")
-                && CopyFormat.explanation.contains("does not create native"),
-            "Copy Formats are distinguished from Native Paste",
+                && CopyFormat.explanation.contains("experimental")
+                && CopyFormat.explanation.contains("must be verified"),
+            "Notion clipboard adapter has an explicit unverified Native Paste boundary",
             failures: &failures
         )
 
@@ -327,6 +329,138 @@ enum Ticket03SelfCheck {
             failures.append("original image fixture")
             return report(failures)
         }
+        do {
+            let notionSource = """
+            Before $x^2$.
+
+            $$y = x + 1$$
+
+            | Name | Value |
+            | --- | --- |
+            | A & B | $\\alpha$ |
+
+            After COMPLETE-CELL-END.
+            """
+            let board = NSPasteboard(name: .init("Ticket03Notion.\(UUID().uuidString)"))
+            try ClipboardService.copy(
+                .notion,
+                payload: ClipboardPayload(canonicalMarkdown: notionSource, complexTableHTML: nil, originalPNG: nil),
+                to: board
+            )
+            let html = board.string(forType: .html) ?? ""
+            let json = board.data(forType: .init("com.byterumi.mymathpix.notion-blocks-v3")) ?? Data()
+            let document = try JSONSerialization.jsonObject(with: json) as? [String: Any]
+            let blocks = document?["blocks"] as? [[String: Any]] ?? []
+            let nativeText = String(data: json, encoding: .utf8) ?? ""
+            let values: [[String: Any]] = blocks.compactMap { block in
+                guard let id = block["blockId"] as? String,
+                      let subtree = block["blockSubtree"] as? [String: Any],
+                      let records = subtree["block"] as? [String: Any],
+                      let record = records[id] as? [String: Any] else { return nil }
+                return record["value"] as? [String: Any]
+            }
+            let display = values.first { $0["type"] as? String == "equation" }
+            let displayTitle = (display?["properties"] as? [String: Any])?["title"] as? [[String]]
+            let firstTitle = (values.first?["properties"] as? [String: Any])?["title"] as? [[Any]] ?? []
+            let hasInlineEquation = firstTitle.contains { run in
+                guard run.first as? String == "‣", run.count == 2,
+                      let marks = run[1] as? [[String]] else { return false }
+                return marks.contains(["e", "x^2"])
+            }
+            let nativeEnvelope = readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))
+            check(
+                CopyFormat.visibleFormats.map(\.title) == ["Markdown", "Notion"]
+                    && blocks.count == 4
+                    && values.compactMap { $0["type"] as? String } == ["text", "equation", "table", "text"]
+                    && displayTitle == [["y = x + 1"]]
+                    && hasInlineEquation
+                    && nativeEnvelope?["text/_notion-blocks-v3-production"] == String(decoding: json, as: UTF8.self)
+                    && nativeText.contains("equation")
+                    && nativeText.contains("table_row")
+                    && nativeText.contains("COMPLETE-CELL-END")
+                    && nativeText.contains("x^2")
+                    && html.contains("<table>")
+                    && html.contains("<math")
+                    && html.contains("Before") && html.contains("After")
+                    && !html.contains("<script") && !html.contains("data-tex")
+                    && board.string(forType: .string) == notionSource
+                    && board.data(forType: .init("org.chromium.web-custom-data")) != nil,
+                "Notion copies complete mixed content with native equations, rich tables, and lossless source fallback",
+                failures: &failures
+            )
+        } catch {
+            failures.append("Notion complete mixed-content pasteboard: \(error)")
+        }
+        do {
+            let source = """
+            Keep `**literal** $notMath$` and $\\alpha$.
+
+            | <b>Name</b> | Value |
+            | --- | --- |
+            | <code>**literal**</code> | &alpha; &copy; &#945; |
+
+            <img src="https://example.invalid/pixel" onerror="evil()">
+
+            | Second | Table |
+            | --- | --- |
+            | end | 完整 🧮 |
+            """
+            let board = NSPasteboard(name: .init("Ticket03NotionLiterals.\(UUID().uuidString)"))
+            try ClipboardService.copy(.notion, payload: ClipboardPayload(
+                canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil
+            ), to: board)
+            let html = board.string(forType: .html) ?? ""
+            let data = board.data(forType: .init("com.byterumi.mymathpix.notion-blocks-v3")) ?? Data()
+            let envelope = readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))
+            check(
+                html.contains("<code>**literal** $notMath$</code>")
+                    && html.contains("<th>Name</th>")
+                    && html.contains("<td>**literal**</td>")
+                    && html.contains("<td>α © α</td>")
+                    && html.components(separatedBy: "<table>").count == 3
+                    && !html.contains("<img") && !html.contains("<script")
+                    && !html.contains("<iframe") && !html.contains("<a ")
+                    && envelope?["text/_notion-blocks-v3-production"] == String(decoding: data, as: UTF8.self)
+                    && String(decoding: data, as: UTF8.self).contains("完整 🧮"),
+                "Notion preserves literal code, cleaned table cells, Unicode, all tables, and inert HTML",
+                failures: &failures
+            )
+        } catch {
+            failures.append("Notion literal and security pasteboard: \(error)")
+        }
+        do {
+            let source = "$$x^2 + y^2$$"
+            let payload = ClipboardPayload(canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil)
+            let board = NSPasteboard(name: .init("Ticket03NotionFormula.\(UUID().uuidString)"))
+            try ClipboardService.copy(.notion, payload: payload, to: board)
+            let json = board.data(forType: .init("com.byterumi.mymathpix.notion-blocks-v3")) ?? Data()
+            let document = try JSONSerialization.jsonObject(with: json) as? [String: Any]
+            let blocks = document?["blocks"] as? [[String: Any]] ?? []
+            check(
+                blocks.count == 1
+                    && String(decoding: json, as: UTF8.self).contains("x^2 + y^2")
+                    && board.string(forType: .html)?.contains("<math") == true
+                    && ClipboardService.automaticCopyFormat(for: payload) == .formulaOutput,
+                "pure formula Notion copy offers equation data without changing conservative automatic raw-LaTeX copy",
+                failures: &failures
+            )
+        } catch { failures.append("Notion pure formula copy: \(error)") }
+        do {
+            let board = NSPasteboard(name: .init("Ticket03NotionComplex.\(UUID().uuidString)"))
+            let complex = "<table><caption>Keep α caption</caption><tr><th>A</th><th>B</th></tr><tr><td rowspan=\"2\">**literal** `code` $5 and $10</td><td>Y</td></tr><tr><td>Z</td></tr></table>"
+            try ClipboardService.copy(.notion, payload: ClipboardPayload(
+                canonicalMarkdown: "Keep surrounding text.", complexTableHTML: complex, originalPNG: nil
+            ), to: board)
+            let native = String(decoding: board.data(forType: .init("com.byterumi.mymathpix.notion-blocks-v3")) ?? Data(), as: UTF8.self)
+            check(
+                native.contains("Keep α caption") && native.contains("Z")
+                    && native.contains("**literal** `code` $5 and $10")
+                    && board.string(forType: .string)?.contains("\n\tZ") == true
+                    && board.string(forType: .html)?.contains("rowspan=\"2\"") == true,
+                "Notion retains distinct complex table captions, merged HTML, and projected fallback cell positions",
+                failures: &failures
+            )
+        } catch { failures.append("Notion complex table copy: \(error)") }
         do {
             let formattedPayload = ClipboardPayload(canonicalMarkdown: formattedTable, complexTableHTML: nil, originalPNG: png)
             let output = try ClipboardService.prepare(.tsvTable, payload: formattedPayload)
@@ -596,6 +730,33 @@ enum Ticket03SelfCheck {
         } catch {
             failures.append("\(format.title) Copy Format")
         }
+    }
+
+    /// Independent consumer of Chromium's public DataTransfer wire format.
+    private static func readChromiumCustomData(_ data: Data?) -> [String: String]? {
+        guard let data else { return nil }
+        let bytes = Array(data)
+        var offset = 0
+        func integer() -> Int? {
+            guard offset + 4 <= bytes.count else { return nil }
+            defer { offset += 4 }
+            return (0..<4).reduce(0) { $0 | (Int(bytes[offset + $1]) << (8 * $1)) }
+        }
+        func string() -> String? {
+            guard let count = integer(), count <= (bytes.count - offset) / 2 else { return nil }
+            let start = offset
+            offset += count * 2
+            let result = String(data: Data(bytes[start..<offset]), encoding: .utf16LittleEndian)
+            offset = (offset + 3) & ~3
+            return result
+        }
+        guard integer() == bytes.count - 4, let count = integer(), count < 100 else { return nil }
+        var entries: [String: String] = [:]
+        for _ in 0..<count {
+            guard let key = string(), let value = string() else { return nil }
+            entries[key] = value
+        }
+        return offset == bytes.count ? entries : nil
     }
 
     private static func makePNG() -> Data? {

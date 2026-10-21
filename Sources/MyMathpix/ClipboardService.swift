@@ -8,6 +8,9 @@ enum CopyFormat: String, CaseIterable, Identifiable {
     case tsvTable
     case richTable
     case originalImage
+    case notion
+
+    static let visibleFormats: [CopyFormat] = [.markdown, .notion]
 
     var id: String { rawValue }
 
@@ -18,13 +21,15 @@ enum CopyFormat: String, CaseIterable, Identifiable {
         case .markdown:
             ("Markdown", "Copy the editable Canonical Markdown source.")
         case .combinedOutput:
-            ("Combined Output", "Copy the complete text, formulas, and tables as one Combined Output.")
+            ("Combined Output", "Copy all text, formulas, and tables. Currently the same Markdown source as Markdown above.")
         case .tsvTable:
             ("TSV Table (Plain Text)", "Copy the first table as tab-separated plain text.")
         case .richTable:
             ("Rich Table (HTML + RTF)", "Copy safe HTML, RTF, TSV, and plain-text table representations together.")
         case .originalImage:
             ("Original Image", "Copy the original Snippet image without recognized text.")
+        case .notion:
+            ("Notion", "Copy the complete result with rich tables and editable equations. Destination paste verification pending.")
         }
     }
 
@@ -32,7 +37,7 @@ enum CopyFormat: String, CaseIterable, Identifiable {
 
     var helpText: String { descriptor.helpText }
 
-    static let explanation = "Copy source formats only — not Native Paste. Copying does not create native Notion or Feishu blocks."
+    static let explanation = "Markdown copies source. Notion includes experimental Native Paste clipboard data plus HTML/source fallbacks; destination compatibility must be verified. No Notion or Feishu document API writes."
 }
 
 struct ClipboardPayload {
@@ -46,6 +51,7 @@ struct PreparedClipboardCopy {
         case text(String)
         case table(tsv: String, html: String?)
         case image(png: Data, tiff: Data)
+        case notion(NotionClipboardDocument)
     }
     let format: CopyFormat
     let content: Content
@@ -55,6 +61,7 @@ struct PreparedClipboardCopy {
         case .text(let text): text
         case .table(let tsv, _): tsv
         case .image: nil
+        case .notion(let document): document.source
         }
     }
 
@@ -123,6 +130,10 @@ enum ClipboardService {
             content = .text(latex)
         case .markdown, .combinedOutput:
             content = .text(payload.canonicalMarkdown)
+        case .notion:
+            content = .notion(try NotionClipboardDocument(
+                markdown: payload.canonicalMarkdown, complexTableHTML: payload.complexTableHTML
+            ))
         case .tsvTable, .richTable:
             guard let table = tableRepresentations(for: payload) else { throw CopyFormatError.tableUnavailable }
             content = .table(tsv: table.tsv, html: format == .richTable ? table.html : nil)
@@ -170,6 +181,11 @@ enum ClipboardService {
         case .image(let png, let tiff):
             representations[.png] = png
             representations[.tiff] = tiff
+        case .notion(let document):
+            representations[.string] = Data(document.source.utf8)
+            representations[.html] = Data(document.html.utf8)
+            representations[NotionClipboardDocument.nativeType] = document.nativeData
+            representations[NotionClipboardDocument.chromiumType] = document.chromiumData
         }
         for (type, data) in representations {
             guard item.setData(data, forType: type) else { throw CopyFormatError.pasteboardWriteFailed }

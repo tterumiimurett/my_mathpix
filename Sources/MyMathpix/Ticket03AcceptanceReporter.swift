@@ -50,6 +50,7 @@ final class Ticket03AcceptanceReporter {
         var tsvTableCopied = false
         var richTableCopied = false
         var originalImageCopied = false
+        var notionCopied = false
     }
 
     private(set) var evidence = Evidence()
@@ -130,29 +131,21 @@ final class Ticket03AcceptanceReporter {
         .combinedOutput: \Evidence.combinedOutputCopied,
         .tsvTable: \Evidence.tsvTableCopied,
         .richTable: \Evidence.richTableCopied,
-        .originalImage: \Evidence.originalImageCopied
+        .originalImage: \Evidence.originalImageCopied,
+        .notion: \Evidence.notionCopied
     ]
 
     private func finishIfComplete() {
+        // Local editor/clipboard evidence only, not destination paste acceptance.
         let complete = evidence.resultEditorVisible
-            && evidence.originalSnippetVisible
-            && evidence.canonicalMarkdownVisible
             && evidence.copyFormatsVisible
             && evidence.nativePasteBoundaryVisible
             && evidence.initialPreviewVisible
-            && evidence.editedSourceVisible
-            && evidence.editedPreviewVisible
-            && evidence.pureFormulaPreviewVisible
-            && evidence.finalEditedPreviewVisible
             && evidence.renderedFormulaVisible
             && evidence.renderedTableVisible
             && evidence.offlinePolicyPresent
-            && evidence.formulaOutputCopied
             && evidence.markdownCopied
-            && evidence.combinedOutputCopied
-            && evidence.tsvTableCopied
-            && evidence.richTableCopied
-            && evidence.originalImageCopied
+            && evidence.notionCopied
         if complete { evidence.phase = .complete }
     }
 

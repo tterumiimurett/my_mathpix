@@ -3,12 +3,17 @@ import Foundation
 
 enum Ticket03AcceptanceFixture {
     static let initialMarkdown = """
-    $$e^{i\\pi} + 1 = 0$$
+    Before $x^2$.
 
-    | Symbol | Meaning |
+    $$y = x + 1$$
+
+    | <b>Name</b> | Value |
     | --- | --- |
-    | $\\pi$ | Circle constant |
-    | $e$ | Euler's number |
+    | <strong>A &amp; B</strong> | &alpha; &copy; &#945; |
+    | <code>**literal**</code> | a < b > c |
+    | long | Content beyond a single line must remain complete after copying — COMPLETE-CELL-END |
+
+    After the table.
     """
 
     static let editedMarkdown = """
@@ -35,29 +40,28 @@ enum Ticket03AcceptanceFixture {
     }
 
     private static func makeOriginalSnippetPNG() -> Data? {
-        let size = NSSize(width: 620, height: 260)
+        let size = NSSize(width: 1100, height: 420)
         let image = NSImage(size: size)
         image.lockFocus()
 
         NSColor(calibratedWhite: 0.98, alpha: 1).setFill()
         NSBezierPath(rect: NSRect(origin: .zero, size: size)).fill()
         NSColor.systemTeal.setStroke()
-        let border = NSBezierPath(roundedRect: NSRect(x: 8, y: 8, width: 604, height: 244), xRadius: 10, yRadius: 10)
+        let border = NSBezierPath(roundedRect: NSRect(x: 8, y: 8, width: 1084, height: 404), xRadius: 10, yRadius: 10)
         border.lineWidth = 4
         border.stroke()
 
-        let titleAttributes: [NSAttributedString.Key: Any] = [
-            .font: NSFont.systemFont(ofSize: 34, weight: .semibold),
-            .foregroundColor: NSColor.labelColor
-        ]
         let bodyAttributes: [NSAttributedString.Key: Any] = [
-            .font: NSFont.monospacedSystemFont(ofSize: 24, weight: .regular),
+            .font: NSFont.monospacedSystemFont(ofSize: 14, weight: .regular),
             .foregroundColor: NSColor.labelColor
         ]
-        NSString(string: "eⁱπ + 1 = 0").draw(at: NSPoint(x: 34, y: 190), withAttributes: titleAttributes)
-        NSString(string: "Symbol     Meaning").draw(at: NSPoint(x: 34, y: 120), withAttributes: bodyAttributes)
-        NSString(string: "π          Circle constant").draw(at: NSPoint(x: 34, y: 78), withAttributes: bodyAttributes)
-        NSString(string: "e          Euler's number").draw(at: NSPoint(x: 34, y: 38), withAttributes: bodyAttributes)
+        // This synthetic snippet shows the literal input, not an OCR result.
+        for (index, line) in initialMarkdown.split(separator: "\n").enumerated() {
+            NSString(string: String(line)).draw(
+                at: NSPoint(x: 34, y: 374 - index * 38),
+                withAttributes: bodyAttributes
+            )
+        }
         image.unlockFocus()
 
         guard let tiff = image.tiffRepresentation,
@@ -80,6 +84,11 @@ enum Ticket03PasteboardInspector {
     static func inspect(_ format: CopyFormat, pasteboard: NSPasteboard = .general) -> Bool {
         let types = Set(pasteboard.types ?? [])
         switch format {
+        case .notion:
+            return types.contains(.html)
+                && types.contains(.string)
+                && types.contains(.init("org.chromium.web-custom-data"))
+                && types.contains(.init("com.byterumi.mymathpix.notion-blocks-v3"))
         case .formulaOutput:
             return types.contains(.string)
                 && pasteboard.string(forType: .string) == "x^2 + y^2"

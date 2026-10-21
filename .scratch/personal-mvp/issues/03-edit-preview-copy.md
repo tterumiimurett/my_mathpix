@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Make Screen Capture survive through a mock result.
 
-**Status:** resolved
+**Status:** claimed
 
 ## Suggested agent split
 
@@ -24,6 +24,14 @@
 - [x] Labels and help text distinguish Copy Formats from Native Paste and do not promise native Notion or Feishu blocks.
 
 ## Comments
+
+### Owner-directed Notion copy follow-up — 2026-10-21
+
+Supersedes the six visible Copy Format rows: show only Markdown and Notion, each with a small secondary-color title to the left of the actual content preview and no inline explanatory prose. Preserve Canonical Markdown copying unchanged. The Notion action copies the complete mixed content, with rich tables and editable inline/display equations rather than just the first table. This explicitly extends the earlier source-copy-only scope to an experimental Notion clipboard adapter; it does not authorize document API writes, authentication, browser injection, or modifications to another ticket/worktree. Existing legacy clipboard seams may remain for baseline compatibility and conservative automatic Pure Formula copying.
+
+Verification remains at the pre-agreed public pasteboard types/values boundary plus a real destination paste by the owner. Native equation/table behavior must not be claimed verified solely from local serialization tests. Keep this follow-up claimed until its required destination acceptance succeeds, and record any unsupported content or destination/version limitations accurately.
+
+Candidate implemented and independently reviewed: only Markdown/Notion rows remain visible; Notion preserves complete mixed content with rich HTML, offline MathML, native equation/table clipboard structures, and source fallback. Focused tests, all 45 full-suite checks, strict signature verification, and the signed-bundle focused tests passed. One literal-cell corruption issue found in review was fixed and both re-reviews have zero remaining findings. Actual Notion paste/edit acceptance remains unexecuted, so Status stays claimed. See [candidate verification and limitations](../evidence/ticket03-notion-copy-2026-10-21.md).
 
 ### Reopened after independent review — 2026-10-21
 
