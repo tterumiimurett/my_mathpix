@@ -25,6 +25,8 @@
 
 ## Comments
 
+- 2026-10-21: At the owner's request, removed the added top linear progress bar and restored the original processing text/spinner presentation. Credential-validation feedback improvements remain in place.
+
 - 2026-10-21 manual feedback: the owner confirmed edit protection, and elected not to manually exercise disconnection this round; disconnection remains covered by automated checks only. The owner observed processing text but wanted a visible progress bar. Invalid replacement credentials correctly preserved the saved credential, but the failure message was not visible. GUI reproduction found the rejection text at y=964 below the Settings window's visible bottom y=667. The repair places credential-test feedback next to the input, adds a failure alert, and adds a top-of-window indeterminate recognition progress bar (the service supplies no completion percentage). These UI changes require a fresh owner check before they count as manual passes.
 
 - 2026-10-21: Fixed the Spec review's lost cost-breakdown regression. Usage Records now retain the complete serialized cost breakdown separately from recognition content, alongside the existing total. A deterministic signed-App regression first failed on missing persisted detail, then passed with nested components and discounts preserved after reload; legacy records without the new optional field remain readable, and deletion/clear-all retain the breakdown. This is automated evidence only; status remains `claimed` and manual/live acceptance is not expanded.
