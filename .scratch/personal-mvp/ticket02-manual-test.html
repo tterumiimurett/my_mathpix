@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>my_mathpix_ticket2 — 人工测试</title>
+<style>body{font:18px/1.7 system-ui;max-width:900px;margin:40px auto;padding:0 24px;background:#f6f7fb;color:#202535}section{background:white;padding:24px;margin:24px 0;border-radius:12px}h1{font-size:30px}table{border-collapse:collapse}td,th{border:1px solid #889;padding:8px 32px}.formula{font:36px Georgia;text-align:center;padding:25px}small{color:#556}</style>
+<h1>my_mathpix_ticket2 人工测试</h1>
+<p>请确认前台应用名称为 <strong>my_mathpix_ticket2</strong>。这是独立沙箱，需要在 Settings 中重新填写自己的 Datalab token。不要把 token 发到聊天里。</p>
+<section><h2>先做一次真实识别</h2>
+<ol><li>Settings → Datalab：输入 token，点击 Test &amp; Save；应显示验证并保存成功。</li>
+<li>回到应用，点击 Capture，选择下方公式或表格；释放后会调用真实服务，可能产生费用。</li>
+<li>确认原图、结果、Fast 模式和耗时；再尝试 High Quality Retry，确认提示后应显示 High Quality。</li></ol>
+<p><small>多版本可能争用默认快捷键，优先点击 Capture。若需快捷键，可在本版本 Settings 中另设。首次捕获可能需要为此应用授予屏幕录制权限。</small></p></section>
+<section><h2>公式测试区域</h2><div class="formula">x² + y² = z²</div></section>
+<section><h2>表格测试区域</h2><table><tr><th>Item</th><th>Value</th></tr><tr><td>Alpha</td><td>12</td></tr><tr><td>Beta</td><td>34</td></tr></table></section>
+<section><h2>剩余交互检查</h2><ol>
+<li>凭证：测试替换与清除；输入无效 token 后应显示可恢复错误，原已验证凭证不应被替换。清除后需重新填写凭证。</li>
+<li>取消／失败：识别中点击 Cancel Recognition；应保留原图，Copy Original Image 和 Retry 应可用。也可手动断网验证错误恢复，完成后恢复网络。</li>
+<li>编辑保护：成功后编辑内容，开始 High Quality Retry，再取消；继续编辑并点 Retry，应先确认。取消确认应保留编辑，确认后才提交。</li>
+<li>进度：如服务耗时超过 5 秒，应出现慢处理提示；到 60 秒仍未完成应可恢复失败。真实请求不保证能触发这些时长，未遇到就记为未实测。</li>
+</ol><p>费用明细与旧记录兼容已有自动测试；本页不会展示或读取本地 token、历史图片、识别输出或用量文件。</p></section>
+</html>

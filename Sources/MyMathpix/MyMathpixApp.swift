@@ -6,6 +6,10 @@ import SwiftUI
 struct MyMathpixApp: App {
     @StateObject private var model: AppModel
 
+    private var appDisplayName: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "MyMathpix"
+    }
+
     init() {
         let launch = AppLaunchConfiguration.current(arguments: CommandLine.arguments)
         if launch.runsLocalTokenStoreSelfTest {
@@ -83,14 +87,14 @@ struct MyMathpixApp: App {
     }
 
     var body: some Scene {
-        WindowGroup("MyMathpix") {
+        WindowGroup(appDisplayName) {
             ContentView()
                 .environmentObject(model)
                 .frame(minWidth: 920, minHeight: 620)
         }
         .defaultSize(width: 1180, height: 760)
 
-        MenuBarExtra("MyMathpix", systemImage: "function") {
+        MenuBarExtra(appDisplayName, systemImage: "function") {
             Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {
                 model.startCapture()
             }

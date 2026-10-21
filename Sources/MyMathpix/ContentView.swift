@@ -17,6 +17,21 @@ struct ContentView: View {
                 emptyState
             }
         }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            if model.isProcessing {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(model.statusMessage)
+                        .font(.callout)
+                    ProgressView()
+                        .progressViewStyle(.linear)
+                        .accessibilityLabel("Recognition in progress")
+                        .accessibilityIdentifier("recognition-progress-bar")
+                }
+                .padding(12)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.bar)
+            }
+        }
         .toolbar {
             ToolbarItemGroup {
                 Button {

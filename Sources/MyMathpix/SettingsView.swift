@@ -5,6 +5,9 @@ struct SettingsView: View {
     @State private var token = ""
     @State private var hotKey = HotKeyConfiguration()
     @State private var testingToken = false
+    @State private var tokenStatus: String?
+    @State private var tokenTestFailed = false
+    @State private var showsTokenFailure = false
     @State private var status: String?
 
     var body: some View {
@@ -18,12 +21,24 @@ struct SettingsView: View {
                     .disabled(testingToken || token.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                     if model.hasToken { Label("Stored locally on this Mac", systemImage: "externaldrive") }
                 }
+                if let tokenStatus {
+                    Label(
+                        tokenStatus,
+                        systemImage: tokenTestFailed ? "exclamationmark.triangle.fill" : "info.circle"
+                    )
+                    .font(.callout)
+                    .foregroundStyle(tokenTestFailed ? Color.red : Color.secondary)
+                    .accessibilityIdentifier("token-test-status")
+                    .textSelection(.enabled)
+                }
                 if model.hasToken {
                     Button("Clear Saved Token", role: .destructive) {
                         do {
                             try model.clearToken()
                             token = ""
-                            status = "Saved token cleared."
+                            tokenStatus = "Saved token cleared."
+                            tokenTestFailed = false
+                            showsTokenFailure = false
                         } catch {
                             status = error.localizedDescription
                         }
@@ -83,20 +98,34 @@ struct SettingsView: View {
         .formStyle(.grouped)
         .padding()
         .onAppear { hotKey = model.hotKeyConfiguration }
+        .alert("Token test failed", isPresented: $showsTokenFailure) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(tokenStatus ?? "The token could not be verified.")
+        }
     }
 
     @MainActor
     private func testToken() async {
         testingToken = true
+        tokenTestFailed = false
+        showsTokenFailure = false
+        tokenStatus = "Testing token…"
         defer { testingToken = false }
         do {
             try await model.testAndSaveToken(token)
             token = ""
-            status = "Token verified and saved locally in the App Sandbox."
+            tokenStatus = "Token verified and saved locally in the App Sandbox."
         } catch is CancellationError {
             // A newer credential action owns the visible status.
         } catch {
-            status = error.localizedDescription
+            let reason = (error as? AppError)?.diagnosticCode == .invalidCredentials
+                ? "The API token was rejected."
+                : "The token could not be verified. Check the token and your connection, then try again."
+            tokenStatus = "Token test failed. \(reason)"
+                + (model.hasToken ? " Your previously saved token was kept." : " No token was saved.")
+            tokenTestFailed = true
+            showsTokenFailure = true
         }
     }
 }
