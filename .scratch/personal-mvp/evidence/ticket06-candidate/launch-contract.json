@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
+  "signal": "TICKET06_LAUNCH_CONTRACT_OK invalid-uuid-and-options=closed",
+  "scope": "Eight existing malformed/duplicate/unknown/conflicting launch cases fail closed on the exact signed executable."
+}

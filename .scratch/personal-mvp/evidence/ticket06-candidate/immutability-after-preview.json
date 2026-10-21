@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
+  "bundleTreeSHA256": "068a8f2aa3b409694154e8510ada1ac136a298120236849c9ca495c5a5e159fd",
+  "signal": "TICKET06_CANDIDATE_UNCHANGED artifact=ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd cdhash=d778b73b6a491c382cb56abeab19c2fcd7e96501",
+  "sameCandidateUnchanged": true,
+  "after": "Eight existing support checks, strict UUID, source bridge and exact signed Golden preview self-test; repeated after documentation assembly."
+}

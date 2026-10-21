@@ -1,13 +1,22 @@
 {
-  "schema": 1,
-  "candidateSourceRevision": "021a5a30dbecf259f1319b055e73c44a550e0e6b",
-  "candidateArtifactSHA256": "49e4b18832715738628b22d0f94fcdb3096067f8e88a4ba391e651fb99510b65",
+  "schema": 2,
+  "candidateSourceRevision": "b667026f27e3e01d6d56b838480ac62aafb0b3b9",
+  "candidateArtifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
   "goldenSourceRevision": "f1244513d47738d9bb0dbc227878a4c42d16abba",
   "goldenArtifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
   "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
   "goldenConfigurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
-  "qualityPipelineInputsUnchanged": true,
-  "verifiedQualityPipelineFiles": 160,
+  "qualityPipelineInputsUnchanged": false,
+  "ordinaryCoreInputsUnchanged": true,
+  "verifiedOrdinaryCoreFiles": 159,
+  "reviewedGoldenRunnerRefactor": [
+    {
+      "path": "Sources/MyMathpix/GoldenSetRunner.swift",
+      "previousSHA256": "3ebc2b386f987f594b34aef02ec91830d369be2baf7dde7f2faaebcf0113980b",
+      "sha256": "150517e9ab4a650ccbdf1d06368960273d1465339aa12ef1ef8611b04db89185",
+      "reviewReason": "Bounded Golden runner attempt-record/outcome types and navigation completion cleanup; public result schema/raw fields retained."
+    }
+  ],
   "acceptanceOnlyChanges": [
     {
       "path": "Sources/MyMathpix/AppModel.swift",
@@ -65,7 +74,7 @@
     }
   ],
   "sourceInputs": {
-    "sha256": "fd8dfec230a5835f41c1563b0d78e5a4ecd4455ec1af19212f2daf4f8991ded5",
+    "sha256": "6915ec6e89bd0d8064a028ea4bbb2777b487b825cc753423631f7863bf374222",
     "files": [
       {
         "path": "Sources/MyMathpix/AppInfo.swift",
@@ -109,7 +118,7 @@
       },
       {
         "path": "Sources/MyMathpix/GoldenSetRunner.swift",
-        "sha256": "3ebc2b386f987f594b34aef02ec91830d369be2baf7dde7f2faaebcf0113980b"
+        "sha256": "150517e9ab4a650ccbdf1d06368960273d1465339aa12ef1ef8611b04db89185"
       },
       {
         "path": "Sources/MyMathpix/HTMLTextEntities.swift",
@@ -829,5 +838,5 @@
       }
     ]
   },
-  "limit": "Source comparison bridges unchanged recognition/normalization/rendering/clipboard/history pipeline. Host-only differences require diff review; this is not a fresh API run or GUI acceptance."
+  "limit": "Ordinary recognition/normalization/rendering/clipboard/history/usage inputs and resources match byte-for-byte. Golden runner record/teardown changes are a separate exact-hash reviewed exception, not an unchanged full quality pipeline. Host differences require diff review; this is not a fresh API run or GUI acceptance."
 }

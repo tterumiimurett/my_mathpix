@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
+  "signal": "GOLDEN_PREVIEW_SELF_TEST_OK height=1776 footerRows=48",
+  "exitCode": 0,
+  "previewSHA256": "ae3113f1a8566cd1570457bd1779ea5c440872eb6ca2299bfe025770d1e24512",
+  "scope": "Existing local offscreen WebKit footer fixture only. No live service, Screen Capture or destination acceptance.",
+  "parentVisualObservation": "Parent viewed the bound local fixture PNG: complete black END footer is visible. footerRows=48 counts black pixel rows, not table records. Offscreen rendering support only; actual desktop UI remains pending."
+}

@@ -14,6 +14,10 @@ CHECKS = {
     'boundary': ('meaning', 'layout', 'canonical', 'preview', 'copy'),
 }
 
+def required_checks(case):
+    """One review policy shared by templates and the fail-closed report."""
+    return CHECKS[case['category']] + (('table_structure',) if case['category'] == 'boundary' and case.get('tableGrids') else ())
+
 def summarize(cases, results, reviews, mode, binding=None):
     binding = binding or {}
     if len({c['id'] for c in cases}) != 80 or any(sum(c['category'] == k for c in cases) != n for k,n in COUNTS.items()):
@@ -37,7 +41,7 @@ def summarize(cases, results, reviews, mode, binding=None):
                 reason = 'Semantic/layout and consumption review pending'
                 if review and review.get('reviewer') and review.get('reviewedAt') and review.get('notes'):
                     checks = review.get('checks',{})
-                    required = CHECKS[case['category']] + (('table_structure',) if case['category']=='boundary' and case.get('tableGrids') else ())
+                    required = required_checks(case)
                     values = [checks.get(key) for key in required]
                     if any(v == 'fail' for v in values): verdict,reason = 'fail',review['notes']
                     elif all(v == 'pass' for v in values): verdict,reason = 'pass',review['notes']

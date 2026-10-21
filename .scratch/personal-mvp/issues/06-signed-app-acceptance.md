@@ -10,7 +10,9 @@
 
 - 2026-10-22: Ticket 05 ordinary quality gate is verified for both modes. Claimed on integration baseline `a1333d6` to assemble and support-check one stable signed candidate. Actual shortcut/selection/live-service GUI acceptance remains pending; the parent agent owns those observations. Existing menu-bar and Notion-inline exceptions remain unresolved.
 
-- 2026-10-22: Parent reviewed final source `021a5a3`; complete production-identity bundle staged and sealed at the retained integration `dist/MyMathpix.app`. All eight signed supporting seams, invalid-launch contract and no-build artifact/source audits passed. Evidence: `../evidence/ticket06-candidate/handoff.md`. Actual shortcut/granted capture/live GUI observations remain pending Mac unlock and action-time permission; no acceptance criteria below are marked passed from supporting checks.
+- 2026-10-22 (superseded pre-review candidate; original evidence retained under `../evidence/ticket06-candidate/pre-review/`): Parent reviewed source `021a5a3`; complete production-identity bundle staged and sealed at the retained integration `dist/MyMathpix.app`. All eight signed supporting seams, invalid-launch contract and no-build artifact/source audits passed. Evidence: `../evidence/ticket06-candidate/handoff.md`. Actual shortcut/granted capture/live GUI observations remain pending Mac unlock and action-time permission; no acceptance criteria below are marked passed from supporting checks.
+
+- 2026-10-22: Parent and independent reviewers accepted Standards fixes `b667026` and explicitly authorized a replacement seal. Current candidate SHA256 `ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd`, CDHash `d778b73b6a491c382cb56abeab19c2fcd7e96501`. All eight signed support checks, strict UUID, local signed Golden preview and immutable audit pass. Bridge distinguishes159 unchanged core/resource files,1 exact-hash reviewed runner refactor and9 host differences. Current probe is separately hash-bound and ungranted; manual unlock plus actual capture/live journeys remain pending. The first four criteria stay unchecked. Resources/offline policy, explicit limits and bound blank14-day handoff are supported by `../evidence/ticket06-candidate/handoff.md`.
 
 ## Suggested agent split
 
@@ -24,6 +26,6 @@
 - [ ] An authorized real ScreenCaptureKit smoke run confirms permission handling, coordinate conversion, Retina output dimensions, and ordinary multi-display behavior.
 - [ ] A real Datalab run confirms fast recognition, visible progress, editing, the relevant Copy Formats, Failed Record recovery, and balanced retry without exposing the token.
 - [ ] Relaunch recovery, individual deletion, clear-all, twenty-record eviction, shortcut conflict, capture cancellation, denial, timeout, and malformed-service behavior remain operable in the candidate.
-- [ ] The candidate contains required offline rendering resources, version information, and third-party license notices and makes no remote preview request.
-- [ ] Known limitations explicitly retain the Personal MVP boundaries, including no Native Paste guarantee, backend, subscription, App Store release, cloud history, document import, or local Marker fallback.
-- [ ] A fourteen-day dogfood checklist is handed to the owner, and the Public Product gate is not claimed until the owner records successful routine replacement of the Mathpix Snip workflow.
+- [x] The candidate contains required offline rendering resources, version information, and third-party license notices and makes no remote preview request.
+- [x] Known limitations explicitly retain the Personal MVP boundaries, including no Native Paste guarantee, backend, subscription, App Store release, cloud history, document import, or local Marker fallback.
+- [x] A fourteen-day dogfood checklist is handed to the owner, and the Public Product gate is not claimed until the owner records successful routine replacement of the Mathpix Snip workflow.

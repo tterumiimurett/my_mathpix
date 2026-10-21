@@ -1,0 +1,5 @@
+{
+  "artifactSHA256": "49e4b18832715738628b22d0f94fcdb3096067f8e88a4ba391e651fb99510b65",
+  "signal": "TICKET01_SCREEN_PERMISSION granted=no",
+  "scope": "Read-only preflight; no permission requested or changed."
+}
