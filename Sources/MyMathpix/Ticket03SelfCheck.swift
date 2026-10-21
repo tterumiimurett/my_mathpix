@@ -816,6 +816,155 @@ enum Ticket03SelfCheck {
             failures: &failures
         )
 
+        let serviceHeaderMarkdown = """
+        | <b>Method</b> | <strong>Value</strong> |
+        | --- | --- |
+        | Baseline | $x^2$ |
+        """
+        let serviceHeaderPreview = MarkdownRenderer.document(for: serviceHeaderMarkdown)
+        check(
+            serviceHeaderPreview.contains("<th>Method</th>")
+                && serviceHeaderPreview.contains("<th>Value</th>"),
+            "service bold wrappers do not become literal markup in preview table headers",
+            failures: &failures
+        )
+        let literalHeaderPreview = MarkdownRenderer.document(for: """
+        Outside <b>literal</b>.
+
+        | `<b>literal</b>` | $x^2$ |
+        | --- | --- |
+        | A < B | x<sup>2</sup> |
+        """)
+        check(
+            literalHeaderPreview.contains("Outside &lt;b&gt;literal&lt;/b&gt;.")
+                && literalHeaderPreview.contains("<code>&lt;b&gt;literal&lt;/b&gt;</code>")
+                && literalHeaderPreview.contains("x&lt;sup&gt;2&lt;/sup&gt;")
+                && literalHeaderPreview.contains("data-tex="),
+            "table header cleanup preserves literal code, math and default raw-HTML escape",
+            failures: &failures
+        )
+
+        // Literal service fixtures captured from the authored T04/T13 PNGs.
+        let serviceMathTables: [(String, String, String)] = [
+            (
+                "Greek table",
+                #"""
+                | <b>Symbol</b> | <b>Meaning</b> |
+                |---------------|----------------|
+                | $\alpha$      | Learning rate  |
+                | $\beta$       | Momentum       |
+                """#,
+                #"""
+                <!DOCTYPE html>
+                <html>
+                 <head>
+                  <meta charset="utf-8"/>
+                 </head>
+                 <body>
+                  <table>
+                   <tr>
+                    <th data-bbox="84 130 994 304"><b>Symbol</b></th>
+                    <th data-bbox="994 130 2318 304"><b>Meaning</b></th>
+                   </tr>
+                   <tr>
+                    <td data-bbox="84 304 994 476"><math>\alpha</math></td>
+                    <td data-bbox="994 304 2318 476">Learning rate</td>
+                   </tr>
+                   <tr>
+                    <td data-bbox="84 476 994 647"><math>\beta</math></td>
+                    <td data-bbox="994 476 2318 647">Momentum</td>
+                   </tr>
+                  </table>
+                 </body>
+                </html>
+                """#
+            ),
+            (
+                "Power table",
+                #"""
+                | <b>Name</b> | <b>Expression</b> |
+                |-------------|-------------------|
+                | Square      | $x^2$             |
+                | Cube        | $x^3$             |
+                """#,
+                #"""
+                <!DOCTYPE html>
+                <html>
+                 <head>
+                  <meta charset="utf-8"/>
+                 </head>
+                 <body>
+                  <table>
+                   <tr>
+                    <th data-bbox="86 131 975 304"><b>Name</b></th>
+                    <th data-bbox="975 131 2318 304"><b>Expression</b></th>
+                   </tr>
+                   <tr>
+                    <td data-bbox="86 304 975 476">Square</td>
+                    <td data-bbox="975 304 2318 476"><math>x^2</math></td>
+                   </tr>
+                   <tr>
+                    <td data-bbox="86 476 975 647">Cube</td>
+                    <td data-bbox="975 476 2318 647"><math>x^3</math></td>
+                   </tr>
+                  </table>
+                 </body>
+                </html>
+                """#
+            )
+        ]
+        for (name, source, rawHTML) in serviceMathTables {
+            let canonical = MarkdownNormalizer.normalize(source)
+            let preview = MarkdownRenderer.document(for: canonical, complexTableHTML: rawHTML)
+            check(
+                preview.components(separatedBy: "<table>").count == 2,
+                "\(name) preview omits only the fully represented math fallback table",
+                failures: &failures
+            )
+            do {
+                let board = NSPasteboard(name: .init("Ticket03ServiceMath.\(UUID().uuidString)"))
+                defer { board.releaseGlobally() }
+                let payload = ClipboardPayload(canonicalMarkdown: canonical, complexTableHTML: rawHTML, originalPNG: nil)
+                for format in [CopyFormat.lark, .notion] {
+                    try ClipboardService.copy(format, payload: payload, to: board)
+                    check(
+                        board.string(forType: .html)?.components(separatedBy: "<table>").count == 2
+                            && board.string(forType: .string) == canonical,
+                        "\(name) \(format.title) copies one complete table without a lossy duplicate",
+                        failures: &failures
+                    )
+                }
+            } catch { failures.append("\(name) whole-table clipboard recovery") }
+        }
+
+        let otherMathTable = #"<table><tr><th>Symbol</th><th>Meaning</th></tr><tr><td><math>\gamma</math></td><td>Different</td></tr></table>"#
+        let originalGreekTable = #"| Symbol | Meaning |\n| --- | --- |\n| $\alpha$ | Learning rate |"#
+            .replacingOccurrences(of: #"\n"#, with: "\n")
+        check(
+            MarkdownRenderer.document(for: originalGreekTable, complexTableHTML: otherMathTable)
+                .components(separatedBy: "<table>").count == 3,
+            "a different math fallback table is retained rather than broadly suppressed",
+            failures: &failures
+        )
+        do {
+            let board = NSPasteboard(name: .init("Ticket03MathSafety.\(UUID().uuidString)"))
+            defer { board.releaseGlobally() }
+            let hostileMathTable = "<table onclick='evil()'><tr><td><math onmouseover='evil()'>x &lt; y</math></td><td><math><script>UNSAFE_MATH_FIXTURE</script>x</math></td></tr></table>"
+            try ClipboardService.copy(.richTable, payload: ClipboardPayload(
+                canonicalMarkdown: "", complexTableHTML: hostileMathTable, originalPNG: nil
+            ), to: board)
+            let html = board.string(forType: .html) ?? ""
+            check(
+                board.string(forType: .string)?.contains("$x < y$") == true
+                    && html.contains("$x &lt; y$")
+                    && !html.contains("<math") && !html.contains("<script")
+                    && !html.contains("onclick") && !html.contains("onmouseover")
+                    && !html.contains("UNSAFE_MATH_FIXTURE"),
+                "text-only math is inert and decoded once while nested executable markup remains suppressed",
+                failures: &failures
+            )
+        } catch { failures.append("math fallback clipboard safety") }
+
         return report(failures)
     }
 

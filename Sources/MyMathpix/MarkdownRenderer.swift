@@ -328,7 +328,10 @@ enum MarkdownRenderer {
             }
             return html
         }
-        let head = "<thead><tr>" + header.map { "<th>\(cellHTML($0))</th>" }.joined() + "</tr></thead>"
+        let head = "<thead><tr>" + header.map {
+            let source = forClipboard ? $0 : TableCellText.previewHeaderSource($0)
+            return "<th>\(cellHTML(source))</th>"
+        }.joined() + "</tr></thead>"
         let body = rows.dropFirst().map { row in
             "<tr>" + row.map { "<td>\(cellHTML($0))</td>" }.joined() + "</tr>"
         }.joined()
