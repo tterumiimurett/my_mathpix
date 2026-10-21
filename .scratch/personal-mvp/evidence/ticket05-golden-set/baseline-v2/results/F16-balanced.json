@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+  "caseID" : "F16",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$</p></body></html>",
+        "plain" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></mfrac><mo>=</mo><mfrac><mi>x</mi><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "1836e2bf85b4000fc5bbcc9086cd27afef381166a00b9d82568b8b01738893ec",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F16-balanced.png",
+    "previewSHA256" : "424712f5ec2d8f1b4518c5c0c1dec54f4305ad17616f45e4d20bdafe8e4386a1"
+  },
+  "contentSHA256" : "9bf1f4e1091f4cd3e2e219f896536432bc11659699bdfeb06fcae1a206a94ba8",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "85907e8f5c9eb31af01e2cf908a70adac0a08c637f19e96887ff6bcef7fc2dbc",
+  "mode" : "balanced",
+  "outputSHA256" : "67f5f9a20e293fb7f1287fccf37652ab8c7f0e4a2e014c95257f75d0288e057c",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+  "rawOutputSHA256" : "b85d5e49373c2d78a27c71a0509f206cfcdd5eec6c2dc79cd32900f49cf16f4e",
+  "runtimeSeconds" : 0.28976321220397949,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:19Z",
+  "status" : "complete",
+  "wallSeconds" : 2.6931719779968262
+}

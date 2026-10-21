@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M01",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 1: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 1: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span></p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>",
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d2ca49be5177c6af94185d987cfc909fbe53df0ddf337e2f2deb3ec122b900b7",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M01-fast.png",
+    "previewSHA256" : "7338cacbcdca0e77e7c95ee12fa3a3c679f3e010de450291db6aa6d02307a772"
+  },
+  "contentSHA256" : "daebfccad02aa09c3ea662dc1878b592faf174266476d34cb20ef3a8d43d1238",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "28e845eaede4876aa19fb1a5ad850d23ecd8944716cefdbe53d156a8226087ad",
+  "mode" : "fast",
+  "outputSHA256" : "23a1cd852dad271dd7fb58dc66e6fea629001c532e9a13e7e9477687275d6956",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>Experiment 1: evaluate <math>x^2</math> before comparing the measurements.</p>\n  <p><math display=\"block\">x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</math></p>\n  <table>\n   <tr>\n    <th><b>Variable</b></th>\n    <th><b>Value</b></th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>\n  <p>The result preserves the order of the observations.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nExperiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+  "rawOutputSHA256" : "1acb266f2b42448124ecdbda0b62239e1ce7e4f941469033c87e3c352e168ae5",
+  "runtimeSeconds" : 0.12969326972961426,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:13:07Z",
+  "status" : "complete",
+  "wallSeconds" : 2.1704620122909546
+}

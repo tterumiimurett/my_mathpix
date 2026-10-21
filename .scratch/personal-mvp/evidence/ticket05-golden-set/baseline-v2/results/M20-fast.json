@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Start with  $x = 1$ .\n\n| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |\n\n$a + b = c$\n\n$a - b = d$\n\nThen compare another table.\n\n| Code | Description  |\n|------|--------------|\n| A1   | Left branch  |\n| B2   | Right branch |\n\nFinish in the same reading order.",
+  "caseID" : "M20",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Sample</th>\n    <th>Result</th>\n   </tr>\n   <tr>\n    <td>S-01</td>\n    <td>Pass</td>\n   </tr>\n   <tr>\n    <td>S-02</td>\n    <td>Fail</td>\n   </tr>\n   <tr>\n    <td>S-03</td>\n    <td>Pass</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Start with  $x = 1$ .</p>\n<table><thead><tr><th>Sample</th><th>Result</th></tr></thead><tbody><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></tbody></table>\n<p>$a + b = c$</p>\n<p>$a - b = d$</p>\n<p>Then compare another table.</p>\n<table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></tbody></table>\n<p>Finish in the same reading order.</p></body></html>",
+        "plain" : "Start with  $x = 1$ .\n\n| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |\n\n$a + b = c$\n\n$a - b = d$\n\nThen compare another table.\n\n| Code | Description  |\n|------|--------------|\n| A1   | Left branch  |\n| B2   | Right branch |\n\nFinish in the same reading order.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Start with  $x = 1$ .\n\n| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |\n\n$a + b = c$\n\n$a - b = d$\n\nThen compare another table.\n\n| Code | Description  |\n|------|--------------|\n| A1   | Left branch  |\n| B2   | Right branch |\n\nFinish in the same reading order.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Start with  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">x = 1</annotation></semantics></math></span> .</p>\n<table><thead><tr><th>Sample</th><th>Result</th></tr></thead><tbody><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></tbody></table>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">a + b = c</annotation></semantics></math></span></p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>−</mo><mi>b</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">a - b = d</annotation></semantics></math></span></p>\n<p>Then compare another table.</p>\n<table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></tbody></table>\n<p>Finish in the same reading order.</p></body></html>",
+        "plain" : "Start with  $x = 1$ .\n\n| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |\n\n$a + b = c$\n\n$a - b = d$\n\nThen compare another table.\n\n| Code | Description  |\n|------|--------------|\n| A1   | Left branch  |\n| B2   | Right branch |\n\nFinish in the same reading order.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Sample</th><th>Result</th></tr></thead><tbody><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></tbody></table>",
+        "plain" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "tsv" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "tsv" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "a313b0d20b1536e6c0d5c527caf7af12eb5fe501a2e04dd02edadea5a4af00a6",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M20-fast.png",
+    "previewSHA256" : "2758b0cc4cd2a4ea1e29508d8aa09707cc5bda8de70ce2836115598fd93d705c"
+  },
+  "contentSHA256" : "98e9f100aee49dbc3d3ec1482a94058bb17f40f2d29cb26d964ee8d69c40f232",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "9b2229d6ca1f5e3a66a9afa1cdec32d7b7b7c4382939bd408f0f922128c5d64b",
+  "mode" : "fast",
+  "outputSHA256" : "e7bc178c8b4fc587b60fe397528a515c322b0c3c30d525c31cf943476ff0fd16",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>Start with <math>x = 1</math>.</p>\n  <table>\n   <tr>\n    <th>Sample</th>\n    <th>Result</th>\n   </tr>\n   <tr>\n    <td>S-01</td>\n    <td>Pass</td>\n   </tr>\n   <tr>\n    <td>S-02</td>\n    <td>Fail</td>\n   </tr>\n   <tr>\n    <td>S-03</td>\n    <td>Pass</td>\n   </tr>\n  </table>\n  <p>\n   <p><math>a + b = c</math></p>\n  </p>\n  <p>\n   <p><math>a - b = d</math></p>\n  </p>\n  <p>Then compare another table.</p>\n  <table>\n   <tr>\n    <th>Code</th>\n    <th>Description</th>\n   </tr>\n   <tr>\n    <td>A1</td>\n    <td>Left branch</td>\n   </tr>\n   <tr>\n    <td>B2</td>\n    <td>Right branch</td>\n   </tr>\n  </table>\n  <p>Finish in the same reading order.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nStart with  $x = 1$ .\n\n| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |\n\n$a + b = c$\n\n$a - b = d$\n\nThen compare another table.\n\n| Code | Description  |\n|------|--------------|\n| A1   | Left branch  |\n| B2   | Right branch |\n\nFinish in the same reading order.",
+  "rawOutputSHA256" : "cbd93ef6c488b7b5d2aebb72c41d8b511c02c3d76af6052ec1f78d2f043535df",
+  "runtimeSeconds" : 0.10561013221740723,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:15:35Z",
+  "status" : "complete",
+  "wallSeconds" : 2.8764289617538452
+}

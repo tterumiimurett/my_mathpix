@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$P(A | B) = \\frac{P(B | A)P(A)}{P(B)}$$",
+  "caseID" : "F20",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$P(A | B) = \\frac{P(B | A)P(A)}{P(B)}$$</p></body></html>",
+        "plain" : "$$P(A | B) = \\frac{P(B | A)P(A)}{P(B)}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$P(A | B) = \\frac{P(B | A)P(A)}{P(B)}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>P</mi><mo stretchy=\"false\">(</mo><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo stretchy=\"false\">(</mo><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mo stretchy=\"false\">)</mo><mi>P</mi><mo stretchy=\"false\">(</mo><mi>A</mi><mo stretchy=\"false\">)</mo></mrow><mrow><mi>P</mi><mo stretchy=\"false\">(</mo><mi>B</mi><mo stretchy=\"false\">)</mo></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">P(A | B) = \\frac{P(B | A)P(A)}{P(B)}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$P(A | B) = \\frac{P(B | A)P(A)}{P(B)}$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "ddc0c01f11017f0eaf8a1620e811f18b6880a9601ce21fdf611011a61283c3bd",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F20-balanced.png",
+    "previewSHA256" : "c04bd7513afe7934b0669b086d95a97a0232e8243c973d799dc1aa287990f489"
+  },
+  "contentSHA256" : "4ca6a1628285972768f51ce4cf4065b419144fb1d950d6510ae120f9fa351ef9",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "ec4cf9a9c1ecdfd394b911f76771a535337606ad79e4e83d6ab4e702f705fc82",
+  "mode" : "balanced",
+  "outputSHA256" : "edabd7d9d4f7e994ad63b611deae4506d06637f5461fb931220ea76ea1e78266",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">P(A | B) = \\frac{P(B | A)P(A)}{P(B)}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$P(A | B) = \\frac{P(B | A)P(A)}{P(B)}$$",
+  "rawOutputSHA256" : "6167b590f40ce3b6d6b444da247ac0127d77e00252f6bc4e16acae2983eb328d",
+  "runtimeSeconds" : 0.13179278373718262,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:40Z",
+  "status" : "complete",
+  "wallSeconds" : 2.2609810829162598
+}

@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$H_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}$$",
+  "caseID" : "F24",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$H_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}$$</p></body></html>",
+        "plain" : "$$H_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$H_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msub><mi>H</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mrow><msup><mi mathvariant=\"normal\">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant=\"normal\">∂</mi><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant=\"normal\">∂</mi><msub><mi>x</mi><mi>j</mi></msub></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">H_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$H_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "1e274a82fadd9ad16999e244eff606f113470819f7838a27796cdaadd7b7dfc8",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F24-fast.png",
+    "previewSHA256" : "0827e251379d33e26d4000c3e7697bfeb69c41eae79eaa89de2e03506b422805"
+  },
+  "contentSHA256" : "ac37fb64378eacf0446fd22b3b526287852913ae1b103403ce3da4cd46f865cd",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "f9315832c2c65e3751ba8940594cbc64e1efd229b0e2248d300c262952981187",
+  "mode" : "fast",
+  "outputSHA256" : "48dd4dade66302b69fc7c4370e48d4772e5d5dbf1f83c0ed3d74fc7161f6179c",
+  "runtimeSeconds" : 0.64380240440368652,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:49:15Z",
+  "status" : "complete",
+  "wallSeconds" : 3.1512559652328491
+}

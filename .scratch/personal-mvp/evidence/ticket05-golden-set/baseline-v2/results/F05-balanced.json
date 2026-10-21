@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+  "caseID" : "F05",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$</p></body></html>",
+        "plain" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>x</mi><mn>2</mn></msup><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\int_0^1 x^2\\,dx = \\frac{1}{3}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "af754d5d2bcd841d0857c658db80fa908053aa466c1c0d7ce2bea6849f16c21e",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F05-balanced.png",
+    "previewSHA256" : "c950ab6299a1ebe930069c7f2b738be0544d9b3a526d61b9fb0de89e5e799521"
+  },
+  "contentSHA256" : "f57f9a85288c4637271ff4e01826b503b7f6d20f6106e32d8ef9cf4e20143b6f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "edf798fca5702be4d8e90f4a27e1b1a2d10cef054e5bebeab9390a28ddcff2ce",
+  "mode" : "balanced",
+  "outputSHA256" : "034317860c4a96659841a24978188e2bdd0b41fd3ac9a317205d72c95fa1a939",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\int_0^1 x^2\\,dx = \\frac{1}{3}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+  "rawOutputSHA256" : "ccc7742ca649293128062fc2ad57e62ba37eb244348b5c42c9ef3773d766e901",
+  "runtimeSeconds" : 0.14444446563720703,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:08:07Z",
+  "status" : "complete",
+  "wallSeconds" : 3.6584210395812988
+}

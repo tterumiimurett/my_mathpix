@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "First measure  $a^2 + b^2 = c^2$ .\n\nThen compare the following observations.\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nTwo paragraphs precede this table.",
+  "caseID" : "M11",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>First measure  $a^2 + b^2 = c^2$ .</p>\n<p>Then compare the following observations.</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>Two paragraphs precede this table.</p></body></html>",
+        "plain" : "First measure  $a^2 + b^2 = c^2$ .\n\nThen compare the following observations.\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nTwo paragraphs precede this table.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "First measure  $a^2 + b^2 = c^2$ .\n\nThen compare the following observations.\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nTwo paragraphs precede this table.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>First measure  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">a^2 + b^2 = c^2</annotation></semantics></math></span> .</p>\n<p>Then compare the following observations.</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>Two paragraphs precede this table.</p></body></html>",
+        "plain" : "First measure  $a^2 + b^2 = c^2$ .\n\nThen compare the following observations.\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nTwo paragraphs precede this table.",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>",
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "990dedbf0eb0819e1f5ad41dbcd7540c6897fd938695eb6c325fe10886bcf476",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M11-fast.png",
+    "previewSHA256" : "30f9f663d45c917256ab52d55c18cbb3db2f91b57c560485028c9c622541a4a0"
+  },
+  "contentSHA256" : "3e47158b40b9af7504e5de18e0501fb484953d83f13ad74cf3322f954839b310",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "6a36cbcc1ac685b29e43e86e7691eb1493b62f1c44eedfe24d47a3bf8b968ca2",
+  "mode" : "fast",
+  "outputSHA256" : "ae6b753a50202a9707218456a656bdc6a152504ea8b9c4f89d11fce4ee095893",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>First measure <math>a^2 + b^2 = c^2</math>.</p>\n  <p>Then compare the following observations.</p>\n  <table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>\n  <p>Two paragraphs precede this table.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nFirst measure  $a^2 + b^2 = c^2$ .\n\nThen compare the following observations.\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nTwo paragraphs precede this table.",
+  "rawOutputSHA256" : "74080386b5bd0f882c19250fc210b4500cd70a191ed5eccde38af9bc8460ade8",
+  "runtimeSeconds" : 0.11385059356689453,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:14:29Z",
+  "status" : "complete",
+  "wallSeconds" : 3.0387629270553589
+}

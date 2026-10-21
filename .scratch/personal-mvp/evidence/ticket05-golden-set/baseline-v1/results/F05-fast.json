@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+  "caseID" : "F05",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$</p></body></html>",
+        "plain" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>x</mi><mn>2</mn></msup><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\int_0^1 x^2\\,dx = \\frac{1}{3}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\int_0^1 x^2\\,dx = \\frac{1}{3}$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "7459d0a20624a61cb45ff940cc848f467a7c18f3a212be2000eba73139773e03",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F05-fast.png",
+    "previewSHA256" : "c950ab6299a1ebe930069c7f2b738be0544d9b3a526d61b9fb0de89e5e799521"
+  },
+  "contentSHA256" : "f57f9a85288c4637271ff4e01826b503b7f6d20f6106e32d8ef9cf4e20143b6f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "edf798fca5702be4d8e90f4a27e1b1a2d10cef054e5bebeab9390a28ddcff2ce",
+  "mode" : "fast",
+  "outputSHA256" : "034317860c4a96659841a24978188e2bdd0b41fd3ac9a317205d72c95fa1a939",
+  "runtimeSeconds" : 0.67904925346374512,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:45:54Z",
+  "status" : "complete",
+  "wallSeconds" : 3.7913280725479126
+}

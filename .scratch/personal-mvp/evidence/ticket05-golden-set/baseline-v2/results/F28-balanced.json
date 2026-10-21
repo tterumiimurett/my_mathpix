@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$",
+  "caseID" : "F28",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$</p></body></html>",
+        "plain" : "$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>A</mi><mo>∩</mo><mo stretchy=\"false\">(</mo><mi>B</mi><mo>∪</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>∪</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>∩</mo><mi>C</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "b7b2eb946faac5ca1b5ead0c32ca98730f453bdf2da2f8829999ae0b8704e662",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F28-balanced.png",
+    "previewSHA256" : "dead577eb23a721be429cad78b2743c6e30e8ea4b5781c3ea00496298dd18ed8"
+  },
+  "contentSHA256" : "3cc253bf20f689528e04232d9cb8ddde9037dabc4ecbf245a8f7486bea525856",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "2a36adbbb06fdd2c5f074cf9a8aa6a807362f1adb94d9609ea50a9ed67b62000",
+  "mode" : "balanced",
+  "outputSHA256" : "96528ea216bfa27a2933cbda007752b2627dd8cc61556d7932a93e722f6d90f9",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$",
+  "rawOutputSHA256" : "62e831c875ffd69b8e4ac64eb51c007d1c4da47d6b32f39aab2e4126e4a3352f",
+  "runtimeSeconds" : 0.14694976806640625,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:10:32Z",
+  "status" : "complete",
+  "wallSeconds" : 2.4006719589233398
+}

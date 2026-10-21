@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$n!=\\prod_{k=1}^n k$$",
+  "caseID" : "F08",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$n!=\\prod_{k=1}^n k$$</p></body></html>",
+        "plain" : "$$n!=\\prod_{k=1}^n k$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$n!=\\prod_{k=1}^n k$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>n</mi><mo stretchy=\"false\">!</mo><mo>=</mo><munderover><mo>∏</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>k</mi></mrow><annotation encoding=\"application/x-tex\">n!=\\prod_{k=1}^n k</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$n!=\\prod_{k=1}^n k$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "2447366f76a701a66a4d62f2f962300cac3ca006362409a73d18815b3af81bac",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F08-balanced.png",
+    "previewSHA256" : "50c2eda4254e4bb6f03a44ca8a0a2c3ea75d7155c8d62390c6586e42c05fe61a"
+  },
+  "contentSHA256" : "6a309da1cb525bebc63a447cf6388021ef45e9d767b02f84a6d0c2f2d52e6b26",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "7fb6bcffbe6ff123f0ad567082eb0677f1510fa7a271bd0a1e6e7c1cccb54f8b",
+  "mode" : "balanced",
+  "outputSHA256" : "13a8408a7b7aae31971a501abb2391d6832c1bdbdc7ae50656e44dd9c0be7fff",
+  "runtimeSeconds" : 3.9253768920898438,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:46:31Z",
+  "status" : "complete",
+  "wallSeconds" : 6.7052319049835205
+}

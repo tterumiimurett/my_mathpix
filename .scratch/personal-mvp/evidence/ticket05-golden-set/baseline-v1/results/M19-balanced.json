@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Read  $\\alpha$  and  $\\beta$  in this order.\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe update is  $v = \\beta v + \\alpha g$ .\n\nA second paragraph explains the symbols.",
+  "caseID" : "M19",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Momentum</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Read  $\\alpha$  and  $\\beta$  in this order.</p>\n<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$\\alpha$</td><td>Learning rate</td></tr><tr><td>$\\beta$</td><td>Momentum</td></tr></tbody></table>\n<p>The update is  $v = \\beta v + \\alpha g$ .</p>\n<p>A second paragraph explains the symbols.</p>\n<table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Momentum</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "Read  $\\alpha$  and  $\\beta$  in this order.\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe update is  $v = \\beta v + \\alpha g$ .\n\nA second paragraph explains the symbols.\n\nSymbol\tMeaning\n\tLearning rate\n\tMomentum",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Read  $\\alpha$  and  $\\beta$  in this order.\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe update is  $v = \\beta v + \\alpha g$ .\n\nA second paragraph explains the symbols.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Read  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>α</mi></mrow><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math></span>  and  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>β</mi></mrow><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math></span>  in this order.</p>\n<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>α</mi></mrow><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math></span></td><td>Learning rate</td></tr><tr><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>β</mi></mrow><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math></span></td><td>Momentum</td></tr></tbody></table>\n<p>The update is  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><mi>β</mi><mi>v</mi><mo>+</mo><mi>α</mi><mi>g</mi></mrow><annotation encoding=\"application/x-tex\">v = \\beta v + \\alpha g</annotation></semantics></math></span> .</p>\n<p>A second paragraph explains the symbols.</p><table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Momentum</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "Read  $\\alpha$  and  $\\beta$  in this order.\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe update is  $v = \\beta v + \\alpha g$ .\n\nA second paragraph explains the symbols.\n\nSymbol\tMeaning\n\tLearning rate\n\tMomentum",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$\\alpha$</td><td>Learning rate</td></tr><tr><td>$\\beta$</td><td>Momentum</td></tr></tbody></table>",
+        "plain" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "tsv" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "tsv" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "56840ae73e3319d9d4ee555d07b038f41090120ae8884336e91f440e427112c5",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M19-balanced.png",
+    "previewSHA256" : "812085ad58ba7bfe97e86bc47c37f70d75b46a4e5ee50ad97584a41b6ad79d9a"
+  },
+  "contentSHA256" : "96a59113c48dbd313a1790dec0a704f7b0007f1e66f0b0bf8b3c11540f5d0525",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "4fa766f64e36afb5336eb0bfbeb4fc54c0336f04bd8a4097a0af973d06a39e2d",
+  "mode" : "balanced",
+  "outputSHA256" : "0a2e4edbc8b8b5a57c6f37c344ca153e200549ded743b157513d2eecb33fe320",
+  "runtimeSeconds" : 2.0100283622741699,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:56:42Z",
+  "status" : "complete",
+  "wallSeconds" : 5.3323129415512085
+}

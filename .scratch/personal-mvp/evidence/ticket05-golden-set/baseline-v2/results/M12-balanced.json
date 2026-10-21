@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+  "caseID" : "M12",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The first experiment uses  $x = 2$ .</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>Compare the second experiment.</p>\n<table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table>\n<p>Both tables are required.</p></body></html>",
+        "plain" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The first experiment uses  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x = 2</annotation></semantics></math></span> .</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>Compare the second experiment.</p>\n<table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table>\n<p>Both tables are required.</p></body></html>",
+        "plain" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>",
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "e6ca5556d426e297595e0e88e9f9cf9e37d25878cbc0a7249cc45006cad84b47",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M12-balanced.png",
+    "previewSHA256" : "9f6249a67355062ac4d070297b80ad24b633510daaeb5777cef5a5464bab63ad"
+  },
+  "contentSHA256" : "d0c27b25e4ad40c2af647e5a1a03b2481d8ddcd55fb7a91d895fc773361b0b1a",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "a0c2b38aff0631353fe58a94bc7375d63eb81470ba2239bc1b0ba6546c42bb7a",
+  "mode" : "balanced",
+  "outputSHA256" : "f634d08b6daee4d279145ee694a4c90e85aea53d35a96d8f7e6c5ff84daed3df",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>The first experiment uses <math>x = 2</math>.</p>\n  <table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>\n  <p>Compare the second experiment.</p>\n  <table>\n   <tr>\n    <th>Epoch</th>\n    <th>Loss</th>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2.50</td>\n   </tr>\n   <tr>\n    <td>2</td>\n    <td>1.20</td>\n   </tr>\n   <tr>\n    <td>3</td>\n    <td>0.65</td>\n   </tr>\n  </table>\n  <p>Both tables are required.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nThe first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+  "rawOutputSHA256" : "5fcde69a5f6c93cc7c9fba17868faf7672c36357d9384a1740970aba28e1ea10",
+  "runtimeSeconds" : 0.12531685829162598,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:14:38Z",
+  "status" : "complete",
+  "wallSeconds" : 2.749940037727356
+}

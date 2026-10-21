@@ -1,0 +1,2036 @@
+{
+  "schema": 1,
+  "corpus": "authored-v1",
+  "modes": [
+    {
+      "mode": "fast",
+      "gate": "fail",
+      "ordinary": {
+        "total": 70,
+        "passed": 30,
+        "failed": 34,
+        "pending": 6
+      },
+      "categories": {
+        "formula": {
+          "total": 30,
+          "passed": 30,
+          "failed": 0,
+          "pending": 0
+        },
+        "table": {
+          "total": 20,
+          "passed": 0,
+          "failed": 17,
+          "pending": 3
+        },
+        "mixed": {
+          "total": 20,
+          "passed": 0,
+          "failed": 17,
+          "pending": 3
+        },
+        "boundary": {
+          "total": 10,
+          "passed": 0,
+          "failed": 0,
+          "pending": 10
+        }
+      },
+      "boundary": {
+        "total": 10,
+        "passed": 0,
+        "failed": 0,
+        "pending": 10
+      },
+      "rows": [
+        {
+          "caseID": "F01",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Quadratic roots: both signs, discriminant, radical and denominator2a preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F02",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Squared terms and sum/equality match the input. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F03",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Complex exponent i*pi and plus-one/equality preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F04",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gaussian normalization and negative exponent grouping, sigma squared and squared difference preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F05",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Integral limits0..1, x squared, differential dx and one-third preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F06",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Finite sum lower/upper limits, r powers and fraction preserved; superscript bracing equivalence accepted. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F07",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Limit x->0, sin(x)/x and equality1 preserved; to/rightarrow are equivalent here. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F08",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Factorial and product bounds1..n preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F09",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Partial derivative and RHS2xy+cos x preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F10",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gradient column vector ordering and derivative fractions preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F11",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Matrix2x2 rows[1,2]/[3,4] and parentheses preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F12",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Determinant matrix cells a,b/c,d and signed result ad-bc preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F13",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Piecewise two branches x squared for x>=0 and negative x for x<0 preserved with one brace. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F14",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Both equation rows a+b=c then a-b=d and visible equality alignment preserved. Two consecutive display blocks are visually equivalent here; no claim of automatic Pure Formula copying for the split representation. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F15",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Binomial expansion: outer exponent n, sum0..n, binomial n choose k and x^(n-k)y^k preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F16",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Nested denominator1+1/x and equivalent RHS x/(x+1) preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F17",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Bold vectors and dot product equal indexed sum with lower1/upper d and both factors preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F18",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Euclidean norm subscript2 and radical enclosing sum of squared indexed coordinates preserved; norm delimiter spelling equivalent. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F19",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Blackboard expectation, random variable X and sum over x of x*p(x) preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F20",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Bayes conditional numerator order and denominator P(B) preserved; vertical-bar spacing difference is harmless. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F21",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Entropy negative sign, sum bounds and both p_i factors with log preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F22",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "KL divergence label, double-bar condition, sum and log(p_i/q_i) preserved; text versus math roman KL equivalent. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F23",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Softmax numerator e^(z_i), sum j=1..n and denominator e^(z_j) preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F24",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Hessian mixed second partial, indices i,j and denominator coordinates preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F25",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Fourier hat, argument omega, infinite integral bounds, negative complex exponent and differential dt preserved; hat width/spacing are equivalent. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F26",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Second derivative in t, omega squared*y and equality zero preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F27",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Complex conjugate bar and modulus squared preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F28",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Set intersection/union, all parentheses and both RHS terms preserve distributive structure. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F29",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Theta hats, n+1 versus n indices, subtraction, eta and gradient L argument preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F30",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Two rows a=b then c=d preserved and readable with the same visible ordering. Exact LaTeX spacing command is not recoverable from pixels and is not a byte-string criterion; split display blocks do not qualify for automatic Pure Formula copying. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "T01",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T02",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T03",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T04",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Greek TeX alpha/beta is equivalent to authored Unicode. Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Preview and whole-output Lark/Notion also append an extra incomplete fallback table with missing math cells. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T05",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T06",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T07",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T08",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T09",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T10",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T11",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T12",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T13",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; TeX x squared/cubed equals authored superscripts. Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Preview and whole-output Lark/Notion also append an extra incomplete fallback table with missing math cells. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T14",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T15",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T16",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T17",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T18",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T19",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T20",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "M01",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M02",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M03",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M04",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Whole-copy tables {'lark': 2, 'notion': 2} differ from expected 1; empty-math fallback appended (structure/copy fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M05",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M06",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M07",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M08",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M09",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M10",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M11",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M12",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M13",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Whole-copy tables {'lark': 2, 'notion': 2} differ from expected 1; empty-math fallback appended (structure/copy fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M14",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M15",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Authored blockquote structure of Units are unchanged is flattened to an ordinary paragraph (layout fail); heading remains a heading though level differs. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M16",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M17",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M18",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M19",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Whole-copy tables {'lark': 2, 'notion': 2} differ from expected 1; empty-math fallback appended (structure/copy fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M20",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B01",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B02",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B03",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B04",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B05",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B06",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B07",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B08",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B09",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B10",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        }
+      ],
+      "measurement": {
+        "attempts": 80,
+        "automaticRetries": 0,
+        "medianWallSeconds": 3.7759865522384644,
+        "underFiveSeconds": 65,
+        "knownCostCents": 31.99999999999995,
+        "costAvailableAttempts": 80,
+        "costEvidence": [
+          {
+            "caseID": "B01",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B02",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B03",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B04",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B05",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B06",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B07",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B08",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B09",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B10",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F01",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F02",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F03",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F04",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F05",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F06",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F07",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F08",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F09",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F10",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F11",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F12",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F13",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F14",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F15",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F16",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F17",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F18",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F19",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F20",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F21",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F22",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F23",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F24",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F25",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F26",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F27",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F28",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F29",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F30",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M01",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M02",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M03",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M04",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M05",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M06",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M07",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M08",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M09",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M10",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M11",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M12",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M13",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M14",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M15",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M16",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M17",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M18",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M19",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M20",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T01",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T02",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T03",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T04",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T05",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T06",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T07",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T08",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T09",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T10",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T11",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T12",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T13",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T14",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T15",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T16",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T17",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T18",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T19",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T20",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          }
+        ]
+      },
+      "policy": "Fast and balanced evaluated separately. No cherry-picked best-of gate. Notion inline paste remains a known deferred defect; serialization checks do not establish destination compatibility."
+    },
+    {
+      "mode": "balanced",
+      "gate": "fail",
+      "ordinary": {
+        "total": 70,
+        "passed": 30,
+        "failed": 21,
+        "pending": 19
+      },
+      "categories": {
+        "formula": {
+          "total": 30,
+          "passed": 30,
+          "failed": 0,
+          "pending": 0
+        },
+        "table": {
+          "total": 20,
+          "passed": 0,
+          "failed": 6,
+          "pending": 14
+        },
+        "mixed": {
+          "total": 20,
+          "passed": 0,
+          "failed": 15,
+          "pending": 5
+        },
+        "boundary": {
+          "total": 10,
+          "passed": 0,
+          "failed": 0,
+          "pending": 10
+        }
+      },
+      "boundary": {
+        "total": 10,
+        "passed": 0,
+        "failed": 0,
+        "pending": 10
+      },
+      "rows": [
+        {
+          "caseID": "F01",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Quadratic roots: both signs, discriminant, radical and denominator2a preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F02",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Squared terms and sum/equality match the input. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F03",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Complex exponent i*pi and plus-one/equality preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F04",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gaussian normalization and negative exponent grouping, sigma squared and squared difference preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F05",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Integral limits0..1, x squared, differential dx and one-third preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F06",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Finite sum lower/upper limits, r powers and fraction preserved; superscript bracing equivalence accepted. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F07",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Limit x->0, sin(x)/x and equality1 preserved; to/rightarrow are equivalent here. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F08",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Factorial and product bounds1..n preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F09",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Partial derivative and RHS2xy+cos x preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F10",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gradient column vector ordering and derivative fractions preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F11",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Matrix2x2 rows[1,2]/[3,4] and parentheses preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F12",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Determinant matrix cells a,b/c,d and signed result ad-bc preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F13",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Piecewise two branches x squared for x>=0 and negative x for x<0 preserved with one brace. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F14",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Both equation rows a+b=c then a-b=d and visible equality alignment preserved. Two consecutive display blocks are visually equivalent here; no claim of automatic Pure Formula copying for the split representation. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F15",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Binomial expansion: outer exponent n, sum0..n, binomial n choose k and x^(n-k)y^k preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F16",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Nested denominator1+1/x and equivalent RHS x/(x+1) preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F17",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Bold vectors and dot product equal indexed sum with lower1/upper d and both factors preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F18",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Euclidean norm subscript2 and radical enclosing sum of squared indexed coordinates preserved; norm delimiter spelling equivalent. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F19",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Blackboard expectation, random variable X and sum over x of x*p(x) preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F20",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Bayes conditional numerator order and denominator P(B) preserved; vertical-bar spacing difference is harmless. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F21",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Entropy negative sign, sum bounds and both p_i factors with log preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F22",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "KL divergence label, double-bar condition, sum and log(p_i/q_i) preserved; text versus math roman KL equivalent. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F23",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Softmax numerator e^(z_i), sum j=1..n and denominator e^(z_j) preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F24",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Hessian mixed second partial, indices i,j and denominator coordinates preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F25",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Fourier hat, argument omega, infinite integral bounds, negative complex exponent and differential dt preserved; hat width/spacing are equivalent. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F26",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Second derivative in t, omega squared*y and equality zero preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F27",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Complex conjugate bar and modulus squared preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F28",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Set intersection/union, all parentheses and both RHS terms preserve distributive structure. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F29",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Theta hats, n+1 versus n indices, subtraction, eta and gradient L argument preserved. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "F30",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Two rows a=b then c=d preserved and readable with the same visible ordering. Exact LaTeX spacing command is not recoverable from pixels and is not a byte-string criterion; split display blocks do not qualify for automatic Pure Formula copying. Parent read actual canonical source and actual offline PNG side by side with authored input. Public Markdown/Lark/Notion complete source and safe rich representations checked; Notion destination editability is not asserted. Named-pasteboard correction evidence and hashes verified."
+        },
+        {
+          "caseID": "T01",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T02",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T03",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T04",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Greek TeX alpha/beta is equivalent to authored Unicode. Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Preview and whole-output Lark/Notion also append an extra incomplete fallback table with missing math cells. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T05",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T06",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T07",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T08",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T09",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T10",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T11",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T12",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T13",
+          "category": "table",
+          "verdict": "fail",
+          "reason": "Every header/data cell and row/column order matches authored tableGrids after harmless format-markup interpretation; TeX x squared/cubed equals authored superscripts. Recorded public Markdown source, Lark/Notion HTML and applicable TSV/rich values/types independently checked. Input/output/corpus/config/artifact and original/corrected PNG hashes verified; isolated edit/copy/render observation flags true. Actual offline preview visibly exposes literal <b> header tags absent from input. Preview and whole-output Lark/Notion also append an extra incomplete fallback table with missing math cells. Notion destination NativePaste/editability not asserted; no destination was operated."
+        },
+        {
+          "caseID": "T14",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T15",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T16",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T17",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T18",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T19",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "T20",
+          "category": "table",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M01",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M02",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M03",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M04",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Whole-copy tables {'lark': 2, 'notion': 2} differ from expected 1; empty-math fallback appended (structure/copy fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M05",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M06",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M07",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M08",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M09",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M10",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M11",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M12",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M13",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Whole-copy tables {'lark': 2, 'notion': 2} differ from expected 1; empty-math fallback appended (structure/copy fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M14",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M15",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Authored blockquote structure of Units are unchanged is flattened to an ordinary paragraph (layout fail); heading remains a heading though level differs. Original normal-preview PNG clips lower content; evidence insufficient, not a proven scrollability defect (pending). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M16",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "M17",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M18",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M19",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent read full actual canonical paragraphs/formulas/table values and all40 corrected preview images against authored input; mathematical meaning, table cells and reading order are retained. Literal <b> header tags visibly leak into preview (fail). Whole-copy tables {'lark': 2, 'notion': 2} differ from expected 1; empty-math fallback appended (structure/copy fail). Public source/pasteboard and correction/hash evidence checked. No real Notion NativePaste claim; deferred inline issue unchanged."
+        },
+        {
+          "caseID": "M20",
+          "category": "mixed",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B01",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B02",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B03",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B04",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B05",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B06",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B07",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B08",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B09",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        },
+        {
+          "caseID": "B10",
+          "category": "boundary",
+          "verdict": "pending",
+          "reason": "Semantic/layout and consumption review pending"
+        }
+      ],
+      "measurement": {
+        "attempts": 80,
+        "automaticRetries": 0,
+        "medianWallSeconds": 5.250832498073578,
+        "underFiveSeconds": 34,
+        "knownCostCents": 31.99999999999995,
+        "costAvailableAttempts": 80,
+        "costEvidence": [
+          {
+            "caseID": "B01",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B02",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B03",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B04",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B05",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B06",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B07",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B08",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B09",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B10",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F01",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F02",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F03",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F04",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F05",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F06",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F07",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F08",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F09",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F10",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F11",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F12",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F13",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F14",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F15",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F16",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F17",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F18",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F19",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F20",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F21",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F22",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F23",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F24",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F25",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F26",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F27",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F28",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F29",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F30",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M01",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M02",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M03",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M04",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M05",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M06",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M07",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M08",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M09",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M10",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M11",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M12",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M13",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M14",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M15",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M16",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M17",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M18",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M19",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M20",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T01",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T02",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T03",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T04",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T05",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T06",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T07",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T08",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T09",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T10",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T11",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T12",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T13",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T14",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T15",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T16",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T17",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T18",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T19",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T20",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          }
+        ]
+      },
+      "policy": "Fast and balanced evaluated separately. No cherry-picked best-of gate. Notion inline paste remains a known deferred defect; serialization checks do not establish destination compatibility."
+    }
+  ]
+}

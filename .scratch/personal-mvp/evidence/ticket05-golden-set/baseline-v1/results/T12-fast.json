@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Model | Small | Medium | Large |\n|-------|-------|--------|-------|\n| A     | 12    | 24     | 48    |\n| B     | 10    | 20     | 40    |",
+  "caseID" : "T12",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Model</th>\n    <th>Small</th>\n    <th>Medium</th>\n    <th>Large</th>\n   </tr>\n   <tr>\n    <td>A</td>\n    <td>12</td>\n    <td>24</td>\n    <td>48</td>\n   </tr>\n   <tr>\n    <td>B</td>\n    <td>10</td>\n    <td>20</td>\n    <td>40</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Model</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead><tbody><tr><td>A</td><td>12</td><td>24</td><td>48</td></tr><tr><td>B</td><td>10</td><td>20</td><td>40</td></tr></tbody></table></body></html>",
+        "plain" : "| Model | Small | Medium | Large |\n|-------|-------|--------|-------|\n| A     | 12    | 24     | 48    |\n| B     | 10    | 20     | 40    |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Model | Small | Medium | Large |\n|-------|-------|--------|-------|\n| A     | 12    | 24     | 48    |\n| B     | 10    | 20     | 40    |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Model</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead><tbody><tr><td>A</td><td>12</td><td>24</td><td>48</td></tr><tr><td>B</td><td>10</td><td>20</td><td>40</td></tr></tbody></table></body></html>",
+        "plain" : "| Model | Small | Medium | Large |\n|-------|-------|--------|-------|\n| A     | 12    | 24     | 48    |\n| B     | 10    | 20     | 40    |",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Model</th><th>Small</th><th>Medium</th><th>Large</th></tr></thead><tbody><tr><td>A</td><td>12</td><td>24</td><td>48</td></tr><tr><td>B</td><td>10</td><td>20</td><td>40</td></tr></tbody></table>",
+        "plain" : "Model\tSmall\tMedium\tLarge\nA\t12\t24\t48\nB\t10\t20\t40",
+        "tsv" : "Model\tSmall\tMedium\tLarge\nA\t12\t24\t48\nB\t10\t20\t40",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Model\tSmall\tMedium\tLarge\nA\t12\t24\t48\nB\t10\t20\t40",
+        "tsv" : "Model\tSmall\tMedium\tLarge\nA\t12\t24\t48\nB\t10\t20\t40",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "4699b6c107e4b019b33ae9e7b3f73c0aaf54dfe26633c4b488db2bd70a6673ed",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T12-fast.png",
+    "previewSHA256" : "863fbdd93e2a85ff96e3fbcc127202fb88ccc5a8c72f9132dca5787113c6e218"
+  },
+  "contentSHA256" : "dd9bcf96e6b62f5783599bac9337a980d4bdf5eb35f084045f687fc95937428d",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "bf4b8c32bf3872d394edc376f7db95ae29e57ae30a1cd2b5cb9bca33bebc3ae1",
+  "mode" : "fast",
+  "outputSHA256" : "d3771f6b772484e0be9c82346d36843a87af5f832dadbb33b194de1d433215d5",
+  "runtimeSeconds" : 0.46349620819091797,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:10Z",
+  "status" : "complete",
+  "wallSeconds" : 2.8906440734863281
+}

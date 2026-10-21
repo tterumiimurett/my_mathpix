@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Group | Value |\n|-------|-------|\n| A     | 1     |\n|       | 2     |",
+  "caseID" : "B05",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Group</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td rowspan=\"2\">A</td>\n    <td>1</td>\n   </tr>\n   <tr>\n    <td>2</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Group</th><th>Value</th></tr></thead><tbody><tr><td>A</td><td>1</td></tr><tr><td></td><td>2</td></tr></tbody></table>\n<table>\n   <tr>\n    <th>Group</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td rowspan=\"2\">A</td>\n    <td>1</td>\n   </tr>\n   <tr>\n    <td>2</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "| Group | Value |\n|-------|-------|\n| A     | 1     |\n|       | 2     |\n\nGroup\tValue\nA\t1\n\t2",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Group | Value |\n|-------|-------|\n| A     | 1     |\n|       | 2     |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Group</th><th>Value</th></tr></thead><tbody><tr><td>A</td><td>1</td></tr><tr><td></td><td>2</td></tr></tbody></table><table>\n   <tr>\n    <th>Group</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td rowspan=\"2\">A</td>\n    <td>1</td>\n   </tr>\n   <tr>\n    <td>2</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "| Group | Value |\n|-------|-------|\n| A     | 1     |\n|       | 2     |\n\nGroup\tValue\nA\t1\n\t2",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Group</th><th>Value</th></tr></thead><tbody><tr><td>A</td><td>1</td></tr><tr><td></td><td>2</td></tr></tbody></table>",
+        "plain" : "Group\tValue\nA\t1\n\t2",
+        "tsv" : "Group\tValue\nA\t1\n\t2",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Group\tValue\nA\t1\n\t2",
+        "tsv" : "Group\tValue\nA\t1\n\t2",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "954b2ae229adee790c745706ec819c61266cfdb4903ac6fae19bb32fa5aa783b",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B05-fast.png",
+    "previewSHA256" : "e6b872c01b9d5311c5b122dbec9592804770143ff2b90f881c551c6f5fca799d"
+  },
+  "contentSHA256" : "d3ca9654a903b4c4c5b09ae912b804f7ff6ff68267ee40238d8c0a463d9d9341",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "147226ae22e1f5f0c28ba5588a71fdaa3644c6390cfb7919d80692832c20b3a4",
+  "mode" : "fast",
+  "outputSHA256" : "838ce8eaa8dd33afa05bd574db19d4828c1ed1c766d0f3befc2a53a98d906fd6",
+  "runtimeSeconds" : 0.50289630889892578,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:57:29Z",
+  "status" : "complete",
+  "wallSeconds" : 3.325577974319458
+}

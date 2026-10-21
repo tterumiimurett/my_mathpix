@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Threshold | TP | FP | FN |\n|-----------|----|----|----|\n| 0.2       | 95 | 12 | 5  |\n| 0.5       | 88 | 4  | 12 |\n| 0.8       | 70 | 1  | 30 |",
+  "caseID" : "T20",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Threshold</th>\n    <th>TP</th>\n    <th>FP</th>\n    <th>FN</th>\n   </tr>\n   <tr>\n    <td>0.2</td>\n    <td>95</td>\n    <td>12</td>\n    <td>5</td>\n   </tr>\n   <tr>\n    <td>0.5</td>\n    <td>88</td>\n    <td>4</td>\n    <td>12</td>\n   </tr>\n   <tr>\n    <td>0.8</td>\n    <td>70</td>\n    <td>1</td>\n    <td>30</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Threshold</th><th>TP</th><th>FP</th><th>FN</th></tr></thead><tbody><tr><td>0.2</td><td>95</td><td>12</td><td>5</td></tr><tr><td>0.5</td><td>88</td><td>4</td><td>12</td></tr><tr><td>0.8</td><td>70</td><td>1</td><td>30</td></tr></tbody></table></body></html>",
+        "plain" : "| Threshold | TP | FP | FN |\n|-----------|----|----|----|\n| 0.2       | 95 | 12 | 5  |\n| 0.5       | 88 | 4  | 12 |\n| 0.8       | 70 | 1  | 30 |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Threshold | TP | FP | FN |\n|-----------|----|----|----|\n| 0.2       | 95 | 12 | 5  |\n| 0.5       | 88 | 4  | 12 |\n| 0.8       | 70 | 1  | 30 |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Threshold</th><th>TP</th><th>FP</th><th>FN</th></tr></thead><tbody><tr><td>0.2</td><td>95</td><td>12</td><td>5</td></tr><tr><td>0.5</td><td>88</td><td>4</td><td>12</td></tr><tr><td>0.8</td><td>70</td><td>1</td><td>30</td></tr></tbody></table></body></html>",
+        "plain" : "| Threshold | TP | FP | FN |\n|-----------|----|----|----|\n| 0.2       | 95 | 12 | 5  |\n| 0.5       | 88 | 4  | 12 |\n| 0.8       | 70 | 1  | 30 |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Threshold</th><th>TP</th><th>FP</th><th>FN</th></tr></thead><tbody><tr><td>0.2</td><td>95</td><td>12</td><td>5</td></tr><tr><td>0.5</td><td>88</td><td>4</td><td>12</td></tr><tr><td>0.8</td><td>70</td><td>1</td><td>30</td></tr></tbody></table>",
+        "plain" : "Threshold\tTP\tFP\tFN\n0.2\t95\t12\t5\n0.5\t88\t4\t12\n0.8\t70\t1\t30",
+        "tsv" : "Threshold\tTP\tFP\tFN\n0.2\t95\t12\t5\n0.5\t88\t4\t12\n0.8\t70\t1\t30",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Threshold\tTP\tFP\tFN\n0.2\t95\t12\t5\n0.5\t88\t4\t12\n0.8\t70\t1\t30",
+        "tsv" : "Threshold\tTP\tFP\tFN\n0.2\t95\t12\t5\n0.5\t88\t4\t12\n0.8\t70\t1\t30",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d999926618e7a0a71cadbfd96da00d064f37c6cbd9c69740762296affdf646c5",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T20-balanced.png",
+    "previewSHA256" : "8190383d640cd8522e1ce79a07cc17e36311c09f2ee3e925ef46b089cfff20f8"
+  },
+  "contentSHA256" : "01625ba4a296d530dfd6cc008c60623ccc9b463ba44ae5fd83ad43f68c8543bb",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "0488ee540ad5fb68edf80d539f69cd5c4150423f6ff9283134f57f40332a9254",
+  "mode" : "balanced",
+  "outputSHA256" : "290df65b26a48d53f1f4a22e62ea160df94119798212696713c4f3b24e366b47",
+  "runtimeSeconds" : 1.9667198657989502,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:53:33Z",
+  "status" : "complete",
+  "wallSeconds" : 5.2643049955368042
+}

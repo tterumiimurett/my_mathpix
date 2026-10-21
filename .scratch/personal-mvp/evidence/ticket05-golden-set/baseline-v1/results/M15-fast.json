@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "# Measurement note\n\nFor  $n = 3$ , compare the readings below.\n\n| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |\n\nUnits are unchanged.",
+  "caseID" : "M15",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Condition</th>\n    <th>Count</th>\n   </tr>\n   <tr>\n    <td>Control</td>\n    <td>120</td>\n   </tr>\n   <tr>\n    <td>Treatment</td>\n    <td>118</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><h1>Measurement note</h1>\n<p>For  $n = 3$ , compare the readings below.</p>\n<table><thead><tr><th>Condition</th><th>Count</th></tr></thead><tbody><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></tbody></table>\n<p>Units are unchanged.</p></body></html>",
+        "plain" : "# Measurement note\n\nFor  $n = 3$ , compare the readings below.\n\n| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |\n\nUnits are unchanged.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "# Measurement note\n\nFor  $n = 3$ , compare the readings below.\n\n| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |\n\nUnits are unchanged.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><h1>Measurement note</h1>\n<p>For  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n = 3</annotation></semantics></math></span> , compare the readings below.</p>\n<table><thead><tr><th>Condition</th><th>Count</th></tr></thead><tbody><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></tbody></table>\n<p>Units are unchanged.</p></body></html>",
+        "plain" : "# Measurement note\n\nFor  $n = 3$ , compare the readings below.\n\n| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |\n\nUnits are unchanged.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Condition</th><th>Count</th></tr></thead><tbody><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></tbody></table>",
+        "plain" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "tsv" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "tsv" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "4f0fb4a50a1703878a10f10e3a8e095a84b6e5bdc39495f3bdcd3fc8bd580a35",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M15-fast.png",
+    "previewSHA256" : "f372ff475cf5248f83028a00239aa1b4477e6ea3ed71f1778c62802105c612a4"
+  },
+  "contentSHA256" : "2a0a0b9d4ab4c8b0939950b00c272950d3bcdb61fde82b6868d33bfc243cbe91",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "2aab55c421b7c515af4faecec923e3883c538521c33c84388be2390b612593e4",
+  "mode" : "fast",
+  "outputSHA256" : "9950180fd5eecdf650b3cd698f66938bd2a1fa5fdd93f657df338042826c9060",
+  "runtimeSeconds" : 1.7818639278411865,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:56:02Z",
+  "status" : "complete",
+  "wallSeconds" : 4.932345986366272
+}

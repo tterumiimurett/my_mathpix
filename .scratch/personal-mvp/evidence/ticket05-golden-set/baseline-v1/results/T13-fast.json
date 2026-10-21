@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Name</b> | <b>Expression</b> |\n|-------------|-------------------|\n| Square      | $x^2$             |\n| Cube        | $x^3$             |",
+  "caseID" : "T13",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Name</th>\n    <th>Expression</th>\n   </tr>\n   <tr>\n    <td>Square</td>\n    <td></td>\n   </tr>\n   <tr>\n    <td>Cube</td>\n    <td></td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Name</th><th>Expression</th></tr></thead><tbody><tr><td>Square</td><td>$x^2$</td></tr><tr><td>Cube</td><td>$x^3$</td></tr></tbody></table>\n<table>\n   <tr>\n    <th>Name</th>\n    <th>Expression</th>\n   </tr>\n   <tr>\n    <td>Square</td>\n    <td></td>\n   </tr>\n   <tr>\n    <td>Cube</td>\n    <td></td>\n   </tr>\n  </table></body></html>",
+        "plain" : "| <b>Name</b> | <b>Expression</b> |\n|-------------|-------------------|\n| Square      | $x^2$             |\n| Cube        | $x^3$             |\n\nName\tExpression\nSquare\t\nCube\t",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Name</b> | <b>Expression</b> |\n|-------------|-------------------|\n| Square      | $x^2$             |\n| Cube        | $x^3$             |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Name</th><th>Expression</th></tr></thead><tbody><tr><td>Square</td><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span></td></tr><tr><td>Cube</td><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^3</annotation></semantics></math></span></td></tr></tbody></table><table>\n   <tr>\n    <th>Name</th>\n    <th>Expression</th>\n   </tr>\n   <tr>\n    <td>Square</td>\n    <td></td>\n   </tr>\n   <tr>\n    <td>Cube</td>\n    <td></td>\n   </tr>\n  </table></body></html>",
+        "plain" : "| <b>Name</b> | <b>Expression</b> |\n|-------------|-------------------|\n| Square      | $x^2$             |\n| Cube        | $x^3$             |\n\nName\tExpression\nSquare\t\nCube\t",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Name</th><th>Expression</th></tr></thead><tbody><tr><td>Square</td><td>$x^2$</td></tr><tr><td>Cube</td><td>$x^3$</td></tr></tbody></table>",
+        "plain" : "Name\tExpression\nSquare\t$x^2$\nCube\t$x^3$",
+        "tsv" : "Name\tExpression\nSquare\t$x^2$\nCube\t$x^3$",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Name\tExpression\nSquare\t$x^2$\nCube\t$x^3$",
+        "tsv" : "Name\tExpression\nSquare\t$x^2$\nCube\t$x^3$",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "b89c83403c5ffc29158aca6801f24fe97210404b7f051a743ba057a3976b1b9a",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T13-fast.png",
+    "previewSHA256" : "0f26333b069f1229140b350d9e589700967c7a3ca963048242eda95dbc55a21d"
+  },
+  "contentSHA256" : "3159977fef70ac86b66f15594cfe0e074071509dda4d99d8583b5c0f5871f2ef",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "2cc2062086672de6439bc430018f60cdbe63ea863cd1859c5dd69005bb0da80a",
+  "mode" : "fast",
+  "outputSHA256" : "437d88fe00a19e78c84611c71566812bbef3ada8787e5a1226d5cb48f380e2f4",
+  "runtimeSeconds" : 1.6391177177429199,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:19Z",
+  "status" : "complete",
+  "wallSeconds" : 4.0369960069656372
+}

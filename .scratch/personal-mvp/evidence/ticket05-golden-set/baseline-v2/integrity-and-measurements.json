@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "runID": "baseline-v2",
+  "verifiedAt": "2026-10-21T16:17:37.498009+00:00",
+  "records": 160,
+  "actualPreviewPNGs": 320,
+  "hashVerification": "All160 source/output/raw/configuration/artifact bindings and320 actual preview hashes match. All80 corpus PNG hashes and1600px widths match.",
+  "repeatedInputProvenance": "Fresh API requests over the exact previously submitted corpus; provider may reuse/cache work. Explicit zero costs remain measured zero. This is not uncached speed or billing verification.",
+  "modes": {
+    "fast": {
+      "attempts": 80,
+      "medianWallSeconds": 3.0991044640541077,
+      "underFiveSeconds": 78,
+      "medianAPIRuntimeSeconds": 0.1358867883682251,
+      "knownCostCents": 0.8,
+      "costAvailableAttempts": 80,
+      "automaticRetries": 0,
+      "technicalFailures": 0
+    },
+    "balanced": {
+      "attempts": 80,
+      "medianWallSeconds": 3.071641504764557,
+      "underFiveSeconds": 76,
+      "medianAPIRuntimeSeconds": 0.13682246208190918,
+      "knownCostCents": 2.4,
+      "costAvailableAttempts": 80,
+      "automaticRetries": 0,
+      "technicalFailures": 0
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Interval</b> | <b>Frequency</b> |\n|-----------------|------------------|\n| 0–10            | 12               |\n| 10–20           | 19               |\n| 20–30           | 7                |",
+  "caseID" : "T16",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Interval</th>\n    <th>Frequency</th>\n   </tr>\n   <tr>\n    <td>0–10</td>\n    <td>12</td>\n   </tr>\n   <tr>\n    <td>10–20</td>\n    <td>19</td>\n   </tr>\n   <tr>\n    <td>20–30</td>\n    <td>7</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Interval</th><th>Frequency</th></tr></thead><tbody><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Interval</b> | <b>Frequency</b> |\n|-----------------|------------------|\n| 0–10            | 12               |\n| 10–20           | 19               |\n| 20–30           | 7                |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Interval</b> | <b>Frequency</b> |\n|-----------------|------------------|\n| 0–10            | 12               |\n| 10–20           | 19               |\n| 20–30           | 7                |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Interval</th><th>Frequency</th></tr></thead><tbody><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Interval</b> | <b>Frequency</b> |\n|-----------------|------------------|\n| 0–10            | 12               |\n| 10–20           | 19               |\n| 20–30           | 7                |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Interval</th><th>Frequency</th></tr></thead><tbody><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></tbody></table>",
+        "plain" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "tsv" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "tsv" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "ccfaf996d1d3398ff4618a212c9077c0ccabce02976e5f8530452cc157e4aa62",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T16-fast.png",
+    "previewSHA256" : "04ed702668f27fadc1350eed4f2bae7cf3dd515d2e84bb5477e6801426301a4c"
+  },
+  "contentSHA256" : "2cb300427edb2787ce7766ee60a19bad5215bf0b14014fbfaf5950555571cd7f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "c699648b6da1342180deb0771b0baff1b1a4861a57cec7f192e27176f435676f",
+  "mode" : "fast",
+  "outputSHA256" : "d7f748db486f8fd245c85cbb6e90710126cad07e87c7ffff3c4c81fa1f562a2c",
+  "runtimeSeconds" : 0.41277885437011719,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:47Z",
+  "status" : "complete",
+  "wallSeconds" : 3.6909379959106445
+}

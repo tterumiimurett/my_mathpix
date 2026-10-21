@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+  "caseID" : "T06",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Class</th>\n    <th>Precision</th>\n    <th>Recall</th>\n   </tr>\n   <tr>\n    <td>A</td>\n    <td>0.90</td>\n    <td>0.88</td>\n   </tr>\n   <tr>\n    <td>B</td>\n    <td>0.85</td>\n    <td>0.92</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Class</th><th>Precision</th><th>Recall</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Class</th><th>Precision</th><th>Recall</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Class</th><th>Precision</th><th>Recall</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></tbody></table>",
+        "plain" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "tsv" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "tsv" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "3f675d4b8516022a02992bd6707d76381f60f35fd8ba55f6164fe76694853284",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T06-balanced.png",
+    "previewSHA256" : "a7a8510f9b9153ec11c57f591b05e725392917b1e66a806b1e7e2f22b3372ab6"
+  },
+  "contentSHA256" : "eb9fff4d2a9578a5fa161832d9e1fdd017805c42974d12f478be8b718b77ab2f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "ee4f45a23ce65f9f9d08464b729992ac7f88692597958edba8ebddefb26d7c51",
+  "mode" : "balanced",
+  "outputSHA256" : "a5b3df16bb8441212a187ef9098974bfb72191c63acf965d005c7d9bab05857e",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <table>\n   <tr>\n    <th><b>Class</b></th>\n    <th><b>Precision</b></th>\n    <th><b>Recall</b></th>\n   </tr>\n   <tr>\n    <td>A</td>\n    <td>0.90</td>\n    <td>0.88</td>\n   </tr>\n   <tr>\n    <td>B</td>\n    <td>0.85</td>\n    <td>0.92</td>\n   </tr>\n  </table>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+  "rawOutputSHA256" : "b10c2a4be389bd5fbceff64d44e544dbce2aa4f501c0d01d82d401dc1b150ee4",
+  "runtimeSeconds" : 0.081095218658447266,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:11:25Z",
+  "status" : "complete",
+  "wallSeconds" : 2.1879850625991821
+}

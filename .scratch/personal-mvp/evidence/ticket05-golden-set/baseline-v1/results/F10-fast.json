@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$",
+  "caseID" : "F10",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$</p></body></html>",
+        "plain" : "$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"normal\">∇</mi><mi>f</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mtable rowspacing=\"0.16em\" columnalign=\"center\" columnspacing=\"1em\"><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi><mi mathvariant=\"normal\">/</mi><mi mathvariant=\"normal\">∂</mi><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi><mi mathvariant=\"normal\">/</mi><mi mathvariant=\"normal\">∂</mi><mi>y</mi></mrow></mstyle></mtd></mtr></mtable><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "4f676ffa528ab9bd1cc1e0c6a7a0c10dd1eb1230216bfcce3781e8c0c34c6770",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F10-fast.png",
+    "previewSHA256" : "65670047347886e5e90b6859430455b7d3a3e7aa051ef0d947de6a111e0740de"
+  },
+  "contentSHA256" : "7f0849a0c298e07205d2849076dc1840b54e02319579cf473db28cb4c913a392",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "b056a6da6c402337a1e2ec4b9d69dc7dd44468b318475c55ce901a969062757f",
+  "mode" : "fast",
+  "outputSHA256" : "027594ecf88613ba2a2d5b07ee86f4c43021b233a84ea1074c3a862be6220ef6",
+  "runtimeSeconds" : 0.84281444549560547,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:46:47Z",
+  "status" : "complete",
+  "wallSeconds" : 3.7075570821762085
+}

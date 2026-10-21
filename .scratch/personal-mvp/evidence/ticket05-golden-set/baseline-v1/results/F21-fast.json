@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+  "caseID" : "F21",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$</p></body></html>",
+        "plain" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>H</mi><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mo>−</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>p</mi><mi>i</mi></msub><mi>log</mi><mo>⁡</mo><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding=\"application/x-tex\">H(p) = -\\sum_{i=1}^n p_i \\log p_i</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "8d00cff10d7b22d81061c629f653419ac309f221af2835079fddf004e0313fe5",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F21-fast.png",
+    "previewSHA256" : "7eafad09817da15d8d40c6e10562ca1a8f1a90b0822c67050be0dfb86dfe387f"
+  },
+  "contentSHA256" : "0afdfeff7c7269e1b1e72ae705e2da4f67794e764521cc03c8de9f0094aca31a",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "a06e4604eb5c913756b98c90993641d1c957b6c65c1dd6459662535ad511f8f2",
+  "mode" : "fast",
+  "outputSHA256" : "1bbdd0011e8d628e92a23e69d2f3002ea06779acc64e95329af79e05be3b965e",
+  "runtimeSeconds" : 0.59499239921569824,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:48:47Z",
+  "status" : "complete",
+  "wallSeconds" : 3.8906040191650391
+}

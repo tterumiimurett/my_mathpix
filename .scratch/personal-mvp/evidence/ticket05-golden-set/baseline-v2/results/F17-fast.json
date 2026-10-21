@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i$$",
+  "caseID" : "F17",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i$$</p></body></html>",
+        "plain" : "$$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"bold\">u</mi><mo>⋅</mo><mi mathvariant=\"bold\">v</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover><msub><mi>u</mi><mi>i</mi></msub><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding=\"application/x-tex\">\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "c7336e1bf9d2a0bc15c32097cc61e160cf66d5d6b7aded6c6c36ac6591c2f70b",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F17-fast.png",
+    "previewSHA256" : "a36759a378536d7af57271c1521f9f7411b928aa77e480a22b27bff5aa332ec5"
+  },
+  "contentSHA256" : "d85a99a412fb9a06be8eb5e5a2445962f242f6b5d6834798d4c5afa13993899b",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "f103f4ed307435000199dd73243d737ccb3ba7017896c02ba4c0b8c2f8a361e4",
+  "mode" : "fast",
+  "outputSHA256" : "e10a19873da045e557d2ca867bd9b35db2a5c1cbc4692e3aebc1ea8d55d2c68a",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^du_iv_i$$",
+  "rawOutputSHA256" : "2bb2d0162352bf067c0baa481125c34461979bb1e3d14ceac3c0275b3d1fe1a4",
+  "runtimeSeconds" : 0.076341152191162109,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:22Z",
+  "status" : "complete",
+  "wallSeconds" : 2.3642159700393677
+}

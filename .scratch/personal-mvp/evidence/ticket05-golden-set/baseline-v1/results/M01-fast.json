@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M01",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 1: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 1: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span></p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 1: evaluate  $x^2$  before comparing the measurements.\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n| <b>Variable</b> | <b>Value</b> |\n|-----------------|--------------|\n| x               | 2            |\n| y               | 5            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>",
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "16337471300eba07a329f73a69c90e61f49ccc4ab5c1ce9b35e3e39621d36488",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M01-fast.png",
+    "previewSHA256" : "392294c1aa181494dc43ad19da7d2806778422f55e62f2d666a574ccd3d55cd3"
+  },
+  "contentSHA256" : "daebfccad02aa09c3ea662dc1878b592faf174266476d34cb20ef3a8d43d1238",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "28e845eaede4876aa19fb1a5ad850d23ecd8944716cefdbe53d156a8226087ad",
+  "mode" : "fast",
+  "outputSHA256" : "23a1cd852dad271dd7fb58dc66e6fea629001c532e9a13e7e9477687275d6956",
+  "runtimeSeconds" : 0.72789311408996582,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:53:39Z",
+  "status" : "complete",
+  "wallSeconds" : 4.849810004234314
+}

@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "|          |          |\n|----------|----------|\n| <b>A</b> | <b>B</b> |\n| 1        | 2        |\n\nBetween tables.\n\n|          |          |\n|----------|----------|\n| <b>C</b> | <b>D</b> |\n| 3        | 4        |",
+  "caseID" : "B08",
+  "complexTableHTML" : "<table>\n   <tr>\n    <td>A</td>\n    <td>B</td>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>A</td><td>B</td></tr><tr><td>1</td><td>2</td></tr></tbody></table>\n<p>Between tables.</p>\n<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>C</td><td>D</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>\n<table>\n   <tr>\n    <td>A</td>\n    <td>B</td>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "|          |          |\n|----------|----------|\n| <b>A</b> | <b>B</b> |\n| 1        | 2        |\n\nBetween tables.\n\n|          |          |\n|----------|----------|\n| <b>C</b> | <b>D</b> |\n| 3        | 4        |\n\nA\tB\n1\t2",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "|          |          |\n|----------|----------|\n| <b>A</b> | <b>B</b> |\n| 1        | 2        |\n\nBetween tables.\n\n|          |          |\n|----------|----------|\n| <b>C</b> | <b>D</b> |\n| 3        | 4        |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>A</td><td>B</td></tr><tr><td>1</td><td>2</td></tr></tbody></table>\n<p>Between tables.</p>\n<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>C</td><td>D</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><table>\n   <tr>\n    <td>A</td>\n    <td>B</td>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "|          |          |\n|----------|----------|\n| <b>A</b> | <b>B</b> |\n| 1        | 2        |\n\nBetween tables.\n\n|          |          |\n|----------|----------|\n| <b>C</b> | <b>D</b> |\n| 3        | 4        |\n\nA\tB\n1\t2",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>A</td><td>B</td></tr><tr><td>1</td><td>2</td></tr></tbody></table>",
+        "plain" : "\t\nA\tB\n1\t2",
+        "tsv" : "\t\nA\tB\n1\t2",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "\t\nA\tB\n1\t2",
+        "tsv" : "\t\nA\tB\n1\t2",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "7c3e5eef9f17d45021fbe33f3733c38854d3acd55accdaf9b558a3fa04c33d9b",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B08-balanced.png",
+    "previewSHA256" : "fdf8085efe8756758ddba2b0903f305552b27f86697106f102cb2783bc927cbb"
+  },
+  "contentSHA256" : "b04295073c597ab4c0cbf409c7c29815a777acbca07e72dde0733b9546073326",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "e6aaea262c5b66e92cda0cf67688a54eaf6631e3b5eb66d5a0f3f2dc46ce16fd",
+  "mode" : "balanced",
+  "outputSHA256" : "31922743be4df9cd7a52fbd18ef9d9f1cda8d0fe7c000aa7e7f19d50079c0e38",
+  "runtimeSeconds" : 1.4676194190979004,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:57:57Z",
+  "status" : "complete",
+  "wallSeconds" : 3.7638219594955444
+}

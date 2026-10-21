@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$a^2 + b^2 = c^2$$",
+  "caseID" : "F02",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$a^2 + b^2 = c^2$$</p></body></html>",
+        "plain" : "$$a^2 + b^2 = c^2$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$a^2 + b^2 = c^2$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">a^2 + b^2 = c^2</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$a^2 + b^2 = c^2$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "4299e7432dfec9fbd7448721708e13374d5f0f450b615219eaff1faecc002885",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F02-balanced.png",
+    "previewSHA256" : "d268853c0b783f9031856d4ff0e0a1e55ea96e92d45ee52be6b7353824a824ef"
+  },
+  "contentSHA256" : "46e3e50e6bc897952ba43683a0011d8f57e39f6c2d79676cfc78a3da95ed3ba2",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "7bb58c070d953ad6f896fff3724cced461cfd2498044dea7ae543516c16a118c",
+  "mode" : "balanced",
+  "outputSHA256" : "e7b65f01afca9725fb8ae11b05b58711e642704a9aec79565553b29beaa8d64f",
+  "runtimeSeconds" : 1.9316706657409668,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:45:17Z",
+  "status" : "complete",
+  "wallSeconds" : 4.5741709470748901
+}

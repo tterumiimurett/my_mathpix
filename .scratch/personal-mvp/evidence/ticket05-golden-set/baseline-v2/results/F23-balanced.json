@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}$$",
+  "caseID" : "F23",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}$$</p></body></html>",
+        "plain" : "$$p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>=</mo><mfrac><msup><mi>e</mi><msub><mi>z</mi><mi>i</mi></msub></msup><mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mi>e</mi><msub><mi>z</mi><mi>j</mi></msub></msup></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "c71c10238ceb5dd09565a73c4982e1dda637b7174fb16cd48364135a35f0db4d",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F23-balanced.png",
+    "previewSHA256" : "1001d887436f3905c63e1c0d67894bf66f39e237918bdb448889f446e92ff862"
+  },
+  "contentSHA256" : "665177586d6aeb9f66322a4fde139c9983a7f86e3440d9453288bb0b4e038c04",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "a17616b546ae8d07316c994cb15c3609a1a34b0088dcb85cfec7646722b2b3a7",
+  "mode" : "balanced",
+  "outputSHA256" : "2afc6944179a967721dd3b2348b83d63f8e153cc76da2dadaea167b0a332d442",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$p_i = \\frac{e^{z_i}}{\\sum_{j=1}^n e^{z_j}}$$",
+  "rawOutputSHA256" : "90e474d5df61642201a42d2d42b12c6e205f7f340944ef1e905ba1344ca0c5a7",
+  "runtimeSeconds" : 0.18213462829589844,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:10:03Z",
+  "status" : "complete",
+  "wallSeconds" : 2.5110980272293091
+}

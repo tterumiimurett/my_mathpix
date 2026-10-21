@@ -11,6 +11,9 @@ struct MyMathpixApp: App {
     }
 
     init() {
+        if GoldenSetRunner.handles(CommandLine.arguments) {
+            exit(GoldenSetRunner.runBlocking(arguments: CommandLine.arguments))
+        }
         let launch = AppLaunchConfiguration.current(arguments: CommandLine.arguments)
         if launch.runsLocalTokenStoreSelfTest {
             let passed = Ticket01LocalTokenStoreSelfTest.run()

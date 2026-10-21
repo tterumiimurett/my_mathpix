@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+  "caseID" : "F16",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$</p></body></html>",
+        "plain" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></mfrac><mo>=</mo><mfrac><mi>x</mi><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "406133a75c258616d47a0fb7b31276271f21ff5b655e87264f31e4d5abb5d555",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F16-balanced.png",
+    "previewSHA256" : "424712f5ec2d8f1b4518c5c0c1dec54f4305ad17616f45e4d20bdafe8e4386a1"
+  },
+  "contentSHA256" : "9bf1f4e1091f4cd3e2e219f896536432bc11659699bdfeb06fcae1a206a94ba8",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "85907e8f5c9eb31af01e2cf908a70adac0a08c637f19e96887ff6bcef7fc2dbc",
+  "mode" : "balanced",
+  "outputSHA256" : "67f5f9a20e293fb7f1287fccf37652ab8c7f0e4a2e014c95257f75d0288e057c",
+  "runtimeSeconds" : 3.6127691268920898,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:48:00Z",
+  "status" : "complete",
+  "wallSeconds" : 5.5397820472717285
+}

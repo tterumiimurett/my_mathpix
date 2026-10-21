@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Keep the formulas inside their table cells.\n\n| Quantity | Formula       |\n|----------|---------------|\n| Energy   | $E = mc^2$    |\n| Area     | $A = \\pi r^2$ |\n\nThe symbol  $r$  is a radius.",
+  "caseID" : "M13",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Quantity</th>\n    <th>Formula</th>\n   </tr>\n   <tr>\n    <td>Energy</td>\n    <td>$E = mc^2$</td>\n   </tr>\n   <tr>\n    <td>Area</td>\n    <td>$A = \\pi r^2$</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Keep the formulas inside their table cells.</p>\n<table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody><tr><td>Energy</td><td>$E = mc^2$</td></tr><tr><td>Area</td><td>$A = \\pi r^2$</td></tr></tbody></table>\n<p>The symbol  $r$  is a radius.</p></body></html>",
+        "plain" : "Keep the formulas inside their table cells.\n\n| Quantity | Formula       |\n|----------|---------------|\n| Energy   | $E = mc^2$    |\n| Area     | $A = \\pi r^2$ |\n\nThe symbol  $r$  is a radius.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Keep the formulas inside their table cells.\n\n| Quantity | Formula       |\n|----------|---------------|\n| Energy   | $E = mc^2$    |\n| Area     | $A = \\pi r^2$ |\n\nThe symbol  $r$  is a radius.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Keep the formulas inside their table cells.</p>\n<table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody><tr><td>Energy</td><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">E = mc^2</annotation></semantics></math></span></td></tr><tr><td>Area</td><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">A = \\pi r^2</annotation></semantics></math></span></td></tr></tbody></table>\n<p>The symbol  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span>  is a radius.</p></body></html>",
+        "plain" : "Keep the formulas inside their table cells.\n\n| Quantity | Formula       |\n|----------|---------------|\n| Energy   | $E = mc^2$    |\n| Area     | $A = \\pi r^2$ |\n\nThe symbol  $r$  is a radius.",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody><tr><td>Energy</td><td>$E = mc^2$</td></tr><tr><td>Area</td><td>$A = \\pi r^2$</td></tr></tbody></table>",
+        "plain" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "tsv" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "tsv" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "e39135fde2f2390cf19302d6f1e331876758560066de6e56d6d82374d5189eec",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M13-balanced.png",
+    "previewSHA256" : "47ef3b093099f6e8174e92cae0ea98ad3bb5ac8bc5bdbb52e3de44713b63d6c6"
+  },
+  "contentSHA256" : "9da7fb1b0485f40da386ef7560f9bcf0d613da7079814ede6a9054cbeab080e7",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "e9afe7016508310edac52c9d792c7b5838ca58e0dc3b7c706e7bc9f386bf494d",
+  "mode" : "balanced",
+  "outputSHA256" : "0a764990e0948a0aa6a88362dbdec45d31784ab15668674fc6e2c874bb05b775",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>Keep the formulas inside their table cells.</p>\n  <table>\n   <tr>\n    <th>Quantity</th>\n    <th>Formula</th>\n   </tr>\n   <tr>\n    <td>Energy</td>\n    <td><math>E = mc^2</math></td>\n   </tr>\n   <tr>\n    <td>Area</td>\n    <td><math>A = \\pi r^2</math></td>\n   </tr>\n  </table>\n  <p>The symbol <math>r</math> is a radius.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nKeep the formulas inside their table cells.\n\n| Quantity | Formula       |\n|----------|---------------|\n| Energy   | $E = mc^2$    |\n| Area     | $A = \\pi r^2$ |\n\nThe symbol  $r$  is a radius.",
+  "rawOutputSHA256" : "28460004374a985cda48544f5ee37e29872a951eaac9f01936af086e9f075fdf",
+  "runtimeSeconds" : 0.13824343681335449,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:14:46Z",
+  "status" : "complete",
+  "wallSeconds" : 2.8999500274658203
+}

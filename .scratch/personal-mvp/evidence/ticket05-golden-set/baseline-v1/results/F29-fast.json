@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\hat{\\theta}_{n+1} = \\hat{\\theta}_n - \\eta \\nabla L(\\hat{\\theta}_n)$$",
+  "caseID" : "F29",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\hat{\\theta}_{n+1} = \\hat{\\theta}_n - \\eta \\nabla L(\\hat{\\theta}_n)$$</p></body></html>",
+        "plain" : "$$\\hat{\\theta}_{n+1} = \\hat{\\theta}_n - \\eta \\nabla L(\\hat{\\theta}_n)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\hat{\\theta}_{n+1} = \\hat{\\theta}_n - \\eta \\nabla L(\\hat{\\theta}_n)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msub><mover accent=\"true\"><mi>θ</mi><mo>^</mo></mover><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mover accent=\"true\"><mi>θ</mi><mo>^</mo></mover><mi>n</mi></msub><mo>−</mo><mi>η</mi><mi mathvariant=\"normal\">∇</mi><mi>L</mi><mo stretchy=\"false\">(</mo><msub><mover accent=\"true\"><mi>θ</mi><mo>^</mo></mover><mi>n</mi></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\hat{\\theta}_{n+1} = \\hat{\\theta}_n - \\eta \\nabla L(\\hat{\\theta}_n)</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\hat{\\theta}_{n+1} = \\hat{\\theta}_n - \\eta \\nabla L(\\hat{\\theta}_n)$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "8651c57d08bac461e34ebc4c8250cd988177c359e96e2e11e882b6614bca20a6",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F29-fast.png",
+    "previewSHA256" : "a7f1ef4c57b9cd43940cfcb338fc85a19ae4d2a03943f865923b0879193d9018"
+  },
+  "contentSHA256" : "a188afa5b5693980592966816cf9cf33449feefb1bbfda88e4855a124dd9d1d7",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "2cb71cb79718ec7e419c16eb5e6980571ffc747ae87f1b47ba35280c9a63aaaa",
+  "mode" : "fast",
+  "outputSHA256" : "c35b05001a54a0ef16b0458069128c7eb09d8a9fe5c77a42f8d0bef8c3cd1bf1",
+  "runtimeSeconds" : 0.70247077941894531,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:49:57Z",
+  "status" : "complete",
+  "wallSeconds" : 3.4087940454483032
+}

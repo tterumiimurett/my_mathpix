@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Term      | Coefficient |\n|-----------|-------------|\n| Intercept | -0.25       |\n| Feature 1 | 1.75        |\n| Feature 2 | 0.50        |",
+  "caseID" : "T18",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Term</th>\n    <th>Coefficient</th>\n   </tr>\n   <tr>\n    <td>Intercept</td>\n    <td>-0.25</td>\n   </tr>\n   <tr>\n    <td>Feature 1</td>\n    <td>1.75</td>\n   </tr>\n   <tr>\n    <td>Feature 2</td>\n    <td>0.50</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Term</th><th>Coefficient</th></tr></thead><tbody><tr><td>Intercept</td><td>-0.25</td></tr><tr><td>Feature 1</td><td>1.75</td></tr><tr><td>Feature 2</td><td>0.50</td></tr></tbody></table></body></html>",
+        "plain" : "| Term      | Coefficient |\n|-----------|-------------|\n| Intercept | -0.25       |\n| Feature 1 | 1.75        |\n| Feature 2 | 0.50        |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Term      | Coefficient |\n|-----------|-------------|\n| Intercept | -0.25       |\n| Feature 1 | 1.75        |\n| Feature 2 | 0.50        |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Term</th><th>Coefficient</th></tr></thead><tbody><tr><td>Intercept</td><td>-0.25</td></tr><tr><td>Feature 1</td><td>1.75</td></tr><tr><td>Feature 2</td><td>0.50</td></tr></tbody></table></body></html>",
+        "plain" : "| Term      | Coefficient |\n|-----------|-------------|\n| Intercept | -0.25       |\n| Feature 1 | 1.75        |\n| Feature 2 | 0.50        |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Term</th><th>Coefficient</th></tr></thead><tbody><tr><td>Intercept</td><td>-0.25</td></tr><tr><td>Feature 1</td><td>1.75</td></tr><tr><td>Feature 2</td><td>0.50</td></tr></tbody></table>",
+        "plain" : "Term\tCoefficient\nIntercept\t-0.25\nFeature 1\t1.75\nFeature 2\t0.50",
+        "tsv" : "Term\tCoefficient\nIntercept\t-0.25\nFeature 1\t1.75\nFeature 2\t0.50",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Term\tCoefficient\nIntercept\t-0.25\nFeature 1\t1.75\nFeature 2\t0.50",
+        "tsv" : "Term\tCoefficient\nIntercept\t-0.25\nFeature 1\t1.75\nFeature 2\t0.50",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "69bc6c8ed252a1c54057381b5d98e4873ee89465bcca64c43416a375e167e7b8",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T18-balanced.png",
+    "previewSHA256" : "5cd0e1a13f728c941600b91a3c9536e88a656b88947292790a918862a7fba010"
+  },
+  "contentSHA256" : "27e48f7e0bb8f31bbe33adb140458c0bfd3e07f746dfd868e1d474dd621088b0",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "e0ec9397d783d1e58ab609654293785eab84cb8764fa4ebd5d4ade6bb53db896",
+  "mode" : "balanced",
+  "outputSHA256" : "ec079fb51654613f51152bb156300899526d4deeef054c7d5e1b212229773b67",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <table>\n   <tr>\n    <th>Term</th>\n    <th>Coefficient</th>\n   </tr>\n   <tr>\n    <td>Intercept</td>\n    <td>-0.25</td>\n   </tr>\n   <tr>\n    <td>Feature 1</td>\n    <td>1.75</td>\n   </tr>\n   <tr>\n    <td>Feature 2</td>\n    <td>0.50</td>\n   </tr>\n  </table>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n| Term      | Coefficient |\n|-----------|-------------|\n| Intercept | -0.25       |\n| Feature 1 | 1.75        |\n| Feature 2 | 0.50        |",
+  "rawOutputSHA256" : "289c205cb310a1f00961acad20859d3f17e511106df4a5c8be910438c207fcf4",
+  "runtimeSeconds" : 0.15984559059143066,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:12:52Z",
+  "status" : "complete",
+  "wallSeconds" : 3.4389520883560181
+}

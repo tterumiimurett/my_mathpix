@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$l_1+I_1+O_0+0=1$$",
+  "caseID" : "B10",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$l_1+I_1+O_0+0=1$$</p></body></html>",
+        "plain" : "$$l_1+I_1+O_0+0=1$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$l_1+I_1+O_0+0=1$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>O</mi><mn>0</mn></msub><mo>+</mo><mn>0</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">l_1+I_1+O_0+0=1</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$l_1+I_1+O_0+0=1$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "94171b02a7f4929cd4ccea300ba4d43477ca3eac15b465aa642b305b878161e4",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B10-balanced.png",
+    "previewSHA256" : "43d0c716ffc441d38ec38fb1f7ba7fcd151c7c497db471cf91d21835d1bd510f"
+  },
+  "contentSHA256" : "498f1534451e88a5c2f15828e0fd2da7803e3707a3acf01a7b74a48f2c7de522",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "ebd119fce14eedb075c0d418dc3c746b3b34b23c31f2377f4a674ec2c4d00f41",
+  "mode" : "balanced",
+  "outputSHA256" : "19f51ca4c61ca2338538661e6b266d3ee94ac84348b193c421313711e95a00f1",
+  "runtimeSeconds" : 1.686882495880127,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:58:15Z",
+  "status" : "complete",
+  "wallSeconds" : 5.3140659332275391
+}
