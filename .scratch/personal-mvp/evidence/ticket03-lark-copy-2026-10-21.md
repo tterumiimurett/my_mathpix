@@ -30,6 +30,10 @@ Focused coverage includes literal expected HTML/table cells, inline and display 
 - Independent Standards review: zero actionable findings. Independent Spec review: zero actionable findings. Both reviewed all tracked/untracked changes relative to `63941cc236a72f87ad92956a9c0e718bcceaa068`, including this evidence and the new adapter.
 - Restarted the isolated App and updated the local test page for the single Lark paste check. Fresh launch evidence reports the Result Editor, offline policy, formula preview, and table preview visible. This is not Lark destination acceptance.
 
-## Manual acceptance still required
+## Owner manual acceptance — completed 2026-10-21
 
-The isolated `my_mathpix_ticket3` fixture already contains inline math, display math, a table and text on both sides. Click **Lark**, paste normally into a blank Lark/Feishu document, and check the whole table, both formula forms, symbols, code literals and complete surrounding text. Local clipboard checks do not establish how a particular Lark release interprets mixed HTML/Markdown math. Ticket remains claimed until this new destination outcome is accepted; the separately deferred Notion inline issue remains documented.
+After testing the rebuilt `my_mathpix_ticket3` candidate (`ec7e140`), the owner reported “very nice，验证通过” and explicitly requested Ticket 03 resolution and main integration. Record this as owner-reported manual acceptance of the current Markdown / Lark / Notion workflow, not as an independently recorded GUI replay or a guarantee for all target-editor versions. The owner did not provide a Lark version; none is inferred.
+
+**Notion inline math remains broken:** the owner observed `Before ‣.`. The owner explicitly permits closing Ticket 03 while deferring this issue; acceptance does not claim editable native inline formulas work. It is separately tracked in [open Ticket 07](../issues/07-notion-inline-math.md). Notion display-math success and Markdown success were reported earlier by the owner.
+
+Main integration is requested but has not completed: main currently has an unrelated active Ticket 04 merge with unresolved conflicts. No main state was overwritten or aborted while recording this acceptance.

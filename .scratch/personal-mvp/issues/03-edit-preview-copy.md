@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Make Screen Capture survive through a mock result.
 
-**Status:** claimed
+**Status:** resolved
 
 ## Suggested agent split
 
@@ -24,6 +24,10 @@
 - [x] Labels and help text distinguish Copy Formats from Native Paste and do not promise native Notion or Feishu blocks.
 
 ## Comments
+
+### Owner acceptance and resolution — 2026-10-21
+
+The owner confirmed the current Markdown / Lark / Notion candidate (`ec7e140`) with “very nice，验证通过” and explicitly requested resolving Ticket 03 and merging it into main. This accepts the latest three-action workflow and supersedes the earlier pending-destination status. The owner explicitly excludes the known Notion inline-equation defect from this resolution: it remains unresolved and must be addressed later, not represented as fixed. Track it separately in [07 — Fix Notion inline math paste](07-notion-inline-math.md).
 
 ### Owner-directed Lark format and deferred Notion inline issue — 2026-10-21
 
@@ -58,6 +62,14 @@ The reusable internal surface is `ResultEditorView(item:)` with the existing `Ap
 The implementation and actual signed-App UI verification completed on 2026-09-05; see Answer and the linked evidence.
 
 ## Answer
+
+### Current three-format workflow accepted — 2026-10-21
+
+Resolved by explicit owner acceptance of the signed `my_mathpix_ticket3` candidate at implementation commit `ec7e140`: compact Markdown / Lark / Notion copy actions, unchanged Markdown source, Lark rich tables plus Markdown inline/display formulas, offline preview, deterministic normalization, and safe complete-content copying. Focused/public-pasteboard tests, the full 45-check suite, signed-bundle tests, and Standards/Spec reviews passed; see [accepted candidate evidence](../evidence/ticket03-lark-copy-2026-10-21.md).
+
+**Known unresolved issue:** Notion inline math can paste as `Before ‣.` instead of an editable equation. The owner confirmed Notion display math works and explicitly deferred the inline fix. Ticket 03 resolution does not certify native inline-math support. Follow-up [Ticket 07](07-notion-inline-math.md) remains open.
+
+Main integration is requested but not yet recorded as complete: at resolution time main contains an unrelated in-progress Ticket 04 merge with conflicts. Do not abort, overwrite, or complete that other task's merge implicitly. Preserve this ticket's branch until main is safely available for integration.
 
 ### Independent review fixes completed — 2026-10-21
 
