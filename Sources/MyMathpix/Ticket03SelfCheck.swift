@@ -766,6 +766,43 @@ enum Ticket03SelfCheck {
                         "accepted three-format clipboard preserves its declared fixture stage",
                         failures: &failures
                     )
+                    if format == .lark || format == .notion {
+                        let originalHTML = acceptanceBoard.string(forType: .html) ?? ""
+                        let partialHTML = source == Ticket03AcceptanceFixture.initialMarkdown
+                            ? "Before $x^2$. $$y = x + 1$$ COMPLETE-CELL-END After the table.<table></table><math>WRONG</math>"
+                            : "$$e^{i\\pi} = -1$$ $\\pi$ Circle constant Euler<table></table><math>WRONG</math>"
+                        acceptanceBoard.setString(partialHTML, forType: .html)
+                        check(
+                            !Ticket03PasteboardInspector.inspect(format, pasteboard: acceptanceBoard, expectedMarkdown: source),
+                            "acceptance inspector rejects truncated HTML despite correct full source and native types",
+                            failures: &failures
+                        )
+                        let header = source == Ticket03AcceptanceFixture.initialMarkdown
+                            ? "<th>Name</th><th>Value</th>" : "<th>Symbol</th><th>Meaning</th>"
+                        let swapped = source == Ticket03AcceptanceFixture.initialMarkdown
+                            ? "<th>Value</th><th>Name</th>" : "<th>Meaning</th><th>Symbol</th>"
+                        acceptanceBoard.setString(originalHTML.replacingOccurrences(of: header, with: swapped), forType: .html)
+                        check(
+                            !Ticket03PasteboardInspector.inspect(format, pasteboard: acceptanceBoard, expectedMarkdown: source),
+                            "acceptance inspector rejects reordered fixture columns",
+                            failures: &failures
+                        )
+                        if format == .notion {
+                            let formulas = source == Ticket03AcceptanceFixture.initialMarkdown
+                                ? ["x^2", "y = x + 1"] : ["e^{i\\pi} = -1", "\\pi", "e"]
+                            for formula in formulas {
+                                let annotation = "<annotation encoding=\"application/x-tex\">\(formula)</annotation>"
+                                check(originalHTML.contains(annotation), "known Notion fixture formula has a public TeX annotation", failures: &failures)
+                                acceptanceBoard.setString(originalHTML.replacingOccurrences(of: annotation, with: "<annotation encoding=\"application/x-tex\">WRONG</annotation>"), forType: .html)
+                                check(
+                                    !Ticket03PasteboardInspector.inspect(format, pasteboard: acceptanceBoard, expectedMarkdown: source),
+                                    "acceptance inspector rejects wrong Notion formula annotation",
+                                    failures: &failures
+                                )
+                            }
+                        }
+                        acceptanceBoard.setString(originalHTML, forType: .html)
+                    }
                     let differentStage = source == Ticket03AcceptanceFixture.initialMarkdown
                         ? Ticket03AcceptanceFixture.editedMarkdown : Ticket03AcceptanceFixture.initialMarkdown
                     check(

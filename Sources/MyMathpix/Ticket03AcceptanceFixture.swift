@@ -81,6 +81,15 @@ final class Ticket03AcceptanceRecognitionService: RecognitionService {
 enum Ticket03PasteboardInspector {
     static let pureFormulaSource = "$$x^2 + y^2$$"
 
+    private static func containsFixturePartsInOrder(_ html: String, parts: [String]) -> Bool {
+        var cursor = html.startIndex
+        for part in parts {
+            guard let range = html.range(of: part, range: cursor..<html.endIndex) else { return false }
+            cursor = range.upperBound
+        }
+        return true
+    }
+
     static func inspect(
         _ format: CopyFormat,
         pasteboard: NSPasteboard = .general,
@@ -98,16 +107,49 @@ enum Ticket03PasteboardInspector {
                   let html = pasteboard.string(forType: .html),
                   html.components(separatedBy: "<table>").count == 2 else { return false }
             let initial = expected == Ticket03AcceptanceFixture.initialMarkdown
-            let complete = html.contains(initial ? "COMPLETE-CELL-END" : "Circle constant")
-                && html.contains(initial ? "After the table." : "Euler")
+            let initialTable = "<table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody>"
+                + "<tr><td>A &amp; B</td><td>α © α</td></tr>"
+                + "<tr><td>**literal**</td><td>a &lt; b &gt; c</td></tr>"
+                + "<tr><td>long</td><td>Content beyond a single line must remain complete after copying — COMPLETE-CELL-END</td></tr>"
+                + "</tbody></table>"
+            let editedLarkTable = "<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody>"
+                + "<tr><td>$\\pi$</td><td>Circle constant</td></tr>"
+                + "<tr><td>$e$</td><td>Euler&#39;s number</td></tr></tbody></table>"
+            // Independent fixed-fixture literals: do not regenerate expected HTML
+            // with the clipboard renderer whose output is being inspected.
+            if initial && !html.contains(initialTable) { return false }
             if format == .lark {
-                return complete
-                    && html.contains(initial ? "$x^2$" : "$$e^{i\\pi} = -1$$")
-                    && html.contains(initial ? "$$y = x + 1$$" : "$\\pi$")
+                return (initial || html.contains(editedLarkTable))
+                    && containsFixturePartsInOrder(html, parts: initial
+                        ? ["Before $x^2$.", "$$y = x + 1$$", initialTable, "After the table."]
+                        : ["$$e^{i\\pi} = -1$$", editedLarkTable])
                     && !types.contains(.init("org.chromium.web-custom-data"))
                     && !types.contains(.init("com.byterumi.mymathpix.notion-blocks-v3"))
             }
-            return complete && html.contains("<math")
+            let formulas = initial ? ["x^2", "y = x + 1"] : ["e^{i\\pi} = -1", "\\pi", "e"]
+            let annotations = formulas.map { "<annotation encoding=\"application/x-tex\">\($0)</annotation>" }
+            guard html.components(separatedBy: "<math").count == formulas.count + 1,
+                  html.components(separatedBy: "<annotation encoding=\"application/x-tex\">").count == formulas.count + 1,
+                  containsFixturePartsInOrder(html, parts: annotations) else { return false }
+            if !initial {
+                // Only the two known formula cells vary in MathML markup. Exact
+                // row separators and cell counts bind their annotations to the
+                // correct cells, preserving the complete fixed grid and order.
+                guard let begin = html.range(of: "<table>"),
+                      let end = html.range(of: "</table>", range: begin.upperBound..<html.endIndex) else { return false }
+                let table = String(html[begin.lowerBound..<end.upperBound])
+                guard table.components(separatedBy: "<td>").count == 5,
+                      table.components(separatedBy: "<th>").count == 3,
+                      table.components(separatedBy: "<tr>").count == 4,
+                      containsFixturePartsInOrder(table, parts: [
+                        "<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>",
+                        annotations[1], "</td><td>Circle constant</td></tr><tr><td>",
+                        annotations[2], "</td><td>Euler&#39;s number</td></tr></tbody></table>"
+                      ]) else { return false }
+            }
+            return containsFixturePartsInOrder(html, parts: initial
+                ? ["Before ", annotations[0], annotations[1], initialTable, "After the table."]
+                : [annotations[0], "<table>", annotations[1], annotations[2]])
                 && types.contains(.init("org.chromium.web-custom-data"))
                 && types.contains(.init("com.byterumi.mymathpix.notion-blocks-v3"))
         case .formulaOutput:
