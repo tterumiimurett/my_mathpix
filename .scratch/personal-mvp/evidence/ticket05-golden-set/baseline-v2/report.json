@@ -1,0 +1,2036 @@
+{
+  "schema": 1,
+  "corpus": "authored-v1",
+  "modes": [
+    {
+      "mode": "fast",
+      "gate": "pass",
+      "ordinary": {
+        "total": 70,
+        "passed": 69,
+        "failed": 1,
+        "pending": 0
+      },
+      "categories": {
+        "formula": {
+          "total": 30,
+          "passed": 30,
+          "failed": 0,
+          "pending": 0
+        },
+        "table": {
+          "total": 20,
+          "passed": 20,
+          "failed": 0,
+          "pending": 0
+        },
+        "mixed": {
+          "total": 20,
+          "passed": 19,
+          "failed": 1,
+          "pending": 0
+        },
+        "boundary": {
+          "total": 10,
+          "passed": 9,
+          "failed": 1,
+          "pending": 0
+        }
+      },
+      "boundary": {
+        "total": 10,
+        "passed": 9,
+        "failed": 1,
+        "pending": 0
+      },
+      "rows": [
+        {
+          "caseID": "F01",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Quadratic roots: leading minus, both plus/minus branches, discriminant b²−4ac, radical scope, and denominator2a match the authored input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F02",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Pythagorean identity: all three square superscripts and plus/equality signs match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F03",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Euler identity: exponent iπ, plus1, and equality to0 match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F04",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gaussian density: σ√(2π) denominator, negative exponent, squared x−μ grouping, and2σ² denominator are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F05",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Definite integral: bounds0 and1, integrand x² dx, and result1/3 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F06",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Geometric sum: k=0 to n, exponent k, numerator1−r^(n+1), denominator1−r and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F07",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Sinc limit: x approaches0, sin x numerator, x denominator, and result1 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F08",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Factorial/product: n!, k=1 lower bound, n upper bound, and factor k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F09",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Partial derivative: ∂f/∂x and right-hand2xy+cos x are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F10",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gradient column vector: ∂f/∂x above ∂f/∂y, enclosing parentheses, two rows and ∇f are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F11",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Matrix: A equals a2×2 parenthesized matrix with rows1,2 and3,4 in the correct positions. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F12",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Determinant: a,b above c,d, det operator, enclosing matrix, and ad−bc result are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F13",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Cases: upper x² branch at x≥0, lower −x branch at x<0, brace and branch association are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F14",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Two displayed rows preserve a+b=c above a−b=d, both signs and visible equality alignment. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F15",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Binomial expansion: (x+y)^n, sum k=0 to n, binomial(n,k), x^(n−k), and y^k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F16",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Nested fraction: denominator1+1/x and right-hand x/(x+1) grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F17",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Dot product: bold u/v, dot operator, sum i=1 to d, and paired u_i v_i indices are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F18",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Euclidean norm: double norm bars with2 subscript, square root, sum i=1 to d, and x_i² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F19",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Expectation: E[X], summation over x, and x p(x) factors are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F20",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Bayes rule: conditional bars and order P(B|A)P(A)/P(B), grouping and equality are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F21",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Entropy: initial minus, sum i=1 to n, and p_i log p_i are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F22",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "KL divergence: KL subscript, p∥q argument order, sum over i, and p_i log(p_i/q_i) are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F23",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Softmax: p_i, numerator e^(z_i), denominator sum j=1 to n of e^(z_j), all indices and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F24",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Hessian entry: H_ij, numerator ∂²f, and ordered denominator ∂x_i ∂x_j are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F25",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Fourier transform: hat on f, ω argument, limits−∞ to∞, f(t)e^(−iωt), dt, and negative sign are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F26",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Second derivative oscillator: d²y/dt² + ω²y =0, both derivative powers and oscillator square are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F27",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Complex conjugate identity: bar on second z and squared modulus |z|² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F28",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Set distributivity: intersection/union operators, all A/B/C positions and parentheses are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F29",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gradient update: hats on θ at n+1 and n and in L argument, minus η, gradient operator, and index scopes are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F30",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Two displayed rows preserve a=b above c=d with visible equality alignment and extra vertical separation. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "T01",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 01: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T02",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 02: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T03",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 03: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T04",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 04: every header/data cell and row/column order verified against independent authored tableGrids. TeX alpha/beta preserves the authored Unicode symbols, with one complete table and no extra blank-cell fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T05",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 05: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T06",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 06: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T07",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 07: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T08",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 08: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T09",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 09: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T10",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 10: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T11",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 11: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T12",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 12: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T13",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 13: every header/data cell and row/column order verified against independent authored tableGrids. TeX squared/cubed expressions are mathematically and visually equivalent to authored superscripts, with one complete table and no extra fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T14",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 14: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T15",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 15: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T16",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 16: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T17",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 17: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T18",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 18: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T19",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 19: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T20",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 20: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "M01",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M02",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M03",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M04",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M05",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M06",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M07",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M08",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M09",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M10",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M11",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M12",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M13",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M14",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M15",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. FAIL: authored blockquote Units are unchanged is flattened to a normal paragraph. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M16",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M17",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M18",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M19",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M20",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. Two aligned equation rows become separate left-aligned formula paragraphs; operators, both rows and reading order remain, with centering change recorded rather than byte-string rejection. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "B01",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Small sum: i=1 lower bound, n upper bound, x_i squared, grouping and readable display all preserved. No table, so table_structure passes as not applicable. Lark complete literal HTML and Notion actual MathML sum/scripts plus complete annotations checked; all plain fallbacks preserve canonical source. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B02",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Low-contrast input fraction recovered correctly as (a+b)/(c−d), including denominator minus; visible fraction grouping preserved in the normal and corrected previews. Input contrast need not be reproduced. No table, so table_structure passes as not applicable. Complete Lark literal HTML and Notion MathML fraction/annotation plus all plain fallbacks checked. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B03",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Rotated E=mc² recovered mathematically correctly; normalizing the12-degree source rotation is permitted by the authored rubric. Equality, multiplication juxtaposition, c superscript2 and visible grouping preserved. No table, so table_structure passes as not applicable. Complete Lark literal HTML and Notion MathML script/annotation plus all plain fallbacks checked. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B04",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Dense matrix: A equals a4×4 parenthesized matrix with every cell1–16 in correct row/column position. Normal and corrected PNGs show all four rows and delimiters fully. Matrix layout and Notion MathML mtable each independently checked as4×4. There is no data table, so table_structure is not applicable and passes. Complete Lark literal HTML, Notion formula annotation and all plain fallbacks checked. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B05",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Merged-table boundary contract passes: Group/Value header, A spanning two data rows, and values1/2 are retained exactly in safe HTML with rowspan=2. Canonical Markdown matches the independently expected empty-slot projection. Both actual previews fully show the flat editable projection followed by the safe merged alternative; this is explicitly assessed under the accepted Complex Table Output retained alongside Markdown contract, not claimed as a single rendered table. Both Lark/Notion whole HTML retain the correct rowspan merged alternative as well as the projection, and plain fallback retains complete Markdown plus occupied-slot TSV; no merged native destination guarantee is made. Correction marker is visible between the projection and retained alternative. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B06",
+          "category": "boundary",
+          "verdict": "fail",
+          "reason": "Recognition meaning and editable canonical source pass: literal code x**2, escaped currency \\$5, prose, and final $x^2$ all match the authored input semantically; harmless spacing differs. No table, so table_structure passes as not applicable. Normal and corrected preview fail: the escaped currency opener is parsed as math, compare becomes math lettering and x^2$ remains literal, with a visible backslash before the price. Notion public rich HTML likewise has annotation 5; compare and leaves x^2$ outside math instead of preserving the final square. Markdown/all source fallbacks remain complete, while Lark HTML retains a visible currency escape. Copy fails for the observed rich-payload corruption; this is independent of the deferred destination-native Notion inline issue. Correction mechanics pass because edit persistence, rendered marker and edited Markdown copy are actually observed; the original rendering defect remains. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B07",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "All three nested radicals have correct extents around x, then1+sqrt(x), then1+sqrt(1+sqrt(x)); both plus signs, grouping and readable render are preserved. Actual Notion MathML has three nested msqrt nodes. No table, so table_structure passes as not applicable. Complete source fallbacks and rich math/literal-Lark representations preserve the expression. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B08",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Both authored tables are retained in order: A/B over1/2, then Between tables., then C/D over3/4. Canonical has exactly two tables with the right two-column/two-row grids. Actual normal/corrected PNGs are complete and rich public Lark/Notion HTML has exactly those two complete tables with intervening prose. A first-table safe HTML fallback is recognized as equivalent and is not appended as a third table; full plain fallbacks are exact canonical source. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B09",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Single two-column/three-row table preserves Quantity/Formula header, Energy→E=mc² and Area→A=πr² with correct cell associations and powers. Actual normal/corrected PNGs show exactly one complete table, correctly rendered formulas and no literal bold markup. Raw HTML uses text-only math elements; sanitized fallback preserves both full formula sources and strict equality suppresses a redundant second table. Lark public HTML has exactly one complete table with literal dollar-delimited math; Notion public HTML has exactly one table with correct MathML/annotations in both cells. All three plain fallbacks equal complete canonical source. The known deferred destination-native Notion inline limitation remains; serialized HTML is the reviewed contract. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B10",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Ambiguous glyphs correctly distinguished in fresh source and visible render: lowercase l subscript1, uppercase I subscript1, uppercase O subscript0, then numeric0 and equality to1. Plus signs, scripts and letter case are preserved in Notion MathML as well. No table, so table_structure passes as not applicable. Complete source fallbacks, literal Lark representation, and Notion formula annotation preserve all glyph distinctions. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        }
+      ],
+      "measurement": {
+        "attempts": 80,
+        "automaticRetries": 0,
+        "medianWallSeconds": 3.0991044640541077,
+        "underFiveSeconds": 78,
+        "knownCostCents": 0.8,
+        "costAvailableAttempts": 80,
+        "costEvidence": [
+          {
+            "caseID": "B01",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B02",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B03",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B04",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B05",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B06",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B07",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B08",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B09",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B10",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F01",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F02",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F03",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F04",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F05",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F06",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F07",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F08",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F09",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F10",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F11",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F12",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F13",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F14",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F15",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F16",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F17",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F18",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F19",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F20",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F21",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F22",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F23",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F24",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F25",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F26",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F27",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F28",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F29",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F30",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M01",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M02",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M03",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M04",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M05",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M06",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M07",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M08",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M09",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M10",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M11",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M12",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M13",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M14",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M15",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M16",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M17",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M18",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M19",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M20",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T01",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T02",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T03",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T04",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T05",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T06",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T07",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T08",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T09",
+            "mode": "fast",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T10",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T11",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T12",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T13",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T14",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T15",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T16",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T17",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T18",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T19",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T20",
+            "mode": "fast",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          }
+        ]
+      },
+      "policy": "Fast and balanced evaluated separately. No cherry-picked best-of gate. Notion inline paste remains a known deferred defect; serialization checks do not establish destination compatibility."
+    },
+    {
+      "mode": "balanced",
+      "gate": "pass",
+      "ordinary": {
+        "total": 70,
+        "passed": 69,
+        "failed": 1,
+        "pending": 0
+      },
+      "categories": {
+        "formula": {
+          "total": 30,
+          "passed": 30,
+          "failed": 0,
+          "pending": 0
+        },
+        "table": {
+          "total": 20,
+          "passed": 20,
+          "failed": 0,
+          "pending": 0
+        },
+        "mixed": {
+          "total": 20,
+          "passed": 19,
+          "failed": 1,
+          "pending": 0
+        },
+        "boundary": {
+          "total": 10,
+          "passed": 8,
+          "failed": 2,
+          "pending": 0
+        }
+      },
+      "boundary": {
+        "total": 10,
+        "passed": 8,
+        "failed": 2,
+        "pending": 0
+      },
+      "rows": [
+        {
+          "caseID": "F01",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Quadratic roots: leading minus, both plus/minus branches, discriminant b²−4ac, radical scope, and denominator2a match the authored input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F02",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Pythagorean identity: all three square superscripts and plus/equality signs match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F03",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Euler identity: exponent iπ, plus1, and equality to0 match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F04",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gaussian density: σ√(2π) denominator, negative exponent, squared x−μ grouping, and2σ² denominator are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F05",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Definite integral: bounds0 and1, integrand x² dx, and result1/3 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F06",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Geometric sum: k=0 to n, exponent k, numerator1−r^(n+1), denominator1−r and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F07",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Sinc limit: x approaches0, sin x numerator, x denominator, and result1 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F08",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Factorial/product: n!, k=1 lower bound, n upper bound, and factor k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F09",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Partial derivative: ∂f/∂x and right-hand2xy+cos x are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F10",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gradient column vector: ∂f/∂x above ∂f/∂y, enclosing parentheses, two rows and ∇f are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F11",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Matrix: A equals a2×2 parenthesized matrix with rows1,2 and3,4 in the correct positions. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F12",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Determinant: a,b above c,d, det operator, enclosing matrix, and ad−bc result are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F13",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Cases: upper x² branch at x≥0, lower −x branch at x<0, brace and branch association are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F14",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Two displayed rows preserve a+b=c above a−b=d, both signs and visible equality alignment. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F15",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Binomial expansion: (x+y)^n, sum k=0 to n, binomial(n,k), x^(n−k), and y^k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F16",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Nested fraction: denominator1+1/x and right-hand x/(x+1) grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F17",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Dot product: bold u/v, dot operator, sum i=1 to d, and paired u_i v_i indices are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F18",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Euclidean norm: double norm bars with2 subscript, square root, sum i=1 to d, and x_i² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F19",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Expectation: E[X], summation over x, and x p(x) factors are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F20",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Bayes rule: conditional bars and order P(B|A)P(A)/P(B), grouping and equality are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F21",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Entropy: initial minus, sum i=1 to n, and p_i log p_i are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F22",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "KL divergence: KL subscript, p∥q argument order, sum over i, and p_i log(p_i/q_i) are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F23",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Softmax: p_i, numerator e^(z_i), denominator sum j=1 to n of e^(z_j), all indices and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F24",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Hessian entry: H_ij, numerator ∂²f, and ordered denominator ∂x_i ∂x_j are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F25",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Fourier transform: hat on f, ω argument, limits−∞ to∞, f(t)e^(−iωt), dt, and negative sign are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F26",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Second derivative oscillator: d²y/dt² + ω²y =0, both derivative powers and oscillator square are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F27",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Complex conjugate identity: bar on second z and squared modulus |z|² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F28",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Set distributivity: intersection/union operators, all A/B/C positions and parentheses are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F29",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Gradient update: hats on θ at n+1 and n and in L argument, minus η, gradient operator, and index scopes are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "F30",
+          "category": "formula",
+          "verdict": "pass",
+          "reason": "Two displayed rows preserve a=b above c=d with visible equality alignment and extra vertical separation. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+        },
+        {
+          "caseID": "T01",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 01: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T02",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 02: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T03",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 03: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T04",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 04: every header/data cell and row/column order verified against independent authored tableGrids. TeX alpha/beta preserves the authored Unicode symbols, with one complete table and no extra blank-cell fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T05",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 05: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T06",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 06: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T07",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 07: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T08",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 08: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T09",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 09: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T10",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 10: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T11",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 11: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T12",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 12: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T13",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 13: every header/data cell and row/column order verified against independent authored tableGrids. TeX squared/cubed expressions are mathematically and visually equivalent to authored superscripts, with one complete table and no extra fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T14",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 14: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T15",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 15: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T16",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 16: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T17",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 17: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T18",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 18: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T19",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 19: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "T20",
+          "category": "table",
+          "verdict": "pass",
+          "reason": "Simple table 20: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+        },
+        {
+          "caseID": "M01",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M02",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M03",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M04",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M05",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M06",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M07",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M08",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M09",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M10",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M11",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M12",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M13",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M14",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M15",
+          "category": "mixed",
+          "verdict": "fail",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. FAIL: authored blockquote Units are unchanged is flattened to a normal paragraph. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M16",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M17",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M18",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M19",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "M20",
+          "category": "mixed",
+          "verdict": "pass",
+          "reason": "Parent freshly read actual v2 canonical output and viewed the complete normal preview against the same frozen authored input; equivalent formula syntax accepted. Identical v2 preview SHA-256 pixels across modes were inspected once, with each record independently bound/verified. All ordered table grids/cells in Lark and Notion HTML and whole canonical fallbacks match; both actual normal/corrected PNG hashes, raw/output/input/binary/corpus/configuration bindings and isolated public edit/persistence/copy/DOM marker evidence verified. Two aligned equation rows become separate left-aligned formula paragraphs; operators, both rows and reading order remain, with centering change recorded rather than byte-string rejection. No destination Native Paste or Notion inline compatibility claim; known deferred inline limitation remains."
+        },
+        {
+          "caseID": "B01",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Small sum: i=1 lower bound, n upper bound, x_i squared, grouping and readable display all preserved. No table, so table_structure passes as not applicable. Lark complete literal HTML and Notion actual MathML sum/scripts plus complete annotations checked; all plain fallbacks preserve canonical source. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B02",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Low-contrast input fraction recovered correctly as (a+b)/(c−d), including denominator minus; visible fraction grouping preserved in the normal and corrected previews. Input contrast need not be reproduced. No table, so table_structure passes as not applicable. Complete Lark literal HTML and Notion MathML fraction/annotation plus all plain fallbacks checked. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B03",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Rotated E=mc² recovered mathematically correctly; normalizing the12-degree source rotation is permitted by the authored rubric. Equality, multiplication juxtaposition, c superscript2 and visible grouping preserved. No table, so table_structure passes as not applicable. Complete Lark literal HTML and Notion MathML script/annotation plus all plain fallbacks checked. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B04",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Dense matrix: A equals a4×4 parenthesized matrix with every cell1–16 in correct row/column position. Normal and corrected PNGs show all four rows and delimiters fully. Matrix layout and Notion MathML mtable each independently checked as4×4. There is no data table, so table_structure is not applicable and passes. Complete Lark literal HTML, Notion formula annotation and all plain fallbacks checked. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B05",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Merged-table boundary contract passes: Group/Value header, A spanning two data rows, and values1/2 are retained exactly in safe HTML with rowspan=2. Canonical Markdown matches the independently expected empty-slot projection. Both actual previews fully show the flat editable projection followed by the safe merged alternative; this is explicitly assessed under the accepted Complex Table Output retained alongside Markdown contract, not claimed as a single rendered table. Both Lark/Notion whole HTML retain the correct rowspan merged alternative as well as the projection, and plain fallback retains complete Markdown plus occupied-slot TSV; no merged native destination guarantee is made. Correction marker is visible between the projection and retained alternative. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B06",
+          "category": "boundary",
+          "verdict": "fail",
+          "reason": "Recognition meaning and editable canonical source pass: literal code x**2, escaped currency \\$5, prose, and final $x^2$ all match the authored input semantically; harmless spacing differs. No table, so table_structure passes as not applicable. Normal and corrected preview fail: the escaped currency opener is parsed as math, compare becomes math lettering and x^2$ remains literal, with a visible backslash before the price. Notion public rich HTML likewise has annotation 5; compare and leaves x^2$ outside math instead of preserving the final square. Markdown/all source fallbacks remain complete, while Lark HTML retains a visible currency escape. Copy fails for the observed rich-payload corruption; this is independent of the deferred destination-native Notion inline issue. Correction mechanics pass because edit persistence, rendered marker and edited Markdown copy are actually observed; the original rendering defect remains. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B07",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "All three nested radicals have correct extents around x, then1+sqrt(x), then1+sqrt(1+sqrt(x)); both plus signs, grouping and readable render are preserved. Actual Notion MathML has three nested msqrt nodes. No table, so table_structure passes as not applicable. Complete source fallbacks and rich math/literal-Lark representations preserve the expression. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B08",
+          "category": "boundary",
+          "verdict": "fail",
+          "reason": "All text/cell values A/B/1/2, Between tables., C/D/3/4 are recognized, so meaning-content passes; their structural presentation fails. Service Markdown invents a blank header row for each table and puts <b>A</b>/<b>B</b> and <b>C</b>/<b>D</b> into body rows; raw HTML instead has two two-row tables. Canonical therefore has three rows per table rather than the authored two. Actual normal/corrected previews show blank headers, literal body formatting tags, plus an appended first-table fallback, yielding three tables. Lark/Notion whole HTML strips body b tags but still includes blank headers and an extra third A/B table; their plain fallbacks also append that redundant first-table TSV. This fails layout, table_structure, canonical, preview and public-copy checks. Correction mechanics and visible marker pass; no data is hidden by snapshot clipping. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B09",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Single two-column/three-row table preserves Quantity/Formula header, Energy→E=mc² and Area→A=πr² with correct cell associations and powers. Actual normal/corrected PNGs show exactly one complete table, correctly rendered formulas and no literal bold markup. Raw HTML uses text-only math elements; sanitized fallback preserves both full formula sources and strict equality suppresses a redundant second table. Lark public HTML has exactly one complete table with literal dollar-delimited math; Notion public HTML has exactly one table with correct MathML/annotations in both cells. All three plain fallbacks equal complete canonical source. The known deferred destination-native Notion inline limitation remains; serialized HTML is the reviewed contract. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        },
+        {
+          "caseID": "B10",
+          "category": "boundary",
+          "verdict": "pass",
+          "reason": "Ambiguous glyphs correctly distinguished in fresh source and visible render: lowercase l subscript1, uppercase I subscript1, uppercase O subscript0, then numeric0 and equality to1. Plus signs, scripts and letter case are preserved in Notion MathML as well. No table, so table_structure passes as not applicable. Complete source fallbacks, literal Lark representation, and Notion formula annotation preserve all glyph distinctions. Fresh v2 actual input, authored Golden Result, raw/canonical output, normal and corrected PNGs, and three public copy representations reviewed. All eight identity/hash bindings, raw/canonical digests, executable/corpus/configuration, normal/corrected PNG hashes, zero retries, complete status and all three correction flags verified. Actual corrected PNG visibly includes Correction check. Destination-native paste/editability is not asserted; no v1 judgment was carried forward."
+        }
+      ],
+      "measurement": {
+        "attempts": 80,
+        "automaticRetries": 0,
+        "medianWallSeconds": 3.071641504764557,
+        "underFiveSeconds": 76,
+        "knownCostCents": 2.4,
+        "costAvailableAttempts": 80,
+        "costEvidence": [
+          {
+            "caseID": "B01",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B02",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B03",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B04",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B05",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B06",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B07",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B08",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B09",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "B10",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F01",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F02",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F03",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F04",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F05",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F06",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F07",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F08",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F09",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F10",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F11",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F12",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F13",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F14",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F15",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F16",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F17",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F18",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F19",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F20",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F21",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F22",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F23",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F24",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F25",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F26",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F27",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F28",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F29",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "F30",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M01",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M02",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M03",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M04",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M05",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M06",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M07",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M08",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M09",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M10",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M11",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M12",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M13",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M14",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M15",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M16",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M17",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M18",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M19",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "M20",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T01",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T02",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T03",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T04",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T05",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T06",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T07",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T08",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T09",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T10",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T11",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T12",
+            "mode": "balanced",
+            "cents": 0.4,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T13",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T14",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T15",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T16",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T17",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T18",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T19",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          },
+          {
+            "caseID": "T20",
+            "mode": "balanced",
+            "cents": 0,
+            "source": "cost_breakdown.final_cost_cents"
+          }
+        ]
+      },
+      "policy": "Fast and balanced evaluated separately. No cherry-picked best-of gate. Notion inline paste remains a known deferred defect; serialization checks do not establish destination compatibility."
+    }
+  ]
+}

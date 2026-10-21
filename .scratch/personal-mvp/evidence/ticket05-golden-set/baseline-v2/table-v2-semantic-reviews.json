@@ -1,0 +1,762 @@
+[
+  {
+    "caseID": "T01",
+    "mode": "balanced",
+    "inputSHA256": "ba807fe620f78b78d8820944a9fc92fcab04a039a62cc499ba9098d0ed2eb6f1",
+    "contentSHA256": "d466211bc2bdb9f01b56867746a8627c40a97755d00d69f2551c98119ff2364a",
+    "outputSHA256": "a9c82ca1e5d89e9d104e922bc3fd697d7680ffbd20bcc93d5b82e75bff81e230",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.894624+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 01: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T01",
+    "mode": "fast",
+    "inputSHA256": "ba807fe620f78b78d8820944a9fc92fcab04a039a62cc499ba9098d0ed2eb6f1",
+    "contentSHA256": "d466211bc2bdb9f01b56867746a8627c40a97755d00d69f2551c98119ff2364a",
+    "outputSHA256": "a9c82ca1e5d89e9d104e922bc3fd697d7680ffbd20bcc93d5b82e75bff81e230",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.896861+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 01: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T02",
+    "mode": "balanced",
+    "inputSHA256": "e36e56e931f6c52ff1e5d83b56823cec2f417b713c460d96e634fee353b2e459",
+    "contentSHA256": "f674d3308459cc40c8603f4104f9ed9097e74ab3f491d3898b0e8c9407fc6777",
+    "outputSHA256": "80b814d7122835bc3b7327ebd68fd1764289613b1d7ff6f76063ee86dc9d0207",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.900855+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 02: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T02",
+    "mode": "fast",
+    "inputSHA256": "e36e56e931f6c52ff1e5d83b56823cec2f417b713c460d96e634fee353b2e459",
+    "contentSHA256": "f674d3308459cc40c8603f4104f9ed9097e74ab3f491d3898b0e8c9407fc6777",
+    "outputSHA256": "80b814d7122835bc3b7327ebd68fd1764289613b1d7ff6f76063ee86dc9d0207",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.903126+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 02: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T03",
+    "mode": "balanced",
+    "inputSHA256": "5ff511dc740cb38e3b5cd58069719c9dc0630add5d7dc0421dd058763ca8c25c",
+    "contentSHA256": "f45c28d287da58a7c3cbbc065a9456b99b7489784f640ce951417279e3bfc6c1",
+    "outputSHA256": "c284d81835a0756ee2aa6a9ea59881c6badff270f1d0cf7ef04b59482784cfd5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.906681+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 03: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T03",
+    "mode": "fast",
+    "inputSHA256": "5ff511dc740cb38e3b5cd58069719c9dc0630add5d7dc0421dd058763ca8c25c",
+    "contentSHA256": "f45c28d287da58a7c3cbbc065a9456b99b7489784f640ce951417279e3bfc6c1",
+    "outputSHA256": "51fa098c647f02d6696bf4ad380a6a297a8a3a6410e995fffa2234693e3e4b1a",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.908090+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 03: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T04",
+    "mode": "balanced",
+    "inputSHA256": "e8125ac13b16cf66a268ef9f514e1d61dc2846acb4f54935b8d3624f8556b59b",
+    "contentSHA256": "8ad56c59f64a37258bb4e3bb14acc8b4c55512dd2b0dc35ba43ce3112d659402",
+    "outputSHA256": "30a279e74646efb25688ca0e0007dc1c97ab31506c2f6877b37e69af45d57ade",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.912367+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 04: every header/data cell and row/column order verified against independent authored tableGrids. TeX alpha/beta preserves the authored Unicode symbols, with one complete table and no extra blank-cell fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T04",
+    "mode": "fast",
+    "inputSHA256": "e8125ac13b16cf66a268ef9f514e1d61dc2846acb4f54935b8d3624f8556b59b",
+    "contentSHA256": "8ad56c59f64a37258bb4e3bb14acc8b4c55512dd2b0dc35ba43ce3112d659402",
+    "outputSHA256": "30a279e74646efb25688ca0e0007dc1c97ab31506c2f6877b37e69af45d57ade",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.914556+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 04: every header/data cell and row/column order verified against independent authored tableGrids. TeX alpha/beta preserves the authored Unicode symbols, with one complete table and no extra blank-cell fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T05",
+    "mode": "balanced",
+    "inputSHA256": "2db763a277a613049bce58911527118642c026eaef8644fe81fae0d1d83feb6d",
+    "contentSHA256": "8d811cddee0715676dd3f40efcc2cafbbb9d0a9c3ce82c295ee97b4422992e5c",
+    "outputSHA256": "476be328ad9d87c21d7c01b14ae51eccb46a47b96383e640ce30365f2f33b028",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.921290+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 05: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T05",
+    "mode": "fast",
+    "inputSHA256": "2db763a277a613049bce58911527118642c026eaef8644fe81fae0d1d83feb6d",
+    "contentSHA256": "8d811cddee0715676dd3f40efcc2cafbbb9d0a9c3ce82c295ee97b4422992e5c",
+    "outputSHA256": "476be328ad9d87c21d7c01b14ae51eccb46a47b96383e640ce30365f2f33b028",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.923435+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 05: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T06",
+    "mode": "balanced",
+    "inputSHA256": "ee4f45a23ce65f9f9d08464b729992ac7f88692597958edba8ebddefb26d7c51",
+    "contentSHA256": "eb9fff4d2a9578a5fa161832d9e1fdd017805c42974d12f478be8b718b77ab2f",
+    "outputSHA256": "a5b3df16bb8441212a187ef9098974bfb72191c63acf965d005c7d9bab05857e",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.927263+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 06: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T06",
+    "mode": "fast",
+    "inputSHA256": "ee4f45a23ce65f9f9d08464b729992ac7f88692597958edba8ebddefb26d7c51",
+    "contentSHA256": "eb9fff4d2a9578a5fa161832d9e1fdd017805c42974d12f478be8b718b77ab2f",
+    "outputSHA256": "a5b3df16bb8441212a187ef9098974bfb72191c63acf965d005c7d9bab05857e",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.930705+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 06: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T07",
+    "mode": "balanced",
+    "inputSHA256": "7143abe3102e59828bc0e0ef29334188bd24195069b9e2e39515db3b4bef6c6d",
+    "contentSHA256": "f65c67665af960d33e9ff2c228bc32eaa3fe26b8ef94c7709a80466789f42cd0",
+    "outputSHA256": "7a846ac61393825f215802fbd12622fed11bf20924b47deb6f9f25c77b0be450",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.936146+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 07: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T07",
+    "mode": "fast",
+    "inputSHA256": "7143abe3102e59828bc0e0ef29334188bd24195069b9e2e39515db3b4bef6c6d",
+    "contentSHA256": "f65c67665af960d33e9ff2c228bc32eaa3fe26b8ef94c7709a80466789f42cd0",
+    "outputSHA256": "a1e9e3d4dda6e4951730026c093cac6a522a9ced01162e934f2e02feb9aa0d71",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.940018+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 07: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T08",
+    "mode": "balanced",
+    "inputSHA256": "ce398750b9ff39673944bc9caf37bd57ea91c4a7faef789dca69870e8ab7053e",
+    "contentSHA256": "74381a740a139f7737a9580f568f8bc97b9a5e5337c7a4a40615f072ca65aa6b",
+    "outputSHA256": "07768ac8775ea1d549af6eb65242fd2509b2cd5f9e821c8051ac8bf27057641e",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.945378+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 08: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T08",
+    "mode": "fast",
+    "inputSHA256": "ce398750b9ff39673944bc9caf37bd57ea91c4a7faef789dca69870e8ab7053e",
+    "contentSHA256": "74381a740a139f7737a9580f568f8bc97b9a5e5337c7a4a40615f072ca65aa6b",
+    "outputSHA256": "b9d7a09036ecb896816cef2039f527b5a89f03ef77f94e42f2a54c152b39849c",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.948317+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 08: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T09",
+    "mode": "balanced",
+    "inputSHA256": "3383759846c77afbe6b1e839862b07a6b4047a3e2e50e9691c7a850e12d2c016",
+    "contentSHA256": "8e9f9870a27edc6a8080363c49fec9110e068c721092c13541de84de66930b62",
+    "outputSHA256": "d04890fcd9864ac2ee815594a2116ee631835e3c8baf63683131647a1f52436a",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.954100+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 09: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T09",
+    "mode": "fast",
+    "inputSHA256": "3383759846c77afbe6b1e839862b07a6b4047a3e2e50e9691c7a850e12d2c016",
+    "contentSHA256": "8e9f9870a27edc6a8080363c49fec9110e068c721092c13541de84de66930b62",
+    "outputSHA256": "323be82dd74066a5ee9b9d55d8ca47296c58983fd1b95ccd71bcbd6095caf528",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.956150+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 09: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T10",
+    "mode": "balanced",
+    "inputSHA256": "151e437ae8e61f8600465e418165f22bdd0df143080a9db56240f8448557e24c",
+    "contentSHA256": "48ad674c136fcde5067c58fc2e984c430658db619286a60114d4c6bb29269772",
+    "outputSHA256": "994ae68112fc901b3ad4aeec56b7376696709a7cff44d9ce56e42114a2e01cd5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.960787+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 10: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T10",
+    "mode": "fast",
+    "inputSHA256": "151e437ae8e61f8600465e418165f22bdd0df143080a9db56240f8448557e24c",
+    "contentSHA256": "48ad674c136fcde5067c58fc2e984c430658db619286a60114d4c6bb29269772",
+    "outputSHA256": "994ae68112fc901b3ad4aeec56b7376696709a7cff44d9ce56e42114a2e01cd5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.962493+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 10: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T11",
+    "mode": "balanced",
+    "inputSHA256": "2ea29c7641b7f984f83cf4902c8961694179c5021571c5d78e93737c09fa9213",
+    "contentSHA256": "b7fe4c38bc4cf6ccde4b442f23b94805949933cb32f27d3dd023fe3128d3f0b4",
+    "outputSHA256": "ab18d5d5149f4fd36e080964e6f876a1ad38c97f5b033381e35396df91f0e935",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.965000+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 11: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T11",
+    "mode": "fast",
+    "inputSHA256": "2ea29c7641b7f984f83cf4902c8961694179c5021571c5d78e93737c09fa9213",
+    "contentSHA256": "b7fe4c38bc4cf6ccde4b442f23b94805949933cb32f27d3dd023fe3128d3f0b4",
+    "outputSHA256": "b263ba6f5fba860b753bd44717b2e123db2e7baedb76c60c90e40ed9b66c7258",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.966971+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 11: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T12",
+    "mode": "balanced",
+    "inputSHA256": "bf4b8c32bf3872d394edc376f7db95ae29e57ae30a1cd2b5cb9bca33bebc3ae1",
+    "contentSHA256": "dd9bcf96e6b62f5783599bac9337a980d4bdf5eb35f084045f687fc95937428d",
+    "outputSHA256": "d3771f6b772484e0be9c82346d36843a87af5f832dadbb33b194de1d433215d5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.970185+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 12: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T12",
+    "mode": "fast",
+    "inputSHA256": "bf4b8c32bf3872d394edc376f7db95ae29e57ae30a1cd2b5cb9bca33bebc3ae1",
+    "contentSHA256": "dd9bcf96e6b62f5783599bac9337a980d4bdf5eb35f084045f687fc95937428d",
+    "outputSHA256": "d3771f6b772484e0be9c82346d36843a87af5f832dadbb33b194de1d433215d5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.973159+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 12: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T13",
+    "mode": "balanced",
+    "inputSHA256": "2cc2062086672de6439bc430018f60cdbe63ea863cd1859c5dd69005bb0da80a",
+    "contentSHA256": "3159977fef70ac86b66f15594cfe0e074071509dda4d99d8583b5c0f5871f2ef",
+    "outputSHA256": "dae13c202ef65a2a17f82f63e2eb7742e97e18cd9a5dd11e0658ca21be74b003",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.977522+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 13: every header/data cell and row/column order verified against independent authored tableGrids. TeX squared/cubed expressions are mathematically and visually equivalent to authored superscripts, with one complete table and no extra fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T13",
+    "mode": "fast",
+    "inputSHA256": "2cc2062086672de6439bc430018f60cdbe63ea863cd1859c5dd69005bb0da80a",
+    "contentSHA256": "3159977fef70ac86b66f15594cfe0e074071509dda4d99d8583b5c0f5871f2ef",
+    "outputSHA256": "dae13c202ef65a2a17f82f63e2eb7742e97e18cd9a5dd11e0658ca21be74b003",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.979411+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 13: every header/data cell and row/column order verified against independent authored tableGrids. TeX squared/cubed expressions are mathematically and visually equivalent to authored superscripts, with one complete table and no extra fallback. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T14",
+    "mode": "balanced",
+    "inputSHA256": "ef0de3b136566d07574e6461ca3237c3ad0ef6826b7b60e6bdd2280402e458ee",
+    "contentSHA256": "f44295278778ebed9ce627deeab9224e6774db18d5bd481aba1ce315d4109feb",
+    "outputSHA256": "ecb1f4be01dce5172c7d7f5068c2d5e95eb1a767ad6a1ba2ca7f69db4cba454f",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.983841+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 14: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T14",
+    "mode": "fast",
+    "inputSHA256": "ef0de3b136566d07574e6461ca3237c3ad0ef6826b7b60e6bdd2280402e458ee",
+    "contentSHA256": "f44295278778ebed9ce627deeab9224e6774db18d5bd481aba1ce315d4109feb",
+    "outputSHA256": "2097c679ce4e4dbacf2594ae0d23bb30551b819ef0f6e62d15bdda893c191c6f",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.987693+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 14: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T15",
+    "mode": "balanced",
+    "inputSHA256": "6831b873dd569fbd2acd5f3faa09c3f93e82b00dd9878cb50cc131efe6547bff",
+    "contentSHA256": "7bd02cb81b72d9a61e53270bef41da02c36b144c53941b4760c43b00ca03b072",
+    "outputSHA256": "8a8a8c68c4f14dbebe2162d2f278fb8bb85d8d7f16598e60f0d89978686898c5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.995144+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 15: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T15",
+    "mode": "fast",
+    "inputSHA256": "6831b873dd569fbd2acd5f3faa09c3f93e82b00dd9878cb50cc131efe6547bff",
+    "contentSHA256": "7bd02cb81b72d9a61e53270bef41da02c36b144c53941b4760c43b00ca03b072",
+    "outputSHA256": "8a8a8c68c4f14dbebe2162d2f278fb8bb85d8d7f16598e60f0d89978686898c5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:43.998935+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 15: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T16",
+    "mode": "balanced",
+    "inputSHA256": "c699648b6da1342180deb0771b0baff1b1a4861a57cec7f192e27176f435676f",
+    "contentSHA256": "2cb300427edb2787ce7766ee60a19bad5215bf0b14014fbfaf5950555571cd7f",
+    "outputSHA256": "d03b998da22290c0ac074852c861ebe75441d04a97b291f8127dfc3082e3f982",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.004390+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 16: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T16",
+    "mode": "fast",
+    "inputSHA256": "c699648b6da1342180deb0771b0baff1b1a4861a57cec7f192e27176f435676f",
+    "contentSHA256": "2cb300427edb2787ce7766ee60a19bad5215bf0b14014fbfaf5950555571cd7f",
+    "outputSHA256": "d7f748db486f8fd245c85cbb6e90710126cad07e87c7ffff3c4c81fa1f562a2c",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.008946+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 16: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T17",
+    "mode": "balanced",
+    "inputSHA256": "ad2217e6bb12f1d4909cca3e36156d570946c9e35a7049c115862ab2e8ce01bc",
+    "contentSHA256": "92a288aa00b808b50b5e782b60261f5eb8158656840a70cccd6496c55a0acc9e",
+    "outputSHA256": "46ed2e0404329c8db8cf973283141902f1d66de91b58bbdccdea9590c69b7a16",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.013602+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 17: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T17",
+    "mode": "fast",
+    "inputSHA256": "ad2217e6bb12f1d4909cca3e36156d570946c9e35a7049c115862ab2e8ce01bc",
+    "contentSHA256": "92a288aa00b808b50b5e782b60261f5eb8158656840a70cccd6496c55a0acc9e",
+    "outputSHA256": "0539412667f6c1733af331e80f83bba4c60c7aba8f685a24ebe594d4b01f0fbb",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.017880+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 17: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T18",
+    "mode": "balanced",
+    "inputSHA256": "e0ec9397d783d1e58ab609654293785eab84cb8764fa4ebd5d4ade6bb53db896",
+    "contentSHA256": "27e48f7e0bb8f31bbe33adb140458c0bfd3e07f746dfd868e1d474dd621088b0",
+    "outputSHA256": "ec079fb51654613f51152bb156300899526d4deeef054c7d5e1b212229773b67",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.022393+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 18: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T18",
+    "mode": "fast",
+    "inputSHA256": "e0ec9397d783d1e58ab609654293785eab84cb8764fa4ebd5d4ade6bb53db896",
+    "contentSHA256": "27e48f7e0bb8f31bbe33adb140458c0bfd3e07f746dfd868e1d474dd621088b0",
+    "outputSHA256": "41c09dff0e0cdd12453151ffb7d7255715aa91e6a9cb10acf34ad3feaecad05f",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.025665+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 18: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T19",
+    "mode": "balanced",
+    "inputSHA256": "5d294efa78b654b59824fe6a4f91aee94cc6a5f99ad8f7b71e9ace506166dc49",
+    "contentSHA256": "902389416f61387ee62f282830ee50d94682fa12ccc6573184eaeb9d453c76ec",
+    "outputSHA256": "ce6cef945016a3645ebd919e8ba097448584b3ccace3b504865dbd629cf075f2",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.031795+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 19: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T19",
+    "mode": "fast",
+    "inputSHA256": "5d294efa78b654b59824fe6a4f91aee94cc6a5f99ad8f7b71e9ace506166dc49",
+    "contentSHA256": "902389416f61387ee62f282830ee50d94682fa12ccc6573184eaeb9d453c76ec",
+    "outputSHA256": "279355db6041cfaec112fcfa17c05f40450ad009689b5a44b5ceefb23df50127",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.035288+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 19: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T20",
+    "mode": "balanced",
+    "inputSHA256": "0488ee540ad5fb68edf80d539f69cd5c4150423f6ff9283134f57f40332a9254",
+    "contentSHA256": "01625ba4a296d530dfd6cc008c60623ccc9b463ba44ae5fd83ad43f68c8543bb",
+    "outputSHA256": "290df65b26a48d53f1f4a22e62ea160df94119798212696713c4f3b24e366b47",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.045367+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 20: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  },
+  {
+    "caseID": "T20",
+    "mode": "fast",
+    "inputSHA256": "0488ee540ad5fb68edf80d539f69cd5c4150423f6ff9283134f57f40332a9254",
+    "contentSHA256": "01625ba4a296d530dfd6cc008c60623ccc9b463ba44ae5fd83ad43f68c8543bb",
+    "outputSHA256": "ec23000330b7b7e7ade8e79f704b18b7ab539256e1d7128430d81bc388cb09b2",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "reviewer": "independent-v2-table-semantic-render-and-clipboard-review",
+    "reviewedAt": "2026-10-21T16:17:44.054588+00:00",
+    "checks": {
+      "table_structure": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Simple table 20: every header/data cell and row/column order verified against independent authored tableGrids. Fresh v2 actual normal PNG shows complete readable table without literal formatting tags or bottom clipping; actual corrected PNG retains all cells and visibly includes Correction check. Public Markdown full source, Lark/Notion complete rich-table HTML and source fallbacks, and TSV/rich grid values/types checked. Input/content/output/raw-output/corpus/config/artifact bindings and both PNG hashes verified; isolated model edit/copy/render flags true. Notion destination NativePaste/editability is not asserted; RTF payload is represented by its advertised type, not a captured decoded body."
+  }
+]

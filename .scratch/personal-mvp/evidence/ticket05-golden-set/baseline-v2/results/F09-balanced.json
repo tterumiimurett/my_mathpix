@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+  "caseID" : "F09",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$</p></body></html>",
+        "plain" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant=\"normal\">∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><mi>cos</mi><mo>⁡</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">\\frac{\\partial f}{\\partial x} = 2xy + \\cos x</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "5d2571fa83f6fe30f262812dc7fad296beb317af6103a9cb814e2a38b2960d32",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F09-balanced.png",
+    "previewSHA256" : "1821e3acfc7cde6302d491ba273cc78ed368407a1ad5b37de03b801dd94df664"
+  },
+  "contentSHA256" : "0786f764a24b2c09fc78b345b47a4f1c39fed22686481b5ff29b74258f7c521e",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "cf99c64e691947c6acc8ec67a8f560448b840d549eacb57823814405ac395d5d",
+  "mode" : "balanced",
+  "outputSHA256" : "d305e3eeb3f6edfa5feae3618324419550c343459b90b04fc29b36fc60e2644c",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\frac{\\partial f}{\\partial x} = 2xy + \\cos x</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+  "rawOutputSHA256" : "b26e7037744fcde107a3c7ba8752bd6af28d5e6a2025a73daf1a56b57a690311",
+  "runtimeSeconds" : 0.13802933692932129,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:08:35Z",
+  "status" : "complete",
+  "wallSeconds" : 3.6488829851150513
+}

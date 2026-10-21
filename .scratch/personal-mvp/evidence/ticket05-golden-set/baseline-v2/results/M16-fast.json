@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "The mean is  $\\mu = 12.4$  and the deviation is  $\\sigma = 0.6$ .\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nUse both  $\\mu$  and  $\\sigma$  when comparing samples.",
+  "caseID" : "M16",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Item</th>\n    <th>Mean</th>\n    <th>SD</th>\n   </tr>\n   <tr>\n    <td>Length</td>\n    <td>12.4</td>\n    <td>0.6</td>\n   </tr>\n   <tr>\n    <td>Mass</td>\n    <td>8.2</td>\n    <td>0.3</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The mean is  $\\mu = 12.4$  and the deviation is  $\\sigma = 0.6$ .</p>\n<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>\n<p>Use both  $\\mu$  and  $\\sigma$  when comparing samples.</p></body></html>",
+        "plain" : "The mean is  $\\mu = 12.4$  and the deviation is  $\\sigma = 0.6$ .\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nUse both  $\\mu$  and  $\\sigma$  when comparing samples.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "The mean is  $\\mu = 12.4$  and the deviation is  $\\sigma = 0.6$ .\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nUse both  $\\mu$  and  $\\sigma$  when comparing samples.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The mean is  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>12.4</mn></mrow><annotation encoding=\"application/x-tex\">\\mu = 12.4</annotation></semantics></math></span>  and the deviation is  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.6</mn></mrow><annotation encoding=\"application/x-tex\">\\sigma = 0.6</annotation></semantics></math></span> .</p>\n<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>\n<p>Use both  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi></mrow><annotation encoding=\"application/x-tex\">\\mu</annotation></semantics></math></span>  and  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>σ</mi></mrow><annotation encoding=\"application/x-tex\">\\sigma</annotation></semantics></math></span>  when comparing samples.</p></body></html>",
+        "plain" : "The mean is  $\\mu = 12.4$  and the deviation is  $\\sigma = 0.6$ .\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nUse both  $\\mu$  and  $\\sigma$  when comparing samples.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>",
+        "plain" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "tsv" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "tsv" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "66b13b743b2b2745b3729fc664018a61c347b2d4721b1b3969e72cac79443c4a",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M16-fast.png",
+    "previewSHA256" : "16fdcc4a15364462fdfc9311213222ed06b445057629f2f9553e1acbe3d12f29"
+  },
+  "contentSHA256" : "c04cec14e27a1ea338a7c6297adf87752e79f1d650ab17bbb4b2eebe8e439d91",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "d8e18faacedb483b6a5d6efb3752a13a8a57c5a30d36d2f308532b381329d5d1",
+  "mode" : "fast",
+  "outputSHA256" : "df60fd27b0ef6510f11eba5454487b8c8ab66ddc53bb4d01d418a7f81d159e1e",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>The mean is <math>\\mu = 12.4</math> and the deviation is <math>\\sigma = 0.6</math>.</p>\n  <table>\n   <tr>\n    <th><b>Item</b></th>\n    <th><b>Mean</b></th>\n    <th><b>SD</b></th>\n   </tr>\n   <tr>\n    <td>Length</td>\n    <td>12.4</td>\n    <td>0.6</td>\n   </tr>\n   <tr>\n    <td>Mass</td>\n    <td>8.2</td>\n    <td>0.3</td>\n   </tr>\n  </table>\n  <p>Use both <math>\\mu</math> and <math>\\sigma</math> when comparing samples.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nThe mean is  $\\mu = 12.4$  and the deviation is  $\\sigma = 0.6$ .\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nUse both  $\\mu$  and  $\\sigma$  when comparing samples.",
+  "rawOutputSHA256" : "783255f355d292fcb4278ef1a6a8411db2d929f12b9c157d87f98ebe45859775",
+  "runtimeSeconds" : 0.11039090156555176,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:15:04Z",
+  "status" : "complete",
+  "wallSeconds" : 3.7948179244995117
+}

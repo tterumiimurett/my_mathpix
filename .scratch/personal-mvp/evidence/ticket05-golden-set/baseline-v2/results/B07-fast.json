@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}$$",
+  "caseID" : "B07",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}$$</p></body></html>",
+        "plain" : "$$\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msqrt><mrow><mn>1</mn><mo>+</mo><msqrt><mrow><mn>1</mn><mo>+</mo><msqrt><mi>x</mi></msqrt></mrow></msqrt></mrow></msqrt></mrow><annotation encoding=\"application/x-tex\">\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "e65149a4d6c0f6f684055d426716a49276dbe17bcd046e25a09988149098fc42",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B07-fast.png",
+    "previewSHA256" : "4bd0abc15df300c83ce6738ce5020158f30123a49f52a084afe88bcb6e81043b"
+  },
+  "contentSHA256" : "ceae4b3de87fee25c811cb0c61f7c6d1d1f828edd104e589166204cd39bdddbd",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "d221a39e56d706e23daa30ff62ef832d36a5f7cd02442fca7cd6497265f17913",
+  "mode" : "fast",
+  "outputSHA256" : "b815193f117f9ca6a64a491fbf03a7c47c9bbf6f2676a5ad79c63810f1ca653d",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\sqrt{1 + \\sqrt{1 + \\sqrt{x}}}$$",
+  "rawOutputSHA256" : "12cf335abed30cbf7a3ba3ed06fb631a3eec1706089533549d870d4cfa55400e",
+  "runtimeSeconds" : 0.17888545989990234,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:16:37Z",
+  "status" : "complete",
+  "wallSeconds" : 3.6824799776077271
+}

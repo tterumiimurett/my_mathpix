@@ -1,0 +1,408 @@
+[
+  {
+    "caseID": "B01",
+    "mode": "balanced",
+    "inputSHA256": "35c12b1f86f1761098cc7668b2672fc433dd8de747d506501b981e12d83ced9c",
+    "contentSHA256": "2bcadfea61ba36356b4f88759f87e77265beef0636e951504ca08fc5e34efb7f",
+    "outputSHA256": "0cde75f904feb016f67171b2cf08bd9f01e0dd2c880949219ea3469b19e6a4ac",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. The small-font input was recovered with correct lower i=1, upper n and x_i squared; output need not preserve tiny font.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B01",
+    "mode": "fast",
+    "inputSHA256": "35c12b1f86f1761098cc7668b2672fc433dd8de747d506501b981e12d83ced9c",
+    "contentSHA256": "2bcadfea61ba36356b4f88759f87e77265beef0636e951504ca08fc5e34efb7f",
+    "outputSHA256": "0cde75f904feb016f67171b2cf08bd9f01e0dd2c880949219ea3469b19e6a4ac",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. The small-font input was recovered with correct lower i=1, upper n and x_i squared; output need not preserve tiny font.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B02",
+    "mode": "balanced",
+    "inputSHA256": "054d459af68b1634825a3404c79454b0e2ca7ae90d0c5bc4c9a25224cfdab020",
+    "contentSHA256": "a6a360fd2b828577a18575801852d12322ab95cd4d7b9c9551a6a3b50c6a5934",
+    "outputSHA256": "5efeecebca5dbe481bddeec7ebc2734b674b97db460ef718f8c9cbdb88fb92d4",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. Low contrast did not lose numerator plus, denominator minus or fraction grouping.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B02",
+    "mode": "fast",
+    "inputSHA256": "054d459af68b1634825a3404c79454b0e2ca7ae90d0c5bc4c9a25224cfdab020",
+    "contentSHA256": "a6a360fd2b828577a18575801852d12322ab95cd4d7b9c9551a6a3b50c6a5934",
+    "outputSHA256": "fe1f108425908d0b389eb90f85e7aee0a0c91606556f036533f2f7935df22eb5",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. Low contrast did not lose numerator plus, denominator minus or fraction grouping.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B03",
+    "mode": "balanced",
+    "inputSHA256": "a4ee290681236bc4c72e90c4b1d24618698b14c1942f6e3cc5dfd0d26b33f361",
+    "contentSHA256": "0d2f3876f73a425a2610140530d31e22a048bbc599435712029c7a395713fbcc",
+    "outputSHA256": "eaf109803e6cde6fdd2aaea9f309c7d168e8bca70bfb2dac436d72e6911c6247",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. Upright rendering of the rotated E=mc^2 input is acceptable; rotation identity is not a quality requirement.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B03",
+    "mode": "fast",
+    "inputSHA256": "a4ee290681236bc4c72e90c4b1d24618698b14c1942f6e3cc5dfd0d26b33f361",
+    "contentSHA256": "0d2f3876f73a425a2610140530d31e22a048bbc599435712029c7a395713fbcc",
+    "outputSHA256": "eaf109803e6cde6fdd2aaea9f309c7d168e8bca70bfb2dac436d72e6911c6247",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. Upright rendering of the rotated E=mc^2 input is acceptable; rotation identity is not a quality requirement.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B04",
+    "mode": "balanced",
+    "inputSHA256": "496c31da844a7ab495a22e9b2cbbc8314450532028cdab7f1c1f9c117e3c41a5",
+    "contentSHA256": "5c1bdb924f33ce1a432b14a8635d4f51085d74e9357be23d026611e769c62659",
+    "outputSHA256": "fde3c30a7b0ca93b414190b794ece47f00c44b15ccdafb341be21010c23e9735",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. All sixteen matrix entries and4x4 grouping are present in correct row/column order.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B04",
+    "mode": "fast",
+    "inputSHA256": "496c31da844a7ab495a22e9b2cbbc8314450532028cdab7f1c1f9c117e3c41a5",
+    "contentSHA256": "5c1bdb924f33ce1a432b14a8635d4f51085d74e9357be23d026611e769c62659",
+    "outputSHA256": "fde3c30a7b0ca93b414190b794ece47f00c44b15ccdafb341be21010c23e9735",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. All sixteen matrix entries and4x4 grouping are present in correct row/column order.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B05",
+    "mode": "balanced",
+    "inputSHA256": "147226ae22e1f5f0c28ba5588a71fdaa3644c6390cfb7919d80692832c20b3a4",
+    "contentSHA256": "d3ca9654a903b4c4c5b09ae912b804f7ff6ff68267ee40238d8c0a463d9d9341",
+    "outputSHA256": "838ce8eaa8dd33afa05bd574db19d4828c1ed1c766d0f3befc2a53a98d906fd6",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Both modes retain exact3x2 empty-slot Markdown/TSV projection and separate safe HTML with A rowspan=2 over values1,2. Complete Lark/Notion HTML preserves this merged alternative; legacy first-table TSV/rich is the projected grid, not a native-merge promise. Actual preview intentionally presents projection plus merge-preserving fallback (distinct representations), but its lower fallback row is clipped by the original harness, so complete original-preview judgment stays pending. Source/grid/span and public copy records/hashes checked; no editable destination merge is claimed.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pending",
+      "copy": "pass",
+      "table_structure": "pass"
+    }
+  },
+  {
+    "caseID": "B05",
+    "mode": "fast",
+    "inputSHA256": "147226ae22e1f5f0c28ba5588a71fdaa3644c6390cfb7919d80692832c20b3a4",
+    "contentSHA256": "d3ca9654a903b4c4c5b09ae912b804f7ff6ff68267ee40238d8c0a463d9d9341",
+    "outputSHA256": "838ce8eaa8dd33afa05bd574db19d4828c1ed1c766d0f3befc2a53a98d906fd6",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Both modes retain exact3x2 empty-slot Markdown/TSV projection and separate safe HTML with A rowspan=2 over values1,2. Complete Lark/Notion HTML preserves this merged alternative; legacy first-table TSV/rich is the projected grid, not a native-merge promise. Actual preview intentionally presents projection plus merge-preserving fallback (distinct representations), but its lower fallback row is clipped by the original harness, so complete original-preview judgment stays pending. Source/grid/span and public copy records/hashes checked; no editable destination merge is claimed.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pending",
+      "copy": "pass",
+      "table_structure": "pass"
+    }
+  },
+  {
+    "caseID": "B06",
+    "mode": "balanced",
+    "inputSHA256": "82a1b8290184f3de00749a713eb4564339d0346ec11d5fe4ac6421bdbcc67bcf",
+    "contentSHA256": "b2437111845f1ad7748c0eddcfdaa91dacbad3b59f24f49ff978faeb71530a9c",
+    "outputSHA256": "a4b563d70f08f2973d010c9fd411d2910be41445ca67b8fa8d842eb0cd7ee70f",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Actual service source correctly escapes currency as \\$5, preserves literal x**2 code and retains inline x^2. This is not a forced failure from the earlier hypothetical unescaped Golden source. The ACTUAL preview nevertheless renders escaped currency through the later dollar as mathematics (5; compare), leaves x^2$ literal and shows the backslash. Public Markdown/Lark source and Lark literal-Markdown HTML retain the correct escaped currency and equation; Notion rich HTML/MathML also contains the wrong 5; compare equation. Preview and affected rich-copy judgment fail; recognition meaning/canonical source pass. This is a local currency/math parser boundary defect, with no new destination test or Native Paste claim.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail"
+    }
+  },
+  {
+    "caseID": "B06",
+    "mode": "fast",
+    "inputSHA256": "82a1b8290184f3de00749a713eb4564339d0346ec11d5fe4ac6421bdbcc67bcf",
+    "contentSHA256": "b2437111845f1ad7748c0eddcfdaa91dacbad3b59f24f49ff978faeb71530a9c",
+    "outputSHA256": "a4b563d70f08f2973d010c9fd411d2910be41445ca67b8fa8d842eb0cd7ee70f",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Actual service source correctly escapes currency as \\$5, preserves literal x**2 code and retains inline x^2. This is not a forced failure from the earlier hypothetical unescaped Golden source. The ACTUAL preview nevertheless renders escaped currency through the later dollar as mathematics (5; compare), leaves x^2$ literal and shows the backslash. Public Markdown/Lark source and Lark literal-Markdown HTML retain the correct escaped currency and equation; Notion rich HTML/MathML also contains the wrong 5; compare equation. Preview and affected rich-copy judgment fail; recognition meaning/canonical source pass. This is a local currency/math parser boundary defect, with no new destination test or Native Paste claim.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail"
+    }
+  },
+  {
+    "caseID": "B07",
+    "mode": "balanced",
+    "inputSHA256": "d221a39e56d706e23daa30ff62ef832d36a5f7cd02442fca7cd6497265f17913",
+    "contentSHA256": "ceae4b3de87fee25c811cb0c61f7c6d1d1f828edd104e589166204cd39bdddbd",
+    "outputSHA256": "b815193f117f9ca6a64a491fbf03a7c47c9bbf6f2676a5ad79c63810f1ca653d",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. All three nested radical extents and the two plus signs match the authored formula.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B07",
+    "mode": "fast",
+    "inputSHA256": "d221a39e56d706e23daa30ff62ef832d36a5f7cd02442fca7cd6497265f17913",
+    "contentSHA256": "ceae4b3de87fee25c811cb0c61f7c6d1d1f828edd104e589166204cd39bdddbd",
+    "outputSHA256": "b815193f117f9ca6a64a491fbf03a7c47c9bbf6f2676a5ad79c63810f1ca653d",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. All three nested radical extents and the two plus signs match the authored formula.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B08",
+    "mode": "balanced",
+    "inputSHA256": "e6aaea262c5b66e92cda0cf67688a54eaf6631e3b5eb66d5a0f3f2dc46ce16fd",
+    "contentSHA256": "b04295073c597ab4c0cbf409c7c29815a777acbca07e72dde0733b9546073326",
+    "outputSHA256": "31922743be4df9cd7a52fbd18ef9d9f1cda8d0fe7c000aa7e7f19d50079c0e38",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Balanced source adds an empty header row to BOTH tables, shifts A/B and C/D into data rows, and retains b-tag header content. Actual preview exposes literal b tags and appends an extra fallback table; whole-output public Lark/Notion HTML also has an extra table. The four numbers/text remain semantically present, but row/header structure, rendered layout and complete-copy structure fail. This is an actual difficult-case structure failure, not byte equality or a rotation/style requirement.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "fail",
+      "canonical": "fail",
+      "preview": "fail",
+      "copy": "fail",
+      "table_structure": "fail"
+    }
+  },
+  {
+    "caseID": "B08",
+    "mode": "fast",
+    "inputSHA256": "e6aaea262c5b66e92cda0cf67688a54eaf6631e3b5eb66d5a0f3f2dc46ce16fd",
+    "contentSHA256": "b04295073c597ab4c0cbf409c7c29815a777acbca07e72dde0733b9546073326",
+    "outputSHA256": "1a15ad079636a040cea17aba90c7c6552a85977bdd717d4c03a7eb404011fc3d",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Canonical Markdown and complete public Lark/Notion output retain exactly two correct2x2 tables A/B/1/2 then C/D/3/4 with Between tables. between them. First-table legacy TSV/rich selection is intentional. Actual original preview clips the final data row of the second table; mark complete original preview pending, not a recognition/copy failure. Public values, source/output hashes and actual PNG hashes checked; no destination Native Paste asserted.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pending",
+      "copy": "pass",
+      "table_structure": "pass"
+    }
+  },
+  {
+    "caseID": "B09",
+    "mode": "balanced",
+    "inputSHA256": "84750d49cf8458bd62f3e3f814a5a4410c02c3266ce7d8ce4e010ce033fac00f",
+    "contentSHA256": "37fd172ebca4dee6c388aec1172b042aad64952ee6d0c7b24145f520a07da559",
+    "outputSHA256": "3f1a2f14d27e0892d81838d54017638aae68375a0b34d6941982917a77d1bd61",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Canonical cell math is semantically correct: E=mc^2 and A=pi*r^2 with correct labels/row order. Actual preview exposes literal b header tags and adds a SECOND fallback table whose formula cells are empty because math was suppressed. Complete public Lark/Notion HTML/source likewise retains this incomplete extra table. Table/copy/layout/preview fail; source formula meaning/canonical content pass after harmless markup interpretation. The known Notion inline destination issue remains deferred and is not claimed retested.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "fail",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail",
+      "table_structure": "fail"
+    }
+  },
+  {
+    "caseID": "B09",
+    "mode": "fast",
+    "inputSHA256": "84750d49cf8458bd62f3e3f814a5a4410c02c3266ce7d8ce4e010ce033fac00f",
+    "contentSHA256": "37fd172ebca4dee6c388aec1172b042aad64952ee6d0c7b24145f520a07da559",
+    "outputSHA256": "3f1a2f14d27e0892d81838d54017638aae68375a0b34d6941982917a77d1bd61",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Canonical cell math is semantically correct: E=mc^2 and A=pi*r^2 with correct labels/row order. Actual preview exposes literal b header tags and adds a SECOND fallback table whose formula cells are empty because math was suppressed. Complete public Lark/Notion HTML/source likewise retains this incomplete extra table. Table/copy/layout/preview fail; source formula meaning/canonical content pass after harmless markup interpretation. The known Notion inline destination issue remains deferred and is not claimed retested.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "fail",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail",
+      "table_structure": "fail"
+    }
+  },
+  {
+    "caseID": "B10",
+    "mode": "balanced",
+    "inputSHA256": "ebd119fce14eedb075c0d418dc3c746b3b34b23c31f2377f4a674ec2c4d00f41",
+    "contentSHA256": "498f1534451e88a5c2f15828e0fd2da7803e3707a3acf01a7b74a48f2c7de522",
+    "outputSHA256": "19f51ca4c61ca2338538661e6b266d3ee94ac84348b193c421313711e95a00f1",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. Lowercase l, uppercase I, uppercase O, zero, one and their subscripts remain distinct and correct.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  },
+  {
+    "caseID": "B10",
+    "mode": "fast",
+    "inputSHA256": "ebd119fce14eedb075c0d418dc3c746b3b34b23c31f2377f4a674ec2c4d00f41",
+    "contentSHA256": "498f1534451e88a5c2f15828e0fd2da7803e3707a3acf01a7b74a48f2c7de522",
+    "outputSHA256": "19f51ca4c61ca2338538661e6b266d3ee94ac84348b193c421313711e95a00f1",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+    "artifactSHA256": "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+    "reviewer": "Ticket05 implementer boundary audit; parent reconciliation pending",
+    "reviewedAt": "2026-10-22",
+    "notes": "Personally inspected this exact original preview PNG against the frozen authored input and actual canonical math/source. All symbols, signs, grouping, bounds and row/cell positions are correct; source spacing/bracing/style differences are equivalent. Public Markdown/Lark/Notion complete source fallbacks and type/value records checked; original/corrected PNG hashes and isolated edit/copy/render flags verified. No destination Native Paste acceptance is asserted. Lowercase l, uppercase I, uppercase O, zero, one and their subscripts remain distinct and correct.",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    }
+  }
+]

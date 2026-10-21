@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |",
+  "caseID" : "T04",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td>$\\alpha$</td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td>$\\beta$</td>\n    <td>Momentum</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$\\alpha$</td><td>Learning rate</td></tr><tr><td>$\\beta$</td><td>Momentum</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>α</mi></mrow><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math></span></td><td>Learning rate</td></tr><tr><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>β</mi></mrow><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math></span></td><td>Momentum</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$\\alpha$</td><td>Learning rate</td></tr><tr><td>$\\beta$</td><td>Momentum</td></tr></tbody></table>",
+        "plain" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "tsv" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "tsv" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "fc1d4b391a1c468c4fe7c7a54147e7f9149c0661bc892d4768fe9e854cab3724",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T04-balanced.png",
+    "previewSHA256" : "28176df553b6eab5479079962a0d9a72e70563132378ee421d2d5a645604db31"
+  },
+  "contentSHA256" : "8ad56c59f64a37258bb4e3bb14acc8b4c55512dd2b0dc35ba43ce3112d659402",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "e8125ac13b16cf66a268ef9f514e1d61dc2846acb4f54935b8d3624f8556b59b",
+  "mode" : "balanced",
+  "outputSHA256" : "30a279e74646efb25688ca0e0007dc1c97ab31506c2f6877b37e69af45d57ade",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <table>\n   <tr>\n    <th data-bbox=\"158 244 1815 554\"><b>Symbol</b></th>\n    <th data-bbox=\"1815 244 4233 554\"><b>Meaning</b></th>\n   </tr>\n   <tr>\n    <td data-bbox=\"158 554 1815 868\"><math>\\alpha</math></td>\n    <td data-bbox=\"1815 554 4233 868\">Learning rate</td>\n   </tr>\n   <tr>\n    <td data-bbox=\"158 868 1815 1178\"><math>\\beta</math></td>\n    <td data-bbox=\"1815 868 4233 1178\">Momentum</td>\n   </tr>\n  </table>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |",
+  "rawOutputSHA256" : "4ee45ef268459572ac9b06976b325eb1302ad87595ebf2287cd21d1983a4a624",
+  "runtimeSeconds" : 0.1305396556854248,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:11:11Z",
+  "status" : "complete",
+  "wallSeconds" : 2.2897770404815674
+}

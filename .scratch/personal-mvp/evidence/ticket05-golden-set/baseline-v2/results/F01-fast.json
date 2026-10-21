@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+  "caseID" : "F01",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$</p></body></html>",
+        "plain" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "5e23e3d04c9216b186b06191ad58a8664d63c2caec53e38a8bc12c8854f51721",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F01-fast.png",
+    "previewSHA256" : "247ea57e0518bb321c32093194014281e163316cdf664225a9fff78e5565b78e"
+  },
+  "contentSHA256" : "6a7953a9f1723e793e94b62f5b79f622b31a44521cf80e31baeb282abe03e729",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "e3856bf45e212e2744e36dc6bc7cd66b4e2e6e0fcde4b4a9176e42510ade123a",
+  "mode" : "fast",
+  "outputSHA256" : "950bb71f2c493d75454b32215a1ecca32b3b8d410398ff208bda7570ca616efc",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+  "rawOutputSHA256" : "85117f41508a403ef7c5c2e49f25015ddd4e13730a9690a240654722335db8d0",
+  "runtimeSeconds" : 0.1446998119354248,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:06:55Z",
+  "status" : "complete",
+  "wallSeconds" : 3.7194530963897705
+}

@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+  "caseID" : "F21",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$</p></body></html>",
+        "plain" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>H</mi><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mo>−</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>p</mi><mi>i</mi></msub><mi>log</mi><mo>⁡</mo><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding=\"application/x-tex\">H(p) = -\\sum_{i=1}^n p_i \\log p_i</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "191e0e852fac5f26ab8b4467ac934e3666e34a3f97578746aee8ae5bc949429c",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F21-balanced.png",
+    "previewSHA256" : "7eafad09817da15d8d40c6e10562ca1a8f1a90b0822c67050be0dfb86dfe387f"
+  },
+  "contentSHA256" : "0afdfeff7c7269e1b1e72ae705e2da4f67794e764521cc03c8de9f0094aca31a",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "a06e4604eb5c913756b98c90993641d1c957b6c65c1dd6459662535ad511f8f2",
+  "mode" : "balanced",
+  "outputSHA256" : "1bbdd0011e8d628e92a23e69d2f3002ea06779acc64e95329af79e05be3b965e",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">H(p) = -\\sum_{i=1}^n p_i \\log p_i</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$H(p) = -\\sum_{i=1}^n p_i \\log p_i$$",
+  "rawOutputSHA256" : "69728dc15a8d7e5bc0ded59b0545e3da95356dbd635cdbeb6837a5f6c4672083",
+  "runtimeSeconds" : 0.12346673011779785,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:47Z",
+  "status" : "complete",
+  "wallSeconds" : 4.9313499927520752
+}

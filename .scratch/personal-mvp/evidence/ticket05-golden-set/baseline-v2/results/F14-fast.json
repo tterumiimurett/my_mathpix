@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$a + b = c$$\n\n$$a - b = d$$",
+  "caseID" : "F14",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$a + b = c$$</p>\n<p>$$a - b = d$$</p></body></html>",
+        "plain" : "$$a + b = c$$\n\n$$a - b = d$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$a + b = c$$\n\n$$a - b = d$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">a + b = c</annotation></semantics></math></span></p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>a</mi><mo>−</mo><mi>b</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">a - b = d</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$a + b = c$$\n\n$$a - b = d$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "bfc701c29cf152fef3d0ae5bf90574179413d8983f6411f2d514c7043a738b04",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F14-fast.png",
+    "previewSHA256" : "4e25dee3de7ab5deee64d09657856eec1c72dbdd32ff73cf526127248ed66a0c"
+  },
+  "contentSHA256" : "260cbe1c1d5300a4bf9e959d6c3e8d6f1c2dec1438d7d89968c7ae6a65eca9c8",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "5a0dc9be97caf779255884c7a8e503131fea5012b2f5e88a4f4282a5a41d8f90",
+  "mode" : "fast",
+  "outputSHA256" : "6df9b07c4ed98766734bf9af5e44c88f5dbbe4b31780a1b11d7a3d282db6f36b",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">a + b = c</math></p>\n  <p><math display=\"block\">a - b = d</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$a + b = c$$\n\n$$a - b = d$$",
+  "rawOutputSHA256" : "17019fa2441bb15495e647bb54697ea1f4ab2b63fe562416f90dca0177a3713c",
+  "runtimeSeconds" : 0.14191460609436035,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:02Z",
+  "status" : "complete",
+  "wallSeconds" : 2.2295960187911987
+}

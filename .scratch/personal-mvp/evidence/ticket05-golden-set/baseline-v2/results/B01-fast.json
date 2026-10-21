@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\sum_{i=1}^n x_i^2$$",
+  "caseID" : "B01",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\sum_{i=1}^n x_i^2$$</p></body></html>",
+        "plain" : "$$\\sum_{i=1}^n x_i^2$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\sum_{i=1}^n x_i^2$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding=\"application/x-tex\">\\sum_{i=1}^n x_i^2</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\sum_{i=1}^n x_i^2$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "16dd61221b3c95a5e29cba1342ef7748204b9e3bff37ded025f4809c9046acce",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B01-fast.png",
+    "previewSHA256" : "1c4eb73cec2a1655b42f2d91b758dd5de323d29f0e08d61cef6acc92154837c1"
+  },
+  "contentSHA256" : "2bcadfea61ba36356b4f88759f87e77265beef0636e951504ca08fc5e34efb7f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "35c12b1f86f1761098cc7668b2672fc433dd8de747d506501b981e12d83ced9c",
+  "mode" : "fast",
+  "outputSHA256" : "0cde75f904feb016f67171b2cf08bd9f01e0dd2c880949219ea3469b19e6a4ac",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\sum_{i=1}^n x_i^2</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\sum_{i=1}^n x_i^2$$",
+  "rawOutputSHA256" : "bb59d65d88c3c592434b559b9c086f5403d98c544db2395e84f122e701e60582",
+  "runtimeSeconds" : 0.14813876152038574,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:15:41Z",
+  "status" : "complete",
+  "wallSeconds" : 4.7088680267333984
+}

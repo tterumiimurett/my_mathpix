@@ -1,0 +1,1142 @@
+[
+  {
+    "caseID": "F01",
+    "mode": "balanced",
+    "inputSHA256": "e3856bf45e212e2744e36dc6bc7cd66b4e2e6e0fcde4b4a9176e42510ade123a",
+    "outputSHA256": "950bb71f2c493d75454b32215a1ecca32b3b8d410398ff208bda7570ca616efc",
+    "contentSHA256": "6a7953a9f1723e793e94b62f5b79f622b31a44521cf80e31baeb282abe03e729",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.042625+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Quadratic roots: leading minus, both plus/minus branches, discriminant b²−4ac, radical scope, and denominator2a match the authored input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F01",
+    "mode": "fast",
+    "inputSHA256": "e3856bf45e212e2744e36dc6bc7cd66b4e2e6e0fcde4b4a9176e42510ade123a",
+    "outputSHA256": "950bb71f2c493d75454b32215a1ecca32b3b8d410398ff208bda7570ca616efc",
+    "contentSHA256": "6a7953a9f1723e793e94b62f5b79f622b31a44521cf80e31baeb282abe03e729",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.042105+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Quadratic roots: leading minus, both plus/minus branches, discriminant b²−4ac, radical scope, and denominator2a match the authored input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F02",
+    "mode": "balanced",
+    "inputSHA256": "7bb58c070d953ad6f896fff3724cced461cfd2498044dea7ae543516c16a118c",
+    "outputSHA256": "e7b65f01afca9725fb8ae11b05b58711e642704a9aec79565553b29beaa8d64f",
+    "contentSHA256": "46e3e50e6bc897952ba43683a0011d8f57e39f6c2d79676cfc78a3da95ed3ba2",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.042950+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Pythagorean identity: all three square superscripts and plus/equality signs match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F02",
+    "mode": "fast",
+    "inputSHA256": "7bb58c070d953ad6f896fff3724cced461cfd2498044dea7ae543516c16a118c",
+    "outputSHA256": "e7b65f01afca9725fb8ae11b05b58711e642704a9aec79565553b29beaa8d64f",
+    "contentSHA256": "46e3e50e6bc897952ba43683a0011d8f57e39f6c2d79676cfc78a3da95ed3ba2",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.042790+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Pythagorean identity: all three square superscripts and plus/equality signs match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F03",
+    "mode": "balanced",
+    "inputSHA256": "88447b2175f4c194baad610e8dfc8e7711077e420f8627e2230c8b0334f32a43",
+    "outputSHA256": "1b773312edac2865b33d464402a38be44da6be36f5de62ca5a170e087cf3e3c1",
+    "contentSHA256": "67c619651703c3ca4cfeb5295493c4a5e6ac7a39678028c51df01f12b77e623c",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.043257+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Euler identity: exponent iπ, plus1, and equality to0 match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F03",
+    "mode": "fast",
+    "inputSHA256": "88447b2175f4c194baad610e8dfc8e7711077e420f8627e2230c8b0334f32a43",
+    "outputSHA256": "1b773312edac2865b33d464402a38be44da6be36f5de62ca5a170e087cf3e3c1",
+    "contentSHA256": "67c619651703c3ca4cfeb5295493c4a5e6ac7a39678028c51df01f12b77e623c",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.043110+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Euler identity: exponent iπ, plus1, and equality to0 match the input. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F04",
+    "mode": "balanced",
+    "inputSHA256": "fcd7f2b4f797e174d8624449e8ed045948d3e54c1347c5a709eac7b16435b1f7",
+    "outputSHA256": "f93eb84bc844ce2616b141062c31d27fc231837c7246500de8dbc2856152e0db",
+    "contentSHA256": "f1e7860a60c5ed6c0e9fadf26806422f2ffb3ef4eb6d39e82fffd98849a94ea0",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.043567+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Gaussian density: σ√(2π) denominator, negative exponent, squared x−μ grouping, and2σ² denominator are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F04",
+    "mode": "fast",
+    "inputSHA256": "fcd7f2b4f797e174d8624449e8ed045948d3e54c1347c5a709eac7b16435b1f7",
+    "outputSHA256": "f93eb84bc844ce2616b141062c31d27fc231837c7246500de8dbc2856152e0db",
+    "contentSHA256": "f1e7860a60c5ed6c0e9fadf26806422f2ffb3ef4eb6d39e82fffd98849a94ea0",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.043418+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Gaussian density: σ√(2π) denominator, negative exponent, squared x−μ grouping, and2σ² denominator are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F05",
+    "mode": "balanced",
+    "inputSHA256": "edf798fca5702be4d8e90f4a27e1b1a2d10cef054e5bebeab9390a28ddcff2ce",
+    "outputSHA256": "034317860c4a96659841a24978188e2bdd0b41fd3ac9a317205d72c95fa1a939",
+    "contentSHA256": "f57f9a85288c4637271ff4e01826b503b7f6d20f6106e32d8ef9cf4e20143b6f",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.043875+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Definite integral: bounds0 and1, integrand x² dx, and result1/3 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F05",
+    "mode": "fast",
+    "inputSHA256": "edf798fca5702be4d8e90f4a27e1b1a2d10cef054e5bebeab9390a28ddcff2ce",
+    "outputSHA256": "034317860c4a96659841a24978188e2bdd0b41fd3ac9a317205d72c95fa1a939",
+    "contentSHA256": "f57f9a85288c4637271ff4e01826b503b7f6d20f6106e32d8ef9cf4e20143b6f",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:08:51.043721+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Definite integral: bounds0 and1, integrand x² dx, and result1/3 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F06",
+    "mode": "balanced",
+    "inputSHA256": "aefb8f06f92a40aae2e1c278986832aaa33d64925d6847c0cdb281444b6f62e5",
+    "outputSHA256": "0cca9e25bf14c1b49d5c95760ae1e1c9b79878a271a3cb47ac36130ea5ad7e4c",
+    "contentSHA256": "f728ed0a7518a527c8756ff6885697a25bb3038cab6f7be4eef86f40ea727997",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.441582+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Geometric sum: k=0 to n, exponent k, numerator1−r^(n+1), denominator1−r and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F06",
+    "mode": "fast",
+    "inputSHA256": "aefb8f06f92a40aae2e1c278986832aaa33d64925d6847c0cdb281444b6f62e5",
+    "outputSHA256": "0cca9e25bf14c1b49d5c95760ae1e1c9b79878a271a3cb47ac36130ea5ad7e4c",
+    "contentSHA256": "f728ed0a7518a527c8756ff6885697a25bb3038cab6f7be4eef86f40ea727997",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.441340+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Geometric sum: k=0 to n, exponent k, numerator1−r^(n+1), denominator1−r and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F07",
+    "mode": "balanced",
+    "inputSHA256": "3e705b44c0b1abb2c11e6a38577b2927bdfab7519a0c58ebfcf1adf7df01cf3f",
+    "outputSHA256": "67caf92715ffc84dda45a650718ecda62cd23921920385b33ac5ff9d7a58ecd9",
+    "contentSHA256": "1a5553d6afa2deff4ba339353f5d603c7ad983aa02966b50fbaa2f6f7cfd5b81",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.441903+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Sinc limit: x approaches0, sin x numerator, x denominator, and result1 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F07",
+    "mode": "fast",
+    "inputSHA256": "3e705b44c0b1abb2c11e6a38577b2927bdfab7519a0c58ebfcf1adf7df01cf3f",
+    "outputSHA256": "ed6f6c79e24743a5b98155308090b2740bfc5ccf661aca586d9b6f354c3f3d1e",
+    "contentSHA256": "1a5553d6afa2deff4ba339353f5d603c7ad983aa02966b50fbaa2f6f7cfd5b81",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.441747+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Sinc limit: x approaches0, sin x numerator, x denominator, and result1 are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F08",
+    "mode": "balanced",
+    "inputSHA256": "7fb6bcffbe6ff123f0ad567082eb0677f1510fa7a271bd0a1e6e7c1cccb54f8b",
+    "outputSHA256": "13a8408a7b7aae31971a501abb2391d6832c1bdbdc7ae50656e44dd9c0be7fff",
+    "contentSHA256": "6a309da1cb525bebc63a447cf6388021ef45e9d767b02f84a6d0c2f2d52e6b26",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.442206+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Factorial/product: n!, k=1 lower bound, n upper bound, and factor k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F08",
+    "mode": "fast",
+    "inputSHA256": "7fb6bcffbe6ff123f0ad567082eb0677f1510fa7a271bd0a1e6e7c1cccb54f8b",
+    "outputSHA256": "13a8408a7b7aae31971a501abb2391d6832c1bdbdc7ae50656e44dd9c0be7fff",
+    "contentSHA256": "6a309da1cb525bebc63a447cf6388021ef45e9d767b02f84a6d0c2f2d52e6b26",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.442058+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Factorial/product: n!, k=1 lower bound, n upper bound, and factor k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F09",
+    "mode": "balanced",
+    "inputSHA256": "cf99c64e691947c6acc8ec67a8f560448b840d549eacb57823814405ac395d5d",
+    "outputSHA256": "d305e3eeb3f6edfa5feae3618324419550c343459b90b04fc29b36fc60e2644c",
+    "contentSHA256": "0786f764a24b2c09fc78b345b47a4f1c39fed22686481b5ff29b74258f7c521e",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.442520+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Partial derivative: ∂f/∂x and right-hand2xy+cos x are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F09",
+    "mode": "fast",
+    "inputSHA256": "cf99c64e691947c6acc8ec67a8f560448b840d549eacb57823814405ac395d5d",
+    "outputSHA256": "d305e3eeb3f6edfa5feae3618324419550c343459b90b04fc29b36fc60e2644c",
+    "contentSHA256": "0786f764a24b2c09fc78b345b47a4f1c39fed22686481b5ff29b74258f7c521e",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.442361+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Partial derivative: ∂f/∂x and right-hand2xy+cos x are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F10",
+    "mode": "balanced",
+    "inputSHA256": "b056a6da6c402337a1e2ec4b9d69dc7dd44468b318475c55ce901a969062757f",
+    "outputSHA256": "027594ecf88613ba2a2d5b07ee86f4c43021b233a84ea1074c3a862be6220ef6",
+    "contentSHA256": "7f0849a0c298e07205d2849076dc1840b54e02319579cf473db28cb4c913a392",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.442850+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Gradient column vector: ∂f/∂x above ∂f/∂y, enclosing parentheses, two rows and ∇f are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F10",
+    "mode": "fast",
+    "inputSHA256": "b056a6da6c402337a1e2ec4b9d69dc7dd44468b318475c55ce901a969062757f",
+    "outputSHA256": "027594ecf88613ba2a2d5b07ee86f4c43021b233a84ea1074c3a862be6220ef6",
+    "contentSHA256": "7f0849a0c298e07205d2849076dc1840b54e02319579cf473db28cb4c913a392",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:04.442688+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Gradient column vector: ∂f/∂x above ∂f/∂y, enclosing parentheses, two rows and ∇f are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F11",
+    "mode": "balanced",
+    "inputSHA256": "7c5a5edb3d4d65a042614c3e733d50d52cc0b37ff1f0411aaa42647451c8102d",
+    "outputSHA256": "50b171ef372c66c070f568364cbdf1b411a2a1574c96ed36ea3d3470ec88e9b2",
+    "contentSHA256": "15704cd224504b6f28d5f4c2204d4999a1e248c372d47533cf94b549ee72819a",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761016+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Matrix: A equals a2×2 parenthesized matrix with rows1,2 and3,4 in the correct positions. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F11",
+    "mode": "fast",
+    "inputSHA256": "7c5a5edb3d4d65a042614c3e733d50d52cc0b37ff1f0411aaa42647451c8102d",
+    "outputSHA256": "50b171ef372c66c070f568364cbdf1b411a2a1574c96ed36ea3d3470ec88e9b2",
+    "contentSHA256": "15704cd224504b6f28d5f4c2204d4999a1e248c372d47533cf94b549ee72819a",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.760742+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Matrix: A equals a2×2 parenthesized matrix with rows1,2 and3,4 in the correct positions. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F12",
+    "mode": "balanced",
+    "inputSHA256": "b66eeff3a4d2be623c5ddda172247306593d51063577133362e070a381a0ef7c",
+    "outputSHA256": "9527088ecac4a0e1862f9370756090dc2a7e418fdb92107947e72385c041545d",
+    "contentSHA256": "99f6706d610e14ec4d982aa2454315e3e12f296fea3b52f0f279de156333355f",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761341+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Determinant: a,b above c,d, det operator, enclosing matrix, and ad−bc result are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F12",
+    "mode": "fast",
+    "inputSHA256": "b66eeff3a4d2be623c5ddda172247306593d51063577133362e070a381a0ef7c",
+    "outputSHA256": "9527088ecac4a0e1862f9370756090dc2a7e418fdb92107947e72385c041545d",
+    "contentSHA256": "99f6706d610e14ec4d982aa2454315e3e12f296fea3b52f0f279de156333355f",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761180+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Determinant: a,b above c,d, det operator, enclosing matrix, and ad−bc result are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F13",
+    "mode": "balanced",
+    "inputSHA256": "7c489b1f253609d778886c36e50832773c4319807b1b3953e9d3aaff7b76c4a7",
+    "outputSHA256": "ec9fd5480e00491659d0733828e2c6d8e8c9de2fd5ebb2a8ad3d1361641c8df7",
+    "contentSHA256": "010347306036b7fd2489a38e27233dcc06efdc984412d64d1a02fc890ced86ea",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761667+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Cases: upper x² branch at x≥0, lower −x branch at x<0, brace and branch association are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F13",
+    "mode": "fast",
+    "inputSHA256": "7c489b1f253609d778886c36e50832773c4319807b1b3953e9d3aaff7b76c4a7",
+    "outputSHA256": "ec9fd5480e00491659d0733828e2c6d8e8c9de2fd5ebb2a8ad3d1361641c8df7",
+    "contentSHA256": "010347306036b7fd2489a38e27233dcc06efdc984412d64d1a02fc890ced86ea",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761498+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Cases: upper x² branch at x≥0, lower −x branch at x<0, brace and branch association are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F14",
+    "mode": "balanced",
+    "inputSHA256": "5a0dc9be97caf779255884c7a8e503131fea5012b2f5e88a4f4282a5a41d8f90",
+    "outputSHA256": "b13f065fc0fe2275872e5ade790f540d6ec3d0ce492086bb0b3377f8c5e9b126",
+    "contentSHA256": "260cbe1c1d5300a4bf9e959d6c3e8d6f1c2dec1438d7d89968c7ae6a65eca9c8",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761998+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Two displayed rows preserve a+b=c above a−b=d, both signs and visible equality alignment. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F14",
+    "mode": "fast",
+    "inputSHA256": "5a0dc9be97caf779255884c7a8e503131fea5012b2f5e88a4f4282a5a41d8f90",
+    "outputSHA256": "6df9b07c4ed98766734bf9af5e44c88f5dbbe4b31780a1b11d7a3d282db6f36b",
+    "contentSHA256": "260cbe1c1d5300a4bf9e959d6c3e8d6f1c2dec1438d7d89968c7ae6a65eca9c8",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.761873+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Two displayed rows preserve a+b=c above a−b=d, both signs and visible equality alignment. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F15",
+    "mode": "balanced",
+    "inputSHA256": "9f12a4142b64966e29d5f2282e3fd960b5e6b2ee80f91fc38b7f4402d8475a8c",
+    "outputSHA256": "6dad921e8ed0ce9923b978cfdf8a135257ff64e6794b1367277898395f0f6ed2",
+    "contentSHA256": "e5d35375cea64f25f4bba63e63d72dd2d65d94d3ff2ab3a109f662b6e89e0af3",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.853842+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Binomial expansion: (x+y)^n, sum k=0 to n, binomial(n,k), x^(n−k), and y^k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F15",
+    "mode": "fast",
+    "inputSHA256": "9f12a4142b64966e29d5f2282e3fd960b5e6b2ee80f91fc38b7f4402d8475a8c",
+    "outputSHA256": "6dad921e8ed0ce9923b978cfdf8a135257ff64e6794b1367277898395f0f6ed2",
+    "contentSHA256": "e5d35375cea64f25f4bba63e63d72dd2d65d94d3ff2ab3a109f662b6e89e0af3",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:09:24.762150+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Binomial expansion: (x+y)^n, sum k=0 to n, binomial(n,k), x^(n−k), and y^k are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F16",
+    "mode": "balanced",
+    "inputSHA256": "85907e8f5c9eb31af01e2cf908a70adac0a08c637f19e96887ff6bcef7fc2dbc",
+    "outputSHA256": "67f5f9a20e293fb7f1287fccf37652ab8c7f0e4a2e014c95257f75d0288e057c",
+    "contentSHA256": "9bf1f4e1091f4cd3e2e219f896536432bc11659699bdfeb06fcae1a206a94ba8",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.854224+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Nested fraction: denominator1+1/x and right-hand x/(x+1) grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F16",
+    "mode": "fast",
+    "inputSHA256": "85907e8f5c9eb31af01e2cf908a70adac0a08c637f19e96887ff6bcef7fc2dbc",
+    "outputSHA256": "67f5f9a20e293fb7f1287fccf37652ab8c7f0e4a2e014c95257f75d0288e057c",
+    "contentSHA256": "9bf1f4e1091f4cd3e2e219f896536432bc11659699bdfeb06fcae1a206a94ba8",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.854071+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Nested fraction: denominator1+1/x and right-hand x/(x+1) grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F17",
+    "mode": "balanced",
+    "inputSHA256": "f103f4ed307435000199dd73243d737ccb3ba7017896c02ba4c0b8c2f8a361e4",
+    "outputSHA256": "e10a19873da045e557d2ca867bd9b35db2a5c1cbc4692e3aebc1ea8d55d2c68a",
+    "contentSHA256": "d85a99a412fb9a06be8eb5e5a2445962f242f6b5d6834798d4c5afa13993899b",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.854561+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Dot product: bold u/v, dot operator, sum i=1 to d, and paired u_i v_i indices are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F17",
+    "mode": "fast",
+    "inputSHA256": "f103f4ed307435000199dd73243d737ccb3ba7017896c02ba4c0b8c2f8a361e4",
+    "outputSHA256": "e10a19873da045e557d2ca867bd9b35db2a5c1cbc4692e3aebc1ea8d55d2c68a",
+    "contentSHA256": "d85a99a412fb9a06be8eb5e5a2445962f242f6b5d6834798d4c5afa13993899b",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.854398+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Dot product: bold u/v, dot operator, sum i=1 to d, and paired u_i v_i indices are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F18",
+    "mode": "balanced",
+    "inputSHA256": "a596e192f752388ba8aace7577e5aa8c21b907042774e41a1af7ef4faaddab1e",
+    "outputSHA256": "73bc61101e5eabe9c0430193a663091eab83513c19678c8f3028037475bd858b",
+    "contentSHA256": "743e2f60e23021898dff152e916b10b6c26a90da6d1ec78c806f4615a1afcd68",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.854865+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Euclidean norm: double norm bars with2 subscript, square root, sum i=1 to d, and x_i² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F18",
+    "mode": "fast",
+    "inputSHA256": "a596e192f752388ba8aace7577e5aa8c21b907042774e41a1af7ef4faaddab1e",
+    "outputSHA256": "73bc61101e5eabe9c0430193a663091eab83513c19678c8f3028037475bd858b",
+    "contentSHA256": "743e2f60e23021898dff152e916b10b6c26a90da6d1ec78c806f4615a1afcd68",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.854711+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Euclidean norm: double norm bars with2 subscript, square root, sum i=1 to d, and x_i² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F19",
+    "mode": "balanced",
+    "inputSHA256": "2f842f5fc4e368632466d4d518842e4e77f6e7bc1ed6b8a26e93290e44d86336",
+    "outputSHA256": "0c2a72180875d08569c583d69c0745911c7b98dd99633c0b241a0d68a7921451",
+    "contentSHA256": "25586c9d9da8fff6fe44fcd7e94dfd2db30842eaf3882cac3d0b05325706e5f0",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.855155+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Expectation: E[X], summation over x, and x p(x) factors are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F19",
+    "mode": "fast",
+    "inputSHA256": "2f842f5fc4e368632466d4d518842e4e77f6e7bc1ed6b8a26e93290e44d86336",
+    "outputSHA256": "0c2a72180875d08569c583d69c0745911c7b98dd99633c0b241a0d68a7921451",
+    "contentSHA256": "25586c9d9da8fff6fe44fcd7e94dfd2db30842eaf3882cac3d0b05325706e5f0",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.855013+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Expectation: E[X], summation over x, and x p(x) factors are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F20",
+    "mode": "balanced",
+    "inputSHA256": "ec4cf9a9c1ecdfd394b911f76771a535337606ad79e4e83d6ab4e702f705fc82",
+    "outputSHA256": "edabd7d9d4f7e994ad63b611deae4506d06637f5461fb931220ea76ea1e78266",
+    "contentSHA256": "4ca6a1628285972768f51ce4cf4065b419144fb1d950d6510ae120f9fa351ef9",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.855440+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Bayes rule: conditional bars and order P(B|A)P(A)/P(B), grouping and equality are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F20",
+    "mode": "fast",
+    "inputSHA256": "ec4cf9a9c1ecdfd394b911f76771a535337606ad79e4e83d6ab4e702f705fc82",
+    "outputSHA256": "edabd7d9d4f7e994ad63b611deae4506d06637f5461fb931220ea76ea1e78266",
+    "contentSHA256": "4ca6a1628285972768f51ce4cf4065b419144fb1d950d6510ae120f9fa351ef9",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:15.855298+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Bayes rule: conditional bars and order P(B|A)P(A)/P(B), grouping and equality are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F21",
+    "mode": "balanced",
+    "inputSHA256": "a06e4604eb5c913756b98c90993641d1c957b6c65c1dd6459662535ad511f8f2",
+    "outputSHA256": "1bbdd0011e8d628e92a23e69d2f3002ea06779acc64e95329af79e05be3b965e",
+    "contentSHA256": "0afdfeff7c7269e1b1e72ae705e2da4f67794e764521cc03c8de9f0094aca31a",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.609219+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Entropy: initial minus, sum i=1 to n, and p_i log p_i are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F21",
+    "mode": "fast",
+    "inputSHA256": "a06e4604eb5c913756b98c90993641d1c957b6c65c1dd6459662535ad511f8f2",
+    "outputSHA256": "1bbdd0011e8d628e92a23e69d2f3002ea06779acc64e95329af79e05be3b965e",
+    "contentSHA256": "0afdfeff7c7269e1b1e72ae705e2da4f67794e764521cc03c8de9f0094aca31a",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.608934+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Entropy: initial minus, sum i=1 to n, and p_i log p_i are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F22",
+    "mode": "balanced",
+    "inputSHA256": "32470981a97852c512e984b191e7e20977069e09f261f426c104a15cf53141f8",
+    "outputSHA256": "c5d93e21896eab11afaca62b03d050c267029ea592a32d7af0bcbc48036f4a2f",
+    "contentSHA256": "34bc8b5b5bd180a69e41dd8d8d9f834915169ca871102125ed225fb96d8cd1ed",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.609581+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "KL divergence: KL subscript, p∥q argument order, sum over i, and p_i log(p_i/q_i) are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F22",
+    "mode": "fast",
+    "inputSHA256": "32470981a97852c512e984b191e7e20977069e09f261f426c104a15cf53141f8",
+    "outputSHA256": "cef061cd1b994461795cc87cc0ad8fcf0a87dd95c4a70f3f351604c4ecd4b367",
+    "contentSHA256": "34bc8b5b5bd180a69e41dd8d8d9f834915169ca871102125ed225fb96d8cd1ed",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.609388+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "KL divergence: KL subscript, p∥q argument order, sum over i, and p_i log(p_i/q_i) are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F23",
+    "mode": "balanced",
+    "inputSHA256": "a17616b546ae8d07316c994cb15c3609a1a34b0088dcb85cfec7646722b2b3a7",
+    "outputSHA256": "2afc6944179a967721dd3b2348b83d63f8e153cc76da2dadaea167b0a332d442",
+    "contentSHA256": "665177586d6aeb9f66322a4fde139c9983a7f86e3440d9453288bb0b4e038c04",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.610018+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Softmax: p_i, numerator e^(z_i), denominator sum j=1 to n of e^(z_j), all indices and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F23",
+    "mode": "fast",
+    "inputSHA256": "a17616b546ae8d07316c994cb15c3609a1a34b0088dcb85cfec7646722b2b3a7",
+    "outputSHA256": "2afc6944179a967721dd3b2348b83d63f8e153cc76da2dadaea167b0a332d442",
+    "contentSHA256": "665177586d6aeb9f66322a4fde139c9983a7f86e3440d9453288bb0b4e038c04",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.609777+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Softmax: p_i, numerator e^(z_i), denominator sum j=1 to n of e^(z_j), all indices and grouping are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F24",
+    "mode": "balanced",
+    "inputSHA256": "f9315832c2c65e3751ba8940594cbc64e1efd229b0e2248d300c262952981187",
+    "outputSHA256": "48dd4dade66302b69fc7c4370e48d4772e5d5dbf1f83c0ed3d74fc7161f6179c",
+    "contentSHA256": "ac37fb64378eacf0446fd22b3b526287852913ae1b103403ce3da4cd46f865cd",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.610680+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Hessian entry: H_ij, numerator ∂²f, and ordered denominator ∂x_i ∂x_j are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F24",
+    "mode": "fast",
+    "inputSHA256": "f9315832c2c65e3751ba8940594cbc64e1efd229b0e2248d300c262952981187",
+    "outputSHA256": "48dd4dade66302b69fc7c4370e48d4772e5d5dbf1f83c0ed3d74fc7161f6179c",
+    "contentSHA256": "ac37fb64378eacf0446fd22b3b526287852913ae1b103403ce3da4cd46f865cd",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.610511+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Hessian entry: H_ij, numerator ∂²f, and ordered denominator ∂x_i ∂x_j are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F25",
+    "mode": "balanced",
+    "inputSHA256": "e7179e15a14188c57dcb23289e082a2be9dc437b048ef5835bcd3d723ad27e49",
+    "outputSHA256": "9299a05f755f1fee0d1ef3e392598528fd71f35a90ed7006cfb7a30cbe29a677",
+    "contentSHA256": "232ba3cc55e28bafd508fec6927f855b57ccd5c825bdd2f0999bf050cc8816d7",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.610919+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Fourier transform: hat on f, ω argument, limits−∞ to∞, f(t)e^(−iωt), dt, and negative sign are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F25",
+    "mode": "fast",
+    "inputSHA256": "e7179e15a14188c57dcb23289e082a2be9dc437b048ef5835bcd3d723ad27e49",
+    "outputSHA256": "9299a05f755f1fee0d1ef3e392598528fd71f35a90ed7006cfb7a30cbe29a677",
+    "contentSHA256": "232ba3cc55e28bafd508fec6927f855b57ccd5c825bdd2f0999bf050cc8816d7",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:10:29.610852+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Fourier transform: hat on f, ω argument, limits−∞ to∞, f(t)e^(−iωt), dt, and negative sign are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F26",
+    "mode": "balanced",
+    "inputSHA256": "9392f7fcf8bde706d91e5b7c62bb99fec85f8e45924dc13489d9d7aee57dbda1",
+    "outputSHA256": "51d6fd26cf2c90e077bc634c8fbd52246fd3dcbfecc67f7767f3cffbf969a19a",
+    "contentSHA256": "c5fc544592d6228e00828c218ad6ab127474a2136f91d08b42d8bed65794caa9",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.524954+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Second derivative oscillator: d²y/dt² + ω²y =0, both derivative powers and oscillator square are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F26",
+    "mode": "fast",
+    "inputSHA256": "9392f7fcf8bde706d91e5b7c62bb99fec85f8e45924dc13489d9d7aee57dbda1",
+    "outputSHA256": "51d6fd26cf2c90e077bc634c8fbd52246fd3dcbfecc67f7767f3cffbf969a19a",
+    "contentSHA256": "c5fc544592d6228e00828c218ad6ab127474a2136f91d08b42d8bed65794caa9",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.524709+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Second derivative oscillator: d²y/dt² + ω²y =0, both derivative powers and oscillator square are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F27",
+    "mode": "balanced",
+    "inputSHA256": "91d1909be78309751f54c9d1d72e98c5f18c127521a3ea0f4117d9ff1cb583bb",
+    "outputSHA256": "45b4f6ce63748fe9c6236c615e92b488d5527c565916738ec3bbb11da0cca12b",
+    "contentSHA256": "f39ce887dc2885c8e36dc3122592e3f35cef10d035a2ae5a11ac74ad0c3ba689",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.525264+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Complex conjugate identity: bar on second z and squared modulus |z|² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F27",
+    "mode": "fast",
+    "inputSHA256": "91d1909be78309751f54c9d1d72e98c5f18c127521a3ea0f4117d9ff1cb583bb",
+    "outputSHA256": "45b4f6ce63748fe9c6236c615e92b488d5527c565916738ec3bbb11da0cca12b",
+    "contentSHA256": "f39ce887dc2885c8e36dc3122592e3f35cef10d035a2ae5a11ac74ad0c3ba689",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.525120+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Complex conjugate identity: bar on second z and squared modulus |z|² are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F28",
+    "mode": "balanced",
+    "inputSHA256": "2a36adbbb06fdd2c5f074cf9a8aa6a807362f1adb94d9609ea50a9ed67b62000",
+    "outputSHA256": "96528ea216bfa27a2933cbda007752b2627dd8cc61556d7932a93e722f6d90f9",
+    "contentSHA256": "3cc253bf20f689528e04232d9cb8ddde9037dabc4ecbf245a8f7486bea525856",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.525580+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Set distributivity: intersection/union operators, all A/B/C positions and parentheses are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F28",
+    "mode": "fast",
+    "inputSHA256": "2a36adbbb06fdd2c5f074cf9a8aa6a807362f1adb94d9609ea50a9ed67b62000",
+    "outputSHA256": "96528ea216bfa27a2933cbda007752b2627dd8cc61556d7932a93e722f6d90f9",
+    "contentSHA256": "3cc253bf20f689528e04232d9cb8ddde9037dabc4ecbf245a8f7486bea525856",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.525427+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Set distributivity: intersection/union operators, all A/B/C positions and parentheses are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F29",
+    "mode": "balanced",
+    "inputSHA256": "2cb71cb79718ec7e419c16eb5e6980571ffc747ae87f1b47ba35280c9a63aaaa",
+    "outputSHA256": "c35b05001a54a0ef16b0458069128c7eb09d8a9fe5c77a42f8d0bef8c3cd1bf1",
+    "contentSHA256": "a188afa5b5693980592966816cf9cf33449feefb1bbfda88e4855a124dd9d1d7",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.525890+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Gradient update: hats on θ at n+1 and n and in L argument, minus η, gradient operator, and index scopes are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F29",
+    "mode": "fast",
+    "inputSHA256": "2cb71cb79718ec7e419c16eb5e6980571ffc747ae87f1b47ba35280c9a63aaaa",
+    "outputSHA256": "c35b05001a54a0ef16b0458069128c7eb09d8a9fe5c77a42f8d0bef8c3cd1bf1",
+    "contentSHA256": "a188afa5b5693980592966816cf9cf33449feefb1bbfda88e4855a124dd9d1d7",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.525735+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Gradient update: hats on θ at n+1 and n and in L argument, minus η, gradient operator, and index scopes are preserved. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F30",
+    "mode": "balanced",
+    "inputSHA256": "52162889aa2702ca79050ac19c91c73841092a0faa642307935ef2fa8dca68a3",
+    "outputSHA256": "26cedcfe0a7061ababb1aafe3a190d47dda9a037a4ae1b31039e080319e2e4eb",
+    "contentSHA256": "70ab858b2f50031c19ce7c3773fdfbe0da1a6af870087553a81c73b02b1713c7",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.526195+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Two displayed rows preserve a=b above c=d with visible equality alignment and extra vertical separation. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  },
+  {
+    "caseID": "F30",
+    "mode": "fast",
+    "inputSHA256": "52162889aa2702ca79050ac19c91c73841092a0faa642307935ef2fa8dca68a3",
+    "outputSHA256": "26cedcfe0a7061ababb1aafe3a190d47dda9a037a4ae1b31039e080319e2e4eb",
+    "contentSHA256": "70ab858b2f50031c19ce7c3773fdfbe0da1a6af870087553a81c73b02b1713c7",
+    "artifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+    "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+    "configurationSHA256": "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+    "reviewer": "table-fix-author-independent-formula-v2-source-render-copy-review",
+    "reviewedAt": "2026-10-21T16:11:41.526043+00:00",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "preview": "pass",
+      "copy": "pass"
+    },
+    "notes": "Two displayed rows preserve a=b above c=d with visible equality alignment and extra vertical separation. The service split these into two display blocks; no automatic Pure Formula copy claim is made for that split representation. Fresh v2 canonical source and actual normal PNG were read against actual authored input PNG and Golden Result. Raw output, canonical output, input, corpus, config, binary, normal/corrected PNG hashes verified; zero retries and all three correction-consumption flags verified. Markdown/Lark/Notion full plain fallbacks, complete Lark HTML text, and complete Notion HTML math annotations verified. Serialized public clipboard payload only; destination-native editability is not asserted. No v1 judgments reused."
+  }
+]

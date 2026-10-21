@@ -1,0 +1,104 @@
+[
+  {
+    "caseID": "B05",
+    "mode": "balanced",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pending",
+      "copy": "pass",
+      "table_structure": "pass"
+    },
+    "notes": "Both modes retain exact3x2 empty-slot Markdown/TSV projection and separate safe HTML with A rowspan=2 over values1,2. Complete Lark/Notion HTML preserves this merged alternative; legacy first-table TSV/rich is the projected grid, not a native-merge promise. Actual preview intentionally presents projection plus merge-preserving fallback (distinct representations), but its lower fallback row is clipped by the original harness, so complete original-preview judgment stays pending. Source/grid/span and public copy records/hashes checked; no editable destination merge is claimed."
+  },
+  {
+    "caseID": "B05",
+    "mode": "fast",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pending",
+      "copy": "pass",
+      "table_structure": "pass"
+    },
+    "notes": "Both modes retain exact3x2 empty-slot Markdown/TSV projection and separate safe HTML with A rowspan=2 over values1,2. Complete Lark/Notion HTML preserves this merged alternative; legacy first-table TSV/rich is the projected grid, not a native-merge promise. Actual preview intentionally presents projection plus merge-preserving fallback (distinct representations), but its lower fallback row is clipped by the original harness, so complete original-preview judgment stays pending. Source/grid/span and public copy records/hashes checked; no editable destination merge is claimed."
+  },
+  {
+    "caseID": "B06",
+    "mode": "balanced",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail"
+    },
+    "notes": "Actual service source correctly escapes currency as \\$5, preserves literal x**2 code and retains inline x^2. This is not a forced failure from the earlier hypothetical unescaped Golden source. The ACTUAL preview nevertheless renders escaped currency through the later dollar as mathematics (5; compare), leaves x^2$ literal and shows the backslash. Public Markdown/Lark source and Lark literal-Markdown HTML retain the correct escaped currency and equation; Notion rich HTML/MathML also contains the wrong 5; compare equation. Preview and affected rich-copy judgment fail; recognition meaning/canonical source pass. This is a local currency/math parser boundary defect, with no new destination test or Native Paste claim."
+  },
+  {
+    "caseID": "B06",
+    "mode": "fast",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail"
+    },
+    "notes": "Actual service source correctly escapes currency as \\$5, preserves literal x**2 code and retains inline x^2. This is not a forced failure from the earlier hypothetical unescaped Golden source. The ACTUAL preview nevertheless renders escaped currency through the later dollar as mathematics (5; compare), leaves x^2$ literal and shows the backslash. Public Markdown/Lark source and Lark literal-Markdown HTML retain the correct escaped currency and equation; Notion rich HTML/MathML also contains the wrong 5; compare equation. Preview and affected rich-copy judgment fail; recognition meaning/canonical source pass. This is a local currency/math parser boundary defect, with no new destination test or Native Paste claim."
+  },
+  {
+    "caseID": "B08",
+    "mode": "balanced",
+    "checks": {
+      "meaning": "pass",
+      "layout": "fail",
+      "canonical": "fail",
+      "preview": "fail",
+      "copy": "fail",
+      "table_structure": "fail"
+    },
+    "notes": "Balanced source adds an empty header row to BOTH tables, shifts A/B and C/D into data rows, and retains b-tag header content. Actual preview exposes literal b tags and appends an extra fallback table; whole-output public Lark/Notion HTML also has an extra table. The four numbers/text remain semantically present, but row/header structure, rendered layout and complete-copy structure fail. This is an actual difficult-case structure failure, not byte equality or a rotation/style requirement."
+  },
+  {
+    "caseID": "B08",
+    "mode": "fast",
+    "checks": {
+      "meaning": "pass",
+      "layout": "pass",
+      "canonical": "pass",
+      "preview": "pending",
+      "copy": "pass",
+      "table_structure": "pass"
+    },
+    "notes": "Canonical Markdown and complete public Lark/Notion output retain exactly two correct2x2 tables A/B/1/2 then C/D/3/4 with Between tables. between them. First-table legacy TSV/rich selection is intentional. Actual original preview clips the final data row of the second table; mark complete original preview pending, not a recognition/copy failure. Public values, source/output hashes and actual PNG hashes checked; no destination Native Paste asserted."
+  },
+  {
+    "caseID": "B09",
+    "mode": "balanced",
+    "checks": {
+      "meaning": "pass",
+      "layout": "fail",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail",
+      "table_structure": "fail"
+    },
+    "notes": "Canonical cell math is semantically correct: E=mc^2 and A=pi*r^2 with correct labels/row order. Actual preview exposes literal b header tags and adds a SECOND fallback table whose formula cells are empty because math was suppressed. Complete public Lark/Notion HTML/source likewise retains this incomplete extra table. Table/copy/layout/preview fail; source formula meaning/canonical content pass after harmless markup interpretation. The known Notion inline destination issue remains deferred and is not claimed retested."
+  },
+  {
+    "caseID": "B09",
+    "mode": "fast",
+    "checks": {
+      "meaning": "pass",
+      "layout": "fail",
+      "canonical": "pass",
+      "preview": "fail",
+      "copy": "fail",
+      "table_structure": "fail"
+    },
+    "notes": "Canonical cell math is semantically correct: E=mc^2 and A=pi*r^2 with correct labels/row order. Actual preview exposes literal b header tags and adds a SECOND fallback table whose formula cells are empty because math was suppressed. Complete public Lark/Notion HTML/source likewise retains this incomplete extra table. Table/copy/layout/preview fail; source formula meaning/canonical content pass after harmless markup interpretation. The known Notion inline destination issue remains deferred and is not claimed retested."
+  }
+]

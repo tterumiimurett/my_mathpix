@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |",
+  "caseID" : "T01",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table></body></html>",
+        "plain" : "| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table></body></html>",
+        "plain" : "| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>",
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "a018f52e2573937468523fee90c2cda679e8eb330557cb0a49674f9943efaa30",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T01-balanced.png",
+    "previewSHA256" : "1c6d2f7d6f2f6fad2532597ac1ee6be74646f360adc02f325740e2e15eb7a554"
+  },
+  "contentSHA256" : "d466211bc2bdb9f01b56867746a8627c40a97755d00d69f2551c98119ff2364a",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "ba807fe620f78b78d8820944a9fc92fcab04a039a62cc499ba9098d0ed2eb6f1",
+  "mode" : "balanced",
+  "outputSHA256" : "a9c82ca1e5d89e9d104e922bc3fd697d7680ffbd20bcc93d5b82e75bff81e230",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |",
+  "rawOutputSHA256" : "07aa5318a58ed8a75d46a40ae9a40e0c830386696e708961a20e62f06f2eac09",
+  "runtimeSeconds" : 0.15191984176635742,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:10:51Z",
+  "status" : "complete",
+  "wallSeconds" : 3.6207990646362305
+}

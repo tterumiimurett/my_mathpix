@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThese limits constrain  $a$  and  $b$ .\n\n$$a + b \\leq 12$$",
+  "caseID" : "M17",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Parameter</th>\n    <th>Lower</th>\n    <th>Upper</th>\n   </tr>\n   <tr>\n    <td>a</td>\n    <td>-1.5</td>\n    <td>2.0</td>\n   </tr>\n   <tr>\n    <td>b</td>\n    <td>0.0</td>\n    <td>10.0</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>\n<p>These limits constrain  $a$  and  $b$ .</p>\n<p>$$a + b \\leq 12$$</p></body></html>",
+        "plain" : "| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThese limits constrain  $a$  and  $b$ .\n\n$$a + b \\leq 12$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThese limits constrain  $a$  and  $b$ .\n\n$$a + b \\leq 12$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>\n<p>These limits constrain  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">a</annotation></semantics></math></span>  and  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">b</annotation></semantics></math></span> .</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>≤</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">a + b \\leq 12</annotation></semantics></math></span></p></body></html>",
+        "plain" : "| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThese limits constrain  $a$  and  $b$ .\n\n$$a + b \\leq 12$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>",
+        "plain" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "tsv" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "tsv" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d44dfdd4464ea5f43e0606e1895970be50476c4e8e27406bb991b6e47786d8b5",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M17-balanced.png",
+    "previewSHA256" : "8a1c857f65b350684c0129c8d5c8ab782b6305c4b5b77f5334b1250346c84bc2"
+  },
+  "contentSHA256" : "9d1f3fa1d8674ba871b7dd2bb2839ff57582a2a7dbd6e9f84ebab18601f22ad6",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "6390bd78017c51bacd9ede8179edc2148ec47ec218ed70cb56985bd2b0d4fdd3",
+  "mode" : "balanced",
+  "outputSHA256" : "8ac54f9ab774d7fe6e288a1d78a210de06b365455d8fab09c9224229efe72a69",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <table>\n   <tr>\n    <th><b>Parameter</b></th>\n    <th><b>Lower</b></th>\n    <th><b>Upper</b></th>\n   </tr>\n   <tr>\n    <td>a</td>\n    <td>-1.5</td>\n    <td>2.0</td>\n   </tr>\n   <tr>\n    <td>b</td>\n    <td>0.0</td>\n    <td>10.0</td>\n   </tr>\n  </table>\n  <p>These limits constrain <math>a</math> and <math>b</math>.</p>\n  <p><math display=\"block\">a + b \\leq 12</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThese limits constrain  $a$  and  $b$ .\n\n$$a + b \\leq 12$$",
+  "rawOutputSHA256" : "018e0bc0fa19c89fb5a622255d0ebe6f3cfd650425b0670141a44b05e0e882c3",
+  "runtimeSeconds" : 0.14890885353088379,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:15:15Z",
+  "status" : "complete",
+  "wallSeconds" : 4.3341430425643921
+}
