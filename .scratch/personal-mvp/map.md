@@ -39,6 +39,8 @@ flowchart TD
 
 ## Delivered context
 
+- Ticket `03` follow-up now exposes Markdown / Lark / Notion. Lark combines rich tables with Markdown math; the owner explicitly deferred the observed Notion inline `‣` issue. See [Lark verification and manual acceptance boundary](evidence/ticket03-lark-copy-2026-10-21.md). Ticket remains claimed while the new Lark destination check is pending.
+
 - Ticket `03` reopened on 2026-10-21 for the owner's two-action Markdown/Notion clipboard workflow. Native equation paste is an explicitly authorized extension, but destination acceptance remains pending; see [follow-up verification](evidence/ticket03-notion-copy-2026-10-21.md). Work remains on the original Ticket 03 branch.
 
 - Ticket `03` review fixes resolved on 2026-10-21: preserves valid LaTeX row spacing, projects merged cells without TSV column shifts, decodes HTML entities safely, and retains unrelated Complex Table Output. See [verification and review results](evidence/ticket03-spec-fixes-2026-10-21.md). Changes remain on the original Ticket 03 branch.

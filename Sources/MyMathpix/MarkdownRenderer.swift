@@ -8,6 +8,10 @@ enum OfflinePreviewNavigationPolicy {
 }
 
 enum MarkdownRenderer {
+    enum FormulaRepresentation {
+        case preview
+        case markdown
+    }
     static func document(
         for markdown: String,
         complexTableHTML: String? = nil
@@ -51,8 +55,12 @@ enum MarkdownRenderer {
         """
     }
 
-    static func renderBody(_ markdown: String, forClipboard: Bool = false) -> String {
-        let extracted = extractMath(markdown)
+    static func renderBody(
+        _ markdown: String,
+        forClipboard: Bool = false,
+        formulaRepresentation: FormulaRepresentation = .preview
+    ) -> String {
+        let extracted = extractMath(markdown, representation: formulaRepresentation)
         let lines = extracted.text.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
         var output: [String] = []
         var paragraph: [String] = []
@@ -131,6 +139,7 @@ enum MarkdownRenderer {
     private struct MathToken {
         let tex: String
         let display: Bool
+        let representation: FormulaRepresentation
     }
 
     private struct ProtectedCode {
@@ -138,7 +147,10 @@ enum MarkdownRenderer {
         let replacements: [String: String]
     }
 
-    private static func extractMath(_ source: String) -> (text: String, math: [String: MathToken]) {
+    private static func extractMath(
+        _ source: String,
+        representation: FormulaRepresentation
+    ) -> (text: String, math: [String: MathToken]) {
         let protectedCode = protectCode(in: source)
         var text = protectedCode.text
         var tokens: [String: MathToken] = [:]
@@ -160,7 +172,7 @@ enum MarkdownRenderer {
                     index: &tokenIndex,
                     avoiding: source
                 )
-                tokens[key] = MathToken(tex: String(text[contentRange]), display: display)
+                tokens[key] = MathToken(tex: String(text[contentRange]), display: display, representation: representation)
                 text.replaceSubrange(range, with: key)
             }
         }
@@ -292,6 +304,10 @@ enum MarkdownRenderer {
     }
 
     private static func mathHTML(_ token: MathToken) -> String {
+        if token.representation == .markdown {
+            let delimiter = token.display ? "$$" : "$"
+            return MarkdownNormalizer.escapeHTML(delimiter + token.tex + delimiter)
+        }
         let encoded = Data(token.tex.utf8).base64EncodedString()
         let className = token.display ? "math-display" : "math-inline"
         return "<span class=\"\(className)\" data-tex=\"\(encoded)\" data-display=\"\(token.display ? "1" : "0")\"></span>"

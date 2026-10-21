@@ -309,7 +309,8 @@ enum Ticket03SelfCheck {
                 "TSV Table (Plain Text)",
                 "Rich Table (HTML + RTF)",
                 "Original Image",
-                "Notion"
+                "Notion",
+                "Lark"
             ],
             "legacy Copy Format seams remain available alongside Notion",
             failures: &failures
@@ -329,6 +330,93 @@ enum Ticket03SelfCheck {
             failures.append("original image fixture")
             return report(failures)
         }
+        do {
+            let source = """
+            Before $x^2$.
+
+            $$y = x + 1$$
+
+            | Name | Value |
+            | --- | --- |
+            | <b>A &amp; B</b> | $\\alpha$ |
+            | <code>**literal**</code> | &alpha; &copy; &#945; |
+
+            After COMPLETE-CELL-END.
+            """
+            let board = NSPasteboard(name: .init("Ticket03Lark.\(UUID().uuidString)"))
+            try ClipboardService.copy(.lark, payload: ClipboardPayload(
+                canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil
+            ), to: board)
+            let html = board.string(forType: .html) ?? ""
+            check(
+                html.contains("Before $x^2$.")
+                    && html.contains("$$y = x + 1$$")
+                    && html.contains("<table>")
+                    && html.contains("<td>A &amp; B</td>")
+                    && html.contains("<td>$\\alpha$</td>")
+                    && html.contains("<td>**literal**</td>")
+                    && html.contains("<td>α © α</td>")
+                    && html.contains("After COMPLETE-CELL-END.")
+                    && !html.contains("<math") && !html.contains("data-tex")
+                    && board.data(forType: .init("org.chromium.web-custom-data")) == nil
+                    && board.data(forType: .init("com.byterumi.mymathpix.notion-blocks-v3")) == nil
+                    && board.string(forType: .string) == source,
+                "Lark copies complete rich tables with Markdown inline/display math and no Notion native placeholders",
+                failures: &failures
+            )
+            try ClipboardService.copy(.markdown, payload: ClipboardPayload(
+                canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil
+            ), to: board)
+            check(board.string(forType: .string) == source && board.data(forType: .html) == nil,
+                  "adding Lark leaves Markdown source-only copying unchanged", failures: &failures)
+        } catch { failures.append("Lark mixed-content copy: \(error)") }
+        do {
+            let source = """
+            Keep `**literal** $notMath$` and $a < b$.
+
+            $$\\begin{aligned}a&=b\\\\[4pt]c&=d\\end{aligned}$$
+
+            <img src="https://example.invalid/pixel" onerror="evil()">
+
+            | A | B |
+            | --- | --- |
+            | one | two |
+
+            | C | D |
+            | --- | --- |
+            | 完整 🧮 | end |
+            """
+            let board = NSPasteboard(name: .init("Ticket03LarkSafety.\(UUID().uuidString)"))
+            let payload = ClipboardPayload(canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil)
+            try ClipboardService.copy(.notion, payload: payload, to: board)
+            try ClipboardService.copy(.lark, payload: payload, to: board)
+            let html = board.string(forType: .html) ?? ""
+            check(
+                html.contains("<code>**literal** $notMath$</code>")
+                    && html.contains("$a &lt; b$")
+                    && html.contains("$$\\begin{aligned}a&amp;=b\\\\[4pt]c&amp;=d\\end{aligned}$$")
+                    && html.components(separatedBy: "<table>").count == 3
+                    && html.contains("完整 🧮")
+                    && !html.contains("<img") && !html.contains("<script")
+                    && !html.contains("<math") && !html.contains("‣")
+                    && board.data(forType: .init("org.chromium.web-custom-data")) == nil
+                    && board.string(forType: .string) == source,
+                "Lark retains literal code, TeX spacing, all tables and safe text without stale Notion clipboard data",
+                failures: &failures
+            )
+            let complex = "<table><caption>Keep α caption</caption><tr><th>A</th><th>B</th></tr><tr><td rowspan=\"2\">**literal**</td><td>Y</td></tr><tr><td>Z</td></tr></table>"
+            try ClipboardService.copy(.lark, payload: ClipboardPayload(
+                canonicalMarkdown: "Keep $x$.", complexTableHTML: complex, originalPNG: nil
+            ), to: board)
+            let expected = "Keep $x$.\n\nKeep α caption\n\nA\tB\n**literal**\tY\n\tZ"
+            check(
+                board.string(forType: .string) == expected
+                    && board.string(forType: .html)?.contains("rowspan=\"2\"") == true
+                    && board.string(forType: .html)?.contains("<caption>Keep α caption</caption>") == true,
+                "Lark preserves complex table captions, merged HTML and complete literal source fallback",
+                failures: &failures
+            )
+        } catch { failures.append("Lark safety and complex table copy: \(error)") }
         do {
             let notionSource = """
             Before $x^2$.
@@ -369,7 +457,7 @@ enum Ticket03SelfCheck {
             }
             let nativeEnvelope = readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))
             check(
-                CopyFormat.visibleFormats.map(\.title) == ["Markdown", "Notion"]
+                CopyFormat.visibleFormats.map(\.title) == ["Markdown", "Lark", "Notion"]
                     && blocks.count == 4
                     && values.compactMap { $0["type"] as? String } == ["text", "equation", "table", "text"]
                     && displayTitle == [["y = x + 1"]]

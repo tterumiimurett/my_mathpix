@@ -25,6 +25,12 @@
 
 ## Comments
 
+### Owner-directed Lark format and deferred Notion inline issue — 2026-10-21
+
+Supersedes the two-action UI: show exactly Markdown, Lark, Notion in that order, retaining small secondary-color titles on the left with one-line content previews and no inline explanatory prose. Lark copies the whole result with rich HTML tables and literal Markdown inline/display formulas (`$…$` / `$$…$$`), without Notion native clipboard data or MathML. Markdown stays source-only and unchanged. Share existing safe table conversion and preserve surrounding text, all tables, code literals, entities, and sanitized Complex Table fallback.
+
+Owner manual results: Markdown works well; Notion display formulas work, but inline math pastes as `Before ‣.`. The owner explicitly deferred the Notion inline fix; do not report it fixed or expand this change into another native-paste investigation. This known limitation is recorded in help/evidence, not extra inline UI prose. The new Lark destination behavior still requires a real paste check after rebuild. No other worktree, recognition service, authentication, or document API changes are authorized.
+
 ### Owner-directed Notion copy follow-up — 2026-10-21
 
 Supersedes the six visible Copy Format rows: show only Markdown and Notion, each with a small secondary-color title to the left of the actual content preview and no inline explanatory prose. Preserve Canonical Markdown copying unchanged. The Notion action copies the complete mixed content, with rich tables and editable inline/display equations rather than just the first table. This explicitly extends the earlier source-copy-only scope to an experimental Notion clipboard adapter; it does not authorize document API writes, authentication, browser injection, or modifications to another ticket/worktree. Existing legacy clipboard seams may remain for baseline compatibility and conservative automatic Pure Formula copying.

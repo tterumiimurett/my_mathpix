@@ -51,6 +51,7 @@ final class Ticket03AcceptanceReporter {
         var richTableCopied = false
         var originalImageCopied = false
         var notionCopied = false
+        var larkCopied = false
     }
 
     private(set) var evidence = Evidence()
@@ -132,7 +133,8 @@ final class Ticket03AcceptanceReporter {
         .tsvTable: \Evidence.tsvTableCopied,
         .richTable: \Evidence.richTableCopied,
         .originalImage: \Evidence.originalImageCopied,
-        .notion: \Evidence.notionCopied
+        .notion: \Evidence.notionCopied,
+        .lark: \Evidence.larkCopied
     ]
 
     private func finishIfComplete() {
@@ -146,6 +148,7 @@ final class Ticket03AcceptanceReporter {
             && evidence.offlinePolicyPresent
             && evidence.markdownCopied
             && evidence.notionCopied
+            && evidence.larkCopied
         if complete { evidence.phase = .complete }
     }
 

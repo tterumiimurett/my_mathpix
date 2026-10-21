@@ -28,10 +28,7 @@ struct NotionClipboardDocument {
            !table.isRepresented(in: canonical) {
             // Notion simple tables have no merged-cell representation. Preserve
             // the safe merged HTML as fallback and occupied grid slots natively.
-            let captionPattern = try NSRegularExpression(pattern: "<caption>(.*?)</caption>", options: .dotMatchesLineSeparators)
-            if let match = captionPattern.firstMatch(in: table.html, range: NSRange(table.html.startIndex..., in: table.html)),
-               let range = Range(match.range(at: 1), in: table.html) {
-                let caption = HTMLTextEntities.decode(String(table.html[range]))
+            if let caption = table.captionText {
                 blocks.append(Self.envelope(type: "text", title: [[caption]]))
                 fallback += "\n\n" + caption
             }

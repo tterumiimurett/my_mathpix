@@ -255,6 +255,7 @@ private struct CopyFormatRow: View {
         case .richTable: "Rich Table"
         case .originalImage: "Image"
         case .notion: "Notion"
+        case .lark: "Lark"
         }
     }
 

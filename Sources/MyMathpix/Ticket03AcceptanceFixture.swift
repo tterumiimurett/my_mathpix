@@ -84,6 +84,11 @@ enum Ticket03PasteboardInspector {
     static func inspect(_ format: CopyFormat, pasteboard: NSPasteboard = .general) -> Bool {
         let types = Set(pasteboard.types ?? [])
         switch format {
+        case .lark:
+            return types.contains(.html) && types.contains(.string)
+                && pasteboard.string(forType: .html)?.contains("$x^2$") == true
+                && pasteboard.string(forType: .html)?.contains("$$y = x + 1$$") == true
+                && pasteboard.string(forType: .html)?.contains("<table>") == true
         case .notion:
             return types.contains(.html)
                 && types.contains(.string)

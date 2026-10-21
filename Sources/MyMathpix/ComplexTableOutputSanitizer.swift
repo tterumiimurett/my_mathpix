@@ -4,6 +4,12 @@ struct SafeComplexTable: Equatable {
     let html: String
     let tabSeparatedText: String
 
+    var captionText: String? {
+        guard let start = html.range(of: "<caption>"),
+              let end = html.range(of: "</caption>", range: start.upperBound..<html.endIndex) else { return nil }
+        return HTMLTextEntities.decode(String(html[start.upperBound..<end.lowerBound]))
+    }
+
     func isRepresented(in markdown: String) -> Bool {
         // Plain text equality cannot account for merged cells or captions.
         guard !html.contains("<caption>"),
