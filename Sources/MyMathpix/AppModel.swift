@@ -221,7 +221,9 @@ final class AppModel: ObservableObject {
             try ClipboardService.copy(prepared, to: pasteboard)
             ticket03Reporter?.markCopy(
                 format,
-                passed: Ticket03PasteboardInspector.inspect(format, pasteboard: pasteboard)
+                passed: Ticket03PasteboardInspector.inspect(
+                    format, pasteboard: pasteboard, expectedMarkdown: selectedItem?.markdown
+                )
             )
             statusMessage = "\(format.title) copied"
             NSSound(named: "Glass")?.play()
@@ -322,11 +324,13 @@ final class AppModel: ObservableObject {
 
     func ticket01MarkResultEditorVisible(
         originalSnippetVisible: Bool,
+        canonicalMarkdownVisible: Bool,
         canonicalMarkdown: String,
         isComplete: Bool
     ) {
         ticket01Reporter?.markResultEditorVisible(
             originalSnippetVisible: originalSnippetVisible,
+            canonicalMarkdownVisible: canonicalMarkdownVisible,
             canonicalMarkdown: canonicalMarkdown,
             isComplete: isComplete
         )

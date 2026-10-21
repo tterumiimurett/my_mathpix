@@ -4,7 +4,13 @@
 
 **Blocked by:** 04 — Make the App dependable for a daily personal workflow; 05 — Prove recognition quality with the Golden Set.
 
-**Status:** ready-for-agent
+**Status:** claimed
+
+## Comments
+
+- 2026-10-22: Ticket 05 ordinary quality gate is verified for both modes. Claimed on integration baseline `a1333d6` to assemble and support-check one stable signed candidate. Actual shortcut/selection/live-service GUI acceptance remains pending; the parent agent owns those observations. Existing menu-bar and Notion-inline exceptions remain unresolved.
+
+- 2026-10-22: Parent reviewed final source `021a5a3`; complete production-identity bundle staged and sealed at the retained integration `dist/MyMathpix.app`. All eight signed supporting seams, invalid-launch contract and no-build artifact/source audits passed. Evidence: `../evidence/ticket06-candidate/handoff.md`. Actual shortcut/granted capture/live GUI observations remain pending Mac unlock and action-time permission; no acceptance criteria below are marked passed from supporting checks.
 
 ## Suggested agent split
 

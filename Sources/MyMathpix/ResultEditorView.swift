@@ -266,6 +266,7 @@ struct ResultEditorView: View {
     private func reportSurface() {
         model.ticket01MarkResultEditorVisible(
             originalSnippetVisible: showsOriginal && model.history.image(for: item) != nil,
+            canonicalMarkdownVisible: showsEditor,
             canonicalMarkdown: item.markdown,
             isComplete: item.status == .complete
         )
