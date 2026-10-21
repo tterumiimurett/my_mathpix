@@ -4,7 +4,7 @@
 
 **Blocked by:** 02 — Make real Datalab recognition reliable and recoverable; 03 — Make recognized content editable, previewable, and copyable.
 
-**Status:** ready-for-agent
+**Status:** claimed
 
 ## Suggested agent split
 
@@ -22,3 +22,7 @@
 - [ ] Fast and balanced results, latency, and available cost evidence are reported without exposing the Datalab token or unrelated screen content.
 - [ ] Results are repeatable and inspectable, and tests assert public behavior or stable external contracts rather than private implementation details.
 
+
+## Comments
+
+- 2026-10-21: Claimed on `codex/ticket05-golden-set`, initially based on integration `3a1bde1`. Uses the already approved manifest/report, production recognition transport, public pasteboard, offline preview, and isolated correction/persistence seams. Known Notion inline and menu-bar follow-ups remain excluded. Quality requires actual outputs and hash-bound semantic review; harness success alone will not resolve this ticket.
