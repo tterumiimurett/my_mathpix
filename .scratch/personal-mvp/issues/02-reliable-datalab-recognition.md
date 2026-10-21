@@ -4,7 +4,7 @@
 
 **Blocked by:** 01 — Make Screen Capture survive through a mock result.
 
-**Status:** claimed
+**Status:** resolved
 
 ## Suggested agent split
 
@@ -14,14 +14,16 @@
 
 ## Acceptance criteria
 
-- [ ] The owner can save, replace, validate, and clear the token; it is stored only in a private `0600` file inside the App Sandbox container and never appears in preferences, history, diagnostics, command output, or test artifacts. Existing Keychain items are neither read nor migrated nor deleted.
-- [ ] Token validation uses the authenticated health operation without uploading a Snippet or consuming recognition credit, and invalid credentials lead directly to a recoverable Settings path.
-- [ ] Fast recognition submits only the selected PNG and approved fields to the current Convert API and requests Markdown plus HTML output.
-- [ ] Polling follows only an HTTPS status URL on an approved Datalab host and handles processing, completion, HTTP rejection, malformed response, service failure, cancellation, and a sixty-second timeout.
-- [ ] The owner sees ordinary progress during the first five seconds and a distinct slow-processing message afterward; only clearly transient technical failure receives at most one automatic retry.
-- [ ] Technical failure retains the original Snippet as a Failed Record that can be retried or copied without recapture.
-- [ ] High-Quality Retry reuses the same Snippet in balanced mode and asks before replacing hand-edited content.
-- [ ] Available request cost and runtime evidence are recorded separately from recognition content.
+Accepted using the owner's final tested-build confirmation plus the automated evidence detailed in Answer. Checked items do not imply that every failure path was manually exercised against the live service.
+
+- [x] The owner can save, replace, validate, and clear the token; it is stored only in a private `0600` file inside the App Sandbox container and never appears in preferences, history, diagnostics, command output, or test artifacts. Existing Keychain items are neither read nor migrated nor deleted.
+- [x] Token validation uses the authenticated health operation without uploading a Snippet or consuming recognition credit, and invalid credentials lead directly to a recoverable Settings path.
+- [x] Fast recognition submits only the selected PNG and approved fields to the current Convert API and requests Markdown plus HTML output.
+- [x] Polling follows only an HTTPS status URL on an approved Datalab host and handles processing, completion, HTTP rejection, malformed response, service failure, cancellation, and a sixty-second timeout.
+- [x] The owner sees ordinary progress during the first five seconds and a distinct slow-processing message afterward; only clearly transient technical failure receives at most one automatic retry.
+- [x] Technical failure retains the original Snippet as a Failed Record that can be retried or copied without recapture.
+- [x] High-Quality Retry reuses the same Snippet in balanced mode and asks before replacing hand-edited content.
+- [x] Available request cost and runtime evidence are recorded separately from recognition content.
 
 ## Comments
 
@@ -37,3 +39,15 @@
 - Blocker: no real Datalab credential was made available, so authenticated health and live Convert submit/poll have not been exercised against the hosted service.
 - Blocker: the signed App's real SwiftUI Result Editor flow, including visible progress, Settings recovery, copying the retained Snippet, and the High-Quality Retry confirmation dialog, has not been operated in a GUI session for this ticket. The deterministic signed-App self-test exercises the public model and transport seams but does not claim that human-visible acceptance.
 - The ticket therefore remains `claimed`; no acceptance checkbox is marked complete until those live credential and GUI checks are performed.
+
+- 2026-10-21 final feedback: after using the updated independent `my_mathpix_ticket2` build with saved credentials and requesting restoration of the original progress presentation, the owner stated: "OK, 可以. 测试通过". This final acceptance supersedes the historical claimed/blocker disposition above. Evidence limits remain recorded below.
+
+## Answer
+
+Resolved on 2026-10-21 following the owner's final tested-build confirmation for `my_mathpix_ticket2` at implementation commit `5171aca`.
+
+Owner-reported checks include real credential setup, earlier High-Quality Retry producing correct formulas/tables with mode/runtime present, protection of hand edits, and confirmation that the final build passes after restoring the original processing text/spinner. Earlier displayed Fast mode/runtime is supporting UI evidence, not an independently captured live fast submit/poll trace. The invalid replacement kept the saved credential; its initially invisible rejection was reproduced and fixed, with agent GUI replay confirming the new rejection text beside the input. The owner subsequently confirmed credentials were saved and the final build passed.
+
+Supporting automated evidence: the signed-App Ticket 02 deterministic self-test passes; the full repository self-test passes 45 checks; production compilation, signing verification and diff checks pass. Tests cover authenticated health without image submission, private-file credential lifecycle, approved fast/balanced multipart input, trusted polling, errors, cancellation, timeout, one-retry budget, Failed Record recovery, replacement confirmation and independent Usage Record persistence. Focused red-to-green regressions cover clearing during validation, retry after cancellation/edit, deletion during recognition, complete cost breakdown persistence and old record compatibility. Standards/Spec reviews found and drove fixes; the final follow-up fixed renamed main-window lookup. No Keychain access was introduced.
+
+Evidence limits: the owner explicitly declined manual disconnection testing this round. Disconnection, the full slow/60-second timeout matrix, clearing during in-flight validation, and usage retention after deletion rely on automated checks rather than individual owner manual passes. Live billing accuracy and a captured live fast request chain were not independently audited. The final owner confirmation is a tested-build acceptance, not a claim that every checklist scenario was manually performed. The later signed-App integration acceptance gate remains separate; the previously reported TSV conversion problem belongs to Ticket 03.
