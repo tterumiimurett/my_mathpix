@@ -30,6 +30,8 @@ final class AppModel: ObservableObject {
     private let hotKeyRegistrar: any HotKeyRegistering
     private let launchAtLoginController: any LaunchAtLoginControlling
     private let resultEditorWindowPresenter: any ResultEditorWindowPresenting
+    private let ticket03Reporter: Ticket03AcceptanceReporter?
+    private let pasteboard: NSPasteboard
     private var historyObservation: AnyCancellable?
     private var recognitionTask: Task<Void, Never>?
     private var slowTask: Task<Void, Never>?
@@ -56,6 +58,9 @@ final class AppModel: ObservableObject {
         launchAtLoginController: (any LaunchAtLoginControlling)? = nil,
         diagnosticLog: DiagnosticLog? = nil,
         ticket01Reporter: Ticket01AcceptanceReporter? = nil,
+        ticket03Reporter: Ticket03AcceptanceReporter? = nil,
+        pasteboard: NSPasteboard = .general,
+        registersHotKey: Bool = true,
         resultEditorWindowPresenter: (any ResultEditorWindowPresenting)? = nil,
         appInteractionEnabled: Bool = true,
         slowMessageDelay: Duration = .seconds(5)
@@ -84,6 +89,8 @@ final class AppModel: ObservableObject {
         self.ticket01Reporter = ticket01Reporter
         self.appInteractionEnabled = appInteractionEnabled
         self.slowMessageDelay = slowMessageDelay
+        self.ticket03Reporter = ticket03Reporter
+        self.pasteboard = pasteboard
         hasToken = resolvedRecognitionConfiguration?.isConfigured ?? true
         usage = Self.loadUsage(defaults: defaults)
         hotKeyConfiguration = Self.loadHotKey(defaults: defaults)
@@ -93,7 +100,7 @@ final class AppModel: ObservableObject {
             self?.objectWillChange.send()
         }
         try? self.diagnosticLog.record(.appLaunched)
-        if appInteractionEnabled {
+        if appInteractionEnabled && registersHotKey {
             do {
                 try self.hotKeyRegistrar.register(hotKeyConfiguration) {
                     [weak self] in self?.startCapture(trigger: .globalShortcut)
@@ -185,9 +192,44 @@ final class AppModel: ObservableObject {
 
     func updateMarkdown(_ markdown: String) {
         guard var item = selectedItem else { return }
+        guard item.markdown != markdown else { return }
         item.markdown = markdown
         do { try history.update(item) }
         catch { errorMessage = "The edited result could not be saved: \(error.localizedDescription)" }
+    }
+
+    @discardableResult
+    func copySelected(as format: CopyFormat) -> Bool {
+        guard let item = selectedItem else { return false }
+        let payload = ClipboardPayload(
+            canonicalMarkdown: item.markdown,
+            complexTableHTML: item.html,
+            originalPNG: history.imageData(for: item)
+        )
+        do {
+            return copyPrepared(try ClipboardService.prepare(format, payload: payload))
+        } catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
+    }
+
+    @discardableResult
+    func copyPrepared(_ prepared: PreparedClipboardCopy) -> Bool {
+        let format = prepared.format
+        do {
+            try ClipboardService.copy(prepared, to: pasteboard)
+            ticket03Reporter?.markCopy(
+                format,
+                passed: Ticket03PasteboardInspector.inspect(format, pasteboard: pasteboard)
+            )
+            statusMessage = "\(format.title) copied"
+            NSSound(named: "Glass")?.play()
+            return true
+        } catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
     }
 
     func deleteSelected() {
@@ -304,6 +346,14 @@ final class AppModel: ObservableObject {
         ticket01Reporter?.markRecentHistoryVisible()
     }
 
+    func ticket03MarkResultEditorVisible(_ observation: ResultEditorObservation) {
+        ticket03Reporter?.markResultEditorVisible(observation)
+    }
+
+    func ticket03MarkPreviewVisible(_ observation: PreviewRenderObservation) {
+        ticket03Reporter?.markPreviewRendered(observation)
+    }
+
     func showMainWindow() {
         guard appInteractionEnabled else { return }
         resultEditorWindowPresenter.showMainWindow()
@@ -418,7 +468,7 @@ final class AppModel: ObservableObject {
             return
         }
         item.markdown = MarkdownNormalizer.normalize(result.markdown)
-        item.html = result.html
+        item.html = result.html.flatMap(ComplexTableOutputSanitizer.sanitize)?.html
         item.status = .complete
         item.mode = mode
         item.errorMessage = nil
@@ -430,9 +480,19 @@ final class AppModel: ObservableObject {
             ticket01Reporter.markComplete(recentHistoryCount: history.items.count)
             ticket01SafeSummary = ticket01Reporter.safeSummary
         }
-        if let latex = MarkdownNormalizer.pureFormula(in: item.markdown) {
-            ClipboardService.copyMarkdown(latex)
-            NSSound(named: "Glass")?.play()
+        let payload = ClipboardPayload(
+            canonicalMarkdown: item.markdown,
+            complexTableHTML: item.html,
+            originalPNG: history.imageData(for: item)
+        )
+        if let format = ClipboardService.automaticCopyFormat(for: payload) {
+            do {
+                try ClipboardService.copy(format, payload: payload, to: pasteboard)
+                statusMessage = "Formula Output copied"
+                NSSound(named: "Glass")?.play()
+            } catch {
+                errorMessage = error.localizedDescription
+            }
         }
         presentRecognitionOutcome(on: resultDisplayID)
     }

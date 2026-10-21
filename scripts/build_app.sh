@@ -24,7 +24,9 @@ swift_args=(
 swift build -c release "${swift_args[@]}"
 
 build_dir="$(swift build -c release --show-bin-path "${swift_args[@]}")"
-app_dir="$repo_dir/dist/MyMathpix.app"
+app_name="${MYMATHPIX_APP_NAME:-MyMathpix}"
+bundle_id="${MYMATHPIX_BUNDLE_ID:-}"
+app_dir="$repo_dir/dist/$app_name.app"
 contents_dir="$app_dir/Contents"
 
 rm -rf "$app_dir"
@@ -32,6 +34,13 @@ mkdir -p "$contents_dir/MacOS" "$contents_dir/Resources"
 
 cp "$build_dir/MyMathpix" "$contents_dir/MacOS/MyMathpix"
 cp "$repo_dir/Config/Info.plist" "$contents_dir/Info.plist"
+if [[ -n "$bundle_id" ]]; then
+    /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $bundle_id" "$contents_dir/Info.plist"
+fi
+if [[ "$app_name" != "MyMathpix" ]]; then
+    /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $app_name" "$contents_dir/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleName $app_name" "$contents_dir/Info.plist"
+fi
 
 resource_bundle="$build_dir/MyMathpix_MyMathpix.bundle"
 resource_root="$resource_bundle/Resources"

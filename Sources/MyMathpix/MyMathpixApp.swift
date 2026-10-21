@@ -46,6 +46,16 @@ struct MyMathpixApp: App {
         if launch.runsTicket04DailyWorkflowSelfTest {
             exit(Ticket04DailyWorkflowSelfTest.run() ? 0 : 1)
         }
+        if launch.runsTicket03SelfTest {
+            exit(Ticket03SelfCheck.run() ? 0 : 1)
+        }
+        if let format = launch.ticket03PasteboardInspection {
+            let passed = Ticket03PasteboardInspector.inspect(format)
+            if passed {
+                print("TICKET03_PASTEBOARD_OK format=\(format.rawValue) values=yes public_types=yes")
+            }
+            exit(passed ? 0 : 1)
+        }
         if launch.runsSelfTest {
             exit(SelfCheck.run() ? 0 : 1)
         }
@@ -55,6 +65,27 @@ struct MyMathpixApp: App {
         }
         if launch.runsTicket04ResultEditorWindowSelfTest {
             _model = StateObject(wrappedValue: Ticket04ResultEditorWindowSelfTest.makeModel())
+        } else if launch.runsTicket03Acceptance {
+            let history = HistoryStore(inMemory: true)
+            do {
+                try Ticket03AcceptanceFixture.seed(history: history)
+            } catch {
+                fatalError("Ticket 03 acceptance fixture could not be prepared")
+            }
+            let defaults = UserDefaults(
+                suiteName: "com.byterumi.mymathpix.ticket03.\(ProcessInfo.processInfo.processIdentifier)"
+            )!
+            let reporter = Ticket03AcceptanceReporter(runID: launch.ticket03AcceptanceRunID!)
+            _model = StateObject(wrappedValue: AppModel(
+                recognitionService: Ticket03AcceptanceRecognitionService(),
+                history: history,
+                usageRecords: UsageRecordStore(inMemory: true),
+                defaults: defaults,
+                diagnosticLog: DiagnosticLog(rootURL: FileManager.default.temporaryDirectory
+                    .appendingPathComponent("Ticket03Diagnostics-\(launch.ticket03AcceptanceRunID!.uuidString)", isDirectory: true)),
+                ticket03Reporter: reporter,
+                registersHotKey: false
+            ))
         } else if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
             let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
@@ -99,19 +130,33 @@ struct MyMathpixApp: App {
 
     var body: some Scene {
         WindowGroup(appDisplayName, id: "main") {
-            ContentView()
-                .environmentObject(model)
-                .background(MainWindowRegistrationView { window in
-                    model.registerMainWindow(window)
-                })
-                .frame(minWidth: 920, minHeight: 620)
-                .task {
-                    if CommandLine.arguments.contains("--ticket04-result-editor-window-self-test") {
-                        await Ticket04ResultEditorWindowSelfTest.run(model: model)
+            Group {
+                if AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance {
+                    if let item = model.selectedItem {
+                        ResultEditorView(item: item)
+                            .id(item.id)
+                            .environmentObject(model)
+                            .frame(minWidth: 400, minHeight: 520)
                     }
+                } else {
+                    ContentView()
+                        .environmentObject(model)
+                        .frame(minWidth: 920, minHeight: 520)
                 }
+            }
+            .background(MainWindowRegistrationView { window in
+                model.registerMainWindow(window)
+            })
+            .task {
+                if CommandLine.arguments.contains("--ticket04-result-editor-window-self-test") {
+                    await Ticket04ResultEditorWindowSelfTest.run(model: model)
+                }
+            }
         }
-        .defaultSize(width: 1180, height: 760)
+        .defaultSize(
+            width: AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance ? 470 : 1180,
+            height: AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance ? 700 : 760
+        )
 
         MenuBarExtra(appDisplayName, systemImage: "function") {
             MenuBarContent()
