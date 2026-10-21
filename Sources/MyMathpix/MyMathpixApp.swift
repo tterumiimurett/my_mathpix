@@ -44,7 +44,9 @@ struct MyMathpixApp: App {
             print("TICKET01_SCREEN_PERMISSION granted=\(CGPreflightScreenCaptureAccess() ? "yes" : "no")")
             exit(0)
         }
-        if launch.runsTicket01Acceptance {
+        if launch.runsTicket04ResultEditorWindowSelfTest {
+            _model = StateObject(wrappedValue: Ticket04ResultEditorWindowSelfTest.makeModel())
+        } else if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
             let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
             let resultEditorWindowPresenter = AppKitResultEditorWindowPresenter(
@@ -93,6 +95,11 @@ struct MyMathpixApp: App {
                     model.registerMainWindow(window)
                 })
                 .frame(minWidth: 920, minHeight: 620)
+                .task {
+                    if CommandLine.arguments.contains("--ticket04-result-editor-window-self-test") {
+                        await Ticket04ResultEditorWindowSelfTest.run(model: model)
+                    }
+                }
         }
         .defaultSize(width: 1180, height: 760)
 

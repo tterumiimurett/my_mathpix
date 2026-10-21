@@ -158,6 +158,10 @@ struct AppLaunchConfiguration {
         arguments.contains("--ticket04-daily-workflow-self-test")
     }
 
+    var runsTicket04ResultEditorWindowSelfTest: Bool {
+        arguments.contains("--ticket04-result-editor-window-self-test")
+    }
+
     var reportsScreenPermissionState: Bool {
         arguments.contains("--ticket01-screen-permission-state")
     }

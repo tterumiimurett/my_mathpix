@@ -14,7 +14,7 @@
 
 ## Acceptance criteria
 
-- [x] The App is usable from both a menu bar presence and a normal application window, with a default global shortcut of Control-Command-M.
+- [ ] The App is usable from both a menu bar presence and a normal application window, with a default global shortcut of Control-Command-M.
 - [x] The owner can customize the shortcut, and registration conflicts are reported immediately instead of failing silently.
 - [x] Recent History preserves the original image and final edited output for the twenty newest Successful or Failed Records inside the App Sandbox container.
 - [x] Edits autosave and survive navigation and relaunch; retry updates remain associated with the existing Snippet.
@@ -25,6 +25,16 @@
 - [ ] A Screen Capture keeps the App window hidden while recognition is active, then presents the Result Editor at a 16-point inset from the top-left visible area of the captured display (falling back to a remaining display only if that display disappears).
 
 ## Answer
+
+### 2026-10-21 — owner-reported shell regressions
+
+Status remains claimed. The owner reports that Control-Command-M, recovery of seven Recent History records, launch-at-login default off, and version display work, but the menu-bar entry is not visible and recognition completion does not automatically present the Result Editor at the captured display's visible-area top-left. Twenty-record manual acceptance has not been performed. The running candidate was verified as the isolated `70ae8d1` preview. Accessibility inspection found its status item outside the connected desktop; Hidden Bar is running, so this may be external hiding rather than an absent App entry. Neither shell acceptance is treated as passed pending reproduction and verification. Work is limited to Ticket 04, without reading other ticket worktrees or using credentials/content in diagnostic artifacts.
+
+The owner approved regression coverage at the real signed-App menu-bar and completed-window seams, with synthetic capture output and local recognition results. `scripts/ticket04_result_editor_window_test.sh` reproduced the window defect before the production fix: `visible=true`, `display-matches=true`, `inset-matches=false`; the actual frame was `x=16, top=695, height=695`, while the expected top was `679`. A default/restored window filling the display had no room for the 16-point inset, so AppKit constrained it back to the visible area's top. The presenter now fits an oversized window to leave that inset before positioning it. The same signed real-SwiftUI-window test passes on both connected displays, independently of persisted window size, without reading credentials/history or performing network requests. This supporting test injects the capture result; it does not claim to exercise a real ScreenCaptureKit selection.
+
+Verification after the fix: release/debug compilation passed; `scripts/test.sh` passed 46 checks plus Ticket 04 checks; `scripts/ticket04_daily_workflow_test.sh` passed; signed mock-recognition, overlay-lifecycle, resource-bundle and local-token checks passed. GUI assertions use actual window visibility, completed record status, display identity and settled geometry, not presentation-call counts.
+
+Menu-bar diagnosis remains separate from the window repair: the running App does own a status item, but Hidden Bar's expanded separator pushes it offscreen (observed x values between approximately -3600 and -5000). The owner allowed temporary expansion and moving only MyMathpix to the visible side. Automated attempts did not establish a successful final move; no Hidden Bar preferences, unrelated icons or permission settings were changed. A successful visible placement and real menu interaction, plus a fresh actual secondary-display capture against the repaired candidate, remain required before resolving Ticket 04.
 
 Reopened on 2026-09-05 because the automatic Result Editor window behavior did not yet meet the owner-confirmed daily workflow: at reopening, recognition opened the main window before completion and did not preserve the captured display identity through to Result Editor presentation. The ticket remains claimed until the Result Editor is presented only after recognition completes, at the top-left visible area of the display where the Snippet was captured, with risk-proportionate signed-App and multi-display evidence recorded below.
 

@@ -107,6 +107,14 @@ final class AppKitResultEditorWindowPresenter: ResultEditorWindowPresenting {
             let screens = screenProvider()
             presentationScreen = screens.first(where: { $0.displayID == displayID }) ?? screens.first
             if let presentationScreen {
+                // A restored/default window may fill the display. Moving that
+                // frame down by the inset would put its bottom offscreen, so
+                // AppKit constrains it back against the menu bar on ordering.
+                // Make room for the inset before positioning the real window.
+                var frame = window.frame
+                frame.size.width = min(frame.width, presentationScreen.visibleFrame.width - ResultEditorWindowPlacement.visibleAreaInset)
+                frame.size.height = min(frame.height, presentationScreen.visibleFrame.height - ResultEditorWindowPlacement.visibleAreaInset)
+                window.setFrame(frame, display: false)
                 window.setFrameTopLeftPoint(ResultEditorWindowPlacement.topLeft(
                     in: presentationScreen.visibleFrame
                 ))

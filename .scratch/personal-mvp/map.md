@@ -36,3 +36,5 @@ flowchart TD
 2. Tickets `02` and `03` are unblocked and may proceed in their isolated worktrees. Ticket `04` was reopened and is `claimed` for the owner-confirmed Result Editor window timing and captured-display placement acceptance; see [04 — Make the App dependable for a daily personal workflow](issues/04-daily-workflow.md#answer). Its original persistence, real-App UI, settings, diagnostics, version, and license evidence remains valid.
 3. Ticket `05` starts after real recognition and result consumption are complete.
 4. Ticket `06` is the integration gate. It must test the assembled signed App and cannot be replaced by reports from earlier tickets.
+
+2026-10-21: Ticket `04` remains claimed after owner-reported menu-bar visibility and Result Editor positioning failures. The oversized-window positioning regression has a red-to-green signed-App test on both connected displays. Hidden Bar visibility/manual placement and a fresh real Screen Capture acceptance remain pending; see the ticket's 2026-10-21 evidence.
