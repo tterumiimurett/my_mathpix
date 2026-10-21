@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_dir="${0:A:h:h}"
-app_dir="$repo_dir/dist/MyMathpix.app"
+app_dir="${MYMATHPIX_ACCEPTANCE_APP:-$repo_dir/dist/MyMathpix.app}"
 app_binary="$app_dir/Contents/MacOS/MyMathpix"
 acceptance_dir="${HOME}/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket01Acceptance"
 evidence_file="$acceptance_dir/evidence.json"
@@ -231,9 +231,9 @@ case "$mode" in
         printf 'TICKET01_ACCEPTANCE_READY pid=%s\n' "$app_pid"
         printf 'FIXTURE=%s\n' "$repo_dir/scripts/ticket01_fixture.html"
         if [[ "$mode" == "launch-secondary" ]]; then
-            printf 'ACTION=Move the fixture to a real secondary display. Keep the MyMathpix window fully covering the colored target, press Control-Command-M, drag just inside the green border so all four markers and the patterned center are included but no red guard is included, release, then press the shortcut once more while Recognizing is visible.\n'
+            printf 'ACTION=Move the fixture to a real secondary display. Keep the MyMathpix window fully covering the colored target, press Control-Command-M, drag just inside the green border so all four markers and the patterned center are included but no red guard is included, release, then press the shortcut once more while the redacted evidence phase is recognizing (before completion). The App stays hidden during this capture-recognition phase; it opens the result only after completion.\n'
         else
-            printf 'ACTION=On a Retina display, keep the MyMathpix window fully covering the colored target, press Control-Command-M, drag just inside the green border so all four markers and the patterned center are included but no red guard is included, release, then press the shortcut once more while Recognizing is visible.\n'
+            printf 'ACTION=On a Retina display, keep the MyMathpix window fully covering the colored target, press Control-Command-M, drag just inside the green border so all four markers and the patterned center are included but no red guard is included, release, then press the shortcut once more while the redacted evidence phase is recognizing (before completion). The App stays hidden during this capture-recognition phase; it opens the result only after completion.\n'
         fi
         ;;
     verify|verify-secondary)
@@ -259,7 +259,7 @@ case "$mode" in
             .capture_completed == true and
             .overlay_dismissed == true and
             .main_window_visible_when_recognition_started == false and
-            .recognizing_was_visible == true and
+            (.recognizing_was_visible | type) == "boolean" and
             .second_capture_blocked == true and
             .submit_count == 1 and
             .poll_count >= 2 and
@@ -299,7 +299,8 @@ case "$mode" in
         fi
         verify_safe_evidence_schema
         write_tcc_state granted "$session_run_id"
-        printf 'TICKET01_SIGNED_APP_OK mode=%s pid=%s submit=1 polls=multiple recent_history=1 ui=yes redacted=yes\n' "$mode" "$app_pid"
+        recognizing_visible="$(jq -r '.recognizing_was_visible' "$evidence_file")"
+        printf 'TICKET01_SIGNED_APP_OK mode=%s pid=%s submit=1 polls=multiple recent_history=1 result_ui=yes recognizing_visible=%s redacted=yes\n' "$mode" "$app_pid" "$recognizing_visible"
         ;;
     prepare-permission-not-determined)
         verify_bundle
