@@ -38,6 +38,25 @@ enum Ticket03SelfCheck {
             "normalization is deterministic and idempotent",
             failures: &failures
         )
+        let spacedFormula = #"$$\begin{aligned}a&=b\\[4pt]c&=d\end{aligned}$$"#
+        check(
+            MarkdownNormalizer.normalize(spacedFormula) == spacedFormula
+                && MarkdownNormalizer.pureFormula(in: spacedFormula) == #"\begin{aligned}a&=b\\[4pt]c&=d\end{aligned}"#,
+            "normalization and raw Formula Output preserve LaTeX row spacing",
+            failures: &failures
+        )
+        check(
+            MarkdownNormalizer.normalize(#"\[\begin{aligned}a&=b\\[4pt]c&=d\end{aligned}\]"#) == spacedFormula
+                && MarkdownNormalizer.normalize(#"$$\text{literal \(x\)}$$"#) == #"$$\text{literal \(x\)}$$"#
+                && MarkdownNormalizer.normalize(#"literal \\[brackets]"#) == #"literal \\[brackets]"#,
+            "delimiter conversion respects existing math context and escaped backslashes",
+            failures: &failures
+        )
+        check(
+            MarkdownNormalizer.normalize(#"Cost $5; value \(x+1\)"#) == "Cost $5; value $x+1$",
+            "an unmatched currency dollar does not disable later formula normalization",
+            failures: &failures
+        )
 
         let table = """
         | Label | Value |
@@ -91,6 +110,51 @@ enum Ticket03SelfCheck {
                 failures: &failures
             )
         }
+
+        let spanningTable = "<table><tr><th>A</th><th>B</th><th>C</th></tr><tr><td rowspan=\"2\" colspan=\"2\">group</td><td>x</td></tr><tr><td>y</td></tr><tr><td>z</td><td>w</td><td>v</td></tr></table>"
+        do {
+            let board = NSPasteboard(name: .init("Ticket03Spans.\(UUID().uuidString)"))
+            let payload = ClipboardPayload(canonicalMarkdown: "", complexTableHTML: spanningTable, originalPNG: nil)
+            for format in [CopyFormat.tsvTable, .richTable] {
+                try ClipboardService.copy(format, payload: payload, to: board)
+                check(
+                    board.string(forType: .tabularText) == "A\tB\tC\ngroup\t\tx\n\t\ty\nz\tw\tv"
+                        && board.string(forType: .string) == "A\tB\tC\ngroup\t\tx\n\t\ty\nz\tw\tv",
+                    "\(format.title) retains rowspan and colspan column positions",
+                    failures: &failures
+                )
+            }
+        } catch { failures.append("spanning table clipboard representations") }
+
+        let entityTable = "<table><tr><td>&alpha; &copy; &#945; &#x3B1; &#X3B1;</td><td>&amp;alpha; &lt;script&gt;safe&lt;/script&gt;</td></tr></table>"
+        do {
+            let board = NSPasteboard(name: .init("Ticket03Entities.\(UUID().uuidString)"))
+            let payload = ClipboardPayload(canonicalMarkdown: "", complexTableHTML: entityTable, originalPNG: nil)
+            for format in [CopyFormat.tsvTable, .richTable] {
+                try ClipboardService.copy(format, payload: payload, to: board)
+                check(
+                    board.string(forType: .string) == "α © α α α\t&alpha; <script>safe</script>"
+                        && board.string(forType: .tabularText) == "α © α α α\t&alpha; <script>safe</script>",
+                    "\(format.title) decodes entities once while preserving literal entity text",
+                    failures: &failures
+                )
+            }
+            check(
+                board.string(forType: .html)?.contains("&lt;script&gt;safe&lt;/script&gt;") == true
+                    && board.string(forType: .html)?.contains("<script>") == false,
+                "decoded entity content stays escaped in rich HTML",
+                failures: &failures
+            )
+            if let rtf = board.data(forType: .rtf) {
+                let text = try NSAttributedString(data: rtf, options: [.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil).string
+                check(text.contains("α © α α α") && text.contains("&alpha; <script>safe</script>"),
+                      "rich RTF preserves decoded entities and escaped literal text", failures: &failures)
+            } else { failures.append("entity-rich table offers RTF") }
+            if let safe = ComplexTableOutputSanitizer.sanitize(entityTable) {
+                check(ComplexTableOutputSanitizer.sanitize(safe.html)?.html == safe.html,
+                      "re-sanitizing entity-bearing HTML does not recursively decode content", failures: &failures)
+            }
+        } catch { failures.append("complex-table entity clipboard representations") }
 
         let unsafeTable = """
         <div>outside</div>
@@ -187,11 +251,46 @@ enum Ticket03SelfCheck {
         )
         let editableTablePreview = MarkdownRenderer.document(
             for: table,
-            complexTableHTML: unsafeTable
+            complexTableHTML: "<table><tr><th>Label</th><th>Value</th></tr><tr><td>A | B</td><td>$2$</td></tr></table>"
         ).lowercased()
         check(
             editableTablePreview.components(separatedBy: "<table>").count - 1 == 1,
             "editable GFM table does not duplicate its Complex Table fallback",
+            failures: &failures
+        )
+        let distinctTablePreview = MarkdownRenderer.document(for: table, complexTableHTML: spanningTable)
+        check(
+            distinctTablePreview.components(separatedBy: "<table>").count - 1 == 2
+                && distinctTablePreview.contains("rowspan=\"2\"")
+                && distinctTablePreview.contains("group"),
+            "an unrelated editable table does not hide Complex Table Output",
+            failures: &failures
+        )
+        let spanningMarkdown = "| A | B | C |\n| --- | --- | --- |\n| group | | x |\n| | | y |\n| z | w | v |"
+        check(
+            MarkdownRenderer.document(for: spanningMarkdown, complexTableHTML: spanningTable)
+                .contains("rowspan=\"2\""),
+            "matching plain cell values do not discard merged HTML structure",
+            failures: &failures
+        )
+        let otherTable = "| Other |\n| --- |\n| value |"
+        let otherHTML = "<table><tr><th>Other</th></tr><tr><td>value</td></tr></table>"
+        check(
+            MarkdownRenderer.document(for: table + "\n\n" + otherTable, complexTableHTML: otherHTML)
+                .components(separatedBy: "<table>").count - 1 == 2,
+            "matching a later Markdown table suppresses only its own duplicate",
+            failures: &failures
+        )
+        check(
+            MarkdownRenderer.document(for: "```\n" + otherTable + "\n```", complexTableHTML: otherHTML)
+                .contains("aria-label=\"Complex Table Output\""),
+            "a table example inside code cannot hide real Complex Table Output",
+            failures: &failures
+        )
+        check(
+            MarkdownRenderer.document(for: otherTable, complexTableHTML: "<table><caption>Keep this caption</caption><tr><th>Other</th></tr><tr><td>value</td></tr></table>")
+                .contains("<caption>Keep this caption</caption>"),
+            "table de-duplication preserves captions absent from Markdown",
             failures: &failures
         )
         check(

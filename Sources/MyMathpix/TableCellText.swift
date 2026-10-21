@@ -53,7 +53,7 @@ enum TableCellText {
                            characters[cursor + 1] == "/",
                            let closing = formattingTag(in: characters, from: cursor), closing.name == "code" {
                             let key = "\(marker)\(protectedContent.count)END"
-                            protectedContent.append((key, decodeEntities(String(characters[tag.end..<cursor]))))
+                            protectedContent.append((key, HTMLTextEntities.decode(String(characters[tag.end..<cursor]))))
                             markdown += key
                             index = closing.end
                             break
@@ -81,16 +81,6 @@ enum TableCellText {
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    private static func decodeEntities(_ text: String) -> String {
-        let entities = try! NSRegularExpression(pattern: #"&(?:#[xX][0-9a-fA-F]+|#[0-9]+|[A-Za-z][A-Za-z0-9]+);"#)
-        var result = text
-        for match in entities.matches(in: text, range: NSRange(text.startIndex..., in: text)).reversed() {
-            guard let range = Range(match.range, in: result),
-                  let decoded = try? AttributedString(markdown: String(result[range]), options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)) else { continue }
-            result.replaceSubrange(range, with: String(decoded.characters))
-        }
-        return result
-    }
 
     private static let formattingTags: Set<String> = [
         "b", "strong", "i", "em", "u", "s", "strike", "del", "sup", "sub",

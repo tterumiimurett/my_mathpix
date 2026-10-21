@@ -29,19 +29,42 @@ enum MarkdownNormalizer {
     }
 
     static func markdownTableTSV(from markdown: String) -> String? {
+        markdownTableTSVs(from: markdown).first
+    }
+
+    static func markdownTableTSVs(from markdown: String) -> [String] {
         let lines = normalize(markdown).split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
-        guard lines.count >= 2 else { return nil }
-        for index in 0..<(lines.count - 1) where isDelimiterRow(lines[index + 1]) {
+        var tables: [String] = []
+        var fence: MarkdownCodeFence?
+        var index = 0
+        while index + 1 < lines.count {
+            let line = lines[index]
+            if let activeFence = fence {
+                if activeFence.closes(line) { fence = nil }
+                index += 1
+                continue
+            }
+            if let opening = MarkdownCodeFence.opening(in: line) {
+                fence = opening
+                index += 1
+                continue
+            }
+            guard line.contains("|"), isDelimiterRow(lines[index + 1]) else {
+                index += 1
+                continue
+            }
             var rows: [[String]] = [tableCells(lines[index])]
             var cursor = index + 2
             while cursor < lines.count, lines[cursor].contains("|") {
                 rows.append(tableCells(lines[cursor]))
                 cursor += 1
             }
-            guard !rows.isEmpty, rows.allSatisfy({ $0.count == rows[0].count }) else { return nil }
-            return rows.map { row in row.map(cleanCell).joined(separator: "\t") }.joined(separator: "\n")
+            if rows.allSatisfy({ $0.count == rows[0].count }) {
+                tables.append(rows.map { row in row.map(cleanCell).joined(separator: "\t") }.joined(separator: "\n"))
+            }
+            index = cursor
         }
-        return nil
+        return tables
     }
 
     static func tableHTML(from markdown: String) -> String? {
@@ -113,6 +136,7 @@ enum MarkdownNormalizer {
 
     private static func canonicalizeFormulaDelimiters(in text: String) -> String {
         var fence: MarkdownCodeFence?
+        var formula: FormulaDelimiter?
         return text.split(separator: "\n", omittingEmptySubsequences: false).map { substring in
             let line = String(substring)
             if let marker = fence {
@@ -123,18 +147,24 @@ enum MarkdownNormalizer {
                 fence = opening
                 return line
             }
-            return canonicalizeFormulaDelimitersOutsideCodeSpans(in: line)
+            return canonicalizeFormulaDelimitersOutsideCodeSpans(in: line, formula: &formula)
         }.joined(separator: "\n")
     }
 
-    private static func canonicalizeFormulaDelimitersOutsideCodeSpans(in line: String) -> String {
+    private enum FormulaDelimiter {
+        case inlineDollar, displayDollar, parentheses, brackets
+    }
+
+    private static func canonicalizeFormulaDelimitersOutsideCodeSpans(
+        in line: String, formula: inout FormulaDelimiter?
+    ) -> String {
         let characters = Array(line)
         var result = ""
         var codeDelimiterLength: Int?
         var index = 0
 
         while index < characters.count {
-            if characters[index] == "`" {
+            if formula == nil, characters[index] == "`" {
                 var end = index
                 while end < characters.count, characters[end] == "`" { end += 1 }
                 let count = end - index
@@ -152,23 +182,57 @@ enum MarkdownNormalizer {
                characters[index] == "\\",
                index + 1 < characters.count {
                 switch characters[index + 1] {
-                case "(", ")":
+                case "(" where formula == nil:
+                    formula = .parentheses
                     result.append("$")
-                    index += 2
-                    continue
-                case "[", "]":
+                case ")" where formula == .parentheses:
+                    formula = nil
+                    result.append("$")
+                case "[" where formula == nil:
+                    formula = .brackets
                     result.append("$$")
-                    index += 2
-                    continue
+                case "]" where formula == .brackets:
+                    formula = nil
+                    result.append("$$")
                 default:
-                    break
+                    // Consume an escape pair together: the second slash in
+                    // a TeX row break (\\[4pt]) is not a formula delimiter.
+                    result += String(characters[index...index + 1])
                 }
+                index += 2
+                continue
+            }
+
+            if codeDelimiterLength == nil, characters[index] == "$" {
+                let isDisplay = index + 1 < characters.count && characters[index + 1] == "$"
+                let delimiter: FormulaDelimiter = isDisplay ? .displayDollar : .inlineDollar
+                if formula == nil, isDisplay || hasClosingInlineDollar(in: characters, after: index) {
+                    formula = delimiter
+                }
+                else if formula == delimiter { formula = nil }
+                result += isDisplay ? "$$" : "$"
+                index += isDisplay ? 2 : 1
+                continue
             }
 
             result.append(characters[index])
             index += 1
         }
         return result
+    }
+
+    private static func hasClosingInlineDollar(in characters: [Character], after opening: Int) -> Bool {
+        var index = opening + 1
+        while index < characters.count {
+            if characters[index] == "\\" { index += 2; continue }
+            if characters[index] == "$" {
+                var end = index + 1
+                while end < characters.count, characters[end] == "$" { end += 1 }
+                if end == index + 1 { return true }
+                index = end
+            } else { index += 1 }
+        }
+        return false
     }
 
     private static func containsUnescapedDollar(in text: String) -> Bool {

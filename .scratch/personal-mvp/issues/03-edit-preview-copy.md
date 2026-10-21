@@ -25,6 +25,10 @@
 
 ## Comments
 
+### Reopened after independent review — 2026-10-21
+
+Fix the four reviewed Spec defects on this branch: preserve valid LaTeX row spacing and existing formula contents during delimiter normalization; retain column positions when projecting HTML rowspan/colspan to TSV/plain text; correctly decode named and numeric HTML entities without recursively decoding literal entity text; and suppress a Complex Table preview only when it represents the same table as an editable GFM table. An unrelated simple table must not hide a complex table. Add regression coverage at existing normalization, preview, and public clipboard seams. Keep the existing compact UI and output scope.
+
 ### Reopened — 2026-09-06
 
 Owner-reported TSV cells leak inline HTML formatting tags. Fix plain-text conversion at the table boundary, preserving literal text, formulas, code, and entities; verify rich table representations too. The new owner decision supersedes format-name-only rows: each vertical immediate-copy row displays a single-line, tail-truncated preview of its actual copied content, with no persistent visible format title. Keep full clipboard payloads, shared conversion for preview/copy, accessible format names, accurate unavailability, and success feedback. Original-image rows use the actual image thumbnail; rich-table rows use their actual plain-text representation. Keep Original/Edit and bottom mode/runtime layout. Full-content LaTeX remains outside scope. Work stays on the Ticket 03 branch.
@@ -40,6 +44,12 @@ The reusable internal surface is `ResultEditorView(item:)` with the existing `Ap
 The implementation and actual signed-App UI verification completed on 2026-09-05; see Answer and the linked evidence.
 
 ## Answer
+
+### Independent review fixes completed — 2026-10-21
+
+Fixed all four reviewed Spec findings: valid LaTeX row spacing survives normalization; HTML rowspan/colspan retain column positions in TSV/plain output; named/numeric entities decode correctly without recursive interpretation; and unrelated complex tables remain visible alongside Markdown tables. Existing same-table duplicate suppression, captions, merged structure, offline security, and Copy Format scope are covered by regression tests.
+
+Each original failure was reproduced before its fix. Focused tests, the full 45-check suite, bundled KaTeX rendering, final release compilation, signature verification, and signed-bundle regressions passed. Independent Standards and Spec re-reviews reported zero remaining findings. See [review-fix verification](../evidence/ticket03-spec-fixes-2026-10-21.md). This validation covers output/rendering/pasteboard contracts; it does not claim a new end-to-end capture or destination-app paste acceptance run.
 
 ### Follow-up completed — 2026-09-06
 

@@ -3,6 +3,13 @@ import Foundation
 struct SafeComplexTable: Equatable {
     let html: String
     let tabSeparatedText: String
+
+    func isRepresented(in markdown: String) -> Bool {
+        // Plain text equality cannot account for merged cells or captions.
+        guard !html.contains("<caption>"),
+              html.range(of: #"(?:rowspan|colspan)=\"(?:[2-9]|[1-9][0-9]+)\""#, options: .regularExpression) == nil else { return false }
+        return MarkdownNormalizer.markdownTableTSVs(from: markdown).contains(tabSeparatedText)
+    }
 }
 
 enum ComplexTableOutputSanitizer {
@@ -36,7 +43,7 @@ enum ComplexTableOutputSanitizer {
 
         func appendText(_ text: Substring) {
             guard isInsideTable, suppressedStack.isEmpty, !text.isEmpty else { return }
-            output += MarkdownNormalizer.escapeHTML(decodeHTMLEntities(String(text)))
+            output += MarkdownNormalizer.escapeHTML(HTMLTextEntities.decode(String(text)))
         }
 
         func closeTop() {
@@ -214,21 +221,46 @@ enum ComplexTableOutputSanitizer {
     private static func tabSeparatedText(fromSanitizedHTML html: String) -> String? {
         let rowPattern = try! NSRegularExpression(pattern: #"(?is)<tr>(.*?)</tr>"#)
         let cellPattern = try! NSRegularExpression(pattern: #"(?is)<t[hd]([^>]*)>(.*?)</t[hd]>"#)
-        let rows = rowPattern.matches(in: html, range: NSRange(html.startIndex..., in: html)).compactMap { row -> String? in
-            guard let bodyRange = Range(row.range(at: 1), in: html) else { return nil }
+        var rows: [[String]] = []
+        // Absolute ending row for every column occupied by a preceding span.
+        var occupiedUntil: [Int: Int] = [:]
+        for match in rowPattern.matches(in: html, range: NSRange(html.startIndex..., in: html)) {
+            guard let bodyRange = Range(match.range(at: 1), in: html) else { continue }
             let body = String(html[bodyRange])
-            let cells = cellPattern.matches(in: body, range: NSRange(body.startIndex..., in: body)).flatMap { cell -> [String] in
+            let rowIndex = rows.count
+            occupiedUntil = occupiedUntil.filter { $0.value > rowIndex }
+            var row = Array(repeating: "", count: (occupiedUntil.keys.max() ?? -1) + 1)
+            var column = 0
+            for cell in cellPattern.matches(in: body, range: NSRange(body.startIndex..., in: body)) {
                 guard let attributesRange = Range(cell.range(at: 1), in: body),
-                      let textRange = Range(cell.range(at: 2), in: body) else { return [] }
+                      let textRange = Range(cell.range(at: 2), in: body) else { continue }
                 let attributes = String(body[attributesRange])
-                let value = decodeHTMLEntities(String(body[textRange]))
-                    .trimmingCharacters(in: .whitespacesAndNewlines)
                 let colspan = numericAttribute("colspan", in: attributes) ?? 1
-                return [value] + Array(repeating: "", count: max(0, colspan - 1))
+                let rowspan = numericAttribute("rowspan", in: attributes) ?? 1
+                while (column..<(column + colspan)).contains(where: { occupiedUntil[$0] != nil }) {
+                    column += 1
+                }
+                if row.count < column + colspan {
+                    row += Array(repeating: "", count: column + colspan - row.count)
+                }
+                row[column] = HTMLTextEntities.decode(String(body[textRange]))
+                    .replacingOccurrences(of: "\t", with: " ")
+                    .replacingOccurrences(of: "\r", with: " ")
+                    .replacingOccurrences(of: "\n", with: " ")
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                if rowspan > 1 {
+                    for index in column..<(column + colspan) {
+                        occupiedUntil[index] = rowIndex + rowspan
+                    }
+                }
+                column += colspan
             }
-            return cells.isEmpty ? nil : cells.joined(separator: "\t")
+            rows.append(row)
         }
-        return rows.isEmpty ? nil : rows.joined(separator: "\n")
+        guard let width = rows.map(\.count).max(), width > 0 else { return nil }
+        return rows.map { row in
+            (row + Array(repeating: "", count: width - row.count)).joined(separator: "\t")
+        }.joined(separator: "\n")
     }
 
     private static func numericAttribute(_ name: String, in attributes: String) -> Int? {
@@ -240,34 +272,4 @@ enum ComplexTableOutputSanitizer {
         return Int(attributes[range])
     }
 
-    private static func decodeHTMLEntities(_ text: String) -> String {
-        var result = text
-        let numericPattern = try! NSRegularExpression(pattern: #"&#(?:x([0-9A-Fa-f]+)|([0-9]+));"#)
-        for match in numericPattern.matches(
-            in: result,
-            range: NSRange(result.startIndex..., in: result)
-        ).reversed() {
-            guard let wholeRange = Range(match.range(at: 0), in: result) else { continue }
-            let value: UInt32?
-            if match.range(at: 1).location != NSNotFound,
-               let range = Range(match.range(at: 1), in: result) {
-                value = UInt32(result[range], radix: 16)
-            } else if let range = Range(match.range(at: 2), in: result) {
-                value = UInt32(result[range], radix: 10)
-            } else {
-                value = nil
-            }
-            if let value, let scalar = UnicodeScalar(value) {
-                result.replaceSubrange(wholeRange, with: String(Character(scalar)))
-            }
-        }
-        return result
-            .replacingOccurrences(of: "&lt;", with: "<", options: .caseInsensitive)
-            .replacingOccurrences(of: "&gt;", with: ">", options: .caseInsensitive)
-            .replacingOccurrences(of: "&quot;", with: "\"", options: .caseInsensitive)
-            .replacingOccurrences(of: "&#39;", with: "'", options: .caseInsensitive)
-            .replacingOccurrences(of: "&apos;", with: "'", options: .caseInsensitive)
-            .replacingOccurrences(of: "&nbsp;", with: " ", options: .caseInsensitive)
-            .replacingOccurrences(of: "&amp;", with: "&", options: .caseInsensitive)
-    }
 }
