@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "builderGitCommit": "021a5a30dbecf259f1319b055e73c44a550e0e6b",
+  "builderGitCommit": "b667026f27e3e01d6d56b838480ac62aafb0b3b9",
   "candidate": {
     "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
     "bundleIdentifier": "com.byterumi.mymathpix",
@@ -8,9 +8,9 @@
     "hostMacOS": "15.7.3",
     "version": "0.1.0",
     "build": "1",
-    "artifactSHA256": "49e4b18832715738628b22d0f94fcdb3096067f8e88a4ba391e651fb99510b65",
-    "bundleTreeSHA256": "917d986bae7542a732ebc2ac63571b86e3ca4682452e2154b88eb7fc0309ceee",
-    "cdhash": "74fa9e3c9a63c6c8ec51f5b0390ce58fd3624a4f",
+    "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+    "bundleTreeSHA256": "068a8f2aa3b409694154e8510ada1ac136a298120236849c9ca495c5a5e159fd",
+    "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
     "sandbox": true,
     "outboundNetwork": true,
     "userSelectedExport": true,
@@ -40,56 +40,56 @@
       "passed": true,
       "signal": "MyMathpix self-test passed (48 checks plus Ticket 04 workflow checks).",
       "exitCode": 0,
-      "seconds": 0.998
+      "seconds": 1.072
     },
     {
       "name": "mock_recognition",
       "passed": true,
       "signal": "TICKET01_MOCK_PROTOCOL_OK submit=1 polls=multiple png=yes fields=yes fixture=yes guard=yes result=yes",
       "exitCode": 0,
-      "seconds": 8.193
+      "seconds": 8.175
     },
     {
       "name": "overlay_lifecycle",
       "passed": true,
       "signal": "TICKET01_OVERLAY_LIFECYCLE_OK",
       "exitCode": 0,
-      "seconds": 0.176
+      "seconds": 0.213
     },
     {
       "name": "offline_resources",
       "passed": true,
       "signal": "TICKET01_RESOURCE_BUNDLE_OK",
       "exitCode": 0,
-      "seconds": 0.026
+      "seconds": 0.024
     },
     {
       "name": "local_token_fixture",
       "passed": true,
       "signal": "TICKET01_LOCAL_TOKEN_OK",
       "exitCode": 0,
-      "seconds": 0.031
+      "seconds": 0.034
     },
     {
       "name": "recognition_contract",
       "passed": true,
       "signal": "TICKET02_RECOGNITION_OK",
       "exitCode": 0,
-      "seconds": 0.641
+      "seconds": 0.698
     },
     {
       "name": "edit_preview_copy_contract",
       "passed": true,
       "signal": "Ticket 03 self-test passed.",
       "exitCode": 0,
-      "seconds": 1.178
+      "seconds": 1.157
     },
     {
       "name": "daily_workflow_contract",
       "passed": true,
       "signal": "TICKET04_DAILY_WORKFLOW_OK",
       "exitCode": 0,
-      "seconds": 0.326
+      "seconds": 0.236
     }
   ],
   "sameCandidateUnchanged": true,

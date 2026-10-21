@@ -1,7 +1,7 @@
 {
-  "schema": 1,
-  "sealedAt": "2026-10-21T16:42:12.936664+00:00",
-  "builderSourceRevision": "021a5a30dbecf259f1319b055e73c44a550e0e6b",
+  "schema": 2,
+  "sealedAt": "2026-10-21T16:55:48.803567+00:00",
+  "builderSourceRevision": "b667026f27e3e01d6d56b838480ac62aafb0b3b9",
   "candidate": {
     "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
     "bundleIdentifier": "com.byterumi.mymathpix",
@@ -9,9 +9,9 @@
     "hostMacOS": "15.7.3",
     "version": "0.1.0",
     "build": "1",
-    "artifactSHA256": "49e4b18832715738628b22d0f94fcdb3096067f8e88a4ba391e651fb99510b65",
-    "bundleTreeSHA256": "917d986bae7542a732ebc2ac63571b86e3ca4682452e2154b88eb7fc0309ceee",
-    "cdhash": "74fa9e3c9a63c6c8ec51f5b0390ce58fd3624a4f",
+    "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+    "bundleTreeSHA256": "068a8f2aa3b409694154e8510ada1ac136a298120236849c9ca495c5a5e159fd",
+    "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
     "sandbox": true,
     "outboundNetwork": true,
     "userSelectedExport": true,
@@ -37,66 +37,87 @@
   },
   "supportingChecksPassed": true,
   "sameCandidateUnchanged": true,
-  "qualityPipelineInputsUnchanged": true,
+  "qualityPipelineInputsUnchanged": false,
+  "ordinaryCoreInputsUnchanged": true,
+  "ordinaryCoreFiles": 159,
+  "reviewedGoldenRunnerRefactor": [
+    {
+      "path": "Sources/MyMathpix/GoldenSetRunner.swift",
+      "previousSHA256": "3ebc2b386f987f594b34aef02ec91830d369be2baf7dde7f2faaebcf0113980b",
+      "sha256": "150517e9ab4a650ccbdf1d06368960273d1465339aa12ef1ef8611b04db89185",
+      "reviewReason": "Bounded Golden runner attempt-record/outcome types and navigation completion cleanup; public result schema/raw fields retained."
+    }
+  ],
+  "acceptanceHostDifferences": 9,
   "evidenceFiles": {
-    "permission-probe.json": "848501fd492b684fccbdedd2839ffc4763308e0888ef56b4b553d6a210bf0927",
-    "source-bridge.json": "9923e25846049d0ce5e15b7617a87ad0cb27ea4e7777ed1f5918d49bcfc7bc3f",
-    "supporting-checks.json": "e9ac01386eaeaeb954ac828adfc2abc4dfb0111de0aa22b306937f7295f29c20"
+    "desktop-gate.json": "d55a78d71f033b471282c0ada3497db4a747460dd9d3f80b998fa8c5e82718b2",
+    "immutability-after-preview.json": "f1dfd73ac02721c214a0760e694f600f0d0b757ab8aeb77cff227bfd585c70f4",
+    "launch-contract.json": "24c0913b1ac9f4151e4b299e0baf694b0661ac151874acefea2ec4809c506af1",
+    "permission-probe.json": "bd73580cde298cd2e82324acf65616845a4a56e715c4ee305fbb171d799b80d2",
+    "preview-self-test.json": "f63abe5f5844c6f81685bd022625ca975e1caabddc6e86778b4078d4fbd28154",
+    "source-bridge.json": "8141a41c5541a7af6664c86f68d8c6cba7bda03131c73e59d6a9318e5a1270fd",
+    "supporting-checks.json": "be67de705ab33aeaa7278f27dbfdb1a09394ff0c9bf23089792cbc83a6e366c8"
+  },
+  "preflightReview": {
+    "path": "../final-review-preflight.md",
+    "sha256": "7ec48a65a56b5819b010fba6385a217f5b02e5e06058b4c67318646c9a31e5cc",
+    "standards": "3 fixed, 0 open",
+    "spec": "2 actual capture/live external acceptance groups open"
   },
   "disposableSessions": {
     "live": {
-      "runID": "ec099e52-f567-4ddd-90c6-330398524eb4",
+      "runID": "f49432fb-2568-4b1b-9d3f-6fa57be88cba",
       "service": "live",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/ec099e52-f567-4ddd-90c6-330398524eb4",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/ec099e52-f567-4ddd-90c6-330398524eb4/session.json",
+      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/f49432fb-2568-4b1b-9d3f-6fa57be88cba",
+      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/f49432fb-2568-4b1b-9d3f-6fa57be88cba/session.json",
       "launchCommand": [
         "open",
         "-n",
         "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
         "--args",
-        "--ticket06-acceptance=ec099e52-f567-4ddd-90c6-330398524eb4",
+        "--ticket06-acceptance=f49432fb-2568-4b1b-9d3f-6fa57be88cba",
         "--ticket06-service=live"
       ]
     },
     "failure": {
-      "runID": "ef2995f0-95c5-4ff7-a87a-80cb3100eb78",
+      "runID": "860e388d-df2f-4fa1-86bd-5be30ef0a59a",
       "service": "failure",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/ef2995f0-95c5-4ff7-a87a-80cb3100eb78",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/ef2995f0-95c5-4ff7-a87a-80cb3100eb78/session.json",
+      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/860e388d-df2f-4fa1-86bd-5be30ef0a59a",
+      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/860e388d-df2f-4fa1-86bd-5be30ef0a59a/session.json",
       "launchCommand": [
         "open",
         "-n",
         "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
         "--args",
-        "--ticket06-acceptance=ef2995f0-95c5-4ff7-a87a-80cb3100eb78",
+        "--ticket06-acceptance=860e388d-df2f-4fa1-86bd-5be30ef0a59a",
         "--ticket06-service=failure"
       ]
     },
     "timeout": {
-      "runID": "e21579e3-51c4-49c5-b19a-a01259c883b3",
+      "runID": "06e7cf6d-65d7-42b0-a166-b04177661801",
       "service": "timeout",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/e21579e3-51c4-49c5-b19a-a01259c883b3",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/e21579e3-51c4-49c5-b19a-a01259c883b3/session.json",
+      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/06e7cf6d-65d7-42b0-a166-b04177661801",
+      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/06e7cf6d-65d7-42b0-a166-b04177661801/session.json",
       "launchCommand": [
         "open",
         "-n",
         "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
         "--args",
-        "--ticket06-acceptance=e21579e3-51c4-49c5-b19a-a01259c883b3",
+        "--ticket06-acceptance=06e7cf6d-65d7-42b0-a166-b04177661801",
         "--ticket06-service=timeout"
       ]
     },
     "malformed": {
-      "runID": "eaf80668-5fb2-4622-8b61-5e4aacb0c109",
+      "runID": "0326ba1f-0b04-4be8-a2a9-9fce5a433a05",
       "service": "malformed",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/eaf80668-5fb2-4622-8b61-5e4aacb0c109",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/eaf80668-5fb2-4622-8b61-5e4aacb0c109/session.json",
+      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/0326ba1f-0b04-4be8-a2a9-9fce5a433a05",
+      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/0326ba1f-0b04-4be8-a2a9-9fce5a433a05/session.json",
       "launchCommand": [
         "open",
         "-n",
         "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
         "--args",
-        "--ticket06-acceptance=eaf80668-5fb2-4622-8b61-5e4aacb0c109",
+        "--ticket06-acceptance=0326ba1f-0b04-4be8-a2a9-9fce5a433a05",
         "--ticket06-service=malformed"
       ]
     }
@@ -105,16 +126,22 @@
   "actualLiveJourney": "pending",
   "destinationPaste": "not-asserted",
   "dogfoodGate": "not-started",
-  "screenRecordingPreflight": "ungranted; denied/revoked reason not inferred",
-  "humanUnlock": "pending-parent-observation",
+  "screenRecordingPreflight": "new exact-candidate parent probe: ungranted; denied/revoked reason not inferred",
+  "humanUnlock": "parent read-only desktop inventory confirms locked; manual unlock required",
   "freeze": "No source/build/sign/bundle changes after seal without parent-coordinated diagnosis and reseal.",
   "knownLimits": [
-    "Notion inline destination equations deferred (Ticket 07).",
+    "Notion inline destination equations deferred (Ticket07).",
     "Menu-bar visibility deferred.",
     "M15 blockquote flattened in both modes.",
     "B06 escaped currency/local formula ambiguity in both modes.",
     "B08 balanced extra-header/fallback table defect.",
-    "Golden v2 provider reuse was inferred; no universal cold fast<5s guarantee.",
+    "Golden v2 provider reuse inferred; no universal cold fast<5s guarantee.",
     "No universal Native Paste or Public Product/dogfood pass."
-  ]
+  ],
+  "supersededCandidate": {
+    "evidence": "pre-review/",
+    "fullBundleBackup": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixCandidatePreReview.app",
+    "artifactSHA256": "49e4b18832715738628b22d0f94fcdb3096067f8e88a4ba391e651fb99510b65",
+    "useForCurrentAcceptance": false
+  }
 }
