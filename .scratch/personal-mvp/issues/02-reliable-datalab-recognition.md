@@ -25,6 +25,8 @@
 
 ## Comments
 
+- 2026-10-21: Fixed the Spec review's lost cost-breakdown regression. Usage Records now retain the complete serialized cost breakdown separately from recognition content, alongside the existing total. A deterministic signed-App regression first failed on missing persisted detail, then passed with nested components and discounts preserved after reload; legacy records without the new optional field remain readable, and deletion/clear-all retain the breakdown. This is automated evidence only; status remains `claimed` and manual/live acceptance is not expanded.
+
 - 2026-09-05 P2 regression fixes: clearing credentials invalidates pending health validation before it can save; recovery Retry asks before replacing retained content after a cancelled balanced attempt; completed attempts retain independent Usage Records even after single deletion or clear-all. Each trigger was reproduced with a failing deterministic public-boundary test and passed after its fix. Signed-App Ticket 02 focused checks and the full 45-check self-test pass. Live credential and GUI acceptance below remain unperformed; status remains `claimed`.
 
 - 2026-09-04 implementation checkpoint: the signed-App deterministic Datalab boundary covers private-file token lifecycle and health validation; fast/balanced multipart requests; trusted polling; processing, completion, rejection, malformed response, service failure, cancellation, timeout, and one-retry behavior; Failed Record recovery; edit-replacement confirmation state; and separate Usage Records. The full repository self-test also passes.

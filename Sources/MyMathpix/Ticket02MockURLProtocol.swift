@@ -344,7 +344,12 @@ final class Ticket02MockURLProtocol: URLProtocol {
                 "markdown": "ticket02 result",
                 "html": "<p>ticket02</p>",
                 "runtime": 1.25,
-                "cost_breakdown": ["final_cost": 0.42],
+                "cost_breakdown": [
+                    "final_cost": 0.42,
+                    "base_cost": 0.5,
+                    "discount": 0.08,
+                    "components": ["conversion": 0.4, "formatting": 0.1]
+                ],
                 "parse_quality_score": 4.5
             ])
         )

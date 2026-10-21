@@ -329,6 +329,34 @@ enum Ticket02RecognitionSelfTest {
               !evidenceData.contains(Data("ticket02 result".utf8)),
               !evidenceData.contains(Data("X-API-Key".utf8)) else { return false }
 
+        guard let costJSON = reloadedUsageRecords.latest(for: itemID)?.costBreakdownJSON,
+              let costData = costJSON.data(using: .utf8),
+              let costs = try? JSONSerialization.jsonObject(with: costData) as? NSDictionary,
+              costs == NSDictionary(dictionary: [
+                  "final_cost": 0.42, "base_cost": 0.5, "discount": 0.08,
+                  "components": ["conversion": 0.4, "formatting": 0.1]
+              ]) else {
+            print("TICKET02_SELF_TEST_FAILURE step=cost-breakdown-persistence")
+            return false
+        }
+
+        // Existing Usage Records predate costBreakdownJSON and must survive an upgrade.
+        let legacyRoot = root.appendingPathComponent("legacy-usage")
+        let legacyJSON = """
+        [{"id":"00000000-0000-0000-0000-000000000001",
+          "historyItemID":"00000000-0000-0000-0000-000000000002",
+          "startedAt":1,"finishedAt":2,"mode":"fast","outcome":"complete",
+          "elapsedSeconds":1,"costCents":0.42}]
+        """
+        do {
+            try FileManager.default.createDirectory(at: legacyRoot, withIntermediateDirectories: true)
+            try Data(legacyJSON.utf8).write(to: legacyRoot.appendingPathComponent("usage-records.json"))
+        } catch { return false }
+        let legacyRecords = UsageRecordStore(rootURL: legacyRoot)
+        guard legacyRecords.records.count == 1,
+              legacyRecords.records.first?.costCents == 0.42,
+              legacyRecords.records.first?.costBreakdownJSON == nil else { return false }
+
         Ticket02MockURLProtocol.configure(scenario: .processingForever, expectedPNG: png)
         model.retryHighQuality(replacingCurrentContent: true)
         guard await waitUntil({ Ticket02MockURLProtocol.snapshot().pollCount > 0 }) else { return false }
@@ -369,6 +397,7 @@ enum Ticket02RecognitionSelfTest {
                   usageRecords.records.count == previousCount + 1,
                   usageRecords.latest(for: deletedID)?.serviceRuntimeSeconds == 1.25,
                   usageRecords.latest(for: deletedID)?.costCents == 0.42,
+                  usageRecords.latest(for: deletedID)?.costBreakdownJSON == costJSON,
                   usageRecords.latest(for: deletedID)?.outcome == .complete,
                   abs(model.usage.cumulativeCost - previousCost - 0.42) < 0.000001,
                   UsageRecordStore(rootURL: evidenceRoot).records == usageRecords.records else {

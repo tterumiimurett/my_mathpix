@@ -346,6 +346,7 @@ final class AppModel: ObservableObject {
             outcome: .complete,
             serviceRuntime: result.runtime,
             costCents: result.costValue,
+            costBreakdownJSON: result.costSummary,
             parseQualityScore: result.parseQualityScore,
             automaticRetryCount: result.automaticRetryCount,
             failureCode: nil
@@ -419,6 +420,7 @@ final class AppModel: ObservableObject {
         outcome: UsageRecordOutcome,
         serviceRuntime: Double?,
         costCents: Double?,
+        costBreakdownJSON: String? = nil,
         parseQualityScore: Double?,
         automaticRetryCount: Int?,
         failureCode: DiagnosticCode?
@@ -438,6 +440,7 @@ final class AppModel: ObservableObject {
                     elapsedSeconds: max(0, finishedAt - attempt.startedAt),
                     serviceRuntimeSeconds: serviceRuntime,
                     costCents: costCents,
+                    costBreakdownJSON: costBreakdownJSON,
                     parseQualityScore: parseQualityScore,
                     automaticRetryCount: automaticRetryCount,
                     failureCode: failureCode

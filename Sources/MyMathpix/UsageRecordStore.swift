@@ -16,6 +16,7 @@ struct UsageRecord: Codable, Equatable, Identifiable {
     let elapsedSeconds: Double
     let serviceRuntimeSeconds: Double?
     let costCents: Double?
+    var costBreakdownJSON: String? = nil
     let parseQualityScore: Double?
     let automaticRetryCount: Int?
     let failureCode: DiagnosticCode?
