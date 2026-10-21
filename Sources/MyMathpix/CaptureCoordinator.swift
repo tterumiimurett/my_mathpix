@@ -84,6 +84,7 @@ enum DisplayRole {
 struct CapturedSnippet: Equatable {
     let uploadPayload: UploadPayload
     let geometry: CaptureGeometry
+    let displayID: CGDirectDisplayID
 }
 
 protocol ScreenImageCapturing: Sendable {
@@ -282,7 +283,8 @@ final class CaptureCoordinator {
                 let uploadPayload = try await imageCapturer.capture(request: request)
                 let snippet = CapturedSnippet(
                     uploadPayload: uploadPayload,
-                    geometry: request.geometry
+                    geometry: request.geometry,
+                    displayID: request.displayID
                 )
                 completeCapture(.success(snippet), callback: callback)
             } catch {
@@ -305,8 +307,15 @@ final class CaptureCoordinator {
     ) {
         lifecycle.finish()
         captureTask = nil
-        restoreCaptureUI()
+        closeOverlays()
+        if case .failure = result {
+            restoreApplicationWindows()
+        }
         callback?(result)
+    }
+
+    func releaseHiddenApplicationWindows() {
+        hiddenApplicationWindows.removeAll()
     }
 
     private func restoreCaptureUI() {

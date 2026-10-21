@@ -29,24 +29,41 @@ final class HistoryStore: ObservableObject {
     func create(uploadPayload: UploadPayload) throws -> HistoryItem {
         try ensureDirectory()
         let filename = "\(UUID().uuidString).png"
-        if inMemory {
-            inMemoryImages[filename] = uploadPayload.pngData
-        } else {
-            try uploadPayload.pngData.write(to: rootURL.appendingPathComponent(filename), options: .atomic)
-        }
+        try writeImage(uploadPayload.pngData, named: filename)
         let item = HistoryItem(imageFilename: filename)
-        items.insert(item, at: 0)
-        trimToLimit()
-        try persist()
+        let priorItems = items
+        let nextItems = Array(([item] + priorItems).prefix(20))
+        let evicted = ([item] + priorItems).dropFirst(20).first
+        var evictedImage: Data?
+        do {
+            if let evicted {
+                evictedImage = try removeImage(named: evicted.imageFilename)
+            }
+            items = nextItems
+            try persist()
+        } catch {
+            items = priorItems
+            _ = try? removeImage(named: filename)
+            if let evicted, let evictedImage {
+                try? writeImage(evictedImage, named: evicted.imageFilename)
+            }
+            throw error
+        }
         return item
     }
 
     func update(_ item: HistoryItem) throws {
         guard let index = items.firstIndex(where: { $0.id == item.id }) else { return }
+        let priorItems = items
         var changed = item
         changed.updatedAt = Date()
         items[index] = changed
-        try persist()
+        do {
+            try persist()
+        } catch {
+            items = priorItems
+            throw error
+        }
     }
 
     func item(id: UUID?) -> HistoryItem? {
@@ -65,19 +82,78 @@ final class HistoryStore: ObservableObject {
 
     func delete(id: UUID) throws {
         guard let item = items.first(where: { $0.id == id }) else { return }
-        if inMemory { inMemoryImages.removeValue(forKey: item.imageFilename) }
-        else { try? FileManager.default.removeItem(at: rootURL.appendingPathComponent(item.imageFilename)) }
+        let priorItems = items
+        let removedImage = try removeImage(named: item.imageFilename)
         items.removeAll { $0.id == id }
-        try persist()
+        do {
+            try persist()
+        } catch {
+            items = priorItems
+            if let removedImage {
+                try? writeImage(removedImage, named: item.imageFilename)
+            }
+            throw error
+        }
     }
 
     func clear() throws {
-        for item in items {
-            if inMemory { inMemoryImages.removeValue(forKey: item.imageFilename) }
-            else { try? FileManager.default.removeItem(at: rootURL.appendingPathComponent(item.imageFilename)) }
+        let priorItems = items
+        var removedImages: [String: Data] = [:]
+        do {
+            for item in priorItems {
+                if let data = try removeImage(named: item.imageFilename) {
+                    removedImages[item.imageFilename] = data
+                }
+            }
+        } catch {
+            restoreImages(removedImages)
+            throw error
         }
         items = []
-        try persist()
+        do {
+            try persist()
+        } catch {
+            items = priorItems
+            restoreImages(removedImages)
+            throw error
+        }
+    }
+
+    private func writeImage(_ data: Data, named filename: String) throws {
+        if inMemory {
+            inMemoryImages[filename] = data
+            return
+        }
+        let url = rootURL.appendingPathComponent(filename)
+        try data.write(to: url, options: .atomic)
+        try FileManager.default.setAttributes(
+            [.posixPermissions: NSNumber(value: Int16(0o600))],
+            ofItemAtPath: url.path
+        )
+    }
+
+    @discardableResult
+    private func removeImage(named filename: String) throws -> Data? {
+        if inMemory {
+            return inMemoryImages.removeValue(forKey: filename)
+        }
+        let url = rootURL.appendingPathComponent(filename)
+        guard FileManager.default.fileExists(atPath: url.path) else { return nil }
+        let data = try Data(contentsOf: url)
+        try FileManager.default.removeItem(at: url)
+        return data
+    }
+
+    private func removeImagesBestEffort(for removed: ArraySlice<HistoryItem>) {
+        for item in removed {
+            _ = try? removeImage(named: item.imageFilename)
+        }
+    }
+
+    private func restoreImages(_ images: [String: Data]) {
+        for (filename, data) in images {
+            try? writeImage(data, named: filename)
+        }
     }
 
     private func ensureDirectory() throws {
@@ -93,27 +169,33 @@ final class HistoryStore: ObservableObject {
         do {
             try ensureDirectory()
             let data = try Data(contentsOf: indexURL)
-            items = try decoder.decode([HistoryItem].self, from: data)
+            let decoded = try decoder.decode([HistoryItem].self, from: data)
                 .sorted { $0.createdAt > $1.createdAt }
-            trimToLimit()
+            var needsPersist = decoded.count > 20
+            let recovered = decoded.map { item in
+                guard item.status == .processing else { return item }
+                var failed = item
+                failed.status = .failed
+                failed.errorMessage = "Recognition was interrupted when MyMathpix closed. Retry this Failed Record to reuse the original Snippet."
+                failed.updatedAt = Date()
+                needsPersist = true
+                return failed
+            }
+            items = Array(recovered.prefix(20))
+            removeImagesBestEffort(for: decoded.dropFirst(20))
+            if needsPersist { try? persist() }
         } catch {
             items = []
         }
-    }
-
-    private func trimToLimit() {
-        guard items.count > 20 else { return }
-        let removed = items.suffix(from: 20)
-        for item in removed {
-            if inMemory { inMemoryImages.removeValue(forKey: item.imageFilename) }
-            else { try? FileManager.default.removeItem(at: rootURL.appendingPathComponent(item.imageFilename)) }
-        }
-        items = Array(items.prefix(20))
     }
 
     private func persist() throws {
         if inMemory { return }
         try ensureDirectory()
         try encoder.encode(items).write(to: indexURL, options: .atomic)
+        try FileManager.default.setAttributes(
+            [.posixPermissions: NSNumber(value: Int16(0o600))],
+            ofItemAtPath: indexURL.path
+        )
     }
 }

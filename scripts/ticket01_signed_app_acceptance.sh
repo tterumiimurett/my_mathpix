@@ -197,13 +197,14 @@ launch_and_wait() {
 
 verify_safe_evidence_schema() {
     jq -e '
-        .schema == 5 and
+        .schema == 6 and
         (keys - [
             "acceptance_run_id", "active_display_count", "canonical_markdown_matches_fixture",
             "canonical_markdown_visible", "capture_completed",
-            "capture_triggered_by_global_shortcut", "expected_pixel_height",
+            "capture_triggered_by_global_shortcut", "captured_display_id", "expected_pixel_height",
             "expected_pixel_width", "failure_code", "fields_approved",
             "fixture_valid", "guard_band_absent", "last_failure_code", "overlay_dismissed",
+            "main_window_visible_when_recognition_started",
             "permission_preflight_granted", "permission_request_attempted",
             "permission_request_granted", "phase", "pixel_geometry_preserved",
             "png_pixel_height", "process_id",
@@ -211,7 +212,9 @@ verify_safe_evidence_schema() {
             "recent_history_count", "recent_history_visible",
             "recovery_probe_started", "recognizing_was_visible",
             "rendered_formula_visible", "rendered_table_visible", "result_complete",
-            "result_editor_visible", "schema", "second_capture_blocked",
+            "result_editor_visible", "result_editor_window_display_matches_capture",
+            "result_editor_window_presented", "result_editor_window_presented_after_completion",
+            "result_editor_window_uses_visible_area_top_left_inset", "schema", "second_capture_blocked",
             "selected_display_scale", "selected_display_was_secondary",
             "selection_point_height", "selection_point_width", "submit_count",
             "original_snippet_visible", "distinct_display_scale_count"
@@ -245,7 +248,7 @@ case "$mode" in
             exit 1
         fi
         jq -e --arg run_id "$session_run_id" --argjson process_id "$app_pid" '
-            .schema == 5 and
+            .schema == 6 and
             .acceptance_run_id == $run_id and
             .process_id == $process_id and
             .phase == "complete" and
@@ -255,6 +258,7 @@ case "$mode" in
             .permission_request_granted == null and
             .capture_completed == true and
             .overlay_dismissed == true and
+            .main_window_visible_when_recognition_started == false and
             .recognizing_was_visible == true and
             .second_capture_blocked == true and
             .submit_count == 1 and
@@ -279,6 +283,10 @@ case "$mode" in
             .rendered_formula_visible == true and
             .rendered_table_visible == true and
             .recent_history_visible == true
+            and .result_editor_window_presented == true
+            and .result_editor_window_presented_after_completion == true
+            and .result_editor_window_display_matches_capture == true
+            and .result_editor_window_uses_visible_area_top_left_inset == true
         ' "$evidence_file" >/dev/null
         if [[ "$mode" == "verify-secondary" ]]; then
             jq -e '

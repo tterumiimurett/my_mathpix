@@ -43,6 +43,9 @@ struct MyMathpixApp: App {
             }
             exit(passed ? 0 : 1)
         }
+        if launch.runsTicket04DailyWorkflowSelfTest {
+            exit(Ticket04DailyWorkflowSelfTest.run() ? 0 : 1)
+        }
         if launch.runsSelfTest {
             exit(SelfCheck.run() ? 0 : 1)
         }
@@ -50,9 +53,16 @@ struct MyMathpixApp: App {
             print("TICKET01_SCREEN_PERMISSION granted=\(CGPreflightScreenCaptureAccess() ? "yes" : "no")")
             exit(0)
         }
-        if launch.runsTicket01Acceptance {
+        if launch.runsTicket04ResultEditorWindowSelfTest {
+            _model = StateObject(wrappedValue: Ticket04ResultEditorWindowSelfTest.makeModel())
+        } else if launch.runsTicket01Acceptance {
             let defaults = UserDefaults(suiteName: "com.byterumi.mymathpix.ticket01.\(ProcessInfo.processInfo.processIdentifier)")!
             let reporter = Ticket01AcceptanceReporter(runID: launch.acceptanceRunID!)
+            let resultEditorWindowPresenter = AppKitResultEditorWindowPresenter(
+                presentationObservation: { observation in
+                    reporter.markResultEditorWindowPresented(observation)
+                }
+            )
             let permissionObservation: (ScreenCapturePermissionObservation) -> Void = { observation in
                 reporter.markPermissionObservation(observation)
             }
@@ -79,7 +89,8 @@ struct MyMathpixApp: App {
                 history: HistoryStore(inMemory: true),
                 usageRecords: UsageRecordStore(inMemory: true),
                 defaults: defaults,
-                ticket01Reporter: reporter
+                ticket01Reporter: reporter,
+                resultEditorWindowPresenter: resultEditorWindowPresenter
             ))
         } else {
             _model = StateObject(wrappedValue: AppModel())
@@ -87,24 +98,24 @@ struct MyMathpixApp: App {
     }
 
     var body: some Scene {
-        WindowGroup(appDisplayName) {
+        WindowGroup(appDisplayName, id: "main") {
             ContentView()
                 .environmentObject(model)
+                .background(MainWindowRegistrationView { window in
+                    model.registerMainWindow(window)
+                })
                 .frame(minWidth: 920, minHeight: 620)
+                .task {
+                    if CommandLine.arguments.contains("--ticket04-result-editor-window-self-test") {
+                        await Ticket04ResultEditorWindowSelfTest.run(model: model)
+                    }
+                }
         }
         .defaultSize(width: 1180, height: 760)
 
         MenuBarExtra(appDisplayName, systemImage: "function") {
-            Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {
-                model.startCapture()
-            }
-            .disabled(model.isProcessing)
-            Button("Show MyMathpix") { model.showMainWindow() }
-            Divider()
-            Text(model.statusMessage)
-            Divider()
-            SettingsLink { Text("Settings…") }
-            Button("Quit MyMathpix") { NSApp.terminate(nil) }
+            MenuBarContent()
+                .environmentObject(model)
         }
 
         Settings {
@@ -112,5 +123,31 @@ struct MyMathpixApp: App {
                 .environmentObject(model)
                 .frame(width: 540, height: 560)
         }
+    }
+}
+
+private struct MenuBarContent: View {
+    @Environment(\.openWindow) private var openWindow
+    @EnvironmentObject private var model: AppModel
+
+    var body: some View {
+        Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {
+            model.startCapture()
+        }
+        .disabled(model.isProcessing)
+        Button("Show MyMathpix") { showMainWindow() }
+        Divider()
+        Text(model.statusMessage)
+        Divider()
+        SettingsLink { Text("Settings…") }
+        Button("Quit MyMathpix") { NSApplication.shared.terminate(nil) }
+            .onAppear {
+                model.installMainWindowOpener { openWindow(id: "main") }
+            }
+    }
+
+    private func showMainWindow() {
+        openWindow(id: "main")
+        DispatchQueue.main.async { model.showMainWindow() }
     }
 }

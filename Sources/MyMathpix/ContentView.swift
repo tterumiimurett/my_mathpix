@@ -3,6 +3,7 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
+    @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var model: AppModel
     @Environment(\.openSettings) private var openSettings
 
@@ -24,7 +25,6 @@ struct ContentView: View {
                 } label: {
                     Label("Capture", systemImage: "viewfinder")
                 }
-                .keyboardShortcut("m", modifiers: [.control, .command])
                 .disabled(model.isProcessing)
 
                 if model.isProcessing {
@@ -43,6 +43,9 @@ struct ContentView: View {
                         .font(.caption.monospaced())
                         .accessibilityIdentifier("ticket01-safe-evidence")
                 }
+                SettingsLink {
+                    Label("Settings", systemImage: "gearshape")
+                }
             }
         }
         .alert("MyMathpix", isPresented: Binding(
@@ -58,6 +61,9 @@ struct ContentView: View {
             Button("OK", role: .cancel) { model.errorMessage = nil }
         } message: {
             Text(model.errorMessage ?? "")
+        }
+        .onAppear {
+            model.installMainWindowOpener { openWindow(id: "main") }
         }
     }
 

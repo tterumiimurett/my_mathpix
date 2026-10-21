@@ -168,6 +168,13 @@ enum SelfCheck {
             "unbound acceptance argument is rejected",
             failures: &failures
         )
+        check(
+            AppLaunchConfiguration(
+                arguments: ["MyMathpix", "--ticket04-daily-workflow-self-test"]
+            ).runsTicket04DailyWorkflowSelfTest,
+            "Ticket 04 signed workflow self-test is explicitly selected",
+            failures: &failures
+        )
         do {
             let markerRoot = FileManager.default.temporaryDirectory
                 .appendingPathComponent("MyMathpix-RelaunchMarker-SelfCheck-\(UUID().uuidString)")
@@ -351,8 +358,14 @@ enum SelfCheck {
             failures.append("local token persistence: \(error.localizedDescription)")
         }
 
+        check(
+            Ticket04DailyWorkflowSelfTest.run(),
+            "Ticket 04 daily workflow contract",
+            failures: &failures
+        )
+
         if failures.isEmpty {
-            print("MyMathpix self-test passed (45 checks).")
+            print("MyMathpix self-test passed (46 checks plus Ticket 04 workflow checks).")
             return true
         }
         print("MyMathpix self-test failed:")
