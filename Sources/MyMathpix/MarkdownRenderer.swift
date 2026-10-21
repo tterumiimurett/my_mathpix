@@ -1,15 +1,38 @@
 import Foundation
 
+enum OfflinePreviewNavigationPolicy {
+    static func allows(_ url: URL) -> Bool {
+        guard let scheme = url.scheme?.lowercased() else { return false }
+        return scheme == "about" || scheme == "file"
+    }
+}
+
 enum MarkdownRenderer {
-    static func document(for markdown: String) -> String {
-        let body = renderBody(MarkdownNormalizer.normalize(markdown))
+    enum FormulaRepresentation {
+        case preview
+        case markdown
+    }
+    static func document(
+        for markdown: String,
+        complexTableHTML: String? = nil
+    ) -> String {
+        let canonicalMarkdown = MarkdownNormalizer.normalize(markdown)
+        let body = renderBody(canonicalMarkdown)
+        let safeComplexTable = complexTableHTML
+            .flatMap(ComplexTableOutputSanitizer.sanitize)
+            .flatMap { table in table.isRepresented(in: canonicalMarkdown) ? nil : table.html }
+        let complexTableSection = safeComplexTable.map {
+            "<section aria-label=\"Complex Table Output\">\($0)</section>"
+        } ?? ""
         let resources = AppResources.directoryURL
         let css = resources.flatMap { try? String(contentsOf: $0.appendingPathComponent("katex.min.css"), encoding: .utf8) } ?? ""
         let js = resources.flatMap { try? String(contentsOf: $0.appendingPathComponent("katex.min.js"), encoding: .utf8) } ?? ""
 
         return """
         <!doctype html>
-        <html><head><meta charset="utf-8"><style>
+        <html><head><meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; navigate-to 'none'; img-src data:; font-src file: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+        <style>
         \(css)
         :root { color-scheme: light dark; }
         body { font: 15px -apple-system, BlinkMacSystemFont, sans-serif; margin: 22px; line-height: 1.55; overflow-wrap: anywhere; }
@@ -20,7 +43,7 @@ enum MarkdownRenderer {
         pre { padding: 12px; border-radius: 8px; background: color-mix(in srgb, currentColor 8%, transparent); overflow-x: auto; }
         blockquote { border-left: 3px solid color-mix(in srgb, currentColor 30%, transparent); margin-left: 0; padding-left: 12px; opacity: .85; }
         .math-display { overflow-x: auto; padding: 8px 0; }
-        </style></head><body>\(body)<script>
+        </style></head><body>\(body)\(complexTableSection)<script>
         \(js)
         document.querySelectorAll('[data-tex]').forEach(function(el) {
           try {
@@ -32,13 +55,17 @@ enum MarkdownRenderer {
         """
     }
 
-    static func renderBody(_ markdown: String) -> String {
-        let extracted = extractMath(markdown)
+    static func renderBody(
+        _ markdown: String,
+        forClipboard: Bool = false,
+        formulaRepresentation: FormulaRepresentation = .preview
+    ) -> String {
+        let extracted = extractMath(markdown, representation: formulaRepresentation)
         let lines = extracted.text.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
         var output: [String] = []
         var paragraph: [String] = []
         var index = 0
-        var inCode = false
+        var codeFence: MarkdownCodeFence?
         var codeLines: [String] = []
 
         func flushParagraph() {
@@ -49,18 +76,20 @@ enum MarkdownRenderer {
 
         while index < lines.count {
             let line = lines[index]
-            if line.hasPrefix("```") {
-                flushParagraph()
-                if inCode {
+            if let activeFence = codeFence {
+                if activeFence.closes(line) {
                     output.append("<pre><code>\(MarkdownNormalizer.escapeHTML(codeLines.joined(separator: "\n")))</code></pre>")
                     codeLines.removeAll()
+                    codeFence = nil
+                } else {
+                    codeLines.append(line)
                 }
-                inCode.toggle()
                 index += 1
                 continue
             }
-            if inCode {
-                codeLines.append(line)
+            if let openingFence = MarkdownCodeFence.opening(in: line) {
+                flushParagraph()
+                codeFence = openingFence
                 index += 1
                 continue
             }
@@ -72,7 +101,7 @@ enum MarkdownRenderer {
                     tableLines.append(lines[index])
                     index += 1
                 }
-                output.append(renderTable(tableLines, math: extracted.math))
+                output.append(renderTable(tableLines, math: extracted.math, forClipboard: forClipboard))
                 continue
             }
             if line.trimmingCharacters(in: .whitespaces).isEmpty {
@@ -101,7 +130,7 @@ enum MarkdownRenderer {
             index += 1
         }
         flushParagraph()
-        if inCode, !codeLines.isEmpty {
+        if codeFence != nil, !codeLines.isEmpty {
             output.append("<pre><code>\(MarkdownNormalizer.escapeHTML(codeLines.joined(separator: "\n")))</code></pre>")
         }
         return output.joined(separator: "\n")
@@ -110,11 +139,22 @@ enum MarkdownRenderer {
     private struct MathToken {
         let tex: String
         let display: Bool
+        let representation: FormulaRepresentation
     }
 
-    private static func extractMath(_ source: String) -> (text: String, math: [String: MathToken]) {
-        var text = source
+    private struct ProtectedCode {
+        let text: String
+        let replacements: [String: String]
+    }
+
+    private static func extractMath(
+        _ source: String,
+        representation: FormulaRepresentation
+    ) -> (text: String, math: [String: MathToken]) {
+        let protectedCode = protectCode(in: source)
+        var text = protectedCode.text
         var tokens: [String: MathToken] = [:]
+        var tokenIndex = 0
         let patterns: [(String, Bool)] = [
             (#"\$\$([\s\S]*?)\$\$"#, true),
             (#"\\\[([\s\S]*?)\\\]"#, true),
@@ -127,51 +167,176 @@ enum MarkdownRenderer {
             for match in matches {
                 guard let range = Range(match.range(at: 0), in: text),
                       let contentRange = Range(match.range(at: 1), in: text) else { continue }
-                let key = "@@MATH\(tokens.count)@@"
-                tokens[key] = MathToken(tex: String(text[contentRange]), display: display)
+                let key = uniquePlaceholder(
+                    kind: "MATH",
+                    index: &tokenIndex,
+                    avoiding: source
+                )
+                tokens[key] = MathToken(tex: String(text[contentRange]), display: display, representation: representation)
                 text.replaceSubrange(range, with: key)
             }
+        }
+        for (key, code) in protectedCode.replacements {
+            text = text.replacingOccurrences(of: key, with: code)
         }
         return (text, tokens)
     }
 
+    private static func protectCode(in source: String) -> ProtectedCode {
+        let lines = source.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
+        var output: [String] = []
+        var replacements: [String: String] = [:]
+        var tokenIndex = 0
+        var index = 0
+
+        while index < lines.count {
+            if let openingFence = MarkdownCodeFence.opening(in: lines[index]) {
+                var block = [lines[index]]
+                index += 1
+                while index < lines.count {
+                    block.append(lines[index])
+                    let isClosing = openingFence.closes(lines[index])
+                    index += 1
+                    if isClosing { break }
+                }
+                let key = uniquePlaceholder(
+                    kind: "CODE",
+                    index: &tokenIndex,
+                    avoiding: source
+                )
+                replacements[key] = block.joined(separator: "\n")
+                output.append(key)
+            } else {
+                output.append(protectInlineCode(
+                    in: lines[index],
+                    originalSource: source,
+                    replacements: &replacements,
+                    tokenIndex: &tokenIndex
+                ))
+                index += 1
+            }
+        }
+        return ProtectedCode(text: output.joined(separator: "\n"), replacements: replacements)
+    }
+
+    private static func protectInlineCode(
+        in line: String,
+        originalSource: String,
+        replacements: inout [String: String],
+        tokenIndex: inout Int
+    ) -> String {
+        let characters = Array(line)
+        var output = ""
+        var index = 0
+
+        while index < characters.count {
+            guard characters[index] == "`" else {
+                output.append(characters[index])
+                index += 1
+                continue
+            }
+
+            let openingStart = index
+            while index < characters.count, characters[index] == "`" { index += 1 }
+            let delimiterLength = index - openingStart
+            var closingStart = index
+            var closingEnd: Int?
+            while closingStart < characters.count {
+                guard characters[closingStart] == "`" else {
+                    closingStart += 1
+                    continue
+                }
+                var runEnd = closingStart
+                while runEnd < characters.count, characters[runEnd] == "`" { runEnd += 1 }
+                if runEnd - closingStart == delimiterLength {
+                    closingEnd = runEnd
+                    break
+                }
+                closingStart = runEnd
+            }
+
+            guard let closingEnd else {
+                output += String(characters[openingStart...])
+                break
+            }
+            let key = uniquePlaceholder(
+                kind: "CODE",
+                index: &tokenIndex,
+                avoiding: originalSource
+            )
+            replacements[key] = String(characters[openingStart..<closingEnd])
+            output += key
+            index = closingEnd
+        }
+        return output
+    }
+
+    private static func uniquePlaceholder(
+        kind: String,
+        index: inout Int,
+        avoiding source: String
+    ) -> String {
+        while true {
+            let candidate = "\u{E000}MYMATHPIX_\(kind)_\(index)\u{E001}"
+            index += 1
+            if !source.contains(candidate) { return candidate }
+        }
+    }
+
     private static func inline(_ source: String, math: [String: MathToken]) -> String {
-        var text = MarkdownNormalizer.escapeHTML(source)
-        text = replace(pattern: #"`([^`]+)`"#, in: text, template: "<code>$1</code>")
+        var code: [String: String] = [:]
+        var index = 0
+        let protected = protectInlineCode(
+            in: source, originalSource: source, replacements: &code, tokenIndex: &index
+        )
+        var text = MarkdownNormalizer.escapeHTML(protected)
         text = replace(pattern: #"\*\*([^*]+)\*\*"#, in: text, template: "<strong>$1</strong>")
         text = replace(pattern: #"(?<!\*)\*([^*]+)\*(?!\*)"#, in: text, template: "<em>$1</em>")
         for (key, token) in math {
             text = text.replacingOccurrences(of: key, with: mathHTML(token))
         }
+        for (key, literal) in code {
+            let delimiterLength = literal.prefix { $0 == "`" }.count
+            let content = String(literal.dropFirst(delimiterLength).dropLast(delimiterLength))
+            text = text.replacingOccurrences(of: key, with: "<code>\(MarkdownNormalizer.escapeHTML(content))</code>")
+        }
         return text
     }
 
     private static func mathHTML(_ token: MathToken) -> String {
+        if token.representation == .markdown {
+            let delimiter = token.display ? "$$" : "$"
+            return MarkdownNormalizer.escapeHTML(delimiter + token.tex + delimiter)
+        }
         let encoded = Data(token.tex.utf8).base64EncodedString()
         let className = token.display ? "math-display" : "math-inline"
         return "<span class=\"\(className)\" data-tex=\"\(encoded)\" data-display=\"\(token.display ? "1" : "0")\"></span>"
     }
 
-    private static func renderTable(_ lines: [String], math: [String: MathToken]) -> String {
+    private static func renderTable(_ lines: [String], math: [String: MathToken], forClipboard: Bool) -> String {
         guard lines.count >= 2 else { return "" }
         let rows = lines.enumerated().compactMap { offset, line -> [String]? in
             if offset == 1 { return nil }
             return cells(line)
         }
         guard let header = rows.first else { return "" }
-        let head = "<thead><tr>" + header.map { "<th>\(inline($0, math: math))</th>" }.joined() + "</tr></thead>"
+        func cellHTML(_ source: String) -> String {
+            guard forClipboard else { return inline(source, math: math) }
+            var html = MarkdownNormalizer.escapeHTML(TableCellText.plainText(source))
+            for (key, token) in math {
+                html = html.replacingOccurrences(of: key, with: mathHTML(token))
+            }
+            return html
+        }
+        let head = "<thead><tr>" + header.map { "<th>\(cellHTML($0))</th>" }.joined() + "</tr></thead>"
         let body = rows.dropFirst().map { row in
-            "<tr>" + row.map { "<td>\(inline($0, math: math))</td>" }.joined() + "</tr>"
+            "<tr>" + row.map { "<td>\(cellHTML($0))</td>" }.joined() + "</tr>"
         }.joined()
         return "<table>\(head)<tbody>\(body)</tbody></table>"
     }
 
     private static func cells(_ line: String) -> [String] {
-        var value = line.trimmingCharacters(in: .whitespaces)
-        if value.hasPrefix("|") { value.removeFirst() }
-        if value.hasSuffix("|") { value.removeLast() }
-        return value.split(separator: "|", omittingEmptySubsequences: false)
-            .map { $0.trimmingCharacters(in: .whitespaces) }
+        MarkdownNormalizer.markdownTableCells(in: line)
     }
 
     private static func isTableDelimiter(_ line: String) -> Bool {
