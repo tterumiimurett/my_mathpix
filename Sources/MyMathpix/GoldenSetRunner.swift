@@ -119,40 +119,27 @@ enum GoldenSetRunner {
                         return 0
                     }
                     let start = Date()
-                    var record: [String: Any] = ["schema": 1, "caseID": id, "mode": mode.rawValue, "inputSHA256": inputHash, "startedAt": ISO8601DateFormatter().string(from: start), "corpusSHA256": digest(manifestData), "configurationSHA256": configurationHash, "artifactSHA256": artifactHash, "contentSHA256": item["contentSHA256"] as? String ?? ""]
+                    var record = AttemptRecord(caseID: id, mode: mode, inputSHA256: inputHash,
+                        startedAt: start, corpusSHA256: digest(manifestData), configurationSHA256: configurationHash,
+                        artifactSHA256: artifactHash, contentSHA256: item["contentSHA256"] as? String ?? "")
                     do {
                         let result = try await service.recognize(uploadPayload: UploadPayload(pngData: png), mode: mode)
                         let canonical = MarkdownNormalizer.normalize(result.markdown)
                         let safeHTML = result.html.flatMap { ComplexTableOutputSanitizer.sanitize($0)?.html }
-                        record["status"] = "complete"
-                        record["rawMarkdown"] = result.markdown
-                        record["rawHTML"] = result.html ?? NSNull()
-                        record["rawOutputSHA256"] = digest(Data((result.markdown + "\0" + (result.html ?? "")).utf8))
-                        record["canonicalMarkdown"] = canonical
-                        record["complexTableHTML"] = safeHTML ?? NSNull()
-                        record["outputSHA256"] = digest(Data((canonical + "\0" + (safeHTML ?? "")).utf8))
-                        record["runtimeSeconds"] = result.runtime ?? NSNull()
-                        record["costCents"] = result.costValue ?? NSNull()
-                        record["costBreakdownJSON"] = result.costSummary ?? NSNull()
-                        record["automaticRetryCount"] = result.automaticRetryCount
-                        record["wallSeconds"] = Date().timeIntervalSince(start)
+                        record.recognized(result, canonical: canonical, safeHTML: safeHTML,
+                            wallSeconds: Date().timeIntervalSince(start))
                         // Save the actual service result before preview/clipboard work; resume cannot spend again.
-                        try write(record, to: resultURL)
+                        try write(record.json, to: resultURL)
                         let consumption = try await consumptionEvidence(canonical: canonical, safeHTML: safeHTML, png: png, snapshotter: snapshotter, stem: id + "-" + mode.rawValue, output: previewDirectory)
-                        record["consumption"] = consumption
+                        record.consumed(consumption)
                     } catch {
-                        if record["status"] == nil {
-                            record["status"] = "failed"
-                            record["errorCode"] = (error as? AppError)?.diagnosticCode.rawValue ?? "recognition_or_local_io_failure"
-                            record["outputSHA256"] = NSNull()
-                            record["wallSeconds"] = Date().timeIntervalSince(start)
-                        } else { record["consumptionError"] = "preview_or_clipboard_failed" }
+                        record.failed(error, wallSeconds: Date().timeIntervalSince(start))
                     }
-                    try write(record, to: resultURL)
+                    try write(record.json, to: resultURL)
                     attempted += 1
-                    let cost = record["costCents"] as? Double
+                    let cost = record.costValue
                     let costText = cost.map { String(format: "%.4f", $0) } ?? "unknown"
-                    print("GOLDEN_LIVE case=\(id) mode=\(mode.rawValue) status=\(record["status"] as? String ?? "failed") wall=\(String(format: "%.2f", Date().timeIntervalSince(start))) costCents=\(costText)")
+                    print("GOLDEN_LIVE case=\(id) mode=\(mode.rawValue) status=\(record.statusLabel) wall=\(String(format: "%.2f", Date().timeIntervalSince(start))) costCents=\(costText)")
                 }
             }
             print("GOLDEN_LIVE_COMPLETE newAttempts=\(attempted) output=\(output.path)")
@@ -161,6 +148,102 @@ enum GoldenSetRunner {
             // Fixed codes only: service messages and credentials never enter console artifacts.
             print("GOLDEN_COMMAND_FAILED code=\((error as? GoldenError)?.rawValue ?? "local_io_or_render")")
             return 1
+        }
+    }
+
+    /// State for one fixed Golden Attempt. Dictionaries exist only at the JSON boundary.
+    @MainActor
+    private struct AttemptRecord {
+        struct Recognition {
+            let result: DatalabResult
+            let canonical: String
+            let safeHTML: String?
+            let wallSeconds: TimeInterval
+        }
+        enum Consumption {
+            case pending
+            case complete([String: Any]) // Existing public consumption evidence JSON.
+            case failed
+        }
+        enum Outcome {
+            case awaitingRecognition
+            case recognized(Recognition, Consumption)
+            case failed(code: String, wallSeconds: TimeInterval)
+        }
+        let caseID: String
+        let mode: RecognitionMode
+        let inputSHA256: String
+        let startedAt: Date
+        let corpusSHA256: String
+        let configurationSHA256: String
+        let artifactSHA256: String
+        let contentSHA256: String
+        var outcome: Outcome = .awaitingRecognition
+
+        mutating func recognized(_ result: DatalabResult, canonical: String, safeHTML: String?, wallSeconds: TimeInterval) {
+            outcome = .recognized(Recognition(result: result, canonical: canonical,
+                safeHTML: safeHTML, wallSeconds: wallSeconds), .pending)
+        }
+        mutating func consumed(_ evidence: [String: Any]) {
+            guard case .recognized(let recognition, _) = outcome else { return }
+            outcome = .recognized(recognition, .complete(evidence))
+        }
+        mutating func failed(_ error: Error, wallSeconds: TimeInterval) {
+            switch outcome {
+            case .awaitingRecognition:
+                outcome = .failed(code: (error as? AppError)?.diagnosticCode.rawValue
+                    ?? "recognition_or_local_io_failure", wallSeconds: wallSeconds)
+            case .recognized(let recognition, _):
+                outcome = .recognized(recognition, .failed)
+            case .failed:
+                break
+            }
+        }
+        var statusLabel: String {
+            switch outcome {
+            case .awaitingRecognition: "recognizing"
+            case .recognized: "complete"
+            case .failed: "failed"
+            }
+        }
+        var costValue: Double? {
+            guard case .recognized(let recognition, _) = outcome else { return nil }
+            return recognition.result.costValue
+        }
+        var json: [String: Any] {
+            var value: [String: Any] = ["schema": 1, "caseID": caseID, "mode": mode.rawValue,
+                "inputSHA256": inputSHA256, "startedAt": ISO8601DateFormatter().string(from: startedAt),
+                "corpusSHA256": corpusSHA256, "configurationSHA256": configurationSHA256,
+                "artifactSHA256": artifactSHA256, "contentSHA256": contentSHA256]
+            switch outcome {
+            case .awaitingRecognition:
+                break
+            case .failed(let code, let wallSeconds):
+                value["status"] = "failed"
+                value["errorCode"] = code
+                value["outputSHA256"] = NSNull()
+                value["wallSeconds"] = wallSeconds
+            case .recognized(let recognition, let consumption):
+                let result = recognition.result
+                value["status"] = "complete"
+                value["rawMarkdown"] = result.markdown
+                value["rawHTML"] = result.html ?? NSNull()
+                value["rawOutputSHA256"] = GoldenSetRunner.digest(Data((result.markdown + "\0" + (result.html ?? "")).utf8))
+                value["canonicalMarkdown"] = recognition.canonical
+                value["complexTableHTML"] = recognition.safeHTML ?? NSNull()
+                value["outputSHA256"] = GoldenSetRunner.digest(Data((recognition.canonical + "\0" + (recognition.safeHTML ?? "")).utf8))
+                value["runtimeSeconds"] = result.runtime ?? NSNull()
+                value["costCents"] = result.costValue ?? NSNull()
+                value["costBreakdownJSON"] = result.costSummary ?? NSNull()
+                value["automaticRetryCount"] = result.automaticRetryCount
+                value["wallSeconds"] = recognition.wallSeconds
+                switch consumption {
+                case .pending: break
+                case .complete(let evidence): value["consumption"] = evidence
+                case .failed: value["consumptionError"] = "preview_or_clipboard_failed"
+                }
+            }
+            return value
         }
     }
 
@@ -333,7 +416,12 @@ private final class GoldenSnapshotter: NSObject, WKNavigationDelegate {
         }
         return darkPixels >= 10
     }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) { navigationTimer?.invalidate(); self.navigation?.resume(); self.navigation = nil }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) { navigationTimer?.invalidate(); self.navigation?.resume(throwing: error); self.navigation = nil }
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) { navigationTimer?.invalidate(); self.navigation?.resume(throwing: error); self.navigation = nil }
+    private func finishNavigation(_ result: Result<Void, Error>) {
+        navigationTimer?.invalidate()
+        navigation?.resume(with: result)
+        navigation = nil
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) { finishNavigation(.success(())) }
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) { finishNavigation(.failure(error)) }
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) { finishNavigation(.failure(error)) }
 }
