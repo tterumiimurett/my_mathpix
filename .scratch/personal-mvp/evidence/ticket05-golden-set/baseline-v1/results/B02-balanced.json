@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{a+b}{c-d}$$",
+  "caseID" : "B02",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{a+b}{c-d}$$</p></body></html>",
+        "plain" : "$$\\frac{a+b}{c-d}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{a+b}{c-d}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mrow><mi>c</mi><mo>−</mo><mi>d</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{a+b}{c-d}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{a+b}{c-d}$$",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "1a601789401c780d34d568488251b422a501c6f604d16a9fa0d901ca24c6bce3",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B02-balanced.png",
+    "previewSHA256" : "eb84b4c4ebc01c4f8211e8240c256a917e3ba136618bd0d8f987460dc9147537"
+  },
+  "contentSHA256" : "a6a360fd2b828577a18575801852d12322ab95cd4d7b9c9551a6a3b50c6a5934",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "054d459af68b1634825a3404c79454b0e2ca7ae90d0c5bc4c9a25224cfdab020",
+  "mode" : "balanced",
+  "outputSHA256" : "5efeecebca5dbe481bddeec7ebc2734b674b97db460ef718f8c9cbdb88fb92d4",
+  "runtimeSeconds" : 1.6231758594512939,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:57:09Z",
+  "status" : "complete",
+  "wallSeconds" : 4.6178569793701172
+}

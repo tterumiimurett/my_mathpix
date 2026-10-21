@@ -37,6 +37,21 @@ enum GoldenSetRunner {
                   var cases = manifest["cases"] as? [[String: Any]], cases.count == 80 else {
                 throw GoldenError.manifest
             }
+            if arguments.contains("--golden-set-preview-self-test") {
+                let snapshotter = GoldenSnapshotter(resources: resources)
+                let document = "<!doctype html><html><body style='margin:22px'><div style='height:820px'></div><div style='height:24px;background:#000;color:#fff'>END</div></body></html>"
+                let png = try await snapshotter.png(document: document, expectedText: "END")
+                try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+                try png.write(to: root.appendingPathComponent("PreviewSelfTest.png"), options: .atomic)
+                guard let bitmap = NSBitmapImageRep(data: png) else { throw GoldenError.correction }
+                let blackRows = (max(0, bitmap.pixelsHigh - 160)..<bitmap.pixelsHigh).filter { y in
+                    guard let c = bitmap.colorAt(x: bitmap.pixelsWide / 2, y: y)?.usingColorSpace(.deviceRGB) else { return false }
+                    return c.redComponent + c.greenComponent + c.blueComponent < 0.3
+                }.count
+                let passed = blackRows >= 40
+                print("GOLDEN_PREVIEW_SELF_TEST_\(passed ? "OK" : "FAIL") height=\(bitmap.pixelsHigh) footerRows=\(blackRows)")
+                return passed ? 0 : 1
+            }
             if arguments.contains("--golden-set-render") {
                 let output = root.appendingPathComponent("Corpus", isDirectory: true)
                 try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
@@ -110,6 +125,9 @@ enum GoldenSetRunner {
                         let canonical = MarkdownNormalizer.normalize(result.markdown)
                         let safeHTML = result.html.flatMap { ComplexTableOutputSanitizer.sanitize($0)?.html }
                         record["status"] = "complete"
+                        record["rawMarkdown"] = result.markdown
+                        record["rawHTML"] = result.html ?? NSNull()
+                        record["rawOutputSHA256"] = digest(Data((result.markdown + "\0" + (result.html ?? "")).utf8))
                         record["canonicalMarkdown"] = canonical
                         record["complexTableHTML"] = safeHTML ?? NSNull()
                         record["outputSHA256"] = digest(Data((canonical + "\0" + (safeHTML ?? "")).utf8))
@@ -238,7 +256,7 @@ private final class GoldenSnapshotter: NSObject, WKNavigationDelegate {
     }
 
     func png(document: String, expectedText: String? = nil) async throws -> Data {
-        webView.setFrameSize(NSSize(width: 800, height: 600))
+        try await setViewport(height: 120)
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             navigation = continuation
             navigationTimer = Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { [weak self] _ in
@@ -250,15 +268,23 @@ private final class GoldenSnapshotter: NSObject, WKNavigationDelegate {
             webView.loadHTMLString(document, baseURL: resources)
         }
         _ = try await webView.callAsyncJavaScript("await document.fonts.ready; return true;", arguments: [:], in: nil, contentWorld: .page)
-        let observation = try await webView.evaluateJavaScript("({source:document.querySelectorAll('[data-tex]').length,rendered:document.querySelectorAll('.katex').length,errors:document.querySelectorAll('.katex-error').length,text:document.body.innerText})") as? [String: Any]
+        // Include margins and synchronize the host window, WK viewport, layout and snapshot.
+        // Merely resizing the view to body.scrollHeight clips the bottom margin/content.
+        for _ in 0..<3 {
+            let height = try await webView.evaluateJavaScript("Math.ceil(Math.max(120,document.documentElement.scrollHeight,document.body.getBoundingClientRect().bottom + parseFloat(getComputedStyle(document.body).marginBottom)))") as? Double ?? 120
+            guard height <= 4096 else { throw CocoaError(.fileReadTooLarge) }
+            try await setViewport(height: height)
+            let overflow = try await webView.evaluateJavaScript("document.documentElement.scrollHeight > window.innerHeight + 1") as? Bool ?? true
+            if !overflow { break }
+        }
+        let observation = try await webView.evaluateJavaScript("({source:document.querySelectorAll('[data-tex]').length,rendered:document.querySelectorAll('.katex').length,errors:document.querySelectorAll('.katex-error').length,text:document.body.innerText,overflow:document.documentElement.scrollHeight > window.innerHeight + 1})") as? [String: Any]
         guard let observation,
               observation["source"] as? Int == observation["rendered"] as? Int,
               observation["errors"] as? Int == 0,
+              observation["overflow"] as? Bool == false,
               let observedText = observation["text"] as? String, !observedText.isEmpty,
               expectedText == nil || observedText.contains(expectedText!) else { throw CocoaError(.fileReadCorruptFile) }
         lastObservedText = observedText
-        let height = try await webView.evaluateJavaScript("Math.max(120,document.body.scrollHeight)") as? Double ?? 600
-        webView.setFrameSize(NSSize(width: 800, height: min(1600, height)))
         let config = WKSnapshotConfiguration()
         config.rect = webView.bounds
         config.snapshotWidth = 800
@@ -268,6 +294,19 @@ private final class GoldenSnapshotter: NSObject, WKNavigationDelegate {
               let bitmap = Self.normalizedBitmap(rawBitmap),
               let png = bitmap.representation(using: .png, properties: [:]), bitmap.pixelsWide == 1600, bitmap.pixelsHigh >= 240, Self.hasVisiblePixels(bitmap) else { throw CocoaError(.fileWriteUnknown) }
         return png
+    }
+    private func setViewport(height: Double) async throws {
+        let size = NSSize(width: 800, height: height)
+        window.setContentSize(size)
+        webView.setFrameSize(size)
+        window.contentView?.layoutSubtreeIfNeeded()
+        for _ in 0..<20 {
+            let viewport = try await webView.evaluateJavaScript("({width:window.innerWidth,height:window.innerHeight})") as? [String: Double]
+            if let viewport, abs((viewport["width"] ?? 0) - 800) < 1,
+               abs((viewport["height"] ?? 0) - height) < 1 { return }
+            try await Task.sleep(for: .milliseconds(50))
+        }
+        throw CocoaError(.fileReadUnknown)
     }
     private static func normalizedBitmap(_ source: NSBitmapImageRep) -> NSBitmapImageRep? {
         if source.pixelsWide == 1600 { return source }

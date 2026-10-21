@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 10: evaluate  $x^2$  before comparing the measurements.\n\n$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M10",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Split</th>\n    <th>Samples</th>\n   </tr>\n   <tr>\n    <td>Train</td>\n    <td>8000</td>\n   </tr>\n   <tr>\n    <td>Validation</td>\n    <td>1000</td>\n   </tr>\n   <tr>\n    <td>Test</td>\n    <td>1000</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 10: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$</p>\n<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 10: evaluate  $x^2$  before comparing the measurements.\n\n$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 10: evaluate  $x^2$  before comparing the measurements.\n\n$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 10: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"normal\">∇</mi><mi>f</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mtable rowspacing=\"0.16em\" columnalign=\"center\" columnspacing=\"1em\"><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi><mi mathvariant=\"normal\">/</mi><mi mathvariant=\"normal\">∂</mi><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi><mi mathvariant=\"normal\">/</mi><mi mathvariant=\"normal\">∂</mi><mi>y</mi></mrow></mstyle></mtd></mtr></mtable><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}</annotation></semantics></math></span></p>\n<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 10: evaluate  $x^2$  before comparing the measurements.\n\n$$\\nabla f = \\begin{pmatrix} \\partial f / \\partial x \\\\ \\partial f / \\partial y \\end{pmatrix}$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>",
+        "plain" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "tsv" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "tsv" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d05eeef2c02a5f7edb41f2c9ecf09b9c74dc25be001e04389b8c504d3c181c42",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M10-balanced.png",
+    "previewSHA256" : "e24c3bc67a1a1223fa0cacd260a08d3cb27674c38be58d22daa16a18b5e72b2f"
+  },
+  "contentSHA256" : "120f41ee1dbbfcb4435cf1d9b1a6634eceb4ea6ddc58af1136ce0078375744be",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "db42dac76db99cac1f157abad2dc3ca705200406b64f2e31b2a3a6d8a9426027",
+  "mode" : "balanced",
+  "outputSHA256" : "d43f112925411a90559cd010cb8a3daea2e62b377f9daedbdfb7830d3f3fbf23",
+  "runtimeSeconds" : 1.5803718566894531,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:55:13Z",
+  "status" : "complete",
+  "wallSeconds" : 4.3938819169998169
+}

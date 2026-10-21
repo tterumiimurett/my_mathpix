@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Epoch</b> | <b>Loss</b> |\n|--------------|-------------|\n| 1            | 2.50        |\n| 2            | 1.20        |\n| 3            | 0.65        |",
+  "caseID" : "T03",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Epoch</th>\n    <th>Loss</th>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2.50</td>\n   </tr>\n   <tr>\n    <td>2</td>\n    <td>1.20</td>\n   </tr>\n   <tr>\n    <td>3</td>\n    <td>0.65</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Epoch</b> | <b>Loss</b> |\n|--------------|-------------|\n| 1            | 2.50        |\n| 2            | 1.20        |\n| 3            | 0.65        |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Epoch</b> | <b>Loss</b> |\n|--------------|-------------|\n| 1            | 2.50        |\n| 2            | 1.20        |\n| 3            | 0.65        |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Epoch</b> | <b>Loss</b> |\n|--------------|-------------|\n| 1            | 2.50        |\n| 2            | 1.20        |\n| 3            | 0.65        |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table>",
+        "plain" : "Epoch\tLoss\n1\t2.50\n2\t1.20\n3\t0.65",
+        "tsv" : "Epoch\tLoss\n1\t2.50\n2\t1.20\n3\t0.65",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Epoch\tLoss\n1\t2.50\n2\t1.20\n3\t0.65",
+        "tsv" : "Epoch\tLoss\n1\t2.50\n2\t1.20\n3\t0.65",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "2e04a0d58f65c6043522b4cf48eb4fb0baf95e90e73167b02f06ca4a9d79149a",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T03-fast.png",
+    "previewSHA256" : "5724db379201e026c48fc1ce8bea3d257d37f21f2b6624c6b99f1254731ea658"
+  },
+  "contentSHA256" : "f45c28d287da58a7c3cbbc065a9456b99b7489784f640ce951417279e3bfc6c1",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "5ff511dc740cb38e3b5cd58069719c9dc0630add5d7dc0421dd058763ca8c25c",
+  "mode" : "fast",
+  "outputSHA256" : "51fa098c647f02d6696bf4ad380a6a297a8a3a6410e995fffa2234693e3e4b1a",
+  "runtimeSeconds" : 0.58031177520751953,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:50:44Z",
+  "status" : "complete",
+  "wallSeconds" : 2.9403480291366577
+}

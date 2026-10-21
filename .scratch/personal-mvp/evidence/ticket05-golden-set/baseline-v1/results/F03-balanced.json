@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$e^{i\\pi}+1=0$$",
+  "caseID" : "F03",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$e^{i\\pi}+1=0$$</p></body></html>",
+        "plain" : "$$e^{i\\pi}+1=0$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$e^{i\\pi}+1=0$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>π</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">e^{i\\pi}+1=0</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$e^{i\\pi}+1=0$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "b03e0a2f699229249c363b2eb732eca110636027fc5e393363abeb69e16cfddc",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F03-balanced.png",
+    "previewSHA256" : "1c9548149cb54cff4e1b6f9329d102a2a9bd3685197de003331af27eae7601af"
+  },
+  "contentSHA256" : "67c619651703c3ca4cfeb5295493c4a5e6ac7a39678028c51df01f12b77e623c",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "88447b2175f4c194baad610e8dfc8e7711077e420f8627e2230c8b0334f32a43",
+  "mode" : "balanced",
+  "outputSHA256" : "1b773312edac2865b33d464402a38be44da6be36f5de62ca5a170e087cf3e3c1",
+  "runtimeSeconds" : 2.6583375930786133,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:45:26Z",
+  "status" : "complete",
+  "wallSeconds" : 5.5100839138031006
+}

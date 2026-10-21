@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+  "caseID" : "M12",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Variable</th>\n    <th>Value</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>2</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>5</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The first experiment uses  $x = 2$ .</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>Compare the second experiment.</p>\n<table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table>\n<p>Both tables are required.</p></body></html>",
+        "plain" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The first experiment uses  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x = 2</annotation></semantics></math></span> .</p>\n<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>\n<p>Compare the second experiment.</p>\n<table><thead><tr><th>Epoch</th><th>Loss</th></tr></thead><tbody><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></tbody></table>\n<p>Both tables are required.</p></body></html>",
+        "plain" : "The first experiment uses  $x = 2$ .\n\n| Variable | Value |\n|----------|-------|\n| x        | 2     |\n| y        | 5     |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n|-------|------|\n| 1     | 2.50 |\n| 2     | 1.20 |\n| 3     | 0.65 |\n\nBoth tables are required.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></tbody></table>",
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Variable\tValue\nx\t2\ny\t5",
+        "tsv" : "Variable\tValue\nx\t2\ny\t5",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d107ac379fb4e4d0cd9f1e4d46010d3bf44236d621e0ed3f5019b70930e39bde",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M12-balanced.png",
+    "previewSHA256" : "5d0658fd9bd282618a7591fea88ab9ff575e305d8c6fa9ac90d4c17e9867971a"
+  },
+  "contentSHA256" : "d0c27b25e4ad40c2af647e5a1a03b2481d8ddcd55fb7a91d895fc773361b0b1a",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "a0c2b38aff0631353fe58a94bc7375d63eb81470ba2239bc1b0ba6546c42bb7a",
+  "mode" : "balanced",
+  "outputSHA256" : "f634d08b6daee4d279145ee694a4c90e85aea53d35a96d8f7e6c5ff84daed3df",
+  "runtimeSeconds" : 1.0910310745239258,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:55:30Z",
+  "status" : "complete",
+  "wallSeconds" : 4.8543180227279663
+}

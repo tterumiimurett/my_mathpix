@@ -59,4 +59,14 @@ class GoldenReportTests(unittest.TestCase):
         self.assertEqual(report['measurement']['costAvailableAttempts'],2)
         self.assertEqual(report['measurement']['costEvidence'][0]['source'],'cost_breakdown.final_cost_cents')
 
+    def test_confirmed_failures_can_make_gate_impossible_before_all_reviews_arrive(self):
+        cases=[{'id':f'{prefix}{i:02}','category':category,'inputSHA256':'input','contentSHA256':'truth'} for prefix,category,count in [('F','formula',30),('T','table',20),('M','mixed',20),('B','boundary',10)] for i in range(count)]
+        binding={'corpusSHA256':'corpus','configurationSHA256':'config','artifactSHA256':'binary'}
+        results=[dict(binding,caseID=f'F{i:02}',mode='fast',inputSHA256='input',contentSHA256='truth',status='failed',errorCode='timeout') for i in range(4)]
+        report=module.summarize(cases,results,[],'fast',binding)
+        self.assertEqual(report['ordinary']['failed'],4)
+        self.assertEqual(report['ordinary']['pending'],66)
+        self.assertEqual(report['ordinary']['total'],70)
+        self.assertEqual(report['gate'],'fail')
+
 if __name__ == '__main__': unittest.main()

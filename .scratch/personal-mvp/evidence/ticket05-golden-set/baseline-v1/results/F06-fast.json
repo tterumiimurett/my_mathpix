@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+  "caseID" : "F06",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$</p></body></html>",
+        "plain" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><msup><mi>r</mi><mi>k</mi></msup><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>r</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "2716200c8cbcf3bb7ccd37ce788a50a85e264006a2ee8399f8ccc555a51ed878",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F06-fast.png",
+    "previewSHA256" : "324b5c5cc43a97dfd127769b6077fb2bf67c02134b03371482c7950c7db551b6"
+  },
+  "contentSHA256" : "f728ed0a7518a527c8756ff6885697a25bb3038cab6f7be4eef86f40ea727997",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "aefb8f06f92a40aae2e1c278986832aaa33d64925d6847c0cdb281444b6f62e5",
+  "mode" : "fast",
+  "outputSHA256" : "0cca9e25bf14c1b49d5c95760ae1e1c9b79878a271a3cb47ac36130ea5ad7e4c",
+  "runtimeSeconds" : 2.6962540149688721,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:46:03Z",
+  "status" : "complete",
+  "wallSeconds" : 6.0274720191955566
+}

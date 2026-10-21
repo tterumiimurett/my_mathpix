@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 5: evaluate  $x^2$  before comparing the measurements.\n\n$$\\int_0^1 x^2 dx = \\frac{1}{3}$$\n\n| <b>Temperature (K)</b> | <b>Pressure (kPa)</b> |\n|------------------------|-----------------------|\n| 273                    | 101.3                 |\n| 298                    | 110.6                 |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M05",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Temperature (K)</th>\n    <th>Pressure (kPa)</th>\n   </tr>\n   <tr>\n    <td>273</td>\n    <td>101.3</td>\n   </tr>\n   <tr>\n    <td>298</td>\n    <td>110.6</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 5: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$\\int_0^1 x^2 dx = \\frac{1}{3}$$</p>\n<table><thead><tr><th>Temperature (K)</th><th>Pressure (kPa)</th></tr></thead><tbody><tr><td>273</td><td>101.3</td></tr><tr><td>298</td><td>110.6</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 5: evaluate  $x^2$  before comparing the measurements.\n\n$$\\int_0^1 x^2 dx = \\frac{1}{3}$$\n\n| <b>Temperature (K)</b> | <b>Pressure (kPa)</b> |\n|------------------------|-----------------------|\n| 273                    | 101.3                 |\n| 298                    | 110.6                 |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 5: evaluate  $x^2$  before comparing the measurements.\n\n$$\\int_0^1 x^2 dx = \\frac{1}{3}$$\n\n| <b>Temperature (K)</b> | <b>Pressure (kPa)</b> |\n|------------------------|-----------------------|\n| 273                    | 101.3                 |\n| 298                    | 110.6                 |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 5: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>x</mi><mn>2</mn></msup><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\int_0^1 x^2 dx = \\frac{1}{3}</annotation></semantics></math></span></p>\n<table><thead><tr><th>Temperature (K)</th><th>Pressure (kPa)</th></tr></thead><tbody><tr><td>273</td><td>101.3</td></tr><tr><td>298</td><td>110.6</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 5: evaluate  $x^2$  before comparing the measurements.\n\n$$\\int_0^1 x^2 dx = \\frac{1}{3}$$\n\n| <b>Temperature (K)</b> | <b>Pressure (kPa)</b> |\n|------------------------|-----------------------|\n| 273                    | 101.3                 |\n| 298                    | 110.6                 |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Temperature (K)</th><th>Pressure (kPa)</th></tr></thead><tbody><tr><td>273</td><td>101.3</td></tr><tr><td>298</td><td>110.6</td></tr></tbody></table>",
+        "plain" : "Temperature (K)\tPressure (kPa)\n273\t101.3\n298\t110.6",
+        "tsv" : "Temperature (K)\tPressure (kPa)\n273\t101.3\n298\t110.6",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Temperature (K)\tPressure (kPa)\n273\t101.3\n298\t110.6",
+        "tsv" : "Temperature (K)\tPressure (kPa)\n273\t101.3\n298\t110.6",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d87ec0cfc845ed375e4df019201aea2729fa464df51d4e35928e978ee67c0876",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M05-balanced.png",
+    "previewSHA256" : "4a457ca99a4c5aa65a5694edceca4da63f8bc74d3d5e84654d155afb2acde7dc"
+  },
+  "contentSHA256" : "3f9057d1ccd167f2a871ee1dc8a701f7ab940101480123e45189b7bfb863cc7f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002,\"list_cost_cents\":0.40000000000000002,\"regional_multiplier\":1}",
+  "costCents" : null,
+  "inputSHA256" : "ec37ba47b5f37fba8a2ff61ce3a96809c1bd13b76032b59afd7848cb2f4d429b",
+  "mode" : "balanced",
+  "outputSHA256" : "66cf6e396e5bfc3cadfabbb925eae172afdeb93082a98964185778186fab427e",
+  "runtimeSeconds" : 1.3494431972503662,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:54:23Z",
+  "status" : "complete",
+  "wallSeconds" : 3.1242570877075195
+}

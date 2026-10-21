@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$a = b$$\n\n$$c = d$$",
+  "caseID" : "F30",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$a = b$$</p>\n<p>$$c = d$$</p></body></html>",
+        "plain" : "$$a = b$$\n\n$$c = d$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$a = b$$\n\n$$c = d$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">a = b</annotation></semantics></math></span></p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>c</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">c = d</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$a = b$$\n\n$$c = d$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "672a5c9feb51f0d0393e996f62be7f941c4ab708dfdddb9e44c6ef0e3be39652",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F30-fast.png",
+    "previewSHA256" : "077a3683e6232761f43b8319c924556d0aa8db2c237a141b2c234a7e4989b111"
+  },
+  "contentSHA256" : "70ab858b2f50031c19ce7c3773fdfbe0da1a6af870087553a81c73b02b1713c7",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "52162889aa2702ca79050ac19c91c73841092a0faa642307935ef2fa8dca68a3",
+  "mode" : "fast",
+  "outputSHA256" : "26cedcfe0a7061ababb1aafe3a190d47dda9a037a4ae1b31039e080319e2e4eb",
+  "runtimeSeconds" : 1.0793805122375488,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:50:06Z",
+  "status" : "complete",
+  "wallSeconds" : 4.2914299964904785
+}

@@ -47,7 +47,8 @@ def summarize(cases, results, reviews, mode, binding=None):
         return {'total':len(selected),'passed':sum(r['verdict']=='pass' for r in selected),'failed':sum(r['verdict']=='fail' for r in selected),'pending':sum(r['verdict']=='pending' for r in selected)}
     ordinary=group(('formula','table','mixed'))
     category={c:group((c,)) for c in COUNTS}
-    gate='pending' if ordinary['pending'] else ('pass' if ordinary['passed'] >= 67 and category['formula']['passed'] >= 27 and category['table']['passed'] >= 18 and category['mixed']['passed'] >= 18 else 'fail')
+    impossible = ordinary['passed'] + ordinary['pending'] < 67 or any(category[key]['passed'] + category[key]['pending'] < floor for key,floor in [('formula',27),('table',18),('mixed',18)])
+    gate = 'fail' if impossible else ('pending' if ordinary['pending'] else 'pass')
     matching=[r for r in results if r['mode']==mode and binding and all(r.get(k)==v for k,v in binding.items()) and any(c['id']==r['caseID'] and c.get('inputSHA256')==r['inputSHA256'] for c in cases)]
     latencies=sorted(r['wallSeconds'] for r in matching if r.get('status')=='complete' and isinstance(r.get('wallSeconds'),(int,float)))
     cost_evidence=[]

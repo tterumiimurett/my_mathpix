@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+  "caseID" : "B08",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>A</th>\n    <th>B</th>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>\n<p>Between tables.</p>\n<table><thead><tr><th>C</th><th>D</th></tr></thead><tbody><tr><td>3</td><td>4</td></tr></tbody></table></body></html>",
+        "plain" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>\n<p>Between tables.</p>\n<table><thead><tr><th>C</th><th>D</th></tr></thead><tbody><tr><td>3</td><td>4</td></tr></tbody></table></body></html>",
+        "plain" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>",
+        "plain" : "A\tB\n1\t2",
+        "tsv" : "A\tB\n1\t2",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "A\tB\n1\t2",
+        "tsv" : "A\tB\n1\t2",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "f1bbfab658e72d7d9b0b099750c8e1147e91071640a0a0c70d05f9b1f60247fc",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B08-fast.png",
+    "previewSHA256" : "fc7e6906ee7ad512dbed990fa3d3b47adee4b837af883bd41c230119962c13b9"
+  },
+  "contentSHA256" : "b04295073c597ab4c0cbf409c7c29815a777acbca07e72dde0733b9546073326",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "e6aaea262c5b66e92cda0cf67688a54eaf6631e3b5eb66d5a0f3f2dc46ce16fd",
+  "mode" : "fast",
+  "outputSHA256" : "1a15ad079636a040cea17aba90c7c6552a85977bdd717d4c03a7eb404011fc3d",
+  "runtimeSeconds" : 0.53380894660949707,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:57:54Z",
+  "status" : "complete",
+  "wallSeconds" : 2.8936740159988403
+}

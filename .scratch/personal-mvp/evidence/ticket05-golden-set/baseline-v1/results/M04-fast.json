@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 4: evaluate  $x^2$  before comparing the measurements.\n\n$$p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)$$\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M04",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Momentum</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 4: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)$$</p>\n<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$\\alpha$</td><td>Learning rate</td></tr><tr><td>$\\beta$</td><td>Momentum</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p>\n<table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Momentum</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "Experiment 4: evaluate  $x^2$  before comparing the measurements.\n\n$$p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)$$\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe result preserves the order of the observations.\n\nSymbol\tMeaning\n\tLearning rate\n\tMomentum",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 4: evaluate  $x^2$  before comparing the measurements.\n\n$$p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)$$\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 4: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>p</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>σ</mi><msqrt><mrow><mn>2</mn><mi>π</mi></mrow></msqrt></mrow></mfrac><mi>exp</mi><mo>⁡</mo><mrow><mo fence=\"true\">(</mo><mo>−</mo><mfrac><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mi>μ</mi><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></mrow><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)</annotation></semantics></math></span></p>\n<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>α</mi></mrow><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math></span></td><td>Learning rate</td></tr><tr><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>β</mi></mrow><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math></span></td><td>Momentum</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p><table>\n   <tr>\n    <th>Symbol</th>\n    <th>Meaning</th>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Learning rate</td>\n   </tr>\n   <tr>\n    <td></td>\n    <td>Momentum</td>\n   </tr>\n  </table></body></html>",
+        "plain" : "Experiment 4: evaluate  $x^2$  before comparing the measurements.\n\n$$p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)$$\n\n| <b>Symbol</b> | <b>Meaning</b> |\n|---------------|----------------|\n| $\\alpha$      | Learning rate  |\n| $\\beta$       | Momentum       |\n\nThe result preserves the order of the observations.\n\nSymbol\tMeaning\n\tLearning rate\n\tMomentum",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$\\alpha$</td><td>Learning rate</td></tr><tr><td>$\\beta$</td><td>Momentum</td></tr></tbody></table>",
+        "plain" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "tsv" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "tsv" : "Symbol\tMeaning\n$\\alpha$\tLearning rate\n$\\beta$\tMomentum",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "57989a7af7b04cebd5f7a742997c771ea39c2610edbd989b8ef929602c8c3256",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M04-fast.png",
+    "previewSHA256" : "09a5714fc968bdf6e65cba845b78ea37d17348e80ef038ef537584d00bdf7b52"
+  },
+  "contentSHA256" : "bd989236c5f07a23b85e7abd14b294dbe51bbd3bd2d538495c4cd522fcf58c1f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "afbaf545d81271b7fd747f1a9b5d0019fe637dfd1343b935c689219d46f16ffa",
+  "mode" : "fast",
+  "outputSHA256" : "5e9d518875a9c886439facae123177a547dc2b2fec1f4b0849d581101c441939",
+  "runtimeSeconds" : 1.0559554100036621,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:54:08Z",
+  "status" : "complete",
+  "wallSeconds" : 3.4714119434356689
+}

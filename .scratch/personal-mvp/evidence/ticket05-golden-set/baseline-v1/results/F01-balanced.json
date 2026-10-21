@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+  "caseID" : "F01",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$</p></body></html>",
+        "plain" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "85c3d873fa9272a33fa46f835cffbbd9f7d024651091a5d7445c10b3bc7099a2",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F01-balanced.png",
+    "previewSHA256" : "247ea57e0518bb321c32093194014281e163316cdf664225a9fff78e5565b78e"
+  },
+  "contentSHA256" : "6a7953a9f1723e793e94b62f5b79f622b31a44521cf80e31baeb282abe03e729",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "e3856bf45e212e2744e36dc6bc7cd66b4e2e6e0fcde4b4a9176e42510ade123a",
+  "mode" : "balanced",
+  "outputSHA256" : "950bb71f2c493d75454b32215a1ecca32b3b8d410398ff208bda7570ca616efc",
+  "runtimeSeconds" : 2.8623309135437012,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:44:38Z",
+  "status" : "complete",
+  "wallSeconds" : 6.9798339605331421
+}

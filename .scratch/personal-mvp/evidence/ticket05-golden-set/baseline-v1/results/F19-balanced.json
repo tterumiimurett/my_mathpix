@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\mathbb{E}[X] = \\sum_x x\\, p(x)$$",
+  "caseID" : "F19",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\mathbb{E}[X] = \\sum_x x\\, p(x)$$</p></body></html>",
+        "plain" : "$$\\mathbb{E}[X] = \\sum_x x\\, p(x)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\mathbb{E}[X] = \\sum_x x\\, p(x)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"double-struck\">E</mi><mo stretchy=\"false\">[</mo><mi>X</mi><mo stretchy=\"false\">]</mo><mo>=</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>x</mi><mtext> </mtext><mi>p</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\mathbb{E}[X] = \\sum_x x\\, p(x)</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\mathbb{E}[X] = \\sum_x x\\, p(x)$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "f1e88825fb799b839c7db5a020f556e8aa9161f3ca0a47806da70f7277e6d8c0",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F19-balanced.png",
+    "previewSHA256" : "220af029969e95eeaaf81168850d6cc317c498cd94f2e1dd04a4235ddb85300f"
+  },
+  "contentSHA256" : "25586c9d9da8fff6fe44fcd7e94dfd2db30842eaf3882cac3d0b05325706e5f0",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "2f842f5fc4e368632466d4d518842e4e77f6e7bc1ed6b8a26e93290e44d86336",
+  "mode" : "balanced",
+  "outputSHA256" : "0c2a72180875d08569c583d69c0745911c7b98dd99633c0b241a0d68a7921451",
+  "runtimeSeconds" : 1.7655432224273682,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:48:30Z",
+  "status" : "complete",
+  "wallSeconds" : 4.265252947807312
+}
