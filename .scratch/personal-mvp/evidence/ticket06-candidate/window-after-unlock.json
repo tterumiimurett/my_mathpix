@@ -1,0 +1,12 @@
+{
+  "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "pid": 72062,
+  "hostUnlockedConfirmed": true,
+  "flag": "--ticket04-result-editor-window-self-test",
+  "priorTimeoutPreserved": true,
+  "exitCode": -9,
+  "timedOut": true,
+  "seconds": 120.021,
+  "stdoutRetained": true,
+  "stderrRetained": true
+}

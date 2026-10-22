@@ -105,9 +105,63 @@
       "sha256": "723a22b9e70c4d17e605e2f719d4c592a54d42c4021335df48e211707ef1448c",
       "source": "/private/tmp/my_mathpix-remaining-context/a05-handoff-spec-review.md",
       "scope": "Independent spec review of pair-data/test-fixture/handoff tip4097690,0 actionable findings; separate from cd826 product-source review and pending runtime acceptance."
+    },
+    {
+      "file": "owner-clarification.json",
+      "sha256": "2fe84b95eb6f00025822c1ad3f7ba8a17427ee1ece1aa1bf6f3777a6254aa2df",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/owner-clarification.json",
+      "scope": "Owner background for earlier a9: also dragged fixture, exact sequence/count not established; no historical gate reclassification or new-a05 pass."
+    },
+    {
+      "file": "ticket03-evidence.json",
+      "sha256": "2b2635e759a1e651433da59c7d2269c2e44f8bed15a57c8ea0a2fd0a0ca853e3",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/ticket03-evidence.json",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "ticket03-process-sample.txt",
+      "sha256": "667907bc6e96ea1736cfa5ef54c3bc33626b8bda81a51c65857ea2fcad432269",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/ticket03-process-sample.txt",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "ticket03-run-state.txt",
+      "sha256": "d5d715dbd043e0511a50491c82aee0c387fd78a02788bd8407b07773a14753c3",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/ticket03-run-state.txt",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "window-after-unlock.json",
+      "sha256": "f2d33ea2254ab4ed0318edc794dd59e6a018313f65acd0c1e9dad7ce01b5a096",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-after-unlock.json",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "window-after-unlock.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-after-unlock.stderr",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "window-after-unlock.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-after-unlock.stdout",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "startup-qa-backup.json",
+      "sha256": "6cfa54f4d12e35488f482b3e446d20709e7ec364610c79f69d1cedfc12cbb13b",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-startup-qa-backup.json",
+      "scope": "Complete unchanged a05 App safe backup; existing auditor signature/executable/CDHash/whole-bundle before/copy/after checks only, no App launch."
+    },
+    {
+      "file": "unlocked-parent-observations.json",
+      "sha256": "4f1585f3b817846ba859eb41f72e99345e95fc1ed0f426e0662ff6d9e6620df6",
+      "source": "Trusted parent task plus scoped7 raw files; agent-authored bounded synthesis",
+      "scope": "Separates reporter flags, CUA read failure, idle sample, slow Settings read and actual acceptance; no root-cause inference."
     }
   ],
-  "gate": "Not all supporting checks passed: exact new sealed window/DOM timeout120.01s. Actual GUI/capture/live and06/08 remain open. No old candidate passes inherited.",
+  "gate": "A05 unchanged, backed up; unlocked window timeout and unresolved T3 GUI launch attempt under investigation. No actual capture/live/TCC success or06/08/dogfood gate closed.",
   "historicalA9Evidence": "../history/compact-preview-regression-a9b1c2df/README.md",
   "reviewCompletion": {
     "reviewedRevision": "409769047add2689b40cfe639e6adb915d1313c9",
@@ -116,5 +170,13 @@
     "parentReview": "passed",
     "documentationTail": "Import reports/status only; not a builder, runtime test or new actual acceptance."
   },
-  "updatedAtUTC": "2026-10-22T04:17:24.705289+00:00"
+  "updatedAtUTC": "2026-10-22T05:22:42.294403+00:00",
+  "unlockedAppend": {
+    "priorIndexedHashesPreserved": 16,
+    "newRawFiles": 7,
+    "newBackupRecord": 1,
+    "newScopedParentSynthesis": 1,
+    "priorNamespaceSnapshot": "../history/a05-window-startup-qa-a05eefa3/README.md",
+    "review": "pending-parent-static-tail-check; no new source review or runtime pass"
+  }
 }

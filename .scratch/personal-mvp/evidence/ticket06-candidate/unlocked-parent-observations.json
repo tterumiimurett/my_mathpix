@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "recordedAtUTC": "2026-10-22T05:22:42.292808+00:00",
+  "source": "Trusted parent task observations plus exact imported scoped fixture records; no new child UI observation",
+  "candidateArtifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "desktop": "Owner unlocked before the current a05 attempts",
+  "windowAfterUnlock": {
+    "file": "window-after-unlock.json",
+    "pid": 72062,
+    "seconds": 120.021,
+    "timedOut": true,
+    "stdoutFile": "window-after-unlock.stdout",
+    "stderrFile": "window-after-unlock.stderr",
+    "bothStreamsFullyRetainedAndEmpty": true,
+    "limit": "Second timeout after unlock; cause unproven. First120.01s timeout remains unchanged and its partial stdout was not retained."
+  },
+  "ticket03Attempt": {
+    "reportFile": "ticket03-evidence.json",
+    "runStateFile": "ticket03-run-state.txt",
+    "sampleFile": "ticket03-process-sample.txt",
+    "processID": 73130,
+    "runID": "bc01606f-63f9-43a7-a686-3ef8dc1f84e6",
+    "scriptSignal": "READY, not proof of GUI/window readiness",
+    "reportedPhase": "launched",
+    "visibilityFlags": "all reported false across parent observations",
+    "CUAFullAppPathRead": {
+      "seconds": 5,
+      "outcome": "timeout; no UI tree obtained"
+    },
+    "absoluteWindowAbsenceProven": false,
+    "parentSampleObservation": "Known isolated fixture main thread sampled in normal idle; this does not prove a deadlock, absolute window absence or final cause.",
+    "stopped": "Parent dedicated Ticket03 script stop before backup; no child stop/launch performed"
+  },
+  "screenRecordingSettingsRead": {
+    "scope": "Read-only MyMathpix Toggle on observed by parent",
+    "seconds": 303,
+    "limit": "Slow tool read is a tool limitation. Toggle on is not proof of this exact new App runtime preflight or real capture; no TCC change."
+  },
+  "ownerClarification": "Owner also dragged in old a9 run; exact ordering/count/activation responsibility not established and old gate remains unchanged.",
+  "currentOutcome": "GUI launch attempted but not successfully established; no new capture/live/API/TCC action",
+  "diagnosis": "Single fixer investigating; no proven root cause or decided new build.",
+  "backupRecord": "startup-qa-backup.json"
+}
