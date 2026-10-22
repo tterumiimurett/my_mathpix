@@ -14,7 +14,17 @@ A personal-first native macOS snippet recognizer for formulas, tables, and mixed
 
 No account, subscription, backend, analytics, or cloud history is included in the Personal MVP.
 
-Known deferred issue: Notion inline equations may paste as placeholders. The owner rejected an oversized capture result; compact/menu-bar/main-workspace routing is being corrected in Ticket 08 and still needs real desktop acceptance. The experimental Notion clipboard adapter does not guarantee native editable blocks in every target version. See the accepted contract and evidence limits in [the Personal MVP spec](.scratch/personal-mvp/spec.md).
+Personal MVP V1 was accepted by the owner on 2026-10-22. Known deferred issue: Notion inline equations may paste as placeholders. The experimental Notion clipboard adapter does not guarantee native editable blocks in every target version. The fourteen-day Dogfood Gate remains pending. See the accepted contract and evidence limits in [the Personal MVP spec](.scratch/personal-mvp/spec.md).
+
+## Download
+
+[Download MyMathpix v0.1.0 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.0/MyMathpix-v0.1.0.zip). Requires macOS 15 or later.
+
+1. Unzip the download and move `MyMathpix.app` to Applications.
+2. Open MyMathpix and enter your own Datalab API token in Settings.
+3. Allow Screen Recording when prompted, then use `Control-Command-M` to select a Snippet.
+
+This personal MVP is ad-hoc signed and has not been notarized by Apple. If macOS blocks the first launch, use System Settings → Privacy & Security → Open Anyway after verifying the download source. Release assets include a SHA-256 checksum. This GitHub release does not complete the later Public Product or App Store release gates.
 
 ## Run
 
