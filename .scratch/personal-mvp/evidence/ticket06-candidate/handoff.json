@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "phase": "real-capture-exposed-blank-preview-regression-investigation",
+  "phase": "a9-regression-session-ended-history-frozen",
   "builderSourceRevision": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
   "reviewedIntegrationRevision": "1a52cdc24a313a23d0327c1f4d8adbc4d0b7a103",
   "auditSourceRevision": "a61dbb1fc8e0db33f0c1ca7c59c5078e6ca73c6f",
@@ -9,7 +9,7 @@
   "candidateBundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
   "candidateIdentitySource": "New build-stage-provenance plus signed manifest and formal read-only source bridge.",
   "sourceReview": "Parent and independent window-role source review passed; real desktop gate remains open.",
-  "sourceBridgeImplementationReview": "Integrated at a61dbb1; this stage-2 evidence output awaits parent review.",
+  "sourceBridgeImplementationReview": "Stage2 plus follow-up structure/hashes/boundaries reviewed by parent and integrated at dbbe693; no new source bridge/pairs generated.",
   "sourceBridge": "source-bridge.json",
   "supportingChecksPassed": true,
   "supportingChecksCount": 8,
@@ -58,5 +58,26 @@
     "latestScalarPreviewFormulaTableOriginalCanonicalVisible": true,
     "limit": "Recovery after editing, not first-render repair or a gate pass; original RED remains."
   },
-  "fixerProgress": "First matching RED via the approved public window/mock command; repeat confirmation underway, cause not finalized; no production/sealed-App change."
+  "fixerProgress": "Initial source fix independently reviewed0/0; parent adding one test-only synchronization prerequisite. Final tip review/new sealed artifact not complete; no new candidate accepted.",
+  "currentCandidateDisposition": "QA-found-first-render-preview-regression; not owner-rejected",
+  "historicalSnapshot": "../history/compact-preview-regression-a9b1c2df/README.md",
+  "sessionClosure": {
+    "processID": 50276,
+    "runID": "e51e074d-88df-42b7-8a13-41218cb1f150",
+    "parentAction": "Mac locked blocked CUA quit; parent used the dedicated Ticket01 stop with exact run/PID matching.",
+    "processState": "Merger independently confirmed no exact stable candidate process.",
+    "desktopState": "locked at current read-only comparison/closure",
+    "evidence": [
+      "compact-preview-red-backup.json",
+      "permission-launch-context-comparison.json"
+    ]
+  },
+  "launchContextComparison": {
+    "file": "permission-launch-context-comparison.json",
+    "launchServices": "granted=yes",
+    "directMachOContemporaneous": "granted=no",
+    "mechanism": "Unproven TCC attribution; observed signal difference is not merely hypothetical.",
+    "warning": "open -W could not obtain a process PID because the app exited too quickly; stdout signal captured, redirected stderr empty, exact process absent afterward."
+  },
+  "backupEvidence": "compact-preview-red-backup.json"
 }

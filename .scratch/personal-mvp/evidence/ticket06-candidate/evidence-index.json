@@ -129,9 +129,39 @@
       "sha256": "d7c2958d9277d27c1e90716fd3d64ddce0f45b633ae3a644d0121141826c6b2f",
       "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-edited-preview-recovery-parent-observations.json",
       "scope": "Later same-run source-edit recovery, not first-render success or repair. Edit disclosure alone did not recover; source change z^2 to z^3 recovered formula/table/footer; Original then independently expanded. Earlier19 snapshots remain immutable."
+    },
+    {
+      "file": "permission-launch-context-comparison.json",
+      "sha256": "83904ecdaf5e6812ac61a81229c12c7d3b95f0eab9d4df9036114f13308cbb85",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/permission-launch-context-comparison.json",
+      "scope": "Later read-only same-a9 launch-context/scoped-fixture diagnostic snapshot; no capture/permission request/model or owner-data initialization."
+    },
+    {
+      "file": "launchservices-permission-probe.stdout",
+      "sha256": "9e5db0ead21154dbff10c0c0aaff83acf0f50aa98004728016043c658e1b4cd5",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/launchservices-permission-probe.stdout",
+      "scope": "Later read-only same-a9 launch-context/scoped-fixture diagnostic snapshot; no capture/permission request/model or owner-data initialization."
+    },
+    {
+      "file": "launchservices-permission-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/launchservices-permission-probe.stderr",
+      "scope": "Later read-only same-a9 launch-context/scoped-fixture diagnostic snapshot; no capture/permission request/model or owner-data initialization."
+    },
+    {
+      "file": "ticket01-scoped-webkit-loading-diagnostics.json",
+      "sha256": "2929370431a027314a6ec9d03d408d619a5f021d86806b2c21a843c7874597bd",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-scoped-webkit-loading-diagnostics.json",
+      "scope": "Read-only collection of67 filtered navigation entries from isolated fixture PID50276 only; no other PID/owner profile/token read, no final-cause assertion."
+    },
+    {
+      "file": "compact-preview-red-backup.json",
+      "sha256": "ccd01fb9a1c0390e1a98a9246a52ffddf8ebe347ae8b87c174657eb494b795e0",
+      "source": "/private/tmp/my_mathpix-remaining-context/compact-preview-red-backup.json",
+      "scope": "Merger independently records no exact stable-path process and full App executable/CDHash/bundle-tree backup equality; no new candidate."
     }
   ],
-  "gate": "Candidate not ready: actual a9 GUI exposed a blank-preview regression, investigation underway. Prior support/T3 evidence remains historical; full desktop/live/06/08 and dogfood remain open.",
+  "gate": "A9 historical QA regression session ended; App backed up, current desktop locked. No new sealed candidate or final06/08/live/dogfood acceptance.",
   "historicalWordingCorrection": {
     "file": "permission-contexts.json",
     "field": "freshGUIObservation.parentObservation",
@@ -139,5 +169,6 @@
     "correctedObservation": "Only App exit/system reopening with a changed PID and then fresh T1 are established. Use App restart; an operating-system reboot was not established.",
     "preservation": "Original17 historical files and their recorded hashes remain unchanged."
   },
-  "latestRecoveryBoundary": "Source editing recovered the displayed preview; the original first-render blank-preview RED and all final06/08 gates remain open."
+  "latestRecoveryBoundary": "Source editing recovered the displayed preview; the original first-render blank-preview RED and all final06/08 gates remain open.",
+  "launchContextObservation": "Contemporaneous LaunchServices granted=yes and direct Mach-O granted=no are observed on the same a9 candidate; exact TCC responsibility/attribution mechanism remains unproven."
 }

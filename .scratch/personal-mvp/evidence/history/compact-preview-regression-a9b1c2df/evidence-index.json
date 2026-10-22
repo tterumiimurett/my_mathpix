@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "recordedAtUTC": "2026-10-22T03:45:11.839596+00:00",
+  "candidateArtifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+  "candidateCDHash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+  "entries": [
+    {
+      "file": "additional-signed-checks.json",
+      "sha256": "55e18a806e2318da827000a361e92ef05101f307f51ca94874477b4efb5e0771",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/additional-signed-checks.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "build-stage-provenance.json",
+      "sha256": "29e6331022b98e87937b9533701fe736aaeaaaac1fc19675de60cfe61ef31b4a",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/build-stage-provenance.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "immutability-after-all-checks.json",
+      "sha256": "ed7bf52cfaea24394a4f2718fd85ae0456bf81a940c53798e4f33e5c6a724f7c",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/immutability-after-all-checks.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "permission-probe.json",
+      "sha256": "1ddc004188480497614025f385a16069952f9dc2115f7b5e30c6172fb6466662",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/permission-probe.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "summary.md",
+      "sha256": "bdc91705c8896c87e3a4a3f8ee9e49a6c43d638555336787eb05924560ba31eb",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/summary.md",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "supporting-checks.json",
+      "sha256": "08f3f640c73735f1ceef6547b46b3f5605082e898079641809abdfada04efb70",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/supporting-checks.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "ticket01-parent-permission-observations.json",
+      "sha256": "7c234d0c442fcd81b089dbe036f4ff5016072da7ef0f983b2dfc793d8fb95719",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-parent-permission-observations.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "ticket01-permission-confirmation.json",
+      "sha256": "52f06518897c431b34369f91dac21d2bdb058bd261774aa0112e22be55f8a96d",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-permission-confirmation.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "ticket03-cua-evidence.json",
+      "sha256": "1c24350bf9ce9524faaf6dbd59f23349ac8131bb63c37b40dd35fa18e68cc2ed",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket03-cua-evidence.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "ticket03-parent-cua-observations.json",
+      "sha256": "525852f6ca98735793eaabd620d7c160b821626b779c323b7620fb5d28602732",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket03-parent-cua-observations.json",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "ticket03-run-state.txt",
+      "sha256": "76e16a18b605d18f294e5351e2edf4556f7fdd4d63d27c5bad7816e4ad54d761",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket03-run-state.txt",
+      "scope": "Original imported snapshot; preserve its own recorded time and stage. Later GUI permission is reconciled separately."
+    },
+    {
+      "file": "ticket01-fresh-gui-evidence.json",
+      "sha256": "9d47c3a54c3f76eea04fe8d042e2cb01deba826fb19375043edf1c27f0f0503a",
+      "source": "Scoped Ticket01Acceptance/evidence.json read-only snapshot",
+      "scope": "Same run e51e074d/PID50276; matches parent permission-confirmation fields, not an independent attempt."
+    },
+    {
+      "file": "ticket01-fresh-gui-run-state.txt",
+      "sha256": "d3431383dfbed2a2d4013204b169c205be02d7013137b834de928661d45ac1ef",
+      "source": "Scoped Ticket01Acceptance/run-state.txt read-only snapshot",
+      "scope": "Same run/PID/CDHash bind; no normal owner history or credentials."
+    },
+    {
+      "file": "permission-contexts.json",
+      "sha256": "978b96ea0605d40ed5877ee44cfbf03592c71e905f4b195d23241a0e5583a2db",
+      "source": "Current parent observations plus exact imported records",
+      "scope": "GUI preflight true and historical CLI no both retained; difference cause unconfirmed; no completed capture."
+    },
+    {
+      "file": "source-bridge.json",
+      "sha256": "88813a15275a6b3127f6e1cb68c9ac2557524921f1a46a733e0f9da96dfa8974",
+      "source": "Existing public source_bridge.py output at audit a61dbb1",
+      "scope": "Exact signed artifact plus reviewed source/builder join; no paid run, binary equivalence or full GUI acceptance."
+    },
+    {
+      "file": "window-roles-spec-review.md",
+      "sha256": "b53966c944adfa8a658173e14d3dab6ce8681c769d583e6ab15697c5d1a5f7a1",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-roles-spec-review.md",
+      "scope": "Read-only source review with actual-desktop gate open."
+    },
+    {
+      "file": "window-roles-standards-review.md",
+      "sha256": "d153f0ce6d1742889bf8e99f303d088b6158251728711d2e5cd7ff3d121fd1d7",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-roles-standards-review.md",
+      "scope": "Source review, final follow-up0open; not reviewer-run desktop validation."
+    },
+    {
+      "file": "ticket01-first-real-capture-evidence.json",
+      "sha256": "43240f766b87e5d8717b4638c3677b97fa8ee9b836852c53b7c9cde842e6a49c",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-first-real-capture-evidence.json",
+      "scope": "Later same-run real ScreenCaptureKit/mock-recognition snapshot; physical global shortcut and capture confirmed, blank preview observed, authoritative T1 gate not passing. Earlier pre-capture failure is retained."
+    },
+    {
+      "file": "ticket01-first-real-capture-parent-observations.json",
+      "sha256": "bc4cf4ffcd30caa8ef13a440cc41e811cbf3f853a2069351eefc1cac44962a8f",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-first-real-capture-parent-observations.json",
+      "scope": "Later same-run real ScreenCaptureKit/mock-recognition snapshot; physical global shortcut and capture confirmed, blank preview observed, authoritative T1 gate not passing. Earlier pre-capture failure is retained."
+    },
+    {
+      "file": "ticket01-edited-preview-recovery-evidence.json",
+      "sha256": "9766ecf9cce08fa4d89505b903bdd37bc27adb9a27b25591d9c3c3969db66875",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-edited-preview-recovery-evidence.json",
+      "scope": "Later same-run source-edit recovery, not first-render success or repair. Edit disclosure alone did not recover; source change z^2 to z^3 recovered formula/table/footer; Original then independently expanded. Earlier19 snapshots remain immutable."
+    },
+    {
+      "file": "ticket01-edited-preview-recovery-parent-observations.json",
+      "sha256": "d7c2958d9277d27c1e90716fd3d64ddce0f45b633ae3a644d0121141826c6b2f",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-edited-preview-recovery-parent-observations.json",
+      "scope": "Later same-run source-edit recovery, not first-render success or repair. Edit disclosure alone did not recover; source change z^2 to z^3 recovered formula/table/footer; Original then independently expanded. Earlier19 snapshots remain immutable."
+    },
+    {
+      "file": "permission-launch-context-comparison.json",
+      "sha256": "83904ecdaf5e6812ac61a81229c12c7d3b95f0eab9d4df9036114f13308cbb85",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/permission-launch-context-comparison.json",
+      "scope": "Later read-only same-a9 launch-context/scoped-fixture diagnostic snapshot; no capture/permission request/model or owner-data initialization."
+    },
+    {
+      "file": "launchservices-permission-probe.stdout",
+      "sha256": "9e5db0ead21154dbff10c0c0aaff83acf0f50aa98004728016043c658e1b4cd5",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/launchservices-permission-probe.stdout",
+      "scope": "Later read-only same-a9 launch-context/scoped-fixture diagnostic snapshot; no capture/permission request/model or owner-data initialization."
+    },
+    {
+      "file": "launchservices-permission-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/launchservices-permission-probe.stderr",
+      "scope": "Later read-only same-a9 launch-context/scoped-fixture diagnostic snapshot; no capture/permission request/model or owner-data initialization."
+    },
+    {
+      "file": "ticket01-scoped-webkit-loading-diagnostics.json",
+      "sha256": "2929370431a027314a6ec9d03d408d619a5f021d86806b2c21a843c7874597bd",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-scoped-webkit-loading-diagnostics.json",
+      "scope": "Read-only collection of67 filtered navigation entries from isolated fixture PID50276 only; no other PID/owner profile/token read, no final-cause assertion."
+    },
+    {
+      "file": "compact-preview-red-backup.json",
+      "sha256": "ccd01fb9a1c0390e1a98a9246a52ffddf8ebe347ae8b87c174657eb494b795e0",
+      "source": "/private/tmp/my_mathpix-remaining-context/compact-preview-red-backup.json",
+      "scope": "Merger independently records no exact stable-path process and full App executable/CDHash/bundle-tree backup equality; no new candidate."
+    }
+  ],
+  "gate": "A9 historical QA regression session ended; App backed up, current desktop locked. No new sealed candidate or final06/08/live/dogfood acceptance.",
+  "historicalWordingCorrection": {
+    "file": "permission-contexts.json",
+    "field": "freshGUIObservation.parentObservation",
+    "incorrectPhrase": "system restart",
+    "correctedObservation": "Only App exit/system reopening with a changed PID and then fresh T1 are established. Use App restart; an operating-system reboot was not established.",
+    "preservation": "Original17 historical files and their recorded hashes remain unchanged."
+  },
+  "latestRecoveryBoundary": "Source editing recovered the displayed preview; the original first-render blank-preview RED and all final06/08 gates remain open.",
+  "launchContextObservation": "Contemporaneous LaunchServices granted=yes and direct Mach-O granted=no are observed on the same a9 candidate; exact TCC responsibility/attribution mechanism remains unproven."
+}
