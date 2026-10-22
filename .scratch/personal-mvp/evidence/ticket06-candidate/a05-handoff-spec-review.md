@@ -1,0 +1,12 @@
+# Independent Spec review — a05 exact-source bridge/handoff
+
+Reviewed tip **409769047add2689b40cfe639e6adb915d1313c9**, clean checkout, against **828d93eea4cfacddbe4f991bfab559ecfb2323b8** (three-dot diff; commits7c4379d,4097690).
+
+**Findings:0 actionable findings; no priority assigned.** Product source and helper algorithm are unchanged by this diff. No build, App launch, UI, TCC, network or API operation was performed; this review used static source/Git/blob/metadata checks, not a fresh runtime test run.
+
+- Requirement: “ContentView含生产预览重叠导航修复（不能标acceptance-only）” and “其他13pairs/beforehash/V2Goldenpin不变”. Verified exactly two changed after-hashes/reasons: ContentView and Ticket04ResultEditorWindowSelfTest. All15 final hashes match both cd826 and677d Git blobs; all before-hashes,13 other pairs, supplements and V2 provenance pin remain identical. The production classification is explicit at `scripts/acceptance/reviewed_source_pairs.json:27–30`; the test pair is separate at53–56. Categories remain6 shell/2 tests/6 acceptance/1 runner.
+- Requirement: “194map/179unchanged/175content/144resources” and separate actual builder/reviewed production/docs identities. Independently matched all194 inspected build-input hashes to both approved source commits and external builder map; recomputed179/175/144. Formal bridge manifest/pair hashes agree. `…/ticket06-candidate/handoff.md:9–13` distinguishes actual clean677d builder, cd826 production, later828d docs and7c4379d audit identity; executable/CDHash/full-tree are a05/0e220/7ac.
+- Requirement: “directwindow/DOM120.01秒timeout未过/partialstdoutlost，不得归因Maclocked或套旧a9”. `handoff.md:17–29` and JSON preserve the failed timeout, unknown cause, missing partial stdout, source-wrapper GREEN scope, new LS/direct no and launcher warning. No old T3/capture/grant pass is transferred; actual06/08 runtime gates remain open.
+- Requirement: “metadata14hash-index+旧a9history30snapshot/26raw bytehash保留”. All14 current index hashes verified; all12 externally copied records match their source bytes. All30 old snapshot files match their hashes/lengths and baseline root bytes; all26 old indexed hashes verify. Golden V1/V2, ea7, pre-review and history paths are untouched by this diff. `handoff.md:35–45` retains continuity/quality boundaries, Notion limitation and blank Dogfood;06/08 remain claimed.
+
+The exact sealed-window timeout and pending actual GUI/capture/live/menu/activation journeys are material unresolved acceptance work, accurately reported rather than implementation defects introduced here.

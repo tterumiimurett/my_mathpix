@@ -90,11 +90,31 @@
     },
     {
       "file": "bridge-and-history-review.md",
-      "sha256": "f8b357246f230a85d6e161e4207603e9aa25cc26b9d2f2a0c13727877c25cb3e",
+      "sha256": "3e7c5375758e086be900745acb238682c23a6d3389cadf2dac0fc9f65635bf65",
       "source": "Current audit task at pair-data revision7c4379d",
-      "scope": "Agent-recorded stale-pin RED then existing14 public CLI checks GREEN; pair-data/test-fixture/handoff review still pending."
+      "scope": "Agent-recorded stale-pin RED then existing14 public CLI checks GREEN; complete409 handoff reviewed Standards0/Spec0 and parent accepted; tail is docs/data only."
+    },
+    {
+      "file": "a05-handoff-standards-review.md",
+      "sha256": "c95215c6f55de77134f161ea198db26ae96a3d74ddd1771ecfd7af0689af1ab6",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-handoff-standards-review.md",
+      "scope": "Independent standards review of pair-data/test-fixture/handoff tip4097690,0 actionable findings; separate from cd826 product-source review and pending runtime acceptance."
+    },
+    {
+      "file": "a05-handoff-spec-review.md",
+      "sha256": "723a22b9e70c4d17e605e2f719d4c592a54d42c4021335df48e211707ef1448c",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-handoff-spec-review.md",
+      "scope": "Independent spec review of pair-data/test-fixture/handoff tip4097690,0 actionable findings; separate from cd826 product-source review and pending runtime acceptance."
     }
   ],
   "gate": "Not all supporting checks passed: exact new sealed window/DOM timeout120.01s. Actual GUI/capture/live and06/08 remain open. No old candidate passes inherited.",
-  "historicalA9Evidence": "../history/compact-preview-regression-a9b1c2df/README.md"
+  "historicalA9Evidence": "../history/compact-preview-regression-a9b1c2df/README.md",
+  "reviewCompletion": {
+    "reviewedRevision": "409769047add2689b40cfe639e6adb915d1313c9",
+    "StandardsActionableFindings": 0,
+    "SpecActionableFindings": 0,
+    "parentReview": "passed",
+    "documentationTail": "Import reports/status only; not a builder, runtime test or new actual acceptance."
+  },
+  "updatedAtUTC": "2026-10-22T04:17:24.705289+00:00"
 }

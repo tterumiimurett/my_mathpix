@@ -10,7 +10,7 @@
   "auditSourceRevision": "7c4379dffba423bb224ec4c7e919873fb165ff56",
   "sourceBridge": "source-bridge.json",
   "sourceReview": "Final cd826 Standards0/Spec0; source reviews do not cover this handoff or new runtime acceptance.",
-  "handoffAndPairReview": "pending-parent-and-two-axis-review",
+  "handoffAndPairReview": "passed: Standards0/Spec0 at4097690 plus parent full diff/hash/boundary acceptance",
   "supportingChecksPassed": true,
   "supportingChecksCount": 8,
   "strictUUIDPassed": true,
@@ -46,5 +46,11 @@
   "ticket08": "claimed",
   "firstFourTicket06GatesPassed": false,
   "dogfoodGate": "not-started",
-  "publicProductGate": "not-asserted"
+  "publicProductGate": "not-asserted",
+  "handoffReviewedRevision": "409769047add2689b40cfe639e6adb915d1313c9",
+  "handoffReviewReports": [
+    "a05-handoff-standards-review.md",
+    "a05-handoff-spec-review.md"
+  ],
+  "documentationTail": "Pure report/status import pending parent tail verification; builder677d/productcd826/audit7c and actual runtime gates unchanged."
 }
