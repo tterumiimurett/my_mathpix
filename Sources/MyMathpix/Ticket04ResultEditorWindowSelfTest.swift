@@ -11,10 +11,12 @@ enum Ticket04ResultEditorWindowSelfTest {
     private static let diagnosticsRoot = FileManager.default.temporaryDirectory
         .appendingPathComponent("Ticket04WindowTest-\(UUID().uuidString)", isDirectory: true)
 
+    private static let recognitionService = WindowRecognitionService()
+
     static func makeModel() -> AppModel {
         let defaults = UserDefaults(suiteName: defaultsName)!
         return AppModel(
-            recognitionService: WindowRecognitionService(),
+            recognitionService: recognitionService,
             history: HistoryStore(inMemory: true),
             usageRecords: UsageRecordStore(inMemory: true),
             defaults: defaults,
@@ -38,6 +40,10 @@ enum Ticket04ResultEditorWindowSelfTest {
             finish(false, scenario: "window-unavailable")
             return
         }
+        guard !window.isRestorable, window.frameAutosaveName.isEmpty else {
+            finish(false, scenario: "disposable-window-state")
+            return
+        }
         if let pixels = bitmap.bitmapData {
             pixels.initialize(repeating: 0, count: bitmap.bytesPerRow * bitmap.pixelsHigh)
         }
@@ -54,7 +60,7 @@ enum Ticket04ResultEditorWindowSelfTest {
             // launch persisted a smaller frame. This keeps the regression red-capable.
             window.setContentSize(NSSize(width: 1180, height: 760))
             window.center()
-            window.orderOut(nil)
+            NSApp.windows.filter { $0.frame.width >= 200 }.forEach { $0.orderOut(nil) }
             model.recognizeCapturedSnippet(CapturedSnippet(
                 uploadPayload: UploadPayload(pngData: png),
                 geometry: CaptureGeometry(
@@ -81,7 +87,12 @@ enum Ticket04ResultEditorWindowSelfTest {
             let compact = resultWindows.count == 1
                 && resultWindow.map { $0.frame.width <= 480 && $0.frame.height <= min(720, screen.visibleFrame.height) } == true
             let floating = resultWindow.map { $0.level.rawValue >= NSWindow.Level.floating.rawValue } == true
-            guard compact, floating, !window.isVisible else {
+            let supportsOtherSpaces = resultWindow.map {
+                $0.collectionBehavior.contains(.canJoinAllSpaces)
+                    && $0.collectionBehavior.contains(.fullScreenAuxiliary)
+                    && !$0.canBecomeMain
+            } == true
+            guard compact, floating, supportsOtherSpaces, !window.isVisible else {
                 print("TICKET04_COMPACT_OBSERVATION visible-windows=\(resultWindows.count) main-visible=\(window.isVisible) width=\(resultWindow?.frame.width ?? 0) height=\(resultWindow?.frame.height ?? 0) floating=\(floating)")
                 finish(false, scenario: "compact-result-role")
                 return
@@ -100,6 +111,51 @@ enum Ticket04ResultEditorWindowSelfTest {
                 finish(false, scenario: "completion-placement")
                 return
             }
+            model.showMainWindow()
+            try? await Task.sleep(for: .milliseconds(250))
+            guard window.isVisible, window.frame.width >= 920, !resultWindow!.isVisible else {
+                print("TICKET04_WORKSPACE_OBSERVATION main-visible=\(window.isVisible) main-width=\(window.frame.width) result-visible=\(resultWindow!.isVisible)")
+                finish(false, scenario: "explicit-workspace-role")
+                return
+            }
+            print("TICKET04_WINDOW_ROLES_OBSERVED compact-width=\(frame.width) compact-height=\(frame.height) floating=\(floating) other-spaces=\(supportsOtherSpaces) main-width=\(window.frame.width)")
+            let selectedBeforeMenu = model.selectedID
+            model.showResultEditor()
+            try? await Task.sleep(for: .milliseconds(250))
+            let reopened = NSApp.windows.filter { $0.isVisible && $0.frame.width >= 200 }
+            guard !window.isVisible, reopened.count == 1, reopened.first === resultWindow,
+                  model.selectedID == selectedBeforeMenu else {
+                print("TICKET04_RESULT_REOPEN_OBSERVATION main-visible=\(window.isVisible) same-result=\(reopened.first === resultWindow) selected-preserved=\(model.selectedID == selectedBeforeMenu)")
+                finish(false, scenario: "result-command-role")
+                return
+            }
+        }
+        // A recoverable recognition error must attach to the compact surface,
+        // without bringing its hidden history/settings workspace back on screen.
+        recognitionService.failure = .invalidCredentials
+        NSApp.windows.filter { $0.frame.width >= 200 }.forEach { $0.orderOut(nil) }
+        model.recognizeCapturedSnippet(CapturedSnippet(
+            uploadPayload: UploadPayload(pngData: png),
+            geometry: CaptureGeometry(expectedPixelWidth: 32, expectedPixelHeight: 32,
+                selectionSizeInPoints: CGSize(width: 32, height: 32), displayScale: 1,
+                selectedDisplayWasSecondary: false),
+            displayID: CGMainDisplayID()
+        ))
+        for _ in 0..<100 {
+            if !model.isProcessing { break }
+            try? await Task.sleep(for: .milliseconds(20))
+        }
+        try? await Task.sleep(for: .milliseconds(400))
+        let failedResult = NSApp.windows.first {
+            $0.identifier?.rawValue == "com.byterumi.mymathpix.compact-result"
+        }
+        let recoverySheetVisible = failedResult?.attachedSheet?.isVisible == true
+        print("TICKET04_FAILURE_WINDOW_OBSERVED main-visible=\(window.isVisible) result-visible=\(failedResult?.isVisible == true) result-sheet=\(recoverySheetVisible) credential-recovery=\(model.needsCredentialRecovery)")
+        guard !window.isVisible, failedResult?.isVisible == true,
+              model.selectedItem?.status == .failed, model.needsCredentialRecovery,
+              recoverySheetVisible else {
+            finish(false, scenario: "compact-error-recovery")
+            return
         }
         finish(true, scenario: "all-connected-displays")
     }
@@ -115,8 +171,11 @@ enum Ticket04ResultEditorWindowSelfTest {
 
 @MainActor
 private final class WindowRecognitionService: RecognitionService {
+    var failure: AppError?
+
     func recognize(uploadPayload: UploadPayload, mode: RecognitionMode) async throws -> DatalabResult {
         try await Task.sleep(for: .milliseconds(200))
+        if let failure { throw failure }
         return DatalabResult(
             markdown: "Local window acceptance result", html: nil, runtime: nil,
             costSummary: nil, costValue: nil, parseQualityScore: nil,

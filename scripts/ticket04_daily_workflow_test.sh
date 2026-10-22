@@ -40,10 +40,9 @@ if [[ "$exit_status" -ne 0 ]] || ! grep -Fxq 'TICKET04_DAILY_WORKFLOW_OK' "$outp
 fi
 
 required_shell_labels=(
-    'Capture Snippet'
-    'MenuBarContent'
-    'ContentView'
-    'SettingsView'
+    'mymathpix-status-item'
+    'recent-history-item'
+    'token-test-status'
     'Clear Recent History'
     'Export Diagnostics'
     ' License Notice'
@@ -56,4 +55,4 @@ for label in "${required_shell_labels[@]}"; do
     fi
 done
 
-printf 'TICKET04_SIGNED_DAILY_WORKFLOW_OK history=create-edit-failed-retry-relaunch-delete-clear-evict-image-delete diagnostics=fixed-codes-redacted-manual-export shell=menu-bar-and-window shortcut=control-command-m-conflict-visible launch-at-login=opt-in version=%s licenses=bundled\n' "$version"
+printf 'TICKET04_SIGNED_DAILY_WORKFLOW_OK history=create-edit-failed-retry-relaunch-delete-clear-evict-image-delete diagnostics=fixed-codes-redacted-manual-export shell-labels=present actual-menu-click=pending shortcut=control-command-m-conflict-visible launch-at-login=opt-in version=%s licenses=bundled\n' "$version"

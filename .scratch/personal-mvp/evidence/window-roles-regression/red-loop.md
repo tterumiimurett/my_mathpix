@@ -20,4 +20,4 @@ RED: signed Result Editor window acceptance failed (status=1)
 
 The first run bootstrapped the release build. The repeat used cached compilation and completed in 4.604 seconds, exit 1. The failure is the user-reported pattern: completion shows the large normal-level main workspace, not a compact floating result. No production implementation change, actual Screen Capture, live API request, owner-history/token change, or delivered-App replacement was made before this evidence. Root separately observed the existing production App through CUA.
 
-Implementation is paused after the red signal pending the parent's ranked hypotheses.
+This records the Phase 2 checkpoint, when implementation paused pending the parent's ranked hypotheses. Subsequent implementation and supporting results are in [green-loop.md](green-loop.md).

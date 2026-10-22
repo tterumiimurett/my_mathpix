@@ -213,7 +213,12 @@ struct ResultEditorView: View {
 
     private var footer: some View {
         HStack(spacing: 6) {
-            if item.status == .failed {
+            if model.isProcessing {
+                ProgressView().controlSize(.small)
+                Text(model.statusMessage).lineLimit(1)
+                Spacer()
+                Button("Cancel") { model.cancelRecognition() }
+            } else if item.status == .failed {
                 Label(item.errorMessage ?? "Recognition failed", systemImage: "exclamationmark.triangle")
                     .lineLimit(2)
                 Spacer()
