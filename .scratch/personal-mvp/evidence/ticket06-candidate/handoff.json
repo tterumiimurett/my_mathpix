@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "phase": "code-and-audit-ready-partial-desktop-evidence-awaiting-parent-review",
+  "phase": "real-capture-exposed-blank-preview-regression-investigation",
   "builderSourceRevision": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
   "reviewedIntegrationRevision": "1a52cdc24a313a23d0327c1f4d8adbc4d0b7a103",
   "auditSourceRevision": "a61dbb1fc8e0db33f0c1ca7c59c5078e6ca73c6f",
@@ -15,8 +15,8 @@
   "supportingChecksCount": 8,
   "ticket03FixtureActualCopyInspectionsPassed": 6,
   "ticket03NativePaste": "not-asserted",
-  "actualWindowRoleJourney": "partial-Ticket03-fixture; physical menu/Command-Tab/capture routing still pending parent",
-  "actualCaptureJourney": "GUI-preflight-granted; overlay-observed; button-triggered undersized-selection rejected; no completed capture/global-shortcut run",
+  "actualWindowRoleJourney": "Actual compact470x560/top-left/captured-display/after-completion observed; preview blank, menu and Command-Tab pending, not accepted",
+  "actualCaptureJourney": "Physical global shortcut and real1764x996 PNG from882x498pt@2 confirmed; fixture/guard/geometry passed, but authoritative T1 verifier not passing",
   "permissionContexts": "permission-contexts.json",
   "cliVersusGUIPermissionDifferenceCause": "unconfirmed",
   "actualLiveRecoveryJourney": "pending-parent-observation",
@@ -27,5 +27,24 @@
   "ticket08": "claimed",
   "firstFourTicket06GatesPassed": false,
   "dogfoodGate": "not-started",
-  "publicProductGate": "not-asserted"
+  "publicProductGate": "not-asserted",
+  "candidateReadiness": "not-ready-blank-preview-regression",
+  "codeReady": false,
+  "actualPreviewRegression": {
+    "observation": "Blank white compact preview; AX offline-preview HTML has no descendants across observations for about2minutes.",
+    "status": "investigation-underway-in-isolated-fixer-tree; no sealed-App repair claimed",
+    "actualOriginalAndEdit": "not-expanded",
+    "copyRows": "Three source-row previews correct; no new six-copy/native-destination claim."
+  },
+  "operationSequenceObservations": {
+    "submitCount": 2,
+    "pollCount": 11,
+    "historyCount": 2,
+    "mainVisibleAtRecognitionStart": true,
+    "secondCaptureBlocked": false,
+    "attribution": "Unconfirmed. Owner drag actions are being clarified; CUA activation effects are also possible. Neither is an established cause."
+  },
+  "actualRealCaptureEvidence": "ticket01-first-real-capture-evidence.json",
+  "actualRealCaptureObservations": "ticket01-first-real-capture-parent-observations.json",
+  "restartObservation": "App restart only; OS reboot not established"
 }

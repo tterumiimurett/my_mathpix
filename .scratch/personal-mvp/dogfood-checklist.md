@@ -2,7 +2,7 @@
 
 状态：待最终候选验收与开始日确认。此表不代表已开始或通过 Dogfood Gate。
 
-候选状态：旧 ea7ad5f 因生产窗口角色被拒绝，原始证据保存在 `evidence/history/gui-rejected-ea7ad5f1/`。新候选 builder `01dffed1f9cd653c8c296c3dc6083863c7d04f1f`，App SHA256 `a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf`，CDHash `2015e6d6467b344c9af0d4ea6cd4895fba9d8d08`。源码审查、正式桥接、8项同候选支持检查已完成；父代理实际验证了 T3 三种格式初始/编辑后共6次复制及470×560面板。fresh T1 GUI 已获授权并出现选区 overlay，但按钮触发的小选区被拒绝，未完成真实捕获或全局快捷键流程；menu/Cmd+Tab/live 等最终验收仍由父代理进行。见 [当前交付边界](evidence/ticket06-candidate/handoff.md) 与 [源桥接](evidence/ticket06-candidate/source-bridge.json)。开始日仍待确认，旧候选或 CLI 权限记录不作为当前 GUI 验收结论。
+候选状态：旧 ea7ad5f 因生产窗口角色被拒绝，原始证据保存在 `evidence/history/gui-rejected-ea7ad5f1/`。新候选 builder `01dffed1f9cd653c8c296c3dc6083863c7d04f1f`，App SHA256 `a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf`，CDHash `2015e6d6467b344c9af0d4ea6cd4895fba9d8d08`。源码审查、正式桥接、8项同候选支持检查已完成；父代理实际验证了 T3 三种格式初始/编辑后共6次复制及470×560面板。App 重启后的早期 T1 小选区失败报告保留；随后同 run 已确认实体全局快捷键及1764×996@2×真实捕获、470×560面板和正确位置。但预览整块白、AX HTML 无子节点持续约2分钟，当前候选未就绪，fixer 正调查。submit2/poll11/history2、mainVisibleStart=true/secondBlocked=false 的操作序列及原因仍待澄清；menu/Cmd+Tab/live 等最终验收继续由父代理进行。见 [当前交付边界](evidence/ticket06-candidate/handoff.md) 与 [源桥接](evidence/ticket06-candidate/source-bridge.json)。开始日仍待确认，旧候选或 CLI 权限记录不作为当前 GUI 验收结论。
 
 每天记录实际使用，不补造数据。连续 14 天没有历史丢失或凭据泄漏、至少 90% 的 Snippet 无需重新截取、大多数 fast 尝试在 5 秒内完成，并且你日常优先选择它替代 Mathpix，才满足日用部分。Golden Set 门槛须另外通过。空白、不使用或未观察均不能当作通过。
 

@@ -105,7 +105,26 @@
       "sha256": "d153f0ce6d1742889bf8e99f303d088b6158251728711d2e5cd7ff3d121fd1d7",
       "source": "/private/tmp/my_mathpix-remaining-context/window-roles-standards-review.md",
       "scope": "Source review, final follow-up0open; not reviewer-run desktop validation."
+    },
+    {
+      "file": "ticket01-first-real-capture-evidence.json",
+      "sha256": "43240f766b87e5d8717b4638c3677b97fa8ee9b836852c53b7c9cde842e6a49c",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-first-real-capture-evidence.json",
+      "scope": "Later same-run real ScreenCaptureKit/mock-recognition snapshot; physical global shortcut and capture confirmed, blank preview observed, authoritative T1 gate not passing. Earlier pre-capture failure is retained."
+    },
+    {
+      "file": "ticket01-first-real-capture-parent-observations.json",
+      "sha256": "bc4cf4ffcd30caa8ef13a440cc41e811cbf3f853a2069351eefc1cac44962a8f",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-first-real-capture-parent-observations.json",
+      "scope": "Later same-run real ScreenCaptureKit/mock-recognition snapshot; physical global shortcut and capture confirmed, blank preview observed, authoritative T1 gate not passing. Earlier pre-capture failure is retained."
     }
   ],
-  "gate": "Code and supporting audit ready; stage-2 import awaits parent review. Full desktop/live/06/08 and dogfood remain open."
+  "gate": "Candidate not ready: actual a9 GUI exposed a blank-preview regression, investigation underway. Prior support/T3 evidence remains historical; full desktop/live/06/08 and dogfood remain open.",
+  "historicalWordingCorrection": {
+    "file": "permission-contexts.json",
+    "field": "freshGUIObservation.parentObservation",
+    "incorrectPhrase": "system restart",
+    "correctedObservation": "Only App exit/system reopening with a changed PID and then fresh T1 are established. Use App restart; an operating-system reboot was not established.",
+    "preservation": "Original17 historical files and their recorded hashes remain unchanged."
+  }
 }
