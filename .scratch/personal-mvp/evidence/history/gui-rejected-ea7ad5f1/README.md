@@ -1,0 +1,3 @@
+# Owner-rejected large-window candidate
+
+Original root-level evidence bytes for ea7ad5f are retained unchanged, including its true historical CLI passes. The owner rejected its production window roles. These are not new-candidate proofs. disposition.json lists every original file/hash; bundle-backup-record.json is the parent's verified full-bundle backup. The older nested pre-review archive was not copied or changed. Historical relative links/old stable paths describe the past snapshot. Historical locked/ungranted observations do not describe the currently accessible desktop or a replacement artifact.

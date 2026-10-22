@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "disposition": "owner-rejected-window-roles",
+  "sourceCandidate": {
+    "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
+    "bundleIdentifier": "com.byterumi.mymathpix",
+    "hostArchitecture": "arm64",
+    "hostMacOS": "15.7.3",
+    "version": "0.1.0",
+    "build": "1",
+    "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+    "bundleTreeSHA256": "068a8f2aa3b409694154e8510ada1ac136a298120236849c9ca495c5a5e159fd",
+    "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
+    "sandbox": true,
+    "outboundNetwork": true,
+    "userSelectedExport": true,
+    "resources": {
+      "katex.min.css": {
+        "bytes": 23112,
+        "sha256": "84b4c230594ac5d3603d7c969524b160dd329099b1c6af58b7730d7dd44659e0"
+      },
+      "katex.min.js": {
+        "bytes": 276757,
+        "sha256": "28b0123ad292db1f29531595cc20e69562788e1b8b6f4bedae06a46c3ea00c3a"
+      },
+      "KATEX-LICENSE.txt": {
+        "bytes": 1107,
+        "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+      },
+      "fonts/KaTeX_Main-Regular.woff2": {
+        "bytes": 26272,
+        "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+      }
+    },
+    "signatureVerified": true
+  },
+  "preservedCandidate": {
+    "appPath": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixRejectedLargeWindow-ea7ad5f1.app",
+    "bundleIdentifier": "com.byterumi.mymathpix",
+    "hostArchitecture": "arm64",
+    "hostMacOS": "15.7.3",
+    "version": "0.1.0",
+    "build": "1",
+    "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+    "bundleTreeSHA256": "068a8f2aa3b409694154e8510ada1ac136a298120236849c9ca495c5a5e159fd",
+    "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
+    "sandbox": true,
+    "outboundNetwork": true,
+    "userSelectedExport": true,
+    "resources": {
+      "katex.min.css": {
+        "bytes": 23112,
+        "sha256": "84b4c230594ac5d3603d7c969524b160dd329099b1c6af58b7730d7dd44659e0"
+      },
+      "katex.min.js": {
+        "bytes": 276757,
+        "sha256": "28b0123ad292db1f29531595cc20e69562788e1b8b6f4bedae06a46c3ea00c3a"
+      },
+      "KATEX-LICENSE.txt": {
+        "bytes": 1107,
+        "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+      },
+      "fonts/KaTeX_Main-Regular.woff2": {
+        "bytes": 26272,
+        "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+      }
+    },
+    "signatureVerified": true
+  },
+  "completeBundleMatches": true,
+  "changesToRunningApp": false
+}
