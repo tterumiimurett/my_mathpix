@@ -1,5 +1,4 @@
 {
-  "schema": 1,
   "candidate": {
     "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
     "bundleIdentifier": "com.byterumi.mymathpix",
@@ -7,9 +6,9 @@
     "hostMacOS": "15.7.3",
     "version": "0.1.0",
     "build": "1",
-    "artifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
-    "bundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
-    "cdhash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+    "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+    "bundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
+    "cdhash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
     "sandbox": true,
     "outboundNetwork": true,
     "userSelectedExport": true,
@@ -33,11 +32,9 @@
     },
     "signatureVerified": true
   },
-  "observedSignal": "TICKET01_SCREEN_PERMISSION granted=no",
-  "permissionGranted": false,
-  "permissionChanges": false,
-  "desktopAccessible": true,
-  "historicalLockedRecordAppliesToCurrentDesktop": false,
-  "recordedAtUTC": "2026-10-22T03:18:52.512017+00:00",
-  "probePhase": "Repeated after Ticket03 CUA session exited; exact same immutable candidate"
+  "builderGitCommit": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "reviewedProductionGitCommit": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "reviewedIntegrationGitCommit": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "buildInputCount": 194,
+  "sourceClean": true
 }

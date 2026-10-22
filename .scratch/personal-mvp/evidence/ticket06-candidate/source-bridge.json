@@ -1,12 +1,12 @@
 {
   "schema": 3,
-  "auditSourceRevision": "a61dbb1fc8e0db33f0c1ca7c59c5078e6ca73c6f",
-  "builderSourceRevision": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
-  "reviewedProductionSourceRevision": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
-  "reviewedIntegrationRevision": "1a52cdc24a313a23d0327c1f4d8adbc4d0b7a103",
-  "candidateArtifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
-  "candidateCDHash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
-  "candidateBundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
+  "auditSourceRevision": "7c4379dffba423bb224ec4c7e919873fb165ff56",
+  "builderSourceRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "reviewedProductionSourceRevision": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "reviewedIntegrationRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "candidateArtifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "candidateCDHash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
+  "candidateBundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
   "goldenSourceRevision": "f1244513d47738d9bb0dbc227878a4c42d16abba",
   "goldenArtifactSHA256": "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
   "corpusSHA256": "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
@@ -48,8 +48,8 @@
     {
       "path": "Sources/MyMathpix/ContentView.swift",
       "previousSHA256": "37e7a7acd53440ec839aa3447e1848a7d7d43d5a6a8d4ed8a62ad20035630356",
-      "sha256": "4a37915a27e313d9af346bcb260d1beb0a372e0ab41a900f1a5b9d63ac9bf386",
-      "reviewReason": "Production large history/settings/usage workspace composition."
+      "sha256": "4afb275ef2669c0a1988f6e4ca42a7bef0bbf482334293328869f748186ff272",
+      "reviewReason": "Production history/settings/usage workspace plus the reviewed offline WK main-frame programmatic navigation overlap fix; this is production preview-host behavior, not acceptance-only."
     },
     {
       "path": "Sources/MyMathpix/ResultEditorWindowPresenter.swift",
@@ -74,8 +74,8 @@
     {
       "path": "Sources/MyMathpix/Ticket04ResultEditorWindowSelfTest.swift",
       "previousSHA256": "de39ff39c59b81c9a9967bcca02473408844be3b683228563969cd88f12e977c",
-      "sha256": "8a07c89bb5dba3996ded52adb2623c9643d06eb69c1e7794b3f1e620b41ff321",
-      "reviewReason": "Reviewed existing signed public window-role observation across displays."
+      "sha256": "46e40d4332a3b790762edc646cd5d7f7ae5da371eba1c5001f682a551c0a71b6",
+      "reviewReason": "Existing public signed window/mock seam now checks real DOM after a hidden loading overlap; pending requires successful release of an installed mock continuation, with window roles/error-sheet coverage retained."
     }
   ],
   "acceptanceOnlyChanges": [
@@ -863,7 +863,7 @@
     }
   ],
   "sourceInputs": {
-    "sha256": "118dc63d1e011c24758798c016038da20b43526834b1e270a49b9e45177df1a2",
+    "sha256": "f745d081424d1d97f36b1ce47717ca54480e829102ba0d590ed0625f5e7befd4",
     "files": [
       {
         "path": "Config/Info.plist",
@@ -911,7 +911,7 @@
       },
       {
         "path": "Sources/MyMathpix/ContentView.swift",
-        "sha256": "4a37915a27e313d9af346bcb260d1beb0a372e0ab41a900f1a5b9d63ac9bf386"
+        "sha256": "4afb275ef2669c0a1988f6e4ca42a7bef0bbf482334293328869f748186ff272"
       },
       {
         "path": "Sources/MyMathpix/DatalabClient.swift",
@@ -1627,7 +1627,7 @@
       },
       {
         "path": "Sources/MyMathpix/Ticket04ResultEditorWindowSelfTest.swift",
-        "sha256": "8a07c89bb5dba3996ded52adb2623c9643d06eb69c1e7794b3f1e620b41ff321"
+        "sha256": "46e40d4332a3b790762edc646cd5d7f7ae5da371eba1c5001f682a551c0a71b6"
       },
       {
         "path": "Sources/MyMathpix/Ticket06Acceptance.swift",
@@ -1644,9 +1644,9 @@
     ]
   },
   "manifestBindings": {
-    "supportingChecksSHA256": "08f3f640c73735f1ceef6547b46b3f5605082e898079641809abdfada04efb70",
-    "buildProvenanceSHA256": "29e6331022b98e87937b9533701fe736aaeaaaac1fc19675de60cfe61ef31b4a",
-    "reviewedPairsSHA256": "4da535922718fa683fe878c0805fd48e2ea6beba0946882db4680d338645855a"
+    "supportingChecksSHA256": "788f823a5b66be5522a86ae3a2c71f2235dfade5fb745e002f260586f8143316",
+    "buildProvenanceSHA256": "ca7c8cf99c51458c3054879ca8ccac9ee0ebe2c7582e4ee1305d416a5282091b",
+    "reviewedPairsSHA256": "56762a706de6ce8ae4173371869dd4d9e77f650b189c97860b6c307aabade6a4"
   },
   "actualWindowRoleJourney": "pending-parent-observation",
   "limit": "Unclassified content/resources/build inputs match the frozen baseline plus explicitly listed original-commit coverage supplements byte-for-byte. Production window shell, window tests, acceptance telemetry and the Golden runner have disjoint exact reviewed pairs. This is source continuity plus external build/audit provenance, not a new paid quality run, binary equivalence or actual GUI/live acceptance."
