@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "phase": "unchanged-a05-unlocked-window-startup-qa-under-investigation",
+  "phase": "owner-accepted-personal-mvp-v1-merge-authorized",
   "candidateArtifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
   "candidateCDHash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
   "candidateBundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
@@ -24,11 +24,11 @@
     "record": "window-timeout-process-state.json"
   },
   "allRequestedChecksPassed": false,
-  "candidateReady": false,
-  "newActualGUI": "launch-attempted-not-successfully-established; reporter phase launched/visiblefalse and CUA read timeout do not prove absolute window absence",
-  "newActualCapture": "not-performed",
-  "newActualSixClipboardClicks": "not-performed",
-  "newLiveService": "not-performed",
+  "candidateReady": true,
+  "newActualGUI": "Root observed normal main/Settings and stored token recognized after restoring normal mode; not all physical journeys verified",
+  "newActualCapture": "Post-restart selection entry observed; completed authoritative crop/global-shortcut/busy-guard flow not newly verified",
+  "newActualSixClipboardClicks": "not newly verified on installed App",
+  "newLiveService": "not newly verified; no real token health rerun claimed",
   "permissionContexts": {
     "file": "permission-probe-contexts.json",
     "LaunchServices": "granted=no",
@@ -38,12 +38,12 @@
     "denialOrRevocationClaimed": false,
     "launcherWarningPreserved": true
   },
-  "currentDesktop": "unlocked by owner before current attempts; no new child desktop probe",
-  "exactAppProcesses": "Parent script stopped isolated T3; exact stable path absent at backup read-only probe",
+  "currentDesktop": "Root observed owner normal App main/Settings; no child UI probe",
+  "exactAppProcesses": "Root restored normal owner App and left it running; do not stop or relaunch for this closeout",
   "historicalA9Evidence": "../history/compact-preview-regression-a9b1c2df/",
   "historicalA9PassesUsedForNewCandidate": false,
-  "ticket06": "claimed",
-  "ticket08": "claimed",
+  "ticket06": "resolved",
+  "ticket08": "resolved",
   "firstFourTicket06GatesPassed": false,
   "dogfoodGate": "not-started",
   "publicProductGate": "not-asserted",
@@ -52,7 +52,7 @@
     "a05-handoff-standards-review.md",
     "a05-handoff-spec-review.md"
   ],
-  "documentationTail": "Original409 handoff review remains historical; current backup/archive/unlocked evidence append awaits parent static verification, not a runtime or source pass.",
+  "documentationTail": "Owner acceptance reconciliation only; old QA raw/indices retained, unverified individual ACs not converted to passes",
   "windowAfterUnlock": {
     "passed": false,
     "timedOut": true,
@@ -76,5 +76,26 @@
   "unlockedObservations": "unlocked-parent-observations.json",
   "backupRecord": "startup-qa-backup.json",
   "priorA05Snapshot": "../history/a05-window-startup-qa-a05eefa3/README.md",
-  "currentInvestigation": "Single fixer diagnosing; no established root cause or new build decision"
+  "currentInvestigation": "Single fixer diagnosing; no established root cause or new build decision",
+  "candidateReadinessBasis": "Explicit owner Personal MVP V1 release acceptance only; not full technical checklist proof",
+  "technicalChecklistFullyVerified": false,
+  "ownerAcceptanceRecord": "owner-v1-acceptance.json",
+  "ownerAcceptanceDate": "2026-10-22",
+  "mergeToMainAuthorized": true,
+  "mergePerformedByThisTask": false,
+  "canonicalInstalledApp": "/Applications/MyMathpix.app",
+  "laterInstalledPermissionObservation": {
+    "source": "owner-v1-name-and-permission-result.json",
+    "actualGUIPreflight": true,
+    "requestAttempted": false,
+    "selectionEntered": true,
+    "completedCaptureClaimed": false
+  },
+  "laterLaunchServicesWindowObservation": {
+    "source": "owner-v1-window-launchservices.json",
+    "publicWindowOK": true,
+    "seconds": 6.339,
+    "appExitIndependentlyObserved": false,
+    "scope": "Supporting public seam, not new menu/CmdTab/clipboard/live pass"
+  }
 }

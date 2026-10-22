@@ -1,0 +1,29 @@
+{
+  "observedAtUTC": "2026-10-22T05:51:50.824980+00:00",
+  "source": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
+  "installedPath": "/Applications/MyMathpix.app",
+  "installedExecutableSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "sourceAndInstalledAllFileBytesAndSymlinksEqual": true,
+  "sourceUnchanged": true,
+  "rebuild": false,
+  "resign": false,
+  "archives": [
+    {
+      "originalPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/.MyMathpix-preview-red-prior-fd5e43f56f0d4dfda25e135ab9545c48.app",
+      "archivePath": "/private/tmp/my_mathpix-remaining-context/app-identity-cleanup/.MyMathpix-preview-red-prior-fd5e43f56f0d4dfda25e135ab9545c48.app.zip",
+      "archiveSHA256": "1cdd11d2074d7d85c2bcf1e753455bb315e8b0fa164fa7e36743eacbc3d221f2",
+      "fileCount": 147,
+      "verifiedExactRestorationAndCodeSignature": true
+    },
+    {
+      "originalPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/.MyMathpix-prior-seal-34d06613cff04ada9d44dc75d86e8de7.app",
+      "archivePath": "/private/tmp/my_mathpix-remaining-context/app-identity-cleanup/.MyMathpix-prior-seal-34d06613cff04ada9d44dc75d86e8de7.app.zip",
+      "archiveSHA256": "f4487286d4603097b542952796fddcc58b6e2c7f251133fb36fe255573171bf0",
+      "fileCount": 147,
+      "verifiedExactRestorationAndCodeSignature": true
+    }
+  ],
+  "TCCReset": false,
+  "LSResetOrUnregister": false,
+  "securityPermissionsChanged": false
+}

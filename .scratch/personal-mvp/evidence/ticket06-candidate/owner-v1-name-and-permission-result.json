@@ -1,0 +1,22 @@
+{
+  "observedAtUTC": "2026-10-22T06:38:08.522398+00:00",
+  "installedPath": "/Applications/MyMathpix.app",
+  "systemSettingsActualName": "MyMathpix",
+  "systemSettingsActualToggle": "on",
+  "oldNamedRowPresentAfterChooserRefresh": false,
+  "nameRefresh": "re-registered the identical already-authorized installed App through System Settings file chooser; dismissed restart notice with Later, then restarted isolated test process",
+  "actualGUIPreflightAfterRestart": true,
+  "actualGUIPermissionRequestAttemptedAfterRestart": false,
+  "actualGUIReachedSelectionOverlayAfterRestart": true,
+  "probeCancelledViaCUAEscape": true,
+  "probeSubmittedRecognition": false,
+  "currentSessionKind": "isolated Ticket01 capture acceptance; recognition synthetic",
+  "currentRunID": "5377e92f-5d88-4a3a-b757-86b1a41cb557",
+  "currentPID": 95685,
+  "currentPhase": "launched",
+  "TCCDatabaseReset": false,
+  "LSDatabaseResetOrUnregister": false,
+  "sourceRebuildOrResign": false,
+  "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "remainingWholeTaskGates": "physical global shortcut/crop/busy guard, menu and CmdTab actual journeys, copy and live workflows remain unaccepted"
+}
