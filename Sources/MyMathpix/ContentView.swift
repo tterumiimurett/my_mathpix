@@ -191,7 +191,6 @@ struct MarkdownPreview: NSViewRepresentable {
         let document = MarkdownRenderer.document(for: markdown, complexTableHTML: complexTableHTML)
         guard context.coordinator.loadedDocument != document else { return }
         context.coordinator.loadedDocument = document
-        context.coordinator.prepareForDocumentLoad()
         let baseURL = AppResources.directoryURL
         webView.loadHTMLString(document, baseURL: baseURL)
     }
@@ -199,14 +198,9 @@ struct MarkdownPreview: NSViewRepresentable {
     final class Coordinator: NSObject, WKNavigationDelegate {
         var onRendered: (Bool, Bool) -> Void
         var loadedDocument: String?
-        private var isAwaitingDocumentLoad = false
 
         init(onRendered: @escaping (Bool, Bool) -> Void) {
             self.onRendered = onRendered
-        }
-
-        func prepareForDocumentLoad() {
-            isAwaitingDocumentLoad = true
         }
 
         func webView(
@@ -214,15 +208,15 @@ struct MarkdownPreview: NSViewRepresentable {
             decidePolicyFor navigationAction: WKNavigationAction,
             decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
         ) {
-            guard isAwaitingDocumentLoad,
-                  navigationAction.navigationType == .other,
+            // SwiftUI can queue the next document before WebKit has decided the
+            // previous load. Each programmatic offline main-frame load is valid.
+            guard navigationAction.navigationType == .other,
                   navigationAction.targetFrame?.isMainFrame == true,
                   let url = navigationAction.request.url,
                   OfflinePreviewNavigationPolicy.allows(url) else {
                 decisionHandler(.cancel)
                 return
             }
-            isAwaitingDocumentLoad = false
             decisionHandler(.allow)
         }
 

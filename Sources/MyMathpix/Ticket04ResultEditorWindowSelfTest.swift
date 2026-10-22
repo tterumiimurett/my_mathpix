@@ -52,16 +52,14 @@ enum Ticket04ResultEditorWindowSelfTest {
             finish(false, scenario: "fixture-unavailable")
             return
         }
-        let scenarios = NSScreen.screens.map { ("fresh-empty-panel", $0) }
-        for (scenario, screen) in scenarios {
-            if scenario == "fresh-empty-panel" {
-                try? model.clearHistory()
-                model.errorMessage = AppError.selectionTooSmall.localizedDescription
-                model.showResultEditor()
-                try? await Task.sleep(for: .milliseconds(200))
-                model.errorMessage = nil
-                try? await Task.sleep(for: .milliseconds(200))
-            }
+        for screen in NSScreen.screens {
+            let scenario = "empty-panel-overlap"
+            try? model.clearHistory()
+            model.errorMessage = AppError.selectionTooSmall.localizedDescription
+            model.showResultEditor()
+            try? await Task.sleep(for: .milliseconds(200))
+            model.errorMessage = nil
+            try? await Task.sleep(for: .milliseconds(200))
             guard let number = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber else {
                 finish(false, scenario: "display-unavailable")
                 return
@@ -99,6 +97,10 @@ enum Ticket04ResultEditorWindowSelfTest {
             }
             recognitionService.complete()
             print("TICKET04_PENDING_DOCUMENT_OBSERVED pending=\(pendingDocumentObserved)")
+            guard pendingDocumentObserved else {
+                finish(false, scenario: "missing-pending-document")
+                return
+            }
             await waitForRecognitionAndWindowSettlement(model: model)
             // The capture result is a compact surface, not the explicit main workspace.
             // Inspect settled visible AppKit windows rather than a presenter method call.
