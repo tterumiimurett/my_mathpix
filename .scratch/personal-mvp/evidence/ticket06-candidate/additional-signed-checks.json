@@ -7,9 +7,9 @@
     "hostMacOS": "15.7.3",
     "version": "0.1.0",
     "build": "1",
-    "artifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
-    "bundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
-    "cdhash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+    "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+    "bundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
+    "cdhash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
     "sandbox": true,
     "outboundNetwork": true,
     "userSelectedExport": true,
@@ -42,7 +42,7 @@
         "TICKET06_LAUNCH_CONTRACT_OK invalid-uuid-and-options=closed"
       ],
       "bundleUnchanged": true,
-      "seconds": 0.176,
+      "seconds": 0.175,
       "passed": true
     },
     {
@@ -53,27 +53,18 @@
         "GOLDEN_PREVIEW_SELF_TEST_OK height=1776 footerRows=48"
       ],
       "bundleUnchanged": true,
-      "seconds": 0.563,
+      "seconds": 0.609,
       "passed": true
     },
     {
       "name": "signed_window_roles",
-      "exitCode": 0,
-      "signal": "TICKET04_RESULT_EDITOR_WINDOW_OK all-connected-displays",
-      "observations": [
-        "TICKET04_WINDOW_ROLES_OBSERVED compact-width=470.0 compact-height=560.0 floating=true other-spaces=true main-width=1180.0",
-        "TICKET04_WINDOW_ROLES_OBSERVED compact-width=470.0 compact-height=560.0 floating=true other-spaces=true main-width=1180.0",
-        "TICKET04_FAILURE_WINDOW_OBSERVED main-visible=false result-visible=true result-sheet=true credential-recovery=true",
-        "TICKET04_RESULT_EDITOR_WINDOW_OK all-connected-displays"
-      ],
-      "bundleUnchanged": true,
-      "seconds": 4.733,
-      "passed": true
+      "passed": false,
+      "failureCode": "timeout",
+      "seconds": 120.01
     }
   ],
   "realCapture": "not-run",
   "liveService": "not-run",
   "normalGUI": "not-run",
-  "TCCChanges": "none",
-  "allPassed": true
+  "TCCChanges": "none"
 }

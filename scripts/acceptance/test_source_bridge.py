@@ -11,7 +11,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 CLI = REPO / 'scripts/acceptance/source_bridge.py'
 GOLDEN = REPO / '.scratch/personal-mvp/evidence/ticket05-golden-set/baseline-v2/build-provenance.json'
-RAW = Path(os.environ.get('MYMATHPIX_BRIDGE_EVIDENCE', '/private/tmp/my_mathpix-remaining-context/window-candidate-evidence'))
+RAW = Path(os.environ.get('MYMATHPIX_BRIDGE_EVIDENCE', str(REPO / '.scratch/personal-mvp/evidence/ticket06-candidate')))
 
 class SourceBridgeCLI(unittest.TestCase):
     def setUp(self):
@@ -60,7 +60,8 @@ class SourceBridgeCLI(unittest.TestCase):
         acceptance = {entry['path'] for entry in report['acceptanceOnlyChanges']}
         self.assertFalse(shell & acceptance)
         self.assertIn('Sources/MyMathpix/ResultEditorView.swift', shell)
-        self.assertEqual(report['builderSourceRevision'], '01dffed1f9cd653c8c296c3dc6083863c7d04f1f')
+        self.assertEqual(report['builderSourceRevision'],
+                         json.loads((self.root / 'build-stage-provenance.json').read_text())['builderGitCommit'])
 
     def rejected(self, reason, golden=GOLDEN):
         result, output = self.invoke(golden)

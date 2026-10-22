@@ -1,10 +1,15 @@
 {
   "schema": 1,
-  "builderGitCommit": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
-  "builderGitTree": "1a476e34a29b774b1088c0539d530b31ba495559",
+  "builderGitCommit": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "builderGitTree": "515e0fd3c57eccc3d688ad1df6912ed6434bd421",
   "builderClean": true,
-  "integrationCommitAtStage": "1a52cdc24a313a23d0327c1f4d8adbc4d0b7a103",
+  "reviewedProductionGitCommit": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "reviewedIntegrationGitCommit": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "reviewedIntegrationBaseGitCommit": "dbbe6939b7ed475bba1c3433c9606adaa226e14c",
+  "reviewScope": "All194 packaged build inputs match the parent-approved production tip exactly; integration additionally preserves historical red and source-only merge records. Actual new GUI acceptance is pending.",
+  "integrationCommitAtStage": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
   "sourceTreeMatchesIntegration": true,
+  "reviewedProductionBuildInputsMatch": true,
   "candidate": {
     "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
     "bundleIdentifier": "com.byterumi.mymathpix",
@@ -12,9 +17,9 @@
     "hostMacOS": "15.7.3",
     "version": "0.1.0",
     "build": "1",
-    "artifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
-    "bundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
-    "cdhash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+    "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+    "bundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
+    "cdhash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
     "sandbox": true,
     "outboundNetwork": true,
     "userSelectedExport": true,
@@ -96,8 +101,8 @@
     },
     {
       "path": "Sources/MyMathpix/ContentView.swift",
-      "bytes": 8993,
-      "sha256": "4a37915a27e313d9af346bcb260d1beb0a372e0ab41a900f1a5b9d63ac9bf386"
+      "bytes": 8874,
+      "sha256": "4afb275ef2669c0a1988f6e4ca42a7bef0bbf482334293328869f748186ff272"
     },
     {
       "path": "Sources/MyMathpix/DatalabClient.swift",
@@ -991,8 +996,8 @@
     },
     {
       "path": "Sources/MyMathpix/Ticket04ResultEditorWindowSelfTest.swift",
-      "bytes": 10385,
-      "sha256": "8a07c89bb5dba3996ded52adb2623c9643d06eb69c1e7794b3f1e620b41ff321"
+      "bytes": 14097,
+      "sha256": "46e40d4332a3b790762edc646cd5d7f7ae5da371eba1c5001f682a551c0a71b6"
     },
     {
       "path": "Sources/MyMathpix/Ticket06Acceptance.swift",
@@ -1017,7 +1022,7 @@
     },
     {
       "path": "Contents/MacOS/MyMathpix",
-      "sha256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf"
+      "sha256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150"
     },
     {
       "path": "Contents/Resources/MyMathpix_MyMathpix.bundle/Resources/GoldenSet/B01.png",
@@ -1600,10 +1605,14 @@
       "sha256": "30bb39523bd2fa107487874c7a3b6e2874ba232008da5263c5f177407e73a519"
     }
   ],
-  "priorStableRetainedAt": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/.MyMathpix-prior-seal-34d06613cff04ada9d44dc75d86e8de7.app",
-  "priorStableArtifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "priorStableRetainedAt": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/.MyMathpix-preview-red-prior-fd5e43f56f0d4dfda25e135ab9545c48.app",
+  "priorStableArtifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+  "redBackupPath": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixCompactPreviewRed-a9b1c2df.app",
+  "redBackupIntegrityVerified": true,
   "stagingSignatureVerified": true,
   "processAbsentBeforeReplacement": true,
+  "buildInvocationCount": 1,
+  "stageInvocationCount": 1,
   "guiJourney": "pending-parent-observation",
   "sourceBridge": "pending-new-reviewed-bridge"
 }
