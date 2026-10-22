@@ -1,6 +1,7 @@
 import AppKit
 import CoreGraphics
 import Foundation
+import WebKit
 
 /// Runs in the real SwiftUI window of the signed App. Only capture pixels and the
 /// external recognition service are synthetic; the Result Editor is not mocked.
@@ -51,7 +52,16 @@ enum Ticket04ResultEditorWindowSelfTest {
             finish(false, scenario: "fixture-unavailable")
             return
         }
-        for screen in NSScreen.screens {
+        let scenarios = NSScreen.screens.map { ("fresh-empty-panel", $0) }
+        for (scenario, screen) in scenarios {
+            if scenario == "fresh-empty-panel" {
+                try? model.clearHistory()
+                model.errorMessage = AppError.selectionTooSmall.localizedDescription
+                model.showResultEditor()
+                try? await Task.sleep(for: .milliseconds(200))
+                model.errorMessage = nil
+                try? await Task.sleep(for: .milliseconds(200))
+            }
             guard let number = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber else {
                 finish(false, scenario: "display-unavailable")
                 return
@@ -61,6 +71,7 @@ enum Ticket04ResultEditorWindowSelfTest {
             window.setContentSize(NSSize(width: 1180, height: 760))
             window.center()
             NSApp.windows.filter { $0.frame.width >= 200 }.forEach { $0.orderOut(nil) }
+            recognitionService.defersCompletion = true
             model.recognizeCapturedSnippet(CapturedSnippet(
                 uploadPayload: UploadPayload(pngData: png),
                 geometry: CaptureGeometry(
@@ -74,6 +85,20 @@ enum Ticket04ResultEditorWindowSelfTest {
                 finish(false, scenario: "hidden-during-recognition")
                 return
             }
+            // Deliver the external result while the real hidden WK view's initial
+            // document is still loading, rather than assuming a fixed mock delay.
+            var pendingDocumentObserved = false
+            for _ in 0..<200 {
+                if let panel = NSApp.windows.first(where: {
+                    $0.identifier?.rawValue == "com.byterumi.mymathpix.compact-result"
+                }), let content = panel.contentView, let webView = findWebView(in: content), webView.isLoading {
+                    pendingDocumentObserved = true
+                    break
+                }
+                try? await Task.sleep(for: .milliseconds(1))
+            }
+            recognitionService.complete()
+            print("TICKET04_PENDING_DOCUMENT_OBSERVED pending=\(pendingDocumentObserved)")
             await waitForRecognitionAndWindowSettlement(model: model)
             // The capture result is a compact surface, not the explicit main workspace.
             // Inspect settled visible AppKit windows rather than a presenter method call.
@@ -106,6 +131,10 @@ enum Ticket04ResultEditorWindowSelfTest {
                 finish(false, scenario: "completion-placement")
                 return
             }
+            guard await previewContainsFixture(in: resultWindow!, scenario: scenario) else {
+                finish(false, scenario: "\(scenario)-preview-dom")
+                return
+            }
             model.showMainWindow()
             try? await Task.sleep(for: .milliseconds(250))
             guard window.isVisible, window.frame.width >= 920, !resultWindow!.isVisible else {
@@ -127,6 +156,7 @@ enum Ticket04ResultEditorWindowSelfTest {
         }
         // A recoverable recognition error must attach to the compact surface,
         // without bringing its hidden history/settings workspace back on screen.
+        recognitionService.defersCompletion = false
         recognitionService.failure = .invalidCredentials
         NSApp.windows.filter { $0.frame.width >= 200 }.forEach { $0.orderOut(nil) }
         model.recognizeCapturedSnippet(CapturedSnippet(
@@ -151,6 +181,36 @@ enum Ticket04ResultEditorWindowSelfTest {
         finish(true, scenario: "all-connected-displays")
     }
 
+    private static func findWebView(in view: NSView) -> WKWebView? {
+        if let webView = view as? WKWebView { return webView }
+        for child in view.subviews {
+            if let found = findWebView(in: child) { return found }
+        }
+        return nil
+    }
+
+    private static func previewContainsFixture(in window: NSWindow, scenario: String) async -> Bool {
+        guard let content = window.contentView, let webView = findWebView(in: content) else {
+            print("TICKET04_PREVIEW_DOM_OBSERVED scenario=\(scenario) webview=false")
+            return false
+        }
+        var counts: [NSNumber] = []
+        for _ in 0..<100 {
+            counts = await withCheckedContinuation { continuation in
+                webView.evaluateJavaScript("[document.body?.innerText.includes('TICKET 01 SAFE FIXTURE') === true, document.querySelectorAll('.katex').length, document.querySelectorAll('table').length]") { value, _ in
+                    continuation.resume(returning: value as? [NSNumber] ?? [])
+                }
+            }
+            if counts.count == 3, counts[0].boolValue, counts[1].intValue > 0, counts[2].intValue > 0 {
+                print("TICKET04_PREVIEW_DOM_OBSERVED scenario=\(scenario) fixture=true formulas=\(counts[1]) tables=\(counts[2])")
+                return true
+            }
+            try? await Task.sleep(for: .milliseconds(50))
+        }
+        print("TICKET04_PREVIEW_DOM_OBSERVED scenario=\(scenario) fixture=\(counts.first?.boolValue == true) formulas=\(counts.dropFirst().first?.intValue ?? 0) tables=\(counts.dropFirst(2).first?.intValue ?? 0) loading=\(webView.isLoading)")
+        return false
+    }
+
     private static func waitForRecognitionAndWindowSettlement(model: AppModel) async {
         for _ in 0..<100 {
             if !model.isProcessing { break }
@@ -172,12 +232,23 @@ enum Ticket04ResultEditorWindowSelfTest {
 @MainActor
 private final class WindowRecognitionService: RecognitionService {
     var failure: AppError?
+    var defersCompletion = false
+    private var completion: CheckedContinuation<Void, Never>?
+
+    func complete() {
+        completion?.resume()
+        completion = nil
+    }
 
     func recognize(uploadPayload: UploadPayload, mode: RecognitionMode) async throws -> DatalabResult {
-        try await Task.sleep(for: .milliseconds(200))
+        if defersCompletion {
+            await withCheckedContinuation { completion = $0 }
+        } else {
+            try await Task.sleep(for: .milliseconds(200))
+        }
         if let failure { throw failure }
         return DatalabResult(
-            markdown: "Local window acceptance result", html: nil, runtime: nil,
+            markdown: Ticket01MockContract.expectedCanonicalMarkdown, html: nil, runtime: nil,
             costSummary: nil, costValue: nil, parseQualityScore: nil,
             automaticRetryCount: 0
         )
