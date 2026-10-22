@@ -4,7 +4,7 @@
 
 **Blocked by:** 04 — Make the App dependable for a daily personal workflow; 05 — Prove recognition quality with the Golden Set.
 
-**Status:** claimed
+**Status:** resolved
 
 ## Comments
 
@@ -41,3 +41,7 @@ A9 session closure/history preparation: the current Mac is locked; parent ended 
 New a05 handoff (runtime acceptance open): final source `cd826ad8da5df3f0c243897de448be5bf84d5121` independently reviewed0/0; actual clean builder/reviewed integration `677d2e9383d89df92e5f0b4d5dc5788276dd43c6` produced executable `a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150`, CDHash `0e22025dae3b9b101e692333f7eb3b03b1763c99`. [Current handoff](../evidence/ticket06-candidate/handoff.md) records8 base checks +strictUUID/Golden1776/48 PASS and **direct production window/DOM timeout120.01seconds** (partial stdout not retained, cause unknown, not attributed to lock). Source-wrapper GREEN is separate. Formal bridge binds the actual new194-input map with two exact reviewed after-hash updates; all prior a9/ea7/pre-review/Golden evidence remains immutable. New LS/direct preflights both no are not denial/revocation or GUI acceptance. No actual new GUI/capture/six-copy/live/TCC journey is credited;06/08 stay claimed and all previously open gates remain open.
 
 Unlocked unchanged-a05 follow-up: public window/DOM timed out again120.021seconds with full empty stdout/stderr retained; original120.01s timeout remains separate. T3 PID73130/run bc01606f script READY but report stayed launched/all visibilityfalse; CUA full-App-path read failed after5seconds, and an idle fixture main-thread sample establishes neither absolute window absence/deadlock nor cause. Parent script stopped T3, and the complete a05 App was safely backed up with signature/executable/CDHash/full-bundle equality. [Current handoff](../evidence/ticket06-candidate/handoff.md) adds7 scoped raw files, parent observations (including303second Settings read/toggle-on limitation) and backup metadata, preserving16 original indexed hashes plus [prior19-file namespace](../evidence/history/a05-window-startup-qa-a05eefa3/README.md). Owner also dragged the old a9 fixture; that background does not reclassify its gate or immutable raw. GUI startup was attempted but not successfully established, no capture/API/TCC action or new build/cause is claimed;06/08 remain claimed with actual gates open.
+
+## Answer
+
+2026-10-22 — **Resolved by owner acceptance of Personal MVP V1**, with explicit merge-to-main authority. Owner quote: “OK, very nice. 那我们这就算是完成了第一版了. 可以先 merge 到 main 了”. See [owner decision and bounded final evidence](../evidence/ticket06-candidate/owner-v1-acceptance.md). This resolution is an owner-accepted release with the unchecked individual ACs retained as unverified; it is not an all-tests/physical-GUI pass. No new live/paid/clipboard/menu/Command-Tab claim is added. Notion07, fourteen-day Dogfood and Public Product remain pending. Earlier claimed/QA-failure statements below are historical stages, not the current ticket disposition.

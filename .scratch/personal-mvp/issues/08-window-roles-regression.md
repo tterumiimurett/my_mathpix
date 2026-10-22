@@ -1,6 +1,6 @@
 # 08 — Restore compact capture result and explicit main workspace
 
-**Status:** claimed
+**Status:** resolved
 
 **What to fix:** Capture completion and the menu-bar MyMathpix item show the same compact Ticket 03 result surface at the captured display's top-left. The compact surface floats over other Apps and preserves preview-first Original/Edit and Markdown/Lark/Notion. The large history/settings/usage workspace appears only on explicit App activation such as Command-Tab or reopening the App.
 
@@ -24,7 +24,9 @@
 
 ## Answer
 
-Implemented in the isolated `codex/restore-compact-result-panel` worktree from `22bf0fd`; acceptance remains claimed until the parent records the actual desktop journey on the final signed candidate.
+2026-10-22 — **Resolved by owner acceptance of Personal MVP V1**, with explicit merge-to-main authority. Owner quote: “OK, very nice. 那我们这就算是完成了第一版了. 可以先 merge 到 main 了”. See [owner decision and bounded final evidence](../evidence/ticket06-candidate/owner-v1-acceptance.md). This resolution is an owner-accepted release with the unchecked individual ACs retained as unverified; it is not an all-tests/physical-GUI pass. No new live/paid/clipboard/menu/Command-Tab claim is added. Notion07, fourteen-day Dogfood and Public Product remain pending. Earlier claimed/QA-failure statements below are historical stages, not the current ticket disposition.
+
+Implemented in the isolated `codex/restore-compact-result-panel` worktree from `22bf0fd`; acceptance was still claimed at that implementation stage; the owner V1 decision above now resolves the ticket while retaining unverified individual criteria.
 
 The regression came from normal capture completion and explicit workspace activation sharing the large main-window presenter, while the compact Ticket 03 layout was only wired into a fixture launch. A separate nonactivating floating panel now hosts that same preview-first Result Editor for production and fixture results. Its default **outer frame including title bar is 470 × 560 points**, with a 16-point visible-area top-left inset on the captured display. The main workspace opens through explicit App activation/reopen; showing it hides the panel, and the result command reuses the same panel and selected Snippet. Menu-bar left click is wired to that result command; the right-click menu retains Capture with its shortcut, current status, explicit workspace access, Settings and Quit through public App/SwiftUI actions. Hidden-main error alerts are gated, and compact credential errors retain an explicit Open MyMathpix recovery action. GUI test scene/restoration state is isolated from normal main-window geometry.
 

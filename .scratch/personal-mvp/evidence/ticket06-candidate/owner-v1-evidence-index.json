@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "recordedAtUTC": "2026-10-22T07:02:48.329780+00:00",
+  "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "ownerAcceptanceDate": "2026-10-22",
+  "entries": [
+    {
+      "file": "owner-v1-installation-provenance.json",
+      "sha256": "ef8142c325e100bad72188ea7dccaf4fea11c2daf568ea45b3bcff1702183e8e",
+      "source": "/private/tmp/my_mathpix-remaining-context/app-identity-cleanup/installation-provenance.json",
+      "scope": "Relevant Root-provided scoped metadata/fixture output, inspected to exclude token contents, personal history content and unrelated AX; preserve its observation-time limits."
+    },
+    {
+      "file": "owner-v1-name-and-permission-result.json",
+      "sha256": "fbb8e3b463586135753548d6e624abd5c98875b08b8cac95ac303307e26d4e12",
+      "source": "/private/tmp/my_mathpix-remaining-context/app-identity-cleanup/name-and-permission-result.json",
+      "scope": "Relevant Root-provided scoped metadata/fixture output, inspected to exclude token contents, personal history content and unrelated AX; preserve its observation-time limits."
+    },
+    {
+      "file": "owner-v1-normal-mode-token-recovery.json",
+      "sha256": "a5e9b8b8a723e713c010531c98ccd15e92e5f634f703d9469b1ba898a4842f75",
+      "source": "/private/tmp/my_mathpix-remaining-context/token-test-mode-recovery/recovery.json",
+      "scope": "Relevant Root-provided scoped metadata/fixture output, inspected to exclude token contents, personal history content and unrelated AX; preserve its observation-time limits."
+    },
+    {
+      "file": "owner-v1-window-launchservices.json",
+      "sha256": "dee9a06dc665905f04d9acb006e9d6e8833877406d5c0df1f6b9a55f3d2d8868",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-launchservices.json",
+      "scope": "Relevant Root-provided scoped metadata/fixture output, inspected to exclude token contents, personal history content and unrelated AX; preserve its observation-time limits."
+    },
+    {
+      "file": "owner-v1-window-launchservices.stdout",
+      "sha256": "c9fdd71d35eba6653b68fa30bb8448e3263d5662479b5badc4b50725eaeb664d",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-launchservices.stdout",
+      "scope": "Relevant Root-provided scoped metadata/fixture output, inspected to exclude token contents, personal history content and unrelated AX; preserve its observation-time limits."
+    },
+    {
+      "file": "owner-v1-release-archive.json",
+      "sha256": "ab63ab635fc645ab695c0d99bea3184d8c177e687d8fb3b7da85926c4d3f46d9",
+      "source": "/private/tmp/my_mathpix-remaining-context/v1-release-archive.json",
+      "scope": "Relevant Root-provided scoped metadata/fixture output, inspected to exclude token contents, personal history content and unrelated AX; preserve its observation-time limits."
+    },
+    {
+      "file": "owner-v1-acceptance.json",
+      "sha256": "971e1d974efc964faa98d8fd9c2205a57c3b349f49d909398ac18515ffc9ec95",
+      "source": "Trusted owner acceptance quoted in parent closeout task",
+      "scope": "Owner release/merge decision; individual unverified ACs,07 and Dogfood/Public Product remain explicit."
+    },
+    {
+      "file": "owner-v1-acceptance.md",
+      "sha256": "6f3cc441d6ebeb12bab4fe70ef44426172c6cd8b838806fe1018a4933b7efd82",
+      "source": "Trusted owner acceptance quoted in parent closeout task",
+      "scope": "Owner release/merge decision; individual unverified ACs,07 and Dogfood/Public Product remain explicit."
+    }
+  ],
+  "oldCurrent25IndexChanged": false,
+  "oldArchive16IndexChanged": false,
+  "releaseZIPIncludedInGit": false
+}

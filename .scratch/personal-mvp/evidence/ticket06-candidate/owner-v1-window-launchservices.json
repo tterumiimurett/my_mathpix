@@ -1,0 +1,25 @@
+{
+  "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "context": "LaunchServices foreground open-n-W",
+  "argv": [
+    "open",
+    "-n",
+    "-W",
+    "--stdout",
+    "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-launchservices.stdout",
+    "--stderr",
+    "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-launchservices.stderr",
+    "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
+    "--args",
+    "--ticket04-result-editor-window-self-test"
+  ],
+  "noRebuild": true,
+  "launcherExitCode": 0,
+  "timedOut": false,
+  "seconds": 6.339,
+  "remainingExactAppPIDs": [],
+  "launcherStdout": "",
+  "launcherStderr": "",
+  "publicWindowOK": true,
+  "appExitCode": "not observed independently through launcher"
+}

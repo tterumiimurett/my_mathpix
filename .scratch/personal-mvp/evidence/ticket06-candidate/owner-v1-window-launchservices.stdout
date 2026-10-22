@@ -1,0 +1,8 @@
+TICKET04_PENDING_DOCUMENT_OBSERVED pending=true
+TICKET04_PREVIEW_DOM_OBSERVED scenario=empty-panel-overlap fixture=true formulas=1 tables=1
+TICKET04_WINDOW_ROLES_OBSERVED compact-width=470.0 compact-height=560.0 floating=true other-spaces=true main-width=1180.0
+TICKET04_PENDING_DOCUMENT_OBSERVED pending=true
+TICKET04_PREVIEW_DOM_OBSERVED scenario=empty-panel-overlap fixture=true formulas=1 tables=1
+TICKET04_WINDOW_ROLES_OBSERVED compact-width=470.0 compact-height=560.0 floating=true other-spaces=true main-width=1180.0
+TICKET04_FAILURE_WINDOW_OBSERVED main-visible=false result-visible=true result-sheet=true credential-recovery=true
+TICKET04_RESULT_EDITOR_WINDOW_OK all-connected-displays

@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "decisionDate": "2026-10-22",
+  "recordedAtUTC": "2026-10-22T07:02:48.324039+00:00",
+  "ownerQuote": "OK, very nice. 那我们这就算是完成了第一版了. 可以先 merge 到 main 了",
+  "decision": "Personal MVP V1 accepted by owner",
+  "mergeToMainAuthorized": true,
+  "mergePerformedByThisDocumentationTask": false,
+  "authority": "Direct human owner acceptance and explicit merge instruction, relayed in trusted parent task",
+  "acceptedIntegrationRevision": "4fba9a15964f069339866ad1655d4907d09c0713",
+  "actualBuilderRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "reviewedProductionRevision": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "formalAuditRevision": "7c4379dffba423bb224ec4c7e919873fb165ff56",
+  "installedApp": "/Applications/MyMathpix.app",
+  "artifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "cdhash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
+  "bundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
+  "identityEvidence": "Root installation provenance says installed/source all file bytes and symlinks equal; no new App audit or execution by this closeout.",
+  "tickets": {
+    "06": "resolved-owner-accepted-release",
+    "08": "resolved-owner-accepted-release",
+    "07": "deferred-needs-triage"
+  },
+  "closureBasis": "Explicit owner release acceptance with unverified individual criteria retained; not a fabricated all-checks pass",
+  "unverifiedConditionsRetained": [
+    "06: one authoritative installed-App physical shortcut/crop/busy-guard/preview/history journey remains without a complete passing record.",
+    "06: complete ordinary Retina/multi-display ScreenCaptureKit smoke and real live-fast/balanced/edit/copy/Failed Record recovery are not newly asserted.",
+    "06: individual relaunch/delete/clear/eviction/conflict/cancel/denial/timeout/malformed GUI conditions are not all newly exercised.",
+    "08: physical menu access, Command-Tab/Dock/full-screen and all production-route conditions retain their unchecked individual ACs; the LaunchServices public seam is supporting evidence.",
+    "No new paid API, real token health rerun, destination paste or clipboard-button pass is claimed by this reconciliation."
+  ],
+  "originalIndividualACCheckboxesChanged": false,
+  "technicalChecklistFullyVerified": false,
+  "knownRootFacts": {
+    "canonicalInstalledIdentity": "MyMathpix, same signed a05; original dist unchanged",
+    "SettingsDisplayNameAndToggle": "MyMathpix/on",
+    "actualGUIAfterRestart": "preflight=true/request=false/selection entered; completed crop not claimed",
+    "LaunchServicesPublicWindowSeam": "Same a05 public marker OK, launcher6.339seconds, no independently observed App exit code; not new menu/CmdTab/clipboard/live acceptance",
+    "tokenTestModeRecovery": "Root isolated T1 mock lacks credential configuration; token test rejected before health/save. Fixture stopped; normal App main/Settings and stored-token recognition observed, no health rerun or token bytes read/copied.",
+    "runtimeOwnership": "Normal App belongs to owner, left running; no closeout launch/stop/change"
+  },
+  "releaseZIP": {
+    "path": "/Users/bytedance/Documents/terumi_repo/my_mathpix/dist/MyMathpix-v0.1.0.zip",
+    "sha256": "cb4b7fac143cb7c8f6266da42a533ea19415a0ac3d6360a592f5919b3bb195a2",
+    "proof": "owner-v1-release-archive.json",
+    "ZIPCommittedToGit": false
+  },
+  "deferred": [
+    "Notion inline Native Paste07",
+    "14-day Dogfood start/results",
+    "Public Product gate"
+  ],
+  "preservedHistoricalIndexSHA256": {
+    ".scratch/personal-mvp/evidence/ticket06-candidate/evidence-index.json": "f857c338e129af3ce5ceb444f6c96a81a13db393a944c08792078ea616883484",
+    ".scratch/personal-mvp/evidence/history/a05-window-startup-qa-a05eefa3/evidence-index.json": "36a0a180f43007f984374f969b38030ab99443f2b100578cca7f4488f3c3f341",
+    ".scratch/personal-mvp/evidence/history/compact-preview-regression-a9b1c2df/evidence-index.json": "087d76728ae3e043b04195c305174ae67cbf3567cf2e095143c26f9446f33aa8"
+  },
+  "sourceBuildSignPermissionOrOwnerDataActionByThisTask": "none"
+}
