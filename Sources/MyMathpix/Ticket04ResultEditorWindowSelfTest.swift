@@ -89,13 +89,13 @@ enum Ticket04ResultEditorWindowSelfTest {
             for _ in 0..<200 {
                 if let panel = NSApp.windows.first(where: {
                     $0.identifier?.rawValue == "com.byterumi.mymathpix.compact-result"
-                }), let content = panel.contentView, let webView = findWebView(in: content), webView.isLoading {
+                }), let content = panel.contentView, let webView = findWebView(in: content),
+                   webView.isLoading, recognitionService.complete() {
                     pendingDocumentObserved = true
                     break
                 }
                 try? await Task.sleep(for: .milliseconds(1))
             }
-            recognitionService.complete()
             print("TICKET04_PENDING_DOCUMENT_OBSERVED pending=\(pendingDocumentObserved)")
             guard pendingDocumentObserved else {
                 finish(false, scenario: "missing-pending-document")
@@ -237,9 +237,11 @@ private final class WindowRecognitionService: RecognitionService {
     var defersCompletion = false
     private var completion: CheckedContinuation<Void, Never>?
 
-    func complete() {
-        completion?.resume()
-        completion = nil
+    func complete() -> Bool {
+        guard let completion else { return false }
+        self.completion = nil
+        completion.resume()
+        return true
     }
 
     func recognize(uploadPayload: UploadPayload, mode: RecognitionMode) async throws -> DatalabResult {

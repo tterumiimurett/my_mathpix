@@ -12,6 +12,8 @@
 
 - 2026-10-22: Actual T1 capture exposed a persistently blank compact WK preview with intact copy source. Added real DOM checks through the existing window/mock seam, reproduced the pending-document overlap twice before production edits, and removed the single-use navigation gate that caused the reproduced cancellation. Both displays now render fixture/formula/table; cold first completion and Ticket 03 checks also pass. See preview navigation RED/GREEN evidence; actual new-candidate acceptance remains open.
 
+- 2026-10-22: After zero-finding preview Standards/Spec reviews, tightened the test-owned mock release handshake so the pending-load premise requires a successfully resumed installed continuation. The same signed-window command remains green on both displays; production ContentView is byte-identical to `54135e2`.
+
 ## Acceptance criteria
 
 - [ ] Capture and recognition keep App windows hidden; completion shows a compact floating result at the captured display's top-left, with the main workspace hidden.
