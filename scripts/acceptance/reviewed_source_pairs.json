@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "reviewedProductionSourceRevision": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
-  "reviewedIntegrationRevision": "1a52cdc24a313a23d0327c1f4d8adbc4d0b7a103",
+  "reviewedProductionSourceRevision": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "reviewedIntegrationRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
   "baselineProvenanceSHA256": "904310eb3d337ea6a10c85392348bd4efc4ca197253c0222e925f980ef4d750b",
   "categories": {
     "productionWindowShellChanges": [
@@ -26,8 +26,8 @@
       {
         "path": "Sources/MyMathpix/ContentView.swift",
         "previousSHA256": "37e7a7acd53440ec839aa3447e1848a7d7d43d5a6a8d4ed8a62ad20035630356",
-        "sha256": "4a37915a27e313d9af346bcb260d1beb0a372e0ab41a900f1a5b9d63ac9bf386",
-        "reviewReason": "Production large history/settings/usage workspace composition."
+        "sha256": "4afb275ef2669c0a1988f6e4ca42a7bef0bbf482334293328869f748186ff272",
+        "reviewReason": "Production history/settings/usage workspace plus the reviewed offline WK main-frame programmatic navigation overlap fix; this is production preview-host behavior, not acceptance-only."
       },
       {
         "path": "Sources/MyMathpix/ResultEditorWindowPresenter.swift",
@@ -52,8 +52,8 @@
       {
         "path": "Sources/MyMathpix/Ticket04ResultEditorWindowSelfTest.swift",
         "previousSHA256": "de39ff39c59b81c9a9967bcca02473408844be3b683228563969cd88f12e977c",
-        "sha256": "8a07c89bb5dba3996ded52adb2623c9643d06eb69c1e7794b3f1e620b41ff321",
-        "reviewReason": "Reviewed existing signed public window-role observation across displays."
+        "sha256": "46e40d4332a3b790762edc646cd5d7f7ae5da371eba1c5001f682a551c0a71b6",
+        "reviewReason": "Existing public signed window/mock seam now checks real DOM after a hidden loading overlap; pending requires successful release of an installed mock continuation, with window roles/error-sheet coverage retained."
       }
     ],
     "acceptanceOnlyChanges": [
