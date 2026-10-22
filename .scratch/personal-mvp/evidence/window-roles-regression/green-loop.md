@@ -59,3 +59,7 @@ The source bridge also needs a reviewed update for these intentional production 
 The independent fixed-range Standards review reported no hard violations and one nonblocking P3 duplicated-code suggestion. Both success and invalid-credentials window scenarios now call the file-private `waitForRecognitionAndWindowSettlement(model:)`. It preserves the existing maximum 100 polls at 20 ms and the subsequent 400 ms settlement wait; no production behavior changed.
 
 Re-ran only `./scripts/ticket04_result_editor_window_test.sh` and `git diff --check` after this extraction. Both passed; the same two-display compact observations and compact error-sheet observation above were reproduced, ending in `TICKET04_RESULT_EDITOR_WINDOW_OK all-connected-displays`. Unrelated already-green suites were not rerun. The retained integration/delivery App was not rebuilt or replaced.
+
+## Real-capture blank-preview follow-up
+
+The parent's subsequent real T1 journey exposed a blank preview not covered by the original geometry checks. The same public window/mock-service seam now reproduces overlapping initial/final document loads with actual WK DOM assertions. See [twice-repeated RED](preview-navigation-red.md) and [single-variable diagnosis, minimal fix and GREEN](preview-navigation-green.md). This is an intentional additional production preview-host change in ContentView, requiring a new exact source-bridge review before resealing; the earlier retained candidate is unchanged.
