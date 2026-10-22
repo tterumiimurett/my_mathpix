@@ -1,0 +1,474 @@
+{
+  "scope": "Only isolated Ticket01 PID50276; all fixture data, no owner profile or token",
+  "matches": [
+    {
+      "timestamp": "2026-10-22 11:43:44.686825+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::decidePolicyForNavigationAction: frameID=12, isMainFrame=1, navigationID=15"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.688759+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=12, isMainFrame=1, navigationID=15, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.688777+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=12, isMainFrame=1, navigationID=15, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.688856+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::decidePolicyForNavigationAction: frameID=25, isMainFrame=1, navigationID=28"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.689187+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=25, isMainFrame=1, navigationID=28, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.689188+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=25, isMainFrame=1, navigationID=28, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.689202+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::decidePolicyForNavigationAction: keep using process 52089 for navigation, reason=Process has not yet committed any provisional loads"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.689215+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176002f40 - [PID=52089] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.696961+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::decidePolicyForNavigationAction: keep using process 52091 for navigation, reason=Process has not yet committed any provisional loads"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.696983+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176006900 - [PID=52091] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.697015+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::didStartProvisionalLoadForFrame: frameID=12, isMainFrame=1"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.697029+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x176002f40 - [PID=52089] WebProcessProxy::didStartProvisionalLoadForMainFrame:"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.701966+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::didStartProvisionalLoadForFrame: frameID=25, isMainFrame=1"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:44.701967+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x176006900 - [PID=52091] WebProcessProxy::didStartProvisionalLoadForMainFrame:"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.008565+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::decidePolicyForNavigationAction: frameID=12, isMainFrame=1, navigationID=36"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.009338+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::decidePolicyForNavigationAction: frameID=25, isMainFrame=1, navigationID=37"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.009819+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=12, isMainFrame=1, navigationID=36, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.009822+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=12, isMainFrame=1, navigationID=36, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.009841+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::decidePolicyForNavigationAction: keep using process 52089 for navigation, reason=Navigation within the same non-HTTP(s) protocol"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.009860+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176002f40 - [PID=52089] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010099+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=25, isMainFrame=1, navigationID=37, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010100+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=25, isMainFrame=1, navigationID=37, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010108+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::decidePolicyForNavigationAction: keep using process 52091 for navigation, reason=Navigation within the same non-HTTP(s) protocol"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010117+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176006900 - [PID=52091] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010236+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1270fdc18 - [pageProxyID=7, webPageID=8, PID=52089] WebPageProxy::didStartProvisionalLoadForFrame: frameID=12, isMainFrame=1"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010237+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x176002f40 - [PID=52089] WebProcessProxy::didStartProvisionalLoadForMainFrame:"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010299+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x115043218 - [pageProxyID=21, webPageID=22, PID=52091] WebPageProxy::didStartProvisionalLoadForFrame: frameID=25, isMainFrame=1"
+    },
+    {
+      "timestamp": "2026-10-22 11:43:53.010299+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x176006900 - [PID=52091] WebProcessProxy::didStartProvisionalLoadForMainFrame:"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.430671+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176002f40 - [PID=52089] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=0, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=1)"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.526366+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176006900 - [PID=52091] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=0, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=1)"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.589302+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x17600dfc0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebProcess NearSuspended Assertion' for process with PID=52089, error: Error Domain=RBSServiceErrorDomain Code=1 \"(target is not running or doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.runningboard.assertions.webkit)\" UserInfo={NSLocalizedFailureReason=(target is not running or doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.runningboard.assertions.webkit)}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.594491+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x17600e560 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=52092, error: Error Domain=RBSServiceErrorDomain Code=1 \"(target is not running or doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.runningboard.assertions.webkit)\" UserInfo={NSLocalizedFailureReason=(target is not running or doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.runningboard.assertions.webkit)}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.595892+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x1237042c0 - WKRBSAssertionDelegate: assertion was invalidated, error: Error Domain=RBSAssertionErrorDomain Code=1 \"Assertions were invalidated\" UserInfo={NSLocalizedFailureReason=Assertions were invalidated}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.595902+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x124ca82c0 - WKRBSAssertionDelegate: assertion was invalidated, error: Error Domain=RBSAssertionErrorDomain Code=1 \"Assertions were invalidated\" UserInfo={NSLocalizedFailureReason=Assertions were invalidated}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.600540+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x124de8a60 - WKRBSAssertionDelegate: assertion was invalidated, error: Error Domain=RBSAssertionErrorDomain Code=1 \"Assertions were invalidated\" UserInfo={NSLocalizedFailureReason=Assertions were invalidated}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.600547+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x124b09dc0 - WKRBSAssertionDelegate: assertion was invalidated, error: Error Domain=RBSAssertionErrorDomain Code=1 \"Assertions were invalidated\" UserInfo={NSLocalizedFailureReason=Assertions were invalidated}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.600551+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSuspension",
+      "message": "0x124cb6210 - WKRBSAssertionDelegate: assertion was invalidated, error: Error Domain=RBSAssertionErrorDomain Code=1 \"Assertions were invalidated\" UserInfo={NSLocalizedFailureReason=Assertions were invalidated}"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.971343+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: frameID=56, isMainFrame=1, navigationID=59"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972070+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: frameID=69, isMainFrame=1, navigationID=72"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972303+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=56, isMainFrame=1, navigationID=59, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972305+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=56, isMainFrame=1, navigationID=59, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972335+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=69, isMainFrame=1, navigationID=72, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972336+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=69, isMainFrame=1, navigationID=72, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972494+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: keep using process 52131 for navigation, reason=Process has not yet committed any provisional loads"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972510+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176021000 - [PID=52131] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972516+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: keep using process 52133 for navigation, reason=Process has not yet committed any provisional loads"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.972523+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176001200 - [PID=52133] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.974473+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: frameID=56, isMainFrame=1, navigationID=76"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.974533+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=56, isMainFrame=1, navigationID=76, policyAction=2, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.974537+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=56, isMainFrame=1, navigationID=76, policyAction=2"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.974739+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: frameID=69, isMainFrame=1, navigationID=77"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.974764+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=69, isMainFrame=1, navigationID=77, policyAction=2, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:44:10.974765+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=69, isMainFrame=1, navigationID=77, policyAction=2"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.640988+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: frameID=56, isMainFrame=1, navigationID=84"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.641775+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: frameID=69, isMainFrame=1, navigationID=85"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642323+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=56, isMainFrame=1, navigationID=84, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642327+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=56, isMainFrame=1, navigationID=84, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642350+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::decidePolicyForNavigationAction: keep using process 52131 for navigation, reason=Process has not yet committed any provisional loads"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642374+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176021000 - [PID=52131] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642381+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=69, isMainFrame=1, navigationID=85, policyAction=0, safeBrowsingWarning=0, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642382+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::receivedNavigationActionPolicyDecision: frameID=69, isMainFrame=1, navigationID=85, policyAction=0"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642387+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "ProcessSwapping",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::decidePolicyForNavigationAction: keep using process 52133 for navigation, reason=Process has not yet committed any provisional loads"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642395+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Process",
+      "message": "0x176001200 - [PID=52133] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=1, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=0)"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642874+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x126a1e018 - [pageProxyID=52, webPageID=53, PID=52131] WebPageProxy::didStartProvisionalLoadForFrame: frameID=56, isMainFrame=1"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.642876+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x176021000 - [PID=52131] WebProcessProxy::didStartProvisionalLoadForMainFrame:"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.643550+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x1268b4818 - [pageProxyID=65, webPageID=66, PID=52133] WebPageProxy::didStartProvisionalLoadForFrame: frameID=69, isMainFrame=1"
+    },
+    {
+      "timestamp": "2026-10-22 11:47:47.643551+0800",
+      "processID": 50276,
+      "subsystem": "com.apple.WebKit",
+      "category": "Loading",
+      "message": "0x176001200 - [PID=52133] WebProcessProxy::didStartProvisionalLoadForMainFrame:"
+    }
+  ]
+}

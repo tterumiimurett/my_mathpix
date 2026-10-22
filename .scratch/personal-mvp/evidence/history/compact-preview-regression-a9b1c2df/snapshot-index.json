@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "recordedAtUTC": "2026-10-22T04:01:19.630521+00:00",
+  "baseAuditRevision": "dbbe6939b7ed475bba1c3433c9606adaa226e14c",
+  "sourceNamespace": ".scratch/personal-mvp/evidence/ticket06-candidate",
+  "originalIndexedRecordCount": 21,
+  "indexedRecordCountAtFreeze": 26,
+  "rootSnapshotFileCount": 30,
+  "files": [
+    {
+      "file": "additional-signed-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/additional-signed-checks.json",
+      "bytes": 2770,
+      "sha256": "55e18a806e2318da827000a361e92ef05101f307f51ca94874477b4efb5e0771"
+    },
+    {
+      "file": "bridge-and-history-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/bridge-and-history-review.md",
+      "bytes": 6695,
+      "sha256": "5316cbe9673bb2f1cb2dfc16cba0bb0687133e561ef43e1d6f9185ec69664e4e"
+    },
+    {
+      "file": "build-stage-provenance.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/build-stage-provenance.json",
+      "bytes": 65871,
+      "sha256": "29e6331022b98e87937b9533701fe736aaeaaaac1fc19675de60cfe61ef31b4a"
+    },
+    {
+      "file": "compact-preview-red-backup.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/compact-preview-red-backup.json",
+      "bytes": 4597,
+      "sha256": "ccd01fb9a1c0390e1a98a9246a52ffddf8ebe347ae8b87c174657eb494b795e0"
+    },
+    {
+      "file": "evidence-index.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/evidence-index.json",
+      "bytes": 11888,
+      "sha256": "087d76728ae3e043b04195c305174ae67cbf3567cf2e095143c26f9446f33aa8"
+    },
+    {
+      "file": "handoff.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/handoff.json",
+      "bytes": 5216,
+      "sha256": "b48760f47dccf0b73e5ec9af6c244a7c76f63b1b323c32d48488a580d78bf3d8"
+    },
+    {
+      "file": "handoff.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/handoff.md",
+      "bytes": 15419,
+      "sha256": "d5f26cad6dd8c089a99810a90d7105d5f38ff79662d54247b3012c3a63e64f77"
+    },
+    {
+      "file": "immutability-after-all-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/immutability-after-all-checks.json",
+      "bytes": 1561,
+      "sha256": "ed7bf52cfaea24394a4f2718fd85ae0456bf81a940c53798e4f33e5c6a724f7c"
+    },
+    {
+      "file": "launchservices-permission-probe.stderr",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/launchservices-permission-probe.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "launchservices-permission-probe.stdout",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/launchservices-permission-probe.stdout",
+      "bytes": 39,
+      "sha256": "9e5db0ead21154dbff10c0c0aaff83acf0f50aa98004728016043c658e1b4cd5"
+    },
+    {
+      "file": "permission-contexts.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/permission-contexts.json",
+      "bytes": 1594,
+      "sha256": "978b96ea0605d40ed5877ee44cfbf03592c71e905f4b195d23241a0e5583a2db"
+    },
+    {
+      "file": "permission-launch-context-comparison.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/permission-launch-context-comparison.json",
+      "bytes": 1504,
+      "sha256": "83904ecdaf5e6812ac61a81229c12c7d3b95f0eab9d4df9036114f13308cbb85"
+    },
+    {
+      "file": "permission-probe.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/permission-probe.json",
+      "bytes": 1625,
+      "sha256": "1ddc004188480497614025f385a16069952f9dc2115f7b5e30c6172fb6466662"
+    },
+    {
+      "file": "source-bridge.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/source-bridge.json",
+      "bytes": 70757,
+      "sha256": "88813a15275a6b3127f6e1cb68c9ac2557524921f1a46a733e0f9da96dfa8974"
+    },
+    {
+      "file": "summary.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/summary.md",
+      "bytes": 1559,
+      "sha256": "bdc91705c8896c87e3a4a3f8ee9e49a6c43d638555336787eb05924560ba31eb"
+    },
+    {
+      "file": "supporting-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/supporting-checks.json",
+      "bytes": 3028,
+      "sha256": "08f3f640c73735f1ceef6547b46b3f5605082e898079641809abdfada04efb70"
+    },
+    {
+      "file": "ticket01-edited-preview-recovery-evidence.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-edited-preview-recovery-evidence.json",
+      "bytes": 1613,
+      "sha256": "9766ecf9cce08fa4d89505b903bdd37bc27adb9a27b25591d9c3c3969db66875"
+    },
+    {
+      "file": "ticket01-edited-preview-recovery-parent-observations.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-edited-preview-recovery-parent-observations.json",
+      "bytes": 790,
+      "sha256": "d7c2958d9277d27c1e90716fd3d64ddce0f45b633ae3a644d0121141826c6b2f"
+    },
+    {
+      "file": "ticket01-first-real-capture-evidence.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-first-real-capture-evidence.json",
+      "bytes": 1617,
+      "sha256": "43240f766b87e5d8717b4638c3677b97fa8ee9b836852c53b7c9cde842e6a49c"
+    },
+    {
+      "file": "ticket01-first-real-capture-parent-observations.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-first-real-capture-parent-observations.json",
+      "bytes": 1227,
+      "sha256": "bc4cf4ffcd30caa8ef13a440cc41e811cbf3f853a2069351eefc1cac44962a8f"
+    },
+    {
+      "file": "ticket01-fresh-gui-evidence.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-fresh-gui-evidence.json",
+      "bytes": 1675,
+      "sha256": "9d47c3a54c3f76eea04fe8d042e2cb01deba826fb19375043edf1c27f0f0503a"
+    },
+    {
+      "file": "ticket01-fresh-gui-run-state.txt",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-fresh-gui-run-state.txt",
+      "bytes": 89,
+      "sha256": "d3431383dfbed2a2d4013204b169c205be02d7013137b834de928661d45ac1ef"
+    },
+    {
+      "file": "ticket01-parent-permission-observations.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-parent-permission-observations.json",
+      "bytes": 1101,
+      "sha256": "7c234d0c442fcd81b089dbe036f4ff5016072da7ef0f983b2dfc793d8fb95719"
+    },
+    {
+      "file": "ticket01-permission-confirmation.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-permission-confirmation.json",
+      "bytes": 1630,
+      "sha256": "52f06518897c431b34369f91dac21d2bdb058bd261774aa0112e22be55f8a96d"
+    },
+    {
+      "file": "ticket01-scoped-webkit-loading-diagnostics.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket01-scoped-webkit-loading-diagnostics.json",
+      "bytes": 25071,
+      "sha256": "2929370431a027314a6ec9d03d408d619a5f021d86806b2c21a843c7874597bd"
+    },
+    {
+      "file": "ticket03-cua-evidence.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket03-cua-evidence.json",
+      "bytes": 856,
+      "sha256": "1c24350bf9ce9524faaf6dbd59f23349ac8131bb63c37b40dd35fa18e68cc2ed"
+    },
+    {
+      "file": "ticket03-parent-cua-observations.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket03-parent-cua-observations.json",
+      "bytes": 3270,
+      "sha256": "525852f6ca98735793eaabd620d7c160b821626b779c323b7620fb5d28602732"
+    },
+    {
+      "file": "ticket03-run-state.txt",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/ticket03-run-state.txt",
+      "bytes": 84,
+      "sha256": "76e16a18b605d18f294e5351e2edf4556f7fdd4d63d27c5bad7816e4ad54d761"
+    },
+    {
+      "file": "window-roles-spec-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/window-roles-spec-review.md",
+      "bytes": 2621,
+      "sha256": "b53966c944adfa8a658173e14d3dab6ce8681c769d583e6ab15697c5d1a5f7a1"
+    },
+    {
+      "file": "window-roles-standards-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/window-roles-standards-review.md",
+      "bytes": 2742,
+      "sha256": "d153f0ce6d1742889bf8e99f303d088b6158251728711d2e5cd7ff3d121fd1d7"
+    }
+  ],
+  "excludedNestedDirectories": [
+    "pre-review"
+  ],
+  "archiveMetadata": [
+    {
+      "file": "README.md",
+      "sha256": "ebb3415340532900919452886a2194ebc74c654bbcb774d46572bd693ad2653e"
+    },
+    {
+      "file": "disposition.json",
+      "sha256": "dfcc89f2cece4b3263a2e9ae5da026c1dd5225810677d46cedfb42b5d8f9a699"
+    }
+  ]
+}

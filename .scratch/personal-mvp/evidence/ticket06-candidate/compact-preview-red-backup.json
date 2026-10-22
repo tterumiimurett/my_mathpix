@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "purpose": "Preserve first-capture blank-preview red candidate before separately reviewed navigation fix",
+  "sourcePath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
+  "backupPath": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixCompactPreviewRed-a9b1c2df.app",
+  "existingBackupReused": false,
+  "exactStablePathProcessProbe": {
+    "method": "anchored-pgrep-f",
+    "exitCode": 1,
+    "running": false
+  },
+  "sourceBefore": {
+    "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
+    "bundleIdentifier": "com.byterumi.mymathpix",
+    "hostArchitecture": "arm64",
+    "hostMacOS": "15.7.3",
+    "version": "0.1.0",
+    "build": "1",
+    "artifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+    "bundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
+    "cdhash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+    "sandbox": true,
+    "outboundNetwork": true,
+    "userSelectedExport": true,
+    "resources": {
+      "katex.min.css": {
+        "bytes": 23112,
+        "sha256": "84b4c230594ac5d3603d7c969524b160dd329099b1c6af58b7730d7dd44659e0"
+      },
+      "katex.min.js": {
+        "bytes": 276757,
+        "sha256": "28b0123ad292db1f29531595cc20e69562788e1b8b6f4bedae06a46c3ea00c3a"
+      },
+      "KATEX-LICENSE.txt": {
+        "bytes": 1107,
+        "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+      },
+      "fonts/KaTeX_Main-Regular.woff2": {
+        "bytes": 26272,
+        "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+      }
+    },
+    "signatureVerified": true
+  },
+  "backup": {
+    "appPath": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixCompactPreviewRed-a9b1c2df.app",
+    "bundleIdentifier": "com.byterumi.mymathpix",
+    "hostArchitecture": "arm64",
+    "hostMacOS": "15.7.3",
+    "version": "0.1.0",
+    "build": "1",
+    "artifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+    "bundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
+    "cdhash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+    "sandbox": true,
+    "outboundNetwork": true,
+    "userSelectedExport": true,
+    "resources": {
+      "katex.min.css": {
+        "bytes": 23112,
+        "sha256": "84b4c230594ac5d3603d7c969524b160dd329099b1c6af58b7730d7dd44659e0"
+      },
+      "katex.min.js": {
+        "bytes": 276757,
+        "sha256": "28b0123ad292db1f29531595cc20e69562788e1b8b6f4bedae06a46c3ea00c3a"
+      },
+      "KATEX-LICENSE.txt": {
+        "bytes": 1107,
+        "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+      },
+      "fonts/KaTeX_Main-Regular.woff2": {
+        "bytes": 26272,
+        "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+      }
+    },
+    "signatureVerified": true
+  },
+  "sourceAfter": {
+    "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
+    "bundleIdentifier": "com.byterumi.mymathpix",
+    "hostArchitecture": "arm64",
+    "hostMacOS": "15.7.3",
+    "version": "0.1.0",
+    "build": "1",
+    "artifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+    "bundleTreeSHA256": "fcefb4c69cd2d703a96caf44f8dba9ea9a9c979f5afed74e502e7056478ebca4",
+    "cdhash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+    "sandbox": true,
+    "outboundNetwork": true,
+    "userSelectedExport": true,
+    "resources": {
+      "katex.min.css": {
+        "bytes": 23112,
+        "sha256": "84b4c230594ac5d3603d7c969524b160dd329099b1c6af58b7730d7dd44659e0"
+      },
+      "katex.min.js": {
+        "bytes": 276757,
+        "sha256": "28b0123ad292db1f29531595cc20e69562788e1b8b6f4bedae06a46c3ea00c3a"
+      },
+      "KATEX-LICENSE.txt": {
+        "bytes": 1107,
+        "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+      },
+      "fonts/KaTeX_Main-Regular.woff2": {
+        "bytes": 26272,
+        "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+      }
+    },
+    "signatureVerified": true
+  },
+  "wholeBundleExecutableAndCDHashEqual": true,
+  "sourceStableCandidateUnchanged": true,
+  "candidateAcceptance": "failed-first-render-and-still-pending",
+  "normalGUI": "not-used",
+  "buildOrSign": "not-performed",
+  "integrationGitCommit": "dbbe6939b7ed475bba1c3433c9606adaa226e14c",
+  "mainGitCommit": "8e27ef03570671e3461a3cf2074474fc679ee98a"
+}

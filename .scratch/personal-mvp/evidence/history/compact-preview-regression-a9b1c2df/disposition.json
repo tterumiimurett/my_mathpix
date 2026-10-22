@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "candidateArtifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+  "candidateCDHash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+  "disposition": "qa-found-first-render-preview-regression",
+  "ownerRejected": false,
+  "actualFirstRender": "failed-blank-preview",
+  "laterEditedPreview": "recovered-not-fixed",
+  "priorSupportAndTicket03Passes": "historical-true-only-for-recorded-artifact/session",
+  "actualFinalGates": "open",
+  "session": "stopped-by-parent-exact-run-PID; independently-absent",
+  "desktopAtClosure": "locked",
+  "newCandidate": "not-generated",
+  "reviewedPairsUpdated": false,
+  "backupRecord": "compact-preview-red-backup.json",
+  "oldNestedArchiveRecursivelyCopied": false
+}
