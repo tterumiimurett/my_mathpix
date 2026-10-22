@@ -117,6 +117,18 @@
       "sha256": "bc4cf4ffcd30caa8ef13a440cc41e811cbf3f853a2069351eefc1cac44962a8f",
       "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-first-real-capture-parent-observations.json",
       "scope": "Later same-run real ScreenCaptureKit/mock-recognition snapshot; physical global shortcut and capture confirmed, blank preview observed, authoritative T1 gate not passing. Earlier pre-capture failure is retained."
+    },
+    {
+      "file": "ticket01-edited-preview-recovery-evidence.json",
+      "sha256": "9766ecf9cce08fa4d89505b903bdd37bc27adb9a27b25591d9c3c3969db66875",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-edited-preview-recovery-evidence.json",
+      "scope": "Later same-run source-edit recovery, not first-render success or repair. Edit disclosure alone did not recover; source change z^2 to z^3 recovered formula/table/footer; Original then independently expanded. Earlier19 snapshots remain immutable."
+    },
+    {
+      "file": "ticket01-edited-preview-recovery-parent-observations.json",
+      "sha256": "d7c2958d9277d27c1e90716fd3d64ddce0f45b633ae3a644d0121141826c6b2f",
+      "source": "/private/tmp/my_mathpix-remaining-context/window-candidate-evidence/ticket01-edited-preview-recovery-parent-observations.json",
+      "scope": "Later same-run source-edit recovery, not first-render success or repair. Edit disclosure alone did not recover; source change z^2 to z^3 recovered formula/table/footer; Original then independently expanded. Earlier19 snapshots remain immutable."
     }
   ],
   "gate": "Candidate not ready: actual a9 GUI exposed a blank-preview regression, investigation underway. Prior support/T3 evidence remains historical; full desktop/live/06/08 and dogfood remain open.",
@@ -126,5 +138,6 @@
     "incorrectPhrase": "system restart",
     "correctedObservation": "Only App exit/system reopening with a changed PID and then fresh T1 are established. Use App restart; an operating-system reboot was not established.",
     "preservation": "Original17 historical files and their recorded hashes remain unchanged."
-  }
+  },
+  "latestRecoveryBoundary": "Source editing recovered the displayed preview; the original first-render blank-preview RED and all final06/08 gates remain open."
 }

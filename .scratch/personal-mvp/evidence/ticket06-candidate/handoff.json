@@ -15,7 +15,7 @@
   "supportingChecksCount": 8,
   "ticket03FixtureActualCopyInspectionsPassed": 6,
   "ticket03NativePaste": "not-asserted",
-  "actualWindowRoleJourney": "Actual compact470x560/top-left/captured-display/after-completion observed; preview blank, menu and Command-Tab pending, not accepted",
+  "actualWindowRoleJourney": "Actual compact470x560/top-left/captured-display/after-completion observed; first preview blank, later source edit recovered preview; menu/Command-Tab pending, not accepted",
   "actualCaptureJourney": "Physical global shortcut and real1764x996 PNG from882x498pt@2 confirmed; fixture/guard/geometry passed, but authoritative T1 verifier not passing",
   "permissionContexts": "permission-contexts.json",
   "cliVersusGUIPermissionDifferenceCause": "unconfirmed",
@@ -33,7 +33,7 @@
   "actualPreviewRegression": {
     "observation": "Blank white compact preview; AX offline-preview HTML has no descendants across observations for about2minutes.",
     "status": "investigation-underway-in-isolated-fixer-tree; no sealed-App repair claimed",
-    "actualOriginalAndEdit": "not-expanded",
+    "actualOriginalAndEdit": "Not expanded at the earlier first-capture RED snapshot; later Edit and independent Original expansion recorded separately.",
     "copyRows": "Three source-row previews correct; no new six-copy/native-destination claim."
   },
   "operationSequenceObservations": {
@@ -46,5 +46,17 @@
   },
   "actualRealCaptureEvidence": "ticket01-first-real-capture-evidence.json",
   "actualRealCaptureObservations": "ticket01-first-real-capture-parent-observations.json",
-  "restartObservation": "App restart only; OS reboot not established"
+  "restartObservation": "App restart only; OS reboot not established",
+  "editedPreviewRecovery": {
+    "appSnapshot": "ticket01-edited-preview-recovery-evidence.json",
+    "parentObservations": "ticket01-edited-preview-recovery-parent-observations.json",
+    "editDisclosureAloneRecovered": false,
+    "sourceChange": "z^2 -> z^3 only, retaining table/footer",
+    "recoverySecondsParentReported": 0.88,
+    "DOMFormulaTableFooterObserved": true,
+    "originalIndependentlyExpandedAfterward": true,
+    "latestScalarPreviewFormulaTableOriginalCanonicalVisible": true,
+    "limit": "Recovery after editing, not first-render repair or a gate pass; original RED remains."
+  },
+  "fixerProgress": "First matching RED via the approved public window/mock command; repeat confirmation underway, cause not finalized; no production/sealed-App change."
 }
