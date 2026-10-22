@@ -17,13 +17,24 @@ enum MarkdownRenderer {
         complexTableHTML: String? = nil
     ) -> String {
         let canonicalMarkdown = MarkdownNormalizer.normalize(markdown)
-        let body = renderBody(canonicalMarkdown)
-        let safeComplexTable = complexTableHTML
-            .flatMap(ComplexTableOutputSanitizer.sanitize)
-            .flatMap { table in table.isRepresented(in: canonicalMarkdown) ? nil : table.html }
-        let complexTableSection = safeComplexTable.map {
-            "<section aria-label=\"Complex Table Output\">\($0)</section>"
-        } ?? ""
+        var body = renderBody(canonicalMarkdown)
+        if complexTableHTML != nil {
+            do {
+                let root = try ClipboardHTMLTree.parse(body)
+                let layout = try TableOutputLayout(markdown: canonicalMarkdown, complexTableHTML: complexTableHTML, root: root)
+                if layout.table != nil {
+                    body = try layout.renderedBody(renderNode: TableOutputLayout.html, renderTable: {
+                        "<section aria-label=\"Complex Table Output\">\(try layout.previewHTML($0))</section>"
+                    })
+                }
+            } catch {
+                // Preserve safe content if an unusual generated fragment cannot
+                // be compared; a failed parse must not discard a service table.
+                if let table = complexTableHTML.flatMap(ComplexTableOutputSanitizer.sanitize) {
+                    body += "<section aria-label=\"Complex Table Output\">\(table.html)</section>"
+                }
+            }
+        }
         let resources = AppResources.directoryURL
         let css = resources.flatMap { try? String(contentsOf: $0.appendingPathComponent("katex.min.css"), encoding: .utf8) } ?? ""
         let js = resources.flatMap { try? String(contentsOf: $0.appendingPathComponent("katex.min.js"), encoding: .utf8) } ?? ""
@@ -43,7 +54,7 @@ enum MarkdownRenderer {
         pre { padding: 12px; border-radius: 8px; background: color-mix(in srgb, currentColor 8%, transparent); overflow-x: auto; }
         blockquote { border-left: 3px solid color-mix(in srgb, currentColor 30%, transparent); margin-left: 0; padding-left: 12px; opacity: .85; }
         .math-display { overflow-x: auto; padding: 8px 0; }
-        </style></head><body>\(body)\(complexTableSection)<script>
+        </style></head><body>\(body)<script>
         \(js)
         document.querySelectorAll('[data-tex]').forEach(function(el) {
           try {
@@ -158,7 +169,9 @@ enum MarkdownRenderer {
         let patterns: [(String, Bool)] = [
             (#"\$\$([\s\S]*?)\$\$"#, true),
             (#"\\\[([\s\S]*?)\\\]"#, true),
-            (#"(?<!\$)\$([^\n$]+?)\$(?!\$)"#, false),
+            // Match math delimiters rather than adjacent currency amounts.
+            // Code is already protected; escaped dollars remain ordinary text.
+            (#"(?<![\\$])\$(?!\s)((?:\\[^\n]|[^$\n\\])+?)(?<!\s)\$(?![$0-9])"#, false),
             (#"\\\(([^\n]*?)\\\)"#, false)
         ]
         for (pattern, display) in patterns {

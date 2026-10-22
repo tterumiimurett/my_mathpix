@@ -3,6 +3,13 @@ import Foundation
 struct SafeComplexTable: Equatable {
     let html: String
     let tabSeparatedText: String
+    /// Occupied grid slots, with generated data-tex spans only for explicit
+    /// text-only <math> source. Literal text is still escaped, never Markdown.
+    let cellHTML: [[String]]
+    /// Persist the inert source marker so sanitizing again after a History
+    /// reload can distinguish explicit equations from literal dollar text.
+    let storageHTML: String
+    let previewHTML: String
 
     var captionText: String? {
         guard let start = html.range(of: "<caption>"),
@@ -46,6 +53,7 @@ enum ComplexTableOutputSanitizer {
         var completedTable = false
         var emittedRow = false
         var emittedCell = false
+        var formulaRanges: [(NSRange, String)] = []
 
         func appendText(_ text: Substring) {
             guard isInsideTable, suppressedStack.isEmpty, !text.isEmpty else { return }
@@ -108,7 +116,9 @@ enum ComplexTableOutputSanitizer {
                 let tex = HTMLTextEntities.decode(String(rawHTML[range.upperBound..<closingRange.lowerBound]))
                     .trimmingCharacters(in: .whitespacesAndNewlines)
                 if !tex.isEmpty {
-                    output += MarkdownNormalizer.escapeHTML("$" + tex + "$")
+                    let text = MarkdownNormalizer.escapeHTML("$" + tex + "$")
+                    formulaRanges.append((NSRange(location: output.utf16.count, length: text.utf16.count), tex))
+                    output += text
                     cursor = closingRange.upperBound
                     continue
                 }
@@ -139,7 +149,17 @@ enum ComplexTableOutputSanitizer {
 
         guard completedTable, emittedRow, emittedCell,
               let tabSeparatedText = tabSeparatedText(fromSanitizedHTML: output) else { return nil }
-        return SafeComplexTable(html: output, tabSeparatedText: tabSeparatedText)
+        var formulaHTML = output
+        var storageHTML = output
+        for (range, tex) in formulaRanges.reversed() {
+            guard let formulaRange = Range(range, in: formulaHTML),
+                  let storageRange = Range(range, in: storageHTML) else { return nil }
+            let encoded = Data(tex.utf8).base64EncodedString()
+            formulaHTML.replaceSubrange(formulaRange, with: "<span data-tex=\"\(encoded)\">\(MarkdownNormalizer.escapeHTML("$" + tex + "$"))</span>")
+            storageHTML.replaceSubrange(storageRange, with: "<math>\(MarkdownNormalizer.escapeHTML(tex))</math>")
+        }
+        guard let cells = cellGrid(fromSanitizedHTML: formulaHTML, decodeText: false) else { return nil }
+        return SafeComplexTable(html: output, tabSeparatedText: tabSeparatedText, cellHTML: cells, storageHTML: storageHTML, previewHTML: formulaHTML)
     }
 
     private struct HTMLTag {
@@ -243,6 +263,10 @@ enum ComplexTableOutputSanitizer {
     }
 
     private static func tabSeparatedText(fromSanitizedHTML html: String) -> String? {
+        cellGrid(fromSanitizedHTML: html, decodeText: true)?.map { $0.joined(separator: "\t") }.joined(separator: "\n")
+    }
+
+    private static func cellGrid(fromSanitizedHTML html: String, decodeText: Bool) -> [[String]]? {
         let rowPattern = try! NSRegularExpression(pattern: #"(?is)<tr>(.*?)</tr>"#)
         let cellPattern = try! NSRegularExpression(pattern: #"(?is)<t[hd]([^>]*)>(.*?)</t[hd]>"#)
         var rows: [[String]] = []
@@ -267,7 +291,8 @@ enum ComplexTableOutputSanitizer {
                 if row.count < column + colspan {
                     row += Array(repeating: "", count: column + colspan - row.count)
                 }
-                row[column] = HTMLTextEntities.decode(String(body[textRange]))
+                let content = String(body[textRange])
+                row[column] = (decodeText ? HTMLTextEntities.decode(content) : content)
                     .replacingOccurrences(of: "\t", with: " ")
                     .replacingOccurrences(of: "\r", with: " ")
                     .replacingOccurrences(of: "\n", with: " ")
@@ -283,8 +308,8 @@ enum ComplexTableOutputSanitizer {
         }
         guard let width = rows.map(\.count).max(), width > 0 else { return nil }
         return rows.map { row in
-            (row + Array(repeating: "", count: width - row.count)).joined(separator: "\t")
-        }.joined(separator: "\n")
+            row + Array(repeating: "", count: width - row.count)
+        }
     }
 
     private static func numericAttribute(_ name: String, in attributes: String) -> Int? {

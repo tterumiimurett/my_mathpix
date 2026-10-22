@@ -358,7 +358,7 @@ enum Ticket03SelfCheck {
                     && html.contains("<td>α © α</td>")
                     && html.contains("After COMPLETE-CELL-END.")
                     && !html.contains("<math") && !html.contains("data-tex")
-                    && board.data(forType: .init("org.chromium.web-custom-data")) == nil
+                    && readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))?.keys.sorted() == ["docx/record"]
                     && board.data(forType: .init("com.byterumi.mymathpix.notion-blocks-v3")) == nil
                     && board.string(forType: .string) == source,
                 "Lark copies complete rich tables with Markdown inline/display math and no Notion native placeholders",
@@ -399,7 +399,7 @@ enum Ticket03SelfCheck {
                     && html.contains("完整 🧮")
                     && !html.contains("<img") && !html.contains("<script")
                     && !html.contains("<math") && !html.contains("‣")
-                    && board.data(forType: .init("org.chromium.web-custom-data")) == nil
+                    && readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))?.keys.sorted() == ["docx/record"]
                     && board.string(forType: .string) == source,
                 "Lark retains literal code, TeX spacing, all tables and safe text without stale Notion clipboard data",
                 failures: &failures
@@ -451,7 +451,7 @@ enum Ticket03SelfCheck {
             let displayTitle = (display?["properties"] as? [String: Any])?["title"] as? [[String]]
             let firstTitle = (values.first?["properties"] as? [String: Any])?["title"] as? [[Any]] ?? []
             let hasInlineEquation = firstTitle.contains { run in
-                guard run.first as? String == "‣", run.count == 2,
+                guard run.first as? String == "⁍", run.count == 2,
                       let marks = run[1] as? [[String]] else { return false }
                 return marks.contains(["e", "x^2"])
             }
@@ -549,6 +549,274 @@ enum Ticket03SelfCheck {
                 failures: &failures
             )
         } catch { failures.append("Notion complex table copy: \(error)") }
+        do {
+            let board = NSPasteboard(name: .init("Ticket07Mixed.\(UUID().uuidString)"))
+            let source = """
+            Before $x^2$ and $\\frac{a}{b}$.
+
+            | Formula | Literal |
+            | --- | --- |
+            | $\\sqrt{x+1}$ | `**literal** $not_math$` |
+            | $2$ | prices $5 and $10 |
+
+            $$y=x+1$$
+
+            After $z_0$.
+            """
+            let complex = #"<table><caption>Caption α</caption><tr><th colspan="2">Group</th><th>Formula</th></tr><tr><td rowspan="2">Keep **literal** `code` $5 and $10 &amp; &lt;b&gt;</td><td>Y</td><td><math>u^2+v^2</math></td></tr><tr><td>Z</td><td><math>\frac{1}{2}</math><math><mi>discard</mi></math><script>evil()</script></td></tr></table>"#
+            try ClipboardService.copy(.notion, payload: ClipboardPayload(
+                canonicalMarkdown: source, complexTableHTML: complex, originalPNG: nil
+            ), to: board)
+            let data = board.data(forType: NotionClipboardDocument.nativeType) ?? Data()
+            let object = try JSONSerialization.jsonObject(with: data)
+            func equations(_ value: Any) -> [String] {
+                if let dictionary = value as? [String: Any] { return dictionary.values.flatMap(equations) }
+                guard let array = value as? [Any] else { return [] }
+                if array.first as? String == "⁍", array.count == 2,
+                   let marks = array[1] as? [[String]] {
+                    return marks.filter { $0.count == 2 && $0[0] == "e" }.map { $0[1] }
+                }
+                return array.flatMap(equations)
+            }
+            check(
+                equations(object).sorted() == ["x^2", #"\frac{a}{b}"#, #"\sqrt{x+1}"#, "2", "z_0", "u^2+v^2", #"\frac{1}{2}"#].sorted(),
+                "Notion mixed pasteboard has all seven native inline equations, including Complex Table Output, without currency or code equations",
+                failures: &failures
+            )
+            func textRuns(_ value: Any) -> [String] {
+                if let dictionary = value as? [String: Any] { return dictionary.values.flatMap(textRuns) }
+                if let runs = value as? [[Any]], !runs.isEmpty,
+                   runs.allSatisfy({ $0.first is String }) {
+                    return [runs.compactMap { $0.first as? String }.joined()]
+                }
+                return (value as? [Any])?.flatMap(textRuns) ?? []
+            }
+            let native = String(decoding: data, as: UTF8.self)
+            let html = board.string(forType: .html) ?? ""
+            check(
+                native.contains("prices $5 and $10") && textRuns(object).contains("Keep **literal** `code` $5 and $10 & <b>")
+                    && native.contains("**literal** $not_math$")
+                    && native.contains("y=x+1") && native.contains("Caption α")
+                    && !native.contains("discard") && !native.contains("evil()")
+                    && html.contains("rowspan=\"2\"") && html.contains("colspan=\"2\"")
+                    && board.string(forType: .string)?.contains("\n\tZ\t$\\frac{1}{2}$") == true,
+                "Notion rich mixed copy preserves literal cells, caption, span HTML, projected columns and display math while suppressing active or nested MathML",
+                failures: &failures
+            )
+        } catch { failures.append("Notion inline rich mixed regression: \(error)") }
+        do {
+            let root = FileManager.default.temporaryDirectory.appendingPathComponent("Ticket07Storage-\(UUID().uuidString)")
+            defer { try? FileManager.default.removeItem(at: root) }
+            let suite = "Ticket07Storage.\(UUID().uuidString)"
+            let defaults = UserDefaults(suiteName: suite)!
+            defer { defaults.removePersistentDomain(forName: suite) }
+            let historyURL = root.appendingPathComponent("History")
+            let history = HistoryStore(rootURL: historyURL)
+            let board = NSPasteboard(name: .init(suite))
+            func model(_ history: HistoryStore) -> AppModel {
+                AppModel(recognitionService: Ticket07StoredMathRecognitionService(), history: history,
+                         usageRecords: UsageRecordStore(inMemory: true), defaults: defaults,
+                         diagnosticLog: DiagnosticLog(rootURL: root.appendingPathComponent("Diagnostics")),
+                         pasteboard: board, registersHotKey: false, appInteractionEnabled: false)
+            }
+            func equations(_ value: Any) -> [String] {
+                if let dictionary = value as? [String: Any] { return dictionary.values.flatMap(equations) }
+                guard let array = value as? [Any] else { return [] }
+                if array.first as? String == "⁍", array.count == 2,
+                   let marks = array[1] as? [[String]] {
+                    return marks.filter { $0.count == 2 && $0[0] == "e" }.map { $0[1] }
+                }
+                return array.flatMap(equations)
+            }
+            let recognitionModel = model(history)
+            recognitionModel.recognizeCapturedSnippet(UploadPayload(pngData: png))
+            let deadline = Date().addingTimeInterval(3)
+            while recognitionModel.isProcessing && Date() < deadline {
+                _ = RunLoop.current.run(mode: .default, before: Date().addingTimeInterval(0.01))
+            }
+            check(!recognitionModel.isProcessing && recognitionModel.selectedItem?.status == .complete,
+                  "offline stored-math fixture completes through the real recognition model", failures: &failures)
+            let reloaded = model(HistoryStore(rootURL: historyURL))
+            check(reloaded.copySelected(as: .notion), "reloaded recognition output copies through the normal model action", failures: &failures)
+            let native = board.data(forType: NotionClipboardDocument.nativeType) ?? Data()
+            let object = try JSONSerialization.jsonObject(with: native)
+            check(equations(object).sorted() == ["x^2", "u^2+v^2", #"\frac{1}{2}"#].sorted(),
+                  "Notion retains explicit complex-cell equations after recognition, disk storage, relaunch and public model copy", failures: &failures)
+            check(reloaded.copySelected(as: .lark), "reloaded recognition output copies through the normal Lark model action", failures: &failures)
+            let larkJSON = readChromiumCustomData(board.data(forType: ChromiumClipboardData.type))?["docx/record"] ?? "{}"
+            let larkObject = try JSONSerialization.jsonObject(with: Data(larkJSON.utf8)) as? [String: Any] ?? [:]
+            let larkRecords = larkObject["recordMap"] as? [String: [String: Any]] ?? [:]
+            let larkPools = larkRecords.values.compactMap { (($0["snapshot"] as? [String: Any])?["text"] as? [String: Any])?["apool"] as? [String: Any] }
+            let larkEquations = larkPools.flatMap { (($0["numToAttrib"] as? [String: [String]]) ?? [:]).values }.filter { $0.first == "equation" }.compactMap { $0.last }
+            check(larkEquations.sorted() == ["x^2", "u^2+v^2", #"\frac{1}{2}"#].sorted(),
+                  "Lark retains explicit complex-cell equations after recognition, disk storage, relaunch and public model copy", failures: &failures)
+
+            // Previously saved records have lost <math> provenance. Recover only
+            // whole-cell formulas corroborated by the actual Canonical Markdown.
+            var legacy = history.items[0]
+            legacy.markdown = #"After $z_0$; code `$not_math$`; prices $5 and $10."# + "\n\n| A | Formula |\n| --- | --- |\n| U | $u^2+v^2$ |\n| F | $\\frac{1}{2}$ |"
+            legacy.html = #"<table><caption>Legacy</caption><tr><td rowspan="2">**literal** `code` $5 and $10</td><td>$u^2+v^2$</td></tr><tr><td>$\frac{1}{2}$</td></tr><tr><td>$not_math$</td><td>$unrelated$</td></tr></table>"#
+            try history.update(legacy)
+            let legacyModel = model(HistoryStore(rootURL: historyURL))
+            _ = legacyModel.copySelected(as: .notion)
+            let legacyData = board.data(forType: NotionClipboardDocument.nativeType) ?? Data()
+            check(equations(try JSONSerialization.jsonObject(with: legacyData)).sorted()
+                    == ["z_0", "u^2+v^2", #"\frac{1}{2}"#, "u^2+v^2", #"\frac{1}{2}"#].sorted()
+                    && String(decoding: legacyData, as: UTF8.self).contains("**literal** `code` $5 and $10")
+                    && String(decoding: legacyData, as: UTF8.self).contains("$unrelated$")
+                    && String(decoding: legacyData, as: UTF8.self).contains("$not_math$"),
+                  "legacy complex cells recover only canonical whole-cell formulas while preserving code, currency and unrelated literal math", failures: &failures)
+            legacy.markdown = "| Math | Code |\n| --- | --- |\n| $u^2+v^2$ | `$u^2+v^2$` |"
+            legacy.html = #"<table><caption>Legacy code ambiguity</caption><tr><td>$u^2+v^2$</td></tr></table>"#
+            try history.update(legacy)
+            let ambiguousModel = model(HistoryStore(rootURL: historyURL))
+            _ = ambiguousModel.copySelected(as: .notion)
+            let ambiguous = board.data(forType: NotionClipboardDocument.nativeType) ?? Data()
+            check(equations(try JSONSerialization.jsonObject(with: ambiguous)) == ["u^2+v^2"],
+                  "legacy recovery declines formulas also used as literal code in Canonical Markdown", failures: &failures)
+        } catch { failures.append("recognition-to-stored-Notion-copy: \(error)") }
+        do {
+            let source = """
+            Before $x^2$.
+
+            Caption α
+
+            | Group | | Formula |
+            | --- | --- | --- |
+            | Keep **literal** `code` $5 and $10 | Y | $u^2+v^2$ |
+            | | Z | $\\frac{1}{2}$ |
+
+            After $z_0$.
+            """
+            let rich = #"<table><caption>Caption α</caption><tr><th colspan="2">Group</th><th>Formula</th></tr><tr><td rowspan="2">Keep **literal** `code` $5 and $10</td><td>Y</td><td><math>u^2+v^2</math></td></tr><tr><td>Z</td><td><math>\frac{1}{2}</math></td></tr></table>"#
+            let preview = MarkdownRenderer.document(for: source, complexTableHTML: rich)
+            check(preview.components(separatedBy: "<table>").count - 1 == 1
+                    && preview.components(separatedBy: "Caption α").count - 1 == 1
+                    && preview.contains("rowspan=\"2\"") && preview.contains("colspan=\"2\"")
+                    && preview.contains(Data("u^2+v^2".utf8).base64EncodedString()),
+                  "preview shows one matching rich table, one caption and rendered math while retaining merged structure", failures: &failures)
+            let board = NSPasteboard(name: .init("Ticket11.\(UUID().uuidString)"))
+            for format in [CopyFormat.lark, .notion] {
+                try ClipboardService.copy(format, payload: ClipboardPayload(canonicalMarkdown: source, complexTableHTML: rich, originalPNG: nil), to: board)
+                let html = board.string(forType: .html) ?? ""
+                let visibleHTML = html.components(separatedBy: "<span data-lark-record-data=").first ?? html
+                check(visibleHTML.components(separatedBy: "<table>").count - 1 == 1
+                        && visibleHTML.components(separatedBy: "Caption α").count - 1 == 1
+                        && html.contains("rowspan=\"2\"") && html.contains("colspan=\"2\"")
+                        && board.string(forType: .string) == source,
+                      "\(format.title) replaces the matching Markdown table with its rich representation without duplicate table or source fallback", failures: &failures)
+                if format == .notion {
+                    let data = board.data(forType: NotionClipboardDocument.nativeType) ?? Data()
+                    let json = String(decoding: data, as: UTF8.self)
+                    check(json.components(separatedBy: "\"type\":\"table\"").count - 1 == 1
+                            && json.components(separatedBy: "\"⁍\"").count - 1 == 4,
+                          "Notion native copy has exactly one table and preserves before/table/after equations", failures: &failures)
+                }
+            }
+            let legacy = rich.replacingOccurrences(of: "<math>u^2+v^2</math>", with: "$u^2+v^2$")
+                .replacingOccurrences(of: #"<math>\frac{1}{2}</math>"#, with: #"$\frac{1}{2}$"#)
+            let legacySource = source.replacingOccurrences(of: "$5 and $10", with: #"\$5 and \$10"#)
+            let legacyPreview = MarkdownRenderer.document(for: legacySource, complexTableHTML: legacy)
+            check(legacyPreview.components(separatedBy: "<table>").count - 1 == 1
+                    && legacyPreview.contains(Data("u^2+v^2".utf8).base64EncodedString())
+                    && legacyPreview.range(of: "Before")!.lowerBound < legacyPreview.range(of: "<caption>")!.lowerBound
+                    && legacyPreview.range(of: "<caption>")!.lowerBound < legacyPreview.range(of: "After")!.lowerBound,
+                  "existing saved rich tables render once, recover corroborated math and keep source reading order", failures: &failures)
+            try ClipboardService.copy(.notion, payload: ClipboardPayload(canonicalMarkdown: legacySource, complexTableHTML: legacy, originalPNG: nil), to: board)
+            let legacyData = board.data(forType: NotionClipboardDocument.nativeType) ?? Data()
+            let native = try JSONSerialization.jsonObject(with: legacyData) as? [String: Any]
+            let blocks = native?["blocks"] as? [[String: Any]] ?? []
+            let types = blocks.compactMap { envelope -> String? in
+                guard let id = envelope["blockId"] as? String,
+                      let subtree = envelope["blockSubtree"] as? [String: Any],
+                      let values = subtree["block"] as? [String: [String: Any]],
+                      let value = values[id]?["value"] as? [String: Any] else { return nil }
+                return value["type"] as? String
+            }
+            check(types == ["text", "text", "table", "text"]
+                    && String(decoding: legacyData, as: UTF8.self).components(separatedBy: "\"⁍\"").count - 1 == 4
+                    && board.string(forType: .string) == legacySource,
+                  "normal copy of an old record retains one caption/table at its source position and all four equations", failures: &failures)
+            let twice = source + "\n\n" + source
+            check(MarkdownRenderer.document(for: twice, complexTableHTML: rich)
+                    .components(separatedBy: "<table>").count - 1 == 2,
+                  "matching one rich representation does not collapse two intentional source tables", failures: &failures)
+        } catch { failures.append("single rich table across preview and copy: \(error)") }
+        do {
+            let source = #"Before $x^2$."# + "\n\nCaption α\n\n| Group | | Formula |\n| --- | --- | --- |\n| Keep <b>literal</b> `code` \\$5 and \\$10 | Y | $u^2+v^2$ |\n| | Z | $\\frac{1}{2}$ |\n\nAfter $z_0$."
+            let complex = #"<table><caption>Caption α</caption><tr><th colspan="2">Group</th><th>Formula</th></tr><tr><td rowspan="2">Keep literal `code` $5 and $10</td><td>Y</td><td>$u^2+v^2$</td></tr><tr><td>Z</td><td>$\frac{1}{2}$</td></tr></table>"#
+            let board = NSPasteboard(name: .init("Ticket12.\(UUID().uuidString)"))
+            try ClipboardService.copy(.lark, payload: ClipboardPayload(canonicalMarkdown: source, complexTableHTML: complex, originalPNG: nil), to: board)
+            if let native = readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))?["docx/record"],
+               let data = native.data(using: .utf8),
+               let object = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let records = object["recordMap"] as? [String: [String: Any]] {
+                let snapshots = records.values.compactMap { $0["snapshot"] as? [String: Any] }
+                let tables = snapshots.filter { $0["type"] as? String == "table" }
+                let pools = snapshots.compactMap { ($0["text"] as? [String: Any])?["apool"] as? [String: Any] }
+                let pairs = pools.flatMap { (($0["numToAttrib"] as? [String: [String]]) ?? [:]).values }
+                let equations = pairs.filter { $0.first == "equation" }.compactMap { $0.last }
+                let texts = snapshots.compactMap { ((($0["text"] as? [String: Any])?["initialAttributedTexts"] as? [String: Any])?["text"] as? [String: String])?["0"] }
+                let cells = (tables.first?["cell_set"] as? [String: [String: Any]]) ?? [:]
+                let merges = cells.values.compactMap { $0["merge_info"] as? [String: Int] }
+                check(tables.count == 1 && equations.sorted() == ["x^2", "u^2+v^2", #"\frac{1}{2}"#, "z_0"].sorted()
+                        && merges.contains { $0["col_span"] == 2 } && merges.contains { $0["row_span"] == 2 }
+                        && texts.contains("Keep literal code $5 and $10")
+                        && !texts.joined().contains("<b>") && !texts.joined().contains(#"\$5"#)
+                        && board.data(forType: NotionClipboardDocument.nativeType) == nil
+                        && board.string(forType: .html)?.contains("lark-record-clipboard") == true,
+                      "Lark native clipboard combines one merged table, four editable equations and cleaned literal/code/price cells without Notion data", failures: &failures)
+                let ids = object["recordIds"] as? [String] ?? []
+                check(ids.compactMap { records[$0]?["snapshot"] as? [String: Any] }.compactMap { $0["type"] as? String } == ["text", "text", "table", "text"],
+                      "Lark native copy preserves before/caption/table/after source order", failures: &failures)
+            } else { failures.append("Lark normal copy lacks self-contained native docx/record formula-table data") }
+        } catch { failures.append("Lark native formula-table copy: \(error)") }
+        do {
+            let source = "# Title 🧮\n\n**bold** and *italic* and `literal $not_math$`.\n\n> Quoted 中文 $x^2$.\n\n- Bullet $y_0$\n\n```text\n$code_only$\n第二行 🧮\n```"
+            let board = NSPasteboard(name: .init("Ticket12Wire.\(UUID().uuidString)"))
+            try ClipboardService.copy(.lark, payload: ClipboardPayload(canonicalMarkdown: source, complexTableHTML: nil, originalPNG: nil), to: board)
+            let json = readChromiumCustomData(board.data(forType: ChromiumClipboardData.type))?["docx/record"] ?? "{}"
+            let object = try JSONSerialization.jsonObject(with: Data(json.utf8)) as? [String: Any] ?? [:]
+            let records = object["recordMap"] as? [String: [String: Any]] ?? [:]
+            let snapshots = records.values.compactMap { $0["snapshot"] as? [String: Any] }
+            let op = try NSRegularExpression(pattern: #"((?:\*[0-9a-z]+)*)(?:\|([0-9a-z]+))?\+([0-9a-z]+)"#)
+            let mark = try NSRegularExpression(pattern: #"\*([0-9a-z]+)"#)
+            var valid = true, equationCount = 0
+            var styles = Set<String>(), content = [String]()
+            for snapshot in snapshots {
+                guard let text = snapshot["text"] as? [String: Any],
+                      let initial = text["initialAttributedTexts"] as? [String: Any],
+                      let value = (initial["text"] as? [String: String])?["0"],
+                      let encoded = (initial["attribs"] as? [String: String])?["0"],
+                      let pool = (text["apool"] as? [String: Any])?["numToAttrib"] as? [String: [String]] else { continue }
+                content.append(value)
+                let ns = value as NSString
+                var cursor = 0, opCursor = 0
+                for match in op.matches(in: encoded, range: NSRange(encoded.startIndex..., in: encoded)) {
+                    let length = Int((encoded as NSString).substring(with: match.range(at: 3)), radix: 36) ?? -1
+                    guard match.range.location == opCursor, length > 0, cursor + length <= ns.length else { valid = false; break }
+                    let segment = ns.substring(with: NSRange(location: cursor, length: length))
+                    let lines = match.range(at: 2).location == NSNotFound ? 0 : Int((encoded as NSString).substring(with: match.range(at: 2)), radix: 36) ?? -1
+                    valid = valid && lines == segment.filter { $0 == "\n" }.count
+                    let attributes = (encoded as NSString).substring(with: match.range(at: 1))
+                    for atom in mark.matches(in: attributes, range: NSRange(attributes.startIndex..., in: attributes)) {
+                        let number = Int((attributes as NSString).substring(with: atom.range(at: 1)), radix: 36) ?? -1
+                        guard let pair = pool[String(number)], pair.count == 2 else { valid = false; continue }
+                        styles.insert(pair[0])
+                        if pair[0] == "equation" { equationCount += 1; valid = valid && segment == " " }
+                    }
+                    cursor += length; opCursor += match.range.length
+                }
+                valid = valid && cursor == ns.length && opCursor == encoded.utf16.count
+            }
+            let types = snapshots.compactMap { $0["type"] as? String }
+            check(valid && equationCount == 2 && styles.isSuperset(of: ["bold", "italic", "inlineCode"])
+                    && types.contains("heading1") && types.contains("quote_container") && types.contains("bullet") && types.contains("code")
+                    && content.contains("Title 🧮") && content.contains("Quoted 中文  .")
+                    && content.contains("$code_only$\n第二行 🧮")
+                    && snapshots.allSatisfy { $0["author"] == nil && $0["doc_info"] == nil },
+                  "Lark native text decodes with valid UTF-16/line attributes, keeps styles/quotes/code and equations, and carries no account metadata", failures: &failures)
+        } catch { failures.append("Lark native text protocol: \(error)") }
         do {
             let formattedPayload = ClipboardPayload(canonicalMarkdown: formattedTable, complexTableHTML: nil, originalPNG: png)
             let output = try ClipboardService.prepare(.tsvTable, payload: formattedPayload)
@@ -1148,5 +1416,15 @@ enum Ticket03SelfCheck {
         print("Ticket 03 self-test failed:")
         failures.forEach { print("- \($0)") }
         return false
+    }
+}
+
+
+@MainActor
+private final class Ticket07StoredMathRecognitionService: RecognitionService {
+    func recognize(uploadPayload: UploadPayload, mode: RecognitionMode) async throws -> DatalabResult {
+        DatalabResult(markdown: "Before $x^2$.",
+                      html: #"<table><caption>Stored α</caption><tr><td rowspan="2">**literal** `code` $5 and $10</td><td><math>u^2+v^2</math></td></tr><tr><td><math>\frac{1}{2}</math></td></tr></table>"#,
+                      runtime: 0.01, costSummary: nil, costValue: nil, parseQualityScore: nil, automaticRetryCount: 0)
     }
 }

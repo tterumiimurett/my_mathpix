@@ -30,9 +30,9 @@ enum CopyFormat: String, CaseIterable, Identifiable {
         case .originalImage:
             ("Original Image", "Copy the original Snippet image without recognized text.")
         case .notion:
-            ("Notion", "Copy rich tables and display equations. Inline equations have a known paste issue.")
+            ("Notion", "Copy rich tables with editable inline and display equations.")
         case .lark:
-            ("Lark", "Copy rich tables with inline and display formulas kept as Markdown.")
+            ("Lark", "Copy editable rich tables and equations, with Markdown source fallback.")
         }
     }
 
@@ -40,7 +40,7 @@ enum CopyFormat: String, CaseIterable, Identifiable {
 
     var helpText: String { descriptor.helpText }
 
-    static let explanation = "Markdown copies source. Lark copies rich tables with Markdown math. Notion includes experimental Native Paste clipboard data; inline equation paste has a known issue. Destination compatibility must be verified. No Notion or Feishu document API writes."
+    static let explanation = "Markdown copies source. Lark and Notion include experimental Native Paste clipboard data for editable equations and tables. Destination compatibility must be verified. No Notion or Feishu document API writes."
 }
 
 struct ClipboardPayload {
@@ -198,6 +198,7 @@ enum ClipboardService {
         case .lark(let document):
             representations[.string] = Data(document.source.utf8)
             representations[.html] = Data(document.html.utf8)
+            if let data = document.chromiumData { representations[ChromiumClipboardData.type] = data }
         }
         for (type, data) in representations {
             guard item.setData(data, forType: type) else { throw CopyFormatError.pasteboardWriteFailed }

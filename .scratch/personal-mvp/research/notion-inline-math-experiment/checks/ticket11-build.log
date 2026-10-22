@@ -1,0 +1,10 @@
+[0/1] Planning build
+Building for production...
+[0/4] Write sources
+[1/4] Write swift-version--1AB21518FC5DEDBE.txt
+[3/5] Compiling MyMathpix AppInfo.swift
+[3/5] Write Objects.LinkFileList
+[4/5] Linking MyMathpix
+Build complete! (20.14s)
+/Users/bytedance/Documents/terumi_repo/my_mathpix/dist/MyMathpix.app: replacing existing signature
+/Users/bytedance/Documents/terumi_repo/my_mathpix/dist/MyMathpix.app

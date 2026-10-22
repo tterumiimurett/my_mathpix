@@ -2,6 +2,14 @@
 
 This map presents six original delivery tickets and explicit follow-ups while preserving the engineering coverage from the finer-grained draft as acceptance criteria and suggested work packages.
 
+2026-10-22: Owner accepted Notion and Markdown in the installed App; 07 is resolved.
+Lark formula rendering was subsequently accepted as well; 12 is resolved.
+
+2026-10-22: [11 — Duplicate rich table](issues/11-duplicate-rich-table.md) is
+resolved. [12 — Lark rich table + math](issues/12-lark-rich-table-markdown-math.md)
+is resolved: production clipboard regressions, release build and owner testing
+of all three installed-App copy formats passed; the prior App is backed up.
+
 ## Execution model
 
 - One main agent owns each ticket's complete user outcome, integration, and acceptance evidence.
@@ -36,6 +44,15 @@ flowchart TD
 
 ## Recommended frontier
 
+2026-10-22 — Clipboard follow-ups 07, 11 and 12 are resolved by focused
+regressions and owner acceptance of all three installed-App copy formats.
+Issue 09 (editing caret jumps to the end) remains open. Ticket 10's permission
+verification applies to the earlier frozen 701ac58e artifact; current-release
+screen-capture permission has not been independently rechecked. The fourteen-day
+Dogfood Gate remains pending. Earlier integration history follows.
+
+## Original V1 acceptance history
+
 Latest disposition2026-10-22: owner accepted V1 and authorized merge to main. Tickets06/08 are resolved on that authority; older menu/QA follow-up descriptions below retain their historical context and do not establish a new physical-menu pass.
 
 1. Ticket `01` is resolved by explicit owner acceptance; its implementation establishes the authoritative capture seam and repairs the reported termination. See [01 — Make Screen Capture survive through a mock result](issues/01-stable-screen-capture.md#answer) for the verified evidence and owner-waived external runs.
@@ -43,6 +60,7 @@ Latest disposition2026-10-22: owner accepted V1 and authorized merge to main. Ti
 3. Ticket `05` is resolved on 2026-10-22: both modes pass the reviewed ordinary Golden Set at 69/70 with category floors met; boundary failures and original failed baseline remain visible. See [Ticket 05 Answer](issues/05-golden-set-quality.md#answer) and [quality evidence](evidence/ticket05-golden-set/quality-summary.md). This quality evidence remains intact alongside the later owner V1 acceptance.
 4. Ticket `08` is resolved by explicit owner acceptance of Personal MVP V1 on2026-10-22. The compact result/main-workspace implementation and QA history remain recorded; unchecked physical-menu/activation and other individual criteria are retained as unverified, not fabricated passes. See [Ticket08 Answer](issues/08-window-roles-regression.md#answer).
 5. Ticket `06` is resolved by the same owner V1 acceptance and merge-to-main authority. See [Ticket06 Answer](issues/06-signed-app-acceptance.md#answer) and [exact owner decision](evidence/ticket06-candidate/owner-v1-acceptance.md). Notion07 remains deferred; fourteen-day Dogfood and Public Product are still pending. This explicit owner release decision does not retroactively mark every integration AC passed.
+6. On 2026-10-22, the owner reported that every typed character in Edit moves the caret to the end of Combined Output. [Ticket 09 — Preserve the caret](issues/09-result-editor-caret-jumps-to-end.md) records the unverified defect. Investigate after Notion inline math (07), as explicitly requested; no editing repair is included in the clipboard experiment.
 
 2026-10-21: The owner accepted Ticket `04` and requested resolution and merge. Follow-up: the menu-bar icon is still not visible, including after the owner expanded Hidden Bar; its cause and repair remain open. Resolution is an explicit acceptance exception, not a claim that menu-bar visibility passed.
 
@@ -57,3 +75,7 @@ Latest disposition2026-10-22: owner accepted V1 and authorized merge to main. Ti
 - Ticket `03` follow-up resolved on 2026-09-06: corrected plain-text table conversion and owner-approved single-line content preview rows, backed by [actual signed-window six-format regression](evidence/ticket03-content-rows/verification.md). This supersedes the earlier format-name-only row design. Integration remains on the original Ticket 03 branch; no other ticket was merged.
 
 - Ticket `03` resolved on 2026-09-05: owner-confirmed compact Result Editor, offline edit/preview, and six immediate Copy Formats. See [Ticket 03 Answer](issues/03-edit-preview-copy.md#answer) and [signed-App UI verification with screenshots](evidence/ticket03-ui/verification.md). Ticket 04 can host `ResultEditorView(item:)` using the selected record and existing `AppModel`; capture-display placement remains Ticket 04 scope. Full-content LaTeX remains undecided.
+
+2026-10-22 final acceptance: owner tested Markdown, Notion and Lark in the
+installed d1a143db candidate and accepted all three. Issue 12 is resolved.
+Issue 09 (caret position during editing) remains open. GitHub update authorized.

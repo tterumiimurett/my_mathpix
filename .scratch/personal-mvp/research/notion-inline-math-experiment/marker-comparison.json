@@ -1,0 +1,28 @@
+{
+  "nativeReferenceEquationMarkers": [
+    "0x204d",
+    "0x204d",
+    "0x204d",
+    "0x204d"
+  ],
+  "nativeReferenceCustomTypes": [
+    "text/_notion-multi-text-production",
+    "text/_notion-page-source-production"
+  ],
+  "variants": {
+    "markerMinimal": {
+      "nativeMarkerReplacements": 1,
+      "htmlUnchangedSHA256": "8b79862d9b94f7e3daac580a335e3693c5b4977cb0b1440a413fd671584cfb0a",
+      "sourceUnchangedSHA256": "723f3590a8eaa0360d7b3b1618dc7a76b1a9c82bfe55c293898c205ec447023d",
+      "onlyNativeEquationMarkerChanged": true,
+      "destinationAcceptance": "pending; desktop input server noWindowsAvailable"
+    },
+    "markerRich": {
+      "nativeMarkerReplacements": 6,
+      "htmlUnchangedSHA256": "73bc2af944810e7a253b29f0b2ad9a80fc990d21602c34702a37ffd1412e9ab3",
+      "sourceUnchangedSHA256": "38eecf5d9f0cbb0438f0eb20f5e2cf655c2ec631437fcb6e5e8011e0d2a5de2c",
+      "onlyNativeEquationMarkerChanged": true,
+      "destinationAcceptance": "pending; desktop input server noWindowsAvailable"
+    }
+  }
+}

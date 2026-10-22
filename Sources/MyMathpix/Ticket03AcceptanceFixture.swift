@@ -123,7 +123,8 @@ enum Ticket03PasteboardInspector {
                     && containsFixturePartsInOrder(html, parts: initial
                         ? ["Before $x^2$.", "$$y = x + 1$$", initialTable, "After the table."]
                         : ["$$e^{i\\pi} = -1$$", editedLarkTable])
-                    && !types.contains(.init("org.chromium.web-custom-data"))
+                    && types.contains(.init("org.chromium.web-custom-data"))
+                    && html.contains("data-lark-record-format=\"docx/record\"")
                     && !types.contains(.init("com.byterumi.mymathpix.notion-blocks-v3"))
             }
             let formulas = initial ? ["x^2", "y = x + 1"] : ["e^{i\\pi} = -1", "\\pi", "e"]

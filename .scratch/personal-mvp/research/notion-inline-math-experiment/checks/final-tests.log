@@ -1,0 +1,23 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[1/4] Write swift-version--1AB21518FC5DEDBE.txt
+[3/6] Compiling MyMathpix ClipboardService.swift
+[4/6] Emitting module MyMathpix
+[5/16] Compiling MyMathpix ContentView.swift
+[6/16] Compiling MyMathpix ResultEditorView.swift
+[7/16] Compiling MyMathpix AppLaunchConfiguration.swift
+[8/16] Compiling MyMathpix Ticket03AcceptanceFixture.swift
+[9/16] Compiling MyMathpix Ticket03AcceptanceReporter.swift
+[10/16] Compiling MyMathpix AppWindowShell.swift
+[11/16] Compiling MyMathpix GoldenSetRunner.swift
+[12/16] Compiling MyMathpix MyMathpixApp.swift
+[13/16] Compiling MyMathpix Ticket03SelfCheck.swift
+[14/16] Compiling MyMathpix AppModel.swift
+[14/17] Write Objects.LinkFileList
+[15/17] Linking MyMathpix
+[16/17] Applying MyMathpix
+Build of product 'MyMathpix' complete! (2.81s)
+Ticket 03 self-test passed.
+TICKET04_DAILY_WORKFLOW_OK
+MyMathpix self-test passed (48 checks plus Ticket 04 workflow checks).

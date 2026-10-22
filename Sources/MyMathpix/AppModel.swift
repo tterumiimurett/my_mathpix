@@ -499,7 +499,7 @@ final class AppModel: ObservableObject {
             return
         }
         item.markdown = MarkdownNormalizer.normalize(result.markdown)
-        item.html = result.html.flatMap(ComplexTableOutputSanitizer.sanitize)?.html
+        item.html = result.html.flatMap(ComplexTableOutputSanitizer.sanitize)?.storageHTML
         item.status = .complete
         item.mode = mode
         item.errorMessage = nil

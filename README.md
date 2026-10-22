@@ -8,17 +8,17 @@ A personal-first native macOS snippet recognizer for formulas, tables, and mixed
 - Datalab `fast` recognition and `balanced` high-quality retry
 - Compact floating result after capture or a menu-bar click, with offline KaTeX preview and independent Original/Edit actions
 - A separate large history/settings/usage workspace on Command-Tab, Dock/reopen or Open MyMathpix
-- Whole-result Markdown / Lark / Notion copy actions; Lark keeps rich tables and Markdown formulas
+- Whole-result Markdown / Lark / Notion copy actions; Lark and Notion include native editable equations and rich tables
 - Local history containing the 20 most recent snippets
 - API token stored in a private `0600` file inside the App Sandbox container
 
 No account, subscription, backend, analytics, or cloud history is included in the Personal MVP.
 
-Personal MVP V1 was accepted by the owner on 2026-10-22. Known deferred issue: Notion inline equations may paste as placeholders. The experimental Notion clipboard adapter does not guarantee native editable blocks in every target version. The fourteen-day Dogfood Gate remains pending. See the accepted contract and evidence limits in [the Personal MVP spec](.scratch/personal-mvp/spec.md).
+Personal MVP V1 and the v0.1.1 Markdown / Lark / Notion paste update were accepted by the owner on 2026-10-22. Native clipboard compatibility depends on the destination version. Known open issue: editing in the middle of text may move the caret to the end. The fourteen-day Dogfood Gate remains pending. See the accepted contract and evidence limits in [the Personal MVP spec](.scratch/personal-mvp/spec.md).
 
 ## Download
 
-[Download MyMathpix v0.1.0 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.0/MyMathpix-v0.1.0.zip). Requires macOS 15 or later.
+[Download MyMathpix v0.1.1 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.1/MyMathpix-v0.1.1.zip). Requires macOS 15 or later.
 
 1. Unzip the download and move `MyMathpix.app` to Applications.
 2. Open MyMathpix and enter your own Datalab API token in Settings.

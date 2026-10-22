@@ -11,7 +11,7 @@ struct NotionClipboardDocument {
     // macOS requires a valid UTI; the web MIME belongs inside Chromium's
     // DataTransfer envelope, not directly in NSPasteboard's type list.
     static let nativeType = NSPasteboard.PasteboardType("com.byterumi.mymathpix.notion-blocks-v3")
-    static let chromiumType = NSPasteboard.PasteboardType("org.chromium.web-custom-data")
+    static let chromiumType = ChromiumClipboardData.type
 
     let html: String
     let source: String
@@ -19,33 +19,39 @@ struct NotionClipboardDocument {
     let chromiumData: Data
 
     init(markdown: String, complexTableHTML: String?) throws {
-        var fallback = markdown
         let canonical = MarkdownNormalizer.normalize(markdown)
         let root = try ClipboardHTMLTree.parse(MarkdownRenderer.renderBody(canonical, forClipboard: true))
-        var blocks = root.children.filter { $0.tag != nil }.flatMap(Self.blocks)
-        var body = try root.children.map(Self.html).joined()
-        if let table = complexTableHTML.flatMap(ComplexTableOutputSanitizer.sanitize),
-           !table.isRepresented(in: canonical) {
-            // Notion simple tables have no merged-cell representation. Preserve
-            // the safe merged HTML as fallback and occupied grid slots natively.
-            if let caption = table.captionText {
-                blocks.append(Self.envelope(type: "text", title: [[caption]]))
-                fallback += "\n\n" + caption
+        let layout = try TableOutputLayout(markdown: canonical, complexTableHTML: complexTableHTML, root: root)
+        func complexBlocks(_ table: SafeComplexTable) throws -> [[String: Any]] {
+            var result: [[String: Any]] = []
+            if let caption = table.captionText { result.append(Self.envelope(type: "text", title: [[caption]])) }
+            // Native Notion tables project occupied slots; the HTML fallback
+            // retains the source rowspan/colspan structure.
+            let rows = try table.cellHTML.map { row in
+                try row.map { source -> [[Any]] in
+                    let cell = try ClipboardHTMLTree.parse(source)
+                    if let tex = layout.legacyEquation(cell) { return Self.equation(tex) }
+                    return Self.richText(cell)
+                }
             }
-            let rows = table.tabSeparatedText.components(separatedBy: "\n").map { line in
-                // Sanitized HTML projects to literal text, not Markdown source.
-                // Re-parsing would turn stars, backticks and currency into markup.
-                line.components(separatedBy: "\t").map { [[ $0 ]] as [[Any]] }
-            }
-            blocks.append(Self.tableBlock(rows: rows, header: false))
-            body += table.html
-            fallback += "\n\n" + table.tabSeparatedText
+            let structure = try ClipboardHTMLTree.parse(table.html)
+            let header = Self.descendants(structure, tag: "tr").first?.children.contains { $0.tag == "th" } == true
+            result.append(Self.tableBlock(rows: rows, header: header))
+            return result
         }
-        source = fallback
+        var blocks: [[String: Any]] = []
+        for node in root.children where node.tag != nil {
+            if node === layout.repeatedCaption { continue }
+            if node === layout.replacement, let table = layout.table { blocks += try complexBlocks(table) }
+            else { blocks += Self.blocks(node) }
+        }
+        if layout.replacement == nil, let table = layout.table { blocks += try complexBlocks(table) }
+        let body = try layout.renderedBody(renderNode: Self.html, renderTable: { $0.html })
+        source = layout.sourceFallback(markdown)
         nativeData = try JSONSerialization.data(withJSONObject: [
             "blocks": blocks, "action": "copy", "wasContiguousSelection": true
         ], options: [.sortedKeys, .withoutEscapingSlashes])
-        chromiumData = Self.chromiumCustomData(
+        chromiumData = ChromiumClipboardData.encode(
             type: Self.nativeMIMEType,
             value: String(decoding: nativeData, as: UTF8.self)
         )
@@ -98,7 +104,7 @@ struct NotionClipboardDocument {
     }
 
     private static func richText(_ node: ClipboardHTMLTree.Node, marks: [[String]] = []) -> [[Any]] {
-        if let tex = node.tex { return [["‣", marks + [["e", tex]]]] }
+        if let tex = node.tex { return equation(tex, marks: marks) }
         if let text = node.text {
             guard !text.isEmpty else { return [] }
             return [marks.isEmpty ? [text] : [text, marks]]
@@ -112,6 +118,12 @@ struct NotionClipboardDocument {
         }
         let next = mark.map { marks + [[$0]] } ?? marks
         return node.children.flatMap { richText($0, marks: next) }
+    }
+
+    private static func equation(_ tex: String, marks: [[String]] = []) -> [[Any]] {
+        // Notion's native equation character is U+204D, distinct from the
+        // visually similar U+2023 bullet, which pastes as ordinary text.
+        [["⁍", marks + [["e", tex]]]]
     }
 
     private static func envelope(type: String, title: [[Any]]) -> [String: Any] {
@@ -177,65 +189,4 @@ struct NotionClipboardDocument {
         return context
     }()
 
-    // Chromium DataTransfer custom MIME values use a Pickle: 32-bit payload
-    // length, entry count, then length-prefixed UTF-16LE key/value strings,
-    // each padded to a four-byte boundary. No workspace IDs or tokens needed.
-    private static func chromiumCustomData(type: String, value: String) -> Data {
-        func integer(_ number: Int) -> Data {
-            var little = UInt32(number).littleEndian
-            return withUnsafeBytes(of: &little) { Data($0) }
-        }
-        var payload = integer(1)
-        for string in [type, value] {
-            let units = Array(string.utf16)
-            payload.append(integer(units.count))
-            for unit in units {
-                var little = unit.littleEndian
-                withUnsafeBytes(of: &little) { payload.append(contentsOf: $0) }
-            }
-            while payload.count % 4 != 0 { payload.append(0) }
-        }
-        return integer(payload.count) + payload
-    }
-}
-
-/// Parses only our generated, escaped fragment, never service-supplied HTML.
-private final class ClipboardHTMLTree: NSObject, XMLParserDelegate {
-    final class Node {
-        let tag: String?
-        let text: String?
-        let attributes: [String: String]
-        var children: [Node]
-        var tex: String? {
-            attributes["data-tex"].flatMap { Data(base64Encoded: $0) }.flatMap { String(data: $0, encoding: .utf8) }
-        }
-        init(tag: String? = nil, text: String? = nil, attributes: [String: String] = [:], children: [Node] = []) {
-            self.tag = tag; self.text = text; self.attributes = attributes; self.children = children
-        }
-    }
-
-    private var stack: [Node] = []
-    private var root: Node?
-
-    static func parse(_ generatedHTML: String) throws -> Node {
-        let delegate = ClipboardHTMLTree()
-        let parser = XMLParser(data: Data("<root>\(generatedHTML)</root>".utf8))
-        parser.shouldResolveExternalEntities = false
-        parser.delegate = delegate
-        guard parser.parse(), let root = delegate.root else { throw CopyFormatError.pasteboardWriteFailed }
-        return root
-    }
-
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes: [String: String]) {
-        let node = Node(tag: elementName, attributes: attributes)
-        stack.last?.children.append(node)
-        if root == nil { root = node }
-        stack.append(node)
-    }
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        stack.last?.children.append(Node(text: string))
-    }
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
-        _ = stack.popLast()
-    }
 }
