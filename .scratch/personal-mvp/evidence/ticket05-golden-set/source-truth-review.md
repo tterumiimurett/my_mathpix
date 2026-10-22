@@ -1,0 +1,25 @@
+# Independent authored Golden Result review — 2026-10-21
+
+Reviewed read-only `/private/tmp/my_mathpix-ticket05/Sources/MyMathpix/Resources/GoldenSet/manifest.json` and `scripts/golden_set/build_corpus.py` while implementation remains in progress. No code edits, rendering, live recognition, credentials or UI operations performed. No PNG files were present in the bundled GoldenSet directory at this review, so **this is authored-content consistency review, not visual truth approval**.
+
+## Confirmed source-level consistency
+
+- Exactly 80 unique expected cases, with category counts formula=30/table=20/mixed=20/boundary=10.
+- F01–F30 each has exactly one authored display formula; Golden Markdown TeX matches HTML data-tex after HTML entity decoding, including matrix rows, aligned ampersands and row spacing. Formula identity is content to recognize; the reviewer need not treat omitted mathematical domain restrictions as recognition errors. Equivalent source/layout variations remain acceptable under the rubric.
+- All 20 ordinary tables and every table grid in ordinary mixed cases match their authored HTML cells and row/table order. An independent HTMLParser extracted all td/th text and data-tex; no ordinary mismatch was found. M12 and M20 include both expected tables in order. M13 cell formulas match `$E=mc^2$` and `$A=\pi r^2$`.
+- Source-level manual reading found no omitted/mismatched prose between ordinary Golden Markdown and fixtureBody. M14 correctly protects literal `x**2` code and uses unambiguous USD 5. M15 heading and blockquote match visible HTML text. M16 includes all four expected inline symbols; M17 starts with the table, M18 with display math, M19 includes two after-table paragraphs, M20 includes two tables around aligned math.
+- Already requested ordinary mixed-case diversity is present in the current generator, so no duplicate diversity request is raised.
+
+## Actionable review findings
+
+1. **M11–M20 stale per-case review instructions.** `replace_mixed` replaces source/body/grids but leaves the generic note “Check text before/after, inline x squared, displayed mathematics and table…” from the original template. It asks for nonexistent material in the revised cases and can create invalid semantic verdicts. M11/M12/M13/M15/M16/M19 lack a display formula; M14 lacks inline math; M17/M18 have no preceding text; none of several cases contains inline x squared. Update each revised case's reviewNotes to describe its actual reading order, formulas and table count. Do not score absence of non-fixture content as a recognition failure.
+
+2. **B05 merged-table Golden Result is underspecified.** fixtureBody has A with rowspan=2, then value 2 in the second column. goldenMarkdown has the lossy but reasonable empty-slot projection; tableGrids is empty, and no independent structured expected merge is stored. Supply the explicit expected 3x2 projected grid `[["Group","Value"],["A","1"],["","2"]]` plus rowspan contract (safe expected HTML or explicit span metadata). A flat-grid-only pass must not imply retained merged structure. Equivalent safe HTML may be accepted without byte equality.
+
+3. **B08/B09 table truth metadata omitted.** Both have visible authored tables and Golden Markdown but empty tableGrids. Populate B08's two ordered grids and B09's 3x2 formula grid; include table-structure review when applicable to boundary cases. The current report boundary CHECKS lacks table_structure, so it could label these pass with no explicit table judgment unless canonical/layout notes happen to cover it. Boundary separation should preserve failures, not omit their relevant criteria.
+
+4. **B06 reference source itself triggers a current product renderer defect.** The fixture intentionally shows literal currency `$5`, literal code `x**2`, and mathematical x squared. Current `MarkdownRenderer.extractMath` matches `(?<!\$)\$([^\n$]+?)\$(?!\$)` and treats `$5; compare $` from Golden Markdown as a formula, leaving `x^2$` literal. The authored semantic expectation is unambiguous in fixtureBody, but rendered goldenMarkdown is not a trustworthy visual reference under this implementation. Keep separate literal-currency/formula semantic truth in review notes/structured atoms; report the actual preview/copy result honestly as a boundary failure if this behavior persists. Do not use exact-source equality, a product-rendered golden reference, or “correction string copied” as evidence that B06 is correct. This is a boundary product limitation, not permission to silently remove the challenge or repair unrelated renderer behavior.
+
+## Evidence limitations and next review
+
+Rendered PNGs must still be inspected to verify actual symbols, dimensions, no clipping, intended small/low-contrast/rotated boundary styling and font readiness. Input hashes should be bound only after that artifact exists. Authored template source and service outputs remain distinct provenance. This review does not sign any Golden Set quality verdict or destination-paste acceptance. Notion inline math remains explicit deferred Ticket07; no native editability pass may come from clipboard types alone.

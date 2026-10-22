@@ -1,0 +1,23 @@
+{
+  "timeUTC": "2026-10-22T06:51:14.667912+00:00",
+  "cause": "Root left installed App running with isolated Ticket01 acceptance arguments; mock RecognitionService provides no credential configuration; AppModel.testAndSaveToken rejects before a health request or save",
+  "stoppedPID": 95685,
+  "stoppedRunID": "5377e92f-5d88-4a3a-b757-86b1a41cb557",
+  "savedTokenExists": true,
+  "savedTokenPrivateMode": "0o600",
+  "savedTokenMetadataUnchanged": true,
+  "tokenContentsReadOrCopied": false,
+  "normalAppLaunchPending": false,
+  "normalModeProcess": "99434 /Applications/MyMathpix.app/Contents/MacOS/MyMathpix",
+  "normalModeHasNoAcceptanceArguments": true,
+  "actualCUANormalMainWindowObserved": true,
+  "actualCUANormalSettingsObserved": true,
+  "actualCUASavedTokenRecognized": true,
+  "actualCUASettingsSavedTokenLabel": "Stored locally on this Mac",
+  "actualCUAReplacementFieldPlaceholder": "A token is saved \u2014 enter a replacement",
+  "newCredentialEnteredByAgent": false,
+  "realTokenHealthRequestRerun": false,
+  "productionSessionLeftRunning": true,
+  "runtimeOwnership": "normal App for owner; no acceptance launch lock held",
+  "completedAtUTC": "2026-10-22T06:54:42.230771+00:00"
+}

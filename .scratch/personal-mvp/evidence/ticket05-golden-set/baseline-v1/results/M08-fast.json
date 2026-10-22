@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 8: evaluate  $x^2$  before comparing the measurements.\n\n$$n! = \\prod_{k=1}^n k$$\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M08",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Item</th>\n    <th>Mean</th>\n    <th>SD</th>\n   </tr>\n   <tr>\n    <td>Length</td>\n    <td>12.4</td>\n    <td>0.6</td>\n   </tr>\n   <tr>\n    <td>Mass</td>\n    <td>8.2</td>\n    <td>0.3</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 8: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$n! = \\prod_{k=1}^n k$$</p>\n<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 8: evaluate  $x^2$  before comparing the measurements.\n\n$$n! = \\prod_{k=1}^n k$$\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 8: evaluate  $x^2$  before comparing the measurements.\n\n$$n! = \\prod_{k=1}^n k$$\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 8: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>n</mi><mo stretchy=\"false\">!</mo><mo>=</mo><munderover><mo>∏</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>k</mi></mrow><annotation encoding=\"application/x-tex\">n! = \\prod_{k=1}^n k</annotation></semantics></math></span></p>\n<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 8: evaluate  $x^2$  before comparing the measurements.\n\n$$n! = \\prod_{k=1}^n k$$\n\n| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>",
+        "plain" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "tsv" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "tsv" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "5cf6dddd4c02333e769266007e5367721fece528c51bce761ab52d6c8c5b44b0",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M08-fast.png",
+    "previewSHA256" : "ea6d2aca2b29b3eeeea040ae919c915b28f83b31a43c8c105f802d1a37aeed31"
+  },
+  "contentSHA256" : "840cd3a7a4eac0bf3323bd337a80d7e10bc653827e3fe3dcb4f3870ec4428c35",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "2c3674d5fc82c1fc119d099b20f455bd5148858caa60dc1e708f19ae0f8425b1",
+  "mode" : "fast",
+  "outputSHA256" : "093d0b07e717339bfe0641562c885cb7f83b91a91db0c64a2b9a0abf3610ac2a",
+  "runtimeSeconds" : 1.6316859722137451,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:54:45Z",
+  "status" : "complete",
+  "wallSeconds" : 4.6560440063476562
+}

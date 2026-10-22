@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$$",
+  "caseID" : "F15",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$$</p></body></html>",
+        "plain" : "$$(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mi>k</mi></mfrac><mo fence=\"true\">)</mo></mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><msup><mi>y</mi><mi>k</mi></msup></mrow><annotation encoding=\"application/x-tex\">(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "7e47b6a244b5c690fdfa8fd71f1a3ebb32bcc55421136594c7e2b8171245183a",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F15-balanced.png",
+    "previewSHA256" : "20e64bb57069b35c0ea7842829ce67ec76348b5dc024f1f7b0830b939bf4a4d0"
+  },
+  "contentSHA256" : "e5d35375cea64f25f4bba63e63d72dd2d65d94d3ff2ab3a109f662b6e89e0af3",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "9f12a4142b64966e29d5f2282e3fd960b5e6b2ee80f91fc38b7f4402d8475a8c",
+  "mode" : "balanced",
+  "outputSHA256" : "6dad921e8ed0ce9923b978cfdf8a135257ff64e6794b1367277898395f0f6ed2",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$$",
+  "rawOutputSHA256" : "a17202d95d226f0435cc58782bee5d823d14e8464cb68daca0b46e0e873b58b4",
+  "runtimeSeconds" : 0.14071083068847656,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:12Z",
+  "status" : "complete",
+  "wallSeconds" : 4.7262810468673706
+}

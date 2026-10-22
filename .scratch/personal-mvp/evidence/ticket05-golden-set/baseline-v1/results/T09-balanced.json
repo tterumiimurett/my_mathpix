@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Parameter | Lower | Upper |\n|-----------|-------|-------|\n| a         | -1.5  | 2.0   |\n| b         | 0.0   | 10.0  |",
+  "caseID" : "T09",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Parameter</th>\n    <th>Lower</th>\n    <th>Upper</th>\n   </tr>\n   <tr>\n    <td>a</td>\n    <td>-1.5</td>\n    <td>2.0</td>\n   </tr>\n   <tr>\n    <td>b</td>\n    <td>0.0</td>\n    <td>10.0</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table></body></html>",
+        "plain" : "| Parameter | Lower | Upper |\n|-----------|-------|-------|\n| a         | -1.5  | 2.0   |\n| b         | 0.0   | 10.0  |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Parameter | Lower | Upper |\n|-----------|-------|-------|\n| a         | -1.5  | 2.0   |\n| b         | 0.0   | 10.0  |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table></body></html>",
+        "plain" : "| Parameter | Lower | Upper |\n|-----------|-------|-------|\n| a         | -1.5  | 2.0   |\n| b         | 0.0   | 10.0  |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>",
+        "plain" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "tsv" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "tsv" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "64e20b49e45cd69fce7e58b9f96b743cbad29af4701c5353dceb21b16ac11064",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T09-balanced.png",
+    "previewSHA256" : "8fadd0f9ed0f615cb65ed0aa73e291dae2b2cac84d3d96f7651d0a61f6726160"
+  },
+  "contentSHA256" : "8e9f9870a27edc6a8080363c49fec9110e068c721092c13541de84de66930b62",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "3383759846c77afbe6b1e839862b07a6b4047a3e2e50e9691c7a850e12d2c016",
+  "mode" : "balanced",
+  "outputSHA256" : "d04890fcd9864ac2ee815594a2116ee631835e3c8baf63683131647a1f52436a",
+  "runtimeSeconds" : 5.64613938331604,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:51:45Z",
+  "status" : "complete",
+  "wallSeconds" : 8.4888029098510742
+}

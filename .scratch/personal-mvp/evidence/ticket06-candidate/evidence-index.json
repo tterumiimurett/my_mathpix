@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "recordedAtUTC": "2026-10-22T04:13:04.167055+00:00",
+  "candidateArtifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "candidateCDHash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
+  "candidateBundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
+  "builderSourceRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "reviewedProductionSourceRevision": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "reviewedIntegrationRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "auditSourceRevision": "7c4379dffba423bb224ec4c7e919873fb165ff56",
+  "rawMergerRecordCount": 10,
+  "entries": [
+    {
+      "file": "additional-signed-checks.json",
+      "sha256": "f59125dc7e86eab6ecf5b8d476ca757c66c76db3a0aa47f42fc2578537fa1f2b",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/additional-signed-checks.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "build-stage-provenance.json",
+      "sha256": "ca7c8cf99c51458c3054879ca8ccac9ee0ebe2c7582e4ee1305d416a5282091b",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/build-stage-provenance.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "immutability-after-all-checks.json",
+      "sha256": "ed56c52c102b192bc3d56f8efceb9b205a6e22b242dd5bc9b1c0c2b7dd7d7c81",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/immutability-after-all-checks.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "immutable-before-checks.json",
+      "sha256": "a234da63d034238cbf81c9af8ba560adcea749db417ae11e303593d5321e884e",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/immutable-before-checks.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "launchservices-permission-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/launchservices-permission-stderr.txt",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "launchservices-permission-stdout.txt",
+      "sha256": "b32b8d681aad6f78229271ced048d723737c46db0d60a731f71b8f949a0358c7",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/launchservices-permission-stdout.txt",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "permission-probe-contexts.json",
+      "sha256": "a6ca22c084a83b1726a1f2cb90ac34169bd715960ed9793afd2e139831e12766",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/permission-probe-contexts.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "summary.md",
+      "sha256": "04cfee7b1be275b345e9c0c4bfce8683e19dd5e07b8abd311ca8bcf48792ee08",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/summary.md",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "supporting-checks.json",
+      "sha256": "788f823a5b66be5522a86ae3a2c71f2235dfade5fb745e002f260586f8143316",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/supporting-checks.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "window-timeout-process-state.json",
+      "sha256": "f7b78d6b4bbf6bf31e4000a83200792ead01804bed5ac7ef421088b206719756",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-fixed-candidate-evidence/window-timeout-process-state.json",
+      "scope": "Original new-a05 Merger record; preserve success, timeout, missing-partial-stdout and launch warning outcomes exactly."
+    },
+    {
+      "file": "preview-navigation-standards-review.md",
+      "sha256": "b802a148ec88ad0f1ca07a8fadf7eda64e5900226e2bea202b72725c6d6f8234",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-navigation-standards-review.md",
+      "scope": "Independent source review final cd826; historical a9 references reflect source-review time, not a05 acceptance or this handoff review."
+    },
+    {
+      "file": "preview-navigation-spec-review.md",
+      "sha256": "a114463aa7a80e04b7892f11d9323e7efce7913e3e363ecb331aae31cf3fc886",
+      "source": "/private/tmp/my_mathpix-remaining-context/preview-navigation-spec-review.md",
+      "scope": "Independent source review final cd826; historical a9 references reflect source-review time, not a05 acceptance or this handoff review."
+    },
+    {
+      "file": "source-bridge.json",
+      "sha256": "1cf87a66f69749aa2d870047a90fc8ae2b112a10c1c71d7636dbc01537ef6c09",
+      "source": "Current audit task at pair-data revision7c4379d",
+      "scope": "Formal existing public CLI output: new candidate identity/external builder194-input map/exact reviewed-pair join, not window or GUI acceptance."
+    },
+    {
+      "file": "bridge-and-history-review.md",
+      "sha256": "3e7c5375758e086be900745acb238682c23a6d3389cadf2dac0fc9f65635bf65",
+      "source": "Current audit task at pair-data revision7c4379d",
+      "scope": "Agent-recorded stale-pin RED then existing14 public CLI checks GREEN; complete409 handoff reviewed Standards0/Spec0 and parent accepted; tail is docs/data only."
+    },
+    {
+      "file": "a05-handoff-standards-review.md",
+      "sha256": "c95215c6f55de77134f161ea198db26ae96a3d74ddd1771ecfd7af0689af1ab6",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-handoff-standards-review.md",
+      "scope": "Independent standards review of pair-data/test-fixture/handoff tip4097690,0 actionable findings; separate from cd826 product-source review and pending runtime acceptance."
+    },
+    {
+      "file": "a05-handoff-spec-review.md",
+      "sha256": "723a22b9e70c4d17e605e2f719d4c592a54d42c4021335df48e211707ef1448c",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-handoff-spec-review.md",
+      "scope": "Independent spec review of pair-data/test-fixture/handoff tip4097690,0 actionable findings; separate from cd826 product-source review and pending runtime acceptance."
+    },
+    {
+      "file": "owner-clarification.json",
+      "sha256": "2fe84b95eb6f00025822c1ad3f7ba8a17427ee1ece1aa1bf6f3777a6254aa2df",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/owner-clarification.json",
+      "scope": "Owner background for earlier a9: also dragged fixture, exact sequence/count not established; no historical gate reclassification or new-a05 pass."
+    },
+    {
+      "file": "ticket03-evidence.json",
+      "sha256": "2b2635e759a1e651433da59c7d2269c2e44f8bed15a57c8ea0a2fd0a0ca853e3",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/ticket03-evidence.json",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "ticket03-process-sample.txt",
+      "sha256": "667907bc6e96ea1736cfa5ef54c3bc33626b8bda81a51c65857ea2fcad432269",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/ticket03-process-sample.txt",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "ticket03-run-state.txt",
+      "sha256": "d5d715dbd043e0511a50491c82aee0c387fd78a02788bd8407b07773a14753c3",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/ticket03-run-state.txt",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "window-after-unlock.json",
+      "sha256": "f2d33ea2254ab4ed0318edc794dd59e6a018313f65acd0c1e9dad7ce01b5a096",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-after-unlock.json",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "window-after-unlock.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-after-unlock.stderr",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "window-after-unlock.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-unlocked-acceptance/window-after-unlock.stdout",
+      "scope": "Original scoped unlocked a05 attempt data; reporter/timeout/sample signals do not establish absolute window absence, deadlock or root cause."
+    },
+    {
+      "file": "startup-qa-backup.json",
+      "sha256": "6cfa54f4d12e35488f482b3e446d20709e7ec364610c79f69d1cedfc12cbb13b",
+      "source": "/private/tmp/my_mathpix-remaining-context/a05-startup-qa-backup.json",
+      "scope": "Complete unchanged a05 App safe backup; existing auditor signature/executable/CDHash/whole-bundle before/copy/after checks only, no App launch."
+    },
+    {
+      "file": "unlocked-parent-observations.json",
+      "sha256": "4f1585f3b817846ba859eb41f72e99345e95fc1ed0f426e0662ff6d9e6620df6",
+      "source": "Trusted parent task plus scoped7 raw files; agent-authored bounded synthesis",
+      "scope": "Separates reporter flags, CUA read failure, idle sample, slow Settings read and actual acceptance; no root-cause inference."
+    }
+  ],
+  "gate": "A05 unchanged, backed up; unlocked window timeout and unresolved T3 GUI launch attempt under investigation. No actual capture/live/TCC success or06/08/dogfood gate closed.",
+  "historicalA9Evidence": "../history/compact-preview-regression-a9b1c2df/README.md",
+  "reviewCompletion": {
+    "reviewedRevision": "409769047add2689b40cfe639e6adb915d1313c9",
+    "StandardsActionableFindings": 0,
+    "SpecActionableFindings": 0,
+    "parentReview": "passed",
+    "documentationTail": "Import reports/status only; not a builder, runtime test or new actual acceptance."
+  },
+  "updatedAtUTC": "2026-10-22T05:22:42.294403+00:00",
+  "unlockedAppend": {
+    "priorIndexedHashesPreserved": 16,
+    "newRawFiles": 7,
+    "newBackupRecord": 1,
+    "newScopedParentSynthesis": 1,
+    "priorNamespaceSnapshot": "../history/a05-window-startup-qa-a05eefa3/README.md",
+    "review": "pending-parent-static-tail-check; no new source review or runtime pass"
+  }
+}

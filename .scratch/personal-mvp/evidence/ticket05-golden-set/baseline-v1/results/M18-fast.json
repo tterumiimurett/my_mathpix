@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$N = 8000 + 1000 + 1000 = 10000$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe total  $N$  includes all three splits.",
+  "caseID" : "M18",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Split</th>\n    <th>Samples</th>\n   </tr>\n   <tr>\n    <td>Train</td>\n    <td>8000</td>\n   </tr>\n   <tr>\n    <td>Validation</td>\n    <td>1000</td>\n   </tr>\n   <tr>\n    <td>Test</td>\n    <td>1000</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$N = 8000 + 1000 + 1000 = 10000$$</p>\n<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>\n<p>The total  $N$  includes all three splits.</p></body></html>",
+        "plain" : "$$N = 8000 + 1000 + 1000 = 10000$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe total  $N$  includes all three splits.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$N = 8000 + 1000 + 1000 = 10000$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe total  $N$  includes all three splits.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>N</mi><mo>=</mo><mn>8000</mn><mo>+</mo><mn>1000</mn><mo>+</mo><mn>1000</mn><mo>=</mo><mn>10000</mn></mrow><annotation encoding=\"application/x-tex\">N = 8000 + 1000 + 1000 = 10000</annotation></semantics></math></span></p>\n<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>\n<p>The total  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>N</mi></mrow><annotation encoding=\"application/x-tex\">N</annotation></semantics></math></span>  includes all three splits.</p></body></html>",
+        "plain" : "$$N = 8000 + 1000 + 1000 = 10000$$\n\n| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |\n\nThe total  $N$  includes all three splits.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>",
+        "plain" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "tsv" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "tsv" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "1d40a0638a8d535066035428c8830a6763995e4b5b627b334fd28d4238295d67",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M18-fast.png",
+    "previewSHA256" : "14ccc7840a32bc484c689f9ace2c2649d87daa5770125affed63c2f2afa8f860"
+  },
+  "contentSHA256" : "05b502850f43b81111ada0aa374285ae38a49b223f2a4dc55b4ea8db62a53e60",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "cbe16158e3f1303dea0b9db4d0e807dbc91eb07b0a2a673441b7b006784898a5",
+  "mode" : "fast",
+  "outputSHA256" : "f3f63fa81bf191d4da66b93b3dc46d094e6254afea22ab2b6bfb892681a0fac4",
+  "runtimeSeconds" : 0.52492904663085938,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:56:29Z",
+  "status" : "complete",
+  "wallSeconds" : 4.7452479600906372
+}

@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{a + b}{c - d}$$",
+  "caseID" : "B02",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{a + b}{c - d}$$</p></body></html>",
+        "plain" : "$$\\frac{a + b}{c - d}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{a + b}{c - d}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mrow><mi>c</mi><mo>−</mo><mi>d</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{a + b}{c - d}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{a + b}{c - d}$$",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "2ef90e72f39b9ce5cb4188b21b376f5c4f9f27b7f48af617aeb8dd224f0a5b7d",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B02-fast.png",
+    "previewSHA256" : "eb84b4c4ebc01c4f8211e8240c256a917e3ba136618bd0d8f987460dc9147537"
+  },
+  "contentSHA256" : "a6a360fd2b828577a18575801852d12322ab95cd4d7b9c9551a6a3b50c6a5934",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "054d459af68b1634825a3404c79454b0e2ca7ae90d0c5bc4c9a25224cfdab020",
+  "mode" : "fast",
+  "outputSHA256" : "fe1f108425908d0b389eb90f85e7aee0a0c91606556f036533f2f7935df22eb5",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\frac{a + b}{c - d}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\frac{a + b}{c - d}$$",
+  "rawOutputSHA256" : "91e92689639b46e5235b346dc9fd35da3eeea8ff38f7afafe28620af41d47c11",
+  "runtimeSeconds" : 0.1979365348815918,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:16:05Z",
+  "status" : "complete",
+  "wallSeconds" : 2.5842550992965698
+}

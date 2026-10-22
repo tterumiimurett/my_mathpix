@@ -122,7 +122,7 @@ final class Ticket01MockURLProtocol: URLProtocol {
         if request.httpMethod == "POST", url.path == "/api/v1/convert" {
             return try submitResponse(request: request, url: url)
         }
-        if request.httpMethod == "GET", url.path == "/mock/ticket01-check" {
+        if request.httpMethod == "GET", url.path == "/api/v1/convert/ticket01-check" {
             return pollResponse(url: url)
         }
         throw AppError.invalidResponse("mock received an unexpected request")
@@ -175,7 +175,7 @@ final class Ticket01MockURLProtocol: URLProtocol {
             httpResponse(url: url),
             jsonData([
                 "success": true,
-                "request_check_url": "https://www.datalab.to/mock/ticket01-check"
+                "request_check_url": "https://www.datalab.to/api/v1/convert/ticket01-check"
             ])
         )
     }

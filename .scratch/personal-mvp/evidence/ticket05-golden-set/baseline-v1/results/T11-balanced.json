@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Axis | Unit | Scale  |\n|------|------|--------|\n| x    | m    | Linear |\n| y    | s    | Log    |",
+  "caseID" : "T11",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Axis</th>\n    <th>Unit</th>\n    <th>Scale</th>\n   </tr>\n   <tr>\n    <td>x</td>\n    <td>m</td>\n    <td>Linear</td>\n   </tr>\n   <tr>\n    <td>y</td>\n    <td>s</td>\n    <td>Log</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Axis</th><th>Unit</th><th>Scale</th></tr></thead><tbody><tr><td>x</td><td>m</td><td>Linear</td></tr><tr><td>y</td><td>s</td><td>Log</td></tr></tbody></table></body></html>",
+        "plain" : "| Axis | Unit | Scale  |\n|------|------|--------|\n| x    | m    | Linear |\n| y    | s    | Log    |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Axis | Unit | Scale  |\n|------|------|--------|\n| x    | m    | Linear |\n| y    | s    | Log    |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Axis</th><th>Unit</th><th>Scale</th></tr></thead><tbody><tr><td>x</td><td>m</td><td>Linear</td></tr><tr><td>y</td><td>s</td><td>Log</td></tr></tbody></table></body></html>",
+        "plain" : "| Axis | Unit | Scale  |\n|------|------|--------|\n| x    | m    | Linear |\n| y    | s    | Log    |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Axis</th><th>Unit</th><th>Scale</th></tr></thead><tbody><tr><td>x</td><td>m</td><td>Linear</td></tr><tr><td>y</td><td>s</td><td>Log</td></tr></tbody></table>",
+        "plain" : "Axis\tUnit\tScale\nx\tm\tLinear\ny\ts\tLog",
+        "tsv" : "Axis\tUnit\tScale\nx\tm\tLinear\ny\ts\tLog",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Axis\tUnit\tScale\nx\tm\tLinear\ny\ts\tLog",
+        "tsv" : "Axis\tUnit\tScale\nx\tm\tLinear\ny\ts\tLog",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "51a7f64f65efef9155036c4b268ea243792e048061160d04598e54f542692d84",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T11-balanced.png",
+    "previewSHA256" : "ef673e25f22934772798a5602a7680ecce7eedc28470cf05d9a67724eb07122d"
+  },
+  "contentSHA256" : "b7fe4c38bc4cf6ccde4b442f23b94805949933cb32f27d3dd023fe3128d3f0b4",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "2ea29c7641b7f984f83cf4902c8961694179c5021571c5d78e93737c09fa9213",
+  "mode" : "balanced",
+  "outputSHA256" : "ab18d5d5149f4fd36e080964e6f876a1ad38c97f5b033381e35396df91f0e935",
+  "runtimeSeconds" : 2.1560769081115723,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:04Z",
+  "status" : "complete",
+  "wallSeconds" : 5.1306439638137817
+}

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "disposition": "owner-rejected-window-roles",
+  "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "reason": "Normal production App showed the large result window instead of the requested compact floating result panel; menu/panel/workspace roles require repair.",
+  "originalSupportingCLIPassRemainsHistorical": true,
+  "originalRootEvidence": [
+    {
+      "path": "desktop-gate.json",
+      "sha256": "d55a78d71f033b471282c0ada3497db4a747460dd9d3f80b998fa8c5e82718b2"
+    },
+    {
+      "path": "handoff.json",
+      "sha256": "43bca563e7c9ee9e6a8baf94841c771affc1bad644a7014066c4a356b97599d0"
+    },
+    {
+      "path": "handoff.md",
+      "sha256": "f444ed4ce152b2f2766d19d04dcaab68a22b86f5e5622f5a930fbb659b1b3cb5"
+    },
+    {
+      "path": "immutability-after-preview.json",
+      "sha256": "f1dfd73ac02721c214a0760e694f600f0d0b757ab8aeb77cff227bfd585c70f4"
+    },
+    {
+      "path": "implementation.md",
+      "sha256": "9e709505fb73692fb1389261087d642de5eade3035a254905b3851ef2c41273a"
+    },
+    {
+      "path": "launch-contract.json",
+      "sha256": "24c0913b1ac9f4151e4b299e0baf694b0661ac151874acefea2ec4809c506af1"
+    },
+    {
+      "path": "permission-probe.json",
+      "sha256": "bd73580cde298cd2e82324acf65616845a4a56e715c4ee305fbb171d799b80d2"
+    },
+    {
+      "path": "preview-self-test.json",
+      "sha256": "f63abe5f5844c6f81685bd022625ca975e1caabddc6e86778b4078d4fbd28154"
+    },
+    {
+      "path": "preview-self-test.png",
+      "sha256": "ae3113f1a8566cd1570457bd1779ea5c440872eb6ca2299bfe025770d1e24512"
+    },
+    {
+      "path": "source-bridge.json",
+      "sha256": "8141a41c5541a7af6664c86f68d8c6cba7bda03131c73e59d6a9318e5a1270fd"
+    },
+    {
+      "path": "standards-fixer-review.md",
+      "sha256": "34ff55124cb4fb2d27e32908a76d6d41d4e8bb15b7fea93b2948cfd01d5465c6"
+    },
+    {
+      "path": "supporting-checks.json",
+      "sha256": "be67de705ab33aeaa7278f27dbfdb1a09394ff0c9bf23089792cbc83a6e366c8"
+    }
+  ],
+  "priorNestedPreReviewArchiveCopied": false,
+  "fullBundleBackup": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixRejectedLargeWindow-ea7ad5f1.app",
+  "currentDesktopOrPermissionEvidence": false
+}

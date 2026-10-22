@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Metric</b> | <b>Before</b> | <b>After</b> |\n|---------------|---------------|--------------|\n| Error         | 5.2%          | 2.1%         |\n| Speed         | 1.0×          | 1.8×         |",
+  "caseID" : "T14",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Metric</th>\n    <th>Before</th>\n    <th>After</th>\n   </tr>\n   <tr>\n    <td>Error</td>\n    <td>5.2%</td>\n    <td>2.1%</td>\n   </tr>\n   <tr>\n    <td>Speed</td>\n    <td>1.0×</td>\n    <td>1.8×</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Error</td><td>5.2%</td><td>2.1%</td></tr><tr><td>Speed</td><td>1.0×</td><td>1.8×</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Metric</b> | <b>Before</b> | <b>After</b> |\n|---------------|---------------|--------------|\n| Error         | 5.2%          | 2.1%         |\n| Speed         | 1.0×          | 1.8×         |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Metric</b> | <b>Before</b> | <b>After</b> |\n|---------------|---------------|--------------|\n| Error         | 5.2%          | 2.1%         |\n| Speed         | 1.0×          | 1.8×         |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Error</td><td>5.2%</td><td>2.1%</td></tr><tr><td>Speed</td><td>1.0×</td><td>1.8×</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Metric</b> | <b>Before</b> | <b>After</b> |\n|---------------|---------------|--------------|\n| Error         | 5.2%          | 2.1%         |\n| Speed         | 1.0×          | 1.8×         |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Error</td><td>5.2%</td><td>2.1%</td></tr><tr><td>Speed</td><td>1.0×</td><td>1.8×</td></tr></tbody></table>",
+        "plain" : "Metric\tBefore\tAfter\nError\t5.2%\t2.1%\nSpeed\t1.0×\t1.8×",
+        "tsv" : "Metric\tBefore\tAfter\nError\t5.2%\t2.1%\nSpeed\t1.0×\t1.8×",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Metric\tBefore\tAfter\nError\t5.2%\t2.1%\nSpeed\t1.0×\t1.8×",
+        "tsv" : "Metric\tBefore\tAfter\nError\t5.2%\t2.1%\nSpeed\t1.0×\t1.8×",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "a46c66c434b7a1949d84cd565ed3a589748673a1e880d6527cfe39743ed9e6bc",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T14-fast.png",
+    "previewSHA256" : "34b860d1b7920efa45985d4c00afd749d3c5a95fd431219384ebe843854239b9"
+  },
+  "contentSHA256" : "f44295278778ebed9ce627deeab9224e6774db18d5bd481aba1ce315d4109feb",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "ef0de3b136566d07574e6461ca3237c3ad0ef6826b7b60e6bdd2280402e458ee",
+  "mode" : "fast",
+  "outputSHA256" : "2097c679ce4e4dbacf2594ae0d23bb30551b819ef0f6e62d15bdda893c191c6f",
+  "runtimeSeconds" : 0.77428603172302246,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:27Z",
+  "status" : "complete",
+  "wallSeconds" : 4.6513079404830933
+}

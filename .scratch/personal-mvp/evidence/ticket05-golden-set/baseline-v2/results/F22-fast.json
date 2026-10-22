@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}$$",
+  "caseID" : "F22",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}$$</p></body></html>",
+        "plain" : "$$D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msub><mi>D</mi><mtext>KL</mtext></msub><mo stretchy=\"false\">(</mo><mi>p</mi><mi mathvariant=\"normal\">∥</mi><mi>q</mi><mo stretchy=\"false\">)</mo><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>p</mi><mi>i</mi></msub><mi>log</mi><mo>⁡</mo><mfrac><msub><mi>p</mi><mi>i</mi></msub><msub><mi>q</mi><mi>i</mi></msub></mfrac></mrow><annotation encoding=\"application/x-tex\">D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}$$",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "24cf2f3996ef20204fb5915ce1a0284e4de432e655e25e3de53776fe0705d262",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F22-fast.png",
+    "previewSHA256" : "f7f4edd0ae4db465f553902877ff33374172d95c40f8027006f183a1a3179d3f"
+  },
+  "contentSHA256" : "34bc8b5b5bd180a69e41dd8d8d9f834915169ca871102125ed225fb96d8cd1ed",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "32470981a97852c512e984b191e7e20977069e09f261f426c104a15cf53141f8",
+  "mode" : "fast",
+  "outputSHA256" : "cef061cd1b994461795cc87cc0ad8fcf0a87dd95c4a70f3f351604c4ecd4b367",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$D_{\\text{KL}}(p\\|q) = \\sum_i p_i \\log \\frac{p_i}{q_i}$$",
+  "rawOutputSHA256" : "531313cf40950b1d72a059ba64d2f35dcfdb7a5f64476143b9bf9179691735b8",
+  "runtimeSeconds" : 0.13771557807922363,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:09:52Z",
+  "status" : "complete",
+  "wallSeconds" : 3.1594460010528564
+}

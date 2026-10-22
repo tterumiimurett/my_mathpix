@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 9: evaluate  $x^2$  before comparing the measurements.\n\n$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$\n\n| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M09",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Parameter</th>\n    <th>Lower</th>\n    <th>Upper</th>\n   </tr>\n   <tr>\n    <td>a</td>\n    <td>-1.5</td>\n    <td>2.0</td>\n   </tr>\n   <tr>\n    <td>b</td>\n    <td>0.0</td>\n    <td>10.0</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 9: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$</p>\n<table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 9: evaluate  $x^2$  before comparing the measurements.\n\n$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$\n\n| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 9: evaluate  $x^2$  before comparing the measurements.\n\n$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$\n\n| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 9: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant=\"normal\">∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><mi>cos</mi><mo>⁡</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">\\frac{\\partial f}{\\partial x} = 2xy + \\cos x</annotation></semantics></math></span></p>\n<table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 9: evaluate  $x^2$  before comparing the measurements.\n\n$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$\n\n| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr></thead><tbody><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></tbody></table>",
+        "plain" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "tsv" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "tsv" : "Parameter\tLower\tUpper\na\t-1.5\t2.0\nb\t0.0\t10.0",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "dd812b9812d2594ea2e9c7bf6316f403739b92a61fac18e6957f5a285d12c039",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M09-fast.png",
+    "previewSHA256" : "b3186686297c13ff621c88431a4c974d088c72d35d8a4962e3e6850dca6c9e55"
+  },
+  "contentSHA256" : "8b085578927596d365b6a68d454ce9994165b0120275de1b2823f80a165167a8",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "e0ca10ca7fcff604bfce76f5d1b005bea2deddb41a6aa4f1a041d2bc94ff240c",
+  "mode" : "fast",
+  "outputSHA256" : "41b1f8c612befa42d22a5f17cceef2abab884fac024242665057cac57a11cb42",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p>Experiment 9: evaluate <math>x^2</math> before comparing the measurements.</p>\n  <p><math display=\"block\">\\frac{\\partial f}{\\partial x} = 2xy + \\cos x</math></p>\n  <table>\n   <tr>\n    <th><b>Parameter</b></th>\n    <th><b>Lower</b></th>\n    <th><b>Upper</b></th>\n   </tr>\n   <tr>\n    <td>a</td>\n    <td>-1.5</td>\n    <td>2.0</td>\n   </tr>\n   <tr>\n    <td>b</td>\n    <td>0.0</td>\n    <td>10.0</td>\n   </tr>\n  </table>\n  <p>The result preserves the order of the observations.</p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\nExperiment 9: evaluate  $x^2$  before comparing the measurements.\n\n$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$\n\n| <b>Parameter</b> | <b>Lower</b> | <b>Upper</b> |\n|------------------|--------------|--------------|\n| a                | -1.5         | 2.0          |\n| b                | 0.0          | 10.0         |\n\nThe result preserves the order of the observations.",
+  "rawOutputSHA256" : "99e0a120f02de77a22aa94f9c61af30c2b331148d66544d5678e98b16c7b7751",
+  "runtimeSeconds" : 0.11909747123718262,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:14:11Z",
+  "status" : "complete",
+  "wallSeconds" : 3.033877968788147
+}

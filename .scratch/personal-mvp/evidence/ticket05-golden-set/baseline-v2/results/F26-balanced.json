@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{d^2y}{dt^2} + \\omega^2 y = 0$$",
+  "caseID" : "F26",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{d^2y}{dt^2} + \\omega^2 y = 0$$</p></body></html>",
+        "plain" : "$$\\frac{d^2y}{dt^2} + \\omega^2 y = 0$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{d^2y}{dt^2} + \\omega^2 y = 0$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>y</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{d^2y}{dt^2} + \\omega^2 y = 0</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{d^2y}{dt^2} + \\omega^2 y = 0$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "501d7e39c5ec4bbb8235449bc0a070580fc58f431e9ee5c8a6e3a705992cdc74",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F26-balanced.png",
+    "previewSHA256" : "1bfc7b8853cd8f30f30b6f7862e879a5a5208cad10aeca29215ebcd32a95901e"
+  },
+  "contentSHA256" : "c5fc544592d6228e00828c218ad6ab127474a2136f91d08b42d8bed65794caa9",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "9392f7fcf8bde706d91e5b7c62bb99fec85f8e45924dc13489d9d7aee57dbda1",
+  "mode" : "balanced",
+  "outputSHA256" : "51d6fd26cf2c90e077bc634c8fbd52246fd3dcbfecc67f7767f3cffbf969a19a",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\frac{d^2y}{dt^2} + \\omega^2 y = 0</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\frac{d^2y}{dt^2} + \\omega^2 y = 0$$",
+  "rawOutputSHA256" : "96cc9caaedd71c989401d659f3776c8cb2b59badbc3fcb0836d1d64ef195b380",
+  "runtimeSeconds" : 0.14246726036071777,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:10:21Z",
+  "status" : "complete",
+  "wallSeconds" : 2.5850669145584106
+}

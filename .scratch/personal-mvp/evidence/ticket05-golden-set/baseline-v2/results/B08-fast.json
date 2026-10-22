@@ -1,0 +1,95 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+  "caseID" : "B08",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>A</th>\n    <th>B</th>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>\n<p>Between tables.</p>\n<table><thead><tr><th>C</th><th>D</th></tr></thead><tbody><tr><td>3</td><td>4</td></tr></tbody></table></body></html>",
+        "plain" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>\n<p>Between tables.</p>\n<table><thead><tr><th>C</th><th>D</th></tr></thead><tbody><tr><td>3</td><td>4</td></tr></tbody></table></body></html>",
+        "plain" : "| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>",
+        "plain" : "A\tB\n1\t2",
+        "tsv" : "A\tB\n1\t2",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "A\tB\n1\t2",
+        "tsv" : "A\tB\n1\t2",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "949ac7ea21d48f3d4331ec3dbe6c958f5cb7f9a2dffa6d374432269c65526601",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B08-fast.png",
+    "previewSHA256" : "89f63649fa33a52880f1f1f8f10b3e9375d2c2b01be339a69369a87d6c33a234"
+  },
+  "contentSHA256" : "b04295073c597ab4c0cbf409c7c29815a777acbca07e72dde0733b9546073326",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "e6aaea262c5b66e92cda0cf67688a54eaf6631e3b5eb66d5a0f3f2dc46ce16fd",
+  "mode" : "fast",
+  "outputSHA256" : "1a15ad079636a040cea17aba90c7c6552a85977bdd717d4c03a7eb404011fc3d",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <table>\n   <tr>\n    <th>A</th>\n    <th>B</th>\n   </tr>\n   <tr>\n    <td>1</td>\n    <td>2</td>\n   </tr>\n  </table>\n  <p>Between tables.</p>\n  <table>\n   <tr>\n    <th>C</th>\n    <th>D</th>\n   </tr>\n   <tr>\n    <td>3</td>\n    <td>4</td>\n   </tr>\n  </table>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n| A | B |\n|---|---|\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n|---|---|\n| 3 | 4 |",
+  "rawOutputSHA256" : "38a8e95e0456a6cb2b8b1bb55916a14ce4da3ccde26c7deecd3e38cae7b42dc5",
+  "runtimeSeconds" : 0.14771199226379395,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:16:46Z",
+  "status" : "complete",
+  "wallSeconds" : 3.6115020513534546
+}

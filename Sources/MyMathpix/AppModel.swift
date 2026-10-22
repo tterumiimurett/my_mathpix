@@ -30,6 +30,8 @@ final class AppModel: ObservableObject {
     private let hotKeyRegistrar: any HotKeyRegistering
     private let launchAtLoginController: any LaunchAtLoginControlling
     private let resultEditorWindowPresenter: any ResultEditorWindowPresenting
+    private var lastResultDisplayID: CGDirectDisplayID?
+    private var openSettings: (() -> Void)?
     private let ticket03Reporter: Ticket03AcceptanceReporter?
     private let pasteboard: NSPasteboard
     private var historyObservation: AnyCancellable?
@@ -128,7 +130,7 @@ final class AppModel: ObservableObject {
         }
         guard hasToken else {
             errorMessage = AppError.missingToken.localizedDescription
-            showMainWindow()
+            showResultEditor()
             return
         }
         statusMessage = "Select a screen region — Esc cancels"
@@ -157,7 +159,7 @@ final class AppModel: ObservableObject {
                         ?? DiagnosticCode.captureError.rawValue,
                     recentHistoryCount: self.history.items.count
                 )
-                self.showMainWindow()
+                self.showResultEditor()
             }
         }
         if began {
@@ -221,7 +223,9 @@ final class AppModel: ObservableObject {
             try ClipboardService.copy(prepared, to: pasteboard)
             ticket03Reporter?.markCopy(
                 format,
-                passed: Ticket03PasteboardInspector.inspect(format, pasteboard: pasteboard)
+                passed: Ticket03PasteboardInspector.inspect(
+                    format, pasteboard: pasteboard, expectedMarkdown: selectedItem?.markdown
+                )
             )
             statusMessage = "\(format.title) copied"
             NSSound(named: "Glass")?.play()
@@ -308,6 +312,14 @@ final class AppModel: ObservableObject {
         resultEditorWindowPresenter.registerMainWindow(window)
     }
 
+    func installResultEditorOpener(_ opener: @escaping () -> Void) {
+        resultEditorWindowPresenter.installResultEditorOpener(opener)
+    }
+
+    func registerResultEditorWindow(_ window: NSWindow) {
+        resultEditorWindowPresenter.registerResultEditorWindow(window)
+    }
+
     func exportDiagnostics(to url: URL) throws {
         try diagnosticLog.exportData().write(to: url, options: .atomic)
     }
@@ -322,11 +334,13 @@ final class AppModel: ObservableObject {
 
     func ticket01MarkResultEditorVisible(
         originalSnippetVisible: Bool,
+        canonicalMarkdownVisible: Bool,
         canonicalMarkdown: String,
         isComplete: Bool
     ) {
         ticket01Reporter?.markResultEditorVisible(
             originalSnippetVisible: originalSnippetVisible,
+            canonicalMarkdownVisible: canonicalMarkdownVisible,
             canonicalMarkdown: canonicalMarkdown,
             isComplete: isComplete
         )
@@ -352,6 +366,23 @@ final class AppModel: ObservableObject {
 
     func ticket03MarkPreviewVisible(_ observation: PreviewRenderObservation) {
         ticket03Reporter?.markPreviewRendered(observation)
+    }
+
+    var isMainWindowVisible: Bool { resultEditorWindowPresenter.isMainWindowVisible }
+
+    func installSettingsOpener(_ opener: @escaping () -> Void) {
+        openSettings = opener
+    }
+
+    func showSettings() {
+        guard appInteractionEnabled else { return }
+        showMainWindow()
+        openSettings?()
+    }
+
+    func showResultEditor() {
+        guard appInteractionEnabled else { return }
+        resultEditorWindowPresenter.presentResultEditor(on: lastResultDisplayID ?? CGMainDisplayID())
     }
 
     func showMainWindow() {
@@ -535,6 +566,7 @@ final class AppModel: ObservableObject {
 
     private func presentRecognitionOutcome(on displayID: CGDirectDisplayID?) {
         guard appInteractionEnabled, let displayID else { return }
+        lastResultDisplayID = displayID
         resultEditorWindowPresenter.presentResultEditor(on: displayID)
         captureCoordinator.releaseHiddenApplicationWindows()
     }

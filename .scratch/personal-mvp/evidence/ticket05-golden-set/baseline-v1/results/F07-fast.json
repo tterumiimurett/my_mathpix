@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\lim_{x \\rightarrow 0} \\frac{\\sin x}{x} = 1$$",
+  "caseID" : "F07",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\lim_{x \\rightarrow 0} \\frac{\\sin x}{x} = 1$$</p></body></html>",
+        "plain" : "$$\\lim_{x \\rightarrow 0} \\frac{\\sin x}{x} = 1$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\lim_{x \\rightarrow 0} \\frac{\\sin x}{x} = 1$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>x</mi></mrow><mi>x</mi></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\lim_{x \\rightarrow 0} \\frac{\\sin x}{x} = 1</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\lim_{x \\rightarrow 0} \\frac{\\sin x}{x} = 1$$",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d9ac8ef43a78670729a4ef97f656c1ab647aa5825d7010f39425ee407385726c",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F07-fast.png",
+    "previewSHA256" : "5978d8d2f0f9d9c50864560c8f8ca7dd6a505adbd5535ff74c2fc40bb634dcca"
+  },
+  "contentSHA256" : "1a5553d6afa2deff4ba339353f5d603c7ad983aa02966b50fbaa2f6f7cfd5b81",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "3e705b44c0b1abb2c11e6a38577b2927bdfab7519a0c58ebfcf1adf7df01cf3f",
+  "mode" : "fast",
+  "outputSHA256" : "ed6f6c79e24743a5b98155308090b2740bfc5ccf661aca586d9b6f354c3f3d1e",
+  "runtimeSeconds" : 2.5432379245758057,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:46:16Z",
+  "status" : "complete",
+  "wallSeconds" : 5.2029129266738892
+}

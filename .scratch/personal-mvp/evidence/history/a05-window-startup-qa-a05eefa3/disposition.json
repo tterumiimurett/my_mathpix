@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "candidateArtifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
+  "candidateCDHash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
+  "candidateBundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
+  "ownerRejected": false,
+  "disposition": "qa-window-startup-under-investigation",
+  "snapshotScope": "Prior handoff19 root files/16 index hashes before unlocked-attempt append",
+  "candidateChanged": false,
+  "absoluteWindowAbsenceProven": false,
+  "deadlockOrRootCauseProven": false,
+  "actualAcceptance": "open",
+  "newBuildDecision": "not-established"
+}

@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+  "caseID" : "F06",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$</p></body></html>",
+        "plain" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><msup><mi>r</mi><mi>k</mi></msup><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>r</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "779a334d0a977ed2d3bb7689ee33bda00979eb29afec4c7b25a7dacf5b7e9e7e",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F06-balanced.png",
+    "previewSHA256" : "324b5c5cc43a97dfd127769b6077fb2bf67c02134b03371482c7950c7db551b6"
+  },
+  "contentSHA256" : "f728ed0a7518a527c8756ff6885697a25bb3038cab6f7be4eef86f40ea727997",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "aefb8f06f92a40aae2e1c278986832aaa33d64925d6847c0cdb281444b6f62e5",
+  "mode" : "balanced",
+  "outputSHA256" : "0cca9e25bf14c1b49d5c95760ae1e1c9b79878a271a3cb47ac36130ea5ad7e4c",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\sum_{k=0}^n r^k = \\frac{1-r^{n+1}}{1-r}$$",
+  "rawOutputSHA256" : "1689682e7cd6b2fd0946b174c12a1d9350906fba08728bad287b365189e44d20",
+  "runtimeSeconds" : 0.12568211555480957,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:08:15Z",
+  "status" : "complete",
+  "wallSeconds" : 2.9562540054321289
+}

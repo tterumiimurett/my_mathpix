@@ -57,8 +57,8 @@ enum ComplexTableOutputSanitizer {
             output += "</\(tag)>"
         }
 
-        for match in matches {
-            guard let range = Range(match.range, in: rawHTML) else { continue }
+        for (index, match) in matches.enumerated() {
+            guard let range = Range(match.range, in: rawHTML), range.lowerBound >= cursor else { continue }
             appendText(rawHTML[cursor..<range.lowerBound])
             cursor = range.upperBound
 
@@ -94,6 +94,24 @@ enum ComplexTableOutputSanitizer {
                 }
                 suppressedStack.append("table")
                 continue
+            }
+
+            // Hosted Convert HTML uses a text-only <math>TeX</math> form.
+            // Preserve that inert source, never attributes or nested markup.
+            // Unknown MathML continues through the suppression rule below.
+            if token.name == "math", !token.isClosing, !token.isSelfClosing,
+               emittedStack.last == "td" || emittedStack.last == "th",
+               index + 1 < matches.count,
+               let closingRange = Range(matches[index + 1].range, in: rawHTML),
+               let closing = parseTag(String(rawHTML[closingRange])),
+               closing.name == "math", closing.isClosing {
+                let tex = HTMLTextEntities.decode(String(rawHTML[range.upperBound..<closingRange.lowerBound]))
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                if !tex.isEmpty {
+                    output += MarkdownNormalizer.escapeHTML("$" + tex + "$")
+                    cursor = closingRange.upperBound
+                    continue
+                }
             }
 
             if suppressedContainerTags.contains(token.name) {

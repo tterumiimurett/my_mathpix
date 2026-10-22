@@ -1,0 +1,64 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+  "caseID" : "F09",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$</p></body></html>",
+        "plain" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mi mathvariant=\"normal\">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant=\"normal\">∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><mi>cos</mi><mo>⁡</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">\\frac{\\partial f}{\\partial x} = 2xy + \\cos x</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\frac{\\partial f}{\\partial x} = 2xy + \\cos x$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "5d2571fa83f6fe30f262812dc7fad296beb317af6103a9cb814e2a38b2960d32",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F09-balanced.png",
+    "previewSHA256" : "1821e3acfc7cde6302d491ba273cc78ed368407a1ad5b37de03b801dd94df664"
+  },
+  "contentSHA256" : "0786f764a24b2c09fc78b345b47a4f1c39fed22686481b5ff29b74258f7c521e",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "cf99c64e691947c6acc8ec67a8f560448b840d549eacb57823814405ac395d5d",
+  "mode" : "balanced",
+  "outputSHA256" : "d305e3eeb3f6edfa5feae3618324419550c343459b90b04fc29b36fc60e2644c",
+  "runtimeSeconds" : 3.727163553237915,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:46:41Z",
+  "status" : "complete",
+  "wallSeconds" : 6.0848380327224731
+}

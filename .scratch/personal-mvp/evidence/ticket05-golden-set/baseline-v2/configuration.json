@@ -1,0 +1,8 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "bundleIdentifier" : "com.byterumi.mymathpix",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "policy" : "fixed-case-order-fast-and-balanced-no-quality-retries",
+  "runID" : "baseline-v2",
+  "schema" : 1
+}

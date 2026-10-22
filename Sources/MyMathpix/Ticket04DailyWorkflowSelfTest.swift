@@ -263,8 +263,8 @@ enum Ticket04DailyWorkflowSelfTest {
                 activateApplication: {}
             )
             reopeningPresenter.presentResultEditor(on: capturedDisplayID)
-            reopeningPresenter.installMainWindowOpener { deferredWindowOpenCount += 1 }
-            reopeningPresenter.installMainWindowOpener { deferredWindowOpenCount += 1 }
+            reopeningPresenter.installResultEditorOpener { deferredWindowOpenCount += 1 }
+            reopeningPresenter.installResultEditorOpener { deferredWindowOpenCount += 1 }
             expect(
                 deferredWindowOpenCount == 1,
                 "a pending Result Editor presentation waits for and requests one window opener",
@@ -576,6 +576,10 @@ private final class Ticket04ResultEditorWindowPresenter: ResultEditorWindowPrese
     func installMainWindowOpener(_ opener: @escaping () -> Void) {}
 
     func showMainWindow() {}
+
+    func registerResultEditorWindow(_ window: NSWindow) {}
+
+    func installResultEditorOpener(_ opener: @escaping () -> Void) {}
 
     func presentResultEditor(on displayID: CGDirectDisplayID) {
         presentedDisplayIDs.append(displayID)

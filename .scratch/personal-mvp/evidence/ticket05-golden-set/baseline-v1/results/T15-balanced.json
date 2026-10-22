@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |",
+  "caseID" : "T15",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Sample</th>\n    <th>Result</th>\n   </tr>\n   <tr>\n    <td>S-01</td>\n    <td>Pass</td>\n   </tr>\n   <tr>\n    <td>S-02</td>\n    <td>Fail</td>\n   </tr>\n   <tr>\n    <td>S-03</td>\n    <td>Pass</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Sample</th><th>Result</th></tr></thead><tbody><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></tbody></table></body></html>",
+        "plain" : "| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Sample</th><th>Result</th></tr></thead><tbody><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></tbody></table></body></html>",
+        "plain" : "| Sample | Result |\n|--------|--------|\n| S-01   | Pass   |\n| S-02   | Fail   |\n| S-03   | Pass   |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Sample</th><th>Result</th></tr></thead><tbody><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></tbody></table>",
+        "plain" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "tsv" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "tsv" : "Sample\tResult\nS-01\tPass\nS-02\tFail\nS-03\tPass",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "c3fb636fc6f834558ebdc76fb197dc1ff886324d9adc5b447583b006f9c31f0d",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T15-balanced.png",
+    "previewSHA256" : "40322b1b4332d1c1f136097b6d6c1098ad0d87e00f4df193200303c1bc9d5b12"
+  },
+  "contentSHA256" : "7bd02cb81b72d9a61e53270bef41da02c36b144c53941b4760c43b00ca03b072",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "6831b873dd569fbd2acd5f3faa09c3f93e82b00dd9878cb50cc131efe6547bff",
+  "mode" : "balanced",
+  "outputSHA256" : "8a8a8c68c4f14dbebe2162d2f278fb8bb85d8d7f16598e60f0d89978686898c5",
+  "runtimeSeconds" : 1.990753173828125,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:42Z",
+  "status" : "complete",
+  "wallSeconds" : 4.8289530277252197
+}

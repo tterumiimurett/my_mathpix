@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |",
+  "caseID" : "T02",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Method</th>\n    <th>Accuracy</th>\n    <th>Time (s)</th>\n   </tr>\n   <tr>\n    <td>Baseline</td>\n    <td>0.81</td>\n    <td>1.20</td>\n   </tr>\n   <tr>\n    <td>Candidate</td>\n    <td>0.93</td>\n    <td>0.85</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr></thead><tbody><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr></thead><tbody><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr></thead><tbody><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></tbody></table>",
+        "plain" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "tsv" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "tsv" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "0734c692845111ac8a5bffc29f93a4e1fe16eabbd94a9466e21fbd0abc08e55a",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T02-balanced.png",
+    "previewSHA256" : "3fc496eab33d4a3957ae8e3b8ed27f5084d8cf93c3e5804c83a0465d2b420500"
+  },
+  "contentSHA256" : "f674d3308459cc40c8603f4104f9ed9097e74ab3f491d3898b0e8c9407fc6777",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "e36e56e931f6c52ff1e5d83b56823cec2f417b713c460d96e634fee353b2e459",
+  "mode" : "balanced",
+  "outputSHA256" : "80b814d7122835bc3b7327ebd68fd1764289613b1d7ff6f76063ee86dc9d0207",
+  "runtimeSeconds" : 2.1516296863555908,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:50:38Z",
+  "status" : "complete",
+  "wallSeconds" : 5.702752947807312
+}

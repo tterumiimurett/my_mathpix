@@ -5,13 +5,30 @@ import SwiftUI
 @main
 struct MyMathpixApp: App {
     @StateObject private var model: AppModel
+    @NSApplicationDelegateAdaptor(AppWindowShell.self) private var windowShell
+    private let isolatesWindowState: Bool
+    private let mainWindowSceneID: String
 
     private var appDisplayName: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "MyMathpix"
     }
 
     init() {
-        let launch = AppLaunchConfiguration.current(arguments: CommandLine.arguments)
+        let ticket06: Ticket06AcceptanceConfiguration?
+        do { ticket06 = try Ticket06AcceptanceConfiguration.parse(CommandLine.arguments) }
+        catch {
+            print("TICKET06_ACCEPTANCE_INVALID")
+            exit(2)
+        }
+        if GoldenSetRunner.handles(CommandLine.arguments) {
+            exit(GoldenSetRunner.runBlocking(arguments: CommandLine.arguments))
+        }
+        let launch = ticket06 == nil
+            ? AppLaunchConfiguration.current(arguments: CommandLine.arguments)
+            : AppLaunchConfiguration(arguments: CommandLine.arguments)
+        isolatesWindowState = ticket06 != nil || launch.runsTicket01Acceptance
+            || launch.runsTicket03Acceptance || launch.runsTicket04ResultEditorWindowSelfTest
+        mainWindowSceneID = isolatesWindowState ? "acceptance-main-\(UUID().uuidString)" : "main"
         if launch.runsLocalTokenStoreSelfTest {
             let passed = Ticket01LocalTokenStoreSelfTest.run()
             print(passed ? "TICKET01_LOCAL_TOKEN_OK" : "TICKET01_LOCAL_TOKEN_FAIL")
@@ -50,7 +67,12 @@ struct MyMathpixApp: App {
             exit(Ticket03SelfCheck.run() ? 0 : 1)
         }
         if let format = launch.ticket03PasteboardInspection {
-            let passed = Ticket03PasteboardInspector.inspect(format)
+            let stage = CommandLine.arguments.first(where: { $0.hasPrefix("--ticket03-inspect-stage=") })
+                .map { String($0.dropFirst("--ticket03-inspect-stage=".count)) } ?? "edited"
+            guard stage == "initial" || stage == "edited" else { exit(2) }
+            let expected = stage == "initial"
+                ? Ticket03AcceptanceFixture.initialMarkdown : Ticket03AcceptanceFixture.editedMarkdown
+            let passed = Ticket03PasteboardInspector.inspect(format, expectedMarkdown: expected)
             if passed {
                 print("TICKET03_PASTEBOARD_OK format=\(format.rawValue) values=yes public_types=yes")
             }
@@ -63,7 +85,16 @@ struct MyMathpixApp: App {
             print("TICKET01_SCREEN_PERMISSION granted=\(CGPreflightScreenCaptureAccess() ? "yes" : "no")")
             exit(0)
         }
-        if launch.runsTicket04ResultEditorWindowSelfTest {
+        if let ticket06 {
+            do {
+                let acceptanceModel = try Ticket06Acceptance.makeModel(configuration: ticket06)
+                _model = StateObject(wrappedValue: acceptanceModel)
+            }
+            catch {
+                print("TICKET06_ACCEPTANCE_PREPARATION_FAILED")
+                exit(2)
+            }
+        } else if launch.runsTicket04ResultEditorWindowSelfTest {
             _model = StateObject(wrappedValue: Ticket04ResultEditorWindowSelfTest.makeModel())
         } else if launch.runsTicket03Acceptance {
             let history = HistoryStore(inMemory: true)
@@ -129,70 +160,36 @@ struct MyMathpixApp: App {
     }
 
     var body: some Scene {
-        WindowGroup(appDisplayName, id: "main") {
-            Group {
-                if AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance {
-                    if let item = model.selectedItem {
-                        ResultEditorView(item: item)
-                            .id(item.id)
-                            .environmentObject(model)
-                            .frame(minWidth: 400, minHeight: 520)
-                    }
-                } else {
-                    ContentView()
-                        .environmentObject(model)
-                        .frame(minWidth: 920, minHeight: 520)
-                }
-            }
+        WindowGroup(appDisplayName, id: mainWindowSceneID) {
+            ContentView(mainWindowSceneID: mainWindowSceneID)
+                .environmentObject(model)
+                .frame(minWidth: 920, minHeight: 520)
             .background(MainWindowRegistrationView { window in
+                if isolatesWindowState {
+                    window.isRestorable = false
+                    window.setFrameAutosaveName("")
+                }
                 model.registerMainWindow(window)
+                windowShell.configure(model: model,
+                    initiallyShowsResult: AppLaunchConfiguration(arguments: CommandLine.arguments).runsTicket03Acceptance,
+                    isolatesWindowState: isolatesWindowState)
             })
             .task {
+                if AppLaunchConfiguration(arguments: CommandLine.arguments).runsTicket03Acceptance {
+                    windowShell.showInitialResult()
+                }
                 if CommandLine.arguments.contains("--ticket04-result-editor-window-self-test") {
                     await Ticket04ResultEditorWindowSelfTest.run(model: model)
                 }
             }
         }
-        .defaultSize(
-            width: AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance ? 470 : 1180,
-            height: AppLaunchConfiguration.current(arguments: CommandLine.arguments).runsTicket03Acceptance ? 700 : 760
-        )
-
-        MenuBarExtra(appDisplayName, systemImage: "function") {
-            MenuBarContent()
-                .environmentObject(model)
-        }
+        .defaultSize(width: 1180, height: 760)
+        .restorationBehavior(isolatesWindowState ? .disabled : .automatic)
 
         Settings {
             SettingsView()
                 .environmentObject(model)
                 .frame(width: 540, height: 560)
         }
-    }
-}
-
-private struct MenuBarContent: View {
-    @Environment(\.openWindow) private var openWindow
-    @EnvironmentObject private var model: AppModel
-
-    var body: some View {
-        Button("Capture Snippet  \(model.hotKeyConfiguration.displayName)") {
-            model.startCapture()
-        }
-        .disabled(model.isProcessing)
-        Button("Show MyMathpix") { showMainWindow() }
-        Divider()
-        Text(model.statusMessage)
-        Divider()
-        SettingsLink { Text("Settings…") }
-        Button("Quit MyMathpix") { NSApplication.shared.terminate(nil) }
-            .onAppear {
-                model.installMainWindowOpener { openWindow(id: "main") }
-            }
-    }
-
-    private func showMainWindow() {
-        openWindow(id: "main")
-        DispatchQueue.main.async { model.showMainWindow() }
     }
 }

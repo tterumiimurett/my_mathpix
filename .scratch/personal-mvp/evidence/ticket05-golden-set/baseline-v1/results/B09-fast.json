@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Quantity</b> | <b>Formula</b> |\n|-----------------|----------------|\n| Energy          | $E = mc^2$     |\n| Area            | $A = \\pi r^2$  |",
+  "caseID" : "B09",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Quantity</th>\n    <th>Formula</th>\n   </tr>\n   <tr>\n    <td>Energy</td>\n    <td></td>\n   </tr>\n   <tr>\n    <td>Area</td>\n    <td></td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody><tr><td>Energy</td><td>$E = mc^2$</td></tr><tr><td>Area</td><td>$A = \\pi r^2$</td></tr></tbody></table>\n<table>\n   <tr>\n    <th>Quantity</th>\n    <th>Formula</th>\n   </tr>\n   <tr>\n    <td>Energy</td>\n    <td></td>\n   </tr>\n   <tr>\n    <td>Area</td>\n    <td></td>\n   </tr>\n  </table></body></html>",
+        "plain" : "| <b>Quantity</b> | <b>Formula</b> |\n|-----------------|----------------|\n| Energy          | $E = mc^2$     |\n| Area            | $A = \\pi r^2$  |\n\nQuantity\tFormula\nEnergy\t\nArea\t",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Quantity</b> | <b>Formula</b> |\n|-----------------|----------------|\n| Energy          | $E = mc^2$     |\n| Area            | $A = \\pi r^2$  |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody><tr><td>Energy</td><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">E = mc^2</annotation></semantics></math></span></td></tr><tr><td>Area</td><td><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">A = \\pi r^2</annotation></semantics></math></span></td></tr></tbody></table><table>\n   <tr>\n    <th>Quantity</th>\n    <th>Formula</th>\n   </tr>\n   <tr>\n    <td>Energy</td>\n    <td></td>\n   </tr>\n   <tr>\n    <td>Area</td>\n    <td></td>\n   </tr>\n  </table></body></html>",
+        "plain" : "| <b>Quantity</b> | <b>Formula</b> |\n|-----------------|----------------|\n| Energy          | $E = mc^2$     |\n| Area            | $A = \\pi r^2$  |\n\nQuantity\tFormula\nEnergy\t\nArea\t",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody><tr><td>Energy</td><td>$E = mc^2$</td></tr><tr><td>Area</td><td>$A = \\pi r^2$</td></tr></tbody></table>",
+        "plain" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "tsv" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "tsv" : "Quantity\tFormula\nEnergy\t$E = mc^2$\nArea\t$A = \\pi r^2$",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "76e7d1596d2b9ce4974c8aa5ec4f5d2f856770105dc55718bd45182afa0e6897",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "B09-fast.png",
+    "previewSHA256" : "3e732071fc8a7651261d6c8a18d1eab39ba739898bbc1c55e0d9df406f027da5"
+  },
+  "contentSHA256" : "37fd172ebca4dee6c388aec1172b042aad64952ee6d0c7b24145f520a07da559",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002,\"list_cost_cents\":0.40000000000000002,\"regional_multiplier\":1}",
+  "costCents" : null,
+  "inputSHA256" : "84750d49cf8458bd62f3e3f814a5a4410c02c3266ce7d8ce4e010ce033fac00f",
+  "mode" : "fast",
+  "outputSHA256" : "3f1a2f14d27e0892d81838d54017638aae68375a0b34d6941982917a77d1bd61",
+  "runtimeSeconds" : 1.2167212963104248,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:58:01Z",
+  "status" : "complete",
+  "wallSeconds" : 3.5119160413742065
+}

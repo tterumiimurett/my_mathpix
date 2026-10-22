@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "reviewedProductionSourceRevision": "cd826ad8da5df3f0c243897de448be5bf84d5121",
+  "reviewedIntegrationRevision": "677d2e9383d89df92e5f0b4d5dc5788276dd43c6",
+  "baselineProvenanceSHA256": "904310eb3d337ea6a10c85392348bd4efc4ca197253c0222e925f980ef4d750b",
+  "categories": {
+    "productionWindowShellChanges": [
+      {
+        "path": "Sources/MyMathpix/AppModel.swift",
+        "previousSHA256": "a965dba2503617a030e4d17fac3b855304fcde546d1262d46ad35ed7587f0172",
+        "sha256": "5b135dd8dd41651f46707f96a238c6d4185c247e7dbc361ed66b00084d92e8d0",
+        "reviewReason": "Production compact-panel/menu/workspace routing, retaining prior optional acceptance telemetry."
+      },
+      {
+        "path": "Sources/MyMathpix/MyMathpixApp.swift",
+        "previousSHA256": "84d2aa8a0c7e941b85168de08a3f7437e1c04fdffe846cc759d73eb41c7c016c",
+        "sha256": "ba139e7d1bbcaf2bdabc6db9e7c945fc88f0f6a6f3e2cda986719d37567f1f26",
+        "reviewReason": "Production scene/application shell roles, retaining prior explicit acceptance launch paths."
+      },
+      {
+        "path": "Sources/MyMathpix/ResultEditorView.swift",
+        "previousSHA256": "096944874b9161d9c958e5e6880b0d839a597102b1be0aefbe701a280bbd8a49",
+        "sha256": "01f38b1f219a9897e6e362d3865ba90e82e0755e4092ff955cd516e0cdd4c056",
+        "reviewReason": "Production shared compact editor and retry composition, retaining prior visibility telemetry."
+      },
+      {
+        "path": "Sources/MyMathpix/ContentView.swift",
+        "previousSHA256": "37e7a7acd53440ec839aa3447e1848a7d7d43d5a6a8d4ed8a62ad20035630356",
+        "sha256": "4afb275ef2669c0a1988f6e4ca42a7bef0bbf482334293328869f748186ff272",
+        "reviewReason": "Production history/settings/usage workspace plus the reviewed offline WK main-frame programmatic navigation overlap fix; this is production preview-host behavior, not acceptance-only."
+      },
+      {
+        "path": "Sources/MyMathpix/ResultEditorWindowPresenter.swift",
+        "previousSHA256": "325bccecced9aa17eb02e6fed18ef4f18e6531ab279a45f1728355cb7f82af68",
+        "sha256": "1e853d120a10728c5dd97c15ddde4335a902181d6cbf64adaa06b2b2575db39d",
+        "reviewReason": "Distinct compact floating result and explicit main workspace presentation."
+      },
+      {
+        "path": "Sources/MyMathpix/AppWindowShell.swift",
+        "previousSHA256": null,
+        "sha256": "85a7c80ea5e4bd88717dd6fe5b8f0994928b698f168140fee013d1f6c17d2d84",
+        "reviewReason": "Added production AppKit shell for compact panel, menu item and explicit activation routing."
+      }
+    ],
+    "windowContractTestChanges": [
+      {
+        "path": "Sources/MyMathpix/Ticket04DailyWorkflowSelfTest.swift",
+        "previousSHA256": "cf188d2f4150ea3088bdb0cc466ecefc38823a7e6188e2a025962a69e9b690af",
+        "sha256": "c182e759b3bac3c8fcc921f29c35ebcc3fb57dadd242b4dac3ba8b33db7e97a5",
+        "reviewReason": "Reviewed deterministic distinct window-role contract fixtures."
+      },
+      {
+        "path": "Sources/MyMathpix/Ticket04ResultEditorWindowSelfTest.swift",
+        "previousSHA256": "de39ff39c59b81c9a9967bcca02473408844be3b683228563969cd88f12e977c",
+        "sha256": "46e40d4332a3b790762edc646cd5d7f7ae5da371eba1c5001f682a551c0a71b6",
+        "reviewReason": "Existing public signed window/mock seam now checks real DOM after a hidden loading overlap; pending requires successful release of an installed mock continuation, with window roles/error-sheet coverage retained."
+      }
+    ],
+    "acceptanceOnlyChanges": [
+      {
+        "path": "Sources/MyMathpix/Ticket01AcceptanceReporter.swift",
+        "previousSHA256": "e7c21807cc49c52754802e708a31c6b8ee9b8a4ac757b8c82d0160c55f709f54",
+        "sha256": "be31a16d5fafa63bee038a3f1f41f2e4f84f51aa193b807e6ffda75b91b6d340",
+        "reviewReason": "Truthful Edit visibility telemetry."
+      },
+      {
+        "path": "Sources/MyMathpix/Ticket03AcceptanceFixture.swift",
+        "previousSHA256": "366bce6bbbd5752e42b0c7f1dfb92a74c46a9913c1f366e14596c70f45947b3f",
+        "sha256": "4c9113bc32a89378a0ce6165357bae58accbc7a99786d67ede905b70e9777363",
+        "reviewReason": "Fixed-fixture initial/edited public clipboard inspection."
+      },
+      {
+        "path": "Sources/MyMathpix/Ticket03AcceptanceReporter.swift",
+        "previousSHA256": "2e5cd2f4cf2808e34c527472be60f9efe3c07871b3a1df1c8ed586bda10eb418",
+        "sha256": "79ba205aac93e21d84dc9ed5f03f40a4c23f0c22c7125f79ebc77ea6bb58419f",
+        "reviewReason": "Original/Edit/preview and three-copy acceptance observations."
+      },
+      {
+        "path": "Sources/MyMathpix/Ticket03SelfCheck.swift",
+        "previousSHA256": "ccc4f14796aae6d8c820a704d97b7e1bc180bbc80b6c9a52813d2265e21a9476",
+        "sha256": "bb4e408a54b9fb2832b466c6b5a715ad2516321debf9d44120565ede894a3cac",
+        "reviewReason": "Public clipboard-stage negative and positive contracts."
+      },
+      {
+        "path": "Sources/MyMathpix/SelfCheck.swift",
+        "previousSHA256": "3c7de69bb87f400b1c780e61c78a66d3f676dc3b3d6c3ca467e627b6bf321cfd",
+        "sha256": "5adf96a1fa5f7b2d95d91e4e812d469d94447e57e80d23f5e1e8154a612bbb7f",
+        "reviewReason": "Disposable UUID persistence regression."
+      },
+      {
+        "path": "Sources/MyMathpix/Ticket06Acceptance.swift",
+        "previousSHA256": null,
+        "sha256": "92f26076a79bb386739d578467e388163bc375cd1af748cdd51720f273768338",
+        "reviewReason": "Explicit disposable UUID live/fault acceptance factory."
+      }
+    ],
+    "reviewedGoldenRunnerRefactor": [
+      {
+        "path": "Sources/MyMathpix/GoldenSetRunner.swift",
+        "previousSHA256": "3ebc2b386f987f594b34aef02ec91830d369be2baf7dde7f2faaebcf0113980b",
+        "sha256": "150517e9ab4a650ccbdf1d06368960273d1465339aa12ef1ef8611b04db89185",
+        "reviewReason": "Previously reviewed bounded attempt record and navigation teardown refactor; unchanged from the prior approved exact pair."
+      }
+    ]
+  },
+  "baselineCoverageSupplement": [
+    {
+      "path": "Config/Info.plist",
+      "sha256": "e89a149302411f0b59fd144a394789274339c2b6972af88accbc9bc176df19d7",
+      "sourceRevision": "f1244513d47738d9bb0dbc227878a4c42d16abba",
+      "origin": "Original Golden source commit Git blob; absent from its recorded sourceInputs list. No baseline file was modified."
+    },
+    {
+      "path": "Config/MyMathpix.entitlements",
+      "sha256": "6eadfd217ae0c1b9df0b5c742cc6b10b49b5c76d2f163ecde0fec45d88b55274",
+      "sourceRevision": "f1244513d47738d9bb0dbc227878a4c42d16abba",
+      "origin": "Original Golden source commit Git blob; absent from its recorded sourceInputs list. No baseline file was modified."
+    },
+    {
+      "path": "Package.swift",
+      "sha256": "fd0dc496ef323d6a4672df89310c170e3f265596194035c30c016757428c627f",
+      "sourceRevision": "f1244513d47738d9bb0dbc227878a4c42d16abba",
+      "origin": "Original Golden source commit Git blob; absent from its recorded sourceInputs list. No baseline file was modified."
+    }
+  ]
+}

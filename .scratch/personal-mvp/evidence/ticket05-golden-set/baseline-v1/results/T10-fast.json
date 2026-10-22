@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |",
+  "caseID" : "T10",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Split</th>\n    <th>Samples</th>\n   </tr>\n   <tr>\n    <td>Train</td>\n    <td>8000</td>\n   </tr>\n   <tr>\n    <td>Validation</td>\n    <td>1000</td>\n   </tr>\n   <tr>\n    <td>Test</td>\n    <td>1000</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Split</b> | <b>Samples</b> |\n|--------------|----------------|\n| Train        | 8000           |\n| Validation   | 1000           |\n| Test         | 1000           |",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Split</th><th>Samples</th></tr></thead><tbody><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></tbody></table>",
+        "plain" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "tsv" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "tsv" : "Split\tSamples\nTrain\t8000\nValidation\t1000\nTest\t1000",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "9f331308f4e8ae4fbed85e8318c2c27036221710419b0a03e7c51697a4fd0687",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T10-fast.png",
+    "previewSHA256" : "98ad13d8cd7bab2f665ff09e6b14129a28e922959e47d59473fe018ef371d3fa"
+  },
+  "contentSHA256" : "48ad674c136fcde5067c58fc2e984c430658db619286a60114d4c6bb29269772",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "151e437ae8e61f8600465e418165f22bdd0df143080a9db56240f8448557e24c",
+  "mode" : "fast",
+  "outputSHA256" : "994ae68112fc901b3ad4aeec56b7376696709a7cff44d9ce56e42114a2e01cd5",
+  "runtimeSeconds" : 0.46643519401550293,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:51:54Z",
+  "status" : "complete",
+  "wallSeconds" : 3.017084002494812
+}

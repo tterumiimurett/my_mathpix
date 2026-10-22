@@ -205,13 +205,14 @@ final class Ticket01AcceptanceReporter {
 
     func markResultEditorVisible(
         originalSnippetVisible: Bool,
+        canonicalMarkdownVisible: Bool,
         canonicalMarkdown: String,
         isComplete: Bool
     ) {
         guard evidence.phase == "complete" else { return }
         evidence.resultEditorVisible = true
         evidence.originalSnippetVisible = originalSnippetVisible
-        evidence.canonicalMarkdownVisible = true
+        evidence.canonicalMarkdownVisible = canonicalMarkdownVisible
         evidence.canonicalMarkdownMatchesFixture = isComplete
             && canonicalMarkdown == Ticket01MockContract.expectedCanonicalMarkdown
         persist()

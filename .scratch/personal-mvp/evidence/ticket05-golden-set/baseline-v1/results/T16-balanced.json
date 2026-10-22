@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| Interval | Frequency |\n|----------|-----------|\n| 0–10     | 12        |\n| 10–20    | 19        |\n| 20–30    | 7         |",
+  "caseID" : "T16",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Interval</th>\n    <th>Frequency</th>\n   </tr>\n   <tr>\n    <td>0–10</td>\n    <td>12</td>\n   </tr>\n   <tr>\n    <td>10–20</td>\n    <td>19</td>\n   </tr>\n   <tr>\n    <td>20–30</td>\n    <td>7</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Interval</th><th>Frequency</th></tr></thead><tbody><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></tbody></table></body></html>",
+        "plain" : "| Interval | Frequency |\n|----------|-----------|\n| 0–10     | 12        |\n| 10–20    | 19        |\n| 20–30    | 7         |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| Interval | Frequency |\n|----------|-----------|\n| 0–10     | 12        |\n| 10–20    | 19        |\n| 20–30    | 7         |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Interval</th><th>Frequency</th></tr></thead><tbody><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></tbody></table></body></html>",
+        "plain" : "| Interval | Frequency |\n|----------|-----------|\n| 0–10     | 12        |\n| 10–20    | 19        |\n| 20–30    | 7         |",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Interval</th><th>Frequency</th></tr></thead><tbody><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></tbody></table>",
+        "plain" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "tsv" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "tsv" : "Interval\tFrequency\n0–10\t12\n10–20\t19\n20–30\t7",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "503c9ecab0202d32e4e585de9d37a702c5cd64c71e623ac36a3eaa9cc21f2276",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T16-balanced.png",
+    "previewSHA256" : "be7d45b9d754434404a9ec273a3c00207579424ab45d05e7e059fa313fc55c87"
+  },
+  "contentSHA256" : "2cb300427edb2787ce7766ee60a19bad5215bf0b14014fbfaf5950555571cd7f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "c699648b6da1342180deb0771b0baff1b1a4861a57cec7f192e27176f435676f",
+  "mode" : "balanced",
+  "outputSHA256" : "d03b998da22290c0ac074852c861ebe75441d04a97b291f8127dfc3082e3f982",
+  "runtimeSeconds" : 1.4810049533843994,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:51Z",
+  "status" : "complete",
+  "wallSeconds" : 4.4363300800323486
+}

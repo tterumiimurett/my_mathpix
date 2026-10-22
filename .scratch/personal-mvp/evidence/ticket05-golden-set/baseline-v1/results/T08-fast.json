@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |",
+  "caseID" : "T08",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Item</th>\n    <th>Mean</th>\n    <th>SD</th>\n   </tr>\n   <tr>\n    <td>Length</td>\n    <td>12.4</td>\n    <td>0.6</td>\n   </tr>\n   <tr>\n    <td>Mass</td>\n    <td>8.2</td>\n    <td>0.3</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Item</b> | <b>Mean</b> | <b>SD</b> |\n|-------------|-------------|-----------|\n| Length      | 12.4        | 0.6       |\n| Mass        | 8.2         | 0.3       |",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Item</th><th>Mean</th><th>SD</th></tr></thead><tbody><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></tbody></table>",
+        "plain" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "tsv" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "tsv" : "Item\tMean\tSD\nLength\t12.4\t0.6\nMass\t8.2\t0.3",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "de1c24e6dfa8cb9335d1db6450fe96925a294bb6ffe6240bef9d9dd09b9d0e97",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T08-fast.png",
+    "previewSHA256" : "ee47d359e0bb83f76a29be10b63faf25b23a772a55ca30d4b8f067aeb47d5e58"
+  },
+  "contentSHA256" : "74381a740a139f7737a9580f568f8bc97b9a5e5337c7a4a40615f072ca65aa6b",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "ce398750b9ff39673944bc9caf37bd57ea91c4a7faef789dca69870e8ab7053e",
+  "mode" : "fast",
+  "outputSHA256" : "b9d7a09036ecb896816cef2039f527b5a89f03ef77f94e42f2a54c152b39849c",
+  "runtimeSeconds" : 0.75248026847839355,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:51:33Z",
+  "status" : "complete",
+  "wallSeconds" : 2.9392490386962891
+}

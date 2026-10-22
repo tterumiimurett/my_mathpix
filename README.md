@@ -6,12 +6,15 @@ A personal-first native macOS snippet recognizer for formulas, tables, and mixed
 
 - Global `Control-Command-M` screen capture
 - Datalab `fast` recognition and `balanced` high-quality retry
-- Editable canonical Markdown with offline KaTeX preview
-- Explicit LaTeX, Markdown, TSV, rich-table, image, and combined copy formats
+- Compact floating result after capture or a menu-bar click, with offline KaTeX preview and independent Original/Edit actions
+- A separate large history/settings/usage workspace on Command-Tab, Dock/reopen or Open MyMathpix
+- Whole-result Markdown / Lark / Notion copy actions; Lark keeps rich tables and Markdown formulas
 - Local history containing the 20 most recent snippets
 - API token stored in a private `0600` file inside the App Sandbox container
 
 No account, subscription, backend, analytics, or cloud history is included in the Personal MVP.
+
+Known deferred issue: Notion inline equations may paste as placeholders. The owner rejected an oversized capture result; compact/menu-bar/main-workspace routing is being corrected in Ticket 08 and still needs real desktop acceptance. The experimental Notion clipboard adapter does not guarantee native editable blocks in every target version. See the accepted contract and evidence limits in [the Personal MVP spec](.scratch/personal-mvp/spec.md).
 
 ## Run
 

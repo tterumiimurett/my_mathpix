@@ -2,6 +2,32 @@
 
 Status: ready-for-agent
 
+## Explicit window-role correction — 2026-10-22
+
+The owner rejected the oversized result in the assembled candidate and clarified the window roles. [Ticket 08](issues/08-window-roles-regression.md) is now the active correction before Ticket 06 can pass:
+
+- Capture completion shows the compact Ticket 03 Result Editor over the current App, at the captured display's visible-area top-left. Its default outer window frame, including the title bar, is 470 points wide and 560 points high, constrained to fit; Original and Edit use the existing internal scroll surface.
+- Clicking the MyMathpix menu-bar item opens that same compact result, with the same selected Snippet and edits. A normal sidebar/toolbar workspace is not substituted for it.
+- Explicit App activation such as Command-Tab, Dock/reopen or Open MyMathpix shows the large Recent History/settings/Usage workspace. Interacting with the nonactivating compact panel must not open that workspace.
+- Capture and recognition still keep content windows hidden until completion. High-Quality Retry in an already open compact result reports progress in its existing footer.
+- Production and seeded acceptance launches use the same actual compact surface and presenter. Isolated acceptance scene/restoration state does not change production layout or overwrite normal main-window geometry.
+
+This supersedes the interpretation that merely moving the large workspace to top-left fulfilled the compact-result design. Menu-bar behavior/visibility is explicitly in this correction's scope; its previous waiver is historical, and a real desktop click remains required before claiming it passed. Notion inline math remains deferred. Golden Set recognition/copy quality evidence is unchanged.
+
+## Accepted baseline and remaining scope — 2026-10-21
+
+Tickets 01–04 are resolved by the owner, with their recorded evidence limits and acceptance exceptions. Their Answers and later owner directions supersede the original prototype description and superseded UI requirements below. Remaining delivery work is Ticket 05, followed by Ticket 06. Deferred follow-ups do not silently reopen accepted tickets or count as passed checks.
+
+- The Result Editor is compact and preview-first. Independent Original and Edit actions reveal the aspect-fit Snippet and Canonical Markdown; both may be open alongside the offline preview.
+- Exactly three immediate Copy Format rows are visible, in order: **Markdown / Lark / Notion**. Each has a small secondary-color title and a single-line preview; copying writes complete content. Legacy six-format public clipboard seams remain compatibility coverage, not six visible UI actions.
+- Markdown copies unchanged Canonical Markdown. Lark copies the complete mixed result with rich tables and literal `$…$` / `$$…$$` formulas. Notion uses the accepted experimental whole-content adapter; display formulas work in the owner's test, but inline formulas can become `Before ‣.`. This unresolved destination defect remains deferred in Ticket 07; serialization alone does not prove editable native equations.
+- Pure Formula alone may automatically copy raw Formula Output. Mixed content waits for an explicit copy. Failed Records retain the original-image copy recovery path.
+- Recognition uses the accepted status text/spinner presentation. High-Quality Retry preserves the Snippet and asks before overwriting hand edits. Runtime and complete available cost breakdown remain separate Usage Records.
+- Ticket 04 menu-bar visibility remains unresolved, including after Hidden Bar was expanded. This is an owner-accepted exception, not a verified menu-bar pass. Normal-window, history, shortcut and captured-display result placement behavior remain required.
+- ADR 0006 supersedes the earlier Keychain-storage direction: credentials use only the private sandbox file. Golden Set and acceptance tests use deliberate, non-sensitive fixtures and do not replace or clear the owner's Recent History.
+
+Final acceptance must test this accepted behavior on the assembled signed candidate. Historical six-row screenshots and earlier ticket passes cannot stand in for the final integration journey. No Public Product or completed fourteen-day Dogfood Gate is implied.
+
 ## Problem Statement
 
 The owner needs a dependable personal macOS alternative to the Mathpix Snip workflow. A Screen Capture should turn a selected visual region containing formulas, tables, or mixed technical material into editable Canonical Markdown and Formula Output that can be corrected and copied into a Paste Target such as Notion or Feishu.
@@ -67,9 +93,9 @@ The implementation is complete only when one highest-level test drives the signe
 47. As the owner, I want a Pure Formula copied automatically as raw LaTeX, so that the fastest common workflow needs no additional click.
 48. As the owner, I want automatic formula classification to be conservative, so that mixed content is not copied under the wrong format.
 49. As the owner, I want non-formula output to wait for confirmation in the Result Editor, so that tables and mixed content can be checked before copying.
-50. As the owner, I want separate actions for LaTeX, Markdown, Combined Output, TSV table, rich table, and original image, so that each Paste Target can receive the most useful representation.
+50. As the owner, I want the accepted Markdown, Lark, and Notion actions to copy the complete result in the appropriate representation, while legacy source/table/image clipboard capabilities remain available at their existing public seams and Failed Records retain original-image recovery.
 51. As the owner, I want rich-table copy to offer HTML, RTF, TSV, and plain-text clipboard representations, so that target applications can select the format they support.
-52. As the owner, I want source copying distinguished from Native Paste, so that the App does not promise Notion or Feishu native blocks that the clipboard cannot guarantee.
+52. As the owner, I want source copying and the experimental Notion clipboard adapter distinguished from a Native Paste guarantee, with the known Notion inline-equation defect retained explicitly.
 53. As the owner, I want the twenty most recent Snippets stored locally, so that accidental window closure does not destroy recent work.
 54. As the owner, I want each Recent History entry to contain the original image and final edited output, so that a result can be reviewed and reused later.
 55. As the owner, I want editing to autosave the final output, so that correction work survives navigation and relaunch.
@@ -109,7 +135,7 @@ The implementation is complete only when one highest-level test drives the signe
 - Present one Result Editor with original image, editable Canonical Markdown, and rendered preview. Do not create a block editor or word processor.
 - Preserve the captured display identity through recognition. Keep App windows hidden after a successful Screen Capture while recognition is active, then present the result or recoverable failure at a small inset from that display's top-left `visibleFrame`; use a remaining display only if the captured display disappears before presentation.
 - Define Pure Formula conservatively. Only one formula plus whitespace qualifies for automatic raw-LaTeX copy.
-- Write explicit Copy Formats to the macOS pasteboard. Source copy is the Personal MVP contract; Native Paste into Notion or Feishu remains a separate later integration.
+- Write the accepted Markdown / Lark / Notion Copy Formats to the macOS pasteboard. The Notion adapter is an owner-authorized experimental exception to the original source-only scope, with no document API, authentication, browser injection, or general Native Paste guarantee. Its deferred inline-equation defect remains open.
 - Store Recent History as an index plus image artifacts inside the App Sandbox container. Persist only the twenty newest records and delete the evicted image in the same operation.
 - Store usage counts and available Datalab cost information separately from recognition content.
 - Keep diagnostic events local and content-free. No third-party analytics or automatic log upload is included.
@@ -145,7 +171,7 @@ The implementation is complete only when one highest-level test drives the signe
 - iPhone, iPad, Windows, web, Intel Mac, or older macOS compatibility work.
 - Local or offline Marker model deployment and automatic fallback from Datalab to Marker.
 - PDF, Office document, EPUB, or full-page import; the Personal MVP begins with Screen Capture Snippets.
-- Native Paste integrations for Notion or Feishu, target-application authentication, accessibility automation, or document API writes.
+- General Native Paste integrations, target-application authentication, accessibility automation, or document API writes. The accepted experimental Notion clipboard adapter is the narrow exception recorded above; repairing its deferred inline issue is outside the remaining Ticket 05/06 work.
 - Cloud history, iCloud synchronization, full history search, favorites, folders, collaboration, or document-library behavior.
 - A visual block editor, Word-like editing, layout reconstruction, free-form canvas, or pixel-perfect source-image reproduction.
 - Deprecated Datalab OCR or standalone table-recognition endpoints.

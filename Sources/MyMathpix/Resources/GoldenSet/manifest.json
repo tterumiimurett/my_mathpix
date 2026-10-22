@@ -1,0 +1,1912 @@
+{
+  "cases" : [
+    {
+      "category" : "formula",
+      "contentSHA256" : "6a7953a9f1723e793e94b62f5b79f622b31a44521cf80e31baeb282abe03e729",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nx=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n$$",
+      "id" : "F01",
+      "inputSHA256" : "e3856bf45e212e2744e36dc6bc7cd66b4e2e6e0fcde4b4a9176e42510ade123a",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Quadratic roots"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "46e3e50e6bc897952ba43683a0011d8f57e39f6c2d79676cfc78a3da95ed3ba2",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"a^2+b^2=c^2\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\na^2+b^2=c^2\n$$",
+      "id" : "F02",
+      "inputSHA256" : "7bb58c070d953ad6f896fff3724cced461cfd2498044dea7ae543516c16a118c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Pythagorean identity"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "67c619651703c3ca4cfeb5295493c4a5e6ac7a39678028c51df01f12b77e623c",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"e^{i\\pi}+1=0\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\ne^{i\\pi}+1=0\n$$",
+      "id" : "F03",
+      "inputSHA256" : "88447b2175f4c194baad610e8dfc8e7711077e420f8627e2230c8b0334f32a43",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Euler identity"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "f1e7860a60c5ed6c0e9fadf26806422f2ffb3ef4eb6d39e82fffd98849a94ea0",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"p(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\np(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\n$$",
+      "id" : "F04",
+      "inputSHA256" : "fcd7f2b4f797e174d8624449e8ed045948d3e54c1347c5a709eac7b16435b1f7",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Gaussian density"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "f57f9a85288c4637271ff4e01826b503b7f6d20f6106e32d8ef9cf4e20143b6f",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\int_0^1 x^2\\,dx=\\frac{1}{3}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\int_0^1 x^2\\,dx=\\frac{1}{3}\n$$",
+      "id" : "F05",
+      "inputSHA256" : "edf798fca5702be4d8e90f4a27e1b1a2d10cef054e5bebeab9390a28ddcff2ce",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Definite integral"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "f728ed0a7518a527c8756ff6885697a25bb3038cab6f7be4eef86f40ea727997",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\sum_{k=0}^{n}r^k=\\frac{1-r^{n+1}}{1-r}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\sum_{k=0}^{n}r^k=\\frac{1-r^{n+1}}{1-r}\n$$",
+      "id" : "F06",
+      "inputSHA256" : "aefb8f06f92a40aae2e1c278986832aaa33d64925d6847c0cdb281444b6f62e5",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Geometric series"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "1a5553d6afa2deff4ba339353f5d603c7ad983aa02966b50fbaa2f6f7cfd5b81",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\lim_{x\\to 0}\\frac{\\sin x}{x}=1\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\lim_{x\\to 0}\\frac{\\sin x}{x}=1\n$$",
+      "id" : "F07",
+      "inputSHA256" : "3e705b44c0b1abb2c11e6a38577b2927bdfab7519a0c58ebfcf1adf7df01cf3f",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Limit"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "6a309da1cb525bebc63a447cf6388021ef45e9d767b02f84a6d0c2f2d52e6b26",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"n!=\\prod_{k=1}^{n}k\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nn!=\\prod_{k=1}^{n}k\n$$",
+      "id" : "F08",
+      "inputSHA256" : "7fb6bcffbe6ff123f0ad567082eb0677f1510fa7a271bd0a1e6e7c1cccb54f8b",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Product"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "0786f764a24b2c09fc78b345b47a4f1c39fed22686481b5ff29b74258f7c521e",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\frac{\\partial f}{\\partial x}=2xy+\\cos x\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\frac{\\partial f}{\\partial x}=2xy+\\cos x\n$$",
+      "id" : "F09",
+      "inputSHA256" : "cf99c64e691947c6acc8ec67a8f560448b840d549eacb57823814405ac395d5d",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Partial derivative"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "7f0849a0c298e07205d2849076dc1840b54e02319579cf473db28cb4c913a392",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\nabla f=\\begin{pmatrix}\\partial f/\\partial x\\\\\\partial f/\\partial y\\end{pmatrix}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\nabla f=\\begin{pmatrix}\\partial f/\\partial x\\\\\\partial f/\\partial y\\end{pmatrix}\n$$",
+      "id" : "F10",
+      "inputSHA256" : "b056a6da6c402337a1e2ec4b9d69dc7dd44468b318475c55ce901a969062757f",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Gradient"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "15704cd224504b6f28d5f4c2204d4999a1e248c372d47533cf94b549ee72819a",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"A=\\begin{pmatrix}1&amp;2\\\\3&amp;4\\end{pmatrix}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nA=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\n$$",
+      "id" : "F11",
+      "inputSHA256" : "7c5a5edb3d4d65a042614c3e733d50d52cc0b37ff1f0411aaa42647451c8102d",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Matrix"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "99f6706d610e14ec4d982aa2454315e3e12f296fea3b52f0f279de156333355f",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\det\\begin{pmatrix}a&amp;b\\\\c&amp;d\\end{pmatrix}=ad-bc\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\det\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}=ad-bc\n$$",
+      "id" : "F12",
+      "inputSHA256" : "b66eeff3a4d2be623c5ddda172247306593d51063577133362e070a381a0ef7c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Determinant"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "010347306036b7fd2489a38e27233dcc06efdc984412d64d1a02fc890ced86ea",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"f(x)=\\begin{cases}x^2,&amp;x\\geq 0\\\\-x,&amp;x&lt;0\\end{cases}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nf(x)=\\begin{cases}x^2,&x\\geq 0\\\\-x,&x<0\\end{cases}\n$$",
+      "id" : "F13",
+      "inputSHA256" : "7c489b1f253609d778886c36e50832773c4319807b1b3953e9d3aaff7b76c4a7",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Piecewise function"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "260cbe1c1d5300a4bf9e959d6c3e8d6f1c2dec1438d7d89968c7ae6a65eca9c8",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\begin{aligned}a+b&amp;=c\\\\a-b&amp;=d\\end{aligned}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\begin{aligned}a+b&=c\\\\a-b&=d\\end{aligned}\n$$",
+      "id" : "F14",
+      "inputSHA256" : "5a0dc9be97caf779255884c7a8e503131fea5012b2f5e88a4f4282a5a41d8f90",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Aligned equations"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "e5d35375cea64f25f4bba63e63d72dd2d65d94d3ff2ab3a109f662b6e89e0af3",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"(x+y)^n=\\sum_{k=0}^{n}\\binom{n}{k}x^{n-k}y^k\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n(x+y)^n=\\sum_{k=0}^{n}\\binom{n}{k}x^{n-k}y^k\n$$",
+      "id" : "F15",
+      "inputSHA256" : "9f12a4142b64966e29d5f2282e3fd960b5e6b2ee80f91fc38b7f4402d8475a8c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Binomial theorem"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "9bf1f4e1091f4cd3e2e219f896536432bc11659699bdfeb06fcae1a206a94ba8",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\frac{1}{1+\\frac{1}{x}}=\\frac{x}{x+1}\n$$",
+      "id" : "F16",
+      "inputSHA256" : "85907e8f5c9eb31af01e2cf908a70adac0a08c637f19e96887ff6bcef7fc2dbc",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Nested fraction"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "d85a99a412fb9a06be8eb5e5a2445962f242f6b5d6834798d4c5afa13993899b",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^{d}u_i v_i\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\mathbf{u}\\cdot\\mathbf{v}=\\sum_{i=1}^{d}u_i v_i\n$$",
+      "id" : "F17",
+      "inputSHA256" : "f103f4ed307435000199dd73243d737ccb3ba7017896c02ba4c0b8c2f8a361e4",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Vector dot product"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "743e2f60e23021898dff152e916b10b6c26a90da6d1ec78c806f4615a1afcd68",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\lVert x\\rVert_2=\\sqrt{\\sum_{i=1}^{d}x_i^2}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\lVert x\\rVert_2=\\sqrt{\\sum_{i=1}^{d}x_i^2}\n$$",
+      "id" : "F18",
+      "inputSHA256" : "a596e192f752388ba8aace7577e5aa8c21b907042774e41a1af7ef4faaddab1e",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Norm"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "25586c9d9da8fff6fe44fcd7e94dfd2db30842eaf3882cac3d0b05325706e5f0",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\mathbb{E}[X]=\\sum_x x\\,p(x)\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\mathbb{E}[X]=\\sum_x x\\,p(x)\n$$",
+      "id" : "F19",
+      "inputSHA256" : "2f842f5fc4e368632466d4d518842e4e77f6e7bc1ed6b8a26e93290e44d86336",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Expectation"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "4ca6a1628285972768f51ce4cf4065b419144fb1d950d6510ae120f9fa351ef9",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nP(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}\n$$",
+      "id" : "F20",
+      "inputSHA256" : "ec4cf9a9c1ecdfd394b911f76771a535337606ad79e4e83d6ab4e702f705fc82",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Conditional probability"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "0afdfeff7c7269e1b1e72ae705e2da4f67794e764521cc03c8de9f0094aca31a",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"H(p)=-\\sum_{i=1}^{n}p_i\\log p_i\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nH(p)=-\\sum_{i=1}^{n}p_i\\log p_i\n$$",
+      "id" : "F21",
+      "inputSHA256" : "a06e4604eb5c913756b98c90993641d1c957b6c65c1dd6459662535ad511f8f2",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Entropy"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "34bc8b5b5bd180a69e41dd8d8d9f834915169ca871102125ed225fb96d8cd1ed",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"D_{\\mathrm{KL}}(p\\Vert q)=\\sum_i p_i\\log\\frac{p_i}{q_i}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nD_{\\mathrm{KL}}(p\\Vert q)=\\sum_i p_i\\log\\frac{p_i}{q_i}\n$$",
+      "id" : "F22",
+      "inputSHA256" : "32470981a97852c512e984b191e7e20977069e09f261f426c104a15cf53141f8",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "KL divergence"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "665177586d6aeb9f66322a4fde139c9983a7f86e3440d9453288bb0b4e038c04",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"p_i=\\frac{e^{z_i}}{\\sum_{j=1}^{n}e^{z_j}}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\np_i=\\frac{e^{z_i}}{\\sum_{j=1}^{n}e^{z_j}}\n$$",
+      "id" : "F23",
+      "inputSHA256" : "a17616b546ae8d07316c994cb15c3609a1a34b0088dcb85cfec7646722b2b3a7",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Softmax"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "ac37fb64378eacf0446fd22b3b526287852913ae1b103403ce3da4cd46f865cd",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"H_{ij}=\\frac{\\partial^2 f}{\\partial x_i\\partial x_j}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nH_{ij}=\\frac{\\partial^2 f}{\\partial x_i\\partial x_j}\n$$",
+      "id" : "F24",
+      "inputSHA256" : "f9315832c2c65e3751ba8940594cbc64e1efd229b0e2248d300c262952981187",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Hessian"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "232ba3cc55e28bafd508fec6927f855b57ccd5c825bdd2f0999bf050cc8816d7",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\widehat{f}(\\omega)=\\int_{-\\infty}^{\\infty}f(t)e^{-i\\omega t}\\,dt\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\widehat{f}(\\omega)=\\int_{-\\infty}^{\\infty}f(t)e^{-i\\omega t}\\,dt\n$$",
+      "id" : "F25",
+      "inputSHA256" : "e7179e15a14188c57dcb23289e082a2be9dc437b048ef5835bcd3d723ad27e49",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Fourier transform"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "c5fc544592d6228e00828c218ad6ab127474a2136f91d08b42d8bed65794caa9",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\frac{d^2 y}{dt^2}+\\omega^2 y=0\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\frac{d^2 y}{dt^2}+\\omega^2 y=0\n$$",
+      "id" : "F26",
+      "inputSHA256" : "9392f7fcf8bde706d91e5b7c62bb99fec85f8e45924dc13489d9d7aee57dbda1",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Differential equation"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "f39ce887dc2885c8e36dc3122592e3f35cef10d035a2ae5a11ac74ad0c3ba689",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"z\\overline{z}=|z|^2\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nz\\overline{z}=|z|^2\n$$",
+      "id" : "F27",
+      "inputSHA256" : "91d1909be78309751f54c9d1d72e98c5f18c127521a3ea0f4117d9ff1cb583bb",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Complex conjugate"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "3cc253bf20f689528e04232d9cb8ddde9037dabc4ecbf245a8f7486bea525856",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)\n$$",
+      "id" : "F28",
+      "inputSHA256" : "2a36adbbb06fdd2c5f074cf9a8aa6a807362f1adb94d9609ea50a9ed67b62000",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Set relation"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "a188afa5b5693980592966816cf9cf33449feefb1bbfda88e4855a124dd9d1d7",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\widehat{\\theta}_{n+1}=\\widehat{\\theta}_n-\\eta\\nabla L(\\widehat{\\theta}_n)\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\widehat{\\theta}_{n+1}=\\widehat{\\theta}_n-\\eta\\nabla L(\\widehat{\\theta}_n)\n$$",
+      "id" : "F29",
+      "inputSHA256" : "2cb71cb79718ec7e419c16eb5e6980571ffc747ae87f1b47ba35280c9a63aaaa",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Accents and subscripts"
+    },
+    {
+      "category" : "formula",
+      "contentSHA256" : "70ab858b2f50031c19ce7c3773fdfbe0da1a6af870087553a81c73b02b1713c7",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\begin{aligned}a&amp;=b\\\\[4pt]c&amp;=d\\end{aligned}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\n\\begin{aligned}a&=b\\\\[4pt]c&=d\\end{aligned}\n$$",
+      "id" : "F30",
+      "inputSHA256" : "52162889aa2702ca79050ac19c91c73841092a0faa642307935ef2fa8dca68a3",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check every operator, bound, index, sign, grouping, and displayed row/matrix structure; equivalent LaTeX is acceptable.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Row spacing"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "d466211bc2bdb9f01b56867746a8627c40a97755d00d69f2551c98119ff2364a",
+      "fixtureBody" : "<table><tr><th>Variable</th><th>Value</th></tr><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Variable | Value |\n| --- | --- |\n| x | 2 |\n| y | 5 |",
+      "id" : "T01",
+      "inputSHA256" : "ba807fe620f78b78d8820944a9fc92fcab04a039a62cc499ba9098d0ed2eb6f1",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Variable",
+            "Value"
+          ],
+          [
+            "x",
+            "2"
+          ],
+          [
+            "y",
+            "5"
+          ]
+        ]
+      ],
+      "title" : "Simple table 01"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "f674d3308459cc40c8603f4104f9ed9097e74ab3f491d3898b0e8c9407fc6777",
+      "fixtureBody" : "<table><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Method | Accuracy | Time (s) |\n| --- | --- | --- |\n| Baseline | 0.81 | 1.20 |\n| Candidate | 0.93 | 0.85 |",
+      "id" : "T02",
+      "inputSHA256" : "e36e56e931f6c52ff1e5d83b56823cec2f417b713c460d96e634fee353b2e459",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Method",
+            "Accuracy",
+            "Time (s)"
+          ],
+          [
+            "Baseline",
+            "0.81",
+            "1.20"
+          ],
+          [
+            "Candidate",
+            "0.93",
+            "0.85"
+          ]
+        ]
+      ],
+      "title" : "Simple table 02"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "f45c28d287da58a7c3cbbc065a9456b99b7489784f640ce951417279e3bfc6c1",
+      "fixtureBody" : "<table><tr><th>Epoch</th><th>Loss</th></tr><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Epoch | Loss |\n| --- | --- |\n| 1 | 2.50 |\n| 2 | 1.20 |\n| 3 | 0.65 |",
+      "id" : "T03",
+      "inputSHA256" : "5ff511dc740cb38e3b5cd58069719c9dc0630add5d7dc0421dd058763ca8c25c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Epoch",
+            "Loss"
+          ],
+          [
+            "1",
+            "2.50"
+          ],
+          [
+            "2",
+            "1.20"
+          ],
+          [
+            "3",
+            "0.65"
+          ]
+        ]
+      ],
+      "title" : "Simple table 03"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "8ad56c59f64a37258bb4e3bb14acc8b4c55512dd2b0dc35ba43ce3112d659402",
+      "fixtureBody" : "<table><tr><th>Symbol</th><th>Meaning</th></tr><tr><td>α</td><td>Learning rate</td></tr><tr><td>β</td><td>Momentum</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Symbol | Meaning |\n| --- | --- |\n| α | Learning rate |\n| β | Momentum |",
+      "id" : "T04",
+      "inputSHA256" : "e8125ac13b16cf66a268ef9f514e1d61dc2846acb4f54935b8d3624f8556b59b",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Symbol",
+            "Meaning"
+          ],
+          [
+            "α",
+            "Learning rate"
+          ],
+          [
+            "β",
+            "Momentum"
+          ]
+        ]
+      ],
+      "title" : "Simple table 04"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "8d811cddee0715676dd3f40efcc2cafbbb9d0a9c3ce82c295ee97b4422992e5c",
+      "fixtureBody" : "<table><tr><th>Temperature (K)</th><th>Pressure (kPa)</th></tr><tr><td>273</td><td>101.3</td></tr><tr><td>298</td><td>110.6</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Temperature (K) | Pressure (kPa) |\n| --- | --- |\n| 273 | 101.3 |\n| 298 | 110.6 |",
+      "id" : "T05",
+      "inputSHA256" : "2db763a277a613049bce58911527118642c026eaef8644fe81fae0d1d83feb6d",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Temperature (K)",
+            "Pressure (kPa)"
+          ],
+          [
+            "273",
+            "101.3"
+          ],
+          [
+            "298",
+            "110.6"
+          ]
+        ]
+      ],
+      "title" : "Simple table 05"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "eb9fff4d2a9578a5fa161832d9e1fdd017805c42974d12f478be8b718b77ab2f",
+      "fixtureBody" : "<table><tr><th>Class</th><th>Precision</th><th>Recall</th></tr><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Class | Precision | Recall |\n| --- | --- | --- |\n| A | 0.90 | 0.88 |\n| B | 0.85 | 0.92 |",
+      "id" : "T06",
+      "inputSHA256" : "ee4f45a23ce65f9f9d08464b729992ac7f88692597958edba8ebddefb26d7c51",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Class",
+            "Precision",
+            "Recall"
+          ],
+          [
+            "A",
+            "0.90",
+            "0.88"
+          ],
+          [
+            "B",
+            "0.85",
+            "0.92"
+          ]
+        ]
+      ],
+      "title" : "Simple table 06"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "f65c67665af960d33e9ff2c228bc32eaa3fe26b8ef94c7709a80466789f42cd0",
+      "fixtureBody" : "<table><tr><th>Condition</th><th>Count</th></tr><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Condition | Count |\n| --- | --- |\n| Control | 120 |\n| Treatment | 118 |",
+      "id" : "T07",
+      "inputSHA256" : "7143abe3102e59828bc0e0ef29334188bd24195069b9e2e39515db3b4bef6c6d",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Condition",
+            "Count"
+          ],
+          [
+            "Control",
+            "120"
+          ],
+          [
+            "Treatment",
+            "118"
+          ]
+        ]
+      ],
+      "title" : "Simple table 07"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "74381a740a139f7737a9580f568f8bc97b9a5e5337c7a4a40615f072ca65aa6b",
+      "fixtureBody" : "<table><tr><th>Item</th><th>Mean</th><th>SD</th></tr><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Item | Mean | SD |\n| --- | --- | --- |\n| Length | 12.4 | 0.6 |\n| Mass | 8.2 | 0.3 |",
+      "id" : "T08",
+      "inputSHA256" : "ce398750b9ff39673944bc9caf37bd57ea91c4a7faef789dca69870e8ab7053e",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Item",
+            "Mean",
+            "SD"
+          ],
+          [
+            "Length",
+            "12.4",
+            "0.6"
+          ],
+          [
+            "Mass",
+            "8.2",
+            "0.3"
+          ]
+        ]
+      ],
+      "title" : "Simple table 08"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "8e9f9870a27edc6a8080363c49fec9110e068c721092c13541de84de66930b62",
+      "fixtureBody" : "<table><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Parameter | Lower | Upper |\n| --- | --- | --- |\n| a | -1.5 | 2.0 |\n| b | 0.0 | 10.0 |",
+      "id" : "T09",
+      "inputSHA256" : "3383759846c77afbe6b1e839862b07a6b4047a3e2e50e9691c7a850e12d2c016",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Parameter",
+            "Lower",
+            "Upper"
+          ],
+          [
+            "a",
+            "-1.5",
+            "2.0"
+          ],
+          [
+            "b",
+            "0.0",
+            "10.0"
+          ]
+        ]
+      ],
+      "title" : "Simple table 09"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "48ad674c136fcde5067c58fc2e984c430658db619286a60114d4c6bb29269772",
+      "fixtureBody" : "<table><tr><th>Split</th><th>Samples</th></tr><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Split | Samples |\n| --- | --- |\n| Train | 8000 |\n| Validation | 1000 |\n| Test | 1000 |",
+      "id" : "T10",
+      "inputSHA256" : "151e437ae8e61f8600465e418165f22bdd0df143080a9db56240f8448557e24c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Split",
+            "Samples"
+          ],
+          [
+            "Train",
+            "8000"
+          ],
+          [
+            "Validation",
+            "1000"
+          ],
+          [
+            "Test",
+            "1000"
+          ]
+        ]
+      ],
+      "title" : "Simple table 10"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "b7fe4c38bc4cf6ccde4b442f23b94805949933cb32f27d3dd023fe3128d3f0b4",
+      "fixtureBody" : "<table><tr><th>Axis</th><th>Unit</th><th>Scale</th></tr><tr><td>x</td><td>m</td><td>Linear</td></tr><tr><td>y</td><td>s</td><td>Log</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Axis | Unit | Scale |\n| --- | --- | --- |\n| x | m | Linear |\n| y | s | Log |",
+      "id" : "T11",
+      "inputSHA256" : "2ea29c7641b7f984f83cf4902c8961694179c5021571c5d78e93737c09fa9213",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Axis",
+            "Unit",
+            "Scale"
+          ],
+          [
+            "x",
+            "m",
+            "Linear"
+          ],
+          [
+            "y",
+            "s",
+            "Log"
+          ]
+        ]
+      ],
+      "title" : "Simple table 11"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "dd9bcf96e6b62f5783599bac9337a980d4bdf5eb35f084045f687fc95937428d",
+      "fixtureBody" : "<table><tr><th>Model</th><th>Small</th><th>Medium</th><th>Large</th></tr><tr><td>A</td><td>12</td><td>24</td><td>48</td></tr><tr><td>B</td><td>10</td><td>20</td><td>40</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Model | Small | Medium | Large |\n| --- | --- | --- | --- |\n| A | 12 | 24 | 48 |\n| B | 10 | 20 | 40 |",
+      "id" : "T12",
+      "inputSHA256" : "bf4b8c32bf3872d394edc376f7db95ae29e57ae30a1cd2b5cb9bca33bebc3ae1",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Model",
+            "Small",
+            "Medium",
+            "Large"
+          ],
+          [
+            "A",
+            "12",
+            "24",
+            "48"
+          ],
+          [
+            "B",
+            "10",
+            "20",
+            "40"
+          ]
+        ]
+      ],
+      "title" : "Simple table 12"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "3159977fef70ac86b66f15594cfe0e074071509dda4d99d8583b5c0f5871f2ef",
+      "fixtureBody" : "<table><tr><th>Name</th><th>Expression</th></tr><tr><td>Square</td><td>x²</td></tr><tr><td>Cube</td><td>x³</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Name | Expression |\n| --- | --- |\n| Square | x² |\n| Cube | x³ |",
+      "id" : "T13",
+      "inputSHA256" : "2cc2062086672de6439bc430018f60cdbe63ea863cd1859c5dd69005bb0da80a",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Name",
+            "Expression"
+          ],
+          [
+            "Square",
+            "x²"
+          ],
+          [
+            "Cube",
+            "x³"
+          ]
+        ]
+      ],
+      "title" : "Simple table 13"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "f44295278778ebed9ce627deeab9224e6774db18d5bd481aba1ce315d4109feb",
+      "fixtureBody" : "<table><tr><th>Metric</th><th>Before</th><th>After</th></tr><tr><td>Error</td><td>5.2%</td><td>2.1%</td></tr><tr><td>Speed</td><td>1.0×</td><td>1.8×</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Metric | Before | After |\n| --- | --- | --- |\n| Error | 5.2% | 2.1% |\n| Speed | 1.0× | 1.8× |",
+      "id" : "T14",
+      "inputSHA256" : "ef0de3b136566d07574e6461ca3237c3ad0ef6826b7b60e6bdd2280402e458ee",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Metric",
+            "Before",
+            "After"
+          ],
+          [
+            "Error",
+            "5.2%",
+            "2.1%"
+          ],
+          [
+            "Speed",
+            "1.0×",
+            "1.8×"
+          ]
+        ]
+      ],
+      "title" : "Simple table 14"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "7bd02cb81b72d9a61e53270bef41da02c36b144c53941b4760c43b00ca03b072",
+      "fixtureBody" : "<table><tr><th>Sample</th><th>Result</th></tr><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Sample | Result |\n| --- | --- |\n| S-01 | Pass |\n| S-02 | Fail |\n| S-03 | Pass |",
+      "id" : "T15",
+      "inputSHA256" : "6831b873dd569fbd2acd5f3faa09c3f93e82b00dd9878cb50cc131efe6547bff",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Sample",
+            "Result"
+          ],
+          [
+            "S-01",
+            "Pass"
+          ],
+          [
+            "S-02",
+            "Fail"
+          ],
+          [
+            "S-03",
+            "Pass"
+          ]
+        ]
+      ],
+      "title" : "Simple table 15"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "2cb300427edb2787ce7766ee60a19bad5215bf0b14014fbfaf5950555571cd7f",
+      "fixtureBody" : "<table><tr><th>Interval</th><th>Frequency</th></tr><tr><td>0–10</td><td>12</td></tr><tr><td>10–20</td><td>19</td></tr><tr><td>20–30</td><td>7</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Interval | Frequency |\n| --- | --- |\n| 0–10 | 12 |\n| 10–20 | 19 |\n| 20–30 | 7 |",
+      "id" : "T16",
+      "inputSHA256" : "c699648b6da1342180deb0771b0baff1b1a4861a57cec7f192e27176f435676f",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Interval",
+            "Frequency"
+          ],
+          [
+            "0–10",
+            "12"
+          ],
+          [
+            "10–20",
+            "19"
+          ],
+          [
+            "20–30",
+            "7"
+          ]
+        ]
+      ],
+      "title" : "Simple table 16"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "92a288aa00b808b50b5e782b60261f5eb8158656840a70cccd6496c55a0acc9e",
+      "fixtureBody" : "<table><tr><th>Code</th><th>Description</th></tr><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Code | Description |\n| --- | --- |\n| A1 | Left branch |\n| B2 | Right branch |",
+      "id" : "T17",
+      "inputSHA256" : "ad2217e6bb12f1d4909cca3e36156d570946c9e35a7049c115862ab2e8ce01bc",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Code",
+            "Description"
+          ],
+          [
+            "A1",
+            "Left branch"
+          ],
+          [
+            "B2",
+            "Right branch"
+          ]
+        ]
+      ],
+      "title" : "Simple table 17"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "27e48f7e0bb8f31bbe33adb140458c0bfd3e07f746dfd868e1d474dd621088b0",
+      "fixtureBody" : "<table><tr><th>Term</th><th>Coefficient</th></tr><tr><td>Intercept</td><td>-0.25</td></tr><tr><td>Feature 1</td><td>1.75</td></tr><tr><td>Feature 2</td><td>0.50</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Term | Coefficient |\n| --- | --- |\n| Intercept | -0.25 |\n| Feature 1 | 1.75 |\n| Feature 2 | 0.50 |",
+      "id" : "T18",
+      "inputSHA256" : "e0ec9397d783d1e58ab609654293785eab84cb8764fa4ebd5d4ade6bb53db896",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Term",
+            "Coefficient"
+          ],
+          [
+            "Intercept",
+            "-0.25"
+          ],
+          [
+            "Feature 1",
+            "1.75"
+          ],
+          [
+            "Feature 2",
+            "0.50"
+          ]
+        ]
+      ],
+      "title" : "Simple table 18"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "902389416f61387ee62f282830ee50d94682fa12ccc6573184eaeb9d453c76ec",
+      "fixtureBody" : "<table><tr><th>Source</th><th>Destination</th><th>Weight</th></tr><tr><td>A</td><td>B</td><td>0.4</td></tr><tr><td>B</td><td>C</td><td>0.6</td></tr><tr><td>C</td><td>A</td><td>1.0</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Source | Destination | Weight |\n| --- | --- | --- |\n| A | B | 0.4 |\n| B | C | 0.6 |\n| C | A | 1.0 |",
+      "id" : "T19",
+      "inputSHA256" : "5d294efa78b654b59824fe6a4f91aee94cc6a5f99ad8f7b71e9ace506166dc49",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Source",
+            "Destination",
+            "Weight"
+          ],
+          [
+            "A",
+            "B",
+            "0.4"
+          ],
+          [
+            "B",
+            "C",
+            "0.6"
+          ],
+          [
+            "C",
+            "A",
+            "1.0"
+          ]
+        ]
+      ],
+      "title" : "Simple table 19"
+    },
+    {
+      "category" : "table",
+      "contentSHA256" : "01625ba4a296d530dfd6cc008c60623ccc9b463ba44ae5fd83ad43f68c8543bb",
+      "fixtureBody" : "<table><tr><th>Threshold</th><th>TP</th><th>FP</th><th>FN</th></tr><tr><td>0.2</td><td>95</td><td>12</td><td>5</td></tr><tr><td>0.5</td><td>88</td><td>4</td><td>12</td></tr><tr><td>0.8</td><td>70</td><td>1</td><td>30</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Threshold | TP | FP | FN |\n| --- | --- | --- | --- |\n| 0.2 | 95 | 12 | 5 |\n| 0.5 | 88 | 4 | 12 |\n| 0.8 | 70 | 1 | 30 |",
+      "id" : "T20",
+      "inputSHA256" : "0488ee540ad5fb68edf80d539f69cd5c4150423f6ff9283134f57f40332a9254",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check header/data row counts, columns, complete cell text, order, editable Markdown grid and TSV/rich structure.",
+      "tableGrids" : [
+        [
+          [
+            "Threshold",
+            "TP",
+            "FP",
+            "FN"
+          ],
+          [
+            "0.2",
+            "95",
+            "12",
+            "5"
+          ],
+          [
+            "0.5",
+            "88",
+            "4",
+            "12"
+          ],
+          [
+            "0.8",
+            "70",
+            "1",
+            "30"
+          ]
+        ]
+      ],
+      "title" : "Simple table 20"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "daebfccad02aa09c3ea662dc1878b592faf174266476d34cb20ef3a8d43d1238",
+      "fixtureBody" : "<p>Experiment 1: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\"></div><table><tr><th>Variable</th><th>Value</th></tr><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 1: evaluate $x^2$ before comparing the measurements.\n\n$$\nx=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n$$\n\n| Variable | Value |\n| --- | --- |\n| x | 2 |\n| y | 5 |\n\nThe result preserves the order of the observations.",
+      "id" : "M01",
+      "inputSHA256" : "28e845eaede4876aa19fb1a5ad850d23ecd8944716cefdbe53d156a8226087ad",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Variable",
+            "Value"
+          ],
+          [
+            "x",
+            "2"
+          ],
+          [
+            "y",
+            "5"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 01"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "25de8960ff6a79c9addb80afb60b670cbaea9966b43a3a12ba4d9986f1a4361e",
+      "fixtureBody" : "<p>Experiment 2: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"a^2+b^2=c^2\"></div><table><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 2: evaluate $x^2$ before comparing the measurements.\n\n$$\na^2+b^2=c^2\n$$\n\n| Method | Accuracy | Time (s) |\n| --- | --- | --- |\n| Baseline | 0.81 | 1.20 |\n| Candidate | 0.93 | 0.85 |\n\nThe result preserves the order of the observations.",
+      "id" : "M02",
+      "inputSHA256" : "bbd99d6e815b20505011c49b8d1ac0c53a02d7373e316be309975c3c4f6a2dc4",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Method",
+            "Accuracy",
+            "Time (s)"
+          ],
+          [
+            "Baseline",
+            "0.81",
+            "1.20"
+          ],
+          [
+            "Candidate",
+            "0.93",
+            "0.85"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 02"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "eb43ff4366a076f90161021a42b90cf572effd0cf1b1c69e0a1655bc2793f620",
+      "fixtureBody" : "<p>Experiment 3: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"e^{i\\pi}+1=0\"></div><table><tr><th>Epoch</th><th>Loss</th></tr><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 3: evaluate $x^2$ before comparing the measurements.\n\n$$\ne^{i\\pi}+1=0\n$$\n\n| Epoch | Loss |\n| --- | --- |\n| 1 | 2.50 |\n| 2 | 1.20 |\n| 3 | 0.65 |\n\nThe result preserves the order of the observations.",
+      "id" : "M03",
+      "inputSHA256" : "6e40ae1ebabaa5f3643ad73e8b7f02477a193008642307e8a9d3d4fc4482fe2a",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Epoch",
+            "Loss"
+          ],
+          [
+            "1",
+            "2.50"
+          ],
+          [
+            "2",
+            "1.20"
+          ],
+          [
+            "3",
+            "0.65"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 03"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "bd989236c5f07a23b85e7abd14b294dbe51bbd3bd2d538495c4cd522fcf58c1f",
+      "fixtureBody" : "<p>Experiment 4: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"p(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\"></div><table><tr><th>Symbol</th><th>Meaning</th></tr><tr><td>α</td><td>Learning rate</td></tr><tr><td>β</td><td>Momentum</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 4: evaluate $x^2$ before comparing the measurements.\n\n$$\np(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\n$$\n\n| Symbol | Meaning |\n| --- | --- |\n| α | Learning rate |\n| β | Momentum |\n\nThe result preserves the order of the observations.",
+      "id" : "M04",
+      "inputSHA256" : "afbaf545d81271b7fd747f1a9b5d0019fe637dfd1343b935c689219d46f16ffa",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Symbol",
+            "Meaning"
+          ],
+          [
+            "α",
+            "Learning rate"
+          ],
+          [
+            "β",
+            "Momentum"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 04"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "3f9057d1ccd167f2a871ee1dc8a701f7ab940101480123e45189b7bfb863cc7f",
+      "fixtureBody" : "<p>Experiment 5: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"\\int_0^1 x^2\\,dx=\\frac{1}{3}\"></div><table><tr><th>Temperature (K)</th><th>Pressure (kPa)</th></tr><tr><td>273</td><td>101.3</td></tr><tr><td>298</td><td>110.6</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 5: evaluate $x^2$ before comparing the measurements.\n\n$$\n\\int_0^1 x^2\\,dx=\\frac{1}{3}\n$$\n\n| Temperature (K) | Pressure (kPa) |\n| --- | --- |\n| 273 | 101.3 |\n| 298 | 110.6 |\n\nThe result preserves the order of the observations.",
+      "id" : "M05",
+      "inputSHA256" : "ec37ba47b5f37fba8a2ff61ce3a96809c1bd13b76032b59afd7848cb2f4d429b",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Temperature (K)",
+            "Pressure (kPa)"
+          ],
+          [
+            "273",
+            "101.3"
+          ],
+          [
+            "298",
+            "110.6"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 05"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "3bc2dba06dd47f4689d9b4cab438a7a8f3f838b9eebb5bc9518aa1a157c4b83c",
+      "fixtureBody" : "<p>Experiment 6: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"\\sum_{k=0}^{n}r^k=\\frac{1-r^{n+1}}{1-r}\"></div><table><tr><th>Class</th><th>Precision</th><th>Recall</th></tr><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 6: evaluate $x^2$ before comparing the measurements.\n\n$$\n\\sum_{k=0}^{n}r^k=\\frac{1-r^{n+1}}{1-r}\n$$\n\n| Class | Precision | Recall |\n| --- | --- | --- |\n| A | 0.90 | 0.88 |\n| B | 0.85 | 0.92 |\n\nThe result preserves the order of the observations.",
+      "id" : "M06",
+      "inputSHA256" : "9f5d24bfda06db4d64df5e08b97000ee1ad47770fcf29017a6da40dd9d70ef6f",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Class",
+            "Precision",
+            "Recall"
+          ],
+          [
+            "A",
+            "0.90",
+            "0.88"
+          ],
+          [
+            "B",
+            "0.85",
+            "0.92"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 06"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "b997d2fbb189ac670f67fd33b7e71a563786ae2970a77db68bc6f434844a8118",
+      "fixtureBody" : "<p>Experiment 7: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"\\lim_{x\\to 0}\\frac{\\sin x}{x}=1\"></div><table><tr><th>Condition</th><th>Count</th></tr><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 7: evaluate $x^2$ before comparing the measurements.\n\n$$\n\\lim_{x\\to 0}\\frac{\\sin x}{x}=1\n$$\n\n| Condition | Count |\n| --- | --- |\n| Control | 120 |\n| Treatment | 118 |\n\nThe result preserves the order of the observations.",
+      "id" : "M07",
+      "inputSHA256" : "ae6003777dc1d5c121fbab52c1bc4a0aa29a38bc9cdebac6ce899e488b5f4059",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Condition",
+            "Count"
+          ],
+          [
+            "Control",
+            "120"
+          ],
+          [
+            "Treatment",
+            "118"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 07"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "840cd3a7a4eac0bf3323bd337a80d7e10bc653827e3fe3dcb4f3870ec4428c35",
+      "fixtureBody" : "<p>Experiment 8: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"n!=\\prod_{k=1}^{n}k\"></div><table><tr><th>Item</th><th>Mean</th><th>SD</th></tr><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 8: evaluate $x^2$ before comparing the measurements.\n\n$$\nn!=\\prod_{k=1}^{n}k\n$$\n\n| Item | Mean | SD |\n| --- | --- | --- |\n| Length | 12.4 | 0.6 |\n| Mass | 8.2 | 0.3 |\n\nThe result preserves the order of the observations.",
+      "id" : "M08",
+      "inputSHA256" : "2c3674d5fc82c1fc119d099b20f455bd5148858caa60dc1e708f19ae0f8425b1",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Item",
+            "Mean",
+            "SD"
+          ],
+          [
+            "Length",
+            "12.4",
+            "0.6"
+          ],
+          [
+            "Mass",
+            "8.2",
+            "0.3"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 08"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "8b085578927596d365b6a68d454ce9994165b0120275de1b2823f80a165167a8",
+      "fixtureBody" : "<p>Experiment 9: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"\\frac{\\partial f}{\\partial x}=2xy+\\cos x\"></div><table><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 9: evaluate $x^2$ before comparing the measurements.\n\n$$\n\\frac{\\partial f}{\\partial x}=2xy+\\cos x\n$$\n\n| Parameter | Lower | Upper |\n| --- | --- | --- |\n| a | -1.5 | 2.0 |\n| b | 0.0 | 10.0 |\n\nThe result preserves the order of the observations.",
+      "id" : "M09",
+      "inputSHA256" : "e0ca10ca7fcff604bfce76f5d1b005bea2deddb41a6aa4f1a041d2bc94ff240c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Parameter",
+            "Lower",
+            "Upper"
+          ],
+          [
+            "a",
+            "-1.5",
+            "2.0"
+          ],
+          [
+            "b",
+            "0.0",
+            "10.0"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 09"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "120f41ee1dbbfcb4435cf1d9b1a6634eceb4ea6ddc58af1136ce0078375744be",
+      "fixtureBody" : "<p>Experiment 10: evaluate <span class=\"math\" data-tex=\"x^2\"></span> before comparing the measurements.</p><div class=\"math display\" data-display=\"1\" data-tex=\"\\nabla f=\\begin{pmatrix}\\partial f/\\partial x\\\\\\partial f/\\partial y\\end{pmatrix}\"></div><table><tr><th>Split</th><th>Samples</th></tr><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></table><p>The result preserves the order of the observations.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Experiment 10: evaluate $x^2$ before comparing the measurements.\n\n$$\n\\nabla f=\\begin{pmatrix}\\partial f/\\partial x\\\\\\partial f/\\partial y\\end{pmatrix}\n$$\n\n| Split | Samples |\n| --- | --- |\n| Train | 8000 |\n| Validation | 1000 |\n| Test | 1000 |\n\nThe result preserves the order of the observations.",
+      "id" : "M10",
+      "inputSHA256" : "db42dac76db99cac1f157abad2dc3ca705200406b64f2e31b2a3a6d8a9426027",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Split",
+            "Samples"
+          ],
+          [
+            "Train",
+            "8000"
+          ],
+          [
+            "Validation",
+            "1000"
+          ],
+          [
+            "Test",
+            "1000"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 10"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "3e47158b40b9af7504e5de18e0501fb484953d83f13ad74cf3322f954839b310",
+      "fixtureBody" : "<p>First measure <span class=\"math\" data-tex=\"a^2+b^2=c^2\"></span>.</p><p>Then compare the following observations.</p><table><tr><th>Variable</th><th>Value</th></tr><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></table><p>Two paragraphs precede this table.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "First measure $a^2+b^2=c^2$.\n\nThen compare the following observations.\n\n| Variable | Value |\n| --- | --- |\n| x | 2 |\n| y | 5 |\n\nTwo paragraphs precede this table.",
+      "id" : "M11",
+      "inputSHA256" : "6a36cbcc1ac685b29e43e86e7691eb1493b62f1c44eedfe24d47a3bf8b968ca2",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Variable",
+            "Value"
+          ],
+          [
+            "x",
+            "2"
+          ],
+          [
+            "y",
+            "5"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 11"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "d0c27b25e4ad40c2af647e5a1a03b2481d8ddcd55fb7a91d895fc773361b0b1a",
+      "fixtureBody" : "<p>The first experiment uses <span class=\"math\" data-tex=\"x=2\"></span>.</p><table><tr><th>Variable</th><th>Value</th></tr><tr><td>x</td><td>2</td></tr><tr><td>y</td><td>5</td></tr></table><p>Compare the second experiment.</p><table><tr><th>Epoch</th><th>Loss</th></tr><tr><td>1</td><td>2.50</td></tr><tr><td>2</td><td>1.20</td></tr><tr><td>3</td><td>0.65</td></tr></table><p>Both tables are required.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "The first experiment uses $x=2$.\n\n| Variable | Value |\n| --- | --- |\n| x | 2 |\n| y | 5 |\n\nCompare the second experiment.\n\n| Epoch | Loss |\n| --- | --- |\n| 1 | 2.50 |\n| 2 | 1.20 |\n| 3 | 0.65 |\n\nBoth tables are required.",
+      "id" : "M12",
+      "inputSHA256" : "a0c2b38aff0631353fe58a94bc7375d63eb81470ba2239bc1b0ba6546c42bb7a",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Variable",
+            "Value"
+          ],
+          [
+            "x",
+            "2"
+          ],
+          [
+            "y",
+            "5"
+          ]
+        ],
+        [
+          [
+            "Epoch",
+            "Loss"
+          ],
+          [
+            "1",
+            "2.50"
+          ],
+          [
+            "2",
+            "1.20"
+          ],
+          [
+            "3",
+            "0.65"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 12"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "9da7fb1b0485f40da386ef7560f9bcf0d613da7079814ede6a9054cbeab080e7",
+      "fixtureBody" : "<p>Keep the formulas inside their table cells.</p><table><tr><th>Quantity</th><th>Formula</th></tr><tr><td>Energy</td><td><span class=\"math\" data-tex=\"E=mc^2\"></span></td></tr><tr><td>Area</td><td><span class=\"math\" data-tex=\"A=\\pi r^2\"></span></td></tr></table><p>The symbol <span class=\"math\" data-tex=\"r\"></span> is a radius.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Keep the formulas inside their table cells.\n\n| Quantity | Formula |\n| --- | --- |\n| Energy | $E=mc^2$ |\n| Area | $A=\\pi r^2$ |\n\nThe symbol $r$ is a radius.",
+      "id" : "M13",
+      "inputSHA256" : "e9afe7016508310edac52c9d792c7b5838ca58e0dc3b7c706e7bc9f386bf494d",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Quantity",
+            "Formula"
+          ],
+          [
+            "Energy",
+            "$E=mc^2$"
+          ],
+          [
+            "Area",
+            "$A=\\pi r^2$"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 13"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "ec5deb2121a11694d6dfc9d940c3686a61ac598b8c4a1cb3bf1f6e68d35288ff",
+      "fixtureBody" : "<p>The literal code <code>x**2</code> is not an equation; the fee is USD 5.</p><div class=\"math display\" data-display=\"1\" data-tex=\"x^2+y^2=z^2\"></div><table><tr><th>Class</th><th>Precision</th><th>Recall</th></tr><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "The literal code `x**2` is not an equation; the fee is USD 5.\n\n$$x^2+y^2=z^2$$\n\n| Class | Precision | Recall |\n| --- | --- | --- |\n| A | 0.90 | 0.88 |\n| B | 0.85 | 0.92 |",
+      "id" : "M14",
+      "inputSHA256" : "4397e637a3c04562e3cf79a09483a7818f896bc16eab24cd8ab07c39b52c4b95",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Class",
+            "Precision",
+            "Recall"
+          ],
+          [
+            "A",
+            "0.90",
+            "0.88"
+          ],
+          [
+            "B",
+            "0.85",
+            "0.92"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 14"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "2a0a0b9d4ab4c8b0939950b00c272950d3bcdb61fde82b6868d33bfc243cbe91",
+      "fixtureBody" : "<h3>Measurement note</h3><p>For <span class=\"math\" data-tex=\"n=3\"></span>, compare the readings below.</p><table><tr><th>Condition</th><th>Count</th></tr><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></table><blockquote>Units are unchanged.</blockquote>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "### Measurement note\n\nFor $n=3$, compare the readings below.\n\n| Condition | Count |\n| --- | --- |\n| Control | 120 |\n| Treatment | 118 |\n\n> Units are unchanged.",
+      "id" : "M15",
+      "inputSHA256" : "2aab55c421b7c515af4faecec923e3883c538521c33c84388be2390b612593e4",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Condition",
+            "Count"
+          ],
+          [
+            "Control",
+            "120"
+          ],
+          [
+            "Treatment",
+            "118"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 15"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "c04cec14e27a1ea338a7c6297adf87752e79f1d650ab17bbb4b2eebe8e439d91",
+      "fixtureBody" : "<p>The mean is <span class=\"math\" data-tex=\"\\mu=12.4\"></span> and the deviation is <span class=\"math\" data-tex=\"\\sigma=0.6\"></span>.</p><table><tr><th>Item</th><th>Mean</th><th>SD</th></tr><tr><td>Length</td><td>12.4</td><td>0.6</td></tr><tr><td>Mass</td><td>8.2</td><td>0.3</td></tr></table><p>Use both <span class=\"math\" data-tex=\"\\mu\"></span> and <span class=\"math\" data-tex=\"\\sigma\"></span> when comparing samples.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "The mean is $\\mu=12.4$ and the deviation is $\\sigma=0.6$.\n\n| Item | Mean | SD |\n| --- | --- | --- |\n| Length | 12.4 | 0.6 |\n| Mass | 8.2 | 0.3 |\n\nUse both $\\mu$ and $\\sigma$ when comparing samples.",
+      "id" : "M16",
+      "inputSHA256" : "d8e18faacedb483b6a5d6efb3752a13a8a57c5a30d36d2f308532b381329d5d1",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Item",
+            "Mean",
+            "SD"
+          ],
+          [
+            "Length",
+            "12.4",
+            "0.6"
+          ],
+          [
+            "Mass",
+            "8.2",
+            "0.3"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 16"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "9d1f3fa1d8674ba871b7dd2bb2839ff57582a2a7dbd6e9f84ebab18601f22ad6",
+      "fixtureBody" : "<table><tr><th>Parameter</th><th>Lower</th><th>Upper</th></tr><tr><td>a</td><td>-1.5</td><td>2.0</td></tr><tr><td>b</td><td>0.0</td><td>10.0</td></tr></table><p>These limits constrain <span class=\"math\" data-tex=\"a\"></span> and <span class=\"math\" data-tex=\"b\"></span>.</p><div class=\"math display\" data-display=\"1\" data-tex=\"a+b\\leq 12\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Parameter | Lower | Upper |\n| --- | --- | --- |\n| a | -1.5 | 2.0 |\n| b | 0.0 | 10.0 |\n\nThese limits constrain $a$ and $b$.\n\n$$a+b\\leq 12$$",
+      "id" : "M17",
+      "inputSHA256" : "6390bd78017c51bacd9ede8179edc2148ec47ec218ed70cb56985bd2b0d4fdd3",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Parameter",
+            "Lower",
+            "Upper"
+          ],
+          [
+            "a",
+            "-1.5",
+            "2.0"
+          ],
+          [
+            "b",
+            "0.0",
+            "10.0"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 17"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "05b502850f43b81111ada0aa374285ae38a49b223f2a4dc55b4ea8db62a53e60",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"N=8000+1000+1000=10000\"></div><table><tr><th>Split</th><th>Samples</th></tr><tr><td>Train</td><td>8000</td></tr><tr><td>Validation</td><td>1000</td></tr><tr><td>Test</td><td>1000</td></tr></table><p>The total <span class=\"math\" data-tex=\"N\"></span> includes all three splits.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$N=8000+1000+1000=10000$$\n\n| Split | Samples |\n| --- | --- |\n| Train | 8000 |\n| Validation | 1000 |\n| Test | 1000 |\n\nThe total $N$ includes all three splits.",
+      "id" : "M18",
+      "inputSHA256" : "cbe16158e3f1303dea0b9db4d0e807dbc91eb07b0a2a673441b7b006784898a5",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Split",
+            "Samples"
+          ],
+          [
+            "Train",
+            "8000"
+          ],
+          [
+            "Validation",
+            "1000"
+          ],
+          [
+            "Test",
+            "1000"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 18"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "96a59113c48dbd313a1790dec0a704f7b0007f1e66f0b0bf8b3c11540f5d0525",
+      "fixtureBody" : "<p>Read α and β in this order.</p><table><tr><th>Symbol</th><th>Meaning</th></tr><tr><td>α</td><td>Learning rate</td></tr><tr><td>β</td><td>Momentum</td></tr></table><p>The update is <span class=\"math\" data-tex=\"v=\\beta v+\\alpha g\"></span>.</p><p>A second paragraph explains the symbols.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Read α and β in this order.\n\n| Symbol | Meaning |\n| --- | --- |\n| α | Learning rate |\n| β | Momentum |\n\nThe update is $v=\\beta v+\\alpha g$.\n\nA second paragraph explains the symbols.",
+      "id" : "M19",
+      "inputSHA256" : "4fa766f64e36afb5336eb0bfbeb4fc54c0336f04bd8a4097a0af973d06a39e2d",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Symbol",
+            "Meaning"
+          ],
+          [
+            "α",
+            "Learning rate"
+          ],
+          [
+            "β",
+            "Momentum"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 19"
+    },
+    {
+      "category" : "mixed",
+      "contentSHA256" : "98e9f100aee49dbc3d3ec1482a94058bb17f40f2d29cb26d964ee8d69c40f232",
+      "fixtureBody" : "<p>Start with <span class=\"math\" data-tex=\"x=1\"></span>.</p><table><tr><th>Sample</th><th>Result</th></tr><tr><td>S-01</td><td>Pass</td></tr><tr><td>S-02</td><td>Fail</td></tr><tr><td>S-03</td><td>Pass</td></tr></table><div class=\"math display\" data-display=\"1\" data-tex=\"\\begin{aligned}a+b&amp;=c\\\\a-b&amp;=d\\end{aligned}\"></div><p>Then compare another table.</p><table><tr><th>Code</th><th>Description</th></tr><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></table><p>Finish in the same reading order.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "Start with $x=1$.\n\n| Sample | Result |\n| --- | --- |\n| S-01 | Pass |\n| S-02 | Fail |\n| S-03 | Pass |\n\n$$\\begin{aligned}a+b&=c\\\\a-b&=d\\end{aligned}$$\n\nThen compare another table.\n\n| Code | Description |\n| --- | --- |\n| A1 | Left branch |\n| B2 | Right branch |\n\nFinish in the same reading order.",
+      "id" : "M20",
+      "inputSHA256" : "9b2229d6ca1f5e3a66a9afa1cdec32d7b7b7c4382939bd408f0f922128c5d64b",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Check exactly the authored paragraphs/heading/blockquote and formula blocks in this Golden Result, in order; preserve all table grids and any inline formula cells. Equivalent formula source is acceptable. Verify isolated Result Editor correction, actual rendered preview and complete Markdown/Lark copy. Notion inline destination remains an explicit deferred limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Sample",
+            "Result"
+          ],
+          [
+            "S-01",
+            "Pass"
+          ],
+          [
+            "S-02",
+            "Fail"
+          ],
+          [
+            "S-03",
+            "Pass"
+          ]
+        ],
+        [
+          [
+            "Code",
+            "Description"
+          ],
+          [
+            "A1",
+            "Left branch"
+          ],
+          [
+            "B2",
+            "Right branch"
+          ]
+        ]
+      ],
+      "title" : "Mixed experiment 20"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "2bcadfea61ba36356b4f88759f87e77265beef0636e951504ca08fc5e34efb7f",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\sum_{i=1}^{n}x_i^2\"></div>",
+      "fixtureStyle" : "body {font-size:11px!important;}",
+      "goldenMarkdown" : "$$\\sum_{i=1}^{n}x_i^2$$",
+      "id" : "B01",
+      "inputSHA256" : "35c12b1f86f1761098cc7668b2672fc433dd8de747d506501b981e12d83ced9c",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Small subscripts and upper limits; deliberate difficult font size.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Small formula"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "a6a360fd2b828577a18575801852d12322ab95cd4d7b9c9551a6a3b50c6a5934",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\frac{a+b}{c-d}\"></div>",
+      "fixtureStyle" : "body {color:#bbb!important;}",
+      "goldenMarkdown" : "$$\\frac{a+b}{c-d}$$",
+      "id" : "B02",
+      "inputSHA256" : "054d459af68b1634825a3404c79454b0e2ca7ae90d0c5bc4c9a25224cfdab020",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Low contrast fraction and minus sign.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Low contrast"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "0d2f3876f73a425a2610140530d31e22a048bbc599435712029c7a395713fbcc",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"E=mc^2\" style=\"transform:rotate(12deg)\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$E=mc^2$$",
+      "id" : "B03",
+      "inputSHA256" : "a4ee290681236bc4c72e90c4b1d24618698b14c1942f6e3cc5dfd0d26b33f361",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Rotation is deliberate; require mathematical equivalence.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Rotated formula"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "5c1bdb924f33ce1a432b14a8635d4f51085d74e9357be23d026611e769c62659",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"A=\\begin{pmatrix}1&amp;2&amp;3&amp;4\\\\5&amp;6&amp;7&amp;8\\\\9&amp;10&amp;11&amp;12\\\\13&amp;14&amp;15&amp;16\\end{pmatrix}\"></div>",
+      "fixtureStyle" : "body {font-size:16px!important;}",
+      "goldenMarkdown" : "$$A=\\begin{pmatrix}1&2&3&4\\\\5&6&7&8\\\\9&10&11&12\\\\13&14&15&16\\end{pmatrix}$$",
+      "id" : "B04",
+      "inputSHA256" : "496c31da844a7ab495a22e9b2cbbc8314450532028cdab7f1c1f9c117e3c41a5",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "All sixteen cells, row/column positions and matrix delimiters.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Dense matrix"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "d3ca9654a903b4c4c5b09ae912b804f7ff6ff68267ee40238d8c0a463d9d9341",
+      "expectedComplexTableHTML" : "<table><tr><th>Group</th><th>Value</th></tr><tr><td rowspan=\"2\">A</td><td>1</td></tr><tr><td>2</td></tr></table>",
+      "fixtureBody" : "<table><tr><th>Group</th><th>Value</th></tr><tr><td rowspan=\"2\">A</td><td>1</td></tr><tr><td>2</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Group | Value |\n| --- | --- |\n| A | 1 |\n|  | 2 |",
+      "id" : "B05",
+      "inputSHA256" : "147226ae22e1f5f0c28ba5588a71fdaa3644c6390cfb7919d80692832c20b3a4",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Merged structure may require safe Complex Table Output, separate from ordinary gate. Require the A cell to span two data rows in safe HTML; flat Markdown alone does not preserve merged structure.",
+      "tableGrids" : [
+        [
+          [
+            "Group",
+            "Value"
+          ],
+          [
+            "A",
+            "1"
+          ],
+          [
+            "",
+            "2"
+          ]
+        ]
+      ],
+      "title" : "Merged table"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "b2437111845f1ad7748c0eddcfdaa91dacbad3b59f24f49ff978faeb71530a9c",
+      "fixtureBody" : "<p>The code <code>x**2</code> costs $5; compare <span class=\"math\" data-tex=\"x^2\"></span>.</p>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "The code `x**2` costs $5; compare $x^2$.",
+      "id" : "B06",
+      "inputSHA256" : "82a1b8290184f3de00749a713eb4564339d0346ec11d5fe4ac6421bdbcc67bcf",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Code and currency must remain literal; final formula must remain mathematical.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Literal code and currency"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "ceae4b3de87fee25c811cb0c61f7c6d1d1f828edd104e589166204cd39bdddbd",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"\\sqrt{1+\\sqrt{1+\\sqrt{x}}}\"></div>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "$$\\sqrt{1+\\sqrt{1+\\sqrt{x}}}$$",
+      "id" : "B07",
+      "inputSHA256" : "d221a39e56d706e23daa30ff62ef832d36a5f7cd02442fca7cd6497265f17913",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "All nested radical extents and plus signs.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Adjacent nested radicals"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "b04295073c597ab4c0cbf409c7c29815a777acbca07e72dde0733b9546073326",
+      "fixtureBody" : "<table><tr><th>A</th><th>B</th></tr><tr><td>1</td><td>2</td></tr></table><p>Between tables.</p><table><tr><th>C</th><th>D</th></tr><tr><td>3</td><td>4</td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| A | B |\n| --- | --- |\n| 1 | 2 |\n\nBetween tables.\n\n| C | D |\n| --- | --- |\n| 3 | 4 |",
+      "id" : "B08",
+      "inputSHA256" : "e6aaea262c5b66e92cda0cf67688a54eaf6631e3b5eb66d5a0f3f2dc46ce16fd",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Preserve both tables with intervening text; rich whole-output copy, not first-table-only.",
+      "tableGrids" : [
+        [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ],
+        [
+          [
+            "C",
+            "D"
+          ],
+          [
+            "3",
+            "4"
+          ]
+        ]
+      ],
+      "title" : "Two tables"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "37fd172ebca4dee6c388aec1172b042aad64952ee6d0c7b24145f520a07da559",
+      "fixtureBody" : "<table><tr><th>Quantity</th><th>Formula</th></tr><tr><td>Energy</td><td><span class=\"math\" data-tex=\"E=mc^2\"></span></td></tr><tr><td>Area</td><td><span class=\"math\" data-tex=\"A=\\pi r^2\"></span></td></tr></table>",
+      "fixtureStyle" : "",
+      "goldenMarkdown" : "| Quantity | Formula |\n| --- | --- |\n| Energy | $E=mc^2$ |\n| Area | $A=\\pi r^2$ |",
+      "id" : "B09",
+      "inputSHA256" : "84750d49cf8458bd62f3e3f814a5a4410c02c3266ce7d8ce4e010ce033fac00f",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Distinguish formula semantics inside cells and target-specific copy limitation.",
+      "tableGrids" : [
+        [
+          [
+            "Quantity",
+            "Formula"
+          ],
+          [
+            "Energy",
+            "$E=mc^2$"
+          ],
+          [
+            "Area",
+            "$A=\\pi r^2$"
+          ]
+        ]
+      ],
+      "title" : "Table inline math"
+    },
+    {
+      "category" : "boundary",
+      "contentSHA256" : "498f1534451e88a5c2f15828e0fd2da7803e3707a3acf01a7b74a48f2c7de522",
+      "fixtureBody" : "<div class=\"math display\" data-display=\"1\" data-tex=\"l_1+I_1+O_0+0=1\"></div>",
+      "fixtureStyle" : "body {font-size:15px!important;}",
+      "goldenMarkdown" : "$$l_1+I_1+O_0+0=1$$",
+      "id" : "B10",
+      "inputSHA256" : "ebd119fce14eedb075c0d418dc3c746b3b34b23c31f2377f4a674ec2c4d00f41",
+      "provenance" : "Original authored development fixture; no private source or service-derived truth",
+      "reviewNotes" : "Distinguish lower-case l, upper-case I, upper-case O, zero and one.",
+      "tableGrids" : [
+
+      ],
+      "title" : "Ambiguous glyphs"
+    }
+  ],
+  "counts" : {
+    "boundary" : 10,
+    "formula" : 30,
+    "mixed" : 20,
+    "table" : 20
+  },
+  "description" : "Fixed original printed development Snippets. Independently authored expected content; not service output, not a representative private screenshot benchmark.",
+  "schema" : 1,
+  "version" : "authored-v1"
+}

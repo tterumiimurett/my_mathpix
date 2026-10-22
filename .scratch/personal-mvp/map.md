@@ -1,6 +1,6 @@
 # MyMathpix Personal MVP — Delivery Map
 
-This map presents six user-facing tickets while preserving the engineering coverage from the finer-grained draft as acceptance criteria and suggested work packages.
+This map presents six original delivery tickets and explicit follow-ups while preserving the engineering coverage from the finer-grained draft as acceptance criteria and suggested work packages.
 
 ## Execution model
 
@@ -28,14 +28,21 @@ flowchart TD
     T3 --> T5
     T4 --> T6
     T5 --> T6
+    T8["Follow-up — T8<br/>Compact result and explicit main window"]
+    T3 --> T8
+    T4 --> T8
+    T8 --> T6
 ```
 
 ## Recommended frontier
 
+Latest disposition2026-10-22: owner accepted V1 and authorized merge to main. Tickets06/08 are resolved on that authority; older menu/QA follow-up descriptions below retain their historical context and do not establish a new physical-menu pass.
+
 1. Ticket `01` is resolved by explicit owner acceptance; its implementation establishes the authoritative capture seam and repairs the reported termination. See [01 — Make Screen Capture survive through a mock result](issues/01-stable-screen-capture.md#answer) for the verified evidence and owner-waived external runs.
 2. Tickets `02`, `03`, and `04` are resolved following the owner's confirmations on 2026-10-21; see [Ticket 02](issues/02-reliable-datalab-recognition.md#answer), [Ticket 03](issues/03-edit-preview-copy.md#answer), and [Ticket 04](issues/04-daily-workflow.md#answer). Ticket 04 menu-bar visibility and [Ticket 07 — Notion inline math](issues/07-notion-inline-math.md) remain unresolved follow-ups. These resolutions do not close the final integration gate.
-3. Ticket `05` starts after real recognition and result consumption are complete.
-4. Ticket `06` is the integration gate. It must test the assembled signed App and cannot be replaced by reports from earlier tickets.
+3. Ticket `05` is resolved on 2026-10-22: both modes pass the reviewed ordinary Golden Set at 69/70 with category floors met; boundary failures and original failed baseline remain visible. See [Ticket 05 Answer](issues/05-golden-set-quality.md#answer) and [quality evidence](evidence/ticket05-golden-set/quality-summary.md). This quality evidence remains intact alongside the later owner V1 acceptance.
+4. Ticket `08` is resolved by explicit owner acceptance of Personal MVP V1 on2026-10-22. The compact result/main-workspace implementation and QA history remain recorded; unchecked physical-menu/activation and other individual criteria are retained as unverified, not fabricated passes. See [Ticket08 Answer](issues/08-window-roles-regression.md#answer).
+5. Ticket `06` is resolved by the same owner V1 acceptance and merge-to-main authority. See [Ticket06 Answer](issues/06-signed-app-acceptance.md#answer) and [exact owner decision](evidence/ticket06-candidate/owner-v1-acceptance.md). Notion07 remains deferred; fourteen-day Dogfood and Public Product are still pending. This explicit owner release decision does not retroactively mark every integration AC passed.
 
 2026-10-21: The owner accepted Ticket `04` and requested resolution and merge. Follow-up: the menu-bar icon is still not visible, including after the owner expanded Hidden Bar; its cause and repair remain open. Resolution is an explicit acceptance exception, not a claim that menu-bar visibility passed.
 

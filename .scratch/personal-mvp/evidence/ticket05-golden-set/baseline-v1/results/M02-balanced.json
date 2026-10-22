@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "Experiment 2: evaluate  $x^2$  before comparing the measurements.\n\n$$a^2 + b^2 = c^2$$\n\n| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |\n\nThe result preserves the order of the observations.",
+  "caseID" : "M02",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Method</th>\n    <th>Accuracy</th>\n    <th>Time (s)</th>\n   </tr>\n   <tr>\n    <td>Baseline</td>\n    <td>0.81</td>\n    <td>1.20</td>\n   </tr>\n   <tr>\n    <td>Candidate</td>\n    <td>0.93</td>\n    <td>0.85</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 2: evaluate  $x^2$  before comparing the measurements.</p>\n<p>$$a^2 + b^2 = c^2$$</p>\n<table><thead><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr></thead><tbody><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 2: evaluate  $x^2$  before comparing the measurements.\n\n$$a^2 + b^2 = c^2$$\n\n| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "Experiment 2: evaluate  $x^2$  before comparing the measurements.\n\n$$a^2 + b^2 = c^2$$\n\n| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>Experiment 2: evaluate  <span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2</annotation></semantics></math></span>  before comparing the measurements.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">a^2 + b^2 = c^2</annotation></semantics></math></span></p>\n<table><thead><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr></thead><tbody><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></tbody></table>\n<p>The result preserves the order of the observations.</p></body></html>",
+        "plain" : "Experiment 2: evaluate  $x^2$  before comparing the measurements.\n\n$$a^2 + b^2 = c^2$$\n\n| <b>Method</b> | <b>Accuracy</b> | <b>Time (s)</b> |\n|---------------|-----------------|-----------------|\n| Baseline      | 0.81            | 1.20            |\n| Candidate     | 0.93            | 0.85            |\n\nThe result preserves the order of the observations.",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Method</th><th>Accuracy</th><th>Time (s)</th></tr></thead><tbody><tr><td>Baseline</td><td>0.81</td><td>1.20</td></tr><tr><td>Candidate</td><td>0.93</td><td>0.85</td></tr></tbody></table>",
+        "plain" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "tsv" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "tsv" : "Method\tAccuracy\tTime (s)\nBaseline\t0.81\t1.20\nCandidate\t0.93\t0.85",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "4a0b16232287f6af6feb5d1c6d8e6ab1f2feb3aa520efa2b0cbe52b47a0fdbf3",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M02-balanced.png",
+    "previewSHA256" : "241a3246705ad618438d387ae14c58aeecef01dd7b0ace171b3b3d99753e4562"
+  },
+  "contentSHA256" : "25de8960ff6a79c9addb80afb60b670cbaea9966b43a3a12ba4d9986f1a4361e",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "bbd99d6e815b20505011c49b8d1ac0c53a02d7373e316be309975c3c4f6a2dc4",
+  "mode" : "balanced",
+  "outputSHA256" : "e638f2c9ab35ae5779bae3eb62ab3e6cab81b80537770795c7fc80852f074876",
+  "runtimeSeconds" : 1.9019424915313721,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:53:52Z",
+  "status" : "complete",
+  "wallSeconds" : 5.9221919775009155
+}

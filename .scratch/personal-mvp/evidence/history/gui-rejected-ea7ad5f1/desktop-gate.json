@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "observedAt": "2026-10-21T16:54:50.991818+00:00",
+  "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "tool": "mcp__cua_repl.js / cua.listApps",
+  "observation": "Mac locked; tool could not automatically unlock; manual unlock required.",
+  "actualCandidateUIJourneys": "not_performed",
+  "screenRecordingPermissionChange": "not_requested_or_performed",
+  "disposableFixtureDestructiveUI": "not_performed",
+  "limit": "Read-only inventory blocker, not capture/live/permission-transition acceptance."
+}

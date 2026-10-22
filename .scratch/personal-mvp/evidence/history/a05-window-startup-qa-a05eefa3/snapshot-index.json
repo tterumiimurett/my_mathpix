@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "recordedAtUTC": "2026-10-22T05:21:37.646108+00:00",
+  "baseAuditRevision": "a6183aa4a53454cde14ecdaf4a33b1256eeb0c68",
+  "sourceNamespace": ".scratch/personal-mvp/evidence/ticket06-candidate",
+  "rootSnapshotFileCount": 19,
+  "indexedRecordCountAtFreeze": 16,
+  "files": [
+    {
+      "file": "a05-handoff-spec-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/a05-handoff-spec-review.md",
+      "bytes": 2661,
+      "sha256": "723a22b9e70c4d17e605e2f719d4c592a54d42c4021335df48e211707ef1448c"
+    },
+    {
+      "file": "a05-handoff-standards-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/a05-handoff-standards-review.md",
+      "bytes": 2397,
+      "sha256": "c95215c6f55de77134f161ea198db26ae96a3d74ddd1771ecfd7af0689af1ab6"
+    },
+    {
+      "file": "additional-signed-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/additional-signed-checks.json",
+      "bytes": 2165,
+      "sha256": "f59125dc7e86eab6ecf5b8d476ca757c66c76db3a0aa47f42fc2578537fa1f2b"
+    },
+    {
+      "file": "bridge-and-history-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/bridge-and-history-review.md",
+      "bytes": 3866,
+      "sha256": "3e7c5375758e086be900745acb238682c23a6d3389cadf2dac0fc9f65635bf65"
+    },
+    {
+      "file": "build-stage-provenance.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/build-stage-provenance.json",
+      "bytes": 66589,
+      "sha256": "ca7c8cf99c51458c3054879ca8ccac9ee0ebe2c7582e4ee1305d416a5282091b"
+    },
+    {
+      "file": "evidence-index.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/evidence-index.json",
+      "bytes": 7719,
+      "sha256": "36a0a180f43007f984374f969b38030ab99443f2b100578cca7f4488f3c3f341"
+    },
+    {
+      "file": "handoff.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/handoff.json",
+      "bytes": 2628,
+      "sha256": "cbc4491d5b46a7d55aacc87fe349702cded68c70cc9b413ab693b23ec9719584"
+    },
+    {
+      "file": "handoff.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/handoff.md",
+      "bytes": 9308,
+      "sha256": "7f6574de4c48b091c4ba6912720c64e510670b1d85e80c014be822355354c31c"
+    },
+    {
+      "file": "immutability-after-all-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/immutability-after-all-checks.json",
+      "bytes": 2248,
+      "sha256": "ed56c52c102b192bc3d56f8efceb9b205a6e22b242dd5bc9b1c0c2b7dd7d7c81"
+    },
+    {
+      "file": "immutable-before-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/immutable-before-checks.json",
+      "bytes": 1523,
+      "sha256": "a234da63d034238cbf81c9af8ba560adcea749db417ae11e303593d5321e884e"
+    },
+    {
+      "file": "launchservices-permission-stderr.txt",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/launchservices-permission-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "launchservices-permission-stdout.txt",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/launchservices-permission-stdout.txt",
+      "bytes": 38,
+      "sha256": "b32b8d681aad6f78229271ced048d723737c46db0d60a731f71b8f949a0358c7"
+    },
+    {
+      "file": "permission-probe-contexts.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/permission-probe-contexts.json",
+      "bytes": 2453,
+      "sha256": "a6ca22c084a83b1726a1f2cb90ac34169bd715960ed9793afd2e139831e12766"
+    },
+    {
+      "file": "preview-navigation-spec-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/preview-navigation-spec-review.md",
+      "bytes": 3464,
+      "sha256": "a114463aa7a80e04b7892f11d9323e7efce7913e3e363ecb331aae31cf3fc886"
+    },
+    {
+      "file": "preview-navigation-standards-review.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/preview-navigation-standards-review.md",
+      "bytes": 3337,
+      "sha256": "b802a148ec88ad0f1ca07a8fadf7eda64e5900226e2bea202b72725c6d6f8234"
+    },
+    {
+      "file": "source-bridge.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/source-bridge.json",
+      "bytes": 71017,
+      "sha256": "1cf87a66f69749aa2d870047a90fc8ae2b112a10c1c71d7636dbc01537ef6c09"
+    },
+    {
+      "file": "summary.md",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/summary.md",
+      "bytes": 2270,
+      "sha256": "04cfee7b1be275b345e9c0c4bfce8683e19dd5e07b8abd311ca8bcf48792ee08"
+    },
+    {
+      "file": "supporting-checks.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/supporting-checks.json",
+      "bytes": 3027,
+      "sha256": "788f823a5b66be5522a86ae3a2c71f2235dfade5fb745e002f260586f8143316"
+    },
+    {
+      "file": "window-timeout-process-state.json",
+      "source": ".scratch/personal-mvp/evidence/ticket06-candidate/window-timeout-process-state.json",
+      "bytes": 1716,
+      "sha256": "f7b78d6b4bbf6bf31e4000a83200792ead01804bed5ac7ef421088b206719756"
+    }
+  ],
+  "archiveMetadata": [
+    {
+      "file": "README.md",
+      "sha256": "21aae9c54d6dfda61fbe0ede8bab28e3bfcc3024a28d54c815a820aaab8bc762"
+    },
+    {
+      "file": "disposition.json",
+      "sha256": "457a242804013bd88d76b128e6ca02d7375ae54e548d7fae9d69a9023ec11716"
+    },
+    {
+      "file": "bundle-backup-record.json",
+      "sha256": "6cfa54f4d12e35488f482b3e446d20709e7ec364610c79f69d1cedfc12cbb13b"
+    }
+  ],
+  "excludedNestedDirectories": [
+    "pre-review"
+  ],
+  "ownerRejected": false,
+  "disposition": "qa-window-startup-under-investigation"
+}

@@ -1,0 +1,7 @@
+{
+  "observedAt": "2026-10-21T16:54:26.913750+00:00",
+  "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
+  "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
+  "signal": "TICKET01_SCREEN_PERMISSION granted=no",
+  "scope": "Exact resealed candidate; read-only preflight. No permission requested or changed. Not denial or revocation evidence."
+}

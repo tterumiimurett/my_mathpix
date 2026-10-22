@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |",
+  "caseID" : "T07",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Condition</th>\n    <th>Count</th>\n   </tr>\n   <tr>\n    <td>Control</td>\n    <td>120</td>\n   </tr>\n   <tr>\n    <td>Treatment</td>\n    <td>118</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Condition</th><th>Count</th></tr></thead><tbody><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Condition</th><th>Count</th></tr></thead><tbody><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Condition</b> | <b>Count</b> |\n|------------------|--------------|\n| Control          | 120          |\n| Treatment        | 118          |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Condition</th><th>Count</th></tr></thead><tbody><tr><td>Control</td><td>120</td></tr><tr><td>Treatment</td><td>118</td></tr></tbody></table>",
+        "plain" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "tsv" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "tsv" : "Condition\tCount\nControl\t120\nTreatment\t118",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "c2cfc8cc9585e899a2fe5a21b3ca1fb4fc2ed91f45bf0cf117509e5a3c81999c",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T07-fast.png",
+    "previewSHA256" : "3e1b300126405902103f4c596d5af37014247023cb97b3dc75621c6d3f3d15bc"
+  },
+  "contentSHA256" : "f65c67665af960d33e9ff2c228bc32eaa3fe26b8ef94c7709a80466789f42cd0",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "7143abe3102e59828bc0e0ef29334188bd24195069b9e2e39515db3b4bef6c6d",
+  "mode" : "fast",
+  "outputSHA256" : "a1e9e3d4dda6e4951730026c093cac6a522a9ced01162e934f2e02feb9aa0d71",
+  "runtimeSeconds" : 0.5072486400604248,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:51:26Z",
+  "status" : "complete",
+  "wallSeconds" : 2.8034200668334961
+}

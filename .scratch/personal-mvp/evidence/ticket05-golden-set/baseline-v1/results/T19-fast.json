@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Source</b> | <b>Destination</b> | <b>Weight</b> |\n|---------------|--------------------|---------------|\n| A             | B                  | 0.4           |\n| B             | C                  | 0.6           |\n| C             | A                  | 1.0           |",
+  "caseID" : "T19",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Source</th>\n    <th>Destination</th>\n    <th>Weight</th>\n   </tr>\n   <tr>\n    <td>A</td>\n    <td>B</td>\n    <td>0.4</td>\n   </tr>\n   <tr>\n    <td>B</td>\n    <td>C</td>\n    <td>0.6</td>\n   </tr>\n   <tr>\n    <td>C</td>\n    <td>A</td>\n    <td>1.0</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Source</th><th>Destination</th><th>Weight</th></tr></thead><tbody><tr><td>A</td><td>B</td><td>0.4</td></tr><tr><td>B</td><td>C</td><td>0.6</td></tr><tr><td>C</td><td>A</td><td>1.0</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Source</b> | <b>Destination</b> | <b>Weight</b> |\n|---------------|--------------------|---------------|\n| A             | B                  | 0.4           |\n| B             | C                  | 0.6           |\n| C             | A                  | 1.0           |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Source</b> | <b>Destination</b> | <b>Weight</b> |\n|---------------|--------------------|---------------|\n| A             | B                  | 0.4           |\n| B             | C                  | 0.6           |\n| C             | A                  | 1.0           |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Source</th><th>Destination</th><th>Weight</th></tr></thead><tbody><tr><td>A</td><td>B</td><td>0.4</td></tr><tr><td>B</td><td>C</td><td>0.6</td></tr><tr><td>C</td><td>A</td><td>1.0</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Source</b> | <b>Destination</b> | <b>Weight</b> |\n|---------------|--------------------|---------------|\n| A             | B                  | 0.4           |\n| B             | C                  | 0.6           |\n| C             | A                  | 1.0           |",
+        "tsv" : null,
+        "types" : [
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Source</th><th>Destination</th><th>Weight</th></tr></thead><tbody><tr><td>A</td><td>B</td><td>0.4</td></tr><tr><td>B</td><td>C</td><td>0.6</td></tr><tr><td>C</td><td>A</td><td>1.0</td></tr></tbody></table>",
+        "plain" : "Source\tDestination\tWeight\nA\tB\t0.4\nB\tC\t0.6\nC\tA\t1.0",
+        "tsv" : "Source\tDestination\tWeight\nA\tB\t0.4\nB\tC\t0.6\nC\tA\t1.0",
+        "types" : [
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Source\tDestination\tWeight\nA\tB\t0.4\nB\tC\t0.6\nC\tA\t1.0",
+        "tsv" : "Source\tDestination\tWeight\nA\tB\t0.4\nB\tC\t0.6\nC\tA\t1.0",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "d030e745d9723e75d74a64eeb588558afc1ff2066d2d2b3279703d9721d65931",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T19-fast.png",
+    "previewSHA256" : "8ed835b79126eaf1f3f274f568774ee35b308e6345d0426721153f6ac0c0811b"
+  },
+  "contentSHA256" : "902389416f61387ee62f282830ee50d94682fa12ccc6573184eaeb9d453c76ec",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "5d294efa78b654b59824fe6a4f91aee94cc6a5f99ad8f7b71e9ace506166dc49",
+  "mode" : "fast",
+  "outputSHA256" : "279355db6041cfaec112fcfa17c05f40450ad009689b5a44b5ceefb23df50127",
+  "runtimeSeconds" : 0.43567204475402832,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:53:18Z",
+  "status" : "complete",
+  "wallSeconds" : 3.0113589763641357
+}

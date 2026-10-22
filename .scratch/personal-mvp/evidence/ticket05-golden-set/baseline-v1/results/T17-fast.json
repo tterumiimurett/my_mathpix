@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "| <b>Code</b> | <b>Description</b> |\n|-------------|--------------------|\n| A1          | Left branch        |\n| B2          | Right branch       |",
+  "caseID" : "T17",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Code</th>\n    <th>Description</th>\n   </tr>\n   <tr>\n    <td>A1</td>\n    <td>Left branch</td>\n   </tr>\n   <tr>\n    <td>B2</td>\n    <td>Right branch</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Code</b> | <b>Description</b> |\n|-------------|--------------------|\n| A1          | Left branch        |\n| B2          | Right branch       |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "| <b>Code</b> | <b>Description</b> |\n|-------------|--------------------|\n| A1          | Left branch        |\n| B2          | Right branch       |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></tbody></table></body></html>",
+        "plain" : "| <b>Code</b> | <b>Description</b> |\n|-------------|--------------------|\n| A1          | Left branch        |\n| B2          | Right branch       |",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody><tr><td>A1</td><td>Left branch</td></tr><tr><td>B2</td><td>Right branch</td></tr></tbody></table>",
+        "plain" : "Code\tDescription\nA1\tLeft branch\nB2\tRight branch",
+        "tsv" : "Code\tDescription\nA1\tLeft branch\nB2\tRight branch",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Code\tDescription\nA1\tLeft branch\nB2\tRight branch",
+        "tsv" : "Code\tDescription\nA1\tLeft branch\nB2\tRight branch",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "cc22f149e9b8af7e3624714b6846a3fb1f61ef865e6221c25ecfd32250cecb04",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "T17-fast.png",
+    "previewSHA256" : "7848c2aab07cefb227e0de3b461cffcb5914f8824c7be140171be869371b92b1"
+  },
+  "contentSHA256" : "92a288aa00b808b50b5e782b60261f5eb8158656840a70cccd6496c55a0acc9e",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "ad2217e6bb12f1d4909cca3e36156d570946c9e35a7049c115862ab2e8ce01bc",
+  "mode" : "fast",
+  "outputSHA256" : "0539412667f6c1733af331e80f83bba4c60c7aba8f685a24ebe594d4b01f0fbb",
+  "runtimeSeconds" : 0.7262728214263916,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:52:56Z",
+  "status" : "complete",
+  "wallSeconds" : 3.9085760116577148
+}

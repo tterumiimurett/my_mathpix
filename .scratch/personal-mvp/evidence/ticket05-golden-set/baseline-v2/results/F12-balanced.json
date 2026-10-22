@@ -1,0 +1,67 @@
+{
+  "artifactSHA256" : "52fa55da6962fe0278d1f56805481ae1a9b404b3b0df8aff09c7b637db3181cc",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "$$\\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc$$",
+  "caseID" : "F12",
+  "complexTableHTML" : null,
+  "configurationSHA256" : "3c27bb3d79f935da026f156b656cb68fd345215f696e08c8027b769d80487ead",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>$$\\det \\begin{pmatrix} a &amp; b \\\\ c &amp; d \\end{pmatrix} = ad - bc$$</p></body></html>",
+        "plain" : "$$\\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "$$\\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc$$",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>det</mi><mo>⁡</mo><mrow><mo fence=\"true\">(</mo><mtable rowspacing=\"0.16em\" columnalign=\"center center\" columnspacing=\"1em\"><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mi>a</mi></mstyle></mtd><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mi>b</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mi>c</mi></mstyle></mtd><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mi>d</mi></mstyle></mtd></mtr></mtable><mo fence=\"true\">)</mo></mrow><mo>=</mo><mi>a</mi><mi>d</mi><mo>−</mo><mi>b</mi><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">\\det \\begin{pmatrix} a &amp; b \\\\ c &amp; d \\end{pmatrix} = ad - bc</annotation></semantics></math></span></p></body></html>",
+        "plain" : "$$\\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc$$",
+        "tsv" : null,
+        "types" : [
+          "public.html",
+          "Apple HTML pasteboard type",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "org.chromium.web-custom-data"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "43c2f04b6d4ec324a003ac161bb146b590c87e910ffca56bc139450662c7db06",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "F12-balanced.png",
+    "previewSHA256" : "012986d144bd086cbe711ce8682c01f170190ddaf2be557af0d5d235bfdff762"
+  },
+  "contentSHA256" : "99f6706d610e14ec4d982aa2454315e3e12f296fea3b52f0f279de156333355f",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0}",
+  "costCents" : null,
+  "inputSHA256" : "b66eeff3a4d2be623c5ddda172247306593d51063577133362e070a381a0ef7c",
+  "mode" : "balanced",
+  "outputSHA256" : "9527088ecac4a0e1862f9370756090dc2a7e418fdb92107947e72385c041545d",
+  "rawHTML" : "<!DOCTYPE html>\n<html>\n <head>\n  <meta charset=\"utf-8\"/>\n </head>\n <body>\n  <p><math display=\"block\">\\det \\begin{pmatrix} a &amp; b \\\\ c &amp; d \\end{pmatrix} = ad - bc</math></p>\n </body>\n</html>\n",
+  "rawMarkdown" : "\n\n$$\\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc$$",
+  "rawOutputSHA256" : "0dd12b029fe60b0dfb09fe238a61fd048b054f8f7d448472cc4e4dba964c282f",
+  "runtimeSeconds" : 0.094095230102539062,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T16:08:52Z",
+  "status" : "complete",
+  "wallSeconds" : 3.7067179679870605
+}

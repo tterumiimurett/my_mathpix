@@ -1,0 +1,92 @@
+{
+  "artifactSHA256" : "bafa156a6c81158443b924153e97c9b549ea2aff58fb6935ae7fa0d787d95102",
+  "automaticRetryCount" : 0,
+  "canonicalMarkdown" : "The literal code `x**2` is not an equation; the fee is USD 5.\n\n$$x^2 + y^2 = z^2$$\n\n| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+  "caseID" : "M14",
+  "complexTableHTML" : "<table>\n   <tr>\n    <th>Class</th>\n    <th>Precision</th>\n    <th>Recall</th>\n   </tr>\n   <tr>\n    <td>A</td>\n    <td>0.90</td>\n    <td>0.88</td>\n   </tr>\n   <tr>\n    <td>B</td>\n    <td>0.85</td>\n    <td>0.92</td>\n   </tr>\n  </table>",
+  "configurationSHA256" : "9b97dcc673bf642e4d479dcaa9f7347bc7741b46cdc561136419dfa63a343077",
+  "consumption" : {
+    "clipboard" : {
+      "lark" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The literal code <code>x**2</code> is not an equation; the fee is USD 5.</p>\n<p>$$x^2 + y^2 = z^2$$</p>\n<table><thead><tr><th>Class</th><th>Precision</th><th>Recall</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></tbody></table></body></html>",
+        "plain" : "The literal code `x**2` is not an equation; the fee is USD 5.\n\n$$x^2 + y^2 = z^2$$\n\n| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.html",
+          "Apple HTML pasteboard type"
+        ]
+      },
+      "markdown" : {
+        "html" : null,
+        "plain" : "The literal code `x**2` is not an equation; the fee is USD 5.\n\n$$x^2 + y^2 = z^2$$\n\n| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+        "tsv" : null,
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "notion" : {
+        "html" : "<html><head><meta charset=\"utf-8\"></head><body><p>The literal code <code>x**2</code> is not an equation; the fee is USD 5.</p>\n<p><span class=\"katex\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><msup><mi>z</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2 + y^2 = z^2</annotation></semantics></math></span></p>\n<table><thead><tr><th>Class</th><th>Precision</th><th>Recall</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></tbody></table></body></html>",
+        "plain" : "The literal code `x**2` is not an equation; the fee is USD 5.\n\n$$x^2 + y^2 = z^2$$\n\n| <b>Class</b> | <b>Precision</b> | <b>Recall</b> |\n|--------------|------------------|---------------|\n| A            | 0.90             | 0.88          |\n| B            | 0.85             | 0.92          |",
+        "tsv" : null,
+        "types" : [
+          "org.chromium.web-custom-data",
+          "com.byterumi.mymathpix.notion-blocks-v3",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType"
+        ]
+      },
+      "richTable" : {
+        "html" : "<table><thead><tr><th>Class</th><th>Precision</th><th>Recall</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.88</td></tr><tr><td>B</td><td>0.85</td><td>0.92</td></tr></tbody></table>",
+        "plain" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "tsv" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "types" : [
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type",
+          "public.html",
+          "Apple HTML pasteboard type",
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.rtf",
+          "NeXT Rich Text Format v1.0 pasteboard type",
+          "public.utf16-external-plain-text",
+          "CorePasteboardFlavorType 0x75743136"
+        ]
+      },
+      "tsvTable" : {
+        "html" : null,
+        "plain" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "tsv" : "Class\tPrecision\tRecall\nA\t0.90\t0.88\nB\t0.85\t0.92",
+        "types" : [
+          "public.utf8-plain-text",
+          "NSStringPboardType",
+          "public.utf8-tab-separated-values-text",
+          "NeXT tabular text pasteboard type"
+        ]
+      }
+    },
+    "correctedPreviewContainsMarker" : true,
+    "correctedPreviewSHA256" : "4dffb77bc68f50cb3721e511303e14b40f3e1eeb6c6dd04331ef8b40afd39291",
+    "correctionMarkdownCopied" : true,
+    "destinationAcceptance" : "Not performed by batch runner; Notion inline math is a known deferred defect",
+    "isolatedModelEditPersisted" : true,
+    "previewPNG" : "M14-fast.png",
+    "previewSHA256" : "944674a844f20aa1bde952b9e23f2ef41a3b01668c78fb3b0bfa9af9b7883dbf"
+  },
+  "contentSHA256" : "ec5deb2121a11694d6dfc9d940c3686a61ac598b8c4a1cb3bf1f6e68d35288ff",
+  "corpusSHA256" : "fdc28d85aca668999c31d3c2bd18008ce7ea5c51c353334e9f0beb510dba6f0f",
+  "costBreakdownJSON" : "{\"final_cost_cents\":0.40000000000000002}",
+  "costCents" : null,
+  "inputSHA256" : "4397e637a3c04562e3cf79a09483a7818f896bc16eab24cd8ab07c39b52c4b95",
+  "mode" : "fast",
+  "outputSHA256" : "52a9f6dade0e8350cf403ed9305bdb7bc2eab5563304242cd176175a6fc77d0f",
+  "runtimeSeconds" : 1.114067554473877,
+  "schema" : 1,
+  "startedAt" : "2026-10-21T15:55:53Z",
+  "status" : "complete",
+  "wallSeconds" : 4.1547520160675049
+}
