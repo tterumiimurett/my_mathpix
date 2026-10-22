@@ -1,6 +1,6 @@
 # Preview-navigation candidate — source reviewed, sealed window check timed out
 
-New a05 is **not fully ready or accepted**. The reviewed source fix has public-seam GREEN evidence, while this exact sealed candidate's direct production-ID window/DOM check **timed out after120.01seconds**. Eight supporting flags plus strict UUID and local long-preview passed. No actual new-candidate GUI, capture, six-copy, live-service or TCC journey has been performed.06/08 stay **claimed**, the Mac is locked, and fourteen-day dogfood remains unstarted.
+Unchanged a05 remains **not ready or accepted**. After owner unlock, the direct production window/DOM flag timed out again at120.021seconds; a public T3 launch reached script READY but its reporter stayed launched/visibilityfalse and CUA App reads timed out. GUI startup was attempted, not successfully established. First-stage8 flags/strictUUID/Golden passes and the original120.01second timeout remain unchanged history.06/08 stay **claimed**, with no new capture/live/TCC action and fourteen-day dogfood unstarted.
 
 ## Exact artifact and source identities
 
@@ -22,11 +22,25 @@ The a05 direct production window/DOM flag ended at120.01seconds with `passed=fal
 
 ## Artifact-specific permission and desktop boundary
 
-[Read-only context probes](permission-probe-contexts.json) report **direct Mach-O no and LaunchServices no** for a05. [App stdout](launchservices-permission-stdout.txt) contains the no signal; [redirected App stderr](launchservices-permission-stderr.txt) is empty. The launcher returned0 with an `Unable to block on application / GetProcessPID` warning recorded separately; a short-lived App signal is not a successful GUI wait or acceptance. No permission request/capture/TCC change or normal GUI interaction occurred. These ambient preflights are not an explicit denial or revocation test.
+[Read-only context probes](permission-probe-contexts.json) report **direct Mach-O no and LaunchServices no** for a05. [App stdout](launchservices-permission-stdout.txt) contains the no signal; [redirected App stderr](launchservices-permission-stderr.txt) is empty. The launcher returned0 with an `Unable to block on application / GetProcessPID` warning recorded separately; a short-lived App signal is not a successful GUI wait or acceptance. No permission request/capture/TCC change or normal GUI interaction occurred during those earlier read-only probes. These ambient preflights are not an explicit denial or revocation test.
 
 Historical a9 had LaunchServices yes/direct no and an earlier GUI preflight yes; it is a **different artifact**. Its six actual T3 copies, physical shortcut/capture geometry and edit recovery remain only in [frozen a9 QA-regression history](../history/compact-preview-regression-a9b1c2df/README.md), not credited to a05. Current specific TCC attribution remains unproven. The old ea7 owner rejection and older pre-review archive remain separate and immutable.
 
 The parent owns the new exact candidate's real first-capture/preview/menu/Command-Tab/Dock/full-screen/recovery/live-fast/balanced journey and operator-sequence reconciliation. Prior a9 submit2/history2/main-visible/second-blocked observations are not newly attributed here. No06 first-four or08 acceptance criterion is closed; source review0/0 and provenance PASS do not close runtime gates.
+
+## Unlocked follow-up, safe backup and prior-stage archive
+
+The owner unlocked and clarified that they also dragged the fixture in the old a9 run. [Owner clarification](owner-clarification.json) adds operator context only: exact sequence/count remains unestablished, the old gate is not reclassified and no old a9 raw file is edited.
+
+The [second direct window run](window-after-unlock.json), PID72062, timed out after120.021seconds while unlocked. Its full [stdout](window-after-unlock.stdout) and [stderr](window-after-unlock.stderr) were retained and are empty. This differs from the first wrapper's lost partial stdout; neither record is overwritten. Cause is unknown, and the unlocked failure prevents treating lock as an established explanation for either timeout.
+
+The public T3 script reported READY for PID73130/run `bc01606f-63f9-43a7-a686-3ef8dc1f84e6` ([run/CDHash binding](ticket03-run-state.txt)), but its [report](ticket03-evidence.json) stayed `phase=launched` with all visibility flags false across parent observations. Parent's CUA full-App-path read timed out after5seconds and returned no usable UI tree. Those are reporter/CUA outcomes, **not proof of absolute window absence**. The [known fixture process sample](ticket03-process-sample.txt) showed the main thread in normal idle at sampling; it proves neither a deadlock nor a root cause. Parent stopped only that T3 fixture with its dedicated script. No capture, API/live request or TCC action occurred. The single fixer is diagnosing; no final cause or new build decision is established.
+
+[Scoped parent observations](unlocked-parent-observations.json) also preserve the read-only System Settings MyMathpix Toggle-on observation. That read took303seconds, a tool limitation; UI on does not establish the new binary's actual runtime authorization or capture. The original LS no/direct no files retain their own observation-time signals and are not rewritten from this UI observation.
+
+The complete App is now safely preserved at `/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixStartupQA-a05eefa3.app`. [Backup metadata](startup-qa-backup.json) records existing-auditor signature/executable/CDHash/full-bundle equality for source-before/backup/source-after: a05/0e220/7ac unchanged. An existing backup would be verified/reused without overwrite. The authorized read-only exact-path process probe found no App; an earlier sandbox enumeration error was only a tool limitation, not a running-process result. This task launched no App or flags and performed no build/sign/stop/UI/TCC/owner-data operation.
+
+Before appending these records, all19 prior current-root files and16 indexed records were frozen byte-for-byte in [a05 startup QA history](../history/a05-window-startup-qa-a05eefa3/README.md). Disposition is `qa-window-startup-under-investigation`, ownerRejected=false. Its original locked/no-GUI wording describes that earlier stage; this unlocked append supersedes current state without altering those bytes. All original16 indexed hashes, raw files, formal source bridge, builder and review reports stay unchanged; current index only adds7 raw files, backup metadata and the scoped parent synthesis. Prior a9/ea7/pre-review/Golden history remains untouched.
 
 ## Formal bridge and evidence scope
 
@@ -42,4 +56,4 @@ Keep a05 bundle/signature and all historical evidence frozen. The parent coordin
 
 Known limits remain: frozen ordinary Golden v2 both69/70 (formula30/30, table20/20, mixed19/20; M15 flattened blockquote), boundary fast9/10 and balanced8/10 (B06 currency/formula ambiguity, B08 balanced extra header/fallback). Provider reuse is inferred, not a universal cold-fast≤5s guarantee. Notion inline Native Paste remains deferred under07; source/clipboard compatibility does not guarantee real destination behavior. Menu→compact and explicit activation→workspace remain08 requirements. Personal MVP excludes backend/accounts/subscriptions, cloud history, document import, App Store release and local Marker fallback.
 
-The [candidate-bound14-day checklist](../../dogfood-checklist.md) stays entirely blank/start pending, and Public Product is not claimed. Resource/offline/limitations/checklist delivery evidence remains scoped supporting evidence. No new-candidate GUI/live or routine-replacement success is asserted.
+The [candidate-bound14-day checklist](../../dogfood-checklist.md) stays entirely blank/start pending, and Public Product is not claimed. Resource/offline/limitations/checklist delivery evidence remains scoped supporting evidence. No successful new-candidate GUI/live workflow or routine-replacement success is asserted; the unsuccessful unlocked GUI launch attempts are now recorded above.

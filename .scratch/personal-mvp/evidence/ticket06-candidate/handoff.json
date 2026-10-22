@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "phase": "new-candidate-source-bridged-window-timeout-runtime-pending",
+  "phase": "unchanged-a05-unlocked-window-startup-qa-under-investigation",
   "candidateArtifactSHA256": "a05eefa3cb53fa9d7ec73fa40ec51964876d7c028067fb33d49fddde15a08150",
   "candidateCDHash": "0e22025dae3b9b101e692333f7eb3b03b1763c99",
   "candidateBundleTreeSHA256": "7ac004932d4deb84318e522648815974797abd575933b9172b81ae677d3a20d2",
@@ -25,7 +25,7 @@
   },
   "allRequestedChecksPassed": false,
   "candidateReady": false,
-  "newActualGUI": "not-performed",
+  "newActualGUI": "launch-attempted-not-successfully-established; reporter phase launched/visiblefalse and CUA read timeout do not prove absolute window absence",
   "newActualCapture": "not-performed",
   "newActualSixClipboardClicks": "not-performed",
   "newLiveService": "not-performed",
@@ -38,8 +38,8 @@
     "denialOrRevocationClaimed": false,
     "launcherWarningPreserved": true
   },
-  "currentDesktop": "locked per parent context",
-  "exactAppProcesses": "absent after timeout and at final audit",
+  "currentDesktop": "unlocked by owner before current attempts; no new child desktop probe",
+  "exactAppProcesses": "Parent script stopped isolated T3; exact stable path absent at backup read-only probe",
   "historicalA9Evidence": "../history/compact-preview-regression-a9b1c2df/",
   "historicalA9PassesUsedForNewCandidate": false,
   "ticket06": "claimed",
@@ -52,5 +52,29 @@
     "a05-handoff-standards-review.md",
     "a05-handoff-spec-review.md"
   ],
-  "documentationTail": "Pure report/status import pending parent tail verification; builder677d/productcd826/audit7c and actual runtime gates unchanged."
+  "documentationTail": "Original409 handoff review remains historical; current backup/archive/unlocked evidence append awaits parent static verification, not a runtime or source pass.",
+  "windowAfterUnlock": {
+    "passed": false,
+    "timedOut": true,
+    "seconds": 120.021,
+    "report": "window-after-unlock.json",
+    "stdout": "window-after-unlock.stdout",
+    "stderr": "window-after-unlock.stderr",
+    "retainedStreams": "both fully retained and empty for this second run",
+    "cause": "unproven; cannot attribute previous or current timeout to lock"
+  },
+  "ticket03StartupAttempt": {
+    "pid": 73130,
+    "runID": "bc01606f-63f9-43a7-a686-3ef8dc1f84e6",
+    "reportPhase": "launched",
+    "reportedVisibility": false,
+    "CUARead": "fullAppPath5second timeout",
+    "absoluteWindowAbsenceProven": false,
+    "deadlockOrCauseProven": false,
+    "stoppedByParentScript": true
+  },
+  "unlockedObservations": "unlocked-parent-observations.json",
+  "backupRecord": "startup-qa-backup.json",
+  "priorA05Snapshot": "../history/a05-window-startup-qa-a05eefa3/README.md",
+  "currentInvestigation": "Single fixer diagnosing; no established root cause or new build decision"
 }
