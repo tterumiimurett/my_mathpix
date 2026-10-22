@@ -7,6 +7,8 @@ protocol ResultEditorWindowPresenting: AnyObject {
     var isMainWindowVisible: Bool { get }
     func registerMainWindow(_ window: NSWindow)
     func installMainWindowOpener(_ opener: @escaping () -> Void)
+    func registerResultEditorWindow(_ window: NSWindow)
+    func installResultEditorOpener(_ opener: @escaping () -> Void)
     func showMainWindow()
     func presentResultEditor(on displayID: CGDirectDisplayID)
 }
@@ -44,6 +46,8 @@ final class AppKitResultEditorWindowPresenter: ResultEditorWindowPresenting {
     private let activateApplication: @MainActor () -> Void
     private let presentationObservation: ((ResultEditorWindowPresentationObservation) -> Void)?
     private weak var mainWindow: NSWindow?
+    private weak var resultEditorWindow: NSWindow?
+    private var openResultEditor: (() -> Void)?
     private var openMainWindow: (() -> Void)?
     private var pendingPresentation: PendingPresentation?
     private var didRequestWindowOpen = false
@@ -85,6 +89,17 @@ final class AppKitResultEditorWindowPresenter: ResultEditorWindowPresenting {
         requestWindowIfNeeded()
     }
 
+    func registerResultEditorWindow(_ window: NSWindow) {
+        resultEditorWindow = window
+        didRequestWindowOpen = false
+        if let pendingPresentation { present(pendingPresentation) }
+    }
+
+    func installResultEditorOpener(_ opener: @escaping () -> Void) {
+        openResultEditor = opener
+        requestWindowIfNeeded()
+    }
+
     func showMainWindow() {
         present(.mainWindow)
     }
@@ -94,8 +109,17 @@ final class AppKitResultEditorWindowPresenter: ResultEditorWindowPresenting {
     }
 
     private func present(_ presentation: PendingPresentation) {
-        activateApplication()
-        guard let window = mainWindow else {
+        let target: NSWindow?
+        switch presentation {
+        case .mainWindow:
+            resultEditorWindow?.orderOut(nil)
+            activateApplication()
+            target = mainWindow
+        case .resultEditor:
+            mainWindow?.orderOut(nil)
+            target = resultEditorWindow
+        }
+        guard let window = target else {
             pendingPresentation = presentation
             requestWindowIfNeeded()
             return
@@ -107,13 +131,11 @@ final class AppKitResultEditorWindowPresenter: ResultEditorWindowPresenting {
             let screens = screenProvider()
             presentationScreen = screens.first(where: { $0.displayID == displayID }) ?? screens.first
             if let presentationScreen {
-                // A restored/default window may fill the display. Moving that
-                // frame down by the inset would put its bottom offscreen, so
-                // AppKit constrains it back against the menu bar on ordering.
-                // Make room for the inset before positioning the real window.
+                // Keep the compact result inside the captured display's usable area,
+                // leaving room for the top/left inset even on a small display.
                 var frame = window.frame
-                frame.size.width = min(frame.width, presentationScreen.visibleFrame.width - ResultEditorWindowPlacement.visibleAreaInset)
-                frame.size.height = min(frame.height, presentationScreen.visibleFrame.height - ResultEditorWindowPlacement.visibleAreaInset)
+                frame.size.width = min(470, presentationScreen.visibleFrame.width - 2 * ResultEditorWindowPlacement.visibleAreaInset)
+                frame.size.height = min(560, presentationScreen.visibleFrame.height - 2 * ResultEditorWindowPlacement.visibleAreaInset)
                 window.setFrame(frame, display: false)
                 window.setFrameTopLeftPoint(ResultEditorWindowPlacement.topLeft(
                     in: presentationScreen.visibleFrame
@@ -136,11 +158,15 @@ final class AppKitResultEditorWindowPresenter: ResultEditorWindowPresenting {
     }
 
     private func requestWindowIfNeeded() {
-        guard pendingPresentation != nil,
-              !didRequestWindowOpen,
-              let openMainWindow else { return }
+        guard let pendingPresentation, !didRequestWindowOpen else { return }
+        let opener: (() -> Void)?
+        switch pendingPresentation {
+        case .mainWindow: opener = openMainWindow
+        case .resultEditor: opener = openResultEditor
+        }
+        guard let opener else { return }
         didRequestWindowOpen = true
-        openMainWindow()
+        opener()
     }
 }
 

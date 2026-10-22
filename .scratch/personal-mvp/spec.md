@@ -2,6 +2,18 @@
 
 Status: ready-for-agent
 
+## Explicit window-role correction — 2026-10-22
+
+The owner rejected the oversized result in the assembled candidate and clarified the window roles. [Ticket 08](issues/08-window-roles-regression.md) is now the active correction before Ticket 06 can pass:
+
+- Capture completion shows the compact Ticket 03 Result Editor over the current App, at the captured display's visible-area top-left. Its default outer window frame, including the title bar, is 470 points wide and 560 points high, constrained to fit; Original and Edit use the existing internal scroll surface.
+- Clicking the MyMathpix menu-bar item opens that same compact result, with the same selected Snippet and edits. A normal sidebar/toolbar workspace is not substituted for it.
+- Explicit App activation such as Command-Tab, Dock/reopen or Open MyMathpix shows the large Recent History/settings/Usage workspace. Interacting with the nonactivating compact panel must not open that workspace.
+- Capture and recognition still keep content windows hidden until completion. High-Quality Retry in an already open compact result reports progress in its existing footer.
+- Production and seeded acceptance launches use the same actual compact surface and presenter. Isolated acceptance scene/restoration state does not change production layout or overwrite normal main-window geometry.
+
+This supersedes the interpretation that merely moving the large workspace to top-left fulfilled the compact-result design. Menu-bar behavior/visibility is explicitly in this correction's scope; its previous waiver is historical, and a real desktop click remains required before claiming it passed. Notion inline math remains deferred. Golden Set recognition/copy quality evidence is unchanged.
+
 ## Accepted baseline and remaining scope — 2026-10-21
 
 Tickets 01–04 are resolved by the owner, with their recorded evidence limits and acceptance exceptions. Their Answers and later owner directions supersede the original prototype description and superseded UI requirements below. Remaining delivery work is Ticket 05, followed by Ticket 06. Deferred follow-ups do not silently reopen accepted tickets or count as passed checks.

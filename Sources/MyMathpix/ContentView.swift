@@ -3,6 +3,7 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
+    var mainWindowSceneID = "main"
     @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var model: AppModel
     @Environment(\.openSettings) private var openSettings
@@ -50,7 +51,7 @@ struct ContentView: View {
             }
         }
         .alert("MyMathpix", isPresented: Binding(
-            get: { model.errorMessage != nil },
+            get: { model.errorMessage != nil && model.isMainWindowVisible },
             set: { if !$0 { model.errorMessage = nil } }
         )) {
             if model.needsCredentialRecovery {
@@ -64,7 +65,8 @@ struct ContentView: View {
             Text(model.errorMessage ?? "")
         }
         .onAppear {
-            model.installMainWindowOpener { openWindow(id: "main") }
+            model.installMainWindowOpener { openWindow(id: mainWindowSceneID) }
+            model.installSettingsOpener { openSettings() }
         }
     }
 
