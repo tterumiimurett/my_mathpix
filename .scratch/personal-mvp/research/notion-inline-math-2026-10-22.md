@@ -8,7 +8,7 @@ Research date: 2026-10-22. Scope: public documentation and public source code on
 buttons 2/3 work, and actual Notion Desktop 7.40.0 testing found a viable plain
 Markdown route for multiple independent paragraphs, inline formulas and a simple
 table. The HTML/table counterpart left formulas literal. Native table equation
-editing survived reload. See [multi-block experiment evidence](notion-inline-math-experiment/README.md#multi-block-destination-checks--2026-10-22).
+editing survived reload. See [multi-block experiment evidence](https://github.com/tterumiimurett/my_mathpix/blob/4afd0af649f02db298a1ce152c8c58453e48a0c1/.scratch/personal-mvp/research/notion-inline-math-experiment/README.md#multi-block-destination-checks--2026-10-22).
 This is version-bound destination evidence, superseding the initial absence of a
 reproduced direct-paste route; it is not a completed production fix.
 

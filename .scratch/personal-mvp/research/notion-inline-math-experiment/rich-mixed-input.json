@@ -1,4 +1,0 @@
-{
-  "markdown": "RICH MIX BEGIN\n\n表格前：$x^2$ 与 $\\frac{a}{b}$。\n\n| <b>Name</b> | Formula | Literal |\n| --- | --- | --- |\n| Energy α © | $E=mc^2$ | `**literal** $not_math$` |\n| Root | $\\sqrt{x+1}$ | 价格 $5 and $10 |\n\n$$\ny=x+1\n$$\n\n表格后：$z_0$。RICH MIX END",
-  "complexTableHTML": "<table><caption>RICH merged caption α</caption><tr><th colspan=\"2\">Group</th><th>Formula</th></tr><tr><td rowspan=\"2\">Keep **literal** `code` $5 and $10</td><td>Y</td><td><math>u^2+v^2</math></td></tr><tr><td>Z</td><td><math>\\frac{1}{2}</math></td></tr></table>"
-}

@@ -1,4 +1,0 @@
-Ticket 03 self-test failed:
-- Notion copies complete mixed content with native equations, rich tables, and lossless source fallback
-- Notion mixed pasteboard has all seven native inline equations, including Complex Table Output, without currency or code equations
-- Notion rich mixed copy preserves literal cells, caption, span HTML, projected columns and display math while suppressing active or nested MathML

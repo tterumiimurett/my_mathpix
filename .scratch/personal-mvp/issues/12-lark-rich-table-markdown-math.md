@@ -40,7 +40,7 @@ Lark format with plain Markdown or regress the accepted Notion/Markdown paths.
   but neither dollars nor isolated span metadata suffice. A fully self-contained
   native `docx/record` payload through Chromium custom MIME successfully pastes
   merged header, paragraph/cell equations and cleaned price text together.
-- Working prototype and candidate details: `../research/lark-rich-math-experiment/README.md`.
+- Working prototype and candidate details: [archived experiment record](https://github.com/tterumiimurett/my_mathpix/blob/4afd0af649f02db298a1ce152c8c58453e48a0c1/.scratch/personal-mvp/research/lark-rich-math-experiment/README.md).
   Production code and all focused/basic regressions now pass. Release candidate
   SHA256 `d1a143db9dd4a6554892e2111dd50bb1e5feb739a1c6f5188b96a2dd44fce544`.
 - Installation / normal Copy Lark acceptance is pending device unlock; desktop
@@ -51,7 +51,7 @@ Lark format with plain Markdown or regress the accepted Notion/Markdown paths.
   `dist/backups/MyMathpix-before-lark-native-abb2215a.zip`; installed d1a143db
   at `/Applications/MyMathpix.app`, strict signature and executable hash verified.
   Selected existing 17:40 RICH record and used actual Copy Lark button; bounded
-  capture `../research/notion-inline-math-experiment/app-lark-native-records.json`
+  capture [archived synthetic capture](https://github.com/tterumiimurett/my_mathpix/blob/4afd0af649f02db298a1ce152c8c58453e48a0c1/.scratch/personal-mvp/research/notion-inline-math-experiment/app-lark-native-records.json)
   contains Chromium docx/record, HTML and Markdown, without Notion custom data.
   Feishu coordinate clicks still fail noWindowsAvailable; keyboard paste did not
   insert content. Asked owner to paste once in the authorized private page.

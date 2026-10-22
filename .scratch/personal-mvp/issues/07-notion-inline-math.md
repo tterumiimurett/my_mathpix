@@ -98,7 +98,7 @@ simple-table / paragraph blocks with rendered equations, including editable tabl
 math that survived reload. The HTML/table counterpart retained all formulas as
 literal source. HTML-only multiline paste became one block and does not count
 as a true multi-block pass. Code/currency checks and remaining fidelity limits
-are recorded in [experiment evidence](../research/notion-inline-math-experiment/README.md#multi-block-destination-checks--2026-10-22).
+are recorded in [experiment evidence](https://github.com/tterumiimurett/my_mathpix/blob/4afd0af649f02db298a1ce152c8c58453e48a0c1/.scratch/personal-mvp/research/notion-inline-math-experiment/README.md#multi-block-destination-checks--2026-10-22).
 The production adapter is unchanged; this does not resolve Issue 07 or establish
 the precise cause of the historical placeholder defect. Ticket 09 remains
 scheduled after this issue as requested by the owner.
@@ -136,8 +136,8 @@ on this target version, not guaranteed across all Notion versions.
 
 Validation: focused Ticket 03 regression passed; basic 48-check suite plus
 Ticket 04 workflow checks passed; release candidate built and signature verified.
-See [destination evidence and limitations](../research/notion-inline-math-experiment/destination-verification.md)
-and [full research sequence](../research/notion-inline-math-experiment/README.md).
+See [destination evidence and limitations](https://github.com/tterumiimurett/my_mathpix/blob/4afd0af649f02db298a1ce152c8c58453e48a0c1/.scratch/personal-mvp/research/notion-inline-math-experiment/destination-verification.md)
+and [full research sequence](https://github.com/tterumiimurett/my_mathpix/blob/4afd0af649f02db298a1ce152c8c58453e48a0c1/.scratch/personal-mvp/research/notion-inline-math-experiment/README.md).
 
 Candidate: `dist/MyMathpix.app`. It retains the normal application name,
 bundle identifier and sandbox entitlements. It has not replaced the installed
