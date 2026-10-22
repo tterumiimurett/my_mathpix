@@ -48,7 +48,7 @@
     },
     {
       "file": "owner-v1-acceptance.md",
-      "sha256": "6f3cc441d6ebeb12bab4fe70ef44426172c6cd8b838806fe1018a4933b7efd82",
+      "sha256": "c35968fbb209cbc667143f698bea6e1ae37f7a551589020f06e711bd5753e443",
       "source": "Trusted owner acceptance quoted in parent closeout task",
       "scope": "Owner release/merge decision; individual unverified ACs,07 and Dogfood/Public Product remain explicit."
     }
