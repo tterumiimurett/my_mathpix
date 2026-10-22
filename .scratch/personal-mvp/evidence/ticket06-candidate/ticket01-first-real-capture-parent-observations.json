@@ -1,0 +1,29 @@
+{
+  "actualScreenCaptureKitPNG": "1764x996 pixels from882x498 points at2x",
+  "candidateExecutableSha256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+  "canonicalFixtureSourceVisibleInCopyRows": true,
+  "limitations": [
+    "Two submissions need operator-action clarification; not yet attributed to an application defect",
+    "Cua drag may affect activation; cause unproven",
+    "Authoritative T1 verifier is not passing",
+    "No live service call or destination paste asserted",
+    "Menu click and CmdTab pending"
+  ],
+  "mainWindowVisibleAtRecognitionStart": true,
+  "mockFixtureValidationPassed": true,
+  "observedAt": "2026-10-22T03:46:42.452468+00:00",
+  "originalPNGNotPersistedByParent": true,
+  "permissionGrantedInApp": true,
+  "physicalGlobalShortcutConfirmed": true,
+  "previewObserved": "Blank white preview; AX offline-preview HTML content has no descendants, persisting across observations",
+  "processID": 50276,
+  "resultPanelAXIdentifier": "com.byterumi.mymathpix.compact-result",
+  "resultPanelScreenshotPixels": [
+    940,
+    1120
+  ],
+  "runID": "e51e074d-88df-42b7-8a13-41218cb1f150",
+  "secondCaptureBlocked": false,
+  "submissionCount": 2,
+  "threeCopyRowsObserved": true
+}
