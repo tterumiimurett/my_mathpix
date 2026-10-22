@@ -1,5 +1,7 @@
 # MyMathpix
 
+<img src="Config/AppIcon.png" alt="MyMathpix app icon" width="128">
+
 A personal-first native macOS snippet recognizer for formulas, tables, and mixed technical content. It captures a selected screen region, sends only that PNG to Datalab's hosted Convert API, and returns editable Markdown/LaTeX with an offline preview.
 
 ## Current scope
@@ -18,7 +20,7 @@ Personal MVP V1 and the v0.1.1 Markdown / Lark / Notion paste update were accept
 
 ## Download
 
-[Download MyMathpix v0.1.1 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.1/MyMathpix-v0.1.1.zip). Requires macOS 15 or later.
+[Download MyMathpix v0.1.2 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.2/MyMathpix-v0.1.2.zip). Requires macOS 15 or later.
 
 1. Unzip the download and move `MyMathpix.app` to Applications.
 2. Open MyMathpix and enter your own Datalab API token in Settings.
