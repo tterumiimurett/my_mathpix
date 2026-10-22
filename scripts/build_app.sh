@@ -61,6 +61,7 @@ for resource in "${required_resources[@]}"; do
     fi
 done
 cp -R "$resource_bundle" "$contents_dir/Resources/"
+cp "$repo_dir/Config/AppIcon.icns" "$contents_dir/Resources/AppIcon.icns"
 
 codesign --force --deep --sign - \
     --entitlements "$repo_dir/Config/MyMathpix.entitlements" \

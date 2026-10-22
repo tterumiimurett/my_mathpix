@@ -37,6 +37,8 @@ open ./dist/MyMathpix.app
 
 The current machine needs Swift 6.2 or later. The first capture requires macOS Screen Recording permission. Enter a Datalab API token in Settings; it is stored in a private `0600` file inside the App Sandbox container and never written to preferences, history, or logs. MyMathpix does not read, migrate, write, or delete Keychain items.
 
+The App icon source is `Config/AppIcon.png`. After changing it, run `./scripts/build_icon.sh` to regenerate the bundled `Config/AppIcon.icns`.
+
 ## Self-test
 
 ```sh
