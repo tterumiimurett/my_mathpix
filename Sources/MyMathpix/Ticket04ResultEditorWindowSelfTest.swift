@@ -74,14 +74,26 @@ enum Ticket04ResultEditorWindowSelfTest {
             }
             // Observe settled AppKit/SwiftUI state, not a presentation method call.
             try? await Task.sleep(for: .milliseconds(400))
-            let frame = window.frame
+            // The capture result is a compact surface, not the explicit main workspace.
+            // Inspect settled visible AppKit windows rather than a presenter method call.
+            let resultWindows = NSApp.windows.filter { $0.isVisible && $0.frame.width >= 200 }
+            let resultWindow = resultWindows.first
+            let compact = resultWindows.count == 1
+                && resultWindow.map { $0.frame.width <= 480 && $0.frame.height <= min(720, screen.visibleFrame.height) } == true
+            let floating = resultWindow.map { $0.level.rawValue >= NSWindow.Level.floating.rawValue } == true
+            guard compact, floating, !window.isVisible else {
+                print("TICKET04_COMPACT_OBSERVATION visible-windows=\(resultWindows.count) main-visible=\(window.isVisible) width=\(resultWindow?.frame.width ?? 0) height=\(resultWindow?.frame.height ?? 0) floating=\(floating)")
+                finish(false, scenario: "compact-result-role")
+                return
+            }
+            let frame = resultWindow!.frame
             let visible = screen.visibleFrame
             let placed = abs(frame.minX - visible.minX - 16) <= 1
                 && abs(frame.maxY - visible.maxY + 16) <= 1
-            let onDisplay = window.screen?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber
+            let onDisplay = resultWindow!.screen?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber
             guard !model.isProcessing,
                   model.selectedItem?.status == .complete,
-                  window.isVisible, !window.isMiniaturized,
+                  resultWindow!.isVisible, !resultWindow!.isMiniaturized,
                   onDisplay == number, placed else {
                 print("TICKET04_WINDOW_OBSERVATION visible=\(window.isVisible) minimized=\(window.isMiniaturized) display-matches=\(onDisplay == number) inset-matches=\(placed)")
                 print("TICKET04_WINDOW_GEOMETRY x=\(frame.minX) top=\(frame.maxY) width=\(frame.width) height=\(frame.height) expected-x=\(visible.minX + 16) expected-top=\(visible.maxY - 16)")
