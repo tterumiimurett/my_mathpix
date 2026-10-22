@@ -1,147 +1,19 @@
 {
-  "schema": 2,
-  "sealedAt": "2026-10-21T16:55:48.803567+00:00",
-  "builderSourceRevision": "b667026f27e3e01d6d56b838480ac62aafb0b3b9",
-  "candidate": {
-    "appPath": "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
-    "bundleIdentifier": "com.byterumi.mymathpix",
-    "hostArchitecture": "arm64",
-    "hostMacOS": "15.7.3",
-    "version": "0.1.0",
-    "build": "1",
-    "artifactSHA256": "ea7ad5f183af7c18fa72fc6a20b59f851662f874e2c0a32912632de363b869dd",
-    "bundleTreeSHA256": "068a8f2aa3b409694154e8510ada1ac136a298120236849c9ca495c5a5e159fd",
-    "cdhash": "d778b73b6a491c382cb56abeab19c2fcd7e96501",
-    "sandbox": true,
-    "outboundNetwork": true,
-    "userSelectedExport": true,
-    "resources": {
-      "katex.min.css": {
-        "bytes": 23112,
-        "sha256": "84b4c230594ac5d3603d7c969524b160dd329099b1c6af58b7730d7dd44659e0"
-      },
-      "katex.min.js": {
-        "bytes": 276757,
-        "sha256": "28b0123ad292db1f29531595cc20e69562788e1b8b6f4bedae06a46c3ea00c3a"
-      },
-      "KATEX-LICENSE.txt": {
-        "bytes": 1107,
-        "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
-      },
-      "fonts/KaTeX_Main-Regular.woff2": {
-        "bytes": 26272,
-        "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
-      }
-    },
-    "signatureVerified": true
-  },
-  "supportingChecksPassed": true,
-  "sameCandidateUnchanged": true,
-  "qualityPipelineInputsUnchanged": false,
-  "ordinaryCoreInputsUnchanged": true,
-  "ordinaryCoreFiles": 159,
-  "reviewedGoldenRunnerRefactor": [
-    {
-      "path": "Sources/MyMathpix/GoldenSetRunner.swift",
-      "previousSHA256": "3ebc2b386f987f594b34aef02ec91830d369be2baf7dde7f2faaebcf0113980b",
-      "sha256": "150517e9ab4a650ccbdf1d06368960273d1465339aa12ef1ef8611b04db89185",
-      "reviewReason": "Bounded Golden runner attempt-record/outcome types and navigation completion cleanup; public result schema/raw fields retained."
-    }
-  ],
-  "acceptanceHostDifferences": 9,
-  "evidenceFiles": {
-    "desktop-gate.json": "d55a78d71f033b471282c0ada3497db4a747460dd9d3f80b998fa8c5e82718b2",
-    "immutability-after-preview.json": "f1dfd73ac02721c214a0760e694f600f0d0b757ab8aeb77cff227bfd585c70f4",
-    "launch-contract.json": "24c0913b1ac9f4151e4b299e0baf694b0661ac151874acefea2ec4809c506af1",
-    "permission-probe.json": "bd73580cde298cd2e82324acf65616845a4a56e715c4ee305fbb171d799b80d2",
-    "preview-self-test.json": "f63abe5f5844c6f81685bd022625ca975e1caabddc6e86778b4078d4fbd28154",
-    "source-bridge.json": "8141a41c5541a7af6664c86f68d8c6cba7bda03131c73e59d6a9318e5a1270fd",
-    "supporting-checks.json": "be67de705ab33aeaa7278f27dbfdb1a09394ff0c9bf23089792cbc83a6e366c8"
-  },
-  "preflightReview": {
-    "path": "../final-review-preflight.md",
-    "sha256": "7ec48a65a56b5819b010fba6385a217f5b02e5e06058b4c67318646c9a31e5cc",
-    "standards": "3 fixed, 0 open",
-    "spec": "2 actual capture/live external acceptance groups open"
-  },
-  "disposableSessions": {
-    "live": {
-      "runID": "f49432fb-2568-4b1b-9d3f-6fa57be88cba",
-      "service": "live",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/f49432fb-2568-4b1b-9d3f-6fa57be88cba",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/f49432fb-2568-4b1b-9d3f-6fa57be88cba/session.json",
-      "launchCommand": [
-        "open",
-        "-n",
-        "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
-        "--args",
-        "--ticket06-acceptance=f49432fb-2568-4b1b-9d3f-6fa57be88cba",
-        "--ticket06-service=live"
-      ]
-    },
-    "failure": {
-      "runID": "860e388d-df2f-4fa1-86bd-5be30ef0a59a",
-      "service": "failure",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/860e388d-df2f-4fa1-86bd-5be30ef0a59a",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/860e388d-df2f-4fa1-86bd-5be30ef0a59a/session.json",
-      "launchCommand": [
-        "open",
-        "-n",
-        "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
-        "--args",
-        "--ticket06-acceptance=860e388d-df2f-4fa1-86bd-5be30ef0a59a",
-        "--ticket06-service=failure"
-      ]
-    },
-    "timeout": {
-      "runID": "06e7cf6d-65d7-42b0-a166-b04177661801",
-      "service": "timeout",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/06e7cf6d-65d7-42b0-a166-b04177661801",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/06e7cf6d-65d7-42b0-a166-b04177661801/session.json",
-      "launchCommand": [
-        "open",
-        "-n",
-        "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
-        "--args",
-        "--ticket06-acceptance=06e7cf6d-65d7-42b0-a166-b04177661801",
-        "--ticket06-service=timeout"
-      ]
-    },
-    "malformed": {
-      "runID": "0326ba1f-0b04-4be8-a2a9-9fce5a433a05",
-      "service": "malformed",
-      "root": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/0326ba1f-0b04-4be8-a2a9-9fce5a433a05",
-      "sessionReport": "/Users/bytedance/Library/Containers/com.byterumi.mymathpix/Data/Library/Application Support/MyMathpix/Ticket06Acceptance/0326ba1f-0b04-4be8-a2a9-9fce5a433a05/session.json",
-      "launchCommand": [
-        "open",
-        "-n",
-        "/Users/bytedance/.codex/worktrees/personal-mvp-integration/my_mathpix/dist/MyMathpix.app",
-        "--args",
-        "--ticket06-acceptance=0326ba1f-0b04-4be8-a2a9-9fce5a433a05",
-        "--ticket06-service=malformed"
-      ]
-    }
-  },
-  "actualPrimaryJourney": "pending",
-  "actualLiveJourney": "pending",
-  "destinationPaste": "not-asserted",
-  "dogfoodGate": "not-started",
-  "screenRecordingPreflight": "new exact-candidate parent probe: ungranted; denied/revoked reason not inferred",
-  "humanUnlock": "parent read-only desktop inventory confirms locked; manual unlock required",
-  "freeze": "No source/build/sign/bundle changes after seal without parent-coordinated diagnosis and reseal.",
-  "knownLimits": [
-    "Notion inline destination equations deferred (Ticket07).",
-    "Menu-bar visibility deferred.",
-    "M15 blockquote flattened in both modes.",
-    "B06 escaped currency/local formula ambiguity in both modes.",
-    "B08 balanced extra-header/fallback table defect.",
-    "Golden v2 provider reuse inferred; no universal cold fast<5s guarantee.",
-    "No universal Native Paste or Public Product/dogfood pass."
-  ],
-  "supersededCandidate": {
-    "evidence": "pre-review/",
-    "fullBundleBackup": "/private/tmp/my_mathpix-remaining-context/artifacts/MyMathpixCandidatePreReview.app",
-    "artifactSHA256": "49e4b18832715738628b22d0f94fcdb3096067f8e88a4ba391e651fb99510b65",
-    "useForCurrentAcceptance": false
-  }
+  "schema": 3,
+  "phase": "source-bridge-and-history-change-awaiting-parent-review",
+  "builderSourceRevision": "01dffed1f9cd653c8c296c3dc6083863c7d04f1f",
+  "candidateArtifactSHA256": "a9b1c2dfd87173b64a8f8159cdb7ec2c3faab792c553419570ec119c4be78faf",
+  "candidateCDHash": "2015e6d6467b344c9af0d4ea6cd4895fba9d8d08",
+  "candidateIdentitySource": "Merger build-stage-provenance; not reassigned from rejected candidate.",
+  "sourceReview": "Parent and independent review passed window-role production source01dffed/tree1a52cdc.",
+  "sourceBridgeImplementationReview": "pending",
+  "actualWindowRoleJourney": "parent-in-progress; no full acceptance claimed",
+  "actualCaptureJourney": "pending-action-time-permission-and-parent-observation",
+  "actualLiveRecoveryJourney": "pending-parent-observation",
+  "previousCandidateDisposition": "owner-rejected-window-roles",
+  "previousCandidateEvidence": "../history/gui-rejected-ea7ad5f1/",
+  "historicalLockedOrUngrantStateUsedAsCurrent": false,
+  "ticket06": "claimed",
+  "ticket08": "claimed",
+  "dogfoodGate": "not-started"
 }
