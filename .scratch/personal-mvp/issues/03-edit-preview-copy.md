@@ -57,7 +57,7 @@ The owner confirmed a compact macOS result window after a Grill Me discussion in
 
 Preserve the prior fixes: fixed-size aspect-fit original image, no duplicated fallback table when editable GFM exists, no synthetic result heading or formula-label prose in the acceptance fixture, and distinct rich-table versus TSV clipboard representations.
 
-The reusable internal surface is `ResultEditorView(item:)` with the existing `AppModel` environment object and record identity. Ticket 04 owns hosting the compact result window, its dimensions, and automatic placement at the top-left of the capture's display. Ticket 03's isolated signed acceptance launch can host the surface at 470 × 700 points without altering ordinary App window behavior.
+The reusable internal surface is `ResultEditorView(item:)` with the existing `AppModel` environment object and record identity. Ticket 04 originally owned window hosting and captured-display placement. Historically, `8e27ef0` configured a 470 × 700-point **default size for the isolated Ticket 03 launch only**; that was not a verified current production outer frame. [Ticket 08](08-window-roles-regression.md) supersedes that separation: production and Ticket 03 fixture results now share the same floating panel with a 470 × 560-point outer frame including title bar, while explicit App activation opens the large workspace. Current candidate observations and still-open real desktop gates are recorded in [the handoff](../evidence/ticket06-candidate/handoff.md); historical acceptance evidence is unchanged.
 
 The implementation and actual signed-App UI verification completed on 2026-09-05; see Answer and the linked evidence.
 
