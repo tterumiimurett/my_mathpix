@@ -8,6 +8,8 @@
 
 - 2026-10-22: Owner rejected the assembled candidate's oversized result. This explicit correction supersedes the previous assumption that positioning the large workspace at top-left satisfied capture presentation. Work starts from integration `22bf0fd`; Ticket 06 actual acceptance remains open. Tests use the existing signed-App window/mock-recognition public seam, with in-memory history and isolated defaults. No owner data, credential, remote service, or delivered App is modified.
 
+- 2026-10-22: Addressed the independent Standards review's nonblocking P3 duplicated wait by extracting one test-private helper, with identical poll/settlement timings. The original signed-window test and diff check remained green; no production change. See the GREEN evidence follow-up.
+
 ## Acceptance criteria
 
 - [ ] Capture and recognition keep App windows hidden; completion shows a compact floating result at the captured display's top-left, with the main workspace hidden.

@@ -74,12 +74,7 @@ enum Ticket04ResultEditorWindowSelfTest {
                 finish(false, scenario: "hidden-during-recognition")
                 return
             }
-            for _ in 0..<100 {
-                if !model.isProcessing { break }
-                try? await Task.sleep(for: .milliseconds(20))
-            }
-            // Observe settled AppKit/SwiftUI state, not a presentation method call.
-            try? await Task.sleep(for: .milliseconds(400))
+            await waitForRecognitionAndWindowSettlement(model: model)
             // The capture result is a compact surface, not the explicit main workspace.
             // Inspect settled visible AppKit windows rather than a presenter method call.
             let resultWindows = NSApp.windows.filter { $0.isVisible && $0.frame.width >= 200 }
@@ -141,11 +136,7 @@ enum Ticket04ResultEditorWindowSelfTest {
                 selectedDisplayWasSecondary: false),
             displayID: CGMainDisplayID()
         ))
-        for _ in 0..<100 {
-            if !model.isProcessing { break }
-            try? await Task.sleep(for: .milliseconds(20))
-        }
-        try? await Task.sleep(for: .milliseconds(400))
+        await waitForRecognitionAndWindowSettlement(model: model)
         let failedResult = NSApp.windows.first {
             $0.identifier?.rawValue == "com.byterumi.mymathpix.compact-result"
         }
@@ -158,6 +149,15 @@ enum Ticket04ResultEditorWindowSelfTest {
             return
         }
         finish(true, scenario: "all-connected-displays")
+    }
+
+    private static func waitForRecognitionAndWindowSettlement(model: AppModel) async {
+        for _ in 0..<100 {
+            if !model.isProcessing { break }
+            try? await Task.sleep(for: .milliseconds(20))
+        }
+        // Observe settled AppKit/SwiftUI state, not a presentation method call.
+        try? await Task.sleep(for: .milliseconds(400))
     }
 
     private static func finish(_ passed: Bool, scenario: String) {
