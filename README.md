@@ -23,8 +23,9 @@ Personal MVP V1 and the v0.1.1 Markdown / Lark / Notion paste update were accept
 [Download MyMathpix v0.1.2 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.2/MyMathpix-v0.1.2.zip). Requires macOS 15 or later.
 
 1. Unzip the download and move `MyMathpix.app` to Applications.
-2. Open MyMathpix and enter your own Datalab API token in Settings.
-3. Allow Screen Recording when prompted, then use `Control-Command-M` to select a Snippet.
+2. Sign up or sign in on the [Datalab website](https://www.datalab.to/), then open the [API keys page](https://www.datalab.to/app/keys) to create and copy your own API key. MyMathpix requires this key to recognize Snippets.
+3. Open MyMathpix → Settings → Datalab, paste the key into **API token**, then click **Test & Save**.
+4. Allow Screen Recording when prompted, then use `Control-Command-M` to select a Snippet.
 
 This personal MVP is ad-hoc signed and has not been notarized by Apple. If macOS blocks the first launch, use System Settings → Privacy & Security → Open Anyway after verifying the download source. Release assets include a SHA-256 checksum. This GitHub release does not complete the later Public Product or App Store release gates.
 
