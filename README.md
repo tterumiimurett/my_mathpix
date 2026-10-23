@@ -8,7 +8,7 @@ A personal-first native macOS snippet recognizer for formulas, tables, and mixed
 
 - Global `Control-Command-M` screen capture
 - Datalab `fast` recognition and `balanced` high-quality retry
-- Compact floating result after capture or a menu-bar click, with offline KaTeX preview and independent Original/Edit actions
+- Compact floating result after capture or a menu-bar click, with offline KaTeX preview and independent Original/Edit actions; click outside to hide it and use the menu bar to reopen the same result
 - A separate large history/settings/usage workspace on Command-Tab, Dock/reopen or Open MyMathpix
 - Whole-result Markdown / Lark / Notion copy actions; Lark and Notion include native editable equations and rich tables
 - Local history containing the 20 most recent snippets
@@ -20,7 +20,7 @@ Personal MVP V1 and the v0.1.1 Markdown / Lark / Notion paste update were accept
 
 ## Download
 
-[Download MyMathpix v0.1.2 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.2/MyMathpix-v0.1.2.zip). Requires macOS 15 or later.
+[Download MyMathpix v0.1.3 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.3/MyMathpix-v0.1.3.zip). Requires macOS 15 or later.
 
 1. Unzip the download and move `MyMathpix.app` to Applications.
 2. Sign up or sign in on the [Datalab website](https://www.datalab.to/), then open the [API keys page](https://www.datalab.to/app/keys) to create and copy your own API key. MyMathpix requires this key to recognize Snippets.

@@ -155,6 +155,28 @@ enum Ticket04ResultEditorWindowSelfTest {
                 finish(false, scenario: "result-command-role")
                 return
             }
+            for _ in 0..<2 {
+                postClick(to: resultWindow!)
+                try? await Task.sleep(for: .milliseconds(150))
+                guard resultWindow!.isVisible else {
+                    finish(false, scenario: "inside-click-dismissed-result")
+                    return
+                }
+                postClick(to: window)
+                try? await Task.sleep(for: .milliseconds(150))
+                guard !resultWindow!.isVisible, !window.isVisible,
+                      model.selectedID == selectedBeforeMenu else {
+                    finish(false, scenario: "outside-click-result-dismissal")
+                    return
+                }
+                model.showResultEditor()
+                try? await Task.sleep(for: .milliseconds(150))
+                guard resultWindow!.isVisible, model.selectedID == selectedBeforeMenu else {
+                    finish(false, scenario: "reopen-after-outside-click")
+                    return
+                }
+            }
+            print("TICKET04_OUTSIDE_CLICK_OK inside-retained=true outside-hidden=true reopen-preserved=true")
         }
         // A recoverable recognition error must attach to the compact surface,
         // without bringing its hidden history/settings workspace back on screen.
@@ -181,6 +203,18 @@ enum Ticket04ResultEditorWindowSelfTest {
             return
         }
         finish(true, scenario: "all-connected-displays")
+    }
+
+    private static func postClick(to window: NSWindow) {
+        // Exercise the real local event dispatch without activating controls or
+        // requiring input access outside this disposable test application.
+        if let event = NSEvent.mouseEvent(with: .otherMouseDown,
+            location: NSPoint(x: 10, y: 10), modifierFlags: [],
+            timestamp: ProcessInfo.processInfo.systemUptime,
+            windowNumber: window.windowNumber, context: nil,
+            eventNumber: 0, clickCount: 1, pressure: 0) {
+            NSApp.postEvent(event, atStart: false)
+        }
     }
 
     private static func findWebView(in view: NSView) -> WKWebView? {

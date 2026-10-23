@@ -105,6 +105,9 @@ final class AppWindowShell: NSObject, NSApplicationDelegate {
 }
 
 private final class CompactResultPanel: NSPanel {
+    private var localClickMonitor: Any?
+    private var globalClickMonitor: Any?
+
     init() {
         super.init(contentRect: NSRect(x: 0, y: 0, width: 470, height: 512),
             styleMask: [.titled, .closable, .resizable, .nonactivatingPanel],
@@ -122,6 +125,55 @@ private final class CompactResultPanel: NSPanel {
     }
     override var canBecomeKey: Bool { true }
     override var canBecomeMain: Bool { false }
+
+    override func makeKeyAndOrderFront(_ sender: Any?) {
+        super.makeKeyAndOrderFront(sender)
+        startClickMonitoring()
+    }
+
+    override func orderOut(_ sender: Any?) {
+        stopClickMonitoring()
+        super.orderOut(sender)
+    }
+
+    override func close() {
+        stopClickMonitoring()
+        super.close()
+    }
+
+    private func startClickMonitoring() {
+        guard localClickMonitor == nil, globalClickMonitor == nil else { return }
+        let clicks: NSEvent.EventTypeMask = [.leftMouseDown, .rightMouseDown, .otherMouseDown]
+        // The panel does not activate MyMathpix, so application deactivation alone
+        // cannot detect a click back into the application that was already active.
+        globalClickMonitor = NSEvent.addGlobalMonitorForEvents(matching: clicks) { [weak self] _ in
+            MainActor.assumeIsolated {
+                guard let self, self.isVisible, self.attachedSheet == nil,
+                      !self.frame.contains(NSEvent.mouseLocation) else { return }
+                self.orderOut(nil)
+            }
+        }
+        localClickMonitor = NSEvent.addLocalMonitorForEvents(matching: clicks) { [weak self] event in
+            MainActor.assumeIsolated {
+                guard let self, self.isVisible, self.attachedSheet == nil else { return }
+                var target = event.window
+                while let window = target {
+                    if window === self { return }
+                    target = window.parent ?? window.sheetParent
+                }
+                self.orderOut(nil)
+            }
+            // Let the clicked control or other window receive the original click.
+            return event
+        }
+    }
+
+    private func stopClickMonitoring() {
+        if let localClickMonitor { NSEvent.removeMonitor(localClickMonitor) }
+        if let globalClickMonitor { NSEvent.removeMonitor(globalClickMonitor) }
+        localClickMonitor = nil
+        globalClickMonitor = nil
+    }
 }
 
 private struct CompactResultContent: View {

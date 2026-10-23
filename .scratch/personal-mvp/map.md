@@ -79,3 +79,13 @@ Latest disposition2026-10-22: owner accepted V1 and authorized merge to main. Ti
 2026-10-22 final acceptance: owner tested Markdown, Notion and Lark in the
 installed d1a143db candidate and accepted all three. Issue 12 is resolved.
 Issue 09 (caret position during editing) remains open. GitHub update authorized.
+
+2026-10-23 — [13 — Outside-click dismissal](issues/13-dismiss-compact-result-on-outside-click.md)
+is implemented and installed locally (build 5). Signed-window and basic checks
+pass. Physical cross-application click acceptance remains pending; no new
+GitHub App release has been published.
+
+2026-10-23 final acceptance — Owner accepted the installed outside-click
+behavior and requested GitHub publication. Issue 13 is resolved; v0.1.3 carries
+this change. Issue 09 remains open. Earlier pending-acceptance notes above are
+historical checkpoints.
