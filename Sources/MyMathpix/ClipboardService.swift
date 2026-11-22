@@ -4,6 +4,7 @@ import Foundation
 enum CopyFormat: String, CaseIterable, Identifiable {
     case formulaOutput
     case markdown
+    case plainText
     case combinedOutput
     case tsvTable
     case richTable
@@ -11,7 +12,7 @@ enum CopyFormat: String, CaseIterable, Identifiable {
     case notion
     case lark
 
-    static let visibleFormats: [CopyFormat] = [.markdown, .lark, .notion]
+    static let visibleFormats: [CopyFormat] = [.markdown, .lark, .notion, .plainText]
 
     var id: String { rawValue }
 
@@ -21,6 +22,8 @@ enum CopyFormat: String, CaseIterable, Identifiable {
             ("Formula Output (LaTeX)", "Copy raw LaTeX when the result is one Pure Formula.")
         case .markdown:
             ("Markdown", "Copy the editable Canonical Markdown source.")
+        case .plainText:
+            ("Plain Text", "Copy readable text, LaTeX formulas, and tab-separated tables.")
         case .combinedOutput:
             ("Combined Output", "Copy all text, formulas, and tables. Currently the same Markdown source as Markdown above.")
         case .tsvTable:
@@ -40,7 +43,7 @@ enum CopyFormat: String, CaseIterable, Identifiable {
 
     var helpText: String { descriptor.helpText }
 
-    static let explanation = "Markdown copies source. Lark and Notion include experimental Native Paste clipboard data for editable equations and tables. Destination compatibility must be verified. No Notion or Feishu document API writes."
+    static let explanation = "Markdown copies source. Plain Text removes Markdown formatting. Lark and Notion include experimental Native Paste clipboard data for editable equations and tables. Destination compatibility must be verified. No Notion or Feishu document API writes."
 }
 
 struct ClipboardPayload {
@@ -135,6 +138,8 @@ enum ClipboardService {
             content = .text(latex)
         case .markdown, .combinedOutput:
             content = .text(payload.canonicalMarkdown)
+        case .plainText:
+            content = .text(try PlainTextClipboardDocument.render(payload))
         case .lark:
             content = .lark(LarkClipboardDocument(
                 markdown: payload.canonicalMarkdown, complexTableHTML: payload.complexTableHTML

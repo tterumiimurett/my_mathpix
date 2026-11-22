@@ -46,6 +46,7 @@ final class Ticket03AcceptanceReporter {
         var offlinePolicyPresent = false
         var formulaOutputCopied = false
         var markdownCopied = false
+        var plainTextCopied = false
         var combinedOutputCopied = false
         var tsvTableCopied = false
         var richTableCopied = false
@@ -129,6 +130,7 @@ final class Ticket03AcceptanceReporter {
     private static let copyEvidenceKeyPaths: [CopyFormat: WritableKeyPath<Evidence, Bool>] = [
         .formulaOutput: \Evidence.formulaOutputCopied,
         .markdown: \Evidence.markdownCopied,
+        .plainText: \Evidence.plainTextCopied,
         .combinedOutput: \Evidence.combinedOutputCopied,
         .tsvTable: \Evidence.tsvTableCopied,
         .richTable: \Evidence.richTableCopied,

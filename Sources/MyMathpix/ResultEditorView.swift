@@ -297,6 +297,7 @@ private struct CopyFormatRow: View {
         switch format {
         case .formulaOutput: "LaTeX"
         case .markdown: "Markdown"
+        case .plainText: "Plain Text"
         case .combinedOutput: "Combined"
         case .tsvTable: "TSV"
         case .richTable: "Rich Table"

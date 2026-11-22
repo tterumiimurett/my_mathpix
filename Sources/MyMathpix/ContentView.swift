@@ -4,9 +4,11 @@ import WebKit
 
 struct ContentView: View {
     var mainWindowSceneID = "main"
+    var markdownConverterPasteboard: NSPasteboard = .general
     @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var model: AppModel
     @Environment(\.openSettings) private var openSettings
+    @State private var showsMarkdownConverter = false
 
     var body: some View {
         NavigationSplitView {
@@ -45,10 +47,18 @@ struct ContentView: View {
                         .font(.caption.monospaced())
                         .accessibilityIdentifier("ticket01-safe-evidence")
                 }
+                Button {
+                    showsMarkdownConverter = true
+                } label: {
+                    Label("Convert Markdown", systemImage: "text.document")
+                }
                 SettingsLink {
                     Label("Settings", systemImage: "gearshape")
                 }
             }
+        }
+        .sheet(isPresented: $showsMarkdownConverter) {
+            MarkdownConverterView(pasteboard: markdownConverterPasteboard)
         }
         .alert("MyMathpix", isPresented: Binding(
             get: { model.errorMessage != nil && model.isMainWindowVisible },

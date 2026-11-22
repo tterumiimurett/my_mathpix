@@ -8,6 +8,7 @@ struct MyMathpixApp: App {
     @NSApplicationDelegateAdaptor(AppWindowShell.self) private var windowShell
     private let isolatesWindowState: Bool
     private let mainWindowSceneID: String
+    private let markdownConverterTestPasteboard: NSPasteboard?
 
     private var appDisplayName: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "MyMathpix"
@@ -23,11 +24,14 @@ struct MyMathpixApp: App {
         if GoldenSetRunner.handles(CommandLine.arguments) {
             exit(GoldenSetRunner.runBlocking(arguments: CommandLine.arguments))
         }
-        let launch = ticket06 == nil
+        let explicitLaunch = AppLaunchConfiguration(arguments: CommandLine.arguments)
+        let launch = ticket06 == nil && !explicitLaunch.runsMarkdownConverterSelfTest
             ? AppLaunchConfiguration.current(arguments: CommandLine.arguments)
-            : AppLaunchConfiguration(arguments: CommandLine.arguments)
+            : explicitLaunch
+        markdownConverterTestPasteboard = launch.runsMarkdownConverterSelfTest ? .withUniqueName() : nil
         isolatesWindowState = ticket06 != nil || launch.runsTicket01Acceptance
             || launch.runsTicket03Acceptance || launch.runsTicket04ResultEditorWindowSelfTest
+            || launch.runsMarkdownConverterSelfTest
         mainWindowSceneID = isolatesWindowState ? "acceptance-main-\(UUID().uuidString)" : "main"
         if launch.runsLocalTokenStoreSelfTest {
             let passed = Ticket01LocalTokenStoreSelfTest.run()
@@ -94,6 +98,8 @@ struct MyMathpixApp: App {
                 print("TICKET06_ACCEPTANCE_PREPARATION_FAILED")
                 exit(2)
             }
+        } else if let markdownConverterTestPasteboard {
+            _model = StateObject(wrappedValue: MarkdownConverterSelfTest.makeModel(pasteboard: markdownConverterTestPasteboard))
         } else if launch.runsTicket04ResultEditorWindowSelfTest {
             _model = StateObject(wrappedValue: Ticket04ResultEditorWindowSelfTest.makeModel())
         } else if launch.runsTicket03Acceptance {
@@ -161,7 +167,10 @@ struct MyMathpixApp: App {
 
     var body: some Scene {
         WindowGroup(appDisplayName, id: mainWindowSceneID) {
-            ContentView(mainWindowSceneID: mainWindowSceneID)
+            ContentView(
+                mainWindowSceneID: mainWindowSceneID,
+                markdownConverterPasteboard: markdownConverterTestPasteboard ?? .general
+            )
                 .environmentObject(model)
                 .frame(minWidth: 920, minHeight: 520)
             .background(MainWindowRegistrationView { window in
@@ -180,6 +189,9 @@ struct MyMathpixApp: App {
                 }
                 if CommandLine.arguments.contains("--ticket04-result-editor-window-self-test") {
                     await Ticket04ResultEditorWindowSelfTest.run(model: model)
+                }
+                if let markdownConverterTestPasteboard {
+                    await MarkdownConverterSelfTest.run(pasteboard: markdownConverterTestPasteboard)
                 }
             }
         }

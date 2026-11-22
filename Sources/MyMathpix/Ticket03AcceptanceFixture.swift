@@ -162,6 +162,17 @@ enum Ticket03PasteboardInspector {
                 && (expected == Ticket03AcceptanceFixture.initialMarkdown
                     || expected == Ticket03AcceptanceFixture.editedMarkdown)
                 && pasteboard.string(forType: .string) == expected
+        case .plainText:
+            let initial = "Before x^2.\n\ny = x + 1\n\nName\tValue\nA & B\tα © α\n**literal**\ta < b > c\nlong\tContent beyond a single line must remain complete after copying — COMPLETE-CELL-END\n\nAfter the table."
+            let edited = "e^{i\\pi} = -1\n\nSymbol\tMeaning\n\\pi\tCircle constant\ne\tEuler's number"
+            guard pasteboard.pasteboardItems?.map(\.types) == [[.string]],
+                  let copied = pasteboard.string(forType: .string) else { return false }
+            switch expectedMarkdown {
+            case Ticket03AcceptanceFixture.initialMarkdown: return copied == initial
+            case Ticket03AcceptanceFixture.editedMarkdown: return copied == edited
+            case nil: return copied == initial || copied == edited
+            default: return false
+            }
         case .combinedOutput:
             return types.contains(.string)
                 && pasteboard.string(forType: .string) == Ticket03AcceptanceFixture.editedMarkdown

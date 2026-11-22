@@ -305,6 +305,7 @@ enum Ticket03SelfCheck {
             CopyFormat.allCases.map(\.title) == [
                 "Formula Output (LaTeX)",
                 "Markdown",
+                "Plain Text",
                 "Combined Output",
                 "TSV Table (Plain Text)",
                 "Rich Table (HTML + RTF)",
@@ -457,7 +458,7 @@ enum Ticket03SelfCheck {
             }
             let nativeEnvelope = readChromiumCustomData(board.data(forType: .init("org.chromium.web-custom-data")))
             check(
-                CopyFormat.visibleFormats.map(\.title) == ["Markdown", "Lark", "Notion"]
+                CopyFormat.visibleFormats.map(\.title) == ["Markdown", "Lark", "Notion", "Plain Text"]
                     && blocks.count == 4
                     && values.compactMap { $0["type"] as? String } == ["text", "equation", "table", "text"]
                     && displayTitle == [["y = x + 1"]]
@@ -881,6 +882,38 @@ enum Ticket03SelfCheck {
         let pasteboard = NSPasteboard(name: NSPasteboard.Name("Ticket03SelfCheck.\(UUID().uuidString)"))
 
         assertCopy(.markdown, payload: payload, pasteboard: pasteboard, plainText: mixedMarkdown, failures: &failures)
+        let formattedText = """
+        # Title
+
+        **Bold** and [link](https://example.invalid), with `$literal$` and $x+1$.
+
+        - First
+        - Second
+
+        ---
+
+        ```
+            **literal**
+
+            next line
+        ```
+
+        | Name | Value |
+        | --- | --- |
+        | A | $y$ |
+        """
+        let plainTextPayload = ClipboardPayload(
+            canonicalMarkdown: formattedText.replacingOccurrences(of: "\n", with: "\r\n"),
+            complexTableHTML: "<table><caption>Measurements</caption><tr><th>Name</th><th>Value</th></tr><tr><td>A</td><td>$y$</td></tr></table>",
+            originalPNG: nil
+        )
+        assertCopy(
+            .plainText, payload: plainTextPayload, pasteboard: pasteboard,
+            plainText: "Title\n\nBold and link, with $literal$ and x+1.\n\nFirst\nSecond\n\n    **literal**\n\n    next line\n\nMeasurements\n\nName\tValue\nA\ty",
+            failures: &failures
+        )
+        check(pasteboard.pasteboardItems?.map(\.types) == [[.string]],
+              "Plain Text uses only the plain-text pasteboard type", failures: &failures)
         assertCopy(.combinedOutput, payload: payload, pasteboard: pasteboard, plainText: mixedMarkdown, failures: &failures)
         assertCopy(.tsvTable, payload: payload, pasteboard: pasteboard, plainText: "Label\tValue\nA\t2", failures: &failures)
         let tsvTypes = Set(pasteboard.types ?? [])
@@ -1031,7 +1064,7 @@ enum Ticket03SelfCheck {
                     )
                     check(
                         Ticket03PasteboardInspector.inspect(format, pasteboard: acceptanceBoard, expectedMarkdown: source),
-                        "accepted three-format clipboard preserves its declared fixture stage",
+                        "visible Copy Format preserves its declared fixture stage",
                         failures: &failures
                     )
                     if format == .lark || format == .notion {

@@ -65,7 +65,7 @@ The surface in which Combined Output source is edited while its rendered preview
 _Avoid_: Visual document editor, document library
 
 **Copy Format**:
-A representation explicitly placed on the clipboard for reuse: LaTeX, Markdown, TSV table, rich table, image, or Combined Output.
+A representation explicitly placed on the clipboard for reuse: LaTeX, Markdown, plain text, TSV table, rich table, image, or Combined Output.
 _Avoid_: Export format, file type
 
 **Native Paste**:

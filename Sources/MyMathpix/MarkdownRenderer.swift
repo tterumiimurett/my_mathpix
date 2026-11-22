@@ -69,7 +69,8 @@ enum MarkdownRenderer {
     static func renderBody(
         _ markdown: String,
         forClipboard: Bool = false,
-        formulaRepresentation: FormulaRepresentation = .preview
+        formulaRepresentation: FormulaRepresentation = .preview,
+        forPlainText: Bool = false
     ) -> String {
         let extracted = extractMath(markdown, representation: formulaRepresentation)
         let lines = extracted.text.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
@@ -79,9 +80,14 @@ enum MarkdownRenderer {
         var codeFence: MarkdownCodeFence?
         var codeLines: [String] = []
 
+        func inlineHTML(_ source: String) -> String {
+            inline(source, math: extracted.math, forPlainText: forPlainText)
+        }
+
         func flushParagraph() {
             guard !paragraph.isEmpty else { return }
-            output.append("<p>\(inline(paragraph.joined(separator: " "), math: extracted.math))</p>")
+            let text = paragraph.joined(separator: forPlainText ? "\n" : " ")
+            output.append("<p>\(inlineHTML(text))</p>")
             paragraph.removeAll()
         }
 
@@ -115,19 +121,22 @@ enum MarkdownRenderer {
                 output.append(renderTable(tableLines, math: extracted.math, forClipboard: forClipboard))
                 continue
             }
-            if line.trimmingCharacters(in: .whitespaces).isEmpty {
+            if line.trimmingCharacters(in: .whitespaces).isEmpty
+                || (forPlainText && line.range(of: #"^ {0,3}([-*_])(?:[ \t]*\1){2,}[ \t]*$"#, options: .regularExpression) != nil) {
                 flushParagraph()
             } else if let heading = heading(line) {
                 flushParagraph()
-                output.append("<h\(heading.level)>\(inline(heading.text, math: extracted.math))</h\(heading.level)>")
+                output.append("<h\(heading.level)>\(inlineHTML(heading.text))</h\(heading.level)>")
             } else if line.hasPrefix("> ") {
                 flushParagraph()
-                output.append("<blockquote>\(inline(String(line.dropFirst(2)), math: extracted.math))</blockquote>")
+                let text = String(line.dropFirst(2))
+                output.append("<blockquote>\(inlineHTML(text))</blockquote>")
             } else if line.hasPrefix("- ") || line.hasPrefix("* ") {
                 flushParagraph()
                 var items: [String] = []
                 while index < lines.count, lines[index].hasPrefix("- ") || lines[index].hasPrefix("* ") {
-                    items.append("<li>\(inline(String(lines[index].dropFirst(2)), math: extracted.math))</li>")
+                    let text = String(lines[index].dropFirst(2))
+                    items.append("<li>\(inlineHTML(text))</li>")
                     index += 1
                 }
                 output.append("<ul>\(items.joined())</ul>")
@@ -296,15 +305,24 @@ enum MarkdownRenderer {
         }
     }
 
-    private static func inline(_ source: String, math: [String: MathToken]) -> String {
+    private static func inline(_ source: String, math: [String: MathToken], forPlainText: Bool = false) -> String {
         var code: [String: String] = [:]
         var index = 0
         let protected = protectInlineCode(
             in: source, originalSource: source, replacements: &code, tokenIndex: &index
         )
-        var text = MarkdownNormalizer.escapeHTML(protected)
-        text = replace(pattern: #"\*\*([^*]+)\*\*"#, in: text, template: "<strong>$1</strong>")
-        text = replace(pattern: #"(?<!\*)\*([^*]+)\*(?!\*)"#, in: text, template: "<em>$1</em>")
+        var text: String
+        if forPlainText {
+            let stripped = try? AttributedString(
+                markdown: protected,
+                options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)
+            )
+            text = MarkdownNormalizer.escapeHTML(stripped.map { String($0.characters) } ?? protected)
+        } else {
+            text = MarkdownNormalizer.escapeHTML(protected)
+            text = replace(pattern: #"\*\*([^*]+)\*\*"#, in: text, template: "<strong>$1</strong>")
+            text = replace(pattern: #"(?<!\*)\*([^*]+)\*(?!\*)"#, in: text, template: "<em>$1</em>")
+        }
         for (key, token) in math {
             text = text.replacingOccurrences(of: key, with: mathHTML(token))
         }

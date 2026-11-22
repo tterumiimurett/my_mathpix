@@ -10,7 +10,8 @@ A personal-first native macOS snippet recognizer for formulas, tables, and mixed
 - Datalab `fast` recognition and `balanced` high-quality retry
 - Compact floating result after capture or a menu-bar click, with offline KaTeX preview and independent Original/Edit actions; click outside to hide it and use the menu bar to reopen the same result
 - A separate large history/settings/usage workspace on Command-Tab, Dock/reopen or Open MyMathpix
-- Whole-result Markdown / Lark / Notion copy actions; Lark and Notion include native editable equations and rich tables
+- Whole-result Markdown, Lark, Notion, and Plain Text copy actions. Plain Text keeps formulas as LaTeX and separates table columns with tabs.
+- **Convert Markdown** in the main window opens a local editor with a live preview and the same copy actions. It works without a Datalab token.
 - Local history containing the 20 most recent snippets
 - API token stored in a private `0600` file inside the App Sandbox container
 
@@ -49,6 +50,8 @@ The App icon source is `Config/AppIcon.png`. After changing it, run `./scripts/b
 ```
 
 The current standalone Command Line Tools installation does not include XCTest, so this runs deterministic core checks through the app's `--self-test` entry point. Move them into XCTest after installing full Xcode.
+
+Run `./scripts/markdown_converter_test.sh` from a macOS desktop session to test the Markdown converter in the signed app with an isolated clipboard.
 
 ## Third-party software
 

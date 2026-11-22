@@ -158,6 +158,10 @@ struct AppLaunchConfiguration {
         arguments.contains("--self-test")
     }
 
+    var runsMarkdownConverterSelfTest: Bool {
+        arguments.contains("--markdown-converter-self-test")
+    }
+
     var runsTicket04DailyWorkflowSelfTest: Bool {
         arguments.contains("--ticket04-daily-workflow-self-test")
     }
