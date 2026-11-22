@@ -21,7 +21,7 @@ Personal MVP V1 and the v0.1.1 Markdown / Lark / Notion paste update were accept
 
 ## Download
 
-[Download MyMathpix v0.1.3 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.3/MyMathpix-v0.1.3.zip). Requires macOS 15 or later.
+[Download MyMathpix v0.1.4 for Apple Silicon](https://github.com/tterumiimurett/my_mathpix/releases/download/v0.1.4/MyMathpix-v0.1.4.zip). Requires macOS 15 or later.
 
 1. Unzip the download and move `MyMathpix.app` to Applications.
 2. Sign up or sign in on the [Datalab website](https://www.datalab.to/), then open the [API keys page](https://www.datalab.to/app/keys) to create and copy your own API key. MyMathpix requires this key to recognize Snippets.
