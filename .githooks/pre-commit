@@ -1,0 +1,23 @@
+#!/bin/sh
+set -eu
+
+git diff --cached --check
+
+if git diff --cached --quiet -- Package.swift Package.resolved Sources Tests Config scripts .githooks/pre-commit; then
+    exit 0
+fi
+
+# Compile and test the index as it will be committed, including partial stages.
+python3 - <<'PY'
+from pathlib import Path
+import subprocess
+import tempfile
+
+with tempfile.TemporaryDirectory(prefix="mymathpix-pre-commit.") as snapshot:
+    subprocess.run(["git", "checkout-index", "--all", f"--prefix={snapshot}/"], check=True)
+    root = Path(snapshot)
+    for script in ("test.sh", "ticket03_test.sh"):
+        result = subprocess.run([root / "scripts" / script], cwd=root)
+        if result.returncode:
+            raise SystemExit(result.returncode)
+PY
